@@ -51,21 +51,28 @@ def _resolver(tmp_path):
 
 @contextmanager
 def _capture_segmenter_logs(caplog):
-    """Reliably capture "preprocessing.segmenter" log records under `caplog`.
+    """Reliably route "preprocessing.segmenter" records into `caplog`.
 
-    get_logger() (src/common/logging_setup.py, base-owned) sets
-    propagate=False on this logger — correct, since it's what stops Kaggle's
-    own root handler from duplicating output — but that also means its
-    records never bubble to the root logger `caplog` captures by default.
-    pytest *does* special-case non-propagating loggers in some versions, by
-    scanning its logging registry for them when a test's capture wrapper
-    starts, but only for loggers already registered at that moment, and only
-    on pytest versions that implement the scan at all — confirmed this
-    differs across pytest 8.4 (fails) and 9.1 (passes) after this test failed
-    on Kaggle despite passing locally. Attaching `caplog.handler` to the
-    logger directly, for the duration of the block, sidesteps all of that:
-    it works identically regardless of propagate, registry timing, or pytest
-    version, because it does not rely on any of pytest's automatic wiring.
+    Two things make a plain `propagate = True` flip ineffective here, verified
+    by direct instrumentation before settling on this approach: `get_logger()`
+    (src/common/logging_setup.py, base-owned) unconditionally resets
+    `propagate = False` on *every* call, and `segment_document` calls
+    `get_logger()` again internally whenever it isn't passed an explicit
+    `logger=` — so a flip applied before calling it is silently undone before
+    the actual `logger.warning(...)` call executes; printing propagate
+    immediately before and after the call showed True flipping back to False
+    mid-call. Relying instead on pytest's own non-propagating-logger registry
+    scan (attaching its handler directly to already-registered
+    propagate=False loggers) also isn't safe: it only fires for loggers
+    already registered when a test's capture wrapper starts, and it turned
+    out to be pytest-version-dependent besides — present in a form that
+    happened to make this pass on pytest 9.1 locally, but not on Kaggle's
+    pytest 8.4.
+
+    Attaching `caplog.handler` to the logger directly, for the duration of
+    this block, sidesteps all of that: capture no longer depends on
+    `propagate` being (or staying) True, on registry timing, or on which
+    pytest version implements which scan.
     """
     logger = logging.getLogger("preprocessing.segmenter")
     logger.addHandler(caplog.handler)
@@ -272,7 +279,7 @@ def test_segment_document_on_unstructured_text_leaves_everything_null_and_warns(
         paragraphs = segmenter.segment_document(record, text, {})
     assert paragraphs
     assert all(p.section_id is None for p in paragraphs)
-    assert any("no chapter, numbered paragraph, or clause marker" in r.message for r in caplog.records)
+    assert "no chapter, numbered paragraph, or clause marker" in caplog.text
 
 
 # -- stable_paragraph_id determinism -------------------------------------------
