@@ -1,0 +1,120 @@
+# =============================================================================
+# RBI-ObliBench / Agentic RAG Compliance System — shared configuration
+#
+# Phase 0 (base). Owned jointly; changed only by agreement across all three
+# Phase 1 branches, because every branch loads this file.
+#
+# Values marked "TODO(phase1/<branch>)" are deliberately unset. The loader
+# treats `null` in a required field as a validation failure, so an unset value
+# fails loudly at load time rather than silently defaulting.
+# =============================================================================
+
+environment:
+  # auto | local | kaggle
+  #   auto  -> detect Kaggle via KAGGLE_KERNEL_RUN_TYPE / KAGGLE_URL_BASE env
+  #            vars, falling back to probing for /kaggle/working
+  #   local | kaggle -> force that mode (used by tests and by anyone debugging
+  #            Kaggle path behaviour from a laptop)
+  mode: auto
+
+  local:
+    # Repository root. "." resolves relative to the repo, not the CWD.
+    working_root: "."
+    # Extra read-only roots searched before the working root. Empty locally.
+    input_roots: []
+
+  kaggle:
+    # Writable scratch. Everything produced by a notebook run lands here and is
+    # then saved by hand via the Kaggle UI (New Dataset / New Version).
+    working_root: "/kaggle/working"
+    # Read-only mount point for attached Kaggle Datasets.
+    input_root: "/kaggle/input"
+    # Dataset slugs attached to the notebook, searched in order for reads.
+    # Populated once the corpus dataset exists; see README "Kaggle workflow".
+    input_datasets: []
+    # TODO(phase1/akash-scraper): set to the slug of the raw-corpus Kaggle
+    # Dataset once the first harvest has been uploaded, e.g.
+    #   input_datasets: ["rbi-obligench-raw-corpus"]
+
+# -----------------------------------------------------------------------------
+# Logical path keys. Values are relative subpaths, resolved against the active
+# mode's roots by src.common.paths.PathResolver. Never hard-code an absolute
+# path in branch code — always resolve through a key listed here.
+# -----------------------------------------------------------------------------
+paths:
+  raw: data/raw
+  extracted: data/extracted
+  processed: data/processed
+  metadata: data/metadata
+  matrix: data/matrix
+  benchmark: data/benchmark
+  evaluation: data/evaluation
+  cache: data/cache
+  reports: reports
+  logs: logs
+
+logging:
+  level: INFO
+  format: "%(asctime)s [%(levelname)s] %(name)s: %(message)s"
+  # Emit a per-logger file under the `logs` path key in addition to stderr.
+  to_file: true
+
+# -----------------------------------------------------------------------------
+# Network behaviour for anything that leaves the machine. Consumed by
+# src.common.retry.RetryPolicy.from_config.
+# -----------------------------------------------------------------------------
+network:
+  retry:
+    attempts: 4
+    initial_delay_sec: 1.0
+    backoff_factor: 2.0
+    max_delay_sec: 30.0
+    # Random fraction added to each delay to avoid synchronised retries.
+    jitter: 0.25
+  request_timeout_sec: 60
+  # Courtesy delay between successive requests to the same host.
+  rate_limit_sec: 1.5
+  # TODO(phase1/akash-scraper): scraper base URLs and per-source listing
+  # endpoints. Left unset because no branch has established which endpoints are
+  # stable. Adding them here (not in branch code) keeps them reviewable.
+  sources: {}
+
+cache:
+  enabled: true
+  # Namespace prefix for cache keys, so two branches caching different things
+  # never collide inside the same Kaggle Dataset.
+  namespace: "phase0"
+  # Reject cache entries older than this. null = never expire (correct for
+  # immutable regulatory source documents).
+  max_age_days: null
+
+# -----------------------------------------------------------------------------
+# Vocabularies are DISCOVERED from the corpus, never declared here. The dossier
+# estimates (~11 entity classes, ~26 subject families) are estimates, not
+# ground truth, and must not be encoded as constants anywhere in the codebase.
+# These files are written by phase1/karan-matrix; they do not exist yet.
+# -----------------------------------------------------------------------------
+vocabulary:
+  entity_class_file: data/metadata/entity_classes.json
+  subject_family_file: data/metadata/subject_families.json
+
+# -----------------------------------------------------------------------------
+# Placeholders for values later phases need. Unset on purpose.
+# -----------------------------------------------------------------------------
+retrieval:
+  # TODO(phase2): embedding model identifier, index type, chunk size. Not set in
+  # Phase 0 — choosing an embedding model is a Week 7 decision with evaluation
+  # consequences, and a placeholder value would invite accidental adoption.
+  embedding_model: null
+  index_type: null
+
+benchmark:
+  # Annotation is the critical path for the research contribution.
+  annotators: []
+  # TODO(phase1/meer-annotation): annotator identifiers, sample size, and the
+  # minimum number of independent annotators per item required before an item
+  # may be promoted from candidate to validated.
+  min_annotators_per_item: 2
+  label_statuses:
+    - candidate
+    - validated

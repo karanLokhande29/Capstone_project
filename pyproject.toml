@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rbi-obligench"
+version = "0.1.0"
+description = "Agentic RAG compliance system and RBI-ObliBench benchmark for RBI Master Directions"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Proprietary — academic capstone; see reports/ for the licensing position on corpus content" }
+
+# Runtime dependencies are declared in requirements.txt rather than here.
+# Execution happens on Kaggle Notebooks, whose base image already provides most
+# of them at pinned versions; see the notes in requirements.txt for why pinning
+# them again in project metadata would cause more problems than it solves.
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+# Tests import `src.*` and `tests.*` from the repository root.
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+filterwarnings = ["error::DeprecationWarning:src.*"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = [
+    "E501",  # line length is handled by the formatter
+    "B008",  # false positives on dataclass field defaults
+]
