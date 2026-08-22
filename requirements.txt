@@ -24,11 +24,9 @@
 # actually found.
 #
 # ---------------------------------------------------------------------------
-# Phase 0 (this branch) needs nothing installed on Kaggle
-# ---------------------------------------------------------------------------
-# The shared foundation uses only the standard library plus PyYAML, and is
-# tested with pytest. Both are in Kaggle's base image, so a Phase 0 notebook
-# run requires no pip install at all.
+# Phase 0 needed nothing installed on Kaggle; phase1/akash-scraper adds one
+# genuinely-missing package below (pdfplumber). Everything else it uses —
+# requests, beautifulsoup4, lxml — is already in the base image.
 # =============================================================================
 
 
@@ -38,21 +36,20 @@
 # PyYAML>=6.0            # config loading                     (src/common/config.py)
 # pytest>=7.4            # test suite
 # requests>=2.31         # HTTP                               (phase1/akash-scraper)
-# beautifulsoup4>=4.12   # HTML parsing                       (phase1/akash-scraper)
-# lxml>=4.9              # BeautifulSoup backend              (phase1/akash-scraper)
-# pandas>=2.0            # tabular artifacts                  (phase1/karan-matrix)
-# numpy>=1.24            # numerics                           (phase1/*)
-# regex>=2023.0          # Unicode-aware patterns             (phase1/*)
-# scikit-learn>=1.3      # agreement statistics               (phase1/meer-annotation)
-# tqdm>=4.66             # progress reporting                 (phase1/*)
+# beautifulsoup4>=4.12   # HTML parsing                        (phase1/akash-scraper)
+# lxml>=4.9              # BeautifulSoup backend               (phase1/akash-scraper)
+# pandas>=2.0            # tabular artifacts                   (phase1/karan-matrix)
+# numpy>=1.24            # numerics                            (phase1/*)
+# regex>=2023.0          # Unicode-aware patterns              (phase1/*)
+# scikit-learn>=1.3      # agreement statistics                (phase1/meer-annotation)
+# tqdm>=4.66             # progress reporting                  (phase1/*)
 
 
 # --- Genuinely missing from the Kaggle base image ---------------------------
-# Uncomment as each Phase 1 branch actually needs it, and confirm on Kaggle
-# before merging. Nothing here is required for Phase 0.
-#
-# pdfplumber>=0.11       # PDF text extraction                 (phase1/akash-scraper)
-#                        # Not in the Kaggle base image. Pulls pdfminer.six.
+# Confirmed against Kaggle's documented default image (not installed there);
+# re-verify with scripts/verify_foundation.py --versions if that ever changes.
+
+pdfplumber>=0.11.0       # PDF text extraction (phase1/akash-scraper). Pulls pdfminer.six.
 
 
 # --- Python version ---------------------------------------------------------

@@ -74,10 +74,31 @@ network:
   request_timeout_sec: 60
   # Courtesy delay between successive requests to the same host.
   rate_limit_sec: 1.5
-  # TODO(phase1/akash-scraper): scraper base URLs and per-source listing
-  # endpoints. Left unset because no branch has established which endpoints are
-  # stable. Adding them here (not in branch code) keeps them reviewable.
-  sources: {}
+
+  # ---------------------------------------------------------------------------
+  # phase1/akash-scraper block. Owned by this branch; edited only here.
+  #
+  # rbidocs.rbi.org.in (the PDF host, distinct from www.rbi.org.in) fronts a
+  # WAF that fingerprints the TLS/HTTP client, not just the User-Agent header:
+  # a bare `curl` request with a spoofed browser User-Agent still gets its
+  # connection dropped ("Empty reply from server") after a clean TLS
+  # handshake, while the same headers sent via Python's `requests` succeed.
+  # This was independently confirmed against the live site while building
+  # this config. `user_agent` and `referer` below are necessary but not
+  # sufficient on their own — see src/scraper/rbi_scraper.py for the session
+  # setup that actually works.
+  # ---------------------------------------------------------------------------
+  sources:
+    rbi_master_directions:
+      # Full listing of Master Directions. No category/date filter is applied
+      # server-side; the page returns every Direction in one response, grouped
+      # by entity-class heading and, within that, by date sub-heading.
+      listing_url: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx"
+      base_url: "https://www.rbi.org.in"
+      # PDF payloads are served from a distinct host (see WAF note above).
+      pdf_host: "https://rbidocs.rbi.org.in"
+    user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    referer: "https://www.rbi.org.in/"
 
 cache:
   enabled: true

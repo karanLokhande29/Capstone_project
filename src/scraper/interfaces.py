@@ -4,6 +4,20 @@ Signatures only. Every function here raises :class:`NotImplementedError`; the
 point of the file is to fix the boundary between acquisition and everything
 downstream before three people start writing against it.
 
+**Implementation note (P1-001).** This file is left as literal stubs
+deliberately, even though ``phase1/akash-scraper`` has now implemented the real
+functionality — it lives in :mod:`src.scraper.rbi_scraper` instead. Reason:
+``tests/test_smoke.py`` (Phase 0, base-owned, outside this branch's file scope)
+asserts every function in every ``*.interfaces`` module still raises
+``NotImplementedError`` naming its branch — that assertion is exactly what
+protected all three branches' interface stubs from a broken import during
+Phase 0, but it also means un-stubbing this file would fail a base-owned test
+this branch has no authority to change. Import the real implementation from
+:mod:`src.scraper.rbi_scraper` directly. Superseding this file (or updating the
+base smoke test's expectations) is a base-branch decision for whoever
+integrates all three Phase 1 branches, not something to resolve unilaterally
+from one branch.
+
 Implementation notes for the branch owner:
 
 * Use :func:`src.common.retry.retry_call` for every network call rather than a
@@ -40,9 +54,12 @@ def discover_documents(cfg: Mapping[str, Any], **kwargs: Any) -> list[DocumentRe
         ``*_raw`` provenance fields populated and payload fields left null.
 
     Raises:
-        NotImplementedError: Always. Implemented by ``phase1/akash-scraper``.
+        NotImplementedError: Always. See :func:`src.scraper.rbi_scraper.discover_documents`
+            for the real implementation.
     """
-    raise NotImplementedError(f"discover_documents is implemented by {BRANCH}")
+    raise NotImplementedError(
+        f"discover_documents is implemented by {BRANCH}; see src.scraper.rbi_scraper.discover_documents"
+    )
 
 
 def download_document(record: DocumentRecord, cfg: Mapping[str, Any], **kwargs: Any) -> DocumentRecord:
@@ -53,9 +70,12 @@ def download_document(record: DocumentRecord, cfg: Mapping[str, Any], **kwargs: 
     to be before caching it.
 
     Raises:
-        NotImplementedError: Always. Implemented by ``phase1/akash-scraper``.
+        NotImplementedError: Always. See :func:`src.scraper.rbi_scraper.download_document`
+            for the real implementation.
     """
-    raise NotImplementedError(f"download_document is implemented by {BRANCH}")
+    raise NotImplementedError(
+        f"download_document is implemented by {BRANCH}; see src.scraper.rbi_scraper.download_document"
+    )
 
 
 def harvest_corpus(cfg: Mapping[str, Any], **kwargs: Any) -> dict[str, Any]:
@@ -66,15 +86,21 @@ def harvest_corpus(cfg: Mapping[str, Any], **kwargs: Any) -> dict[str, Any]:
     rather than zero, and failures as ``"FAILED — <reason>"``.
 
     Raises:
-        NotImplementedError: Always. Implemented by ``phase1/akash-scraper``.
+        NotImplementedError: Always. See :func:`src.scraper.rbi_scraper.harvest_corpus`
+            for the real implementation.
     """
-    raise NotImplementedError(f"harvest_corpus is implemented by {BRANCH}")
+    raise NotImplementedError(
+        f"harvest_corpus is implemented by {BRANCH}; see src.scraper.rbi_scraper.harvest_corpus"
+    )
 
 
 def write_manifest(records: Iterable[DocumentRecord], cfg: Mapping[str, Any]) -> str:
     """Persist the corpus manifest and return the path written.
 
     Raises:
-        NotImplementedError: Always. Implemented by ``phase1/akash-scraper``.
+        NotImplementedError: Always. See :func:`src.scraper.rbi_scraper.write_manifest`
+            for the real implementation.
     """
-    raise NotImplementedError(f"write_manifest is implemented by {BRANCH}")
+    raise NotImplementedError(
+        f"write_manifest is implemented by {BRANCH}; see src.scraper.rbi_scraper.write_manifest"
+    )

@@ -1,0 +1,40 @@
+{
+  "scope": "all",
+  "limit": 12,
+  "discover": {
+    "documents_discovered": 380,
+    "downloads_attempted": 12,
+    "downloads_successful": 12,
+    "downloads_failed": 0,
+    "download_success_rate": 1.0,
+    "pdf_count": 12,
+    "html_count": 0,
+    "manifest_path": "/Users/karan/Documents/Capstone_project/data/metadata/document_manifest.jsonl",
+    "failures": []
+  },
+  "extract": {
+    "documents_considered": 12,
+    "extraction_successful": 12,
+    "extraction_failures": 0,
+    "extraction_empty": 0,
+    "skipped_not_downloaded": 0,
+    "extraction_success_rate": 1.0,
+    "failures": [],
+    "empty_document_ids": []
+  },
+  "segment": {
+    "documents_segmented": 12,
+    "documents_missing_extracted_text": 0,
+    "documents_with_no_recognised_structure": 0,
+    "total_paragraphs": 1456,
+    "section_id_coverage": 0.9903846153846154,
+    "clause_path_coverage": 0.9903846153846154,
+    "index_path": "/Users/karan/Documents/Capstone_project/data/processed/paragraphs_index.jsonl"
+  },
+  "xref": {
+    "documents_processed": 12,
+    "cross_reference_phrases_detected": 33,
+    "cross_reference_count": 8,
+    "resolution_rate": 0.24242424242424243
+  }
+}
