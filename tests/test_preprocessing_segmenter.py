@@ -12,10 +12,26 @@ any RBI Direction.
 from __future__ import annotations
 
 from src.common.io_helpers import read_jsonl, write_jsonl
+from src.common.logging_setup import get_logger
 from src.common.paths import PathResolver
 from src.preprocessing import cross_references as xref_module
 from src.preprocessing import segmenter
 from src.schemas.provenance import DocumentRecord, ParagraphRecord, stable_paragraph_id
+
+# get_logger() sets propagate=False on this logger (src/common/logging_setup.py,
+# base-owned), so its records never bubble to the root logger pytest's `caplog`
+# captures by default. pytest's own `catching_logs` DOES account for
+# non-propagating loggers, but only ones already present in the logging
+# registry at the moment a test's log-capture wrapper starts — before that
+# test function's body runs (see _pytest/logging.py's `catching_logs`, whose
+# own comment reads "will miss loggers that *become* non-propagating after
+# __enter__"). Registering the logger here, at module import time, guarantees
+# it exists with propagate=False before any test in this file starts, so
+# `caplog` reliably captures it regardless of test order — confirmed this is
+# necessary and sufficient by reproducing the failure both with the logger
+# unregistered and with it registered only inside the test body (still too
+# late; pytest's per-item wrapper has already run its registry scan by then).
+get_logger("preprocessing.segmenter", {})
 
 MINIMAL_CONFIG = {
     "environment": {
