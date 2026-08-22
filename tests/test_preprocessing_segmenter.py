@@ -11,27 +11,14 @@ any RBI Direction.
 
 from __future__ import annotations
 
+import logging
+from contextlib import contextmanager
+
 from src.common.io_helpers import read_jsonl, write_jsonl
-from src.common.logging_setup import get_logger
 from src.common.paths import PathResolver
 from src.preprocessing import cross_references as xref_module
 from src.preprocessing import segmenter
 from src.schemas.provenance import DocumentRecord, ParagraphRecord, stable_paragraph_id
-
-# get_logger() sets propagate=False on this logger (src/common/logging_setup.py,
-# base-owned), so its records never bubble to the root logger pytest's `caplog`
-# captures by default. pytest's own `catching_logs` DOES account for
-# non-propagating loggers, but only ones already present in the logging
-# registry at the moment a test's log-capture wrapper starts — before that
-# test function's body runs (see _pytest/logging.py's `catching_logs`, whose
-# own comment reads "will miss loggers that *become* non-propagating after
-# __enter__"). Registering the logger here, at module import time, guarantees
-# it exists with propagate=False before any test in this file starts, so
-# `caplog` reliably captures it regardless of test order — confirmed this is
-# necessary and sufficient by reproducing the failure both with the logger
-# unregistered and with it registered only inside the test body (still too
-# late; pytest's per-item wrapper has already run its registry scan by then).
-get_logger("preprocessing.segmenter", {})
 
 MINIMAL_CONFIG = {
     "environment": {
@@ -60,6 +47,32 @@ MINIMAL_CONFIG = {
 
 def _resolver(tmp_path):
     return PathResolver.from_config(MINIMAL_CONFIG, repo_root=tmp_path)
+
+
+@contextmanager
+def _capture_segmenter_logs(caplog):
+    """Reliably capture "preprocessing.segmenter" log records under `caplog`.
+
+    get_logger() (src/common/logging_setup.py, base-owned) sets
+    propagate=False on this logger — correct, since it's what stops Kaggle's
+    own root handler from duplicating output — but that also means its
+    records never bubble to the root logger `caplog` captures by default.
+    pytest *does* special-case non-propagating loggers in some versions, by
+    scanning its logging registry for them when a test's capture wrapper
+    starts, but only for loggers already registered at that moment, and only
+    on pytest versions that implement the scan at all — confirmed this
+    differs across pytest 8.4 (fails) and 9.1 (passes) after this test failed
+    on Kaggle despite passing locally. Attaching `caplog.handler` to the
+    logger directly, for the duration of the block, sidesteps all of that:
+    it works identically regardless of propagate, registry timing, or pytest
+    version, because it does not rely on any of pytest's automatic wiring.
+    """
+    logger = logging.getLogger("preprocessing.segmenter")
+    logger.addHandler(caplog.handler)
+    try:
+        yield
+    finally:
+        logger.removeHandler(caplog.handler)
 
 
 # A document text mirroring real RBI structure: a chapter heading running
@@ -255,7 +268,7 @@ def test_segment_document_on_unstructured_text_leaves_everything_null_and_warns(
     """No chapter/paragraph/clause marker anywhere: fail loudly, don't guess."""
     text = "Just some flowing prose with no numbering at all in this document body text here."
     record = _doc_record()
-    with caplog.at_level("WARNING"):
+    with _capture_segmenter_logs(caplog), caplog.at_level("WARNING", logger="preprocessing.segmenter"):
         paragraphs = segmenter.segment_document(record, text, {})
     assert paragraphs
     assert all(p.section_id is None for p in paragraphs)
