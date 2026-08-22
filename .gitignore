@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# OS
+.DS_Store
+
+# Logs (regenerated on every run; never a source of truth)
+logs/
+reports/logs/
+
+# ---------------------------------------------------------------------------
+# Corpus data: NOT committed.
+#
+# Redistribution of RBI Master Directions, FAQs, circulars and enforcement
+# material is an open IPR question. Raw and extracted full text therefore live
+# in a private Kaggle Dataset, not in this repository. Only derived artifacts
+# that reference source material by URL / document ID / character offset are
+# eligible for commit.
+# ---------------------------------------------------------------------------
+data/raw/**
+data/extracted/**
+data/cache/**
+!data/**/.gitkeep
+
+# Derived artifacts are large and regenerable; commit deliberately, not by default.
+data/processed/**
+data/benchmark/**
+data/evaluation/**
+!data/processed/.gitkeep
+!data/benchmark/.gitkeep
+!data/evaluation/.gitkeep
+
+# Notebook execution noise
+.ipynb_checkpoints/
+
+# Claude Code local machine-specific permissions
+.claude/settings.local.json
