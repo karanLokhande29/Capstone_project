@@ -1,0 +1,79 @@
+# RBI-ObliBench / Agentic RAG compliance — Weeks 1–5 configuration
+# Paths are relative to repository root unless absolute.
+
+paths:
+  raw: data/raw
+  extracted: data/extracted
+  processed: data/processed
+  metadata: data/metadata
+  matrix: data/matrix
+  benchmark_candidate: data/benchmark/candidate
+  benchmark_validated: data/benchmark/validated
+  reports: reports
+  logs: reports/logs
+
+rbi:
+  base_url: "https://www.rbi.org.in"
+  master_directions_url: "https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx"
+  # Department of Regulation entity-class listing pages (discovered structure; ids are site params)
+  dor_category_param: "did"
+  user_agent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+  request_timeout_sec: 60
+  rate_limit_sec: 1.5
+  max_retries: 4
+  backoff_factor: 2.0
+  # Prefer PDF when available; also cache HTML listing/detail pages
+  prefer_format: "pdf"
+
+scraper:
+  # If true, skip files already present with matching content hash / stable name
+  resumable: true
+  # Optional cap for pilot runs (null = no cap / full corpus)
+  pilot_download_limit: null
+  # Subdirectory names under data/raw/
+  master_directions_subdir: master_directions
+  faq_subdir: faq
+  amendments_subdir: amendments
+  circulars_withdrawn_subdir: circulars_withdrawn
+  enforcement_subdir: enforcement
+
+extraction:
+  pilot_size: 15
+  min_text_chars: 50
+
+segmentation:
+  min_paragraph_chars: 40
+
+deontic:
+  cues:
+    - "shall not"
+    - "shall"
+    - "must not"
+    - "must"
+    - "is required to"
+    - "are required to"
+    - "is prohibited from"
+    - "are prohibited from"
+    - "should not"
+    - "should"
+  # Spans matching cues but matching these patterns are filtered as non-obligations
+  reject_patterns:
+    - "(?i)\\bshall\\s+mean\\b"
+    - "(?i)\\bshall\\s+be\\s+construed\\b"
+    - "(?i)\\bshall\\s+come\\s+into\\s+force\\b"
+    - "(?i)\\bthis\\s+direction\\s+shall\\s+be\\s+called\\b"
+
+benchmark:
+  # Validation sample size ceiling for this run (annotation capacity, not dossier target)
+  max_validation_sample: 30
+  stratification_keys:
+    - entity_class
+    - subject_family
+    - differential_flag
+  annotators:
+    - Akash
+    - Karan
+    - Meer
+
+logging:
+  level: INFO

@@ -1,0 +1,207 @@
+{
+  "extraction_success_rate_pilot": 1.0,
+  "extraction_pilot": {
+    "documents_attempted": 15,
+    "extraction_success": 15,
+    "extraction_failed": 0,
+    "extraction_success_rate": 1.0,
+    "failures": [],
+    "results_path": "/Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/metadata/extraction_results.json"
+  },
+  "temporal_metadata_coverage_pilot": 0.26666666666666666,
+  "temporal_pilot": {
+    "documents_processed": 15,
+    "usable_date_count": 4,
+    "temporal_coverage_rate": 0.26666666666666666,
+    "output_path": "/Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/metadata/temporal_metadata.json"
+  },
+  "cross_class_alignment_rate": 0.9224562216010344,
+  "alignment_fallback_triggered": false,
+  "faq_paragraph_alignment_rate": 0.0,
+  "enforcement_paragraph_alignment_rate": 0.0,
+  "faq_enforcement_check": {
+    "faq": {
+      "kind": "faq",
+      "items_checked": 30,
+      "clean_paragraph_maps": 0,
+      "paragraph_alignment_rate": 0.0,
+      "mappings_sample": [
+        {
+          "document_id": "faq_c214f35a46b9",
+          "title": "FAQs of RBI Reporting Portals",
+          "best_paragraph_id": "md_13147::p00103",
+          "score": 0.1007,
+          "clean_map": false
+        },
+        {
+          "document_id": "faq_ec8bef6a8afe",
+          "title": "Banker and Debt Manager to Government",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.0915,
+          "clean_map": false
+        },
+        {
+          "document_id": "faq_50cfd5f3524f",
+          "title": "Commercial Banking",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.0933,
+          "clean_map": false
+        },
+        {
+          "document_id": "faq_cb64d56d9b9f",
+          "title": "Co-operative Banking",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.0933,
+          "clean_map": false
+        },
+        {
+          "document_id": "faq_6533202e38f0",
+          "title": "Financial Inclusion and Development",
+          "best_paragraph_id": "md_13102::p00051",
+          "score": 0.1056,
+          "clean_map": false
+        },
+        {
+          "document_id": "faq_ee25dacf3945",
+          "title": "Financial Market",
+          "best_paragraph_id": "md_13102::p00051",
+          "score": 0.0994,
+          "clean_map": false
+        },
+        {
+          "document_id": "faq_5fc414d61ebc",
+          "title": "Foreign Exchange Management",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.1141,
+          "clean_map": false
+        },
+        {
+          "document_id": "faq_1bce211ba08e",
+          "title": "Consumer Education and Protection",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.0921,
+          "clean_map": false
+        },
+        {
+          "document_id": "faq_6fc01170fd85",
+          "title": "Issuer of Currency",
+          "best_paragraph_id": "md_13147::p00103",
+          "score": 0.0933,
+          "clean_map": false
+        },
+        {
+          "document_id": "faq_b227fe093faf",
+          "title": "Payment and Settlement System",
+          "best_paragraph_id": "md_13102::p00051",
+          "score": 0.0988,
+          "clean_map": false
+        }
+      ]
+    },
+    "enforcement": {
+      "kind": "enforcement",
+      "items_checked": 30,
+      "clean_paragraph_maps": 0,
+      "paragraph_alignment_rate": 0.0,
+      "mappings_sample": [
+        {
+          "document_id": "enforcement_32668d59704f",
+          "title": "Press Releases",
+          "best_paragraph_id": "md_13102::p00051",
+          "score": 0.1019,
+          "clean_map": false
+        },
+        {
+          "document_id": "enforcement_c0eec1b890cb",
+          "title": "Press Releases",
+          "best_paragraph_id": "md_13102::p00051",
+          "score": 0.1019,
+          "clean_map": false
+        },
+        {
+          "document_id": "enforcement_4e50ff10853c",
+          "title": "RBI to conduct Overnight Variable Rate Reverse Repo (VRRR) auction under LAF on August 13, 2026",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.1019,
+          "clean_map": false
+        },
+        {
+          "document_id": "enforcement_36c2d38f1b49",
+          "title": "Conversion/Switch of Government of India Securities",
+          "best_paragraph_id": "md_13102::p00051",
+          "score": 0.0994,
+          "clean_map": false
+        },
+        {
+          "document_id": "enforcement_0880aaa745aa",
+          "title": "RBI invites comments on the Draft “Reserve Bank of India (Interest Rates on Loans and Advances) Directions, 2026”",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.098,
+          "clean_map": false
+        },
+        {
+          "document_id": "enforcement_66de8638d630",
+          "title": "Scheduled Banks’ Statement of Position in India as on July 31, 2026",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.106,
+          "clean_map": false
+        },
+        {
+          "document_id": "enforcement_86ef23e9b498",
+          "title": "Treasury Bills: Full Auction Result",
+          "best_paragraph_id": "md_13102::p00051",
+          "score": 0.0988,
+          "clean_map": false
+        },
+        {
+          "document_id": "enforcement_6686bf88031b",
+          "title": "91-Day, 182-Day and 364-Day T-Bill Auction Result: Cut-off",
+          "best_paragraph_id": "md_13102::p00051",
+          "score": 0.097,
+          "clean_map": false
+        },
+        {
+          "document_id": "enforcement_5d29816f0164",
+          "title": "Foreign Exchange Turnover Data: July 27, 2026 – July 31, 2026",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.1141,
+          "clean_map": false
+        },
+        {
+          "document_id": "enforcement_329f37c8a892",
+          "title": "Foreign Exchange Turnover Data: July 20, 2026 – July 24, 2026",
+          "best_paragraph_id": "md_10197::p00000",
+          "score": 0.1141,
+          "clean_map": false
+        }
+      ]
+    },
+    "demote_to_validation_motivation": true,
+    "report_path": "/Users/karan/Downloads/carbon-tracker 3/Capstone_project/reports/week2_faq_enforcement_check.md"
+  },
+  "annotation_pilot_item_count": 12,
+  "annotation_pilot_avg_time_per_item_seconds": "NOT YET MEASURED",
+  "licensing_note_path": "/Users/karan/Downloads/carbon-tracker 3/Capstone_project/reports/week2_licensing_note.md",
+  "early_supplementary": {
+    "supplementary_documents_harvested": {
+      "faq": 35,
+      "enforcement": 35,
+      "circulars_withdrawn": 5,
+      "amendments": 35
+    },
+    "supplementary_manifest_path": "/Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/metadata/supplementary_manifest.json",
+    "total_supplementary_rows": 110
+  },
+  "pilot_segmentation_note": {
+    "total_paragraphs": 600,
+    "extraction_failures_missing_text": 366,
+    "malformed_documents": 0,
+    "index_path": "/Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/processed/paragraphs_index.jsonl"
+  },
+  "alignment_subjects_used": [
+    "Know Your Customer",
+    "Prudential Norms on Capital Adequacy",
+    "Miscellaneous"
+  ],
+  "alignment_rerun_note": "Recomputed on full processed corpus after Week 3 segmentation (pilot-only pass had insufficient overlap)."
+}

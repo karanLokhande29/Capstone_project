@@ -1,0 +1,40 @@
+{
+  "candidate_pool_size": 68281,
+  "stratified_validation_sample_size": 30,
+  "sample_size_rationale": "Annotation capacity for this run capped at max_validation_sample=30 (config). Stratified round-robin over (differential_flag, entity_class). Not the dossier ~350–400 ceiling.",
+  "items_independently_annotated_by_ge_2": 0,
+  "fleiss_kappa": "NOT YET MEASURED — annotation not yet completed",
+  "disagreement_categories": [],
+  "validated_benchmark_size": 0,
+  "per_class_distribution_candidate": {
+    "Commercial Banks": 12023,
+    "Small Finance Banks": 10274,
+    "Non-Banking Financial Companies": 7129,
+    "Urban Co-operative Banks": 6267,
+    "All India Financial Institutions": 5596,
+    "Local Area Banks": 5570,
+    "Payments Banks": 5277,
+    "Regional Rural Banks": 4442,
+    "Rural Co-operative Banks": 4253,
+    "Foreign Exchange Management": 1838,
+    "Financial Market": 1231,
+    "Asset Reconstruction Companies": 1120,
+    "Payment and Settlement System": 878,
+    "Credit Information Companies": 768,
+    "Financial Inclusion and Development": 420,
+    "Commercial Banks - Capital Charge for Credit Risk": 368,
+    "Banker and Debt Manager to Government": 196,
+    "Issuer of Currency": 170,
+    "Banker to Governments and Banks": 132,
+    "Consumer Education and Protection": 93,
+    "Non-Bank Prepaid Payment Instruments Issuers": 90,
+    "Universal Banks": 77,
+    "Priority Sector Lending": 69
+  },
+  "per_differential_flag_distribution_candidate": {
+    "absent": 63791,
+    "shared": 4349,
+    "class-specific": 141
+  },
+  "ambiguity_rate_proxy_absent_share": 0.9342423221686853
+}

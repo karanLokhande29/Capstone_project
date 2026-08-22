@@ -1,0 +1,3423 @@
+[
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "(All India Financial Institutions - Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13594"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Asset Liability Management",
+    "document_ids": [
+      "md_12974"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Classification, Valuation and Operation of Investment Portfolio",
+    "document_ids": [
+      "md_12975"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Concentration Risk Management",
+    "document_ids": [
+      "md_12978"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Credit Facilities",
+    "document_ids": [
+      "md_12981"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Credit Information Reporting",
+    "document_ids": [
+      "md_12980"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Credit Risk Management",
+    "document_ids": [
+      "md_12979"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Cybersecurity, Technology: Risk, Resilience and Assurance Framework",
+    "document_ids": [
+      "md_13597"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Financial Statements: Presentation and Disclosures",
+    "document_ids": [
+      "md_12970"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Fraud Risk Management",
+    "document_ids": [
+      "md_13596"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Income Recognition, Asset Classification and Provisioning",
+    "document_ids": [
+      "md_12973"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_12969"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Managing Risks in Outsourcing",
+    "document_ids": [
+      "md_12967"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Miscellaneous",
+    "document_ids": [
+      "md_12966"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Prudential Norms on Capital Adequacy",
+    "document_ids": [
+      "md_12983"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Resolution of Stressed Assets",
+    "document_ids": [
+      "md_12972"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Resource Raising Norms",
+    "document_ids": [
+      "md_12982"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Responsible Business Conduct",
+    "document_ids": [
+      "md_12968"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Securitisation Transactions",
+    "document_ids": [
+      "md_12976"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Supervisory Returns",
+    "document_ids": [
+      "md_13595"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Transfer and Distribution of Credit Risk",
+    "document_ids": [
+      "md_12977"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Treatment of Wilful Defaulters and Large Defaulters",
+    "document_ids": [
+      "md_12971"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "All India Financial Institutions",
+    "subject_family": "Undertaking of Financial Services",
+    "document_ids": [
+      "md_12984"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Asset Reconstruction Companies",
+    "subject_family": "Asset Reconstruction Companies",
+    "document_ids": [
+      "md_12930"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Asset Reconstruction Companies",
+    "subject_family": "Credit Information Reporting",
+    "document_ids": [
+      "md_12929"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Asset Reconstruction Companies",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_12927"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Asset Reconstruction Companies",
+    "subject_family": "Supervisory Returns",
+    "document_ids": [
+      "md_13584"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Asset Reconstruction Companies",
+    "subject_family": "Treatment of Wilful Defaulters and Large Defaulters",
+    "document_ids": [
+      "md_12928"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Banker and Debt Manager to Government",
+    "subject_family": "Operational Guidelines for Primary Dealers",
+    "document_ids": [
+      "md_10476"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Banker and Debt Manager to Government",
+    "subject_family": "Relief/Savings Bonds",
+    "document_ids": [
+      "md_11322"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Banker to Governments and Banks",
+    "subject_family": "[Conduct of Government Business by Agency Banks (ABs) – Payment of Agency Commission and Oversight of ABs]",
+    "document_ids": [
+      "md_13443"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Banker to Governments and Banks",
+    "subject_family": "[Disbursement of Government Pension by Agency Banks (ABs)]",
+    "document_ids": [
+      "md_13442"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "(Commercial Banks – Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13637"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "(Setting Up of Wholly Owned Subsidiaries by Foreign Banks)",
+    "document_ids": [
+      "md_13167"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Acquisition and Holding of Shares or Voting Rights",
+    "document_ids": [
+      "md_13166"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Asset Classification, Provisioning and Income Recognition",
+    "document_ids": [
+      "md_13400"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Asset Liability Management",
+    "document_ids": [
+      "md_13147"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Branch Authorisation",
+    "document_ids": [
+      "md_13164"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Cash Reserve Ratio and Statutory Liquidity Ratio",
+    "document_ids": [
+      "md_13160"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Classification, Valuation and Operation of Investment Portfolio",
+    "document_ids": [
+      "md_13148"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Climate Finance and Management of Climate Change Risks",
+    "document_ids": [
+      "md_13138"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Compliance Function",
+    "document_ids": [
+      "md_13645"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Concentration Risk Management",
+    "document_ids": [
+      "md_13152"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Concurrent Audit",
+    "document_ids": [
+      "md_13644"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Credit Cards and Debit Cards: Issuance and Conduct",
+    "document_ids": [
+      "md_13155"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Credit Facilities",
+    "document_ids": [
+      "md_13156"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Credit Information Reporting",
+    "document_ids": [
+      "md_13154"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Credit Risk Management",
+    "document_ids": [
+      "md_13153"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Cybersecurity, Technology: Risk, Resilience and Assurance Framework",
+    "document_ids": [
+      "md_13643"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Digital Banking Channels Authorisation",
+    "document_ids": [
+      "md_13163"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Digital Payment Security Controls",
+    "document_ids": [
+      "md_13642"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Financial Statements: Presentation and Disclosures",
+    "document_ids": [
+      "md_13143"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Forthcoming Instructions",
+    "document_ids": [
+      "md_13137"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Fraud Risk Management",
+    "document_ids": [
+      "md_13641"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Governance",
+    "document_ids": [
+      "md_13161"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Income Recognition, Asset Classification and Provisioning",
+    "document_ids": [
+      "md_13146"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Interest Rate on Deposits",
+    "document_ids": [
+      "md_13157"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Interest Rates on Advances",
+    "document_ids": [
+      "md_13149"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Internal Audit Function",
+    "document_ids": [
+      "md_13640"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Internal Ombudsman",
+    "document_ids": [
+      "md_13271"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_13141"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Managing Risks in Outsourcing",
+    "document_ids": [
+      "md_13139"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Miscellaneous",
+    "document_ids": [
+      "md_13136"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Prudential Norms on Capital Adequacy",
+    "document_ids": [
+      "md_13159"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Prudential Norms on Declaration of Dividend and Remittances of Profits",
+    "document_ids": [
+      "md_13319"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Resolution of Stressed Assets",
+    "document_ids": [
+      "md_13145"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Resource Raising Norms",
+    "document_ids": [
+      "md_13158"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Responsible Business Conduct",
+    "document_ids": [
+      "md_13140"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Securitisation Transactions",
+    "document_ids": [
+      "md_13150"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Statutory Audit",
+    "document_ids": [
+      "md_13639"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Supervisory Returns",
+    "document_ids": [
+      "md_13638"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Transfer and Distribution of Credit Risk",
+    "document_ids": [
+      "md_13151"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Treatment of Wilful Defaulters and Large Defaulters",
+    "document_ids": [
+      "md_13144"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Undertaking of Financial Services",
+    "document_ids": [
+      "md_13162"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks",
+    "subject_family": "Voluntary Amalgamation",
+    "document_ids": [
+      "md_13165"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Commercial Banks - Capital Charge for Credit Risk",
+    "subject_family": "Standardised Approach",
+    "document_ids": [
+      "md_13399"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Consumer Education and Protection",
+    "subject_family": "Reserve Bank of India (Internal Ombudsman for Regulated Entities)",
+    "document_ids": [
+      "md_12586"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Credit Information Companies",
+    "subject_family": "(Credit Information Companies - Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13582"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Credit Information Companies",
+    "subject_family": "Credit Information Companies",
+    "document_ids": [
+      "md_12926"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Credit Information Companies",
+    "subject_family": "Cybersecurity, Technology: Risk, Resilience and Assurance Framework",
+    "document_ids": [
+      "md_13583"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Credit Information Companies",
+    "subject_family": "Internal Ombudsman",
+    "document_ids": [
+      "md_13276"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Credit Information Companies",
+    "subject_family": "Managing Risks in Outsourcing",
+    "document_ids": [
+      "md_12925"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Inclusion and Development",
+    "subject_family": "",
+    "document_ids": [
+      "md_11959"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Inclusion and Development",
+    "subject_family": "Lending to Micro, Small & Medium Enterprises (MSME) Sector ( Updated as on February 09, 2026 )",
+    "document_ids": [
+      "md_11060"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Inclusion and Development",
+    "subject_family": "Reserve Bank of India (Relief Measures by banks in areas affected by Natural Calamities)",
+    "document_ids": [
+      "md_11037"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Inclusion and Development",
+    "subject_family": "[Commercial Banks - Kisan Credit Card (KCC) Scheme]",
+    "document_ids": [
+      "md_13522"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Inclusion and Development",
+    "subject_family": "[Regional Rural Banks - Kisan Credit Card (KCC) Scheme]",
+    "document_ids": [
+      "md_13524"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Inclusion and Development",
+    "subject_family": "[Rural Co-operative Banks - Kisan Credit Card (KCC) Scheme]",
+    "document_ids": [
+      "md_13525"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Inclusion and Development",
+    "subject_family": "[Small Finance Banks - Kisan Credit Card (KCC) Scheme]",
+    "document_ids": [
+      "md_13523"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "(Financial Benchmark Administrators)",
+    "document_ids": [
+      "md_12581"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "(Forward Contracts in Government Securities)",
+    "document_ids": [
+      "md_12784"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "(Government Securities Lending)",
+    "document_ids": [
+      "md_12580"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "(Prevention of Market Abuse)",
+    "document_ids": [
+      "md_11500"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Foreign Exchange Management (Hedging of Commodity Price Risk and Freight Risk in Overseas Markets)",
+    "document_ids": [
+      "md_12427"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Access Criteria for NDS-OM)",
+    "document_ids": [
+      "md_13376"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Call, Notice and Term Money Markets)",
+    "document_ids": [
+      "md_12061"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Certificate of Deposit)",
+    "document_ids": [
+      "md_12108"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Commercial Paper and Non-Convertible Debentures of original or initial maturity upto one year)",
+    "document_ids": [
+      "md_12592"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Credit Derivatives)",
+    "document_ids": [
+      "md_13552"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Electronic Trading Platforms)",
+    "document_ids": [
+      "md_12870"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Margining for Non-Centrally Cleared OTC Derivatives)",
+    "document_ids": [
+      "md_12682"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Market-makers in OTC Derivatives)",
+    "document_ids": [
+      "md_12163"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Non-resident Investment in Debt Instruments)",
+    "document_ids": [
+      "md_12765"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Repurchase Transactions (Repo))",
+    "document_ids": [
+      "md_12920"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Rupee Interest Rate Derivatives)",
+    "document_ids": [
+      "md_13214"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Reserve Bank of India (Unique Identifiers in Financial Markets)",
+    "document_ids": [
+      "md_13343"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "Risk Management and Inter-Bank Dealings ( Updated as on September 22, 2025 )",
+    "document_ids": [
+      "md_10485"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Financial Market",
+    "subject_family": "on Money Market Instruments: Call/Notice Money Market, Commercial Paper, Certificates of Deposit and Non-Convertible Debentures (original maturity up to one year) ( This Master Direction has been superseded )",
+    "document_ids": [
+      "md_10495"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "",
+    "document_ids": [
+      "md_12839",
+      "md_11510"
+    ],
+    "n_documents": 2,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Acquisition or Transfer of Immovable Property under Foreign Exchange Management Act, 1999",
+    "document_ids": [
+      "md_10196"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Borrowing and Lending transactions in Indian Rupee between Persons Resident in India and Non-Resident Indians/ Persons of Indian Origin ( Updated as on February 16, 2026 )",
+    "document_ids": [
+      "md_10191"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Deposits and Accounts ( Updated as on June 29, 2026 )",
+    "document_ids": [
+      "md_10198"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Direct Investment by Residents in Joint Venture (JV) / Wholly Owned Subsidiary (WOS) Abroad",
+    "document_ids": [
+      "md_10637"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Establishment of Branch Office (BO)/ Liaison Office (LO)/ Project Office (PO) or any other place of business in India by foreign entities",
+    "document_ids": [
+      "md_10404"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Export of Goods and Services ( Updated as on July 17, 2026 )",
+    "document_ids": [
+      "md_10395"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Foreign Investment in India ( Updated up to June 15, 2026 )",
+    "document_ids": [
+      "md_11200"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Import of Goods and Services ( Updated as on January 12, 2026 )",
+    "document_ids": [
+      "md_10201"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Insurance",
+    "document_ids": [
+      "md_10738"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Liberalised Remittance Scheme (LRS) ( Updated as on September 06, 2024 )",
+    "document_ids": [
+      "md_10192"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Miscellaneous ( Updated as on May 13, 2026 )",
+    "document_ids": [
+      "md_10203"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Money Changing Activities ( Updated as on June 24, 2026 )",
+    "document_ids": [
+      "md_11518"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Money Transfer Service Scheme (MTSS) ( Updated as on November 28, 2025 )",
+    "document_ids": [
+      "md_10868"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Opening and Maintenance of Rupee/Foreign Currency Vostro Accounts of Non-resident Exchange Houses",
+    "document_ids": [
+      "md_10205"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Other Remittance Facilities ( Updated as on May 06, 2026 )",
+    "document_ids": [
+      "md_10193"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Overseas Investment ( Updated as on April 01, 2026 )",
+    "document_ids": [
+      "md_12710"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Remittance of Assets ( Updated as on June 29, 2026 )",
+    "document_ids": [
+      "md_10197"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Foreign Exchange Management",
+    "subject_family": "Reporting under Foreign Exchange Management Act, 1999 ( Updated as on June 24, 2026 )",
+    "document_ids": [
+      "md_10202"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Issuer of Currency",
+    "subject_family": "Facility for Exchange of Notes and Coins",
+    "document_ids": [
+      "md_13362"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Issuer of Currency",
+    "subject_family": "on Counterfeit Notes – Detection, Reporting and Monitoring",
+    "document_ids": [
+      "md_13361"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Issuer of Currency",
+    "subject_family": "on Incentives for Currency Distribution and Exchange and Penalties / Penal Provisions for Bank Branches and Currency Chests for Deficiency in Rendering Customer Service and Reporting of Transactions / Balances ( Updated as on May 27, 2026 )",
+    "document_ids": [
+      "md_13360"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "(Local Area Banks – Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13603"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Acquisition and Holding of Shares or Voting Rights",
+    "document_ids": [
+      "md_13086"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Asset Liability Management",
+    "document_ids": [
+      "md_13070"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Branch Authorisation",
+    "document_ids": [
+      "md_13084"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Cash Reserve Ratio and Statutory Liquidity Ratio",
+    "document_ids": [
+      "md_13081"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Classification, Valuation and Operation of Investment Portfolio",
+    "document_ids": [
+      "md_13071"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Compliance Function",
+    "document_ids": [
+      "md_13609"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Concentration Risk Management",
+    "document_ids": [
+      "md_13074"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Concurrent Audit",
+    "document_ids": [
+      "md_13608"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Credit Facilities",
+    "document_ids": [
+      "md_13078"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Credit Information Reporting",
+    "document_ids": [
+      "md_13076"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Credit Risk Management",
+    "document_ids": [
+      "md_13075"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Debit Cards: Issuance and Conduct",
+    "document_ids": [
+      "md_13077"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Digital Banking Channels Authorisation",
+    "document_ids": [
+      "md_13083"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Financial Statements: Presentation and Disclosures",
+    "document_ids": [
+      "md_13066"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Fraud Risk Management",
+    "document_ids": [
+      "md_13607"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Governance",
+    "document_ids": [
+      "md_13082"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Income Recognition, Asset Classification and Provisioning",
+    "document_ids": [
+      "md_13069"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Interest Rate on Deposits",
+    "document_ids": [
+      "md_13079"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Interest Rates on Advances",
+    "document_ids": [
+      "md_13072"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Internal Audit Function",
+    "document_ids": [
+      "md_13606"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_13064"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Managing Risks in Outsourcing",
+    "document_ids": [
+      "md_13062"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Miscellaneous",
+    "document_ids": [
+      "md_13061"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Prudential Norms on Capital Adequacy",
+    "document_ids": [
+      "md_13080"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Prudential Norms on Declaration of Dividend",
+    "document_ids": [
+      "md_13324"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Resolution of Stressed Assets",
+    "document_ids": [
+      "md_13068"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Responsible Business Conduct",
+    "document_ids": [
+      "md_13063"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Statutory Audit",
+    "document_ids": [
+      "md_13605"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Supervisory Returns",
+    "document_ids": [
+      "md_13604"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Transfer and Distribution of Credit Risk",
+    "document_ids": [
+      "md_13073"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Treatment of Wilful Defaulters and Large Defaulters",
+    "document_ids": [
+      "md_13067"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Local Area Banks",
+    "subject_family": "Voluntary Amalgamation",
+    "document_ids": [
+      "md_13085"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Bank Prepaid Payment Instruments Issuers",
+    "subject_family": "Internal Ombudsman",
+    "document_ids": [
+      "md_13275"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "(Core Investment Companies)",
+    "document_ids": [
+      "md_12937"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "(Housing Finance Companies)",
+    "document_ids": [
+      "md_12939"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "(Mortgage Guarantee Companies)",
+    "document_ids": [
+      "md_12935"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "(Non-Banking Financial Companies – Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13586"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "(Non-Operative Financial Holding Companies)",
+    "document_ids": [
+      "md_12932"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "(Standalone Primary Dealers)",
+    "document_ids": [
+      "md_12938"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Acceptance of Public Deposits",
+    "document_ids": [
+      "md_12958"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Account Aggregator",
+    "document_ids": [
+      "md_12936"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Acquisition of Shareholding or Control",
+    "document_ids": [
+      "md_12964"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Asset Liability Management",
+    "document_ids": [
+      "md_12949"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Auditor’s Report",
+    "document_ids": [
+      "md_13585"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Branch Authorisation",
+    "document_ids": [
+      "md_12962"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Classification, Valuation and Operation of Investment Portfolio",
+    "document_ids": [
+      "md_12950"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Climate Finance and Management of Climate Change Risks",
+    "document_ids": [
+      "md_12940"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Compliance Function",
+    "document_ids": [
+      "md_13593"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Concentration Risk Management",
+    "document_ids": [
+      "md_12953"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Credit Cards: Issuance and Conduct",
+    "document_ids": [
+      "md_12956"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Credit Facilities",
+    "document_ids": [
+      "md_12957"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Credit Information Reporting",
+    "document_ids": [
+      "md_12955"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Credit Risk Management",
+    "document_ids": [
+      "md_12954"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Cybersecurity, Technology: Risk, Resilience and Assurance Framework",
+    "document_ids": [
+      "md_13592"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Digital Payment Security Controls",
+    "document_ids": [
+      "md_13591"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Financial Statements: Presentation and Disclosures",
+    "document_ids": [
+      "md_12945"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Fraud Risk Management",
+    "document_ids": [
+      "md_13590"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Governance",
+    "document_ids": [
+      "md_12960"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Income Recognition, Asset Classification and Provisioning",
+    "document_ids": [
+      "md_12948"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Internal Audit Function",
+    "document_ids": [
+      "md_13589"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Internal Ombudsman",
+    "document_ids": [
+      "md_13274"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_12943"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Managing Risks in Outsourcing",
+    "document_ids": [
+      "md_12941"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Microfinance Institution",
+    "document_ids": [
+      "md_12933"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Miscellaneous",
+    "document_ids": [
+      "md_12931"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Peer to Peer Lending Platform",
+    "document_ids": [
+      "md_12934"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Prudential Norms on Capital Adequacy",
+    "document_ids": [
+      "md_12959"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Prudential Norms on Declaration of Dividends",
+    "document_ids": [
+      "md_12944"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Registration, Exemptions and Framework for Scale Based Regulation",
+    "document_ids": [
+      "md_12965"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Resolution of Stressed Assets",
+    "document_ids": [
+      "md_12947"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Responsible Business Conduct",
+    "document_ids": [
+      "md_12942"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Securitisation Transactions",
+    "document_ids": [
+      "md_12951"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Statutory Audit",
+    "document_ids": [
+      "md_13588"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Supervisory Returns",
+    "document_ids": [
+      "md_13587"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Transfer and Distribution of Credit Risk",
+    "document_ids": [
+      "md_12952"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Treatment of Wilful Defaulters and Large Defaulters",
+    "document_ids": [
+      "md_12946"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Undertaking of Financial Services",
+    "document_ids": [
+      "md_12961"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Non-Banking Financial Companies",
+    "subject_family": "Voluntary Amalgamation",
+    "document_ids": [
+      "md_12963"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payment and Settlement System",
+    "subject_family": "(Authentication mechanisms for digital payment transactions)",
+    "document_ids": [
+      "md_12898"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payment and Settlement System",
+    "subject_family": "(Trade Receivables Discounting System)",
+    "document_ids": [
+      "md_13526"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payment and Settlement System",
+    "subject_family": "Access Criteria for Payment Systems",
+    "document_ids": [
+      "md_10833"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payment and Settlement System",
+    "subject_family": "Authorisation to operate a Payment System",
+    "document_ids": [
+      "md_13502"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payment and Settlement System",
+    "subject_family": "Cyber Resilience and Digital Payment Security Controls for non-bank Payment System Operators",
+    "document_ids": [
+      "md_12715"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payment and Settlement System",
+    "subject_family": "Digital Payments – E-mandate Framework, 2026",
+    "document_ids": [
+      "md_13374"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payment and Settlement System",
+    "subject_family": "Prepaid Payment Instruments (PPIs) ( Updated as on December 27, 2024 )",
+    "document_ids": [
+      "md_12156"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payment and Settlement System",
+    "subject_family": "Reserve Bank of India (Bharat Bill Payment System)",
+    "document_ids": [
+      "md_12616"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payment and Settlement System",
+    "subject_family": "on Regulation of Payment Aggregator (PA)",
+    "document_ids": [
+      "md_12896"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "(Payments Banks – Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13619"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Acquisition and Holding of Shares or Voting Rights",
+    "document_ids": [
+      "md_13104"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Asset Liability Management",
+    "document_ids": [
+      "md_13093"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Branch Authorisation",
+    "document_ids": [
+      "md_13102"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Cash Reserve Ratio and Statutory Liquidity Ratio",
+    "document_ids": [
+      "md_13098"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Classification, Valuation and Operation of Investment Portfolio",
+    "document_ids": [
+      "md_13094"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Compliance Function",
+    "document_ids": [
+      "md_13627"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Concurrent Audit",
+    "document_ids": [
+      "md_13626"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Cybersecurity, Technology: Risk, Resilience and Assurance Framework",
+    "document_ids": [
+      "md_13625"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Debit Cards: Issuance and Conduct",
+    "document_ids": [
+      "md_13095"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Digital Banking Channels Authorisation",
+    "document_ids": [
+      "md_13101"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Digital Payment Security Controls",
+    "document_ids": [
+      "md_13624"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Financial Statements: Presentation and Disclosures",
+    "document_ids": [
+      "md_13092"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Fraud Risk Management",
+    "document_ids": [
+      "md_13623"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Governance",
+    "document_ids": [
+      "md_13099"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Interest Rate on Deposits",
+    "document_ids": [
+      "md_13096"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Internal Audit Function",
+    "document_ids": [
+      "md_13622"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Internal Ombudsman",
+    "document_ids": [
+      "md_13273"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_13090"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Managing Risks in Outsourcing",
+    "document_ids": [
+      "md_13088"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Miscellaneous",
+    "document_ids": [
+      "md_13087"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Prudential Norms on Capital Adequacy",
+    "document_ids": [
+      "md_13097"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Prudential Norms on Declaration of Dividend",
+    "document_ids": [
+      "md_13321"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Responsible Business Conduct",
+    "document_ids": [
+      "md_13089"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Statutory Audit",
+    "document_ids": [
+      "md_13621"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Supervisory Returns",
+    "document_ids": [
+      "md_13620"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Undertaking of Financial Services",
+    "document_ids": [
+      "md_13100"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Payments Banks",
+    "subject_family": "Voluntary Amalgamation",
+    "document_ids": [
+      "md_13103"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Priority Sector Lending",
+    "subject_family": "Targets and Classification",
+    "document_ids": [
+      "md_12799"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "(Regional Rural Banks - Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13598"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Asset Liability Management",
+    "document_ids": [
+      "md_13045"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Branch Authorisation",
+    "document_ids": [
+      "md_13060"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Cash Reserve Ratio and Statutory Liquidity Ratio",
+    "document_ids": [
+      "md_13056"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Classification, Valuation and Operation of Investment Portfolio",
+    "document_ids": [
+      "md_13046"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Concentration Risk Management",
+    "document_ids": [
+      "md_13049"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Credit Cards and Debit Cards: Issuance and Conduct",
+    "document_ids": [
+      "md_13052"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Credit Facilities",
+    "document_ids": [
+      "md_13053"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Credit Information Reporting",
+    "document_ids": [
+      "md_13051"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Credit Risk Management",
+    "document_ids": [
+      "md_13050"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Digital Banking Channels Authorisation",
+    "document_ids": [
+      "md_13059"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Financial Statements: Presentation and Disclosures",
+    "document_ids": [
+      "md_13041"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Fraud Risk Management",
+    "document_ids": [
+      "md_13599"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Governance",
+    "document_ids": [
+      "md_13057"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Income Recognition, Asset Classification and Provisioning",
+    "document_ids": [
+      "md_13044"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Interest Rate on Deposits",
+    "document_ids": [
+      "md_13054"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Interest Rates on Advances",
+    "document_ids": [
+      "md_13047"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_13040"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Miscellaneous",
+    "document_ids": [
+      "md_13038"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Prudential Norms on Capital Adequacy",
+    "document_ids": [
+      "md_13055"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Prudential Norms on Declaration of Dividend",
+    "document_ids": [
+      "md_13327"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Resolution of Stressed Assets",
+    "document_ids": [
+      "md_13043"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Responsible Business Conduct",
+    "document_ids": [
+      "md_13039"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Transfer and Distribution of Credit Risk",
+    "document_ids": [
+      "md_13048"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Treatment of Wilful Defaulters and Large Defaulters",
+    "document_ids": [
+      "md_13042"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Regional Rural Banks",
+    "subject_family": "Undertaking of Financial Services",
+    "document_ids": [
+      "md_13058"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "(Rural Co-operative Banks - Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13600"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Asset Liability Management",
+    "document_ids": [
+      "md_12994"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Branch Authorisation",
+    "document_ids": [
+      "md_13205"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Cash Reserve Ratio and Statutory Liquidity Ratio",
+    "document_ids": [
+      "md_13005"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Classification, Valuation and Operation of Investment Portfolio",
+    "document_ids": [
+      "md_12995"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Concentration Risk Management",
+    "document_ids": [
+      "md_12998"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Credit Facilities",
+    "document_ids": [
+      "md_13002"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Credit Information Reporting",
+    "document_ids": [
+      "md_13000"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Credit Risk Management",
+    "document_ids": [
+      "md_12999"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Debit Cards: Issuance and Conduct",
+    "document_ids": [
+      "md_13001"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Digital Banking Channels Authorisation",
+    "document_ids": [
+      "md_13008"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Financial Statements: Presentation and Disclosures",
+    "document_ids": [
+      "md_12990"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Fraud Risk Management",
+    "document_ids": [
+      "md_13602"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Governance",
+    "document_ids": [
+      "md_13006"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Income Recognition, Asset Classification and Provisioning",
+    "document_ids": [
+      "md_12993"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Interest Rate on Deposits",
+    "document_ids": [
+      "md_13003"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Interest Rates on Advances",
+    "document_ids": [
+      "md_12996"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_12988"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Managing Risks in Outsourcing",
+    "document_ids": [
+      "md_12986"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Miscellaneous",
+    "document_ids": [
+      "md_13202"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Prudential Norms on Capital Adequacy",
+    "document_ids": [
+      "md_13004"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Prudential Norms on Declaration of Dividends",
+    "document_ids": [
+      "md_12989"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Resolution of Stressed Assets",
+    "document_ids": [
+      "md_12992"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Responsible Business Conduct",
+    "document_ids": [
+      "md_12987"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Statutory Audit",
+    "document_ids": [
+      "md_13601"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Transfer and Distribution of Credit Risk",
+    "document_ids": [
+      "md_12997"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Treatment of Wilful Defaulters and Large Defaulters",
+    "document_ids": [
+      "md_12991"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Undertaking of Financial Services",
+    "document_ids": [
+      "md_13007"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Rural Co-operative Banks",
+    "subject_family": "Voluntary Amalgamation",
+    "document_ids": [
+      "md_13010"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "(Small Finance Banks – Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13628"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Acquisition and Holding of Shares or Voting Rights",
+    "document_ids": [
+      "md_13134"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Asset Liability Management",
+    "document_ids": [
+      "md_13115"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Branch Authorisation",
+    "document_ids": [
+      "md_13132"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Cash Reserve Ratio and Statutory Liquidity Ratio",
+    "document_ids": [
+      "md_13128"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Classification, Valuation and Operation of Investment Portfolio",
+    "document_ids": [
+      "md_13116"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Climate Finance and Management of Climate Change Risks",
+    "document_ids": [
+      "md_13106"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Compliance Function",
+    "document_ids": [
+      "md_13636"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Concentration Risk Management",
+    "document_ids": [
+      "md_13120"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Concurrent Audit",
+    "document_ids": [
+      "md_13635"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Credit Cards and Debit Cards: Issuance and Conduct",
+    "document_ids": [
+      "md_13123"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Credit Facilities",
+    "document_ids": [
+      "md_13124"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Credit Information Reporting",
+    "document_ids": [
+      "md_13122"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Credit Risk Management",
+    "document_ids": [
+      "md_13121"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Cybersecurity, Technology: Risk, Resilience and Assurance Framework",
+    "document_ids": [
+      "md_13634"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Digital Banking Channels Authorisation",
+    "document_ids": [
+      "md_13131"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Digital Payment Security Controls",
+    "document_ids": [
+      "md_13633"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Financial Statements: Presentation and Disclosures",
+    "document_ids": [
+      "md_13111"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Fraud Risk Management",
+    "document_ids": [
+      "md_13632"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Governance",
+    "document_ids": [
+      "md_13129"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Income Recognition, Asset Classification and Provisioning",
+    "document_ids": [
+      "md_13114"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Interest Rate on Deposits",
+    "document_ids": [
+      "md_13125"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Interest Rates on Advances",
+    "document_ids": [
+      "md_13117"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Internal Audit Function",
+    "document_ids": [
+      "md_13631"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Internal Ombudsman",
+    "document_ids": [
+      "md_13272"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_13109"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Licensing",
+    "document_ids": [
+      "md_13135"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Managing Risks in Outsourcing",
+    "document_ids": [
+      "md_13107"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Miscellaneous",
+    "document_ids": [
+      "md_13105"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Prudential Norms on Capital Adequacy",
+    "document_ids": [
+      "md_13127"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Prudential Norms on Declaration of Dividend",
+    "document_ids": [
+      "md_13328"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Resolution of Stressed Assets",
+    "document_ids": [
+      "md_13113"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Resource Raising Norms",
+    "document_ids": [
+      "md_13126"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Responsible Business Conduct",
+    "document_ids": [
+      "md_13108"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Securitisation Transactions",
+    "document_ids": [
+      "md_13118"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Statutory Audit",
+    "document_ids": [
+      "md_13630"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Supervisory Returns",
+    "document_ids": [
+      "md_13629"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Transfer and Distribution of Credit Risk",
+    "document_ids": [
+      "md_13119"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Treatment of Wilful Defaulters and Large Defaulters",
+    "document_ids": [
+      "md_13112"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Undertaking of Financial Services",
+    "document_ids": [
+      "md_13130"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Small Finance Banks",
+    "subject_family": "Voluntary Amalgamation",
+    "document_ids": [
+      "md_13133"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Universal Banks",
+    "subject_family": "Licensing",
+    "document_ids": [
+      "md_13168"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "(Urban Co-operative Banks - Miscellaneous) Supervisory",
+    "document_ids": [
+      "md_13610"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Asset Liability Management",
+    "document_ids": [
+      "md_13020"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Branch Authorisation",
+    "document_ids": [
+      "md_13204"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Cash Reserve Ratio and Statutory Liquidity Ratio",
+    "document_ids": [
+      "md_13031"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Classification, Valuation and Operation of Investment Portfolio",
+    "document_ids": [
+      "md_13021"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Compliance Function",
+    "document_ids": [
+      "md_13618"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Concentration Risk Management",
+    "document_ids": [
+      "md_13024"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Concurrent Audit",
+    "document_ids": [
+      "md_13617"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Credit Cards and Debit Cards: Issuance and Conduct",
+    "document_ids": [
+      "md_13027"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Credit Facilities",
+    "document_ids": [
+      "md_13028"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Credit Information Reporting",
+    "document_ids": [
+      "md_13026"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Credit Risk Management",
+    "document_ids": [
+      "md_13025"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Cybersecurity, Technology: Risk, Resilience and Assurance Framework",
+    "document_ids": [
+      "md_13616"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Digital Banking Channels Authorisation",
+    "document_ids": [
+      "md_13034"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Digital Payment Security Controls",
+    "document_ids": [
+      "md_13615"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Financial Statements: Presentation and Disclosures",
+    "document_ids": [
+      "md_13016"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Fraud Risk Management",
+    "document_ids": [
+      "md_13614"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Governance",
+    "document_ids": [
+      "md_13032"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Income Recognition, Asset Classification and Provisioning",
+    "document_ids": [
+      "md_13019"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Interest Rate on Deposits",
+    "document_ids": [
+      "md_13029"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Interest Rates on Advances",
+    "document_ids": [
+      "md_13022"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Internal Audit Function",
+    "document_ids": [
+      "md_13613"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Know Your Customer",
+    "document_ids": [
+      "md_13014"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Licensing, Scheduling and Regulatory Classification",
+    "document_ids": [
+      "md_13203"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Managing Risks in Outsourcing",
+    "document_ids": [
+      "md_13012"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Miscellaneous",
+    "document_ids": [
+      "md_13011"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Prudential Norms on Capital Adequacy",
+    "document_ids": [
+      "md_13030"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Prudential Norms on Declaration of Dividends",
+    "document_ids": [
+      "md_13015"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Resolution of Stressed Assets",
+    "document_ids": [
+      "md_13018"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Responsible Business Conduct",
+    "document_ids": [
+      "md_13013"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Statutory Audit",
+    "document_ids": [
+      "md_13612"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Supervisory Returns",
+    "document_ids": [
+      "md_13611"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Transfer and Distribution of Credit Risk",
+    "document_ids": [
+      "md_13023"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Treatment of Wilful Defaulters and Large Defaulters",
+    "document_ids": [
+      "md_13017"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Undertaking of Financial Services",
+    "document_ids": [
+      "md_13033"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  },
+  {
+    "entity_class": "Urban Co-operative Banks",
+    "subject_family": "Voluntary Amalgamation",
+    "document_ids": [
+      "md_13036"
+    ],
+    "n_documents": 1,
+    "status": "populated"
+  }
+]

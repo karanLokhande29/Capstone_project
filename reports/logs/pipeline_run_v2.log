@@ -1,0 +1,808 @@
+2026-08-12 19:41:44,500 [INFO] pipeline.weeks1to5: === WEEK 1: scrape + matrix v0 ===
+2026-08-12 19:41:44,500 [INFO] scraper.rbi: GET attempt=1 url=https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx
+2026-08-12 19:41:45,122 [INFO] scraper.rbi: Cached listing page -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/_listing_BS_ViewMasDirections.html
+2026-08-12 19:41:45,177 [INFO] scraper.rbi: Discovered 381 Master Direction entries from listing
+2026-08-12 19:41:46,622 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/61MD0825F724310142CBB351B33F9C3F80FA.PDF
+2026-08-12 19:41:46,980 [INFO] scraper.rbi: DOWNLOADED md_11322 bytes=263026 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11322.pdf
+2026-08-12 19:41:48,482 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/29MD8B47C911ECA14450AACBAEF6D7981EF8.PDF
+2026-08-12 19:41:49,062 [INFO] scraper.rbi: DOWNLOADED md_10476 bytes=685497 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10476.pdf
+2026-08-12 19:41:50,558 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/400MDEF6FB735DC5A48308F688DCB9BA11A65.PDF
+2026-08-12 19:41:50,960 [INFO] scraper.rbi: DOWNLOADED md_13443 bytes=542101 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13443.pdf
+2026-08-12 19:41:52,462 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/399MDAD236E83FDD240EEB29F1F5E2DBAD333.PDF
+2026-08-12 19:41:52,816 [INFO] scraper.rbi: DOWNLOADED md_13442 bytes=318018 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13442.pdf
+2026-08-12 19:41:54,316 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/380MD14012026DAD56B73DC944F02AEA4530EC779AD7F.PDF
+2026-08-12 19:41:54,603 [INFO] scraper.rbi: DOWNLOADED md_13271 bytes=300587 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13271.pdf
+2026-08-12 19:41:56,104 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/381MD140120267212A1D4EF8349448E9416EF8F2D19B5.PDF
+2026-08-12 19:41:56,373 [INFO] scraper.rbi: DOWNLOADED md_13272 bytes=291358 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13272.pdf
+2026-08-12 19:41:57,874 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/NOT3821EAEF90E037B4061A91775A5525510C3.PDF
+2026-08-12 19:41:58,196 [INFO] scraper.rbi: DOWNLOADED md_13273 bytes=292848 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13273.pdf
+2026-08-12 19:41:59,700 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/383MD14012026559E41DD96224880B75EDB2B96E4BD8B.PDF
+2026-08-12 19:41:59,958 [INFO] scraper.rbi: DOWNLOADED md_13274 bytes=302017 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13274.pdf
+2026-08-12 19:42:01,462 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/384MD14012026E275757688DE4E68AF9813B3B9491E4B.PDF
+2026-08-12 19:42:01,728 [INFO] scraper.rbi: DOWNLOADED md_13275 bytes=292808 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13275.pdf
+2026-08-12 19:42:03,227 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/NOT38578CF3B232A694DBEAB2A9CE71848DCA1.PDF
+2026-08-12 19:42:03,519 [INFO] scraper.rbi: DOWNLOADED md_13276 bytes=320843 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13276.pdf
+2026-08-12 19:42:05,018 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/108MDINTERNALOMBUDSMANCC05402F77BE4F229B59877F341386A4.PDF
+2026-08-12 19:42:05,356 [INFO] scraper.rbi: DOWNLOADED md_12586 bytes=387533 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12586.pdf
+2026-08-12 19:42:06,860 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/397MD7DCC951F9F014A738C60E0FBC1A73D70.PDF
+2026-08-12 19:42:07,399 [INFO] scraper.rbi: DOWNLOADED md_13399 bytes=892264 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13399.pdf
+2026-08-12 19:42:08,893 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD39857992A3DBE7946619F0F76DF81E472CF.PDF
+2026-08-12 19:42:09,545 [INFO] scraper.rbi: DOWNLOADED md_13400 bytes=892872 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13400.pdf
+2026-08-12 19:42:11,044 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/387MD1003202698CBFA3D29254532B33C97C231B6F7D8.PDF
+2026-08-12 19:42:11,520 [INFO] scraper.rbi: DOWNLOADED md_13319 bytes=453238 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13319.pdf
+2026-08-12 19:42:13,021 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/174MD.PDF
+2026-08-12 19:42:14,081 [INFO] scraper.rbi: DOWNLOADED md_13136 bytes=1458942 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13136.pdf
+2026-08-12 19:42:15,579 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/173MD.PDF
+2026-08-12 19:42:16,640 [INFO] scraper.rbi: DOWNLOADED md_13137 bytes=904063 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13137.pdf
+2026-08-12 19:42:18,137 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/172MD.PDF
+2026-08-12 19:42:18,557 [INFO] scraper.rbi: DOWNLOADED md_13138 bytes=286744 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13138.pdf
+2026-08-12 19:42:20,058 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/171MD.PDF
+2026-08-12 19:42:20,522 [INFO] scraper.rbi: DOWNLOADED md_13139 bytes=420763 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13139.pdf
+2026-08-12 19:42:22,023 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/170MD.PDF
+2026-08-12 19:42:22,816 [INFO] scraper.rbi: DOWNLOADED md_13140 bytes=1091225 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13140.pdf
+2026-08-12 19:42:24,314 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/169MD.PDF
+2026-08-12 19:42:24,771 [INFO] scraper.rbi: DOWNLOADED md_13141 bytes=699883 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13141.pdf
+2026-08-12 19:42:26,274 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/167MD.PDF
+2026-08-12 19:42:27,320 [INFO] scraper.rbi: DOWNLOADED md_13143 bytes=1218328 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13143.pdf
+2026-08-12 19:42:28,819 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/166MD.PDF
+2026-08-12 19:42:29,417 [INFO] scraper.rbi: DOWNLOADED md_13144 bytes=482011 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13144.pdf
+2026-08-12 19:42:30,922 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/165MD.PDF
+2026-08-12 19:42:31,348 [INFO] scraper.rbi: DOWNLOADED md_13145 bytes=519010 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13145.pdf
+2026-08-12 19:42:32,851 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/164MD.PDF
+2026-08-12 19:42:33,359 [INFO] scraper.rbi: DOWNLOADED md_13146 bytes=627447 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13146.pdf
+2026-08-12 19:42:34,863 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/163MD.PDF
+2026-08-12 19:42:36,150 [INFO] scraper.rbi: DOWNLOADED md_13147 bytes=1861534 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13147.pdf
+2026-08-12 19:42:37,650 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/162MD.PDF
+2026-08-12 19:42:38,350 [INFO] scraper.rbi: DOWNLOADED md_13148 bytes=848802 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13148.pdf
+2026-08-12 19:42:39,853 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/161MD.PDF
+2026-08-12 19:42:40,195 [INFO] scraper.rbi: DOWNLOADED md_13149 bytes=326584 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13149.pdf
+2026-08-12 19:42:41,692 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/160MD.PDF
+2026-08-12 19:42:42,208 [INFO] scraper.rbi: DOWNLOADED md_13150 bytes=472319 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13150.pdf
+2026-08-12 19:42:43,712 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/159MD.PDF
+2026-08-12 19:42:44,165 [INFO] scraper.rbi: DOWNLOADED md_13151 bytes=519514 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13151.pdf
+2026-08-12 19:42:45,669 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/158MD.PDF
+2026-08-12 19:42:46,439 [INFO] scraper.rbi: DOWNLOADED md_13152 bytes=769935 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13152.pdf
+2026-08-12 19:42:47,942 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/157MD.PDF
+2026-08-12 19:42:48,412 [INFO] scraper.rbi: DOWNLOADED md_13153 bytes=534747 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13153.pdf
+2026-08-12 19:42:49,912 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/156MD.PDF
+2026-08-12 19:42:50,748 [INFO] scraper.rbi: DOWNLOADED md_13154 bytes=875058 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13154.pdf
+2026-08-12 19:42:52,249 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/155MD.PDF
+2026-08-12 19:42:52,657 [INFO] scraper.rbi: DOWNLOADED md_13155 bytes=443607 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13155.pdf
+2026-08-12 19:42:54,158 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/154MD.PDF
+2026-08-12 19:42:54,972 [INFO] scraper.rbi: DOWNLOADED md_13156 bytes=1090899 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13156.pdf
+2026-08-12 19:42:56,475 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/153MD.PDF
+2026-08-12 19:42:56,876 [INFO] scraper.rbi: DOWNLOADED md_13157 bytes=391259 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13157.pdf
+2026-08-12 19:42:58,376 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/152MD.PDF
+2026-08-12 19:42:58,658 [INFO] scraper.rbi: DOWNLOADED md_13158 bytes=249704 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13158.pdf
+2026-08-12 19:43:00,158 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/151MD.PDF
+2026-08-12 19:43:01,575 [INFO] scraper.rbi: DOWNLOADED md_13159 bytes=2608058 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13159.pdf
+2026-08-12 19:43:03,074 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/150MD.PDF
+2026-08-12 19:43:03,514 [INFO] scraper.rbi: DOWNLOADED md_13160 bytes=592767 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13160.pdf
+2026-08-12 19:43:05,011 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/149MD.PDF
+2026-08-12 19:43:05,561 [INFO] scraper.rbi: DOWNLOADED md_13161 bytes=667658 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13161.pdf
+2026-08-12 19:43:07,057 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/148MD.PDF
+2026-08-12 19:43:07,463 [INFO] scraper.rbi: DOWNLOADED md_13162 bytes=404439 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13162.pdf
+2026-08-12 19:43:08,967 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/380MD.PDF
+2026-08-12 19:43:09,261 [INFO] scraper.rbi: DOWNLOADED md_13163 bytes=251076 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13163.pdf
+2026-08-12 19:43:10,760 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/147MD.PDF
+2026-08-12 19:43:11,366 [INFO] scraper.rbi: DOWNLOADED md_13164 bytes=627541 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13164.pdf
+2026-08-12 19:43:12,867 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/146MD.PDF
+2026-08-12 19:43:13,182 [INFO] scraper.rbi: DOWNLOADED md_13165 bytes=312998 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13165.pdf
+2026-08-12 19:43:14,681 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/145MD.PDF
+2026-08-12 19:43:15,070 [INFO] scraper.rbi: DOWNLOADED md_13166 bytes=386459 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13166.pdf
+2026-08-12 19:43:16,573 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/144MD.PDF
+2026-08-12 19:43:16,897 [INFO] scraper.rbi: DOWNLOADED md_13167 bytes=308365 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13167.pdf
+2026-08-12 19:43:18,400 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/143MD.PDF
+2026-08-12 19:43:19,028 [INFO] scraper.rbi: DOWNLOADED md_13168 bytes=572205 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13168.pdf
+2026-08-12 19:43:20,527 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/391MD10032026DEA2C866625C478D9F4CC695FCA60B68.PDF
+2026-08-12 19:43:20,985 [INFO] scraper.rbi: DOWNLOADED md_13328 bytes=420691 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13328.pdf
+2026-08-12 19:43:22,485 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/204MD.PDF
+2026-08-12 19:43:23,682 [INFO] scraper.rbi: DOWNLOADED md_13105 bytes=1418488 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13105.pdf
+2026-08-12 19:43:25,185 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/203MD.PDF
+2026-08-12 19:43:25,600 [INFO] scraper.rbi: DOWNLOADED md_13106 bytes=283397 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13106.pdf
+2026-08-12 19:43:27,100 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/202MD.PDF
+2026-08-12 19:43:27,530 [INFO] scraper.rbi: DOWNLOADED md_13107 bytes=423458 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13107.pdf
+2026-08-12 19:43:29,032 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/201MD.PDF
+2026-08-12 19:43:29,855 [INFO] scraper.rbi: DOWNLOADED md_13108 bytes=1102150 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13108.pdf
+2026-08-12 19:43:31,355 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/200MD.PDF
+2026-08-12 19:43:31,955 [INFO] scraper.rbi: DOWNLOADED md_13109 bytes=701267 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13109.pdf
+2026-08-12 19:43:33,458 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/198MD.PDF
+2026-08-12 19:43:34,289 [INFO] scraper.rbi: DOWNLOADED md_13111 bytes=1229013 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13111.pdf
+2026-08-12 19:43:35,790 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/197MD.PDF
+2026-08-12 19:43:36,223 [INFO] scraper.rbi: DOWNLOADED md_13112 bytes=446156 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13112.pdf
+2026-08-12 19:43:37,725 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/196MD.PDF
+2026-08-12 19:43:38,307 [INFO] scraper.rbi: DOWNLOADED md_13113 bytes=572070 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13113.pdf
+2026-08-12 19:43:39,811 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/195MD.PDF
+2026-08-12 19:43:40,314 [INFO] scraper.rbi: DOWNLOADED md_13114 bytes=514146 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13114.pdf
+2026-08-12 19:43:41,817 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/194MD.PDF
+2026-08-12 19:43:43,090 [INFO] scraper.rbi: DOWNLOADED md_13115 bytes=1753927 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13115.pdf
+2026-08-12 19:43:44,590 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/193MD.PDF
+2026-08-12 19:43:45,274 [INFO] scraper.rbi: DOWNLOADED md_13116 bytes=902559 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13116.pdf
+2026-08-12 19:43:46,775 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/192MD.PDF
+2026-08-12 19:43:47,207 [INFO] scraper.rbi: DOWNLOADED md_13117 bytes=343567 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13117.pdf
+2026-08-12 19:43:48,709 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/191MD.PDF
+2026-08-12 19:43:49,167 [INFO] scraper.rbi: DOWNLOADED md_13118 bytes=431557 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13118.pdf
+2026-08-12 19:43:50,667 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/190MD.PDF
+2026-08-12 19:43:51,202 [INFO] scraper.rbi: DOWNLOADED md_13119 bytes=518610 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13119.pdf
+2026-08-12 19:43:52,705 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/189MD.PDF
+2026-08-12 19:43:53,119 [INFO] scraper.rbi: DOWNLOADED md_13120 bytes=415323 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13120.pdf
+2026-08-12 19:43:54,621 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/188MD.PDF
+2026-08-12 19:43:55,100 [INFO] scraper.rbi: DOWNLOADED md_13121 bytes=464915 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13121.pdf
+2026-08-12 19:43:56,600 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/187MD.PDF
+2026-08-12 19:43:57,420 [INFO] scraper.rbi: DOWNLOADED md_13122 bytes=911056 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13122.pdf
+2026-08-12 19:43:58,919 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/186MD.PDF
+2026-08-12 19:43:59,390 [INFO] scraper.rbi: DOWNLOADED md_13123 bytes=429901 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13123.pdf
+2026-08-12 19:44:00,893 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/185MD.PDF
+2026-08-12 19:44:01,675 [INFO] scraper.rbi: DOWNLOADED md_13124 bytes=1074113 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13124.pdf
+2026-08-12 19:44:03,174 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/184MD.PDF
+2026-08-12 19:44:03,575 [INFO] scraper.rbi: DOWNLOADED md_13125 bytes=384097 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13125.pdf
+2026-08-12 19:44:05,074 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/183MD.PDF
+2026-08-12 19:44:05,428 [INFO] scraper.rbi: DOWNLOADED md_13126 bytes=283996 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13126.pdf
+2026-08-12 19:44:06,930 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/182MD.PDF
+2026-08-12 19:44:09,002 [INFO] scraper.rbi: DOWNLOADED md_13127 bytes=2135200 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13127.pdf
+2026-08-12 19:44:10,500 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/181MD.PDF
+2026-08-12 19:44:10,970 [INFO] scraper.rbi: DOWNLOADED md_13128 bytes=521935 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13128.pdf
+2026-08-12 19:44:12,471 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/180MD.PDF
+2026-08-12 19:44:13,098 [INFO] scraper.rbi: DOWNLOADED md_13129 bytes=651324 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13129.pdf
+2026-08-12 19:44:14,600 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/179MD.PDF
+2026-08-12 19:44:14,925 [INFO] scraper.rbi: DOWNLOADED md_13130 bytes=298997 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13130.pdf
+2026-08-12 19:44:16,429 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/381MD.PDF
+2026-08-12 19:44:16,702 [INFO] scraper.rbi: DOWNLOADED md_13131 bytes=229708 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13131.pdf
+2026-08-12 19:44:18,205 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/178MD.PDF
+2026-08-12 19:44:18,663 [INFO] scraper.rbi: DOWNLOADED md_13132 bytes=470268 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13132.pdf
+2026-08-12 19:44:20,166 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/177MD.PDF
+2026-08-12 19:44:20,489 [INFO] scraper.rbi: DOWNLOADED md_13133 bytes=299151 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13133.pdf
+2026-08-12 19:44:21,990 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/176MD.PDF
+2026-08-12 19:44:22,450 [INFO] scraper.rbi: DOWNLOADED md_13134 bytes=389515 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13134.pdf
+2026-08-12 19:44:23,951 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/175MD.PDF
+2026-08-12 19:44:24,483 [INFO] scraper.rbi: DOWNLOADED md_13135 bytes=676912 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13135.pdf
+2026-08-12 19:44:25,986 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/388MD10032026C9C28BA2FD904454A24EE40607D82CC7.PDF
+2026-08-12 19:44:26,452 [INFO] scraper.rbi: DOWNLOADED md_13321 bytes=414440 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13321.pdf
+2026-08-12 19:44:27,953 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/221MD.PDF
+2026-08-12 19:44:29,041 [INFO] scraper.rbi: DOWNLOADED md_13087 bytes=1464130 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13087.pdf
+2026-08-12 19:44:30,540 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/220MD.PDF
+2026-08-12 19:44:30,930 [INFO] scraper.rbi: DOWNLOADED md_13088 bytes=329588 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13088.pdf
+2026-08-12 19:44:32,434 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/219MD.PDF
+2026-08-12 19:44:33,152 [INFO] scraper.rbi: DOWNLOADED md_13089 bytes=782216 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13089.pdf
+2026-08-12 19:44:34,653 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/218MD.PDF
+2026-08-12 19:44:35,213 [INFO] scraper.rbi: DOWNLOADED md_13090 bytes=731828 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13090.pdf
+2026-08-12 19:44:36,716 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/216MD.PDF
+2026-08-12 19:44:37,384 [INFO] scraper.rbi: DOWNLOADED md_13092 bytes=858466 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13092.pdf
+2026-08-12 19:44:38,883 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/215MD.PDF
+2026-08-12 19:44:39,613 [INFO] scraper.rbi: DOWNLOADED md_13093 bytes=1095770 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13093.pdf
+2026-08-12 19:44:41,116 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/214MD.PDF
+2026-08-12 19:44:41,852 [INFO] scraper.rbi: DOWNLOADED md_13094 bytes=797529 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13094.pdf
+2026-08-12 19:44:43,352 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/213MD.PDF
+2026-08-12 19:44:43,811 [INFO] scraper.rbi: DOWNLOADED md_13095 bytes=298020 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13095.pdf
+2026-08-12 19:44:45,314 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/212MD.PDF
+2026-08-12 19:44:45,669 [INFO] scraper.rbi: DOWNLOADED md_13096 bytes=280047 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13096.pdf
+2026-08-12 19:44:47,173 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/211MD.PDF
+2026-08-12 19:44:49,048 [INFO] scraper.rbi: DOWNLOADED md_13097 bytes=972720 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13097.pdf
+2026-08-12 19:44:50,550 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/210MD.PDF
+2026-08-12 19:44:51,144 [INFO] scraper.rbi: DOWNLOADED md_13098 bytes=577585 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13098.pdf
+2026-08-12 19:44:52,647 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/209MD.PDF
+2026-08-12 19:44:53,290 [INFO] scraper.rbi: DOWNLOADED md_13099 bytes=599900 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13099.pdf
+2026-08-12 19:44:54,791 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/208MD.PDF
+2026-08-12 19:44:55,088 [INFO] scraper.rbi: DOWNLOADED md_13100 bytes=242181 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13100.pdf
+2026-08-12 19:44:56,591 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/382MD.PDF
+2026-08-12 19:44:56,954 [INFO] scraper.rbi: DOWNLOADED md_13101 bytes=224760 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13101.pdf
+2026-08-12 19:44:58,458 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/207MD.PDF
+2026-08-12 19:44:59,254 [INFO] scraper.rbi: DOWNLOADED md_13102 bytes=610287 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13102.pdf
+2026-08-12 19:45:00,756 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/206MD.PDF
+2026-08-12 19:45:01,244 [INFO] scraper.rbi: DOWNLOADED md_13103 bytes=299219 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13103.pdf
+2026-08-12 19:45:02,748 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/205MD.PDF
+2026-08-12 19:45:03,295 [INFO] scraper.rbi: DOWNLOADED md_13104 bytes=412180 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13104.pdf
+2026-08-12 19:45:04,795 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/389MD100320260CC22242233B4A46883801B79C02FE8B.PDF
+2026-08-12 19:45:05,298 [INFO] scraper.rbi: DOWNLOADED md_13324 bytes=423090 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13324.pdf
+2026-08-12 19:45:06,802 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/246MD.PDF
+2026-08-12 19:45:07,893 [INFO] scraper.rbi: DOWNLOADED md_13061 bytes=1421800 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13061.pdf
+2026-08-12 19:45:09,396 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/245MD.PDF
+2026-08-12 19:45:09,902 [INFO] scraper.rbi: DOWNLOADED md_13062 bytes=345405 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13062.pdf
+2026-08-12 19:45:11,405 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/244MD.PDF
+2026-08-12 19:45:12,110 [INFO] scraper.rbi: DOWNLOADED md_13063 bytes=779527 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13063.pdf
+2026-08-12 19:45:13,612 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/243MD.PDF
+2026-08-12 19:45:14,272 [INFO] scraper.rbi: DOWNLOADED md_13064 bytes=699073 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13064.pdf
+2026-08-12 19:45:15,776 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/241MD.PDF
+2026-08-12 19:45:16,538 [INFO] scraper.rbi: DOWNLOADED md_13066 bytes=754563 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13066.pdf
+2026-08-12 19:45:18,039 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/240MD.PDF
+2026-08-12 19:45:18,599 [INFO] scraper.rbi: DOWNLOADED md_13067 bytes=476905 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13067.pdf
+2026-08-12 19:45:20,099 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/239MD.PDF
+2026-08-12 19:45:20,561 [INFO] scraper.rbi: DOWNLOADED md_13068 bytes=465703 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13068.pdf
+2026-08-12 19:45:22,064 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/238MD.PDF
+2026-08-12 19:45:22,524 [INFO] scraper.rbi: DOWNLOADED md_13069 bytes=455491 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13069.pdf
+2026-08-12 19:45:24,028 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/237MD.PDF
+2026-08-12 19:45:24,532 [INFO] scraper.rbi: DOWNLOADED md_13070 bytes=495859 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13070.pdf
+2026-08-12 19:45:26,035 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/236MD.PDF
+2026-08-12 19:45:26,647 [INFO] scraper.rbi: DOWNLOADED md_13071 bytes=864029 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13071.pdf
+2026-08-12 19:45:28,149 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/235MD.PDF
+2026-08-12 19:45:28,583 [INFO] scraper.rbi: DOWNLOADED md_13072 bytes=334874 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13072.pdf
+2026-08-12 19:45:30,082 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/234MD.PDF
+2026-08-12 19:45:30,591 [INFO] scraper.rbi: DOWNLOADED md_13073 bytes=371536 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13073.pdf
+2026-08-12 19:45:32,091 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/233MD.PDF
+2026-08-12 19:45:32,539 [INFO] scraper.rbi: DOWNLOADED md_13074 bytes=277325 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13074.pdf
+2026-08-12 19:45:34,041 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/232MD.PDF
+2026-08-12 19:45:34,628 [INFO] scraper.rbi: DOWNLOADED md_13075 bytes=497557 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13075.pdf
+2026-08-12 19:45:36,131 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/231MD.PDF
+2026-08-12 19:45:36,946 [INFO] scraper.rbi: DOWNLOADED md_13076 bytes=899231 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13076.pdf
+2026-08-12 19:45:38,449 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/230MD.PDF
+2026-08-12 19:45:38,839 [INFO] scraper.rbi: DOWNLOADED md_13077 bytes=290353 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13077.pdf
+2026-08-12 19:45:40,340 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/229MD.PDF
+2026-08-12 19:45:40,721 [INFO] scraper.rbi: DOWNLOADED md_13078 bytes=524504 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13078.pdf
+2026-08-12 19:45:42,225 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/228MD.PDF
+2026-08-12 19:45:42,700 [INFO] scraper.rbi: DOWNLOADED md_13079 bytes=387083 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13079.pdf
+2026-08-12 19:45:44,202 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/227MD.PDF
+2026-08-12 19:45:44,901 [INFO] scraper.rbi: DOWNLOADED md_13080 bytes=812105 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13080.pdf
+2026-08-12 19:45:46,404 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/226MD.PDF
+2026-08-12 19:45:46,989 [INFO] scraper.rbi: DOWNLOADED md_13081 bytes=542090 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13081.pdf
+2026-08-12 19:45:48,488 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/225MD.PDF
+2026-08-12 19:45:49,027 [INFO] scraper.rbi: DOWNLOADED md_13082 bytes=588289 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13082.pdf
+2026-08-12 19:45:50,530 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/383MD.PDF
+2026-08-12 19:45:50,869 [INFO] scraper.rbi: DOWNLOADED md_13083 bytes=252970 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13083.pdf
+2026-08-12 19:45:52,367 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/224MD.PDF
+2026-08-12 19:45:52,982 [INFO] scraper.rbi: DOWNLOADED md_13084 bytes=492979 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13084.pdf
+2026-08-12 19:45:54,485 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/223MD.PDF
+2026-08-12 19:45:54,944 [INFO] scraper.rbi: DOWNLOADED md_13085 bytes=303687 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13085.pdf
+2026-08-12 19:45:56,443 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/222MD.PDF
+2026-08-12 19:45:56,943 [INFO] scraper.rbi: DOWNLOADED md_13086 bytes=371432 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13086.pdf
+2026-08-12 19:45:58,444 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/390MD10032026A83919BF58A2481BB8240A89F25F285E.PDF
+2026-08-12 19:45:58,863 [INFO] scraper.rbi: DOWNLOADED md_13327 bytes=415353 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13327.pdf
+2026-08-12 19:46:00,371 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/268MD4759833478EF4A88898144BF91E4EE1B.PDF
+2026-08-12 19:46:01,510 [INFO] scraper.rbi: DOWNLOADED md_13038 bytes=1392133 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13038.pdf
+2026-08-12 19:46:03,015 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/267MD96B7D24557AC47BFB051A5301120FFBB.PDF
+2026-08-12 19:46:03,739 [INFO] scraper.rbi: DOWNLOADED md_13039 bytes=1059469 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13039.pdf
+2026-08-12 19:46:05,239 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/266MDB4BD80DE4B394A50808E81ACC3A2358E.PDF
+2026-08-12 19:46:05,986 [INFO] scraper.rbi: DOWNLOADED md_13040 bytes=709626 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13040.pdf
+2026-08-12 19:46:07,491 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/265MD4C8ABA19A5194D39A7AD1071676C3060.PDF
+2026-08-12 19:46:08,227 [INFO] scraper.rbi: DOWNLOADED md_13041 bytes=891092 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13041.pdf
+2026-08-12 19:46:09,736 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/264MDC9E9F8DD7A7D4A0D8C7661B8589E8605.PDF
+2026-08-12 19:46:10,267 [INFO] scraper.rbi: DOWNLOADED md_13042 bytes=480265 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13042.pdf
+2026-08-12 19:46:11,775 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/263MD.PDF
+2026-08-12 19:46:12,229 [INFO] scraper.rbi: DOWNLOADED md_13043 bytes=388225 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13043.pdf
+2026-08-12 19:46:13,734 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/262MD.PDF
+2026-08-12 19:46:14,091 [INFO] scraper.rbi: DOWNLOADED md_13044 bytes=358703 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13044.pdf
+2026-08-12 19:46:15,591 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/261MD.PDF
+2026-08-12 19:46:16,032 [INFO] scraper.rbi: DOWNLOADED md_13045 bytes=464068 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13045.pdf
+2026-08-12 19:46:17,534 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/260MD.PDF
+2026-08-12 19:46:17,994 [INFO] scraper.rbi: DOWNLOADED md_13046 bytes=460461 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13046.pdf
+2026-08-12 19:46:19,502 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/259MD.PDF
+2026-08-12 19:46:19,847 [INFO] scraper.rbi: DOWNLOADED md_13047 bytes=241093 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13047.pdf
+2026-08-12 19:46:21,351 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/258MD.PDF
+2026-08-12 19:46:21,813 [INFO] scraper.rbi: DOWNLOADED md_13048 bytes=392264 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13048.pdf
+2026-08-12 19:46:23,321 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/257MD.PDF
+2026-08-12 19:46:23,664 [INFO] scraper.rbi: DOWNLOADED md_13049 bytes=223228 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13049.pdf
+2026-08-12 19:46:25,173 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/256MD.PDF
+2026-08-12 19:46:25,633 [INFO] scraper.rbi: DOWNLOADED md_13050 bytes=407729 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13050.pdf
+2026-08-12 19:46:27,135 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/255MD.PDF
+2026-08-12 19:46:27,876 [INFO] scraper.rbi: DOWNLOADED md_13051 bytes=893594 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13051.pdf
+2026-08-12 19:46:29,376 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/254MD.PDF
+2026-08-12 19:46:29,769 [INFO] scraper.rbi: DOWNLOADED md_13052 bytes=439493 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13052.pdf
+2026-08-12 19:46:31,277 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/253MD.PDF
+2026-08-12 19:46:31,705 [INFO] scraper.rbi: DOWNLOADED md_13053 bytes=463325 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13053.pdf
+2026-08-12 19:46:33,212 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/252MD.PDF
+2026-08-12 19:46:33,559 [INFO] scraper.rbi: DOWNLOADED md_13054 bytes=357498 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13054.pdf
+2026-08-12 19:46:35,061 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/251MD.PDF
+2026-08-12 19:46:35,521 [INFO] scraper.rbi: DOWNLOADED md_13055 bytes=524491 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13055.pdf
+2026-08-12 19:46:37,027 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/250MD.PDF
+2026-08-12 19:46:37,548 [INFO] scraper.rbi: DOWNLOADED md_13056 bytes=583944 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13056.pdf
+2026-08-12 19:46:39,054 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/249MD.PDF
+2026-08-12 19:46:39,462 [INFO] scraper.rbi: DOWNLOADED md_13057 bytes=417842 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13057.pdf
+2026-08-12 19:46:40,970 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/248MD.PDF
+2026-08-12 19:46:41,438 [INFO] scraper.rbi: DOWNLOADED md_13058 bytes=363417 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13058.pdf
+2026-08-12 19:46:42,941 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/384MD.PDF
+2026-08-12 19:46:43,224 [INFO] scraper.rbi: DOWNLOADED md_13059 bytes=245122 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13059.pdf
+2026-08-12 19:46:44,733 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/247MD.PDF
+2026-08-12 19:46:45,359 [INFO] scraper.rbi: DOWNLOADED md_13060 bytes=595043 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13060.pdf
+2026-08-12 19:46:46,859 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/269MDB68791ED3DA4407596FC88446FC24DF3.PDF
+2026-08-12 19:46:47,140 [INFO] scraper.rbi: DOWNLOADED md_13203 bytes=233902 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13203.pdf
+2026-08-12 19:46:48,650 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/271MD5F6E28F2C5AF4B92AE44048FD3C21405.PDF
+2026-08-12 19:46:49,062 [INFO] scraper.rbi: DOWNLOADED md_13204 bytes=462245 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13204.pdf
+2026-08-12 19:46:50,567 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/294MDA514F8EED7554D9F8B8DC461B55E4956.PDF
+2026-08-12 19:46:51,542 [INFO] scraper.rbi: DOWNLOADED md_13011 bytes=1436487 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13011.pdf
+2026-08-12 19:46:53,048 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/293MD6D08F6482DFE4A22AF441AD601136473.PDF
+2026-08-12 19:46:53,584 [INFO] scraper.rbi: DOWNLOADED md_13012 bytes=357792 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13012.pdf
+2026-08-12 19:46:55,091 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/292MD76099C95D4BD4139A4EBCDA2F50BEFA2.PDF
+2026-08-12 19:46:55,802 [INFO] scraper.rbi: DOWNLOADED md_13013 bytes=1002728 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13013.pdf
+2026-08-12 19:46:57,304 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/291MDE108E59AC43D4C13B2D06598B296C877.PDF
+2026-08-12 19:46:57,893 [INFO] scraper.rbi: DOWNLOADED md_13014 bytes=742135 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13014.pdf
+2026-08-12 19:46:59,393 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/290MD616350878BDB425AB674BD8F44CECA6F.PDF
+2026-08-12 19:46:59,692 [INFO] scraper.rbi: DOWNLOADED md_13015 bytes=266993 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13015.pdf
+2026-08-12 19:47:01,200 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/289MDA4C31A1342334925BEA8860F1C07A2E2.PDF
+2026-08-12 19:47:01,827 [INFO] scraper.rbi: DOWNLOADED md_13016 bytes=759815 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13016.pdf
+2026-08-12 19:47:03,334 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/288MDFF01AB60686C42C3A362F83E87392224.PDF
+2026-08-12 19:47:03,705 [INFO] scraper.rbi: DOWNLOADED md_13017 bytes=344573 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13017.pdf
+2026-08-12 19:47:05,208 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/287MDF9C64E970EA74C16A6FEAB59052A0F72.PDF
+2026-08-12 19:47:05,671 [INFO] scraper.rbi: DOWNLOADED md_13018 bytes=497706 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13018.pdf
+2026-08-12 19:47:07,176 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/286MD85DCC2671BCB41DC8B0714812DAB799A.PDF
+2026-08-12 19:47:07,629 [INFO] scraper.rbi: DOWNLOADED md_13019 bytes=485006 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13019.pdf
+2026-08-12 19:47:09,134 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/285MDF435283E73444E45A54EC8764ABCC848.PDF
+2026-08-12 19:47:09,687 [INFO] scraper.rbi: DOWNLOADED md_13020 bytes=737645 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13020.pdf
+2026-08-12 19:47:11,189 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/284MD47AE1D934ED549E2AEB98E30D3A85A57.PDF
+2026-08-12 19:47:11,639 [INFO] scraper.rbi: DOWNLOADED md_13021 bytes=518613 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13021.pdf
+2026-08-12 19:47:13,145 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/283MDC3CE849D1EE047478359BA164A180EB2.PDF
+2026-08-12 19:47:13,441 [INFO] scraper.rbi: DOWNLOADED md_13022 bytes=247877 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13022.pdf
+2026-08-12 19:47:14,941 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/282MD963601BD314543AD8105FDAFACD3AA91.PDF
+2026-08-12 19:47:15,328 [INFO] scraper.rbi: DOWNLOADED md_13023 bytes=358070 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13023.pdf
+2026-08-12 19:47:16,834 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/281MD5AD018D50ACD4B10AF51DD504AD3DDB3.PDF
+2026-08-12 19:47:17,240 [INFO] scraper.rbi: DOWNLOADED md_13024 bytes=314325 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13024.pdf
+2026-08-12 19:47:18,748 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/280MD71ABEC5E655C4CE7816646F849E5CB29.PDF
+2026-08-12 19:47:19,171 [INFO] scraper.rbi: DOWNLOADED md_13025 bytes=447739 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13025.pdf
+2026-08-12 19:47:20,674 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/279MD3334DC0D4F8F43068FA37F74DED62382.PDF
+2026-08-12 19:47:21,435 [INFO] scraper.rbi: DOWNLOADED md_13026 bytes=902256 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13026.pdf
+2026-08-12 19:47:22,941 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/278MD2C704B1C34BF4E1BB8F6B710190D4E6C.PDF
+2026-08-12 19:47:23,549 [INFO] scraper.rbi: DOWNLOADED md_13027 bytes=336615 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13027.pdf
+2026-08-12 19:47:25,049 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/277MDFF00147367D64F02899A3A756CDA9093.PDF
+2026-08-12 19:47:25,665 [INFO] scraper.rbi: DOWNLOADED md_13028 bytes=815371 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13028.pdf
+2026-08-12 19:47:27,167 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/276MD926CB0F1D85C4C7981A81F01AAEE0D13.PDF
+2026-08-12 19:47:27,656 [INFO] scraper.rbi: DOWNLOADED md_13029 bytes=372698 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13029.pdf
+2026-08-12 19:47:29,160 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/275MD3D20366A706C4C13B4FA21A3DC0451A1.PDF
+2026-08-12 19:47:29,847 [INFO] scraper.rbi: DOWNLOADED md_13030 bytes=913212 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13030.pdf
+2026-08-12 19:47:31,347 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/274MD3A0AEE03DF1B4F39BB0F0B91BFC73A05.PDF
+2026-08-12 19:47:32,044 [INFO] scraper.rbi: DOWNLOADED md_13031 bytes=776477 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13031.pdf
+2026-08-12 19:47:33,552 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/273MD1E2C8ADF7F3D4881933547E0AAABCFA4.PDF
+2026-08-12 19:47:34,200 [INFO] scraper.rbi: DOWNLOADED md_13032 bytes=435289 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13032.pdf
+2026-08-12 19:47:35,709 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/272MD6C9694D129BC4A769CBCD6B206A345B5.PDF
+2026-08-12 19:47:36,210 [INFO] scraper.rbi: DOWNLOADED md_13033 bytes=419337 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13033.pdf
+2026-08-12 19:47:37,718 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/385MDE9EEBCE5D5EA40C5AD9FD122507E94F8.PDF
+2026-08-12 19:47:38,107 [INFO] scraper.rbi: DOWNLOADED md_13034 bytes=268968 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13034.pdf
+2026-08-12 19:47:39,616 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/270MD0F410014D53F4900814935480D096DDA.PDF
+2026-08-12 19:47:39,993 [INFO] scraper.rbi: DOWNLOADED md_13036 bytes=344616 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13036.pdf
+2026-08-12 19:47:41,498 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/318MDE0794991DA36479EAF4267E99E78C5D4.PDF
+2026-08-12 19:47:41,940 [INFO] scraper.rbi: DOWNLOADED md_12986 bytes=315912 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12986.pdf
+2026-08-12 19:47:43,447 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/317MD887462600A924B8CB0DD389AC78041C5.PDF
+2026-08-12 19:47:45,286 [INFO] scraper.rbi: DOWNLOADED md_12987 bytes=1606239 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12987.pdf
+2026-08-12 19:47:46,791 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/316MDC827AC45BD1248DFB272637379D4128C.PDF
+2026-08-12 19:47:50,158 [INFO] scraper.rbi: DOWNLOADED md_12988 bytes=732746 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12988.pdf
+2026-08-12 19:47:51,661 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/315MDD4D6D28D4BD84F84A93DBB459D696D04.PDF
+2026-08-12 19:47:52,056 [INFO] scraper.rbi: DOWNLOADED md_12989 bytes=269503 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12989.pdf
+2026-08-12 19:47:53,564 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/314MD105FDB4D92954DC8A332FDDD468727E2.PDF
+2026-08-12 19:47:54,355 [INFO] scraper.rbi: DOWNLOADED md_12990 bytes=698469 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12990.pdf
+2026-08-12 19:47:55,859 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/313MD02F712F901B74064B5DFB5389AAF4635.PDF
+2026-08-12 19:47:56,226 [INFO] scraper.rbi: DOWNLOADED md_12991 bytes=403794 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12991.pdf
+2026-08-12 19:47:57,730 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/312MDED63664A2FAD47AAA2AF35B21B42D891.PDF
+2026-08-12 19:47:58,415 [INFO] scraper.rbi: DOWNLOADED md_12992 bytes=517325 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12992.pdf
+2026-08-12 19:47:59,917 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/311MD325E093FC9B14A5E8D968E2BFC9A7CE2.PDF
+2026-08-12 19:48:00,419 [INFO] scraper.rbi: DOWNLOADED md_12993 bytes=398205 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12993.pdf
+2026-08-12 19:48:01,928 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/310MDB3001389A9CC4E929E5C95170219D08C.PDF
+2026-08-12 19:48:02,691 [INFO] scraper.rbi: DOWNLOADED md_12994 bytes=476376 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12994.pdf
+2026-08-12 19:48:04,199 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/309MDA721C4C88C1C47618967DEE0A5DD8ECF.PDF
+2026-08-12 19:48:04,610 [INFO] scraper.rbi: DOWNLOADED md_12995 bytes=436955 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12995.pdf
+2026-08-12 19:48:06,119 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/308MD5EFEC2756D6C49D89939321BFA1112ED.PDF
+2026-08-12 19:48:06,483 [INFO] scraper.rbi: DOWNLOADED md_12996 bytes=250792 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12996.pdf
+2026-08-12 19:48:07,982 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/307MDA2E3C66F4060495EB4262788206D4624.PDF
+2026-08-12 19:48:08,322 [INFO] scraper.rbi: DOWNLOADED md_12997 bytes=300093 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12997.pdf
+2026-08-12 19:48:09,828 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/306MD1B2E712A2C85493B9597D742B7D0723D.PDF
+2026-08-12 19:48:10,262 [INFO] scraper.rbi: DOWNLOADED md_12998 bytes=343779 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12998.pdf
+2026-08-12 19:48:11,767 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/305MDBAA8E20812664CD58C98C7436D919C49.PDF
+2026-08-12 19:48:12,258 [INFO] scraper.rbi: DOWNLOADED md_12999 bytes=364666 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12999.pdf
+2026-08-12 19:48:13,756 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/304MDB8CFC8C99FB2410A82F9022648786BD0.PDF
+2026-08-12 19:48:14,676 [INFO] scraper.rbi: DOWNLOADED md_13000 bytes=916726 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13000.pdf
+2026-08-12 19:48:16,184 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/303MD6394576E32E84D3FA6634CBA70F0291A.PDF
+2026-08-12 19:48:16,598 [INFO] scraper.rbi: DOWNLOADED md_13001 bytes=305548 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13001.pdf
+2026-08-12 19:48:18,105 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/302MD9447AEE4C3A543AA970CAF17ECD0E440.PDF
+2026-08-12 19:48:18,641 [INFO] scraper.rbi: DOWNLOADED md_13002 bytes=498879 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13002.pdf
+2026-08-12 19:48:20,147 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/301MD61FDD3EB323E49EEA9A1DFCE704E5BF9.PDF
+2026-08-12 19:48:20,617 [INFO] scraper.rbi: DOWNLOADED md_13003 bytes=389140 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13003.pdf
+2026-08-12 19:48:22,124 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/300MDF58DB7A7A9564C0CA00ABE5D6A0A07F1.PDF
+2026-08-12 19:48:22,711 [INFO] scraper.rbi: DOWNLOADED md_13004 bytes=559954 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13004.pdf
+2026-08-12 19:48:24,216 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/299MDEC55794FB96E4E52A5B5D0893EBE36F6.PDF
+2026-08-12 19:48:25,562 [INFO] scraper.rbi: DOWNLOADED md_13005 bytes=759650 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13005.pdf
+2026-08-12 19:48:27,067 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/298MD47439C1E67454650A666D90BDDE73AC3.PDF
+2026-08-12 19:48:27,452 [INFO] scraper.rbi: DOWNLOADED md_13006 bytes=372061 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13006.pdf
+2026-08-12 19:48:28,955 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/297MD8B97C3B046D84D0BAA969029B3B4F39F.PDF
+2026-08-12 19:48:29,305 [INFO] scraper.rbi: DOWNLOADED md_13007 bytes=368969 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13007.pdf
+2026-08-12 19:48:30,814 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/386MD2EA5A2249DB94541B485F19F9D6CEC6C.PDF
+2026-08-12 19:48:31,120 [INFO] scraper.rbi: DOWNLOADED md_13008 bytes=280361 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13008.pdf
+2026-08-12 19:48:32,627 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/295MD1EAD13C6D93B44E98AB6A4353542054E.PDF
+2026-08-12 19:48:33,167 [INFO] scraper.rbi: DOWNLOADED md_13010 bytes=327375 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13010.pdf
+2026-08-12 19:48:34,670 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/296MD3B084D4247B940E782DCF35DE02806CB.PDF
+2026-08-12 19:48:35,213 [INFO] scraper.rbi: DOWNLOADED md_13205 bytes=394417 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13205.pdf
+2026-08-12 19:48:36,714 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/319MDD6043B8B7A0A49CFA8C29881AE174DD6.PDF
+2026-08-12 19:48:41,003 [INFO] scraper.rbi: DOWNLOADED md_13202 bytes=405901 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13202.pdf
+2026-08-12 19:48:42,508 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/338MD82DA791B78C840DA9CE556AD2F6A099E.PDF
+2026-08-12 19:48:42,885 [INFO] scraper.rbi: DOWNLOADED md_12966 bytes=268542 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12966.pdf
+2026-08-12 19:48:44,393 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/337MD82046EB95DF047E7B6D4977E1D1B344E.PDF
+2026-08-12 19:48:44,886 [INFO] scraper.rbi: DOWNLOADED md_12967 bytes=350735 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12967.pdf
+2026-08-12 19:48:46,395 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/336MDE82A669C159C41D09B212DDF2908364A.PDF
+2026-08-12 19:48:46,764 [INFO] scraper.rbi: DOWNLOADED md_12968 bytes=324473 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12968.pdf
+2026-08-12 19:48:48,267 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/335MDB36143CAC69041858F40094B961AD8D1.PDF
+2026-08-12 19:48:48,912 [INFO] scraper.rbi: DOWNLOADED md_12969 bytes=692368 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12969.pdf
+2026-08-12 19:48:50,417 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/334MDBA729BB698594DF88D0C0F8AD14D6051.PDF
+2026-08-12 19:48:51,259 [INFO] scraper.rbi: DOWNLOADED md_12970 bytes=986174 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12970.pdf
+2026-08-12 19:48:52,767 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/333MD5058C30FAE2B4BF7A6FA46FBF5BA1860.PDF
+2026-08-12 19:48:54,171 [INFO] scraper.rbi: DOWNLOADED md_12971 bytes=465872 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12971.pdf
+2026-08-12 19:48:55,672 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/332MD172466A0BC46438DB5E53C03F90E5D97.PDF
+2026-08-12 19:49:01,872 [INFO] scraper.rbi: DOWNLOADED md_12972 bytes=559246 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12972.pdf
+2026-08-12 19:49:03,373 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/331MD8F94924174D045A9A61DB7472C935BBB.PDF
+2026-08-12 19:49:03,954 [INFO] scraper.rbi: DOWNLOADED md_12973 bytes=548273 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12973.pdf
+2026-08-12 19:49:05,459 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/330MD8EE03EACE9C840B78782487A56262606.PDF
+2026-08-12 19:49:10,817 [INFO] scraper.rbi: DOWNLOADED md_12974 bytes=577134 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12974.pdf
+2026-08-12 19:49:12,317 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/329MDB471ED6596B74577A0D9BC3296ECC859.PDF
+2026-08-12 19:49:12,788 [INFO] scraper.rbi: DOWNLOADED md_12975 bytes=444393 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12975.pdf
+2026-08-12 19:49:14,297 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/328MDCA89E7AD35574A5E8A94F83F329293A2.PDF
+2026-08-12 19:49:17,190 [INFO] scraper.rbi: DOWNLOADED md_12976 bytes=452842 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12976.pdf
+2026-08-12 19:49:18,693 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/327MD7EA8E880A8D64D06B8AE74D8EDF60F17.PDF
+2026-08-12 19:49:23,906 [INFO] scraper.rbi: DOWNLOADED md_12977 bytes=516807 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12977.pdf
+2026-08-12 19:49:25,405 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/326MD7CB162D66FB043AFA384B6ED63EFA5D7.PDF
+2026-08-12 19:49:26,249 [INFO] scraper.rbi: DOWNLOADED md_12978 bytes=577738 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12978.pdf
+2026-08-12 19:49:27,749 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/325MD9D1E9340756A42F183443F73A0B46998.PDF
+2026-08-12 19:49:28,360 [INFO] scraper.rbi: DOWNLOADED md_12979 bytes=357219 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12979.pdf
+2026-08-12 19:49:29,867 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/324MD7A26BF797952433E8A8D59AA98A79999.PDF
+2026-08-12 19:49:31,084 [INFO] scraper.rbi: DOWNLOADED md_12980 bytes=907241 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12980.pdf
+2026-08-12 19:49:32,583 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/323MDC03F7527B77E43B586042F9F3104C2B7.PDF
+2026-08-12 19:49:33,434 [INFO] scraper.rbi: DOWNLOADED md_12981 bytes=481741 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12981.pdf
+2026-08-12 19:49:34,941 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/322MD52B038D169F34D5C9851D5F02E1C7044.PDF
+2026-08-12 19:49:35,569 [INFO] scraper.rbi: DOWNLOADED md_12982 bytes=298032 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12982.pdf
+2026-08-12 19:49:37,081 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/321MDD26060BC94C943C8B5907F5E328E0F1B.PDF
+2026-08-12 19:50:18,710 [INFO] scraper.rbi: DOWNLOADED md_12983 bytes=2923059 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12983.pdf
+2026-08-12 19:50:20,216 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/320MDC5714911D38A471980DD2D5D9DB3AECD.PDF
+2026-08-12 19:50:20,912 [INFO] scraper.rbi: DOWNLOADED md_12984 bytes=369659 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12984.pdf
+2026-08-12 19:50:22,413 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/373MD7F3656C99F764E2F9CE1BC4A1337861F.PDF
+2026-08-12 19:50:22,952 [INFO] scraper.rbi: DOWNLOADED md_12931 bytes=300857 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12931.pdf
+2026-08-12 19:50:24,461 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/372MD72894C1BCD6646C582BDF57824ED849B.PDF
+2026-08-12 19:50:24,914 [INFO] scraper.rbi: DOWNLOADED md_12932 bytes=330756 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12932.pdf
+2026-08-12 19:50:26,415 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/371MD93444E1CFB2749C6A9F8F0182794522B.PDF
+2026-08-12 19:50:26,847 [INFO] scraper.rbi: DOWNLOADED md_12933 bytes=321056 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12933.pdf
+2026-08-12 19:50:28,348 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/370MD60843CF99DE6468CA026BF367311796E.PDF
+2026-08-12 19:50:33,310 [INFO] scraper.rbi: DOWNLOADED md_12934 bytes=749681 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12934.pdf
+2026-08-12 19:50:34,810 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/369MD595FB8D5A60A4858AEADC3DA61569214.PDF
+2026-08-12 19:50:35,200 [INFO] scraper.rbi: DOWNLOADED md_12935 bytes=438852 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12935.pdf
+2026-08-12 19:50:36,708 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/368MDA3A72C813679452CB0A291E6B300DB59.PDF
+2026-08-12 19:50:37,194 [INFO] scraper.rbi: DOWNLOADED md_12936 bytes=340801 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12936.pdf
+2026-08-12 19:50:38,694 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/367MD6F29605A9F984829B1DDFA72799197BB.PDF
+2026-08-12 19:50:39,296 [INFO] scraper.rbi: DOWNLOADED md_12937 bytes=485872 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12937.pdf
+2026-08-12 19:50:40,796 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/366MDF8A3AEF00BF24FFC8FA8F1B096F8E054.PDF
+2026-08-12 19:50:41,499 [INFO] scraper.rbi: DOWNLOADED md_12938 bytes=810920 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12938.pdf
+2026-08-12 19:50:42,999 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/365MD8214102C853241B98E06B2123AB42657.PDF
+2026-08-12 19:50:43,662 [INFO] scraper.rbi: DOWNLOADED md_12939 bytes=833695 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12939.pdf
+2026-08-12 19:50:45,165 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/364MD89C593EA3A124B1491E797D1A752110F.PDF
+2026-08-12 19:50:45,721 [INFO] scraper.rbi: DOWNLOADED md_12940 bytes=286153 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12940.pdf
+2026-08-12 19:50:47,227 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/363MD40F22B0CDF734E3C884A9CBCE5DF9194.PDF
+2026-08-12 19:50:47,817 [INFO] scraper.rbi: DOWNLOADED md_12941 bytes=517983 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12941.pdf
+2026-08-12 19:50:49,319 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/362MD26CA543937BA439A97E1BCFC08CF5808.PDF
+2026-08-12 19:50:49,966 [INFO] scraper.rbi: DOWNLOADED md_12942 bytes=506756 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12942.pdf
+2026-08-12 19:50:51,475 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/361MD1E2F8EA063454AD5AFA1D02A1BA5ACA7.PDF
+2026-08-12 19:50:56,317 [INFO] scraper.rbi: DOWNLOADED md_12943 bytes=603902 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12943.pdf
+2026-08-12 19:50:57,817 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/360MD1E07039E1DCA455B8CCB9D0C4BFD4BBE.PDF
+2026-08-12 19:50:58,361 [INFO] scraper.rbi: DOWNLOADED md_12944 bytes=366226 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12944.pdf
+2026-08-12 19:50:59,867 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/359MD22B81FAE1AB9481BA79541602ADD032D.PDF
+2026-08-12 19:51:00,726 [INFO] scraper.rbi: DOWNLOADED md_12945 bytes=761522 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12945.pdf
+2026-08-12 19:51:02,227 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/358MDB0FF0CDD07C04BFAB5A97494E9BB7104.PDF
+2026-08-12 19:51:02,866 [INFO] scraper.rbi: DOWNLOADED md_12946 bytes=499259 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12946.pdf
+2026-08-12 19:51:04,372 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/357MD501BDDC9758E40B592D1AD2D919CC6AF.PDF
+2026-08-12 19:51:04,915 [INFO] scraper.rbi: DOWNLOADED md_12947 bytes=681132 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12947.pdf
+2026-08-12 19:51:06,424 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/356MD4F8109CA54BE44A9805C5300601F8A11.PDF
+2026-08-12 19:51:06,872 [INFO] scraper.rbi: DOWNLOADED md_12948 bytes=360989 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12948.pdf
+2026-08-12 19:51:08,377 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/355MDDFD8E87964DD4F529248131781B5812F.PDF
+2026-08-12 19:51:09,100 [INFO] scraper.rbi: DOWNLOADED md_12949 bytes=655160 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12949.pdf
+2026-08-12 19:51:10,605 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/354MD1F909E42C44E481085D47ECF16A9EE26.PDF
+2026-08-12 19:51:11,043 [INFO] scraper.rbi: DOWNLOADED md_12950 bytes=341221 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12950.pdf
+2026-08-12 19:51:12,546 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/353MD9A35481FC07E4D1199A62E5C2356B0C4.PDF
+2026-08-12 19:51:13,119 [INFO] scraper.rbi: DOWNLOADED md_12951 bytes=492033 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12951.pdf
+2026-08-12 19:51:14,619 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/352MDCF4E55B0ACD24FCC8AED1C715997F0F9.PDF
+2026-08-12 19:51:15,089 [INFO] scraper.rbi: DOWNLOADED md_12952 bytes=403131 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12952.pdf
+2026-08-12 19:51:16,598 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/351MD74108723E6DA484E954DB9D2C7ED184C.PDF
+2026-08-12 19:51:16,981 [INFO] scraper.rbi: DOWNLOADED md_12953 bytes=414519 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12953.pdf
+2026-08-12 19:51:18,484 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/350MDEF81E70DAB50429898EB2CF07BBCA09E.PDF
+2026-08-12 19:51:18,958 [INFO] scraper.rbi: DOWNLOADED md_12954 bytes=379835 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12954.pdf
+2026-08-12 19:51:20,464 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/349MD04B1F5EC16D84779BC61D9CC40552401.PDF
+2026-08-12 19:51:21,366 [INFO] scraper.rbi: DOWNLOADED md_12955 bytes=891327 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12955.pdf
+2026-08-12 19:51:22,869 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/348MD993245D8570047299D1814811F20AFEE.PDF
+2026-08-12 19:51:23,412 [INFO] scraper.rbi: DOWNLOADED md_12956 bytes=460224 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12956.pdf
+2026-08-12 19:51:24,912 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/347MD5CC21D3597C04354B67A42A1A4CB439C.PDF
+2026-08-12 19:51:25,461 [INFO] scraper.rbi: DOWNLOADED md_12957 bytes=555191 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12957.pdf
+2026-08-12 19:51:26,962 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/346MD6C1FC3FFE3E84415B12A1C05642FD3E3.PDF
+2026-08-12 19:51:27,363 [INFO] scraper.rbi: DOWNLOADED md_12958 bytes=392986 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12958.pdf
+2026-08-12 19:51:28,871 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/345MDAB71EF5B2D534D7B92C654742BDF9A77.PDF
+2026-08-12 19:51:29,420 [INFO] scraper.rbi: DOWNLOADED md_12959 bytes=672123 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12959.pdf
+2026-08-12 19:51:30,929 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/344MD22F0E87F6DD848919A6459236939D76F.PDF
+2026-08-12 19:51:31,320 [INFO] scraper.rbi: DOWNLOADED md_12960 bytes=501716 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12960.pdf
+2026-08-12 19:51:32,829 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/343MD54448C9FA65A429BB5AFADBB162904F1.PDF
+2026-08-12 19:51:33,422 [INFO] scraper.rbi: DOWNLOADED md_12961 bytes=522731 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12961.pdf
+2026-08-12 19:51:34,929 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/342MD6D0E541E684A451BB4BB80C4819B2BB1.PDF
+2026-08-12 19:51:35,385 [INFO] scraper.rbi: DOWNLOADED md_12962 bytes=268408 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12962.pdf
+2026-08-12 19:51:36,894 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/341MDDF7F3A9C8BF2439D828E773D444D7FD3.PDF
+2026-08-12 19:51:37,309 [INFO] scraper.rbi: DOWNLOADED md_12963 bytes=277957 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12963.pdf
+2026-08-12 19:51:38,814 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/340MD4B77ED4B942E4F9FBECA5673D0360BA3.PDF
+2026-08-12 19:51:39,240 [INFO] scraper.rbi: DOWNLOADED md_12964 bytes=320412 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12964.pdf
+2026-08-12 19:51:40,746 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/339MD7166A79E96D64572B378949D3972DBD1.PDF
+2026-08-12 19:51:41,202 [INFO] scraper.rbi: DOWNLOADED md_12965 bytes=492747 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12965.pdf
+2026-08-12 19:51:42,704 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/377MDC2C0B12BF5FA4716B1186CBAFBAEE6DC.PDF
+2026-08-12 19:51:43,305 [INFO] scraper.rbi: DOWNLOADED md_12927 bytes=579524 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12927.pdf
+2026-08-12 19:51:44,806 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/376MD90C9663D1BA3430989254B93FFC0C975.PDF
+2026-08-12 19:54:35,123 [INFO] scraper.rbi: DOWNLOADED md_12928 bytes=407668 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12928.pdf
+2026-08-12 19:54:36,624 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/375MD4501F9CAB74942A5862702FA20D4F275.PDF
+2026-08-12 19:54:44,065 [INFO] scraper.rbi: DOWNLOADED md_12929 bytes=838708 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12929.pdf
+2026-08-12 19:54:45,563 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/374MD5EB12B213C134165BBC19F6F9B01434A.PDF
+2026-08-12 19:54:50,850 [INFO] scraper.rbi: DOWNLOADED md_12930 bytes=715449 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12930.pdf
+2026-08-12 19:54:52,349 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/379MD4FB63C400E634A6EA5E9F800150E0643.PDF
+2026-08-12 19:54:53,656 [INFO] scraper.rbi: DOWNLOADED md_12925 bytes=360772 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12925.pdf
+2026-08-12 19:54:55,159 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/378MD65D46FCCF0C34491B34505C6E1DACFFE.PDF
+2026-08-12 19:55:02,417 [INFO] scraper.rbi: DOWNLOADED md_12926 bytes=1085418 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12926.pdf
+2026-08-12 19:55:03,917 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/416MD53D6A6765E6649B6AAABB58C0E4C7EFB.PDF
+2026-08-12 19:55:04,556 [INFO] scraper.rbi: DOWNLOADED md_13637 bytes=485460 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13637.pdf
+2026-08-12 19:55:06,055 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/415MD17AD8787C68848D58600F61E35468861.PDF
+2026-08-12 19:55:06,878 [INFO] scraper.rbi: DOWNLOADED md_13638 bytes=994596 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13638.pdf
+2026-08-12 19:55:08,376 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/414MDEB929BD427B7443C98B182F2A13E1396.PDF
+2026-08-12 19:55:09,768 [INFO] scraper.rbi: DOWNLOADED md_13639 bytes=2349883 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13639.pdf
+2026-08-12 19:55:11,266 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/413MD4F9FF319B5954ED1998D65025BDCBFDA.PDF
+2026-08-12 19:55:11,890 [INFO] scraper.rbi: DOWNLOADED md_13640 bytes=761407 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13640.pdf
+2026-08-12 19:55:13,390 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/412MD5B6CA712E156413BACDEA9DD5CF5D1EF.PDF
+2026-08-12 19:55:14,093 [INFO] scraper.rbi: DOWNLOADED md_13641 bytes=1171895 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13641.pdf
+2026-08-12 19:55:15,588 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/411MD1918998D1AD74F159D57664FB10E053F.PDF
+2026-08-12 19:55:16,076 [INFO] scraper.rbi: DOWNLOADED md_13642 bytes=413422 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13642.pdf
+2026-08-12 19:55:17,576 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/410MD1C1DD4C43C9C49ED9033D64902636D9C.PDF
+2026-08-12 19:55:18,028 [INFO] scraper.rbi: DOWNLOADED md_13643 bytes=523257 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13643.pdf
+2026-08-12 19:55:19,527 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/409MD13EB09368FC543A2BEDF3B9E8F2C9A6A.PDF
+2026-08-12 19:55:23,887 [INFO] scraper.rbi: DOWNLOADED md_13644 bytes=563767 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13644.pdf
+2026-08-12 19:55:25,391 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/408MD83CAFF1305FB4180A6C3B4E68C88ED09.PDF
+2026-08-12 19:55:26,032 [INFO] scraper.rbi: DOWNLOADED md_13645 bytes=993461 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13645.pdf
+2026-08-12 19:55:27,536 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/425MD0436481B095C48CD89101DA2ACCD152E.PDF
+2026-08-12 19:55:28,117 [INFO] scraper.rbi: DOWNLOADED md_13628 bytes=444943 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13628.pdf
+2026-08-12 19:55:29,618 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/424MD2CF5C97A54FA4C2883108496BBEF2D80.PDF
+2026-08-12 19:55:30,229 [INFO] scraper.rbi: DOWNLOADED md_13629 bytes=856939 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13629.pdf
+2026-08-12 19:55:31,733 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/423MD425FF643D83E4234949863E6681E0BC3.PDF
+2026-08-12 19:55:33,146 [INFO] scraper.rbi: DOWNLOADED md_13630 bytes=2077471 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13630.pdf
+2026-08-12 19:55:34,643 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/422MD40D63D4AC3564816952B97A16E1AFABD.PDF
+2026-08-12 19:55:35,160 [INFO] scraper.rbi: DOWNLOADED md_13631 bytes=785833 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13631.pdf
+2026-08-12 19:55:36,660 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/421MD045AAA3F34354D88B80AB52E2EFBBBA1.PDF
+2026-08-12 19:55:37,319 [INFO] scraper.rbi: DOWNLOADED md_13632 bytes=1110281 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13632.pdf
+2026-08-12 19:55:38,818 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/420MD29384D707EBB4C938067734D3B24D278.PDF
+2026-08-12 19:55:39,224 [INFO] scraper.rbi: DOWNLOADED md_13633 bytes=387970 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13633.pdf
+2026-08-12 19:55:40,728 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/419MD2FBDBDE1A8C948B79579A76A9BC83E21.PDF
+2026-08-12 19:55:41,164 [INFO] scraper.rbi: DOWNLOADED md_13634 bytes=493084 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13634.pdf
+2026-08-12 19:55:42,665 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/418MD59AF663B94CE4CA4AED6B0F320D63F27.PDF
+2026-08-12 19:55:43,157 [INFO] scraper.rbi: DOWNLOADED md_13635 bytes=539476 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13635.pdf
+2026-08-12 19:55:44,655 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/417MDBF2FB62647A34F518725C7419A522A1A.PDF
+2026-08-12 19:55:45,241 [INFO] scraper.rbi: DOWNLOADED md_13636 bytes=992218 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13636.pdf
+2026-08-12 19:55:46,744 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/434MDB0864F4A89F445818734DA5107794020.PDF
+2026-08-12 19:55:47,124 [INFO] scraper.rbi: DOWNLOADED md_13619 bytes=408199 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13619.pdf
+2026-08-12 19:55:48,627 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/433MD144CFE8D6C744FDABF82F09A06E54704.PDF
+2026-08-12 19:55:54,760 [INFO] scraper.rbi: DOWNLOADED md_13620 bytes=691358 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13620.pdf
+2026-08-12 19:55:56,262 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/432MD02061AE612F1453BAD8A821EBECC8F58.PDF
+2026-08-12 19:55:57,259 [INFO] scraper.rbi: DOWNLOADED md_13621 bytes=1517466 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13621.pdf
+2026-08-12 19:55:58,760 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/431MDACE5BE38F43D4579B03E9DF6F96DA7B7.PDF
+2026-08-12 19:55:59,396 [INFO] scraper.rbi: DOWNLOADED md_13622 bytes=785776 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13622.pdf
+2026-08-12 19:56:00,898 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/430MD8AFE9055BACE46968BC6E8CB3112471B.PDF
+2026-08-12 19:56:06,288 [INFO] scraper.rbi: DOWNLOADED md_13623 bytes=1002313 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13623.pdf
+2026-08-12 19:56:07,787 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/429MD335484C7D27C4AC58720D636CA735A25.PDF
+2026-08-12 19:56:10,639 [INFO] scraper.rbi: DOWNLOADED md_13624 bytes=430746 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13624.pdf
+2026-08-12 19:56:12,142 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/428MD47757204F5E54CE99FB1E19E8C458655.PDF
+2026-08-12 19:56:12,580 [INFO] scraper.rbi: DOWNLOADED md_13625 bytes=493820 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13625.pdf
+2026-08-12 19:56:14,083 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/427MD7FCE1B261A9043DC9F6B526DAC24BCF3.PDF
+2026-08-12 19:56:14,689 [INFO] scraper.rbi: DOWNLOADED md_13626 bytes=515824 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13626.pdf
+2026-08-12 19:56:16,194 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/426MDAC33102EE3FA40DA842AAF54921D76DD.PDF
+2026-08-12 19:56:18,157 [INFO] scraper.rbi: DOWNLOADED md_13627 bytes=992121 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13627.pdf
+2026-08-12 19:56:19,657 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/450MD9EEAB01F633148768CC03DEEA746654E.PDF
+2026-08-12 19:56:20,152 [INFO] scraper.rbi: DOWNLOADED md_13603 bytes=457877 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13603.pdf
+2026-08-12 19:56:21,653 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/449MD116AEA06D1C141EDA717FDD5B72BB988.PDF
+2026-08-12 19:56:22,184 [INFO] scraper.rbi: DOWNLOADED md_13604 bytes=704598 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13604.pdf
+2026-08-12 19:56:23,688 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/448MDEB239D081FB94715A7DA64D5F34CC51D.PDF
+2026-08-12 19:56:24,780 [INFO] scraper.rbi: DOWNLOADED md_13605 bytes=2137229 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13605.pdf
+2026-08-12 19:56:26,282 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/447MDBF165A2602F944F79E739038F8807402.PDF
+2026-08-12 19:56:26,872 [INFO] scraper.rbi: DOWNLOADED md_13606 bytes=784693 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13606.pdf
+2026-08-12 19:56:28,371 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/446MDF0DB1395806B4600842005FCA98583BE.PDF
+2026-08-12 19:56:30,066 [INFO] scraper.rbi: DOWNLOADED md_13607 bytes=1110380 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13607.pdf
+2026-08-12 19:56:31,565 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/445MD0C4C20C6998646ABAC1E8634D932999D.PDF
+2026-08-12 19:56:31,971 [INFO] scraper.rbi: DOWNLOADED md_13608 bytes=539444 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13608.pdf
+2026-08-12 19:56:33,474 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/444MDF1F447E6FD10463DAEDCAA55AEBC11ED.PDF
+2026-08-12 19:56:34,172 [INFO] scraper.rbi: DOWNLOADED md_13609 bytes=992085 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13609.pdf
+2026-08-12 19:56:35,671 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/455MDC05EBF7DB224411BA9BCFB752F1AA5C3.PDF
+2026-08-12 19:56:36,023 [INFO] scraper.rbi: DOWNLOADED md_13598 bytes=445383 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13598.pdf
+2026-08-12 19:56:37,523 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/454MD3627FA91C182430CB1E49367CA5A9896.PDF
+2026-08-12 19:56:38,199 [INFO] scraper.rbi: DOWNLOADED md_13599 bytes=1026546 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13599.pdf
+2026-08-12 19:56:39,702 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/443MD40CA627030B44C78A2B73D3CE3BE4E98.PDF
+2026-08-12 19:56:40,131 [INFO] scraper.rbi: DOWNLOADED md_13610 bytes=451542 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13610.pdf
+2026-08-12 19:56:41,634 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/442MD0BA25C6023EF4C10A10B90D638D6B00D.PDF
+2026-08-12 19:56:42,668 [INFO] scraper.rbi: DOWNLOADED md_13611 bytes=878271 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13611.pdf
+2026-08-12 19:56:44,170 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/441MD53753CC8209F499E84242D70BF5AAB9F.PDF
+2026-08-12 19:56:44,762 [INFO] scraper.rbi: DOWNLOADED md_13612 bytes=915494 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13612.pdf
+2026-08-12 19:56:46,264 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/440MDAD4DA76A732549728DFC3DC643051CA0.PDF
+2026-08-12 19:56:49,598 [INFO] scraper.rbi: DOWNLOADED md_13613 bytes=886003 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13613.pdf
+2026-08-12 19:56:51,099 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/439MD31E8DC47A27C4FE6B43005D22E4F6CB7.PDF
+2026-08-12 19:56:51,786 [INFO] scraper.rbi: DOWNLOADED md_13614 bytes=967909 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13614.pdf
+2026-08-12 19:56:53,285 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/438MDD999C3E155F8479AA7075B10FAF82870.PDF
+2026-08-12 19:56:53,816 [INFO] scraper.rbi: DOWNLOADED md_13615 bytes=450551 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13615.pdf
+2026-08-12 19:56:55,318 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/437MDA9AD9C6F79B74CC8ABD98AAB32B1CD7D.PDF
+2026-08-12 19:56:55,841 [INFO] scraper.rbi: DOWNLOADED md_13616 bytes=533982 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13616.pdf
+2026-08-12 19:56:57,342 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/436MD1749C7AECBD84DA589A814082520A61A.PDF
+2026-08-12 19:56:57,920 [INFO] scraper.rbi: DOWNLOADED md_13617 bytes=790485 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13617.pdf
+2026-08-12 19:56:59,422 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/435MD3E78BD10EF6B4B0D8E7A686F5515990E.PDF
+2026-08-12 19:57:00,026 [INFO] scraper.rbi: DOWNLOADED md_13618 bytes=821849 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13618.pdf
+2026-08-12 19:57:01,528 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/453MD62DE2F74F5754FF89FCE75096ADFA2AF.PDF
+2026-08-12 19:57:01,930 [INFO] scraper.rbi: DOWNLOADED md_13600 bytes=429593 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13600.pdf
+2026-08-12 19:57:03,433 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/452MD687C391BD41D4A4BA803192EC00E5334.PDF
+2026-08-12 19:57:03,984 [INFO] scraper.rbi: DOWNLOADED md_13601 bytes=914539 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13601.pdf
+2026-08-12 19:57:05,487 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/451MD722AF863DDEA43F29EA4828F2038670D.PDF
+2026-08-12 19:57:06,074 [INFO] scraper.rbi: DOWNLOADED md_13602 bytes=969071 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13602.pdf
+2026-08-12 19:57:07,577 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/459MD246DBC64D787490CA734181844D21432.PDF
+2026-08-12 19:57:09,120 [INFO] scraper.rbi: DOWNLOADED md_13594 bytes=497442 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13594.pdf
+2026-08-12 19:57:10,618 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/458MD364EFCA1964B4A9D88DBC6F0D774C920.PDF
+2026-08-12 19:57:15,218 [INFO] scraper.rbi: DOWNLOADED md_13595 bytes=735509 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13595.pdf
+2026-08-12 19:57:16,721 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/457MDAC203EBBDF604A81958E02BB2C4BB1B1.PDF
+2026-08-12 19:57:17,521 [INFO] scraper.rbi: DOWNLOADED md_13596 bytes=1104021 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13596.pdf
+2026-08-12 19:57:19,018 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/456MDC4C94C45185348009970C11F344F27C4.PDF
+2026-08-12 19:57:19,470 [INFO] scraper.rbi: DOWNLOADED md_13597 bytes=528509 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13597.pdf
+2026-08-12 19:57:20,972 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/468MDF194492AB28E4600BEA9DFBF8D32CC13.PDF
+2026-08-12 19:57:21,414 [INFO] scraper.rbi: DOWNLOADED md_13585 bytes=616827 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13585.pdf
+2026-08-12 19:57:22,918 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/467MD9CF8CD4ED6364DEEAB5E2638BC39ABA8.PDF
+2026-08-12 19:57:23,318 [INFO] scraper.rbi: DOWNLOADED md_13586 bytes=342336 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13586.pdf
+2026-08-12 19:57:24,819 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/466MD8895831DD9DF4F4ABD6342045EB4509C.PDF
+2026-08-12 19:57:25,456 [INFO] scraper.rbi: DOWNLOADED md_13587 bytes=780852 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13587.pdf
+2026-08-12 19:57:26,961 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/465MD03A0FCE0832642DDAAE82DB2FBC920C8.PDF
+2026-08-12 19:57:27,509 [INFO] scraper.rbi: DOWNLOADED md_13588 bytes=971149 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13588.pdf
+2026-08-12 19:57:29,013 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/464MD4F5E2EE83BB848DFB6B3475F8B91F45B.PDF
+2026-08-12 19:57:29,524 [INFO] scraper.rbi: DOWNLOADED md_13589 bytes=777966 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13589.pdf
+2026-08-12 19:57:31,024 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/463MDC5167A28A3B24A2B856804E201261635.PDF
+2026-08-12 19:57:31,666 [INFO] scraper.rbi: DOWNLOADED md_13590 bytes=1103903 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13590.pdf
+2026-08-12 19:57:33,164 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/462MD7323FF342D124FAF9BC3B3F7E4F837A5.PDF
+2026-08-12 19:57:33,617 [INFO] scraper.rbi: DOWNLOADED md_13591 bytes=423239 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13591.pdf
+2026-08-12 19:57:35,121 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/461MD9FAF2CD7550844EE9A70C884DBE4A8A6.PDF
+2026-08-12 19:57:35,709 [INFO] scraper.rbi: DOWNLOADED md_13592 bytes=552900 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13592.pdf
+2026-08-12 19:57:37,207 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/460MD930686EC27D04B4AA9DF4A3481CDD465.PDF
+2026-08-12 19:57:37,849 [INFO] scraper.rbi: DOWNLOADED md_13593 bytes=767668 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13593.pdf
+2026-08-12 19:57:39,353 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/469MDD14C26A537384DFA85C27DFF81A91765.PDF
+2026-08-12 19:57:39,762 [INFO] scraper.rbi: DOWNLOADED md_13584 bytes=628938 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13584.pdf
+2026-08-12 19:57:41,263 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/471MD76C394F39ABC4C0998D865E923481A06.PDF
+2026-08-12 19:57:41,621 [INFO] scraper.rbi: DOWNLOADED md_13582 bytes=413886 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13582.pdf
+2026-08-12 19:57:43,124 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/470MD9D03D4E25E864955B59B7A17DA164DB9.PDF
+2026-08-12 19:57:43,793 [INFO] scraper.rbi: DOWNLOADED md_13583 bytes=511509 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13583.pdf
+2026-08-12 19:57:45,294 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/402MD09973277BFE449CC8E21A0C9634191F2.PDF
+2026-08-12 19:57:45,707 [INFO] scraper.rbi: DOWNLOADED md_13522 bytes=407781 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13522.pdf
+2026-08-12 19:57:47,209 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/403MDB87EB105BA0A40E18A89C5231E301639.PDF
+2026-08-12 19:57:47,618 [INFO] scraper.rbi: DOWNLOADED md_13523 bytes=391088 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13523.pdf
+2026-08-12 19:57:49,127 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/404MDE8BE807BACAC4DA09EA3561C820C7A13.PDF
+2026-08-12 19:57:49,771 [INFO] scraper.rbi: DOWNLOADED md_13524 bytes=397195 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13524.pdf
+2026-08-12 19:57:51,278 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/405MDD58E90A39C3D479CB0CF706F173BF58F.PDF
+2026-08-12 19:57:51,749 [INFO] scraper.rbi: DOWNLOADED md_13525 bytes=399387 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13525.pdf
+2026-08-12 19:57:53,255 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/128MD66C4DDCB167C4DC9A5BD913570CB3D47.PDF
+2026-08-12 19:57:53,879 [INFO] scraper.rbi: DOWNLOADED md_12799 bytes=835149 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12799.pdf
+2026-08-12 19:57:55,387 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MDPSL803EE903174E4C85AFA14C335A5B0909.PDF
+2026-08-12 19:57:56,398 [INFO] scraper.rbi: DOWNLOADED md_11959 bytes=1596789 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11959.pdf
+2026-08-12 19:57:57,900 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/56MD24072017E50D0ED63F9B4414AA756FF0FC72FB66.PDF
+2026-08-12 19:57:58,290 [INFO] scraper.rbi: DOWNLOADED md_11060 bytes=439977 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11060.pdf
+2026-08-12 19:57:59,792 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/55MD0A0C769D62074BCEAEC6F40FD8356870.PDF
+2026-08-12 19:58:00,032 [INFO] scraper.rbi: DOWNLOADED md_11037 bytes=139666 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11037.pdf
+2026-08-12 19:58:01,535 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/407MD23637C77AC6742318BC8906ED8B98BEC.PDF
+2026-08-12 19:58:01,861 [INFO] scraper.rbi: DOWNLOADED md_13552 bytes=307278 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13552.pdf
+2026-08-12 19:58:03,367 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/392MD270320266188FCF9FF0D4C51913E2DD577796EA4.PDF
+2026-08-12 19:58:03,684 [INFO] scraper.rbi: DOWNLOADED md_13343 bytes=285833 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13343.pdf
+2026-08-12 19:58:05,189 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/281MD4079EF84173847849A50F7A00FB229F5.PDF
+2026-08-12 19:58:05,674 [INFO] scraper.rbi: DOWNLOADED md_13214 bytes=361107 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13214.pdf
+2026-08-12 19:58:07,183 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/142MD1111202598527CBD7B6D4BFC9792D568AD07F27D.PDF
+2026-08-12 19:58:07,458 [INFO] scraper.rbi: DOWNLOADED md_12920 bytes=193429 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12920.pdf
+2026-08-12 19:58:08,968 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/137MDEF04E0A142F948C58A9503C136E565AF.PDF
+2026-08-12 19:58:09,577 [INFO] scraper.rbi: DOWNLOADED md_12870 bytes=432305 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12870.pdf
+2026-08-12 19:58:11,085 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/NT117115BA3350C4D4AEABEF8DE4C2BCDE7BB.PDF
+2026-08-12 19:58:11,534 [INFO] scraper.rbi: DOWNLOADED md_12784 bytes=371426 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12784.pdf
+2026-08-12 19:58:13,043 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD12777A587A04E134163B2F6F574B44F9F1C.PDF
+2026-08-12 19:58:13,357 [INFO] scraper.rbi: DOWNLOADED md_13376 bytes=257422 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13376.pdf
+2026-08-12 19:58:14,866 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD126B9CF2E0CABD14471955E50A54D8291F2.PDF
+2026-08-12 19:58:15,329 [INFO] scraper.rbi: DOWNLOADED md_12765 bytes=554759 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12765.pdf
+2026-08-12 19:58:16,830 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/117MDRBIOTCDERIVATIVES20245DEA695183554A20B155CE65F58944DD.PDF
+2026-08-12 19:58:17,361 [INFO] scraper.rbi: DOWNLOADED md_12682 bytes=587907 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12682.pdf
+2026-08-12 19:58:18,867 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/109MDCPNCD797F42D139D741169EB58E637B243FF6.PDF
+2026-08-12 19:58:19,340 [INFO] scraper.rbi: DOWNLOADED md_12592 bytes=371016 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12592.pdf
+2026-08-12 19:58:20,846 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/NOTI98FBA281220235418D645715946F7A2C8905B39411F40.PDF
+2026-08-12 19:58:21,417 [INFO] scraper.rbi: DOWNLOADED md_12581 bytes=702123 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12581.pdf
+2026-08-12 19:58:22,926 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/GSLDIRECTIONS0AF9CACC130344C0A261EAD47F277AF0.PDF
+2026-08-12 19:58:23,382 [INFO] scraper.rbi: DOWNLOADED md_12580 bytes=369705 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12580.pdf
+2026-08-12 19:58:24,891 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/94MDHEDGIN0DE447B3472143D6B3237D5F605E2ADB.PDF
+2026-08-12 19:58:25,408 [INFO] scraper.rbi: DOWNLOADED md_12427 bytes=361533 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12427.pdf
+2026-08-12 19:58:26,906 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/84MD8DAD7C4F379B4875AC9C2D398646B42D.PDF
+2026-08-12 19:58:27,306 [INFO] scraper.rbi: DOWNLOADED md_12163 bytes=265300 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12163.pdf
+2026-08-12 19:58:28,811 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/NT5080C62E3929DE4D70AABB8136B7B5F647.PDF
+2026-08-12 19:58:29,206 [INFO] scraper.rbi: DOWNLOADED md_12108 bytes=274652 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12108.pdf
+2026-08-12 19:58:30,708 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/78CALL95561D4E6ED4441EAE8AB0763E9B5DAE.PDF
+2026-08-12 19:58:31,090 [INFO] scraper.rbi: DOWNLOADED md_12061 bytes=256550 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12061.pdf
+2026-08-12 19:58:32,599 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/NT141DCB01288F6D24552A898041355981711.PDF
+2026-08-12 19:58:32,811 [INFO] scraper.rbi: DOWNLOADED md_11500 bytes=170981 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11500.pdf
+2026-08-12 19:58:34,313 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/32MD3991CCC227A24E61B8EFF6F7DBA065E2.PDF
+2026-08-12 19:58:35,105 [INFO] scraper.rbi: DOWNLOADED md_10495 bytes=1091739 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10495.pdf
+2026-08-12 19:58:36,606 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD3191FD1C01B7704FB9B24E7073F651AB51.PDF
+2026-08-12 19:58:37,253 [INFO] scraper.rbi: DOWNLOADED md_10485 bytes=571577 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10485.pdf
+2026-08-12 19:58:38,758 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/135MD89B55F672F36443FA02C0C53DC207FFF.PDF
+2026-08-12 19:58:39,121 [INFO] scraper.rbi: DOWNLOADED md_12839 bytes=307849 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12839.pdf
+2026-08-12 19:58:40,624 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/121MDOI2507202427D16C96B42C4E0B849FFD9732752B68.PDF
+2026-08-12 19:58:41,025 [INFO] scraper.rbi: DOWNLOADED md_12710 bytes=366708 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12710.pdf
+2026-08-12 19:58:42,528 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/5MD2603201979CA1390E9E546869B2A9A92614DEDBF.PDF
+2026-08-12 19:58:43,093 [INFO] scraper.rbi: DOWNLOADED md_11510 bytes=463318 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11510.pdf
+2026-08-12 19:58:44,601 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD11_04012018B4D0DB4E6DA04CC4B7AF62AA03D902BE.PDF
+2026-08-12 19:58:45,075 [INFO] scraper.rbi: DOWNLOADED md_11200 bytes=493318 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11200.pdf
+2026-08-12 19:58:46,584 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD01220220176458378BB80A417592B7CE4DB57B123A.PDF
+2026-08-12 19:58:46,884 [INFO] scraper.rbi: DOWNLOADED md_10868 bytes=218698 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10868.pdf
+2026-08-12 19:58:48,384 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/05MD56DF4232873F466191DC23F39F1012DD.PDF
+2026-08-12 19:58:48,642 [INFO] scraper.rbi: DOWNLOADED md_10738 bytes=150409 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10738.pdf
+2026-08-12 19:58:50,152 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/06MDE170516F633150EBCFE438084174F7DECCDC20C.PDF
+2026-08-12 19:58:50,590 [INFO] scraper.rbi: DOWNLOADED md_10404 bytes=324753 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10404.pdf
+2026-08-12 19:58:52,100 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/10MD06102016E550559916C346E0BC93720658286729.PDF
+2026-08-12 19:58:52,990 [INFO] scraper.rbi: DOWNLOADED md_10637 bytes=1304624 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10637.pdf
+2026-08-12 19:58:54,496 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/02MD787706E669D641C090B415DBE22DEE29.PDF
+2026-08-12 19:58:55,076 [INFO] scraper.rbi: DOWNLOADED md_10191 bytes=330621 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10191.pdf
+2026-08-12 19:58:56,581 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/03MD945692290C104C5595AEDAC89AE78788.PDF
+2026-08-12 19:58:57,272 [INFO] scraper.rbi: DOWNLOADED md_10192 bytes=433170 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10192.pdf
+2026-08-12 19:58:58,771 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/04MD5127742FD0914D54B5EC4ECA8076F325.PDF
+2026-08-12 19:58:59,273 [INFO] scraper.rbi: DOWNLOADED md_10193 bytes=512282 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10193.pdf
+2026-08-12 19:59:00,782 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/07MIP0101168C51C4CB845342D09E8A4A613B1F1C6D.PDF
+2026-08-12 19:59:01,172 [INFO] scraper.rbi: DOWNLOADED md_10196 bytes=276116 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10196.pdf
+2026-08-12 19:59:02,681 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/08MDROA112016989330DF1FF9494784DAC32B488E6AE4.PDF
+2026-08-12 19:59:03,090 [INFO] scraper.rbi: DOWNLOADED md_10197 bytes=202192 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10197.pdf
+2026-08-12 19:59:04,599 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/09MDD593B2F2D48648C8AB3D37625C9F245D.PDF
+2026-08-12 19:59:06,161 [INFO] scraper.rbi: DOWNLOADED md_10198 bytes=541003 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10198.pdf
+2026-08-12 19:59:07,661 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/12MDFB8AD1B34BCB4D0A8F6869DA4A53082E.PDF
+2026-08-12 19:59:08,129 [INFO] scraper.rbi: DOWNLOADED md_10201 bytes=498359 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10201.pdf
+2026-08-12 19:59:09,631 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/13MDRD77DCF42C4E64B6C9A83C24EF5D4E188.PDF
+2026-08-12 19:59:10,686 [INFO] scraper.rbi: DOWNLOADED md_10202 bytes=1475472 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10202.pdf
+2026-08-12 19:59:12,187 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/14MDM1120153F2FD5CC455640E78D139304BC7C080F.PDF
+2026-08-12 19:59:12,758 [INFO] scraper.rbi: DOWNLOADED md_10203 bytes=242849 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10203.pdf
+2026-08-12 19:59:14,260 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/16MCDF82CC17C279247FCB66E2A39BDAD38F6.PDF
+2026-08-12 19:59:14,761 [INFO] scraper.rbi: DOWNLOADED md_10205 bytes=226939 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10205.pdf
+2026-08-12 19:59:16,263 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/11MDEGS1205163428383952204B77831A3A086E82FDDF.PDF
+2026-08-12 19:59:16,820 [INFO] scraper.rbi: DOWNLOADED md_10395 bytes=531565 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10395.pdf
+2026-08-12 19:59:18,320 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD03_29031928C70FB929814CFCA72C7D3ED5A0EDE4.PDF
+2026-08-12 19:59:18,829 [INFO] scraper.rbi: DOWNLOADED md_11518 bytes=342032 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11518.pdf
+2026-08-12 19:59:20,329 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/395MDDCEE303B29F7409B867FAAEC10242C4A.PDF
+2026-08-12 19:59:20,815 [INFO] scraper.rbi: DOWNLOADED md_13362 bytes=514463 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13362.pdf
+2026-08-12 19:59:22,324 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD39472AB49ECE87F40868FBB8F0714E1627F.PDF
+2026-08-12 19:59:22,822 [INFO] scraper.rbi: DOWNLOADED md_13361 bytes=641280 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13361.pdf
+2026-08-12 19:59:24,329 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/393MD748717FE591F47CA86031C181677D39B.PDF
+2026-08-12 19:59:24,791 [INFO] scraper.rbi: DOWNLOADED md_13360 bytes=457964 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13360.pdf
+2026-08-12 19:59:26,295 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/406MD184DBA53FAE148368AD6D3ACF0DB824E.PDF
+2026-08-12 19:59:26,762 [INFO] scraper.rbi: DOWNLOADED md_13526 bytes=255667 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13526.pdf
+2026-08-12 19:59:28,271 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/401MDDAB7489361B4431DB9A075997E990529.PDF
+2026-08-12 19:59:28,626 [INFO] scraper.rbi: DOWNLOADED md_13502 bytes=337612 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13502.pdf
+2026-08-12 19:59:30,133 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/396MDD002E435ECA145509929FC3ACBCFD0E9.PDF
+2026-08-12 19:59:30,425 [INFO] scraper.rbi: DOWNLOADED md_13374 bytes=248167 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13374.pdf
+2026-08-12 19:59:31,924 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/NT79258FF36ECA8F4886B3B01F55D166C2B2.PDF
+2026-08-12 19:59:32,235 [INFO] scraper.rbi: DOWNLOADED md_12898 bytes=274853 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12898.pdf
+2026-08-12 19:59:33,734 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/141MD7D7F25DEBF1F48449E20D685E4B014E5.PDF
+2026-08-12 19:59:34,276 [INFO] scraper.rbi: DOWNLOADED md_12896 bytes=439103 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12896.pdf
+2026-08-12 19:59:35,786 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD123C0C6F7FF70E34F3DA5623B9E72AB3181.PDF
+2026-08-12 19:59:36,775 [INFO] scraper.rbi: DOWNLOADED md_12715 bytes=1057805 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12715.pdf
+2026-08-12 19:59:38,283 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/111MDONBBPS87BA4103916D4B21AE117F1443020ADB.PDF
+2026-08-12 19:59:38,704 [INFO] scraper.rbi: DOWNLOADED md_12616 bytes=370667 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12616.pdf
+2026-08-12 19:59:40,214 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/82MDPPIS2708202181CF0A6FCD1B47B88CAE8E92A228B160.PDF
+2026-08-12 19:59:40,833 [INFO] scraper.rbi: DOWNLOADED md_12156 bytes=724805 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12156.pdf
+2026-08-12 19:59:42,340 [INFO] scraper.rbi: GET attempt=1 url=https://rbidocs.rbi.org.in/rdocs/notification/PDFs/MD51170116C65788DE8A564165B74D5FECE0626A73.PDF
+2026-08-12 19:59:43,537 [INFO] scraper.rbi: DOWNLOADED md_10833 bytes=1392341 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10833.pdf
+2026-08-12 19:59:43,607 [INFO] pipeline.weeks1to5: === WEEK 2: extraction pilot + risk checks ===
+2026-08-12 19:59:43,891 [INFO] extraction.text: Extracted md_11322 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_11322.txt (9037 chars)
+2026-08-12 19:59:47,603 [INFO] extraction.text: Extracted md_10476 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10476.txt (120885 chars)
+2026-08-12 19:59:49,251 [INFO] extraction.text: Extracted md_13443 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13443.txt (51925 chars)
+2026-08-12 19:59:49,918 [INFO] extraction.text: Extracted md_13442 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13442.txt (29231 chars)
+2026-08-12 19:59:50,596 [INFO] extraction.text: Extracted md_13271 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13271.txt (26819 chars)
+2026-08-12 19:59:51,152 [INFO] extraction.text: Extracted md_13272 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13272.txt (26413 chars)
+2026-08-12 19:59:51,800 [INFO] extraction.text: Extracted md_13273 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13273.txt (26344 chars)
+2026-08-12 19:59:52,397 [INFO] extraction.text: Extracted md_13274 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13274.txt (26342 chars)
+2026-08-12 19:59:52,993 [INFO] extraction.text: Extracted md_13275 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13275.txt (26696 chars)
+2026-08-12 19:59:53,613 [INFO] extraction.text: Extracted md_13276 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13276.txt (25291 chars)
+2026-08-12 19:59:54,404 [INFO] extraction.text: Extracted md_12586 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12586.txt (37425 chars)
+2026-08-12 19:59:57,968 [INFO] extraction.text: Extracted md_13399 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13399.txt (165080 chars)
+2026-08-12 20:00:01,648 [INFO] extraction.text: Extracted md_13400 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13400.txt (147763 chars)
+2026-08-12 20:00:02,011 [INFO] extraction.text: Extracted md_13319 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13319.txt (16466 chars)
+2026-08-12 20:00:09,506 [INFO] extraction.text: Extracted md_13136 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13136.txt (218796 chars)
+2026-08-12 20:00:09,550 [INFO] metadata.temporal: Temporal coverage: 4/15 usable dates
+2026-08-12 20:00:09,632 [INFO] preprocessing.segmenter: Segmented 600 paragraphs across corpus
+2026-08-12 20:00:09,632 [ERROR] pipeline.weeks1to5: Early supplementary harvest failed: 'SupplementaryHarvester' object has no attribute 'base'
+Traceback (most recent call last):
+  File "/Users/karan/Downloads/carbon-tracker 3/Capstone_project/scripts/run_weeks_1_to_5.py", line 377, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/Users/karan/Downloads/carbon-tracker 3/Capstone_project/scripts/run_weeks_1_to_5.py", line 101, in main
+    ann = checks.annotation_feasibility_pilot(n_items=12)
+  File "/Users/karan/Downloads/carbon-tracker 3/Capstone_project/src/metadata/week2_checks.py", line 348, in annotation_feasibility_pilot
+    df = pd.read_csv(cand)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/io/parsers/readers.py", line 873, in read_csv
+    return _read(filepath_or_buffer, kwds)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/io/parsers/readers.py", line 300, in _read
+    parser = TextFileReader(filepath_or_buffer, **kwds)
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/io/parsers/readers.py", line 1645, in __init__
+    self._engine = self._make_engine(f, self.engine)
+                   ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/io/parsers/readers.py", line 1922, in _make_engine
+    return mapping[engine](f, **self.options)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.14/lib/python3.14/site-packages/pandas/io/parsers/c_parser_wrapper.py", line 95, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+                   ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "pandas/_libs/parsers.pyx", line 575, in pandas._libs.parsers.TextReader.__cinit__
+pandas.errors.EmptyDataError: No columns to parse from file

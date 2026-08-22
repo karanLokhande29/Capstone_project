@@ -1,0 +1,14 @@
+2026-08-12 19:25:45,785 [INFO] pipeline.weeks1to5: === WEEK 1: scrape + matrix v0 ===
+2026-08-12 19:35:41,803 [INFO] pipeline.weeks1to5: === WEEK 2: extraction pilot + risk checks ===
+2026-08-12 19:35:59,916 [INFO] pipeline.weeks1to5: === WEEK 1: scrape + matrix v0 ===
+2026-08-12 19:36:01,756 [INFO] pipeline.weeks1to5: === WEEK 2: extraction pilot + risk checks ===
+2026-08-12 19:39:44,787 [INFO] pipeline.weeks1to5: === WEEK 3: full extract + segment + matrix v1 ===
+2026-08-12 19:39:46,379 [INFO] pipeline.weeks1to5: === WEEK 4: supplementary + deontic + T1 candidates ===
+2026-08-12 19:40:20,894 [INFO] pipeline.weeks1to5: === WEEK 5: stratified sample + validation infrastructure ===
+2026-08-12 19:41:44,500 [INFO] pipeline.weeks1to5: === WEEK 1: scrape + matrix v0 ===
+2026-08-12 19:59:43,607 [INFO] pipeline.weeks1to5: === WEEK 2: extraction pilot + risk checks ===
+2026-08-12 20:00:09,632 [ERROR] pipeline.weeks1to5: Early supplementary harvest failed: 'SupplementaryHarvester' object has no attribute 'base'
+2026-08-12 20:00:47,733 [INFO] pipeline.weeks1to5: === WEEK 1: scrape + matrix v0 ===
+2026-08-12 20:00:50,741 [INFO] pipeline.weeks1to5: === WEEK 2: extraction pilot + risk checks ===
+2026-08-12 20:00:59,051 [INFO] pipeline.weeks1to5: === WEEK 3: full extract + segment + matrix v1 ===
+2026-08-12 20:13:04,871 [INFO] pipeline.weeks1to5: === WEEK 4: supplementary + deontic + T1 candidates ===

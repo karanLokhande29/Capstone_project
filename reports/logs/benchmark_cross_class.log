@@ -1,0 +1,5 @@
+2026-08-12 19:40:20,891 [INFO] benchmark.cross_class: Cross-class candidate matches=0 level=paragraph by_flag={}
+2026-08-12 20:24:08,143 [INFO] benchmark.cross_class: Cross-class candidate matches=410 level=paragraph by_flag={'shared': 395, 'absent': 11, 'class-specific': 4}
+2026-08-12 20:25:09,395 [INFO] benchmark.cross_class: Cross-class candidate matches=410 level=paragraph by_flag={'shared': 395, 'absent': 11, 'class-specific': 4}
+2026-08-12 20:26:18,550 [INFO] benchmark.cross_class: Cross-class candidate matches=410 level=paragraph by_flag={'shared': 395, 'absent': 11, 'class-specific': 4}
+2026-08-12 20:27:08,559 [INFO] benchmark.cross_class: Cross-class candidate matches=928 level=paragraph by_flag={'shared': 880, 'absent': 39, 'class-specific': 9}

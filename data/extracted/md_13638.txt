@@ -1,0 +1,712 @@
+भारतीय �रज़व र् बक�
+Reserve Bank of India
+RBI/DoS/2026-27/415
+DoS.CO.DSG.9/33.01.001/2026-27 July 31, 2026
+Reserve Bank of India (Commercial Banks – Supervisory Returns) Directions,
+2026
+Table of Contents
+Chapter I - Preliminary ............................................................................................. 2
+A. Short Title and Commencement ..................................................................... 2
+B. Applicability ..................................................................................................... 2
+C. Definitions ........................................................................................................ 2
+Chapter II - Governance and Oversight .................................................................. 4
+A. Role of the Board and Senior Management ................................................... 4
+B. Data Architecture and IT Infrastructure ......................................................... 4
+C. Accuracy and Integrity in Reporting .............................................................. 5
+Chapter III - Filing of Supervisory Returns ............................................................ 6
+A. Operational Guidelines .................................................................................... 6
+B. List of Applicable Returns .............................................................................. 6
+C. Timelines ........................................................................................................ 16
+D. Exceptions ...................................................................................................... 16
+E. Penalties ......................................................................................................... 18
+F. Other Instructions .......................................................................................... 18
+Chapter IV - Repeal and Other Provisions ........................................................... 19
+A. Repeal and Saving ......................................................................................... 19
+B. Application of Other Laws Not barred ......................................................... 19
+C. Interpretations ................................................................................................ 20
+पयर्वेक्षण िवभाग, भारतीय �रज़व र्ब�क, क��ीय कायार्लय, मेकर टावर-ई, 20व� मंिजल, कफ परेड, कोलाबा, मुंबई-400 005
+दरू भाष: 022-6989 2053 ई-मले : dsgdosco.rs@rbi.org.in
+Department of Supervision, Reserve Bank of India, Central Office, Maker Tower-E, 20th floor, Cuffe Parade, Colaba, Mumbai- 400 005
+Tel: 022-6989 2053 Email: dsgdosco.rs@rbi.org.in
+�हदं ी आसान ह,ै इसका �योग बढ़ाइए
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+In exercise of powers conferred under Section 27 and Section 35-A of the Banking
+Regulation Act, 1949, Chapter III-A of the Reserve Bank of India Act, 1934, and all
+other provisions / laws enabling the Reserve Bank of India (‘RBI’) in this regard, RBI
+being satisfied that it is necessary and expedient in the public interest so to do, hereby,
+issues Directions hereinafter specified.
+Chapter I - Preliminary
+A. Short Title and Commencement
+1. These Directions shall be called the Reserve Bank of India (Commercial Banks -
+Supervisory Returns) Directions, 2026.
+2. These Directions shall come into effect immediately upon issuance.
+B. Applicability
+3. These Directions shall be applicable to Commercial Banks (hereinafter
+collectively referred to as 'banks' and individually as 'bank').
+For the purpose of these Directions, ‘Commercial Banks’ means banking
+companies (other than Small Finance Banks, Payment Banks, and Local Area
+Banks), corresponding new banks, and the State Bank of India, as defined
+respectively under clauses (c), (da), and (nc) of Section 5 of the Banking
+Regulation Act, 1949.
+C. Definitions
+4. In these Directions, unless the context states otherwise, the terms herein shall
+bear the meaning assigned to them below:
+(1) ‘Centralised Information Management System (CIMS)’ refers to an online
+platform of RBI for return submission, data dissemination, and other related
+purposes.
+(2) ‘Supervisory Returns’ refer to all periodic / ad-hoc data submitted to RBI in
+formats prescribed from time to time, irrespective of the technology
+platform, periodicity, and the mode of submission.
+2
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+5. All other expressions unless defined herein shall have the same meaning as
+have been assigned to them under the Reserve Bank of India Act, 1934, Banking
+Regulation Act, 1949, the Companies Act, 2013, or any statutory modification or
+re-enactment thereto or other regulations issued by RBI or the Glossary of Terms
+published by RBI or as used in commercial parlance, as the case may be.
+3
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Chapter II - Governance and Oversight
+A. Role of the Board and Senior Management
+6. The Board and Senior Management shall include the identification, assessment,
+and management of data quality risks as part of its overall risk management
+framework. The framework shall include standards for both in-house and
+outsourced risks for data-related processes, policies on data confidentiality,
+integrity, availability, and risk management.
+7. The bank shall ensure that the risk data aggregation capabilities and risk
+reporting practices are fully documented and subjected to high standards of
+validation that are aligned with the bank’s other independent risk management
+reviews. Validation of risk data aggregation and risk reporting practices should
+be conducted by staff with specific Information Technology (IT), data, and
+reporting expertise. The Board and Senior Management shall ensure that
+adequate resources are deployed for this purpose.
+8. The Board and Senior Management shall ensure that the ability of the bank to
+aggregate and report data at a consolidated level or at any relevant level within
+the organisation is not hindered by its group structure (e.g., sub-consolidated
+level, jurisdiction of operation level). Data aggregation and reporting shall be
+independent of the choices that the bank makes regarding its legal organisation
+and geographical presence, subject to the statutory limitations, if any.
+9. While considering any acquisition / divestiture, new product development, IT
+change initiatives, the due diligence process shall consider the impact of such
+activities on data aggregation and reporting. In such cases, it shall be ensured
+that data aggregation and reporting facilities are integrated within the existing
+reporting framework within a timeframe.
+B. Data Architecture and IT Infrastructure
+10. The bank shall design, build, and maintain the data architecture and supporting
+IT infrastructure for complete, accurate, and timely data aggregation as well as
+reporting not only in normal times but also during times of stress or crisis.
+4
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+11. The data aggregation and reporting practices shall be considered an essential
+part of the bank’s business continuity planning process and subject to a business
+impact analysis.
+12. Roles and responsibilities shall be established among business owners and the
+IT team so as to ensure that the data is kept current and aligned with the data
+definitions and with the bank’s data reporting policies.
+13. The bank should ensure that the resources and IT infrastructure are adequate to
+meet a broad range of on-demand, ad hoc reporting requests, including requests
+during stress / crisis event and to meet supervisory queries. The bank should be
+able to generate subsets of data based on scenarios requested by the
+Supervisors. For example, the bank should be able to accurately aggregate data
+on exposure for a particular period for a specific industry cluster in a district.
+C. Accuracy and Integrity in Reporting
+14. All returns / risk reports shall be reconciled with the bank’s own sources, including
+accounting data where appropriate, to ensure accuracy, consistency, and
+completeness of the same.
+15. The bank shall maintain proper records of sources and aggregation rules for
+generating returns’ data.
+16. The bank shall strive to achieve a higher degree of automation in the generation
+of data for filing of returns.
+17. The bank should measure and monitor the accuracy of data and develop
+appropriate escalation channels and action plans to rectify any deterioration in
+data quality.
+5
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Chapter III - Filing of Supervisory Returns
+A. Operational Guidelines
+18. RBI has introduced various online portals, links to which are available on RBI
+website, for filing all applicable online returns by the bank. The bank shall submit
+all the returns through online mode in the formats and in the manner as
+communicated to them, unless specified otherwise. Returns submitted in hard
+copy format through hand delivery / post / courier, or in soft copy format through
+emails, shall not be accepted (i.e., would not be deemed to have been submitted
+by the bank), unless prescribed to be submitted in such format. As a contingency
+measure, in case of non-availability of online portals, the bank may be advised
+to submit the returns through email. However, the bank shall re-submit the return
+through online mode as soon as the online portal becomes available. The list of
+returns and periodicity are also available on RBI website.
+19. The bank is provided with a Super User Credential for User with defined access
+rights who, in turn, can create other users (with different roles such as maker and
+checker) with required access rights. The bank can monitor the status of its
+returns’ submission on the portal. Return formats, guidance notes on returns
+filing, validation rules, help documents for submission of data are available on
+the respective reporting portals.
+20. The bank shall report data on its domestic and overseas operations, including
+the operations of IFSC Banking Units (IBUs) and Overseas Banking Units
+(OBUs), wherever applicable.
+B. List of Applicable Returns
+21. The bank shall submit the applicable returns with accurate and complete data,
+strictly within the prescribed timelines as given below:
+6
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+1 Return on Asset Liability and a. Monthly 30th April / All banks
+Off-Balance Sheet 31st May /
+Exposures (ALE) 31st July /
+31st August /
+31st October /
+30th November /
+31st January /
+28th or 29th
+February as
+applicable
+b. Quarterly 31st March /
+30th June /
+30th September /
+31st December
+ALE return contains the granular breakup of asset and liability items along with
+details regarding off-balance sheet and derivative exposures.
+2 Return on Asset Quality a. Monthly: 30th April / All banks
+(RAQ) Section-9 of 31st May /
+the return 31st July /
+only 31st August /
+31st October /
+30th November /
+31st January /
+28th or 29th
+February as
+applicable
+b. Quarterly 30th June /
+30th September /
+31st December
+c. Yearly 31st March
+RAQ contains asset classification and provisioning for the advances and
+investment portfolio of the bank. This return also contains sector-wise granular
+break up of credit and investment portfolio.
+3 Return on Operating Quarterly 31st March / All banks
+Results (ROR) 30th June /
+30th September /
+31st December
+ROR contains data on quarterly reporting of profit and loss statement, with
+granular break up of interest income and interest expenses.
+4 Risk Based Supervision Quarterly 31st March / All banks
+Return (RBS) 30th June /
+30th September /
+31st December
+7
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+RBS return captures information on rating-wise distribution of standard
+advances, rating-wise distribution of non-Statutory Liquidity Ratio investments,
+sale of loans and securitisation, credit card business carried out by the bank
+or through its subsidiaries, housing finance and infrastructure finance.
+5 Liquidity Return (LR) a. Fortnightly 15th March/ All banks
+(Part A) 15th April/
+15th May/
+15th June/
+15th July/
+15th August/
+15th September/
+15th October/
+15th November/
+15th December/
+15th January/
+15th February
+b. Monthly 30th April /
+(Part A and 31st May /
+Part B) 31st July /
+31st August /
+31st October /
+30th November /
+31st January /
+28th or 29th
+February as
+applicable
+c. Quarterly 31st March /
+(Part A, Part 30th June /
+B, and Part 30th September /
+C) 31st December
+The LR on structural liquidity includes behavioural maturity profile of various
+components of on / off-balance sheet items on the basis of assumptions and
+trend analysis supported by time series analysis having five parts, viz. (i)
+‘Domestic Currency - Indian Operations’, (ii) ‘Foreign Currency - Indian
+Operations’, (iii) ‘Combined Indian Operations - Domestic and Foreign
+Currency’ i.e. solo bank level, (iv) ‘Overseas Branch Operations - Country-
+Wise’, and (v) ‘For Consolidated Bank Operations’.
+6 Return on Capital Quarterly 31st March / All banks
+Adequacy-III (RCA - III) 30th June /
+30th September /
+31st December
+RCA-III contains data on computation of capital base, computation of risk
+weighted assets, and risk-based capital as per BASEL - III Capital Adequacy
+Framework.
+8
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+7 Return on Interest Rate Monthly 31st March / All banks
+Sensitivity- (IRS) 30th April /
+31st May /
+30th June /
+31st July /
+31st August /
+30th September /
+31st October /
+30th November /
+31st December /
+31st January /
+28th or 29th
+February as
+applicable
+IRS return captures the bank’s exposure to the interest rate risk, traditional
+gap, and duration gap analysis.
+8 Return on Large Credits Quarterly 31st March / All banks
+(RLC) 30th June /
+30th September /
+31st December
+Section 1 of RLC captures information of all individual borrowers (excluding
+other banks) having exposure exceeding 15 per cent of regulatory capital for a
+minimum of top 50 large borrowers. In Section 2, all borrower groups having
+total exposure exceeding 30 per cent of bank’s regulatory capital for a
+minimum of top 50 large borrower groups shall be reported; Section 3 captures
+top 20 exposure to other banks irrespective of the percentage of such
+exposures to the bank’s capital funds.
+9 Central Repository of Monthly 31st March / All banks
+Information on Large 30th April /
+Credits (CRILC) – SCBs 31st May /
+30th June /
+31st July /
+31st August /
+30th September /
+31st October /
+30th November /
+31st December /
+31st January /
+28th or 29th
+February as
+applicable
+CRILC return captures credit information of borrowers having aggregate fund-
+based and non-fund-based exposure of ₹5 crore and above from the bank. In
+case the bank does not have any borrower with aggregate exposure of ₹5 crore
+and above for a reporting month, it shall submit a ‘NIL’ return.
+9
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+10 Red Flagged Account As and when Detection Date All banks
+Return (RFA)
+This return contains data on RFA borrowers.
+11 Return on Defaulted Weekly Friday (or All banks
+Borrowers (RDB) preceding
+working day if
+Friday happens to
+be a holiday)
+This return captures information of defaulted borrowers (Global Operations). It
+has two sections; reporting of borrowers defaulted during the week and
+reporting of borrowers moved out of default category during the week,
+containing details like borrower PAN, borrower name, date of default, funded
+amount outstanding as on reporting date, non-funded amount outstanding as
+on reporting date, total amount outstanding (funded + non-funded) as on
+reporting date. In case the bank does not have any large borrower with ‘default
+move-in / move-out’ positions during the week, it shall submit a ‘NIL’ return.
+12 Return on Ownership and Half-yearly 31st March / Public Sector
+Control (ROC) 30th September Banks (PSBs)
+and Private
+Sector Banks
+(PVBs): entire
+return.
+Foreign Banks
+(FBs): Only
+Section 2 - part
+c and part d
+ROC captures details of ownership pattern of the bank and details of Executive
+/ Whole Time Directors and Non-Executive Directors including details of other
+companies in which any such officials are interested along with nature of
+interests.
+13 Return on Subsidiaries / Half-yearly 31st March / Banks having
+Joint Ventures (JV) / 30th September Subsidiaries /
+Associates (RoS) JV / Associates
+The return contains information / data on financial performance, large
+exposure exceeding 10 per cent of bank’s capital funds and ownership details
+of each subsidiary / joint venture / associate of the bank.
+14 Consolidated Prudential Half-yearly 31st March / Banks having
+Return (CPR) 30th September Subsidiaries /
+JV / Associates
+10
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+CPR contains consolidated prudential information at the level of the group to
+which the supervised bank belongs and is derived from the consolidated
+balance sheet and profit and loss account, prepared as per Reserve Bank of
+India (Commercial Banks – Financial Statements: Presentation and
+Disclosures) Directions, 2025 on preparation of Consolidated Financial
+Statements. For reporting in CPR, the consolidation may exclude group
+companies which are engaged in (a) insurance business, and (b) businesses
+not pertaining to financial services. Investment in Regional Rural Banks
+(RRBs) sponsored by the bank shall be treated as per Reserve Bank of India
+(Commercial Banks – Financial Statements: Presentation and Disclosures)
+Directions, 2025.
+15 Balance Sheet Analysis Yearly 31st March All banks
+(BSA)
+BSA return captures audited accounts of the bank with notes on accounts. This
+return contains total capital and liabilities, assets, details of capital, reserves
+and surplus, deposits, cash and balances, investments, advances, fixed
+assets, contingent liabilities, profit and loss details, interest earned, other
+income, interest expended and operating expenses, quantum-wise gross non-
+performing assets.
+16 Return on Asset Liability and Quarterly 31st March / PSBs and
+Off-Balance Sheet 30th June / PVBs having
+Exposures (ALO) 30th September / overseas
+31st December operations
+Branch-wise break up of assets and liabilities on the basis of residual maturity /
+next repricing date, gap, off-balance sheet exposures, unreconciled entries
+with other branches, with other Indian banks’ branches in same foreign centre
+and accounts with other banks.
+17 Return on Large Exposures Quarterly 31st March / PSBs and
+(RLE) 30th June / PVBs having
+30th September / overseas
+31st December operations
+RLE captures the reporting of large exposures and investments made during
+the quarter and is divided into three sections- listing of customers having limits
+or outstanding of USD 5 million and above, listing of new customers having
+limits or outstanding of USD 1 to 5 million, and investments made during the
+quarter amounting to more than USD 1 million.
+18 Return on Country Quarterly 31st March / PSBs and
+Exposures and Maturity 30th June / PVBs having
+(CEM) 30th September / overseas
+31st December operations
+CEM captures country-wise concentration of credit exposures at each
+overseas geography.
+19 Return on Profitability Quarterly 31st March / PSBs and
+(ROP) 30th June / PVBs having
+30th September / overseas
+31st December operations
+11
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+ROP captures the profitability figures for the current quarter and the cumulative
+position (Year to Date) of all overseas branches.
+20 Equity Investment in Capital Weekly Friday (or AXIS Bank,
+Market preceding Bank of
+working day if Baroda, Bank
+Friday happens of India, Canara
+to be a holiday) Bank, HDFC
+Bank, ICICI
+Bank, Indian
+Overseas
+Bank, J&K
+Bank, Punjab
+National Bank,
+State Bank of
+India, Union
+Bank of India
+only
+This return is submitted by select banks on a weekly basis to report the amount
+of equities purchased from or sold in the capital market during the relevant
+week.
+21 Return on Connected Quarterly 31st March / All banks
+Exposure (RCE) 30th June /
+30th September /
+31st December
+The return captures information on exposures to borrowers including their
+group companies / associates / business partners / subsidiaries, exposures to
+significant shareholders and / or their ‘Interests / Related Firms’, and
+exposures to directors, managers, and their interested enterprises.
+22 Leverage Ratio Return Quarterly 31st March / All banks
+(LRR) 30th June /
+30th September /
+31st December
+LRR captures data on the key drivers of Basel III leverage ratio.
+23 Large Exposure Framework Quarterly 31st March / All banks
+Return (LEF) 30th June /
+30th September /
+31st December
+LEF return captures details about the bank’s 20 largest exposures to
+counterparties, exposure with values equal to or above 10 per cent of Tier 1
+Capital, bank’s other exposures and exempted exposures.
+12
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+24 Basel Liquidity Returns a. Monthly - 31st March / All banks
+(BLR) BLR 1, 30th April /
+BLR 2, 31st May /
+BLR 4, 30th June /
+BLR 5, and 31st July /
+BLR 6 31st August /
+30th September /
+31st October /
+30th November /
+31st December /
+31st January /
+28th or 29th
+February as
+applicable
+b. Quarterly - 31st March / All banks
+BLR 3 and 30th June /
+BLR 7 30th September /
+31st December
+BLR contains seven returns viz. BLR 1, BLR 2, BLR 3, BLR 4, BLR 5, BLR 6,
+and BLR 7. BLR captures data on the unencumbered High Quality Liquid
+Assets (HQLAs) that can be converted into cash to meet liquidity needs for a
+30 calendar days horizon under a significantly severe liquidity stress scenario
+specified by supervisors. It also contains data on Liquidity Coverage Ratio
+(LCR) and Net Stable Funding Ratio (NSFR).
+25 Monthly Return on Monthly 31st March / All banks
+Information related to 30th April /
+Stressed MSME Sub- 31st May /
+ordinate Debt Scheme 30th June /
+31st July /
+31st August /
+30th September /
+31st October /
+30th November /
+31st December /
+31st January /
+28th or 29th
+February as
+applicable
+This return contains information on Personal Loans sanctioned to promoters
+of distressed MSMEs under ‘Credit Guarantee Scheme for Subordinate Debt
+(CGSSD)’. It contains identifier information of promoters and the eligible
+MSME and operational information on the loan sanctioned under CGSSD and
+the MSME loan account.
+13
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+26 Report on Financial Quarterly 31st March / All Financial
+Conglomerates (FINCON) 30th June / Conglomerates
+30th September / for which RBI is
+31st December the Principal
+Regulator
+FINCON return is submitted by a designated Financial Conglomerate (FC) to
+the Principal Regulator. It captures information on Group Structure like
+Specified Financial Intermediaries (SFIs), Non-specified Financial
+Intermediaries (NSFIs), and Non-Financial Entities (NFEs) of FC, Balance
+Sheet Parameters, Intra-group Transactions and Exposures (ITEs),
+Governance and Miscellaneous Qualitative Parameters.
+27 Half-yearly Review of Half-yearly 31st March / All banks
+Investment Portfolio Return 30th September
+This return captures information on qualitative / quantitative review of entire
+investment portfolio of the bank for the half-year.
+28 Allocation of Branches to Yearly 31st March PSBs only
+Statutory Branch Auditors
+(SBAs)
+PSBs are required to upload the details of branches allocated to their SBAs,
+on an annual basis, in the Auditor Allocation System (AAS) application
+maintained by RBI.
+29 Return on Digital Banking Monthly 31st March / Banks having
+Units (DBUs) 30th April / DBUs
+31st May /
+30th June /
+31st July /
+31st August /
+30th September /
+31st October /
+30th November /
+31st December /
+31st January /
+28th or 29th
+February as
+applicable
+This return captures the status of performance of the DBUs established by the
+applicable banks on an aggregate level as well as detailed metrics like number
+of digital services offered availability of these services, infrastructure related
+parameters, number and amount of transactions done through DBUs.
+30 Daily Liquidity Data Weekly Friday (or PSBs, PVBs,
+preceding and select FBs
+working day if
+Friday happens
+to be a holiday)
+14
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+This return captures daily outstanding balances in various types of deposits
+accounts, borrowings from RBI / market, reverse repo, intraday liquidity facility
+from RBI, net flows from payments and settlement systems.
+31 Financial Soundness Quarterly 31st March / PSBs and
+Indicators (FSI) 30th June / PVBs
+30th September /
+31st December
+This is a special return for furnishing consolidated FSI to International
+Monetary Fund (IMF). Data is compiled as per the guidelines issued by IMF,
+circulated to all applicable banks.
+32 Supervisory Return on Gold Quarterly 31st March / All banks
+Metal Loans (GML) 30th June /
+30th September /
+31st December
+This return captures information on Gold Metal Loans extended under the
+regulatory framework, including GMS-linked and import-linked GMLs.
+33 Fraud Monitoring Return As and when Fraud All banks
+(FMR) – SCBs a fraud is Classification
+classified Date
+This return captures report on actual frauds in the bank.
+34 FMR Update Application On any Update Date / All banks
+(FUA) development Progress Date
+in fraud case
+This return captures the progress report on frauds of large value, and it is to
+be filed as and when any development occurs in FMR - SCBs.
+35 Fraud Monitoring Return 4 Quarterly 31st March / All banks
+(FMR4 / RBR) 30th June /
+30th September /
+31st December
+This return captures consolidated information on dacoities / robberies / theft /
+burglaries in the bank.
+36 Vigilance Monitoring Quarterly 31st March / PSBs
+Return - I (VMR-I) 30th June /
+30th September /
+31st December
+This return captures details on action plan on anti-corruption measures against
+staff. It contains information regarding preventive measures, surveillance and
+detection details, deterrent punitive action on vigilance cases and disciplinary
+cases.
+37 Vigilance Monitoring Quarterly 31st March / PSBs
+Return - II (VMR- II) 30th June /
+30th September /
+31st December
+15
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Name of Return Periodicity Reference Date Applicability
+This return captures details of the security arrangements in PSBs and contains
+information regarding the number of branches considered vulnerable,
+branches provided with armed guards, alarm system, and other security
+measures provided.
+C. Timelines
+22. The timelines with respect to Reference Date for submission of returns will
+depend on the frequency at which the return is to be submitted, unless mentioned
+otherwise. The timelines are given below:
+Periodicity Reference Date Timeline
+Weekly Every Friday (or preceding working day if On or before Wednesday
+Friday happens to be a holiday) of the following week
+Fortnightly 15th day of a calendar month Within seven days
+Monthly Last day of a calendar month Within 15 days
+Quarterly Last day of the quarter Within 21 days
+Half-yearly 31st March / 30th September Within 21 days
+Yearly 31st March Within 21 days
+Notes:
+(1) All audited returns, wherever applicable, shall be filed within five working
+days from the date of signing of the Auditor’s report in terms of Section 134
+of the Companies Act, 2013 (solo / group level as per applicability of the
+return), as applicable.
+(2) All ad-hoc returns / data must be submitted within the timelines as indicated
+in the communication issued by RBI.
+D. Exceptions
+23. The timelines for submission of returns will depend on the frequency at which the
+return is to be submitted, except as mentioned below:
+16
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Sr. No. Return Name Periodicity Reference Date Timeline
+1 Consolidated Half-yearly 31st March (i) Provisional /
+Prudential Return unaudited data to be
+(CPR) submitted by end-June
+(ii) Audited data to be
+submitted by end-
+September
+30th September End-December
+2 BLR Return Quarterly 31st March / 15 days from the
+(Sheets BLR 3 30th June / Reference Date at par
+and BLR 7) 30th September / with other sheets of
+31st December BLR return
+3 Allocation of Yearly 31st March Within one month from
+branches to the date of appointment
+Statutory Branch of SBAs
+Auditors (SBAs)
+4 Report on Quarterly 31st March / Within 45 days
+Financial 30th June /
+Conglomerates 30th September /
+31st December
+5 Half-yearly Half-yearly 31st March / 15th June /
+Review of 30th September 15th December
+Investment
+Portfolio
+6 Red Flagged As and when Detection Date Within Seven days
+Account Return
+(RFA)
+7 Supervisory Quarterly 31st March / Within Seven days
+Return on Gold 30th June /
+Metal Loans 30th September /
+(GML) 31st December
+8 Fraud Monitoring As and when Fraud Within 14 days
+Return (FMR) – Classification
+SCBs Date
+9 FMR Update Update Date / Immediate
+Application (FUA) Progress Date
+10 Fraud Monitoring Quarterly 31st March / Within 15 days
+Return 4 (FMR4 / 30th June /
+RBR) 30th September /
+11 Vigilance 31st December
+Monitoring
+Return-I (VMR-I)
+12 Vigilance
+Monitoring
+Return-II (VMR-II)
+17
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+E. Penalties
+24. The bank shall furnish true and correct information in the returns prescribed in
+these Directions, within the stipulated timelines. In case the bank is found in
+violation of these Directions, RBI may take necessary action including imposition
+of a penalty / fine under the extant provisions of the Banking Regulation Act,
+1949.
+F. Other Instructions
+25. Ad-Hoc / Additional Returns: RBI may introduce new returns / withdraw existing
+returns (both ad-hoc / regular) for submission by the bank and inform suitably.
+26. It is clarified that submission of other regulatory / statutory returns will not be
+affected by these Directions.
+18
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+Chapter IV - Repeal and Other Provisions
+A. Repeal and Saving
+27. With the issue of these Directions, the existing directions, instructions, and
+guidelines relating to Supervisory Returns as applicable to Commercial Banks
+stand repealed, as the contents of the same have been incorporated in these
+Directions, as communicated vide circular no.DoS.CO.PPG.66/11.01.005/2026-
+27 dated July 31, 2026. The directions, instructions, and guidelines repealed prior
+to the issuance of these Directions shall continue to remain repealed.
+28. Notwithstanding such repeal, any action taken or purported to have been taken,
+or initiated under the repealed directions, instructions, or guidelines shall
+continue to be governed by the provisions thereof. All approvals or
+acknowledgments granted under the repealed directions, instructions or
+guidelines shall be deemed as governed by these Directions. Further, the repeal
+of the directions, instructions, or guidelines shall not in any way prejudicially
+affect:
+(1) any right, obligation or liability acquired, accrued, or incurred thereunder;
+(2) any penalty, forfeiture, or punishment incurred in respect of any
+contravention committed thereunder;
+(3) any investigation, legal proceeding, or remedy in respect of any such right,
+privilege, obligation, liability, penalty, forfeiture, or punishment as aforesaid;
+and any such investigation, legal proceedings or remedy may be instituted,
+continued, or enforced and any such penalty, forfeiture or punishment may
+be imposed as if the directions, instructions, or guidelines had not been
+repealed.
+B. Application of Other Laws Not barred
+29. The provisions of these Directions shall be in addition to, and not in derogation
+of the provisions of any other laws, rules, regulations or directions, for the time
+being in force.
+19
+
+RBI (CBs – Supervisory Returns) Directions, 2026
+C. Interpretations
+30. For the purposes of giving effect to the provisions of these Directions or for
+removing any difficulties in their application or interpretation, RBI may, if it deems
+necessary, issue such clarifications as it considers appropriate in respect of any
+matter covered herein. The interpretation of any provision of these Directions by
+RBI shall be final and binding on all concerned entities.
+(Dr. Vijay Singh Shekhawat)
+Chief General Manager
+20

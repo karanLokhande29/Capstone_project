@@ -1,0 +1,4 @@
+2026-08-12 20:24:06,046 [INFO] pipeline.resume_w4w5: === WEEK 4 resume: deontic (if needed) + matcher + T1 ===
+2026-08-12 20:24:06,300 [INFO] pipeline.resume_w4w5: Reusing deontic candidates kept=68281 rejected=1026
+2026-08-12 20:24:09,224 [INFO] pipeline.resume_w4w5: === WEEK 5 ===
+2026-08-12 20:24:09,566 [INFO] pipeline.resume_w4w5: Wrote /Users/karan/Downloads/carbon-tracker 3/Capstone_project/reports/weeks_1_to_5_summary.md

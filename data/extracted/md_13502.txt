@@ -1,0 +1,359 @@
+भारतीय �रज़वर् बैंक
+RESERVE BANK OF INDIA
+www.rbi.org.in
+RBI/DPSS/2026-27/401
+DPSS.CO.AUTH.No.S-239/02-27-004/2026-27 June 15, 2026
+Master Directions on Authorisation to operate a Payment System
+Table of Contents
+1. Short Title and Commencement………………………………………………….2
+2. Definitions…………………………………………………………….....................2
+3. Applicability…………………………………………………………………………4
+4. Eligibility Criteria and Requirements …………………………………………..4
+5. Investment in Entities from FATF Non-Compliant Jurisdictions…………..6
+6. Validity period of Certificate of Authorisation…………………………………6
+7. Voluntary Surrender of CoA by PSO’s Authorised under PSS Act…………7
+8. Cooling Period………………………………………………………………………9
+9. Miscellaneous…………………………………………………………………….. 10
+10. Repeal and Other Provisions……………………………………………………10
+
+These Directions are issued in exercise of powers conferred in Chapter III on
+Authorisation of Payment Systems and issued under Section 10(2) read with Section
+18 of Payment and Settlement Systems Act, 2007 (Act 51 of 2007) hereinafter referred
+as “PSS Act”.
+1. Short Title and Commencement
+1.1 These Directions shall be called the Master Directions on Authorisation to operate
+a Payment System.
+1.2 These directions shall come into effect on the day they are placed on the website
+of the Reserve Bank.
+2. Definitions
+2.1 In these directions, unless the context otherwise.
+(1) ‘Payment System’ has the same meaning as defined in the PSS Act.
+(2) ‘Payment System Operator’ (PSO) has the same meaning as defined for System
+Participant in clause (p) of Section 2(1) of the PSS Act.
+(3) ‘Company’ means a company registered under Section 3 of the Companies Act,
+1956 or the corresponding provision under the Companies Act, 2013.
+(4) ‘Companies in the group’ means an arrangement involving two or more entities
+related to each other through any of the following relationships: Subsidiary – parent
+(defined in terms of AS 21), Joint venture (defined in terms of AS 27), Associate
+(defined in terms of AS 23), Promoter–promotee [as provided in the SEBI (Acquisition
+of Shares and Takeover) Regulations, 1997] for listed companies, a related party
+(defined in terms of AS 18), common brand name, and investment in equity shares of
+20 percent and above.
+(5) ‘Promoter’ means, the person who together with his relatives [as defined in Section
+2(77) of the Companies Act, 2013 and Rules made there under], by virtue of his
+ownership of voting equity shares, will be/ is in effective control of Payment System
+Operator, and includes, wherever applicable, all entities which form part of the
+Promoter Group.
+2
+
+Explanation: The term ‘effective control’ means any arrangement whether in the form
+of shareholding or agreement or otherwise, which enables exercise of control.
+(6) ‘Promoter Group’ includes:
+A. the promoter;
+B. relatives of the promoter [as defined in Section 2 (77) of the Companies Act, 2013
+and Rules made there under]; and
+C. in case promoter is a body corporate:
+(i) a subsidiary or holding company of such body corporate;
+(ii) body corporate in which the promoter holds ten per cent or more of the equity
+share capital or which holds ten per cent or more of the equity share capital of the
+promoter;
+(iii) any body corporate in which a group of individuals or companies or combinations
+thereof which hold twenty percent or more of the equity share capital in that body
+corporate also holds twenty per cent or more of the equity share capital of the
+promoter;
+(iv) Joint venture/Associate (as defined in terms of Ind AS 28) with the promoter;
+(v) Related party (as defined in terms of Ind AS24) of the promoter; and
+D. In case the promoter is an individual:
+(i) any body corporate in which ten per cent or more of the equity share capital is
+held by the promoter or a relative of the promoter or a firm or Hindu Undivided Family
+in which the promoter or anyone or more of his immediate relative is a member;
+(ii) any body corporate in which a body corporate as provided in (D) (i) above holds
+ten per cent or more, of the equity share capital;
+(iii) any Hindu Undivided Family or firm in which the aggregate shareholding of the
+promoter and his immediate relatives is equal to or more than ten per cent of the
+total; and
+E. all persons who are declared as promoters in the Articles of Association of the group
+companies.
+F. all persons whose shareholding is aggregated for the purpose of disclosing in the
+prospectus (As per SEBI (Issue of Capital & Disclosure Requirements) Regulations,
+2018) under the heading "shareholding of the promoter group";
+G. Entities sharing a common brand name with entities discussed in (C) (i), (C) (ii),
+3
+
+(C) (iii), (C) (iv), (C) (v), where the promoter is a body corporate and (D) (i), (D) (ii), (D)
+(iii) where the promoter is an individual;
+Provided that a financial institution, scheduled commercial bank, foreign institutional
+investor or mutual fund shall not be deemed to be promoter group merely by virtue of
+the fact that ten per cent or more of the equity share capital of the promoter is held by
+such institution unless such investment is strategic in nature.
+3. Applicability
+3.1 As provided in the PSS Act no person can operate a payment system without an
+Authorisation issued by RBI in accordance with PSS Act. As such, these Directions
+apply to:
+(i) An entity applying for authorisation to operate a payment system under the PSS
+Act.
+(ii) An entity authorised to operate a payment system under the PSS Act.
+3.2 Authorisation shall be available on an on-tap basis to an entity who intends to
+operate a payment system.
+4. Eligibility Criteria and Requirements
+4.1 An entity seeking authorisation to operate a payment system shall submit an
+application in the prescribed form through RBI’s portal.
+4.2 The capital requirement shall be in accordance with the Guidelines/ Directions
+issued for the specific payment system. The details of the same are available on RBI
+website.
+4.3 The ‘Net-worth’ will consist of ‘paid up equity capital, preference shares
+compulsorily convertible to equity, free reserves, balance in share premium account
+and capital reserves representing surplus arising out of sale proceeds of assets but not
+reserves created by revaluation of assets’, adjusted for ‘accumulated loss balance,
+book value of intangible assets, Deferred Revenue Expenditure, and Deferred Tax
+Assets, if any’.
+4
+
+4.4 An entity while submitting the application for authorisation, shall also submit a
+certificate in the enclosed format (Annexure) from its Statutory Auditor, evidencing
+compliance with the applicable net-worth requirement. A newly incorporated entity, not
+having an audited balance sheet shall submit the certificate, along with a provisional
+balance sheet of a recent date.
+4.5 The Entity / Promoters / Promoter Groups, shall conform to the Reserve Bank’s ‘fit
+and proper’ criteria, including but not limited to:
+(i) The entity shall have a past record of sound credentials and integrity.
+(ii) Director of a Promoter Company / Group Company shall have a record of
+financial integrity; good reputation and character; honesty; etc.
+(iii) Such person shall not have incurred any of the following disqualifications –
+a) Convicted by a court for any offence involving moral turpitude or any
+economic offence or any offence under the laws administered by the
+RBI.
+b) Declared insolvent and not discharged.
+c) An order, restraining, prohibiting or debarring the person from accessing
+/ dealing in any financial system, passed by any regulatory authority,
+and the period specified in the order has not elapsed.
+d) Found to be of unsound mind by a court of competent jurisdiction and
+the finding is in force, and
+e) Is financially not sound.
+RBI’s decision on whether a person is a fit and proper person shall be final.
+4.6 The overall financial strength of the promoters/ entity, sound technological basis to
+support its operations, management, governance etc. shall be other important criteria.
+4.7 Application of an entity not meeting the basic eligibility criteria, such as not meeting
+the minimum capital requirement, or which is incomplete / not in the prescribed form,
+will be returned. The application which is not in compliance with regulatory
+requirements as per the provisions of extant DPSS directions, may also be returned.
+5
+
+4.8 The ‘fit and proper’ criteria as detailed at para 4.5 are in addition to criteria stipulated
+if any, in system specific directions issued by RBI.
+5. Investment in Entities from FATF Non-Compliant Jurisdictions:
+5.1 The Financial Action Task Force (FATF) periodically identifies jurisdictions with
+weak measures to combat money laundering and terrorist financing (AML / CFT) in its
+following publications: i) High-Risk Jurisdictions subject to a Call for Action, and ii)
+Jurisdictions under Increased Monitoring. A jurisdiction whose name does not appear
+in these two lists is referred to as a FATF compliant jurisdiction. Investments in PSOs
+from FATF non-compliant jurisdictions shall not be treated at par with that from
+compliant jurisdictions.
+5.2 Investors in existing PSOs holding their investments prior to the classification of
+the source or intermediate jurisdiction/s as FATF non-compliant, may continue with the
+investments or bring in additional investments as per extant regulations so as to
+support continuity of business in India.
+5.3 New investors from or through non-compliant FATF jurisdictions, whether in
+existing PSOs or in entities seeking authorisation as PSOs, are not permitted to
+acquire, directly or indirectly, ‘significant influence’ in the investee PSO, as defined in
+the applicable accounting standards. In other words, fresh investment (directly or
+indirectly) from such jurisdictions, in aggregate, should account for less than 20 per
+cent of the voting power (including potential voting power) of the PSO.
+Explanation: “Potential voting power” could arise from instruments that are convertible
+into equity, other instruments with contingent voting rights, contractual arrangements,
+etc., that grant investors voting rights (including contingent voting rights) in the future.
+In such cases, it should be ensured that new investments from FATF non-compliant
+jurisdictions are less than both (i) 20 per cent of the existing voting powers, and (ii) 20
+per cent of existing and potential voting powers assuming those potential voting rights
+have materialised.
+6. Validity period of Certificate of Authorisation
+6.1 Authorisation to operate a payment system to a new entity will be given on a
+perpetual basis.
+6
+
+6.2 For an existing authorised Payment System Operator (PSO), perpetual validity may
+be provided when the Certificate of Authorisation (CoA) becomes due for renewal,
+subject to its adherence to the following:
+i. Full compliance with the terms and conditions subject to which authorisation was
+granted.
+ii. No major regulatory or supervisory concerns related to operations of the PSO.
+iii. No adverse reports from other departments of RBI / regulators / statutory bodies,
+etc.
+6.3 Existing PSO who do not satisfy the aforementioned conditions at para 6.2 will be
+given one-year renewals to enable them to comply. If a PSO fails to do so in a
+reasonable time, its authorisation may be withdrawn.
+6.4 If an entity becomes non-compliant with any of the conditions of authorisation, RBI
+may undertake action as deemed fit under the provisions of PSS Act, including
+imposition of restrictions on payment system operations and / or revocation of CoA.
+7. Voluntary Surrender of CoA by PSO’s Authorised under PSS Act 2007
+7.1 A PSO, authorised under PSS Act, intending to discontinue its payment system
+operations may apply to the Reserve Bank for voluntary surrender of its CoA.
+7.2 Process to be followed: A PSO needs to submit a request in writing, signed by its
+authorised signatory, to Department of Payment and Settlement Systems (DPSS),
+Central Office (CO), RBI, Mumbai along with the following documents:
+i. A copy of its recent Board Resolution, indicating its intent and the reason for
+voluntary surrender of CoA.
+ii. A statement, certified by its Statutory Auditor, delineating its escrow account
+details and outstanding liabilities related to its payment system operations to
+customers / merchants / agents / banks, etc., as applicable.
+iii. A ‘Memorandum of Procedure (MoP) indicating, inter alia, the process and
+timelines to be followed for extinguishing / repaying the liabilities to customers /
+merchants / agents / banks, etc., as applicable.
+7
+
+iv. An undertaking, signed by its authorised signatory, that it would not undertake
+payment system operations (for which CoA is being surrendered) during the
+process of voluntary surrender.
+7.3 Based on the merits of the case, the RBI will process such requests and advise the
+entity to initiate the following process regarding the further course of action, as
+applicable:
+i. Intimate all stakeholders through digital communication on registered mobile
+number (SMS, in-app notifications, etc.) and email-id, about its intent to close its
+payment system operations.
+ii. Issue a public notice in English, Hindi and a vernacular language, in print/visual
+media, on three different occasions, informing the customers / merchants /
+agents / banks, etc., about its intent to close its payment systems operations.
+Such public notice, shall inter-alia indicate:
+a) The process to be adopted for repaying the liabilities to customers / merchants
+/ agents / banks, etc.
+b) The mode of receipt of such requests for redemption of liabilities.
+c) Name, contact address, phone number and e-mail id of a Nodal officer to
+whom such requests can be sent by the customer.
+d) Time-line within which the entity would process such requests and repay the
+liabilities.
+iii. Submit monthly progress report to RBI regarding the progress in extinguishing
+its liabilities.
+7.4 On completing the process of extinguishing liabilities to customers / merchants /
+agents / banks, etc., (as applicable), the entity would be required to submit a ‘No
+Liability’ certificate, certified by its Statutory Auditor.
+Explanation: The phrase ‘liabilities to customers /merchants /agents /banks, etc.,
+includes, but not limited to liabilities such as chargebacks and transactions under
+dispute.
+7.5 In case entity is not able to extinguish its liabilities, it shall,
+8
+
+i. Submit an undertaking to the effect that it will not recognise the extant balance
+amount in escrow account pertaining to customers/ merchants, agents, etc. (as
+applicable) as an income or transfer it to profit and loss account for three years
+from the date of cancellation of CoA and would honour the claims, if any,
+received from the customers, merchants, agents etc., during the said period of
+three years.
+ii. Subsequently, after acceptance of request for voluntary surrender, a Press
+Notification would be issued by RBI containing the clause “customers or
+merchants having a valid claim on the entity as PSO, can approach it for
+settlement of their claims within three years from the date of cancellation of
+CoA”, if liabilities remain unextinguished.
+iii. The entity shall submit the status of outstanding amount in escrow account to
+RBI after the completion of said period of three years.
+7.6 An entity that has not commenced operations as a PSO needs to submit a written
+request from its authorised signatory, along with the following documents to DPSS,
+CO, RBI, Mumbai:
+i. A copy of its recent Board Resolution, indicating its intent and the reason for such
+voluntary surrender of CoA.
+ii. A certificate from its Statutory Auditor in respect of non-commencement of any
+payment system operations by the entity.
+iii. A copy of the latest audited balance sheet of the entity.
+iv. Any other document in support of its request for such voluntary surrender.
+7.7 On receipt of the advice from the Bank about acceptance of the request for
+voluntary surrender of CoA, the entity shall submit the original CoA to DPSS, CO, RBI,
+Mumbai for cancellation.
+8. Cooling Period
+8.1 RBI may impose a cooling period of one year in the following situations:
+i. Authorised Payment System Operators (PSOs) whose Certificate of
+Authorisation (CoA) is revoked or not renewed for any reason; or
+9
+
+ii. CoA is voluntarily surrendered for any reason; or
+iii. Application for authorisation of a payment system has been refused by RBI.
+iv. New entities that are set-up by promoters involved in any of the above categories;
+8.2 During the cooling period the entities shall not be allowed to submit an application
+for operating any payment system under the PSS Act.
+8.3 RBI may waive or curtail the cooling-off period in cases where it is deemed
+necessary and expedient in exceptional cases, on representation.
+9. Miscellaneous
+9.1 Entities applying to operate a payment system under the PSS Act may refer to the
+FAQs section of DPSS and Citizen's Charter on the RBI website for application
+guidance.
+9.2 The Authorised Non-Bank PSOs shall refer to RBI circular (Requirement for
+obtaining prior approval in case of takeover / acquisition of control of non-bank PSOs
+and sale / transfer of payment system activity of non-bank PSO) (as updated from time
+to time) for effecting takeover / Acquisition of control, which may / may not result in
+change of management or sale/transfer of payment activity.
+10. Repeal and Other Provisions
+10.1 With the issue of these Directions, the following guidelines/ directions issued by
+the Reserve Bank, stands repealed (list as provided below). All
+approvals/acknowledgements given under guidelines/ directions stated above shall be
+deemed as given under these Directions. Notwithstanding such repeal, any action
+taken/ purported to have been taken or initiated under the instructions/ guidelines
+having repealed shall continue to be guided by the provisions of said
+instructions/guidelines.
+Sr.
+Circular/Directions Date Subject
+No.
+1. Press Release: 2019- 15.10.2019 On-tap Authorisation of
+2020/953 Payment Systems
+10
+
+2. DPSS.AUTH.No.S190/02 14.06.2021 Investment in Entities from
+.27.005/2021-22 FATF Non-compliant
+Jurisdictions
+3. DPSS.CO.OD.No.753/06. 04.12.2020 Authorisation of entities for
+08.005/2020-21 operating a Payment System
+under the PSS Act – Introduction
+of Cooling Period
+4. DPSS.CO.AD.No.724/02. 04.12.2020 Perpetual Validity for Certificate
+27.005/2020-21 of Authorisation (CoA) issued to
+Payment System Operators
+5. DPSS.CO.AD. 12.05.2016 Guidelines for Voluntary
+No.2627/02.27.005/2015- Surrender of Certificate of
+16 Authorisation
+and the Framework for
+Voluntary Surrender of
+Certificate of Authorisation
+dated 12.05.2023
+6. DPSS.CO.AD.No.1344 16.01.2015 Computation of Net-worth
+/02.27.005/2014-15
+10.2 Application of other laws not barred:
+The provisions of these Directions shall be in addition to, and not in derogation of the
+provisions of any other laws, rules, regulations, or directions, for the time being in
+force.
+10.3 Interpretations:
+For the purpose of giving effect to the provisions of these Directions or in order to
+remove any difficulties in the application or interpretation of the provisions of these
+Directions, the RBI may, if it considers necessary, issue necessary clarifications in
+respect of any matter covered herein and the interpretation of any provision of these
+Directions given by the RBI shall be final and binding.
+11
+
+Annexure
+Net-worth Certificate
+We have perused the records maintained by the_______(Company). On the basis of our
+perusal of the records, the audited / unaudited (strike off whichever is not applicable) financial
+statements for the financial year ended and the information and explanations given
+to us, we certify that the Company’s net-worth computed in accordance with the paragraph 4.3
+of the above Master Direction as on_________ is ₹ ________.
+This certificate has been provided by us at the request of the Company. The details for net-
+worth computation are given below:
+Computation of Net-worth of as on
+Particulars Amount (₹)
+Equity Share Capital (A)
+Add: (B)
+Preference Shares Compulsorily Convertible
+into Equity
+Free Reserves
+Share Premium Account
+Capital Reserves (representing surplus
+arising out of sale proceeds of assets)
+Total (A+B)
+Less: (C)
+Revaluation Reserves1
+Accumulated Losses
+Book Value of Intangible Assets
+Deferred Revenue Expenditure
+Deferred Tax Assets
+Net-worth (A+B-C)
+Place:
+Date: Signature:
+Stamp: Name and Designation:
+1 Revaluation Reserve need to be deducted if included in (A+B) above.
+12

@@ -1,0 +1,1199 @@
+2026-08-12 20:00:47,733 [INFO] pipeline.weeks1to5: === WEEK 1: scrape + matrix v0 ===
+2026-08-12 20:00:47,738 [INFO] scraper.rbi: GET attempt=1 url=https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx
+2026-08-12 20:00:48,463 [INFO] scraper.rbi: Cached listing page -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/_listing_BS_ViewMasDirections.html
+2026-08-12 20:00:48,891 [INFO] scraper.rbi: Discovered 381 Master Direction entries from listing
+2026-08-12 20:00:48,900 [INFO] scraper.rbi: CACHE HIT md_11322 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11322.pdf
+2026-08-12 20:00:48,905 [INFO] scraper.rbi: CACHE HIT md_10476 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10476.pdf
+2026-08-12 20:00:48,912 [INFO] scraper.rbi: CACHE HIT md_13443 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13443.pdf
+2026-08-12 20:00:48,915 [INFO] scraper.rbi: CACHE HIT md_13442 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13442.pdf
+2026-08-12 20:00:48,917 [INFO] scraper.rbi: CACHE HIT md_13271 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13271.pdf
+2026-08-12 20:00:48,919 [INFO] scraper.rbi: CACHE HIT md_13272 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13272.pdf
+2026-08-12 20:00:48,923 [INFO] scraper.rbi: CACHE HIT md_13273 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13273.pdf
+2026-08-12 20:00:48,925 [INFO] scraper.rbi: CACHE HIT md_13274 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13274.pdf
+2026-08-12 20:00:48,927 [INFO] scraper.rbi: CACHE HIT md_13275 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13275.pdf
+2026-08-12 20:00:48,931 [INFO] scraper.rbi: CACHE HIT md_13276 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13276.pdf
+2026-08-12 20:00:48,936 [INFO] scraper.rbi: CACHE HIT md_12586 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12586.pdf
+2026-08-12 20:00:48,938 [INFO] scraper.rbi: CACHE HIT md_13399 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13399.pdf
+2026-08-12 20:00:48,944 [INFO] scraper.rbi: CACHE HIT md_13400 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13400.pdf
+2026-08-12 20:00:48,947 [INFO] scraper.rbi: CACHE HIT md_13319 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13319.pdf
+2026-08-12 20:00:48,950 [INFO] scraper.rbi: CACHE HIT md_13136 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13136.pdf
+2026-08-12 20:00:48,956 [INFO] scraper.rbi: CACHE HIT md_13137 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13137.pdf
+2026-08-12 20:00:48,958 [INFO] scraper.rbi: CACHE HIT md_13138 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13138.pdf
+2026-08-12 20:00:48,961 [INFO] scraper.rbi: CACHE HIT md_13139 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13139.pdf
+2026-08-12 20:00:48,971 [INFO] scraper.rbi: CACHE HIT md_13140 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13140.pdf
+2026-08-12 20:00:48,978 [INFO] scraper.rbi: CACHE HIT md_13141 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13141.pdf
+2026-08-12 20:00:48,983 [INFO] scraper.rbi: CACHE HIT md_13143 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13143.pdf
+2026-08-12 20:00:48,988 [INFO] scraper.rbi: CACHE HIT md_13144 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13144.pdf
+2026-08-12 20:00:48,989 [INFO] scraper.rbi: CACHE HIT md_13145 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13145.pdf
+2026-08-12 20:00:48,991 [INFO] scraper.rbi: CACHE HIT md_13146 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13146.pdf
+2026-08-12 20:00:48,994 [INFO] scraper.rbi: CACHE HIT md_13147 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13147.pdf
+2026-08-12 20:00:49,002 [INFO] scraper.rbi: CACHE HIT md_13148 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13148.pdf
+2026-08-12 20:00:49,008 [INFO] scraper.rbi: CACHE HIT md_13149 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13149.pdf
+2026-08-12 20:00:49,009 [INFO] scraper.rbi: CACHE HIT md_13150 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13150.pdf
+2026-08-12 20:00:49,010 [INFO] scraper.rbi: CACHE HIT md_13151 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13151.pdf
+2026-08-12 20:00:49,014 [INFO] scraper.rbi: CACHE HIT md_13152 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13152.pdf
+2026-08-12 20:00:49,023 [INFO] scraper.rbi: CACHE HIT md_13153 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13153.pdf
+2026-08-12 20:00:49,031 [INFO] scraper.rbi: CACHE HIT md_13154 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13154.pdf
+2026-08-12 20:00:49,034 [INFO] scraper.rbi: CACHE HIT md_13155 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13155.pdf
+2026-08-12 20:00:49,039 [INFO] scraper.rbi: CACHE HIT md_13156 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13156.pdf
+2026-08-12 20:00:49,041 [INFO] scraper.rbi: CACHE HIT md_13157 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13157.pdf
+2026-08-12 20:00:49,049 [INFO] scraper.rbi: CACHE HIT md_13158 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13158.pdf
+2026-08-12 20:00:49,059 [INFO] scraper.rbi: CACHE HIT md_13159 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13159.pdf
+2026-08-12 20:00:49,061 [INFO] scraper.rbi: CACHE HIT md_13160 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13160.pdf
+2026-08-12 20:00:49,071 [INFO] scraper.rbi: CACHE HIT md_13161 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13161.pdf
+2026-08-12 20:00:49,074 [INFO] scraper.rbi: CACHE HIT md_13162 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13162.pdf
+2026-08-12 20:00:49,092 [INFO] scraper.rbi: CACHE HIT md_13163 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13163.pdf
+2026-08-12 20:00:49,098 [INFO] scraper.rbi: CACHE HIT md_13164 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13164.pdf
+2026-08-12 20:00:49,099 [INFO] scraper.rbi: CACHE HIT md_13165 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13165.pdf
+2026-08-12 20:00:49,104 [INFO] scraper.rbi: CACHE HIT md_13166 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13166.pdf
+2026-08-12 20:00:49,107 [INFO] scraper.rbi: CACHE HIT md_13167 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13167.pdf
+2026-08-12 20:00:49,108 [INFO] scraper.rbi: CACHE HIT md_13168 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13168.pdf
+2026-08-12 20:00:49,124 [INFO] scraper.rbi: CACHE HIT md_13328 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13328.pdf
+2026-08-12 20:00:49,130 [INFO] scraper.rbi: CACHE HIT md_13105 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13105.pdf
+2026-08-12 20:00:49,132 [INFO] scraper.rbi: CACHE HIT md_13106 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13106.pdf
+2026-08-12 20:00:49,139 [INFO] scraper.rbi: CACHE HIT md_13107 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13107.pdf
+2026-08-12 20:00:49,144 [INFO] scraper.rbi: CACHE HIT md_13108 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13108.pdf
+2026-08-12 20:00:49,161 [INFO] scraper.rbi: CACHE HIT md_13109 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13109.pdf
+2026-08-12 20:00:49,166 [INFO] scraper.rbi: CACHE HIT md_13111 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13111.pdf
+2026-08-12 20:00:49,167 [INFO] scraper.rbi: CACHE HIT md_13112 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13112.pdf
+2026-08-12 20:00:49,171 [INFO] scraper.rbi: CACHE HIT md_13113 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13113.pdf
+2026-08-12 20:00:49,172 [INFO] scraper.rbi: CACHE HIT md_13114 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13114.pdf
+2026-08-12 20:00:49,182 [INFO] scraper.rbi: CACHE HIT md_13115 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13115.pdf
+2026-08-12 20:00:49,188 [INFO] scraper.rbi: CACHE HIT md_13116 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13116.pdf
+2026-08-12 20:00:49,190 [INFO] scraper.rbi: CACHE HIT md_13117 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13117.pdf
+2026-08-12 20:00:49,192 [INFO] scraper.rbi: CACHE HIT md_13118 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13118.pdf
+2026-08-12 20:00:49,194 [INFO] scraper.rbi: CACHE HIT md_13119 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13119.pdf
+2026-08-12 20:00:49,199 [INFO] scraper.rbi: CACHE HIT md_13120 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13120.pdf
+2026-08-12 20:00:49,201 [INFO] scraper.rbi: CACHE HIT md_13121 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13121.pdf
+2026-08-12 20:00:49,205 [INFO] scraper.rbi: CACHE HIT md_13122 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13122.pdf
+2026-08-12 20:00:49,222 [INFO] scraper.rbi: CACHE HIT md_13123 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13123.pdf
+2026-08-12 20:00:49,226 [INFO] scraper.rbi: CACHE HIT md_13124 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13124.pdf
+2026-08-12 20:00:49,228 [INFO] scraper.rbi: CACHE HIT md_13125 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13125.pdf
+2026-08-12 20:00:49,231 [INFO] scraper.rbi: CACHE HIT md_13126 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13126.pdf
+2026-08-12 20:00:49,238 [INFO] scraper.rbi: CACHE HIT md_13127 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13127.pdf
+2026-08-12 20:00:49,240 [INFO] scraper.rbi: CACHE HIT md_13128 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13128.pdf
+2026-08-12 20:00:49,242 [INFO] scraper.rbi: CACHE HIT md_13129 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13129.pdf
+2026-08-12 20:00:49,243 [INFO] scraper.rbi: CACHE HIT md_13130 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13130.pdf
+2026-08-12 20:00:49,249 [INFO] scraper.rbi: CACHE HIT md_13131 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13131.pdf
+2026-08-12 20:00:49,253 [INFO] scraper.rbi: CACHE HIT md_13132 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13132.pdf
+2026-08-12 20:00:49,260 [INFO] scraper.rbi: CACHE HIT md_13133 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13133.pdf
+2026-08-12 20:00:49,265 [INFO] scraper.rbi: CACHE HIT md_13134 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13134.pdf
+2026-08-12 20:00:49,267 [INFO] scraper.rbi: CACHE HIT md_13135 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13135.pdf
+2026-08-12 20:00:49,271 [INFO] scraper.rbi: CACHE HIT md_13321 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13321.pdf
+2026-08-12 20:00:49,275 [INFO] scraper.rbi: CACHE HIT md_13087 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13087.pdf
+2026-08-12 20:00:49,276 [INFO] scraper.rbi: CACHE HIT md_13088 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13088.pdf
+2026-08-12 20:00:49,282 [INFO] scraper.rbi: CACHE HIT md_13089 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13089.pdf
+2026-08-12 20:00:49,288 [INFO] scraper.rbi: CACHE HIT md_13090 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13090.pdf
+2026-08-12 20:00:49,299 [INFO] scraper.rbi: CACHE HIT md_13092 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13092.pdf
+2026-08-12 20:00:49,305 [INFO] scraper.rbi: CACHE HIT md_13093 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13093.pdf
+2026-08-12 20:00:49,307 [INFO] scraper.rbi: CACHE HIT md_13094 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13094.pdf
+2026-08-12 20:00:49,309 [INFO] scraper.rbi: CACHE HIT md_13095 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13095.pdf
+2026-08-12 20:00:49,310 [INFO] scraper.rbi: CACHE HIT md_13096 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13096.pdf
+2026-08-12 20:00:49,314 [INFO] scraper.rbi: CACHE HIT md_13097 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13097.pdf
+2026-08-12 20:00:49,316 [INFO] scraper.rbi: CACHE HIT md_13098 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13098.pdf
+2026-08-12 20:00:49,331 [INFO] scraper.rbi: CACHE HIT md_13099 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13099.pdf
+2026-08-12 20:00:49,334 [INFO] scraper.rbi: CACHE HIT md_13100 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13100.pdf
+2026-08-12 20:00:49,337 [INFO] scraper.rbi: CACHE HIT md_13101 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13101.pdf
+2026-08-12 20:00:49,339 [INFO] scraper.rbi: CACHE HIT md_13102 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13102.pdf
+2026-08-12 20:00:49,340 [INFO] scraper.rbi: CACHE HIT md_13103 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13103.pdf
+2026-08-12 20:00:49,341 [INFO] scraper.rbi: CACHE HIT md_13104 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13104.pdf
+2026-08-12 20:00:49,343 [INFO] scraper.rbi: CACHE HIT md_13324 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13324.pdf
+2026-08-12 20:00:49,356 [INFO] scraper.rbi: CACHE HIT md_13061 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13061.pdf
+2026-08-12 20:00:49,359 [INFO] scraper.rbi: CACHE HIT md_13062 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13062.pdf
+2026-08-12 20:00:49,361 [INFO] scraper.rbi: CACHE HIT md_13063 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13063.pdf
+2026-08-12 20:00:49,367 [INFO] scraper.rbi: CACHE HIT md_13064 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13064.pdf
+2026-08-12 20:00:49,369 [INFO] scraper.rbi: CACHE HIT md_13066 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13066.pdf
+2026-08-12 20:00:49,371 [INFO] scraper.rbi: CACHE HIT md_13067 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13067.pdf
+2026-08-12 20:00:49,373 [INFO] scraper.rbi: CACHE HIT md_13068 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13068.pdf
+2026-08-12 20:00:49,375 [INFO] scraper.rbi: CACHE HIT md_13069 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13069.pdf
+2026-08-12 20:00:49,377 [INFO] scraper.rbi: CACHE HIT md_13070 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13070.pdf
+2026-08-12 20:00:49,385 [INFO] scraper.rbi: CACHE HIT md_13071 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13071.pdf
+2026-08-12 20:00:49,391 [INFO] scraper.rbi: CACHE HIT md_13072 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13072.pdf
+2026-08-12 20:00:49,399 [INFO] scraper.rbi: CACHE HIT md_13073 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13073.pdf
+2026-08-12 20:00:49,401 [INFO] scraper.rbi: CACHE HIT md_13074 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13074.pdf
+2026-08-12 20:00:49,404 [INFO] scraper.rbi: CACHE HIT md_13075 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13075.pdf
+2026-08-12 20:00:49,408 [INFO] scraper.rbi: CACHE HIT md_13076 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13076.pdf
+2026-08-12 20:00:49,409 [INFO] scraper.rbi: CACHE HIT md_13077 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13077.pdf
+2026-08-12 20:00:49,414 [INFO] scraper.rbi: CACHE HIT md_13078 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13078.pdf
+2026-08-12 20:00:49,426 [INFO] scraper.rbi: CACHE HIT md_13079 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13079.pdf
+2026-08-12 20:00:49,443 [INFO] scraper.rbi: CACHE HIT md_13080 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13080.pdf
+2026-08-12 20:00:49,450 [INFO] scraper.rbi: CACHE HIT md_13081 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13081.pdf
+2026-08-12 20:00:49,455 [INFO] scraper.rbi: CACHE HIT md_13082 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13082.pdf
+2026-08-12 20:00:49,457 [INFO] scraper.rbi: CACHE HIT md_13083 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13083.pdf
+2026-08-12 20:00:49,464 [INFO] scraper.rbi: CACHE HIT md_13084 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13084.pdf
+2026-08-12 20:00:49,467 [INFO] scraper.rbi: CACHE HIT md_13085 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13085.pdf
+2026-08-12 20:00:49,469 [INFO] scraper.rbi: CACHE HIT md_13086 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13086.pdf
+2026-08-12 20:00:49,471 [INFO] scraper.rbi: CACHE HIT md_13327 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13327.pdf
+2026-08-12 20:00:49,474 [INFO] scraper.rbi: CACHE HIT md_13038 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13038.pdf
+2026-08-12 20:00:49,483 [INFO] scraper.rbi: CACHE HIT md_13039 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13039.pdf
+2026-08-12 20:00:49,492 [INFO] scraper.rbi: CACHE HIT md_13040 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13040.pdf
+2026-08-12 20:00:49,494 [INFO] scraper.rbi: CACHE HIT md_13041 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13041.pdf
+2026-08-12 20:00:49,499 [INFO] scraper.rbi: CACHE HIT md_13042 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13042.pdf
+2026-08-12 20:00:49,500 [INFO] scraper.rbi: CACHE HIT md_13043 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13043.pdf
+2026-08-12 20:00:49,502 [INFO] scraper.rbi: CACHE HIT md_13044 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13044.pdf
+2026-08-12 20:00:49,504 [INFO] scraper.rbi: CACHE HIT md_13045 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13045.pdf
+2026-08-12 20:00:49,506 [INFO] scraper.rbi: CACHE HIT md_13046 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13046.pdf
+2026-08-12 20:00:49,507 [INFO] scraper.rbi: CACHE HIT md_13047 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13047.pdf
+2026-08-12 20:00:49,508 [INFO] scraper.rbi: CACHE HIT md_13048 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13048.pdf
+2026-08-12 20:00:49,510 [INFO] scraper.rbi: CACHE HIT md_13049 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13049.pdf
+2026-08-12 20:00:49,511 [INFO] scraper.rbi: CACHE HIT md_13050 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13050.pdf
+2026-08-12 20:00:49,515 [INFO] scraper.rbi: CACHE HIT md_13051 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13051.pdf
+2026-08-12 20:00:49,518 [INFO] scraper.rbi: CACHE HIT md_13052 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13052.pdf
+2026-08-12 20:00:49,521 [INFO] scraper.rbi: CACHE HIT md_13053 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13053.pdf
+2026-08-12 20:00:49,522 [INFO] scraper.rbi: CACHE HIT md_13054 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13054.pdf
+2026-08-12 20:00:49,526 [INFO] scraper.rbi: CACHE HIT md_13055 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13055.pdf
+2026-08-12 20:00:49,527 [INFO] scraper.rbi: CACHE HIT md_13056 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13056.pdf
+2026-08-12 20:00:49,530 [INFO] scraper.rbi: CACHE HIT md_13057 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13057.pdf
+2026-08-12 20:00:49,531 [INFO] scraper.rbi: CACHE HIT md_13058 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13058.pdf
+2026-08-12 20:00:49,532 [INFO] scraper.rbi: CACHE HIT md_13059 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13059.pdf
+2026-08-12 20:00:49,533 [INFO] scraper.rbi: CACHE HIT md_13060 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13060.pdf
+2026-08-12 20:00:49,534 [INFO] scraper.rbi: CACHE HIT md_13203 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13203.pdf
+2026-08-12 20:00:49,537 [INFO] scraper.rbi: CACHE HIT md_13204 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13204.pdf
+2026-08-12 20:00:49,542 [INFO] scraper.rbi: CACHE HIT md_13011 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13011.pdf
+2026-08-12 20:00:49,543 [INFO] scraper.rbi: CACHE HIT md_13012 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13012.pdf
+2026-08-12 20:00:49,544 [INFO] scraper.rbi: CACHE HIT md_13013 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13013.pdf
+2026-08-12 20:00:49,547 [INFO] scraper.rbi: CACHE HIT md_13014 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13014.pdf
+2026-08-12 20:00:49,549 [INFO] scraper.rbi: CACHE HIT md_13015 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13015.pdf
+2026-08-12 20:00:49,555 [INFO] scraper.rbi: CACHE HIT md_13016 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13016.pdf
+2026-08-12 20:00:49,556 [INFO] scraper.rbi: CACHE HIT md_13017 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13017.pdf
+2026-08-12 20:00:49,558 [INFO] scraper.rbi: CACHE HIT md_13018 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13018.pdf
+2026-08-12 20:00:49,559 [INFO] scraper.rbi: CACHE HIT md_13019 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13019.pdf
+2026-08-12 20:00:49,560 [INFO] scraper.rbi: CACHE HIT md_13020 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13020.pdf
+2026-08-12 20:00:49,565 [INFO] scraper.rbi: CACHE HIT md_13021 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13021.pdf
+2026-08-12 20:00:49,567 [INFO] scraper.rbi: CACHE HIT md_13022 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13022.pdf
+2026-08-12 20:00:49,567 [INFO] scraper.rbi: CACHE HIT md_13023 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13023.pdf
+2026-08-12 20:00:49,568 [INFO] scraper.rbi: CACHE HIT md_13024 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13024.pdf
+2026-08-12 20:00:49,571 [INFO] scraper.rbi: CACHE HIT md_13025 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13025.pdf
+2026-08-12 20:00:49,573 [INFO] scraper.rbi: CACHE HIT md_13026 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13026.pdf
+2026-08-12 20:00:49,578 [INFO] scraper.rbi: CACHE HIT md_13027 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13027.pdf
+2026-08-12 20:00:49,584 [INFO] scraper.rbi: CACHE HIT md_13028 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13028.pdf
+2026-08-12 20:00:49,587 [INFO] scraper.rbi: CACHE HIT md_13029 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13029.pdf
+2026-08-12 20:00:49,589 [INFO] scraper.rbi: CACHE HIT md_13030 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13030.pdf
+2026-08-12 20:00:49,591 [INFO] scraper.rbi: CACHE HIT md_13031 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13031.pdf
+2026-08-12 20:00:49,592 [INFO] scraper.rbi: CACHE HIT md_13032 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13032.pdf
+2026-08-12 20:00:49,592 [INFO] scraper.rbi: CACHE HIT md_13033 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13033.pdf
+2026-08-12 20:00:49,593 [INFO] scraper.rbi: CACHE HIT md_13034 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13034.pdf
+2026-08-12 20:00:49,594 [INFO] scraper.rbi: CACHE HIT md_13036 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13036.pdf
+2026-08-12 20:00:49,599 [INFO] scraper.rbi: CACHE HIT md_12986 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12986.pdf
+2026-08-12 20:00:49,606 [INFO] scraper.rbi: CACHE HIT md_12987 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12987.pdf
+2026-08-12 20:00:49,608 [INFO] scraper.rbi: CACHE HIT md_12988 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12988.pdf
+2026-08-12 20:00:49,609 [INFO] scraper.rbi: CACHE HIT md_12989 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12989.pdf
+2026-08-12 20:00:49,617 [INFO] scraper.rbi: CACHE HIT md_12990 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12990.pdf
+2026-08-12 20:00:49,631 [INFO] scraper.rbi: CACHE HIT md_12991 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12991.pdf
+2026-08-12 20:00:49,638 [INFO] scraper.rbi: CACHE HIT md_12992 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12992.pdf
+2026-08-12 20:00:49,641 [INFO] scraper.rbi: CACHE HIT md_12993 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12993.pdf
+2026-08-12 20:00:49,642 [INFO] scraper.rbi: CACHE HIT md_12994 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12994.pdf
+2026-08-12 20:00:49,643 [INFO] scraper.rbi: CACHE HIT md_12995 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12995.pdf
+2026-08-12 20:00:49,644 [INFO] scraper.rbi: CACHE HIT md_12996 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12996.pdf
+2026-08-12 20:00:49,647 [INFO] scraper.rbi: CACHE HIT md_12997 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12997.pdf
+2026-08-12 20:00:49,650 [INFO] scraper.rbi: CACHE HIT md_12998 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12998.pdf
+2026-08-12 20:00:49,651 [INFO] scraper.rbi: CACHE HIT md_12999 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12999.pdf
+2026-08-12 20:00:49,655 [INFO] scraper.rbi: CACHE HIT md_13000 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13000.pdf
+2026-08-12 20:00:49,656 [INFO] scraper.rbi: CACHE HIT md_13001 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13001.pdf
+2026-08-12 20:00:49,660 [INFO] scraper.rbi: CACHE HIT md_13002 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13002.pdf
+2026-08-12 20:00:49,665 [INFO] scraper.rbi: CACHE HIT md_13003 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13003.pdf
+2026-08-12 20:00:49,668 [INFO] scraper.rbi: CACHE HIT md_13004 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13004.pdf
+2026-08-12 20:00:49,674 [INFO] scraper.rbi: CACHE HIT md_13005 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13005.pdf
+2026-08-12 20:00:49,676 [INFO] scraper.rbi: CACHE HIT md_13006 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13006.pdf
+2026-08-12 20:00:49,680 [INFO] scraper.rbi: CACHE HIT md_13007 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13007.pdf
+2026-08-12 20:00:49,688 [INFO] scraper.rbi: CACHE HIT md_13008 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13008.pdf
+2026-08-12 20:00:49,690 [INFO] scraper.rbi: CACHE HIT md_13010 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13010.pdf
+2026-08-12 20:00:49,692 [INFO] scraper.rbi: CACHE HIT md_13205 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13205.pdf
+2026-08-12 20:00:49,699 [INFO] scraper.rbi: CACHE HIT md_13202 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13202.pdf
+2026-08-12 20:00:49,700 [INFO] scraper.rbi: CACHE HIT md_12966 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12966.pdf
+2026-08-12 20:00:49,705 [INFO] scraper.rbi: CACHE HIT md_12967 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12967.pdf
+2026-08-12 20:00:49,708 [INFO] scraper.rbi: CACHE HIT md_12968 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12968.pdf
+2026-08-12 20:00:49,711 [INFO] scraper.rbi: CACHE HIT md_12969 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12969.pdf
+2026-08-12 20:00:49,717 [INFO] scraper.rbi: CACHE HIT md_12970 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12970.pdf
+2026-08-12 20:00:49,721 [INFO] scraper.rbi: CACHE HIT md_12971 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12971.pdf
+2026-08-12 20:00:49,724 [INFO] scraper.rbi: CACHE HIT md_12972 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12972.pdf
+2026-08-12 20:00:49,725 [INFO] scraper.rbi: CACHE HIT md_12973 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12973.pdf
+2026-08-12 20:00:49,732 [INFO] scraper.rbi: CACHE HIT md_12974 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12974.pdf
+2026-08-12 20:00:49,734 [INFO] scraper.rbi: CACHE HIT md_12975 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12975.pdf
+2026-08-12 20:00:49,736 [INFO] scraper.rbi: CACHE HIT md_12976 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12976.pdf
+2026-08-12 20:00:49,739 [INFO] scraper.rbi: CACHE HIT md_12977 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12977.pdf
+2026-08-12 20:00:49,741 [INFO] scraper.rbi: CACHE HIT md_12978 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12978.pdf
+2026-08-12 20:00:49,745 [INFO] scraper.rbi: CACHE HIT md_12979 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12979.pdf
+2026-08-12 20:00:49,748 [INFO] scraper.rbi: CACHE HIT md_12980 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12980.pdf
+2026-08-12 20:00:49,750 [INFO] scraper.rbi: CACHE HIT md_12981 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12981.pdf
+2026-08-12 20:00:49,758 [INFO] scraper.rbi: CACHE HIT md_12982 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12982.pdf
+2026-08-12 20:00:49,768 [INFO] scraper.rbi: CACHE HIT md_12983 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12983.pdf
+2026-08-12 20:00:49,771 [INFO] scraper.rbi: CACHE HIT md_12984 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12984.pdf
+2026-08-12 20:00:49,775 [INFO] scraper.rbi: CACHE HIT md_12931 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12931.pdf
+2026-08-12 20:00:49,778 [INFO] scraper.rbi: CACHE HIT md_12932 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12932.pdf
+2026-08-12 20:00:49,781 [INFO] scraper.rbi: CACHE HIT md_12933 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12933.pdf
+2026-08-12 20:00:49,784 [INFO] scraper.rbi: CACHE HIT md_12934 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12934.pdf
+2026-08-12 20:00:49,786 [INFO] scraper.rbi: CACHE HIT md_12935 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12935.pdf
+2026-08-12 20:00:49,791 [INFO] scraper.rbi: CACHE HIT md_12936 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12936.pdf
+2026-08-12 20:00:49,794 [INFO] scraper.rbi: CACHE HIT md_12937 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12937.pdf
+2026-08-12 20:00:49,816 [INFO] scraper.rbi: CACHE HIT md_12938 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12938.pdf
+2026-08-12 20:00:49,826 [INFO] scraper.rbi: CACHE HIT md_12939 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12939.pdf
+2026-08-12 20:00:49,827 [INFO] scraper.rbi: CACHE HIT md_12940 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12940.pdf
+2026-08-12 20:00:49,831 [INFO] scraper.rbi: CACHE HIT md_12941 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12941.pdf
+2026-08-12 20:00:49,834 [INFO] scraper.rbi: CACHE HIT md_12942 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12942.pdf
+2026-08-12 20:00:49,838 [INFO] scraper.rbi: CACHE HIT md_12943 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12943.pdf
+2026-08-12 20:00:49,842 [INFO] scraper.rbi: CACHE HIT md_12944 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12944.pdf
+2026-08-12 20:00:49,848 [INFO] scraper.rbi: CACHE HIT md_12945 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12945.pdf
+2026-08-12 20:00:49,858 [INFO] scraper.rbi: CACHE HIT md_12946 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12946.pdf
+2026-08-12 20:00:49,862 [INFO] scraper.rbi: CACHE HIT md_12947 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12947.pdf
+2026-08-12 20:00:49,864 [INFO] scraper.rbi: CACHE HIT md_12948 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12948.pdf
+2026-08-12 20:00:49,866 [INFO] scraper.rbi: CACHE HIT md_12949 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12949.pdf
+2026-08-12 20:00:49,871 [INFO] scraper.rbi: CACHE HIT md_12950 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12950.pdf
+2026-08-12 20:00:49,875 [INFO] scraper.rbi: CACHE HIT md_12951 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12951.pdf
+2026-08-12 20:00:49,876 [INFO] scraper.rbi: CACHE HIT md_12952 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12952.pdf
+2026-08-12 20:00:49,878 [INFO] scraper.rbi: CACHE HIT md_12953 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12953.pdf
+2026-08-12 20:00:49,885 [INFO] scraper.rbi: CACHE HIT md_12954 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12954.pdf
+2026-08-12 20:00:49,893 [INFO] scraper.rbi: CACHE HIT md_12955 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12955.pdf
+2026-08-12 20:00:49,897 [INFO] scraper.rbi: CACHE HIT md_12956 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12956.pdf
+2026-08-12 20:00:49,899 [INFO] scraper.rbi: CACHE HIT md_12957 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12957.pdf
+2026-08-12 20:00:49,900 [INFO] scraper.rbi: CACHE HIT md_12958 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12958.pdf
+2026-08-12 20:00:49,906 [INFO] scraper.rbi: CACHE HIT md_12959 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12959.pdf
+2026-08-12 20:00:49,907 [INFO] scraper.rbi: CACHE HIT md_12960 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12960.pdf
+2026-08-12 20:00:49,909 [INFO] scraper.rbi: CACHE HIT md_12961 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12961.pdf
+2026-08-12 20:00:49,915 [INFO] scraper.rbi: CACHE HIT md_12962 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12962.pdf
+2026-08-12 20:00:49,916 [INFO] scraper.rbi: CACHE HIT md_12963 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12963.pdf
+2026-08-12 20:00:49,917 [INFO] scraper.rbi: CACHE HIT md_12964 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12964.pdf
+2026-08-12 20:00:49,919 [INFO] scraper.rbi: CACHE HIT md_12965 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12965.pdf
+2026-08-12 20:00:49,921 [INFO] scraper.rbi: CACHE HIT md_12927 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12927.pdf
+2026-08-12 20:00:49,925 [INFO] scraper.rbi: CACHE HIT md_12928 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12928.pdf
+2026-08-12 20:00:49,927 [INFO] scraper.rbi: CACHE HIT md_12929 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12929.pdf
+2026-08-12 20:00:49,932 [INFO] scraper.rbi: CACHE HIT md_12930 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12930.pdf
+2026-08-12 20:00:49,933 [INFO] scraper.rbi: CACHE HIT md_12925 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12925.pdf
+2026-08-12 20:00:49,936 [INFO] scraper.rbi: CACHE HIT md_12926 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12926.pdf
+2026-08-12 20:00:49,941 [INFO] scraper.rbi: CACHE HIT md_13637 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13637.pdf
+2026-08-12 20:00:49,943 [INFO] scraper.rbi: CACHE HIT md_13638 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13638.pdf
+2026-08-12 20:00:49,973 [INFO] scraper.rbi: CACHE HIT md_13639 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13639.pdf
+2026-08-12 20:00:49,988 [INFO] scraper.rbi: CACHE HIT md_13640 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13640.pdf
+2026-08-12 20:00:49,993 [INFO] scraper.rbi: CACHE HIT md_13641 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13641.pdf
+2026-08-12 20:00:49,994 [INFO] scraper.rbi: CACHE HIT md_13642 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13642.pdf
+2026-08-12 20:00:50,001 [INFO] scraper.rbi: CACHE HIT md_13643 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13643.pdf
+2026-08-12 20:00:50,007 [INFO] scraper.rbi: CACHE HIT md_13644 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13644.pdf
+2026-08-12 20:00:50,010 [INFO] scraper.rbi: CACHE HIT md_13645 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13645.pdf
+2026-08-12 20:00:50,015 [INFO] scraper.rbi: CACHE HIT md_13628 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13628.pdf
+2026-08-12 20:00:50,028 [INFO] scraper.rbi: CACHE HIT md_13629 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13629.pdf
+2026-08-12 20:00:50,039 [INFO] scraper.rbi: CACHE HIT md_13630 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13630.pdf
+2026-08-12 20:00:50,040 [INFO] scraper.rbi: CACHE HIT md_13631 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13631.pdf
+2026-08-12 20:00:50,049 [INFO] scraper.rbi: CACHE HIT md_13632 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13632.pdf
+2026-08-12 20:00:50,054 [INFO] scraper.rbi: CACHE HIT md_13633 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13633.pdf
+2026-08-12 20:00:50,057 [INFO] scraper.rbi: CACHE HIT md_13634 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13634.pdf
+2026-08-12 20:00:50,059 [INFO] scraper.rbi: CACHE HIT md_13635 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13635.pdf
+2026-08-12 20:00:50,074 [INFO] scraper.rbi: CACHE HIT md_13636 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13636.pdf
+2026-08-12 20:00:50,100 [INFO] scraper.rbi: CACHE HIT md_13619 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13619.pdf
+2026-08-12 20:00:50,105 [INFO] scraper.rbi: CACHE HIT md_13620 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13620.pdf
+2026-08-12 20:00:50,109 [INFO] scraper.rbi: CACHE HIT md_13621 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13621.pdf
+2026-08-12 20:00:50,123 [INFO] scraper.rbi: CACHE HIT md_13622 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13622.pdf
+2026-08-12 20:00:50,126 [INFO] scraper.rbi: CACHE HIT md_13623 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13623.pdf
+2026-08-12 20:00:50,127 [INFO] scraper.rbi: CACHE HIT md_13624 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13624.pdf
+2026-08-12 20:00:50,138 [INFO] scraper.rbi: CACHE HIT md_13625 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13625.pdf
+2026-08-12 20:00:50,141 [INFO] scraper.rbi: CACHE HIT md_13626 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13626.pdf
+2026-08-12 20:00:50,157 [INFO] scraper.rbi: CACHE HIT md_13627 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13627.pdf
+2026-08-12 20:00:50,176 [INFO] scraper.rbi: CACHE HIT md_13603 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13603.pdf
+2026-08-12 20:00:50,183 [INFO] scraper.rbi: CACHE HIT md_13604 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13604.pdf
+2026-08-12 20:00:50,189 [INFO] scraper.rbi: CACHE HIT md_13605 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13605.pdf
+2026-08-12 20:00:50,201 [INFO] scraper.rbi: CACHE HIT md_13606 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13606.pdf
+2026-08-12 20:00:50,206 [INFO] scraper.rbi: CACHE HIT md_13607 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13607.pdf
+2026-08-12 20:00:50,208 [INFO] scraper.rbi: CACHE HIT md_13608 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13608.pdf
+2026-08-12 20:00:50,214 [INFO] scraper.rbi: CACHE HIT md_13609 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13609.pdf
+2026-08-12 20:00:50,216 [INFO] scraper.rbi: CACHE HIT md_13598 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13598.pdf
+2026-08-12 20:00:50,219 [INFO] scraper.rbi: CACHE HIT md_13599 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13599.pdf
+2026-08-12 20:00:50,224 [INFO] scraper.rbi: CACHE HIT md_13610 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13610.pdf
+2026-08-12 20:00:50,227 [INFO] scraper.rbi: CACHE HIT md_13611 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13611.pdf
+2026-08-12 20:00:50,248 [INFO] scraper.rbi: CACHE HIT md_13612 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13612.pdf
+2026-08-12 20:00:50,256 [INFO] scraper.rbi: CACHE HIT md_13613 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13613.pdf
+2026-08-12 20:00:50,258 [INFO] scraper.rbi: CACHE HIT md_13614 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13614.pdf
+2026-08-12 20:00:50,264 [INFO] scraper.rbi: CACHE HIT md_13615 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13615.pdf
+2026-08-12 20:00:50,266 [INFO] scraper.rbi: CACHE HIT md_13616 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13616.pdf
+2026-08-12 20:00:50,272 [INFO] scraper.rbi: CACHE HIT md_13617 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13617.pdf
+2026-08-12 20:00:50,288 [INFO] scraper.rbi: CACHE HIT md_13618 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13618.pdf
+2026-08-12 20:00:50,306 [INFO] scraper.rbi: CACHE HIT md_13600 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13600.pdf
+2026-08-12 20:00:50,313 [INFO] scraper.rbi: CACHE HIT md_13601 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13601.pdf
+2026-08-12 20:00:50,322 [INFO] scraper.rbi: CACHE HIT md_13602 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13602.pdf
+2026-08-12 20:00:50,325 [INFO] scraper.rbi: CACHE HIT md_13594 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13594.pdf
+2026-08-12 20:00:50,332 [INFO] scraper.rbi: CACHE HIT md_13595 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13595.pdf
+2026-08-12 20:00:50,338 [INFO] scraper.rbi: CACHE HIT md_13596 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13596.pdf
+2026-08-12 20:00:50,341 [INFO] scraper.rbi: CACHE HIT md_13597 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13597.pdf
+2026-08-12 20:00:50,345 [INFO] scraper.rbi: CACHE HIT md_13585 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13585.pdf
+2026-08-12 20:00:50,356 [INFO] scraper.rbi: CACHE HIT md_13586 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13586.pdf
+2026-08-12 20:00:50,380 [INFO] scraper.rbi: CACHE HIT md_13587 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13587.pdf
+2026-08-12 20:00:50,388 [INFO] scraper.rbi: CACHE HIT md_13588 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13588.pdf
+2026-08-12 20:00:50,392 [INFO] scraper.rbi: CACHE HIT md_13589 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13589.pdf
+2026-08-12 20:00:50,409 [INFO] scraper.rbi: CACHE HIT md_13590 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13590.pdf
+2026-08-12 20:00:50,427 [INFO] scraper.rbi: CACHE HIT md_13591 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13591.pdf
+2026-08-12 20:00:50,432 [INFO] scraper.rbi: CACHE HIT md_13592 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13592.pdf
+2026-08-12 20:00:50,461 [INFO] scraper.rbi: CACHE HIT md_13593 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13593.pdf
+2026-08-12 20:00:50,474 [INFO] scraper.rbi: CACHE HIT md_13584 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13584.pdf
+2026-08-12 20:00:50,498 [INFO] scraper.rbi: CACHE HIT md_13582 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13582.pdf
+2026-08-12 20:00:50,506 [INFO] scraper.rbi: CACHE HIT md_13583 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13583.pdf
+2026-08-12 20:00:50,510 [INFO] scraper.rbi: CACHE HIT md_13522 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13522.pdf
+2026-08-12 20:00:50,511 [INFO] scraper.rbi: CACHE HIT md_13523 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13523.pdf
+2026-08-12 20:00:50,514 [INFO] scraper.rbi: CACHE HIT md_13524 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13524.pdf
+2026-08-12 20:00:50,515 [INFO] scraper.rbi: CACHE HIT md_13525 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13525.pdf
+2026-08-12 20:00:50,518 [INFO] scraper.rbi: CACHE HIT md_12799 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12799.pdf
+2026-08-12 20:00:50,522 [INFO] scraper.rbi: CACHE HIT md_11959 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11959.pdf
+2026-08-12 20:00:50,524 [INFO] scraper.rbi: CACHE HIT md_11060 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11060.pdf
+2026-08-12 20:00:50,525 [INFO] scraper.rbi: CACHE HIT md_11037 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11037.pdf
+2026-08-12 20:00:50,526 [INFO] scraper.rbi: CACHE HIT md_13552 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13552.pdf
+2026-08-12 20:00:50,528 [INFO] scraper.rbi: CACHE HIT md_13343 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13343.pdf
+2026-08-12 20:00:50,530 [INFO] scraper.rbi: CACHE HIT md_13214 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13214.pdf
+2026-08-12 20:00:50,530 [INFO] scraper.rbi: CACHE HIT md_12920 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12920.pdf
+2026-08-12 20:00:50,532 [INFO] scraper.rbi: CACHE HIT md_12870 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12870.pdf
+2026-08-12 20:00:50,533 [INFO] scraper.rbi: CACHE HIT md_12784 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12784.pdf
+2026-08-12 20:00:50,534 [INFO] scraper.rbi: CACHE HIT md_13376 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13376.pdf
+2026-08-12 20:00:50,537 [INFO] scraper.rbi: CACHE HIT md_12765 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12765.pdf
+2026-08-12 20:00:50,539 [INFO] scraper.rbi: CACHE HIT md_12682 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12682.pdf
+2026-08-12 20:00:50,540 [INFO] scraper.rbi: CACHE HIT md_12592 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12592.pdf
+2026-08-12 20:00:50,542 [INFO] scraper.rbi: CACHE HIT md_12581 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12581.pdf
+2026-08-12 20:00:50,543 [INFO] scraper.rbi: CACHE HIT md_12580 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12580.pdf
+2026-08-12 20:00:50,544 [INFO] scraper.rbi: CACHE HIT md_12427 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12427.pdf
+2026-08-12 20:00:50,546 [INFO] scraper.rbi: CACHE HIT md_12163 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12163.pdf
+2026-08-12 20:00:50,548 [INFO] scraper.rbi: CACHE HIT md_12108 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12108.pdf
+2026-08-12 20:00:50,550 [INFO] scraper.rbi: CACHE HIT md_12061 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12061.pdf
+2026-08-12 20:00:50,551 [INFO] scraper.rbi: CACHE HIT md_11500 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11500.pdf
+2026-08-12 20:00:50,553 [INFO] scraper.rbi: CACHE HIT md_10495 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10495.pdf
+2026-08-12 20:00:50,555 [INFO] scraper.rbi: CACHE HIT md_10485 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10485.pdf
+2026-08-12 20:00:50,556 [INFO] scraper.rbi: CACHE HIT md_12839 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12839.pdf
+2026-08-12 20:00:50,557 [INFO] scraper.rbi: CACHE HIT md_12710 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12710.pdf
+2026-08-12 20:00:50,559 [INFO] scraper.rbi: CACHE HIT md_11510 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11510.pdf
+2026-08-12 20:00:50,560 [INFO] scraper.rbi: CACHE HIT md_11200 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11200.pdf
+2026-08-12 20:00:50,562 [INFO] scraper.rbi: CACHE HIT md_10868 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10868.pdf
+2026-08-12 20:00:50,565 [INFO] scraper.rbi: CACHE HIT md_10738 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10738.pdf
+2026-08-12 20:00:50,568 [INFO] scraper.rbi: CACHE HIT md_10404 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10404.pdf
+2026-08-12 20:00:50,571 [INFO] scraper.rbi: CACHE HIT md_10637 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10637.pdf
+2026-08-12 20:00:50,572 [INFO] scraper.rbi: CACHE HIT md_10191 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10191.pdf
+2026-08-12 20:00:50,573 [INFO] scraper.rbi: CACHE HIT md_10192 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10192.pdf
+2026-08-12 20:00:50,574 [INFO] scraper.rbi: CACHE HIT md_10193 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10193.pdf
+2026-08-12 20:00:50,575 [INFO] scraper.rbi: CACHE HIT md_10196 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10196.pdf
+2026-08-12 20:00:50,576 [INFO] scraper.rbi: CACHE HIT md_10197 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10197.pdf
+2026-08-12 20:00:50,577 [INFO] scraper.rbi: CACHE HIT md_10198 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10198.pdf
+2026-08-12 20:00:50,578 [INFO] scraper.rbi: CACHE HIT md_10201 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10201.pdf
+2026-08-12 20:00:50,582 [INFO] scraper.rbi: CACHE HIT md_10202 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10202.pdf
+2026-08-12 20:00:50,584 [INFO] scraper.rbi: CACHE HIT md_10203 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10203.pdf
+2026-08-12 20:00:50,585 [INFO] scraper.rbi: CACHE HIT md_10205 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10205.pdf
+2026-08-12 20:00:50,586 [INFO] scraper.rbi: CACHE HIT md_10395 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10395.pdf
+2026-08-12 20:00:50,587 [INFO] scraper.rbi: CACHE HIT md_11518 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11518.pdf
+2026-08-12 20:00:50,589 [INFO] scraper.rbi: CACHE HIT md_13362 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13362.pdf
+2026-08-12 20:00:50,590 [INFO] scraper.rbi: CACHE HIT md_13361 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13361.pdf
+2026-08-12 20:00:50,591 [INFO] scraper.rbi: CACHE HIT md_13360 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13360.pdf
+2026-08-12 20:00:50,592 [INFO] scraper.rbi: CACHE HIT md_13526 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13526.pdf
+2026-08-12 20:00:50,593 [INFO] scraper.rbi: CACHE HIT md_13502 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13502.pdf
+2026-08-12 20:00:50,595 [INFO] scraper.rbi: CACHE HIT md_13374 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13374.pdf
+2026-08-12 20:00:50,597 [INFO] scraper.rbi: CACHE HIT md_12898 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12898.pdf
+2026-08-12 20:00:50,599 [INFO] scraper.rbi: CACHE HIT md_12896 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12896.pdf
+2026-08-12 20:00:50,604 [INFO] scraper.rbi: CACHE HIT md_12715 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12715.pdf
+2026-08-12 20:00:50,605 [INFO] scraper.rbi: CACHE HIT md_12616 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12616.pdf
+2026-08-12 20:00:50,606 [INFO] scraper.rbi: CACHE HIT md_12156 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12156.pdf
+2026-08-12 20:00:50,608 [INFO] scraper.rbi: CACHE HIT md_10833 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10833.pdf
+2026-08-12 20:00:50,741 [INFO] pipeline.weeks1to5: === WEEK 2: extraction pilot + risk checks ===
+2026-08-12 20:00:50,748 [INFO] extraction.text: SKIP extract (cached text) md_11322
+2026-08-12 20:00:50,749 [INFO] extraction.text: SKIP extract (cached text) md_10476
+2026-08-12 20:00:50,751 [INFO] extraction.text: SKIP extract (cached text) md_13443
+2026-08-12 20:00:50,751 [INFO] extraction.text: SKIP extract (cached text) md_13442
+2026-08-12 20:00:50,754 [INFO] extraction.text: SKIP extract (cached text) md_13271
+2026-08-12 20:00:50,754 [INFO] extraction.text: SKIP extract (cached text) md_13272
+2026-08-12 20:00:50,755 [INFO] extraction.text: SKIP extract (cached text) md_13273
+2026-08-12 20:00:50,756 [INFO] extraction.text: SKIP extract (cached text) md_13274
+2026-08-12 20:00:50,757 [INFO] extraction.text: SKIP extract (cached text) md_13275
+2026-08-12 20:00:50,757 [INFO] extraction.text: SKIP extract (cached text) md_13276
+2026-08-12 20:00:50,758 [INFO] extraction.text: SKIP extract (cached text) md_12586
+2026-08-12 20:00:50,759 [INFO] extraction.text: SKIP extract (cached text) md_13399
+2026-08-12 20:00:50,759 [INFO] extraction.text: SKIP extract (cached text) md_13400
+2026-08-12 20:00:50,760 [INFO] extraction.text: SKIP extract (cached text) md_13319
+2026-08-12 20:00:50,761 [INFO] extraction.text: SKIP extract (cached text) md_13136
+2026-08-12 20:00:50,859 [INFO] metadata.temporal: Temporal coverage: 4/15 usable dates
+2026-08-12 20:00:51,132 [INFO] preprocessing.segmenter: Segmented 600 paragraphs across corpus
+2026-08-12 20:00:51,136 [INFO] scraper.supplementary: GET https://www.rbi.org.in/Scripts/FAQView.aspx attempt=1
+2026-08-12 20:00:51,749 [INFO] scraper.supplementary: Discovered 91 links for faq
+2026-08-12 20:00:51,765 [INFO] scraper.supplementary: Supplementary faq downloaded/cached=35
+2026-08-12 20:00:53,240 [INFO] scraper.supplementary: GET https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx attempt=1
+2026-08-12 20:00:53,686 [INFO] scraper.supplementary: Discovered 79 links for enforcement
+2026-08-12 20:00:53,698 [INFO] scraper.supplementary: Supplementary enforcement downloaded/cached=35
+2026-08-12 20:00:55,154 [INFO] scraper.supplementary: GET https://www.rbi.org.in/Scripts/BS_CircularsIndexDisplay.aspx attempt=1
+2026-08-12 20:00:55,325 [INFO] scraper.supplementary: Discovered 5 links for circulars_withdrawn
+2026-08-12 20:00:55,329 [INFO] scraper.supplementary: Supplementary circulars_withdrawn downloaded/cached=5
+2026-08-12 20:00:56,829 [INFO] scraper.supplementary: GET https://www.rbi.org.in/Scripts/NotificationUser.aspx attempt=1
+2026-08-12 20:00:57,078 [INFO] scraper.supplementary: Discovered 44 links for amendments
+2026-08-12 20:00:57,091 [INFO] scraper.supplementary: Supplementary amendments downloaded/cached=35
+2026-08-12 20:00:59,051 [INFO] pipeline.weeks1to5: === WEEK 3: full extract + segment + matrix v1 ===
+2026-08-12 20:00:59,052 [INFO] scraper.rbi: GET attempt=1 url=https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx
+2026-08-12 20:00:59,469 [INFO] scraper.rbi: Cached listing page -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/_listing_BS_ViewMasDirections.html
+2026-08-12 20:00:59,527 [INFO] scraper.rbi: Discovered 381 Master Direction entries from listing
+2026-08-12 20:00:59,530 [INFO] scraper.rbi: CACHE HIT md_11322 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11322.pdf
+2026-08-12 20:00:59,531 [INFO] scraper.rbi: CACHE HIT md_10476 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10476.pdf
+2026-08-12 20:00:59,531 [INFO] scraper.rbi: CACHE HIT md_13443 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13443.pdf
+2026-08-12 20:00:59,531 [INFO] scraper.rbi: CACHE HIT md_13442 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13442.pdf
+2026-08-12 20:00:59,532 [INFO] scraper.rbi: CACHE HIT md_13271 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13271.pdf
+2026-08-12 20:00:59,532 [INFO] scraper.rbi: CACHE HIT md_13272 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13272.pdf
+2026-08-12 20:00:59,532 [INFO] scraper.rbi: CACHE HIT md_13273 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13273.pdf
+2026-08-12 20:00:59,533 [INFO] scraper.rbi: CACHE HIT md_13274 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13274.pdf
+2026-08-12 20:00:59,533 [INFO] scraper.rbi: CACHE HIT md_13275 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13275.pdf
+2026-08-12 20:00:59,533 [INFO] scraper.rbi: CACHE HIT md_13276 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13276.pdf
+2026-08-12 20:00:59,534 [INFO] scraper.rbi: CACHE HIT md_12586 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12586.pdf
+2026-08-12 20:00:59,534 [INFO] scraper.rbi: CACHE HIT md_13399 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13399.pdf
+2026-08-12 20:00:59,535 [INFO] scraper.rbi: CACHE HIT md_13400 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13400.pdf
+2026-08-12 20:00:59,535 [INFO] scraper.rbi: CACHE HIT md_13319 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13319.pdf
+2026-08-12 20:00:59,537 [INFO] scraper.rbi: CACHE HIT md_13136 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13136.pdf
+2026-08-12 20:00:59,537 [INFO] scraper.rbi: CACHE HIT md_13137 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13137.pdf
+2026-08-12 20:00:59,538 [INFO] scraper.rbi: CACHE HIT md_13138 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13138.pdf
+2026-08-12 20:00:59,538 [INFO] scraper.rbi: CACHE HIT md_13139 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13139.pdf
+2026-08-12 20:00:59,539 [INFO] scraper.rbi: CACHE HIT md_13140 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13140.pdf
+2026-08-12 20:00:59,539 [INFO] scraper.rbi: CACHE HIT md_13141 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13141.pdf
+2026-08-12 20:00:59,540 [INFO] scraper.rbi: CACHE HIT md_13143 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13143.pdf
+2026-08-12 20:00:59,541 [INFO] scraper.rbi: CACHE HIT md_13144 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13144.pdf
+2026-08-12 20:00:59,541 [INFO] scraper.rbi: CACHE HIT md_13145 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13145.pdf
+2026-08-12 20:00:59,542 [INFO] scraper.rbi: CACHE HIT md_13146 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13146.pdf
+2026-08-12 20:00:59,543 [INFO] scraper.rbi: CACHE HIT md_13147 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13147.pdf
+2026-08-12 20:00:59,544 [INFO] scraper.rbi: CACHE HIT md_13148 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13148.pdf
+2026-08-12 20:00:59,544 [INFO] scraper.rbi: CACHE HIT md_13149 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13149.pdf
+2026-08-12 20:00:59,545 [INFO] scraper.rbi: CACHE HIT md_13150 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13150.pdf
+2026-08-12 20:00:59,545 [INFO] scraper.rbi: CACHE HIT md_13151 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13151.pdf
+2026-08-12 20:00:59,546 [INFO] scraper.rbi: CACHE HIT md_13152 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13152.pdf
+2026-08-12 20:00:59,546 [INFO] scraper.rbi: CACHE HIT md_13153 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13153.pdf
+2026-08-12 20:00:59,547 [INFO] scraper.rbi: CACHE HIT md_13154 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13154.pdf
+2026-08-12 20:00:59,547 [INFO] scraper.rbi: CACHE HIT md_13155 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13155.pdf
+2026-08-12 20:00:59,548 [INFO] scraper.rbi: CACHE HIT md_13156 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13156.pdf
+2026-08-12 20:00:59,548 [INFO] scraper.rbi: CACHE HIT md_13157 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13157.pdf
+2026-08-12 20:00:59,549 [INFO] scraper.rbi: CACHE HIT md_13158 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13158.pdf
+2026-08-12 20:00:59,551 [INFO] scraper.rbi: CACHE HIT md_13159 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13159.pdf
+2026-08-12 20:00:59,551 [INFO] scraper.rbi: CACHE HIT md_13160 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13160.pdf
+2026-08-12 20:00:59,552 [INFO] scraper.rbi: CACHE HIT md_13161 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13161.pdf
+2026-08-12 20:00:59,552 [INFO] scraper.rbi: CACHE HIT md_13162 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13162.pdf
+2026-08-12 20:00:59,552 [INFO] scraper.rbi: CACHE HIT md_13163 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13163.pdf
+2026-08-12 20:00:59,553 [INFO] scraper.rbi: CACHE HIT md_13164 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13164.pdf
+2026-08-12 20:00:59,553 [INFO] scraper.rbi: CACHE HIT md_13165 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13165.pdf
+2026-08-12 20:00:59,554 [INFO] scraper.rbi: CACHE HIT md_13166 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13166.pdf
+2026-08-12 20:00:59,554 [INFO] scraper.rbi: CACHE HIT md_13167 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13167.pdf
+2026-08-12 20:00:59,554 [INFO] scraper.rbi: CACHE HIT md_13168 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13168.pdf
+2026-08-12 20:00:59,555 [INFO] scraper.rbi: CACHE HIT md_13328 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13328.pdf
+2026-08-12 20:00:59,556 [INFO] scraper.rbi: CACHE HIT md_13105 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13105.pdf
+2026-08-12 20:00:59,556 [INFO] scraper.rbi: CACHE HIT md_13106 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13106.pdf
+2026-08-12 20:00:59,557 [INFO] scraper.rbi: CACHE HIT md_13107 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13107.pdf
+2026-08-12 20:00:59,557 [INFO] scraper.rbi: CACHE HIT md_13108 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13108.pdf
+2026-08-12 20:00:59,558 [INFO] scraper.rbi: CACHE HIT md_13109 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13109.pdf
+2026-08-12 20:00:59,559 [INFO] scraper.rbi: CACHE HIT md_13111 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13111.pdf
+2026-08-12 20:00:59,560 [INFO] scraper.rbi: CACHE HIT md_13112 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13112.pdf
+2026-08-12 20:00:59,560 [INFO] scraper.rbi: CACHE HIT md_13113 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13113.pdf
+2026-08-12 20:00:59,561 [INFO] scraper.rbi: CACHE HIT md_13114 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13114.pdf
+2026-08-12 20:00:59,562 [INFO] scraper.rbi: CACHE HIT md_13115 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13115.pdf
+2026-08-12 20:00:59,563 [INFO] scraper.rbi: CACHE HIT md_13116 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13116.pdf
+2026-08-12 20:00:59,563 [INFO] scraper.rbi: CACHE HIT md_13117 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13117.pdf
+2026-08-12 20:00:59,564 [INFO] scraper.rbi: CACHE HIT md_13118 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13118.pdf
+2026-08-12 20:00:59,564 [INFO] scraper.rbi: CACHE HIT md_13119 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13119.pdf
+2026-08-12 20:00:59,564 [INFO] scraper.rbi: CACHE HIT md_13120 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13120.pdf
+2026-08-12 20:00:59,565 [INFO] scraper.rbi: CACHE HIT md_13121 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13121.pdf
+2026-08-12 20:00:59,566 [INFO] scraper.rbi: CACHE HIT md_13122 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13122.pdf
+2026-08-12 20:00:59,566 [INFO] scraper.rbi: CACHE HIT md_13123 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13123.pdf
+2026-08-12 20:00:59,567 [INFO] scraper.rbi: CACHE HIT md_13124 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13124.pdf
+2026-08-12 20:00:59,567 [INFO] scraper.rbi: CACHE HIT md_13125 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13125.pdf
+2026-08-12 20:00:59,567 [INFO] scraper.rbi: CACHE HIT md_13126 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13126.pdf
+2026-08-12 20:00:59,569 [INFO] scraper.rbi: CACHE HIT md_13127 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13127.pdf
+2026-08-12 20:00:59,569 [INFO] scraper.rbi: CACHE HIT md_13128 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13128.pdf
+2026-08-12 20:00:59,570 [INFO] scraper.rbi: CACHE HIT md_13129 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13129.pdf
+2026-08-12 20:00:59,570 [INFO] scraper.rbi: CACHE HIT md_13130 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13130.pdf
+2026-08-12 20:00:59,571 [INFO] scraper.rbi: CACHE HIT md_13131 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13131.pdf
+2026-08-12 20:00:59,571 [INFO] scraper.rbi: CACHE HIT md_13132 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13132.pdf
+2026-08-12 20:00:59,571 [INFO] scraper.rbi: CACHE HIT md_13133 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13133.pdf
+2026-08-12 20:00:59,572 [INFO] scraper.rbi: CACHE HIT md_13134 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13134.pdf
+2026-08-12 20:00:59,572 [INFO] scraper.rbi: CACHE HIT md_13135 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13135.pdf
+2026-08-12 20:00:59,573 [INFO] scraper.rbi: CACHE HIT md_13321 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13321.pdf
+2026-08-12 20:00:59,574 [INFO] scraper.rbi: CACHE HIT md_13087 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13087.pdf
+2026-08-12 20:00:59,574 [INFO] scraper.rbi: CACHE HIT md_13088 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13088.pdf
+2026-08-12 20:00:59,575 [INFO] scraper.rbi: CACHE HIT md_13089 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13089.pdf
+2026-08-12 20:00:59,575 [INFO] scraper.rbi: CACHE HIT md_13090 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13090.pdf
+2026-08-12 20:00:59,576 [INFO] scraper.rbi: CACHE HIT md_13092 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13092.pdf
+2026-08-12 20:00:59,577 [INFO] scraper.rbi: CACHE HIT md_13093 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13093.pdf
+2026-08-12 20:00:59,578 [INFO] scraper.rbi: CACHE HIT md_13094 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13094.pdf
+2026-08-12 20:00:59,578 [INFO] scraper.rbi: CACHE HIT md_13095 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13095.pdf
+2026-08-12 20:00:59,578 [INFO] scraper.rbi: CACHE HIT md_13096 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13096.pdf
+2026-08-12 20:00:59,579 [INFO] scraper.rbi: CACHE HIT md_13097 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13097.pdf
+2026-08-12 20:00:59,579 [INFO] scraper.rbi: CACHE HIT md_13098 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13098.pdf
+2026-08-12 20:00:59,580 [INFO] scraper.rbi: CACHE HIT md_13099 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13099.pdf
+2026-08-12 20:00:59,580 [INFO] scraper.rbi: CACHE HIT md_13100 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13100.pdf
+2026-08-12 20:00:59,580 [INFO] scraper.rbi: CACHE HIT md_13101 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13101.pdf
+2026-08-12 20:00:59,581 [INFO] scraper.rbi: CACHE HIT md_13102 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13102.pdf
+2026-08-12 20:00:59,581 [INFO] scraper.rbi: CACHE HIT md_13103 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13103.pdf
+2026-08-12 20:00:59,582 [INFO] scraper.rbi: CACHE HIT md_13104 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13104.pdf
+2026-08-12 20:00:59,582 [INFO] scraper.rbi: CACHE HIT md_13324 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13324.pdf
+2026-08-12 20:00:59,583 [INFO] scraper.rbi: CACHE HIT md_13061 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13061.pdf
+2026-08-12 20:00:59,583 [INFO] scraper.rbi: CACHE HIT md_13062 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13062.pdf
+2026-08-12 20:00:59,584 [INFO] scraper.rbi: CACHE HIT md_13063 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13063.pdf
+2026-08-12 20:00:59,585 [INFO] scraper.rbi: CACHE HIT md_13064 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13064.pdf
+2026-08-12 20:00:59,585 [INFO] scraper.rbi: CACHE HIT md_13066 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13066.pdf
+2026-08-12 20:00:59,586 [INFO] scraper.rbi: CACHE HIT md_13067 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13067.pdf
+2026-08-12 20:00:59,586 [INFO] scraper.rbi: CACHE HIT md_13068 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13068.pdf
+2026-08-12 20:00:59,586 [INFO] scraper.rbi: CACHE HIT md_13069 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13069.pdf
+2026-08-12 20:00:59,587 [INFO] scraper.rbi: CACHE HIT md_13070 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13070.pdf
+2026-08-12 20:00:59,588 [INFO] scraper.rbi: CACHE HIT md_13071 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13071.pdf
+2026-08-12 20:00:59,588 [INFO] scraper.rbi: CACHE HIT md_13072 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13072.pdf
+2026-08-12 20:00:59,588 [INFO] scraper.rbi: CACHE HIT md_13073 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13073.pdf
+2026-08-12 20:00:59,589 [INFO] scraper.rbi: CACHE HIT md_13074 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13074.pdf
+2026-08-12 20:00:59,589 [INFO] scraper.rbi: CACHE HIT md_13075 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13075.pdf
+2026-08-12 20:00:59,590 [INFO] scraper.rbi: CACHE HIT md_13076 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13076.pdf
+2026-08-12 20:00:59,590 [INFO] scraper.rbi: CACHE HIT md_13077 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13077.pdf
+2026-08-12 20:00:59,590 [INFO] scraper.rbi: CACHE HIT md_13078 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13078.pdf
+2026-08-12 20:00:59,591 [INFO] scraper.rbi: CACHE HIT md_13079 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13079.pdf
+2026-08-12 20:00:59,591 [INFO] scraper.rbi: CACHE HIT md_13080 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13080.pdf
+2026-08-12 20:00:59,592 [INFO] scraper.rbi: CACHE HIT md_13081 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13081.pdf
+2026-08-12 20:00:59,592 [INFO] scraper.rbi: CACHE HIT md_13082 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13082.pdf
+2026-08-12 20:00:59,593 [INFO] scraper.rbi: CACHE HIT md_13083 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13083.pdf
+2026-08-12 20:00:59,593 [INFO] scraper.rbi: CACHE HIT md_13084 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13084.pdf
+2026-08-12 20:00:59,593 [INFO] scraper.rbi: CACHE HIT md_13085 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13085.pdf
+2026-08-12 20:00:59,594 [INFO] scraper.rbi: CACHE HIT md_13086 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13086.pdf
+2026-08-12 20:00:59,594 [INFO] scraper.rbi: CACHE HIT md_13327 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13327.pdf
+2026-08-12 20:00:59,595 [INFO] scraper.rbi: CACHE HIT md_13038 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13038.pdf
+2026-08-12 20:00:59,596 [INFO] scraper.rbi: CACHE HIT md_13039 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13039.pdf
+2026-08-12 20:00:59,597 [INFO] scraper.rbi: CACHE HIT md_13040 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13040.pdf
+2026-08-12 20:00:59,597 [INFO] scraper.rbi: CACHE HIT md_13041 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13041.pdf
+2026-08-12 20:00:59,598 [INFO] scraper.rbi: CACHE HIT md_13042 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13042.pdf
+2026-08-12 20:00:59,598 [INFO] scraper.rbi: CACHE HIT md_13043 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13043.pdf
+2026-08-12 20:00:59,599 [INFO] scraper.rbi: CACHE HIT md_13044 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13044.pdf
+2026-08-12 20:00:59,599 [INFO] scraper.rbi: CACHE HIT md_13045 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13045.pdf
+2026-08-12 20:00:59,599 [INFO] scraper.rbi: CACHE HIT md_13046 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13046.pdf
+2026-08-12 20:00:59,600 [INFO] scraper.rbi: CACHE HIT md_13047 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13047.pdf
+2026-08-12 20:00:59,600 [INFO] scraper.rbi: CACHE HIT md_13048 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13048.pdf
+2026-08-12 20:00:59,600 [INFO] scraper.rbi: CACHE HIT md_13049 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13049.pdf
+2026-08-12 20:00:59,601 [INFO] scraper.rbi: CACHE HIT md_13050 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13050.pdf
+2026-08-12 20:00:59,601 [INFO] scraper.rbi: CACHE HIT md_13051 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13051.pdf
+2026-08-12 20:00:59,602 [INFO] scraper.rbi: CACHE HIT md_13052 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13052.pdf
+2026-08-12 20:00:59,602 [INFO] scraper.rbi: CACHE HIT md_13053 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13053.pdf
+2026-08-12 20:00:59,602 [INFO] scraper.rbi: CACHE HIT md_13054 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13054.pdf
+2026-08-12 20:00:59,603 [INFO] scraper.rbi: CACHE HIT md_13055 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13055.pdf
+2026-08-12 20:00:59,603 [INFO] scraper.rbi: CACHE HIT md_13056 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13056.pdf
+2026-08-12 20:00:59,604 [INFO] scraper.rbi: CACHE HIT md_13057 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13057.pdf
+2026-08-12 20:00:59,604 [INFO] scraper.rbi: CACHE HIT md_13058 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13058.pdf
+2026-08-12 20:00:59,604 [INFO] scraper.rbi: CACHE HIT md_13059 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13059.pdf
+2026-08-12 20:00:59,605 [INFO] scraper.rbi: CACHE HIT md_13060 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13060.pdf
+2026-08-12 20:00:59,605 [INFO] scraper.rbi: CACHE HIT md_13203 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13203.pdf
+2026-08-12 20:00:59,605 [INFO] scraper.rbi: CACHE HIT md_13204 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13204.pdf
+2026-08-12 20:00:59,607 [INFO] scraper.rbi: CACHE HIT md_13011 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13011.pdf
+2026-08-12 20:00:59,607 [INFO] scraper.rbi: CACHE HIT md_13012 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13012.pdf
+2026-08-12 20:00:59,608 [INFO] scraper.rbi: CACHE HIT md_13013 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13013.pdf
+2026-08-12 20:00:59,608 [INFO] scraper.rbi: CACHE HIT md_13014 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13014.pdf
+2026-08-12 20:00:59,609 [INFO] scraper.rbi: CACHE HIT md_13015 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13015.pdf
+2026-08-12 20:00:59,609 [INFO] scraper.rbi: CACHE HIT md_13016 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13016.pdf
+2026-08-12 20:00:59,609 [INFO] scraper.rbi: CACHE HIT md_13017 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13017.pdf
+2026-08-12 20:00:59,610 [INFO] scraper.rbi: CACHE HIT md_13018 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13018.pdf
+2026-08-12 20:00:59,610 [INFO] scraper.rbi: CACHE HIT md_13019 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13019.pdf
+2026-08-12 20:00:59,611 [INFO] scraper.rbi: CACHE HIT md_13020 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13020.pdf
+2026-08-12 20:00:59,611 [INFO] scraper.rbi: CACHE HIT md_13021 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13021.pdf
+2026-08-12 20:00:59,612 [INFO] scraper.rbi: CACHE HIT md_13022 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13022.pdf
+2026-08-12 20:00:59,612 [INFO] scraper.rbi: CACHE HIT md_13023 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13023.pdf
+2026-08-12 20:00:59,612 [INFO] scraper.rbi: CACHE HIT md_13024 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13024.pdf
+2026-08-12 20:00:59,613 [INFO] scraper.rbi: CACHE HIT md_13025 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13025.pdf
+2026-08-12 20:00:59,613 [INFO] scraper.rbi: CACHE HIT md_13026 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13026.pdf
+2026-08-12 20:00:59,614 [INFO] scraper.rbi: CACHE HIT md_13027 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13027.pdf
+2026-08-12 20:00:59,614 [INFO] scraper.rbi: CACHE HIT md_13028 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13028.pdf
+2026-08-12 20:00:59,615 [INFO] scraper.rbi: CACHE HIT md_13029 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13029.pdf
+2026-08-12 20:00:59,615 [INFO] scraper.rbi: CACHE HIT md_13030 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13030.pdf
+2026-08-12 20:00:59,616 [INFO] scraper.rbi: CACHE HIT md_13031 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13031.pdf
+2026-08-12 20:00:59,616 [INFO] scraper.rbi: CACHE HIT md_13032 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13032.pdf
+2026-08-12 20:00:59,617 [INFO] scraper.rbi: CACHE HIT md_13033 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13033.pdf
+2026-08-12 20:00:59,617 [INFO] scraper.rbi: CACHE HIT md_13034 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13034.pdf
+2026-08-12 20:00:59,617 [INFO] scraper.rbi: CACHE HIT md_13036 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13036.pdf
+2026-08-12 20:00:59,618 [INFO] scraper.rbi: CACHE HIT md_12986 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12986.pdf
+2026-08-12 20:00:59,619 [INFO] scraper.rbi: CACHE HIT md_12987 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12987.pdf
+2026-08-12 20:00:59,620 [INFO] scraper.rbi: CACHE HIT md_12988 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12988.pdf
+2026-08-12 20:00:59,620 [INFO] scraper.rbi: CACHE HIT md_12989 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12989.pdf
+2026-08-12 20:00:59,620 [INFO] scraper.rbi: CACHE HIT md_12990 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12990.pdf
+2026-08-12 20:00:59,621 [INFO] scraper.rbi: CACHE HIT md_12991 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12991.pdf
+2026-08-12 20:00:59,621 [INFO] scraper.rbi: CACHE HIT md_12992 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12992.pdf
+2026-08-12 20:00:59,622 [INFO] scraper.rbi: CACHE HIT md_12993 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12993.pdf
+2026-08-12 20:00:59,622 [INFO] scraper.rbi: CACHE HIT md_12994 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12994.pdf
+2026-08-12 20:00:59,623 [INFO] scraper.rbi: CACHE HIT md_12995 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12995.pdf
+2026-08-12 20:00:59,623 [INFO] scraper.rbi: CACHE HIT md_12996 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12996.pdf
+2026-08-12 20:00:59,623 [INFO] scraper.rbi: CACHE HIT md_12997 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12997.pdf
+2026-08-12 20:00:59,624 [INFO] scraper.rbi: CACHE HIT md_12998 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12998.pdf
+2026-08-12 20:00:59,624 [INFO] scraper.rbi: CACHE HIT md_12999 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12999.pdf
+2026-08-12 20:00:59,625 [INFO] scraper.rbi: CACHE HIT md_13000 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13000.pdf
+2026-08-12 20:00:59,625 [INFO] scraper.rbi: CACHE HIT md_13001 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13001.pdf
+2026-08-12 20:00:59,625 [INFO] scraper.rbi: CACHE HIT md_13002 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13002.pdf
+2026-08-12 20:00:59,626 [INFO] scraper.rbi: CACHE HIT md_13003 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13003.pdf
+2026-08-12 20:00:59,626 [INFO] scraper.rbi: CACHE HIT md_13004 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13004.pdf
+2026-08-12 20:00:59,627 [INFO] scraper.rbi: CACHE HIT md_13005 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13005.pdf
+2026-08-12 20:00:59,627 [INFO] scraper.rbi: CACHE HIT md_13006 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13006.pdf
+2026-08-12 20:00:59,628 [INFO] scraper.rbi: CACHE HIT md_13007 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13007.pdf
+2026-08-12 20:00:59,628 [INFO] scraper.rbi: CACHE HIT md_13008 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13008.pdf
+2026-08-12 20:00:59,628 [INFO] scraper.rbi: CACHE HIT md_13010 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13010.pdf
+2026-08-12 20:00:59,629 [INFO] scraper.rbi: CACHE HIT md_13205 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13205.pdf
+2026-08-12 20:00:59,629 [INFO] scraper.rbi: CACHE HIT md_13202 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13202.pdf
+2026-08-12 20:00:59,629 [INFO] scraper.rbi: CACHE HIT md_12966 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12966.pdf
+2026-08-12 20:00:59,630 [INFO] scraper.rbi: CACHE HIT md_12967 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12967.pdf
+2026-08-12 20:00:59,630 [INFO] scraper.rbi: CACHE HIT md_12968 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12968.pdf
+2026-08-12 20:00:59,631 [INFO] scraper.rbi: CACHE HIT md_12969 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12969.pdf
+2026-08-12 20:00:59,632 [INFO] scraper.rbi: CACHE HIT md_12970 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12970.pdf
+2026-08-12 20:00:59,632 [INFO] scraper.rbi: CACHE HIT md_12971 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12971.pdf
+2026-08-12 20:00:59,633 [INFO] scraper.rbi: CACHE HIT md_12972 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12972.pdf
+2026-08-12 20:00:59,633 [INFO] scraper.rbi: CACHE HIT md_12973 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12973.pdf
+2026-08-12 20:00:59,634 [INFO] scraper.rbi: CACHE HIT md_12974 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12974.pdf
+2026-08-12 20:00:59,634 [INFO] scraper.rbi: CACHE HIT md_12975 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12975.pdf
+2026-08-12 20:00:59,635 [INFO] scraper.rbi: CACHE HIT md_12976 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12976.pdf
+2026-08-12 20:00:59,635 [INFO] scraper.rbi: CACHE HIT md_12977 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12977.pdf
+2026-08-12 20:00:59,636 [INFO] scraper.rbi: CACHE HIT md_12978 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12978.pdf
+2026-08-12 20:00:59,636 [INFO] scraper.rbi: CACHE HIT md_12979 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12979.pdf
+2026-08-12 20:00:59,637 [INFO] scraper.rbi: CACHE HIT md_12980 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12980.pdf
+2026-08-12 20:00:59,638 [INFO] scraper.rbi: CACHE HIT md_12981 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12981.pdf
+2026-08-12 20:00:59,638 [INFO] scraper.rbi: CACHE HIT md_12982 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12982.pdf
+2026-08-12 20:00:59,640 [INFO] scraper.rbi: CACHE HIT md_12983 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12983.pdf
+2026-08-12 20:00:59,641 [INFO] scraper.rbi: CACHE HIT md_12984 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12984.pdf
+2026-08-12 20:00:59,641 [INFO] scraper.rbi: CACHE HIT md_12931 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12931.pdf
+2026-08-12 20:00:59,641 [INFO] scraper.rbi: CACHE HIT md_12932 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12932.pdf
+2026-08-12 20:00:59,642 [INFO] scraper.rbi: CACHE HIT md_12933 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12933.pdf
+2026-08-12 20:00:59,642 [INFO] scraper.rbi: CACHE HIT md_12934 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12934.pdf
+2026-08-12 20:00:59,643 [INFO] scraper.rbi: CACHE HIT md_12935 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12935.pdf
+2026-08-12 20:00:59,643 [INFO] scraper.rbi: CACHE HIT md_12936 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12936.pdf
+2026-08-12 20:00:59,643 [INFO] scraper.rbi: CACHE HIT md_12937 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12937.pdf
+2026-08-12 20:00:59,644 [INFO] scraper.rbi: CACHE HIT md_12938 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12938.pdf
+2026-08-12 20:00:59,645 [INFO] scraper.rbi: CACHE HIT md_12939 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12939.pdf
+2026-08-12 20:00:59,645 [INFO] scraper.rbi: CACHE HIT md_12940 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12940.pdf
+2026-08-12 20:00:59,646 [INFO] scraper.rbi: CACHE HIT md_12941 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12941.pdf
+2026-08-12 20:00:59,646 [INFO] scraper.rbi: CACHE HIT md_12942 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12942.pdf
+2026-08-12 20:00:59,647 [INFO] scraper.rbi: CACHE HIT md_12943 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12943.pdf
+2026-08-12 20:00:59,647 [INFO] scraper.rbi: CACHE HIT md_12944 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12944.pdf
+2026-08-12 20:00:59,648 [INFO] scraper.rbi: CACHE HIT md_12945 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12945.pdf
+2026-08-12 20:00:59,649 [INFO] scraper.rbi: CACHE HIT md_12946 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12946.pdf
+2026-08-12 20:00:59,649 [INFO] scraper.rbi: CACHE HIT md_12947 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12947.pdf
+2026-08-12 20:00:59,650 [INFO] scraper.rbi: CACHE HIT md_12948 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12948.pdf
+2026-08-12 20:00:59,650 [INFO] scraper.rbi: CACHE HIT md_12949 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12949.pdf
+2026-08-12 20:00:59,651 [INFO] scraper.rbi: CACHE HIT md_12950 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12950.pdf
+2026-08-12 20:00:59,651 [INFO] scraper.rbi: CACHE HIT md_12951 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12951.pdf
+2026-08-12 20:00:59,652 [INFO] scraper.rbi: CACHE HIT md_12952 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12952.pdf
+2026-08-12 20:00:59,652 [INFO] scraper.rbi: CACHE HIT md_12953 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12953.pdf
+2026-08-12 20:00:59,652 [INFO] scraper.rbi: CACHE HIT md_12954 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12954.pdf
+2026-08-12 20:00:59,653 [INFO] scraper.rbi: CACHE HIT md_12955 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12955.pdf
+2026-08-12 20:00:59,653 [INFO] scraper.rbi: CACHE HIT md_12956 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12956.pdf
+2026-08-12 20:00:59,654 [INFO] scraper.rbi: CACHE HIT md_12957 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12957.pdf
+2026-08-12 20:00:59,654 [INFO] scraper.rbi: CACHE HIT md_12958 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12958.pdf
+2026-08-12 20:00:59,655 [INFO] scraper.rbi: CACHE HIT md_12959 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12959.pdf
+2026-08-12 20:00:59,655 [INFO] scraper.rbi: CACHE HIT md_12960 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12960.pdf
+2026-08-12 20:00:59,656 [INFO] scraper.rbi: CACHE HIT md_12961 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12961.pdf
+2026-08-12 20:00:59,656 [INFO] scraper.rbi: CACHE HIT md_12962 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12962.pdf
+2026-08-12 20:00:59,656 [INFO] scraper.rbi: CACHE HIT md_12963 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12963.pdf
+2026-08-12 20:00:59,657 [INFO] scraper.rbi: CACHE HIT md_12964 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12964.pdf
+2026-08-12 20:00:59,657 [INFO] scraper.rbi: CACHE HIT md_12965 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12965.pdf
+2026-08-12 20:00:59,658 [INFO] scraper.rbi: CACHE HIT md_12927 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12927.pdf
+2026-08-12 20:00:59,658 [INFO] scraper.rbi: CACHE HIT md_12928 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12928.pdf
+2026-08-12 20:00:59,659 [INFO] scraper.rbi: CACHE HIT md_12929 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12929.pdf
+2026-08-12 20:00:59,659 [INFO] scraper.rbi: CACHE HIT md_12930 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12930.pdf
+2026-08-12 20:00:59,660 [INFO] scraper.rbi: CACHE HIT md_12925 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12925.pdf
+2026-08-12 20:00:59,660 [INFO] scraper.rbi: CACHE HIT md_12926 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12926.pdf
+2026-08-12 20:00:59,661 [INFO] scraper.rbi: CACHE HIT md_13637 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13637.pdf
+2026-08-12 20:00:59,662 [INFO] scraper.rbi: CACHE HIT md_13638 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13638.pdf
+2026-08-12 20:00:59,664 [INFO] scraper.rbi: CACHE HIT md_13639 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13639.pdf
+2026-08-12 20:00:59,665 [INFO] scraper.rbi: CACHE HIT md_13640 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13640.pdf
+2026-08-12 20:00:59,665 [INFO] scraper.rbi: CACHE HIT md_13641 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13641.pdf
+2026-08-12 20:00:59,666 [INFO] scraper.rbi: CACHE HIT md_13642 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13642.pdf
+2026-08-12 20:00:59,666 [INFO] scraper.rbi: CACHE HIT md_13643 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13643.pdf
+2026-08-12 20:00:59,667 [INFO] scraper.rbi: CACHE HIT md_13644 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13644.pdf
+2026-08-12 20:00:59,668 [INFO] scraper.rbi: CACHE HIT md_13645 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13645.pdf
+2026-08-12 20:00:59,668 [INFO] scraper.rbi: CACHE HIT md_13628 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13628.pdf
+2026-08-12 20:00:59,669 [INFO] scraper.rbi: CACHE HIT md_13629 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13629.pdf
+2026-08-12 20:00:59,670 [INFO] scraper.rbi: CACHE HIT md_13630 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13630.pdf
+2026-08-12 20:00:59,671 [INFO] scraper.rbi: CACHE HIT md_13631 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13631.pdf
+2026-08-12 20:00:59,672 [INFO] scraper.rbi: CACHE HIT md_13632 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13632.pdf
+2026-08-12 20:00:59,672 [INFO] scraper.rbi: CACHE HIT md_13633 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13633.pdf
+2026-08-12 20:00:59,673 [INFO] scraper.rbi: CACHE HIT md_13634 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13634.pdf
+2026-08-12 20:00:59,673 [INFO] scraper.rbi: CACHE HIT md_13635 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13635.pdf
+2026-08-12 20:00:59,674 [INFO] scraper.rbi: CACHE HIT md_13636 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13636.pdf
+2026-08-12 20:00:59,674 [INFO] scraper.rbi: CACHE HIT md_13619 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13619.pdf
+2026-08-12 20:00:59,675 [INFO] scraper.rbi: CACHE HIT md_13620 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13620.pdf
+2026-08-12 20:00:59,676 [INFO] scraper.rbi: CACHE HIT md_13621 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13621.pdf
+2026-08-12 20:00:59,677 [INFO] scraper.rbi: CACHE HIT md_13622 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13622.pdf
+2026-08-12 20:00:59,677 [INFO] scraper.rbi: CACHE HIT md_13623 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13623.pdf
+2026-08-12 20:00:59,678 [INFO] scraper.rbi: CACHE HIT md_13624 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13624.pdf
+2026-08-12 20:00:59,678 [INFO] scraper.rbi: CACHE HIT md_13625 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13625.pdf
+2026-08-12 20:00:59,679 [INFO] scraper.rbi: CACHE HIT md_13626 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13626.pdf
+2026-08-12 20:00:59,680 [INFO] scraper.rbi: CACHE HIT md_13627 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13627.pdf
+2026-08-12 20:00:59,680 [INFO] scraper.rbi: CACHE HIT md_13603 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13603.pdf
+2026-08-12 20:00:59,681 [INFO] scraper.rbi: CACHE HIT md_13604 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13604.pdf
+2026-08-12 20:00:59,683 [INFO] scraper.rbi: CACHE HIT md_13605 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13605.pdf
+2026-08-12 20:00:59,683 [INFO] scraper.rbi: CACHE HIT md_13606 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13606.pdf
+2026-08-12 20:00:59,684 [INFO] scraper.rbi: CACHE HIT md_13607 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13607.pdf
+2026-08-12 20:00:59,685 [INFO] scraper.rbi: CACHE HIT md_13608 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13608.pdf
+2026-08-12 20:00:59,685 [INFO] scraper.rbi: CACHE HIT md_13609 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13609.pdf
+2026-08-12 20:00:59,686 [INFO] scraper.rbi: CACHE HIT md_13598 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13598.pdf
+2026-08-12 20:00:59,687 [INFO] scraper.rbi: CACHE HIT md_13599 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13599.pdf
+2026-08-12 20:00:59,687 [INFO] scraper.rbi: CACHE HIT md_13610 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13610.pdf
+2026-08-12 20:00:59,688 [INFO] scraper.rbi: CACHE HIT md_13611 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13611.pdf
+2026-08-12 20:00:59,689 [INFO] scraper.rbi: CACHE HIT md_13612 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13612.pdf
+2026-08-12 20:00:59,689 [INFO] scraper.rbi: CACHE HIT md_13613 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13613.pdf
+2026-08-12 20:00:59,690 [INFO] scraper.rbi: CACHE HIT md_13614 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13614.pdf
+2026-08-12 20:00:59,690 [INFO] scraper.rbi: CACHE HIT md_13615 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13615.pdf
+2026-08-12 20:00:59,691 [INFO] scraper.rbi: CACHE HIT md_13616 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13616.pdf
+2026-08-12 20:00:59,692 [INFO] scraper.rbi: CACHE HIT md_13617 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13617.pdf
+2026-08-12 20:00:59,692 [INFO] scraper.rbi: CACHE HIT md_13618 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13618.pdf
+2026-08-12 20:00:59,693 [INFO] scraper.rbi: CACHE HIT md_13600 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13600.pdf
+2026-08-12 20:00:59,693 [INFO] scraper.rbi: CACHE HIT md_13601 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13601.pdf
+2026-08-12 20:00:59,694 [INFO] scraper.rbi: CACHE HIT md_13602 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13602.pdf
+2026-08-12 20:00:59,695 [INFO] scraper.rbi: CACHE HIT md_13594 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13594.pdf
+2026-08-12 20:00:59,695 [INFO] scraper.rbi: CACHE HIT md_13595 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13595.pdf
+2026-08-12 20:00:59,696 [INFO] scraper.rbi: CACHE HIT md_13596 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13596.pdf
+2026-08-12 20:00:59,697 [INFO] scraper.rbi: CACHE HIT md_13597 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13597.pdf
+2026-08-12 20:00:59,697 [INFO] scraper.rbi: CACHE HIT md_13585 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13585.pdf
+2026-08-12 20:00:59,698 [INFO] scraper.rbi: CACHE HIT md_13586 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13586.pdf
+2026-08-12 20:00:59,698 [INFO] scraper.rbi: CACHE HIT md_13587 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13587.pdf
+2026-08-12 20:00:59,699 [INFO] scraper.rbi: CACHE HIT md_13588 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13588.pdf
+2026-08-12 20:00:59,700 [INFO] scraper.rbi: CACHE HIT md_13589 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13589.pdf
+2026-08-12 20:00:59,701 [INFO] scraper.rbi: CACHE HIT md_13590 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13590.pdf
+2026-08-12 20:00:59,701 [INFO] scraper.rbi: CACHE HIT md_13591 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13591.pdf
+2026-08-12 20:00:59,702 [INFO] scraper.rbi: CACHE HIT md_13592 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13592.pdf
+2026-08-12 20:00:59,702 [INFO] scraper.rbi: CACHE HIT md_13593 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13593.pdf
+2026-08-12 20:00:59,703 [INFO] scraper.rbi: CACHE HIT md_13584 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13584.pdf
+2026-08-12 20:00:59,703 [INFO] scraper.rbi: CACHE HIT md_13582 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13582.pdf
+2026-08-12 20:00:59,704 [INFO] scraper.rbi: CACHE HIT md_13583 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13583.pdf
+2026-08-12 20:00:59,704 [INFO] scraper.rbi: CACHE HIT md_13522 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13522.pdf
+2026-08-12 20:00:59,704 [INFO] scraper.rbi: CACHE HIT md_13523 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13523.pdf
+2026-08-12 20:00:59,705 [INFO] scraper.rbi: CACHE HIT md_13524 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13524.pdf
+2026-08-12 20:00:59,705 [INFO] scraper.rbi: CACHE HIT md_13525 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13525.pdf
+2026-08-12 20:00:59,706 [INFO] scraper.rbi: CACHE HIT md_12799 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12799.pdf
+2026-08-12 20:00:59,707 [INFO] scraper.rbi: CACHE HIT md_11959 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11959.pdf
+2026-08-12 20:00:59,707 [INFO] scraper.rbi: CACHE HIT md_11060 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11060.pdf
+2026-08-12 20:00:59,707 [INFO] scraper.rbi: CACHE HIT md_11037 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11037.pdf
+2026-08-12 20:00:59,708 [INFO] scraper.rbi: CACHE HIT md_13552 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13552.pdf
+2026-08-12 20:00:59,708 [INFO] scraper.rbi: CACHE HIT md_13343 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13343.pdf
+2026-08-12 20:00:59,708 [INFO] scraper.rbi: CACHE HIT md_13214 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13214.pdf
+2026-08-12 20:00:59,709 [INFO] scraper.rbi: CACHE HIT md_12920 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12920.pdf
+2026-08-12 20:00:59,709 [INFO] scraper.rbi: CACHE HIT md_12870 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12870.pdf
+2026-08-12 20:00:59,709 [INFO] scraper.rbi: CACHE HIT md_12784 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12784.pdf
+2026-08-12 20:00:59,710 [INFO] scraper.rbi: CACHE HIT md_13376 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13376.pdf
+2026-08-12 20:00:59,710 [INFO] scraper.rbi: CACHE HIT md_12765 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12765.pdf
+2026-08-12 20:00:59,711 [INFO] scraper.rbi: CACHE HIT md_12682 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12682.pdf
+2026-08-12 20:00:59,711 [INFO] scraper.rbi: CACHE HIT md_12592 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12592.pdf
+2026-08-12 20:00:59,711 [INFO] scraper.rbi: CACHE HIT md_12581 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12581.pdf
+2026-08-12 20:00:59,712 [INFO] scraper.rbi: CACHE HIT md_12580 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12580.pdf
+2026-08-12 20:00:59,712 [INFO] scraper.rbi: CACHE HIT md_12427 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12427.pdf
+2026-08-12 20:00:59,713 [INFO] scraper.rbi: CACHE HIT md_12163 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12163.pdf
+2026-08-12 20:00:59,713 [INFO] scraper.rbi: CACHE HIT md_12108 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12108.pdf
+2026-08-12 20:00:59,713 [INFO] scraper.rbi: CACHE HIT md_12061 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12061.pdf
+2026-08-12 20:00:59,713 [INFO] scraper.rbi: CACHE HIT md_11500 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11500.pdf
+2026-08-12 20:00:59,714 [INFO] scraper.rbi: CACHE HIT md_10495 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10495.pdf
+2026-08-12 20:00:59,715 [INFO] scraper.rbi: CACHE HIT md_10485 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10485.pdf
+2026-08-12 20:00:59,715 [INFO] scraper.rbi: CACHE HIT md_12839 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12839.pdf
+2026-08-12 20:00:59,715 [INFO] scraper.rbi: CACHE HIT md_12710 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12710.pdf
+2026-08-12 20:00:59,716 [INFO] scraper.rbi: CACHE HIT md_11510 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11510.pdf
+2026-08-12 20:00:59,716 [INFO] scraper.rbi: CACHE HIT md_11200 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11200.pdf
+2026-08-12 20:00:59,716 [INFO] scraper.rbi: CACHE HIT md_10868 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10868.pdf
+2026-08-12 20:00:59,717 [INFO] scraper.rbi: CACHE HIT md_10738 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10738.pdf
+2026-08-12 20:00:59,717 [INFO] scraper.rbi: CACHE HIT md_10404 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10404.pdf
+2026-08-12 20:00:59,718 [INFO] scraper.rbi: CACHE HIT md_10637 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10637.pdf
+2026-08-12 20:00:59,718 [INFO] scraper.rbi: CACHE HIT md_10191 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10191.pdf
+2026-08-12 20:00:59,719 [INFO] scraper.rbi: CACHE HIT md_10192 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10192.pdf
+2026-08-12 20:00:59,719 [INFO] scraper.rbi: CACHE HIT md_10193 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10193.pdf
+2026-08-12 20:00:59,719 [INFO] scraper.rbi: CACHE HIT md_10196 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10196.pdf
+2026-08-12 20:00:59,720 [INFO] scraper.rbi: CACHE HIT md_10197 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10197.pdf
+2026-08-12 20:00:59,720 [INFO] scraper.rbi: CACHE HIT md_10198 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10198.pdf
+2026-08-12 20:00:59,721 [INFO] scraper.rbi: CACHE HIT md_10201 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10201.pdf
+2026-08-12 20:00:59,722 [INFO] scraper.rbi: CACHE HIT md_10202 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10202.pdf
+2026-08-12 20:00:59,722 [INFO] scraper.rbi: CACHE HIT md_10203 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10203.pdf
+2026-08-12 20:00:59,722 [INFO] scraper.rbi: CACHE HIT md_10205 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10205.pdf
+2026-08-12 20:00:59,723 [INFO] scraper.rbi: CACHE HIT md_10395 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10395.pdf
+2026-08-12 20:00:59,723 [INFO] scraper.rbi: CACHE HIT md_11518 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_11518.pdf
+2026-08-12 20:00:59,723 [INFO] scraper.rbi: CACHE HIT md_13362 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13362.pdf
+2026-08-12 20:00:59,724 [INFO] scraper.rbi: CACHE HIT md_13361 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13361.pdf
+2026-08-12 20:00:59,724 [INFO] scraper.rbi: CACHE HIT md_13360 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13360.pdf
+2026-08-12 20:00:59,725 [INFO] scraper.rbi: CACHE HIT md_13526 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13526.pdf
+2026-08-12 20:00:59,725 [INFO] scraper.rbi: CACHE HIT md_13502 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13502.pdf
+2026-08-12 20:00:59,725 [INFO] scraper.rbi: CACHE HIT md_13374 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_13374.pdf
+2026-08-12 20:00:59,726 [INFO] scraper.rbi: CACHE HIT md_12898 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12898.pdf
+2026-08-12 20:00:59,726 [INFO] scraper.rbi: CACHE HIT md_12896 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12896.pdf
+2026-08-12 20:00:59,727 [INFO] scraper.rbi: CACHE HIT md_12715 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12715.pdf
+2026-08-12 20:00:59,728 [INFO] scraper.rbi: CACHE HIT md_12616 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12616.pdf
+2026-08-12 20:00:59,728 [INFO] scraper.rbi: CACHE HIT md_12156 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_12156.pdf
+2026-08-12 20:00:59,730 [INFO] scraper.rbi: CACHE HIT md_10833 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/raw/master_directions/md_10833.pdf
+2026-08-12 20:00:59,744 [INFO] extraction.text: SKIP extract (cached text) md_11322
+2026-08-12 20:00:59,745 [INFO] extraction.text: SKIP extract (cached text) md_10476
+2026-08-12 20:00:59,745 [INFO] extraction.text: SKIP extract (cached text) md_13443
+2026-08-12 20:00:59,745 [INFO] extraction.text: SKIP extract (cached text) md_13442
+2026-08-12 20:00:59,745 [INFO] extraction.text: SKIP extract (cached text) md_13271
+2026-08-12 20:00:59,745 [INFO] extraction.text: SKIP extract (cached text) md_13272
+2026-08-12 20:00:59,746 [INFO] extraction.text: SKIP extract (cached text) md_13273
+2026-08-12 20:00:59,746 [INFO] extraction.text: SKIP extract (cached text) md_13274
+2026-08-12 20:00:59,746 [INFO] extraction.text: SKIP extract (cached text) md_13275
+2026-08-12 20:00:59,746 [INFO] extraction.text: SKIP extract (cached text) md_13276
+2026-08-12 20:00:59,746 [INFO] extraction.text: SKIP extract (cached text) md_12586
+2026-08-12 20:00:59,746 [INFO] extraction.text: SKIP extract (cached text) md_13399
+2026-08-12 20:00:59,746 [INFO] extraction.text: SKIP extract (cached text) md_13400
+2026-08-12 20:00:59,746 [INFO] extraction.text: SKIP extract (cached text) md_13319
+2026-08-12 20:00:59,747 [INFO] extraction.text: SKIP extract (cached text) md_13136
+2026-08-12 20:01:04,427 [INFO] extraction.text: Extracted md_13137 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13137.txt (191607 chars)
+2026-08-12 20:01:04,830 [INFO] extraction.text: Extracted md_13138 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13138.txt (19552 chars)
+2026-08-12 20:01:06,596 [INFO] extraction.text: Extracted md_13139 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13139.txt (78910 chars)
+2026-08-12 20:01:12,636 [INFO] extraction.text: Extracted md_13140 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13140.txt (288097 chars)
+2026-08-12 20:01:16,962 [INFO] extraction.text: Extracted md_13141 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13141.txt (200264 chars)
+2026-08-12 20:01:22,093 [INFO] extraction.text: Extracted md_13143 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13143.txt (160821 chars)
+2026-08-12 20:01:23,225 [INFO] extraction.text: Extracted md_13144 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13144.txt (50143 chars)
+2026-08-12 20:01:25,440 [INFO] extraction.text: Extracted md_13145 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13145.txt (99877 chars)
+2026-08-12 20:01:27,436 [INFO] extraction.text: Extracted md_13146 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13146.txt (89547 chars)
+2026-08-12 20:01:37,226 [INFO] extraction.text: Extracted md_13147 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13147.txt (296834 chars)
+2026-08-12 20:01:40,310 [INFO] extraction.text: Extracted md_13148 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13148.txt (146284 chars)
+2026-08-12 20:01:40,956 [INFO] extraction.text: Extracted md_13149 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13149.txt (29070 chars)
+2026-08-12 20:01:43,075 [INFO] extraction.text: Extracted md_13150 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13150.txt (90276 chars)
+2026-08-12 20:01:45,375 [INFO] extraction.text: Extracted md_13151 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13151.txt (96575 chars)
+2026-08-12 20:01:47,701 [INFO] extraction.text: Extracted md_13152 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13152.txt (107835 chars)
+2026-08-12 20:01:49,264 [INFO] extraction.text: Extracted md_13153 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13153.txt (77581 chars)
+2026-08-12 20:01:53,025 [INFO] extraction.text: Extracted md_13154 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13154.txt (108530 chars)
+2026-08-12 20:01:54,311 [INFO] extraction.text: Extracted md_13155 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13155.txt (64796 chars)
+2026-08-12 20:02:00,091 [INFO] extraction.text: Extracted md_13156 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13156.txt (273763 chars)
+2026-08-12 20:02:00,924 [INFO] extraction.text: Extracted md_13157 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13157.txt (44357 chars)
+2026-08-12 20:02:01,125 [INFO] extraction.text: Extracted md_13158 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13158.txt (10570 chars)
+2026-08-12 20:02:18,115 [INFO] extraction.text: Extracted md_13159 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13159.txt (790334 chars)
+2026-08-12 20:02:19,387 [INFO] extraction.text: Extracted md_13160 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13160.txt (62108 chars)
+2026-08-12 20:02:21,845 [INFO] extraction.text: Extracted md_13161 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13161.txt (107618 chars)
+2026-08-12 20:02:23,073 [INFO] extraction.text: Extracted md_13162 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13162.txt (63781 chars)
+2026-08-12 20:02:23,422 [INFO] extraction.text: Extracted md_13163 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13163.txt (16624 chars)
+2026-08-12 20:02:25,937 [INFO] extraction.text: Extracted md_13164 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13164.txt (104888 chars)
+2026-08-12 20:02:26,406 [INFO] extraction.text: Extracted md_13165 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13165.txt (18300 chars)
+2026-08-12 20:02:27,759 [INFO] extraction.text: Extracted md_13166 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13166.txt (47149 chars)
+2026-08-12 20:02:28,443 [INFO] extraction.text: Extracted md_13167 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13167.txt (27471 chars)
+2026-08-12 20:02:30,487 [INFO] extraction.text: Extracted md_13168 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13168.txt (55422 chars)
+2026-08-12 20:02:30,982 [INFO] extraction.text: Extracted md_13328 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13328.txt (13832 chars)
+2026-08-12 20:02:38,901 [INFO] extraction.text: Extracted md_13105 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13105.txt (215372 chars)
+2026-08-12 20:02:39,292 [INFO] extraction.text: Extracted md_13106 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13106.txt (19034 chars)
+2026-08-12 20:02:40,706 [INFO] extraction.text: Extracted md_13107 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13107.txt (77935 chars)
+2026-08-12 20:02:47,280 [INFO] extraction.text: Extracted md_13108 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13108.txt (288399 chars)
+2026-08-12 20:02:51,131 [INFO] extraction.text: Extracted md_13109 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13109.txt (198112 chars)
+2026-08-12 20:02:56,324 [INFO] extraction.text: Extracted md_13111 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13111.txt (149548 chars)
+2026-08-12 20:02:57,532 [INFO] extraction.text: Extracted md_13112 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13112.txt (48138 chars)
+2026-08-12 20:02:59,824 [INFO] extraction.text: Extracted md_13113 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13113.txt (99161 chars)
+2026-08-12 20:03:01,670 [INFO] extraction.text: Extracted md_13114 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13114.txt (86906 chars)
+2026-08-12 20:03:10,794 [INFO] extraction.text: Extracted md_13115 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13115.txt (279639 chars)
+2026-08-12 20:03:13,888 [INFO] extraction.text: Extracted md_13116 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13116.txt (144567 chars)
+2026-08-12 20:03:14,527 [INFO] extraction.text: Extracted md_13117 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13117.txt (28681 chars)
+2026-08-12 20:03:16,572 [INFO] extraction.text: Extracted md_13118 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13118.txt (85108 chars)
+2026-08-12 20:03:18,493 [INFO] extraction.text: Extracted md_13119 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13119.txt (79255 chars)
+2026-08-12 20:03:19,678 [INFO] extraction.text: Extracted md_13120 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13120.txt (54540 chars)
+2026-08-12 20:03:21,283 [INFO] extraction.text: Extracted md_13121 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13121.txt (73548 chars)
+2026-08-12 20:03:24,988 [INFO] extraction.text: Extracted md_13122 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13122.txt (108168 chars)
+2026-08-12 20:03:26,342 [INFO] extraction.text: Extracted md_13123 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13123.txt (64385 chars)
+2026-08-12 20:03:31,687 [INFO] extraction.text: Extracted md_13124 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13124.txt (258389 chars)
+2026-08-12 20:03:32,501 [INFO] extraction.text: Extracted md_13125 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13125.txt (43656 chars)
+2026-08-12 20:03:32,700 [INFO] extraction.text: Extracted md_13126 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13126.txt (10282 chars)
+2026-08-12 20:03:46,062 [INFO] extraction.text: Extracted md_13127 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13127.txt (623027 chars)
+2026-08-12 20:03:47,529 [INFO] extraction.text: Extracted md_13128 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13128.txt (61446 chars)
+2026-08-12 20:03:49,620 [INFO] extraction.text: Extracted md_13129 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13129.txt (87366 chars)
+2026-08-12 20:03:50,480 [INFO] extraction.text: Extracted md_13130 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13130.txt (36210 chars)
+2026-08-12 20:03:50,859 [INFO] extraction.text: Extracted md_13131 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13131.txt (16372 chars)
+2026-08-12 20:03:53,841 [INFO] extraction.text: Extracted md_13132 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13132.txt (97352 chars)
+2026-08-12 20:03:54,186 [INFO] extraction.text: Extracted md_13133 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13133.txt (18213 chars)
+2026-08-12 20:03:55,377 [INFO] extraction.text: Extracted md_13134 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13134.txt (47030 chars)
+2026-08-12 20:03:57,794 [INFO] extraction.text: Extracted md_13135 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13135.txt (74753 chars)
+2026-08-12 20:03:58,097 [INFO] extraction.text: Extracted md_13321 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13321.txt (13125 chars)
+2026-08-12 20:04:05,695 [INFO] extraction.text: Extracted md_13087 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13087.txt (226154 chars)
+2026-08-12 20:04:07,546 [INFO] extraction.text: Extracted md_13088 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13088.txt (77239 chars)
+2026-08-12 20:04:11,537 [INFO] extraction.text: Extracted md_13089 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13089.txt (172734 chars)
+2026-08-12 20:04:15,648 [INFO] extraction.text: Extracted md_13090 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13090.txt (195074 chars)
+2026-08-12 20:04:19,150 [INFO] extraction.text: Extracted md_13092 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13092.txt (105195 chars)
+2026-08-12 20:04:23,777 [INFO] extraction.text: Extracted md_13093 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13093.txt (110124 chars)
+2026-08-12 20:04:26,896 [INFO] extraction.text: Extracted md_13094 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13094.txt (142036 chars)
+2026-08-12 20:04:27,468 [INFO] extraction.text: Extracted md_13095 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13095.txt (23610 chars)
+2026-08-12 20:04:27,825 [INFO] extraction.text: Extracted md_13096 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13096.txt (17397 chars)
+2026-08-12 20:04:32,541 [INFO] extraction.text: Extracted md_13097 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13097.txt (222129 chars)
+2026-08-12 20:04:33,948 [INFO] extraction.text: Extracted md_13098 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13098.txt (56808 chars)
+2026-08-12 20:04:35,897 [INFO] extraction.text: Extracted md_13099 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13099.txt (80765 chars)
+2026-08-12 20:04:36,250 [INFO] extraction.text: Extracted md_13100 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13100.txt (15978 chars)
+2026-08-12 20:04:36,573 [INFO] extraction.text: Extracted md_13101 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13101.txt (16279 chars)
+2026-08-12 20:04:38,621 [INFO] extraction.text: Extracted md_13102 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13102.txt (83735 chars)
+2026-08-12 20:04:39,030 [INFO] extraction.text: Extracted md_13103 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13103.txt (18226 chars)
+2026-08-12 20:04:40,155 [INFO] extraction.text: Extracted md_13104 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13104.txt (46508 chars)
+2026-08-12 20:04:40,550 [INFO] extraction.text: Extracted md_13324 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13324.txt (13727 chars)
+2026-08-12 20:04:47,849 [INFO] extraction.text: Extracted md_13061 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13061.txt (212942 chars)
+2026-08-12 20:04:48,911 [INFO] extraction.text: Extracted md_13062 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13062.txt (52373 chars)
+2026-08-12 20:04:52,753 [INFO] extraction.text: Extracted md_13063 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13063.txt (167526 chars)
+2026-08-12 20:04:56,909 [INFO] extraction.text: Extracted md_13064 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13064.txt (199123 chars)
+2026-08-12 20:05:00,975 [INFO] extraction.text: Extracted md_13066 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13066.txt (119151 chars)
+2026-08-12 20:05:02,227 [INFO] extraction.text: Extracted md_13067 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13067.txt (47279 chars)
+2026-08-12 20:05:03,114 [INFO] extraction.text: Extracted md_13068 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13068.txt (41110 chars)
+2026-08-12 20:05:04,790 [INFO] extraction.text: Extracted md_13069 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13069.txt (70431 chars)
+2026-08-12 20:05:06,282 [INFO] extraction.text: Extracted md_13070 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13070.txt (43308 chars)
+2026-08-12 20:05:09,566 [INFO] extraction.text: Extracted md_13071 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13071.txt (144222 chars)
+2026-08-12 20:05:10,210 [INFO] extraction.text: Extracted md_13072 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13072.txt (28549 chars)
+2026-08-12 20:05:10,927 [INFO] extraction.text: Extracted md_13073 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13073.txt (33836 chars)
+2026-08-12 20:05:11,546 [INFO] extraction.text: Extracted md_13074 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13074.txt (26561 chars)
+2026-08-12 20:05:13,039 [INFO] extraction.text: Extracted md_13075 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13075.txt (58911 chars)
+2026-08-12 20:05:16,629 [INFO] extraction.text: Extracted md_13076 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13076.txt (107695 chars)
+2026-08-12 20:05:17,115 [INFO] extraction.text: Extracted md_13077 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13077.txt (23914 chars)
+2026-08-12 20:05:18,732 [INFO] extraction.text: Extracted md_13078 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13078.txt (68951 chars)
+2026-08-12 20:05:19,540 [INFO] extraction.text: Extracted md_13079 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13079.txt (43660 chars)
+2026-08-12 20:05:22,550 [INFO] extraction.text: Extracted md_13080 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13080.txt (116559 chars)
+2026-08-12 20:05:23,855 [INFO] extraction.text: Extracted md_13081 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13081.txt (53364 chars)
+2026-08-12 20:05:25,638 [INFO] extraction.text: Extracted md_13082 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13082.txt (75549 chars)
+2026-08-12 20:05:25,978 [INFO] extraction.text: Extracted md_13083 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13083.txt (16816 chars)
+2026-08-12 20:05:28,347 [INFO] extraction.text: Extracted md_13084 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13084.txt (84454 chars)
+2026-08-12 20:05:28,682 [INFO] extraction.text: Extracted md_13085 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13085.txt (18202 chars)
+2026-08-12 20:05:29,852 [INFO] extraction.text: Extracted md_13086 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13086.txt (46837 chars)
+2026-08-12 20:05:30,251 [INFO] extraction.text: Extracted md_13327 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13327.txt (12761 chars)
+2026-08-12 20:05:37,612 [INFO] extraction.text: Extracted md_13038 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13038.txt (214069 chars)
+2026-08-12 20:05:43,651 [INFO] extraction.text: Extracted md_13039 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13039.txt (275805 chars)
+2026-08-12 20:05:47,760 [INFO] extraction.text: Extracted md_13040 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13040.txt (198968 chars)
+2026-08-12 20:05:51,258 [INFO] extraction.text: Extracted md_13041 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13041.txt (111558 chars)
+2026-08-12 20:05:52,275 [INFO] extraction.text: Extracted md_13042 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13042.txt (46424 chars)
+2026-08-12 20:05:53,122 [INFO] extraction.text: Extracted md_13043 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13043.txt (41603 chars)
+2026-08-12 20:05:54,202 [INFO] extraction.text: Extracted md_13044 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13044.txt (46262 chars)
+2026-08-12 20:05:55,509 [INFO] extraction.text: Extracted md_13045 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13045.txt (37725 chars)
+2026-08-12 20:05:56,710 [INFO] extraction.text: Extracted md_13046 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13046.txt (57329 chars)
+2026-08-12 20:05:56,891 [INFO] extraction.text: Extracted md_13047 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13047.txt (7316 chars)
+2026-08-12 20:05:57,946 [INFO] extraction.text: Extracted md_13048 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13048.txt (44259 chars)
+2026-08-12 20:05:58,153 [INFO] extraction.text: Extracted md_13049 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13049.txt (11137 chars)
+2026-08-12 20:05:59,105 [INFO] extraction.text: Extracted md_13050 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13050.txt (44501 chars)
+2026-08-12 20:06:02,657 [INFO] extraction.text: Extracted md_13051 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13051.txt (107851 chars)
+2026-08-12 20:06:03,924 [INFO] extraction.text: Extracted md_13052 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13052.txt (64480 chars)
+2026-08-12 20:06:05,600 [INFO] extraction.text: Extracted md_13053 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13053.txt (77191 chars)
+2026-08-12 20:06:06,511 [INFO] extraction.text: Extracted md_13054 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13054.txt (43737 chars)
+2026-08-12 20:06:07,726 [INFO] extraction.text: Extracted md_13055 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13055.txt (44402 chars)
+2026-08-12 20:06:09,284 [INFO] extraction.text: Extracted md_13056 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13056.txt (60486 chars)
+2026-08-12 20:06:10,190 [INFO] extraction.text: Extracted md_13057 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13057.txt (33824 chars)
+2026-08-12 20:06:10,612 [INFO] extraction.text: Extracted md_13058 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13058.txt (20264 chars)
+2026-08-12 20:06:11,019 [INFO] extraction.text: Extracted md_13059 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13059.txt (16884 chars)
+2026-08-12 20:06:12,977 [INFO] extraction.text: Extracted md_13060 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13060.txt (81554 chars)
+2026-08-12 20:06:13,053 [INFO] extraction.text: Extracted md_13203 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13203.txt (3563 chars)
+2026-08-12 20:06:14,633 [INFO] extraction.text: Extracted md_13204 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13204.txt (76310 chars)
+2026-08-12 20:06:22,275 [INFO] extraction.text: Extracted md_13011 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13011.txt (220891 chars)
+2026-08-12 20:06:24,159 [INFO] extraction.text: Extracted md_13012 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13012.txt (76380 chars)
+2026-08-12 20:06:29,322 [INFO] extraction.text: Extracted md_13013 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13013.txt (223320 chars)
+2026-08-12 20:06:33,532 [INFO] extraction.text: Extracted md_13014 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13014.txt (199748 chars)
+2026-08-12 20:06:33,679 [INFO] extraction.text: Extracted md_13015 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13015.txt (7246 chars)
+2026-08-12 20:06:36,126 [INFO] extraction.text: Extracted md_13016 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13016.txt (77674 chars)
+2026-08-12 20:06:37,509 [INFO] extraction.text: Extracted md_13017 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13017.txt (47641 chars)
+2026-08-12 20:06:39,212 [INFO] extraction.text: Extracted md_13018 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13018.txt (75407 chars)
+2026-08-12 20:06:40,728 [INFO] extraction.text: Extracted md_13019 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13019.txt (61448 chars)
+2026-08-12 20:06:43,194 [INFO] extraction.text: Extracted md_13020 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13020.txt (63211 chars)
+2026-08-12 20:06:45,036 [INFO] extraction.text: Extracted md_13021 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13021.txt (86009 chars)
+2026-08-12 20:06:45,206 [INFO] extraction.text: Extracted md_13022 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13022.txt (8212 chars)
+2026-08-12 20:06:46,634 [INFO] extraction.text: Extracted md_13023 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13023.txt (52816 chars)
+2026-08-12 20:06:47,116 [INFO] extraction.text: Extracted md_13024 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13024.txt (22735 chars)
+2026-08-12 20:06:48,465 [INFO] extraction.text: Extracted md_13025 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13025.txt (62490 chars)
+2026-08-12 20:06:52,091 [INFO] extraction.text: Extracted md_13026 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13026.txt (108208 chars)
+2026-08-12 20:06:53,704 [INFO] extraction.text: Extracted md_13027 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13027.txt (66574 chars)
+2026-08-12 20:06:57,101 [INFO] extraction.text: Extracted md_13028 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13028.txt (165869 chars)
+2026-08-12 20:06:57,999 [INFO] extraction.text: Extracted md_13029 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13029.txt (41428 chars)
+2026-08-12 20:07:01,763 [INFO] extraction.text: Extracted md_13030 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13030.txt (142590 chars)
+2026-08-12 20:07:04,656 [INFO] extraction.text: Extracted md_13031 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13031.txt (79412 chars)
+2026-08-12 20:07:05,439 [INFO] extraction.text: Extracted md_13032 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13032.txt (32597 chars)
+2026-08-12 20:07:06,052 [INFO] extraction.text: Extracted md_13033 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13033.txt (29532 chars)
+2026-08-12 20:07:06,464 [INFO] extraction.text: Extracted md_13034 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13034.txt (17086 chars)
+2026-08-12 20:07:07,052 [INFO] extraction.text: Extracted md_13036 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13036.txt (24730 chars)
+2026-08-12 20:07:07,754 [INFO] extraction.text: Extracted md_12986 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12986.txt (33287 chars)
+2026-08-12 20:07:13,133 [INFO] extraction.text: Extracted md_12987 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12987.txt (241088 chars)
+2026-08-12 20:07:17,317 [INFO] extraction.text: Extracted md_12988 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12988.txt (200771 chars)
+2026-08-12 20:07:17,457 [INFO] extraction.text: Extracted md_12989 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12989.txt (6820 chars)
+2026-08-12 20:07:19,756 [INFO] extraction.text: Extracted md_12990 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12990.txt (72143 chars)
+2026-08-12 20:07:20,225 [INFO] extraction.text: Extracted md_12991 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12991.txt (16152 chars)
+2026-08-12 20:07:21,260 [INFO] extraction.text: Extracted md_12992 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12992.txt (42406 chars)
+2026-08-12 20:07:22,133 [INFO] extraction.text: Extracted md_12993 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12993.txt (37919 chars)
+2026-08-12 20:07:23,550 [INFO] extraction.text: Extracted md_12994 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12994.txt (40142 chars)
+2026-08-12 20:07:24,791 [INFO] extraction.text: Extracted md_12995 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12995.txt (57722 chars)
+2026-08-12 20:07:24,963 [INFO] extraction.text: Extracted md_12996 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12996.txt (7641 chars)
+2026-08-12 20:07:25,637 [INFO] extraction.text: Extracted md_12997 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12997.txt (33708 chars)
+2026-08-12 20:07:26,221 [INFO] extraction.text: Extracted md_12998 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12998.txt (21712 chars)
+2026-08-12 20:07:27,089 [INFO] extraction.text: Extracted md_12999 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12999.txt (41325 chars)
+2026-08-12 20:07:30,733 [INFO] extraction.text: Extracted md_13000 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13000.txt (108081 chars)
+2026-08-12 20:07:31,168 [INFO] extraction.text: Extracted md_13001 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13001.txt (24250 chars)
+2026-08-12 20:07:32,961 [INFO] extraction.text: Extracted md_13002 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13002.txt (89463 chars)
+2026-08-12 20:07:33,891 [INFO] extraction.text: Extracted md_13003 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13003.txt (41075 chars)
+2026-08-12 20:07:35,488 [INFO] extraction.text: Extracted md_13004 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13004.txt (66268 chars)
+2026-08-12 20:07:38,040 [INFO] extraction.text: Extracted md_13005 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13005.txt (69618 chars)
+2026-08-12 20:07:38,826 [INFO] extraction.text: Extracted md_13006 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13006.txt (39164 chars)
+2026-08-12 20:07:39,356 [INFO] extraction.text: Extracted md_13007 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13007.txt (22375 chars)
+2026-08-12 20:07:39,707 [INFO] extraction.text: Extracted md_13008 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13008.txt (17172 chars)
+2026-08-12 20:07:40,218 [INFO] extraction.text: Extracted md_13010 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13010.txt (20518 chars)
+2026-08-12 20:07:41,401 [INFO] extraction.text: Extracted md_13205 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13205.txt (52670 chars)
+2026-08-12 20:07:43,227 [INFO] extraction.text: Extracted md_13202 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13202.txt (65223 chars)
+2026-08-12 20:07:43,512 [INFO] extraction.text: Extracted md_12966 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12966.txt (13256 chars)
+2026-08-12 20:07:44,585 [INFO] extraction.text: Extracted md_12967 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12967.txt (53042 chars)
+2026-08-12 20:07:45,039 [INFO] extraction.text: Extracted md_12968 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12968.txt (21384 chars)
+2026-08-12 20:07:48,739 [INFO] extraction.text: Extracted md_12969 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12969.txt (184941 chars)
+2026-08-12 20:07:51,742 [INFO] extraction.text: Extracted md_12970 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12970.txt (80073 chars)
+2026-08-12 20:07:52,919 [INFO] extraction.text: Extracted md_12971 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12971.txt (48767 chars)
+2026-08-12 20:07:55,031 [INFO] extraction.text: Extracted md_12972 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12972.txt (96709 chars)
+2026-08-12 20:07:56,549 [INFO] extraction.text: Extracted md_12973 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12973.txt (66753 chars)
+2026-08-12 20:07:58,582 [INFO] extraction.text: Extracted md_12974 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12974.txt (60359 chars)
+2026-08-12 20:08:00,835 [INFO] extraction.text: Extracted md_12975 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12975.txt (79822 chars)
+2026-08-12 20:08:02,707 [INFO] extraction.text: Extracted md_12976 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12976.txt (89720 chars)
+2026-08-12 20:08:04,798 [INFO] extraction.text: Extracted md_12977 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12977.txt (90427 chars)
+2026-08-12 20:08:05,880 [INFO] extraction.text: Extracted md_12978 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12978.txt (52493 chars)
+2026-08-12 20:08:06,481 [INFO] extraction.text: Extracted md_12979 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12979.txt (28584 chars)
+2026-08-12 20:08:09,988 [INFO] extraction.text: Extracted md_12980 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12980.txt (103476 chars)
+2026-08-12 20:08:11,841 [INFO] extraction.text: Extracted md_12981 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12981.txt (86405 chars)
+2026-08-12 20:08:12,089 [INFO] extraction.text: Extracted md_12982 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12982.txt (11735 chars)
+2026-08-12 20:08:29,955 [INFO] extraction.text: Extracted md_12983 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12983.txt (694600 chars)
+2026-08-12 20:08:30,349 [INFO] extraction.text: Extracted md_12984 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12984.txt (20447 chars)
+2026-08-12 20:08:31,255 [INFO] extraction.text: Extracted md_12931 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12931.txt (31499 chars)
+2026-08-12 20:08:31,817 [INFO] extraction.text: Extracted md_12932 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12932.txt (30972 chars)
+2026-08-12 20:08:32,445 [INFO] extraction.text: Extracted md_12933 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12933.txt (26509 chars)
+2026-08-12 20:08:33,268 [INFO] extraction.text: Extracted md_12934 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12934.txt (37966 chars)
+2026-08-12 20:08:34,536 [INFO] extraction.text: Extracted md_12935 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12935.txt (57459 chars)
+2026-08-12 20:08:35,371 [INFO] extraction.text: Extracted md_12936 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12936.txt (35454 chars)
+2026-08-12 20:08:36,770 [INFO] extraction.text: Extracted md_12937 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12937.txt (53925 chars)
+2026-08-12 20:08:40,416 [INFO] extraction.text: Extracted md_12938 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12938.txt (150397 chars)
+2026-08-12 20:08:44,957 [INFO] extraction.text: Extracted md_12939 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12939.txt (189873 chars)
+2026-08-12 20:08:45,362 [INFO] extraction.text: Extracted md_12940 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12940.txt (18749 chars)
+2026-08-12 20:08:47,195 [INFO] extraction.text: Extracted md_12941 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12941.txt (80377 chars)
+2026-08-12 20:08:48,601 [INFO] extraction.text: Extracted md_12942 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12942.txt (65115 chars)
+2026-08-12 20:08:52,391 [INFO] extraction.text: Extracted md_12943 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12943.txt (183472 chars)
+2026-08-12 20:08:52,792 [INFO] extraction.text: Extracted md_12944 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12944.txt (16413 chars)
+2026-08-12 20:08:55,378 [INFO] extraction.text: Extracted md_12945 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12945.txt (76036 chars)
+2026-08-12 20:08:56,553 [INFO] extraction.text: Extracted md_12946 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12946.txt (49584 chars)
+2026-08-12 20:08:59,001 [INFO] extraction.text: Extracted md_12947 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12947.txt (118522 chars)
+2026-08-12 20:08:59,872 [INFO] extraction.text: Extracted md_12948 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12948.txt (40971 chars)
+2026-08-12 20:09:02,243 [INFO] extraction.text: Extracted md_12949 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12949.txt (66408 chars)
+2026-08-12 20:09:02,647 [INFO] extraction.text: Extracted md_12950 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12950.txt (21398 chars)
+2026-08-12 20:09:04,657 [INFO] extraction.text: Extracted md_12951 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12951.txt (91382 chars)
+2026-08-12 20:09:06,168 [INFO] extraction.text: Extracted md_12952 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12952.txt (74600 chars)
+2026-08-12 20:09:07,121 [INFO] extraction.text: Extracted md_12953 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12953.txt (39399 chars)
+2026-08-12 20:09:08,015 [INFO] extraction.text: Extracted md_12954 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12954.txt (41447 chars)
+2026-08-12 20:09:11,584 [INFO] extraction.text: Extracted md_12955 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12955.txt (107512 chars)
+2026-08-12 20:09:12,774 [INFO] extraction.text: Extracted md_12956 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12956.txt (62708 chars)
+2026-08-12 20:09:14,788 [INFO] extraction.text: Extracted md_12957 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12957.txt (88927 chars)
+2026-08-12 20:09:16,381 [INFO] extraction.text: Extracted md_12958 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12958.txt (77463 chars)
+2026-08-12 20:09:18,680 [INFO] extraction.text: Extracted md_12959 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12959.txt (104079 chars)
+2026-08-12 20:09:19,723 [INFO] extraction.text: Extracted md_12960 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12960.txt (46773 chars)
+2026-08-12 20:09:20,859 [INFO] extraction.text: Extracted md_12961 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12961.txt (51557 chars)
+2026-08-12 20:09:21,107 [INFO] extraction.text: Extracted md_12962 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12962.txt (11666 chars)
+2026-08-12 20:09:21,253 [INFO] extraction.text: Extracted md_12963 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12963.txt (6242 chars)
+2026-08-12 20:09:21,777 [INFO] extraction.text: Extracted md_12964 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12964.txt (18734 chars)
+2026-08-12 20:09:22,999 [INFO] extraction.text: Extracted md_12965 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12965.txt (56385 chars)
+2026-08-12 20:09:26,122 [INFO] extraction.text: Extracted md_12927 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12927.txt (161722 chars)
+2026-08-12 20:09:26,557 [INFO] extraction.text: Extracted md_12928 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12928.txt (17139 chars)
+2026-08-12 20:09:30,099 [INFO] extraction.text: Extracted md_12929 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12929.txt (102141 chars)
+2026-08-12 20:09:33,386 [INFO] extraction.text: Extracted md_12930 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12930.txt (131619 chars)
+2026-08-12 20:09:34,460 [INFO] extraction.text: Extracted md_12925 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12925.txt (52678 chars)
+2026-08-12 20:09:38,977 [INFO] extraction.text: Extracted md_12926 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12926.txt (137858 chars)
+2026-08-12 20:09:40,342 [INFO] extraction.text: Extracted md_13637 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13637.txt (60357 chars)
+2026-08-12 20:09:43,095 [INFO] extraction.text: Extracted md_13638 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13638.txt (32557 chars)
+2026-08-12 20:09:50,645 [INFO] extraction.text: Extracted md_13639 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13639.txt (98583 chars)
+2026-08-12 20:09:52,794 [INFO] extraction.text: Extracted md_13640 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13640.txt (25968 chars)
+2026-08-12 20:09:55,734 [INFO] extraction.text: Extracted md_13641 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13641.txt (40837 chars)
+2026-08-12 20:09:56,977 [INFO] extraction.text: Extracted md_13642 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13642.txt (55002 chars)
+2026-08-12 20:09:59,061 [INFO] extraction.text: Extracted md_13643 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13643.txt (98510 chars)
+2026-08-12 20:10:00,325 [INFO] extraction.text: Extracted md_13644 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13644.txt (13790 chars)
+2026-08-12 20:10:02,896 [INFO] extraction.text: Extracted md_13645 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13645.txt (38685 chars)
+2026-08-12 20:10:04,039 [INFO] extraction.text: Extracted md_13628 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13628.txt (49185 chars)
+2026-08-12 20:10:06,133 [INFO] extraction.text: Extracted md_13629 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13629.txt (29285 chars)
+2026-08-12 20:10:12,891 [INFO] extraction.text: Extracted md_13630 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13630.txt (93534 chars)
+2026-08-12 20:10:14,849 [INFO] extraction.text: Extracted md_13631 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13631.txt (26032 chars)
+2026-08-12 20:10:17,775 [INFO] extraction.text: Extracted md_13632 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13632.txt (39264 chars)
+2026-08-12 20:10:19,031 [INFO] extraction.text: Extracted md_13633 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13633.txt (54539 chars)
+2026-08-12 20:10:21,031 [INFO] extraction.text: Extracted md_13634 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13634.txt (95940 chars)
+2026-08-12 20:10:22,241 [INFO] extraction.text: Extracted md_13635 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13635.txt (13419 chars)
+2026-08-12 20:10:24,823 [INFO] extraction.text: Extracted md_13636 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13636.txt (37717 chars)
+2026-08-12 20:10:25,664 [INFO] extraction.text: Extracted md_13619 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13619.txt (38563 chars)
+2026-08-12 20:10:27,273 [INFO] extraction.text: Extracted md_13620 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13620.txt (19959 chars)
+2026-08-12 20:10:31,844 [INFO] extraction.text: Extracted md_13621 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13621.txt (64998 chars)
+2026-08-12 20:10:33,951 [INFO] extraction.text: Extracted md_13622 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13622.txt (25986 chars)
+2026-08-12 20:10:36,262 [INFO] extraction.text: Extracted md_13623 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13623.txt (29669 chars)
+2026-08-12 20:10:37,510 [INFO] extraction.text: Extracted md_13624 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13624.txt (54443 chars)
+2026-08-12 20:10:39,526 [INFO] extraction.text: Extracted md_13625 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13625.txt (95834 chars)
+2026-08-12 20:10:40,753 [INFO] extraction.text: Extracted md_13626 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13626.txt (12969 chars)
+2026-08-12 20:10:43,341 [INFO] extraction.text: Extracted md_13627 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13627.txt (37670 chars)
+2026-08-12 20:10:44,586 [INFO] extraction.text: Extracted md_13603 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13603.txt (55337 chars)
+2026-08-12 20:10:46,009 [INFO] extraction.text: Extracted md_13604 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13604.txt (20497 chars)
+2026-08-12 20:10:52,847 [INFO] extraction.text: Extracted md_13605 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13605.txt (90883 chars)
+2026-08-12 20:10:54,950 [INFO] extraction.text: Extracted md_13606 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13606.txt (26020 chars)
+2026-08-12 20:10:57,770 [INFO] extraction.text: Extracted md_13607 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13607.txt (39187 chars)
+2026-08-12 20:10:58,915 [INFO] extraction.text: Extracted md_13608 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13608.txt (13398 chars)
+2026-08-12 20:11:01,577 [INFO] extraction.text: Extracted md_13609 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13609.txt (37713 chars)
+2026-08-12 20:11:02,231 [INFO] extraction.text: Extracted md_13598 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13598.txt (7406 chars)
+2026-08-12 20:11:04,797 [INFO] extraction.text: Extracted md_13599 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13599.txt (31954 chars)
+2026-08-12 20:11:05,678 [INFO] extraction.text: Extracted md_13610 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13610.txt (39791 chars)
+2026-08-12 20:11:07,864 [INFO] extraction.text: Extracted md_13611 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13611.txt (23718 chars)
+2026-08-12 20:11:10,283 [INFO] extraction.text: Extracted md_13612 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13612.txt (33112 chars)
+2026-08-12 20:11:12,377 [INFO] extraction.text: Extracted md_13613 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13613.txt (26479 chars)
+2026-08-12 20:11:14,778 [INFO] extraction.text: Extracted md_13614 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13614.txt (33713 chars)
+2026-08-12 20:11:15,948 [INFO] extraction.text: Extracted md_13615 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13615.txt (54992 chars)
+2026-08-12 20:11:17,958 [INFO] extraction.text: Extracted md_13616 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13616.txt (88484 chars)
+2026-08-12 20:11:19,731 [INFO] extraction.text: Extracted md_13617 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13617.txt (22714 chars)
+2026-08-12 20:11:21,618 [INFO] extraction.text: Extracted md_13618 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13618.txt (22391 chars)
+2026-08-12 20:11:22,160 [INFO] extraction.text: Extracted md_13600 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13600.txt (7162 chars)
+2026-08-12 20:11:24,466 [INFO] extraction.text: Extracted md_13601 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13601.txt (31672 chars)
+2026-08-12 20:11:26,690 [INFO] extraction.text: Extracted md_13602 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13602.txt (30231 chars)
+2026-08-12 20:11:27,539 [INFO] extraction.text: Extracted md_13594 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13594.txt (8830 chars)
+2026-08-12 20:11:29,154 [INFO] extraction.text: Extracted md_13595 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13595.txt (20859 chars)
+2026-08-12 20:11:31,938 [INFO] extraction.text: Extracted md_13596 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13596.txt (39235 chars)
+2026-08-12 20:11:33,887 [INFO] extraction.text: Extracted md_13597 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13597.txt (88363 chars)
+2026-08-12 20:11:35,211 [INFO] extraction.text: Extracted md_13585 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13585.txt (18471 chars)
+2026-08-12 20:11:35,862 [INFO] extraction.text: Extracted md_13586 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13586.txt (22240 chars)
+2026-08-12 20:11:37,678 [INFO] extraction.text: Extracted md_13587 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13587.txt (23068 chars)
+2026-08-12 20:11:40,163 [INFO] extraction.text: Extracted md_13588 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13588.txt (33266 chars)
+2026-08-12 20:11:41,938 [INFO] extraction.text: Extracted md_13589 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13589.txt (21426 chars)
+2026-08-12 20:11:44,643 [INFO] extraction.text: Extracted md_13590 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13590.txt (37219 chars)
+2026-08-12 20:11:45,835 [INFO] extraction.text: Extracted md_13591 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13591.txt (52468 chars)
+2026-08-12 20:11:47,572 [INFO] extraction.text: Extracted md_13592 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13592.txt (77052 chars)
+2026-08-12 20:11:49,286 [INFO] extraction.text: Extracted md_13593 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13593.txt (20515 chars)
+2026-08-12 20:11:50,506 [INFO] extraction.text: Extracted md_13584 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13584.txt (15068 chars)
+2026-08-12 20:11:51,055 [INFO] extraction.text: Extracted md_13582 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13582.txt (6279 chars)
+2026-08-12 20:11:52,921 [INFO] extraction.text: Extracted md_13583 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13583.txt (87821 chars)
+2026-08-12 20:11:53,929 [INFO] extraction.text: Extracted md_13522 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13522.txt (34904 chars)
+2026-08-12 20:11:55,039 [INFO] extraction.text: Extracted md_13523 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13523.txt (34576 chars)
+2026-08-12 20:11:55,988 [INFO] extraction.text: Extracted md_13524 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13524.txt (31641 chars)
+2026-08-12 20:11:56,931 [INFO] extraction.text: Extracted md_13525 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13525.txt (31532 chars)
+2026-08-12 20:11:59,659 [INFO] extraction.text: Extracted md_12799 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12799.txt (89079 chars)
+2026-08-12 20:12:02,133 [INFO] extraction.text: Extracted md_11959 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_11959.txt (77485 chars)
+2026-08-12 20:12:02,873 [INFO] extraction.text: Extracted md_11060 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_11060.txt (30024 chars)
+2026-08-12 20:12:03,430 [INFO] extraction.text: Extracted md_11037 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_11037.txt (24639 chars)
+2026-08-12 20:12:04,272 [INFO] extraction.text: Extracted md_13552 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13552.txt (36238 chars)
+2026-08-12 20:12:04,548 [INFO] extraction.text: Extracted md_13343 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13343.txt (10849 chars)
+2026-08-12 20:12:05,247 [INFO] extraction.text: Extracted md_13214 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13214.txt (32489 chars)
+2026-08-12 20:12:05,600 [INFO] extraction.text: Extracted md_12920 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12920.txt (16672 chars)
+2026-08-12 20:12:06,158 [INFO] extraction.text: Extracted md_12870 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12870.txt (25046 chars)
+2026-08-12 20:12:06,467 [INFO] extraction.text: Extracted md_12784 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12784.txt (15344 chars)
+2026-08-12 20:12:06,748 [INFO] extraction.text: Extracted md_13376 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13376.txt (12778 chars)
+2026-08-12 20:12:07,970 [INFO] extraction.text: Extracted md_12765 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12765.txt (51090 chars)
+2026-08-12 20:12:08,855 [INFO] extraction.text: Extracted md_12682 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12682.txt (38263 chars)
+2026-08-12 20:12:09,574 [INFO] extraction.text: Extracted md_12592 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12592.txt (29415 chars)
+2026-08-12 20:12:11,155 [INFO] extraction.text: Extracted md_12581 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12581.txt (24332 chars)
+2026-08-12 20:12:11,706 [INFO] extraction.text: Extracted md_12580 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12580.txt (20986 chars)
+2026-08-12 20:12:11,928 [INFO] extraction.text: Extracted md_12427 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12427.txt (10484 chars)
+2026-08-12 20:12:12,441 [INFO] extraction.text: Extracted md_12163 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12163.txt (22998 chars)
+2026-08-12 20:12:12,706 [INFO] extraction.text: Extracted md_12108 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12108.txt (12034 chars)
+2026-08-12 20:12:13,017 [INFO] extraction.text: Extracted md_12061 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12061.txt (12853 chars)
+2026-08-12 20:12:13,203 [INFO] extraction.text: Extracted md_11500 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_11500.txt (7715 chars)
+2026-08-12 20:12:14,529 [INFO] extraction.text: Extracted md_10495 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10495.txt (55135 chars)
+2026-08-12 20:12:16,756 [INFO] extraction.text: Extracted md_10485 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10485.txt (82882 chars)
+2026-08-12 20:12:17,755 [INFO] extraction.text: Extracted md_12839 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12839.txt (38561 chars)
+2026-08-12 20:12:18,983 [INFO] extraction.text: Extracted md_12710 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12710.txt (56978 chars)
+2026-08-12 20:12:20,494 [INFO] extraction.text: Extracted md_11510 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_11510.txt (59924 chars)
+2026-08-12 20:12:23,063 [INFO] extraction.text: Extracted md_11200 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_11200.txt (127573 chars)
+2026-08-12 20:12:23,595 [INFO] extraction.text: Extracted md_10868 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10868.txt (28038 chars)
+2026-08-12 20:12:24,024 [INFO] extraction.text: Extracted md_10738 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10738.txt (20080 chars)
+2026-08-12 20:12:24,951 [INFO] extraction.text: Extracted md_10404 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10404.txt (39737 chars)
+2026-08-12 20:12:26,891 [INFO] extraction.text: Extracted md_10637 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10637.txt (87582 chars)
+2026-08-12 20:12:27,374 [INFO] extraction.text: Extracted md_10191 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10191.txt (20242 chars)
+2026-08-12 20:12:28,563 [INFO] extraction.text: Extracted md_10192 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10192.txt (42655 chars)
+2026-08-12 20:12:30,302 [INFO] extraction.text: Extracted md_10193 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10193.txt (64673 chars)
+2026-08-12 20:12:31,040 [INFO] extraction.text: Extracted md_10196 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10196.txt (32511 chars)
+2026-08-12 20:12:31,278 [INFO] extraction.text: Extracted md_10197 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10197.txt (12271 chars)
+2026-08-12 20:12:33,101 [INFO] extraction.text: Extracted md_10198 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10198.txt (74244 chars)
+2026-08-12 20:12:34,998 [INFO] extraction.text: Extracted md_10201 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10201.txt (82448 chars)
+2026-08-12 20:12:42,966 [INFO] extraction.text: Extracted md_10202 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10202.txt (229563 chars)
+2026-08-12 20:12:43,349 [INFO] extraction.text: Extracted md_10203 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10203.txt (19503 chars)
+2026-08-12 20:12:43,976 [INFO] extraction.text: Extracted md_10205 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10205.txt (32810 chars)
+2026-08-12 20:12:46,413 [INFO] extraction.text: Extracted md_10395 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10395.txt (119264 chars)
+2026-08-12 20:12:47,999 [INFO] extraction.text: Extracted md_11518 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_11518.txt (65952 chars)
+2026-08-12 20:12:48,762 [INFO] extraction.text: Extracted md_13362 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13362.txt (27004 chars)
+2026-08-12 20:12:50,234 [INFO] extraction.text: Extracted md_13361 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13361.txt (49728 chars)
+2026-08-12 20:12:51,202 [INFO] extraction.text: Extracted md_13360 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13360.txt (35350 chars)
+2026-08-12 20:12:51,640 [INFO] extraction.text: Extracted md_13526 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13526.txt (15978 chars)
+2026-08-12 20:12:52,192 [INFO] extraction.text: Extracted md_13502 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13502.txt (20426 chars)
+2026-08-12 20:12:52,373 [INFO] extraction.text: Extracted md_13374 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_13374.txt (6707 chars)
+2026-08-12 20:12:52,641 [INFO] extraction.text: Extracted md_12898 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12898.txt (11815 chars)
+2026-08-12 20:12:53,588 [INFO] extraction.text: Extracted md_12896 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12896.txt (43557 chars)
+2026-08-12 20:12:54,755 [INFO] extraction.text: Extracted md_12715 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12715.txt (31895 chars)
+2026-08-12 20:12:55,026 [INFO] extraction.text: Extracted md_12616 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12616.txt (11195 chars)
+2026-08-12 20:12:57,347 [INFO] extraction.text: Extracted md_12156 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_12156.txt (95963 chars)
+2026-08-12 20:13:00,240 [INFO] extraction.text: Extracted md_10833 -> /Users/karan/Downloads/carbon-tracker 3/Capstone_project/data/extracted/md_10833.txt (105197 chars)
+2026-08-12 20:13:01,325 [INFO] metadata.temporal: Temporal coverage: 188/381 usable dates
+2026-08-12 20:13:03,594 [INFO] preprocessing.segmenter: Segmented 16298 paragraphs across corpus
+2026-08-12 20:13:04,859 [INFO] preprocessing.xref: Recorded 1851 cross-reference mentions
+2026-08-12 20:13:04,871 [INFO] matrix.builder: Matrix v1: entities=28 subjects=203 populated=380 missing=5304
+2026-08-12 20:13:04,871 [INFO] pipeline.weeks1to5: === WEEK 4: supplementary + deontic + T1 candidates ===
+2026-08-12 20:13:04,872 [INFO] scraper.supplementary: GET https://www.rbi.org.in/Scripts/FAQView.aspx attempt=1
+2026-08-12 20:13:05,508 [INFO] scraper.supplementary: Discovered 91 links for faq
+2026-08-12 20:13:05,527 [INFO] scraper.supplementary: Supplementary faq downloaded/cached=40
+2026-08-12 20:13:06,995 [INFO] scraper.supplementary: GET https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx attempt=1
+2026-08-12 20:13:07,557 [INFO] scraper.supplementary: Discovered 79 links for enforcement
+2026-08-12 20:13:07,572 [INFO] scraper.supplementary: Supplementary enforcement downloaded/cached=40
+2026-08-12 20:13:09,029 [INFO] scraper.supplementary: GET https://www.rbi.org.in/Scripts/BS_CircularsIndexDisplay.aspx attempt=1
+2026-08-12 20:13:09,265 [INFO] scraper.supplementary: Discovered 5 links for circulars_withdrawn
+2026-08-12 20:13:09,270 [INFO] scraper.supplementary: Supplementary circulars_withdrawn downloaded/cached=5
+2026-08-12 20:13:10,755 [INFO] scraper.supplementary: GET https://www.rbi.org.in/Scripts/NotificationUser.aspx attempt=1
+2026-08-12 20:13:11,119 [INFO] scraper.supplementary: Discovered 44 links for amendments
+2026-08-12 20:13:11,134 [INFO] scraper.supplementary: Supplementary amendments downloaded/cached=40
+2026-08-12 20:13:13,294 [INFO] benchmark.deontic: Deontic candidates=69307 kept=68281 rejected=1026
