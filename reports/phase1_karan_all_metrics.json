@@ -1,0 +1,32 @@
+{
+  "scope": "all",
+  "discover": {
+    "documents_scanned": 380,
+    "entity_classes_discovered": 19,
+    "entity_class_unresolved_documents": 0,
+    "subject_families_discovered": 56,
+    "subject_family_unresolved_documents": 76,
+    "entity_class_file": "/Users/karan/Documents/Capstone_project/data/metadata/entity_classes.json",
+    "subject_family_file": "/Users/karan/Documents/Capstone_project/data/metadata/subject_families.json",
+    "subject_family_unresolved_file": "/Users/karan/Documents/Capstone_project/data/metadata/subject_family_unresolved.json"
+  },
+  "normalize": {
+    "documents_normalised": 380,
+    "entity_class_extraction_coverage": 1.0,
+    "subject_family_extraction_coverage": 0.8,
+    "documents_with_paragraphs_normalised": 299,
+    "documents_missing_paragraphs": 81,
+    "total_paragraphs_normalised": 51853,
+    "raw_fields_verified_unchanged": true
+  },
+  "matrix": {
+    "total_cells": 1064,
+    "populated_cells": 295,
+    "missing_cells": 769,
+    "ambiguous_cells": 9,
+    "duplicate_mapping_cells": 9,
+    "matrix_coverage": 0.27725563909774437,
+    "matrix_path": "/Users/karan/Documents/Capstone_project/data/matrix/matrix_v1.jsonl",
+    "summary_path": "/Users/karan/Documents/Capstone_project/data/matrix/matrix_v1_summary.json"
+  }
+}

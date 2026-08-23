@@ -1,0 +1,215 @@
+{
+  "kind": "entity_class",
+  "term_count": 19,
+  "terms": [
+    {
+      "term_id": "ec_all_india_financial_institutions",
+      "canonical_name": "All India Financial Institutions",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_12966",
+      "occurrence_count": 23,
+      "notes": null
+    },
+    {
+      "term_id": "ec_asset_reconstruction_companies",
+      "canonical_name": "Asset Reconstruction Companies",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_12927",
+      "occurrence_count": 5,
+      "notes": null
+    },
+    {
+      "term_id": "ec_banker_and_debt_manager_to_government",
+      "canonical_name": "Banker and Debt Manager to Government",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_11322",
+      "occurrence_count": 2,
+      "notes": null
+    },
+    {
+      "term_id": "ec_banker_to_governments_and_banks",
+      "canonical_name": "Banker to Governments and Banks",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13443",
+      "occurrence_count": 2,
+      "notes": null
+    },
+    {
+      "term_id": "ec_commercial_banks",
+      "canonical_name": "Commercial Banks",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13399",
+      "occurrence_count": 44,
+      "notes": null
+    },
+    {
+      "term_id": "ec_consumer_education_and_protection",
+      "canonical_name": "Consumer Education and Protection",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13271",
+      "occurrence_count": 7,
+      "notes": null
+    },
+    {
+      "term_id": "ec_credit_information_companies",
+      "canonical_name": "Credit Information Companies",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_12925",
+      "occurrence_count": 4,
+      "notes": null
+    },
+    {
+      "term_id": "ec_financial_inclusion_and_development",
+      "canonical_name": "Financial Inclusion and Development",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13522",
+      "occurrence_count": 8,
+      "notes": null
+    },
+    {
+      "term_id": "ec_financial_market",
+      "canonical_name": "Financial Market",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13552",
+      "occurrence_count": 18,
+      "notes": null
+    },
+    {
+      "term_id": "ec_foreign_exchange_management",
+      "canonical_name": "Foreign Exchange Management",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_12839",
+      "occurrence_count": 20,
+      "notes": null
+    },
+    {
+      "term_id": "ec_issuer_of_currency",
+      "canonical_name": "Issuer of Currency",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13362",
+      "occurrence_count": 3,
+      "notes": null
+    },
+    {
+      "term_id": "ec_local_area_banks",
+      "canonical_name": "Local Area Banks",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13324",
+      "occurrence_count": 33,
+      "notes": null
+    },
+    {
+      "term_id": "ec_non_banking_financial_companies",
+      "canonical_name": "Non-Banking Financial Companies",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_12931",
+      "occurrence_count": 44,
+      "notes": null
+    },
+    {
+      "term_id": "ec_payment_and_settlement_system",
+      "canonical_name": "Payment and Settlement System",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13526",
+      "occurrence_count": 9,
+      "notes": null
+    },
+    {
+      "term_id": "ec_payments_banks",
+      "canonical_name": "Payments Banks",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13321",
+      "occurrence_count": 27,
+      "notes": null
+    },
+    {
+      "term_id": "ec_regional_rural_banks",
+      "canonical_name": "Regional Rural Banks",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13327",
+      "occurrence_count": 26,
+      "notes": null
+    },
+    {
+      "term_id": "ec_rural_co_operative_banks",
+      "canonical_name": "Rural Co-operative Banks",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13205",
+      "occurrence_count": 29,
+      "notes": null
+    },
+    {
+      "term_id": "ec_small_finance_banks",
+      "canonical_name": "Small Finance Banks",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13328",
+      "occurrence_count": 40,
+      "notes": null
+    },
+    {
+      "term_id": "ec_urban_co_operative_banks",
+      "canonical_name": "Urban Co-operative Banks",
+      "kind": "entity_class",
+      "aliases": [],
+      "source": "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)",
+      "definition": null,
+      "first_seen_document_id": "md_13011",
+      "occurrence_count": 36,
+      "notes": null
+    }
+  ]
+}

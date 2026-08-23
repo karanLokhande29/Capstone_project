@@ -113,11 +113,30 @@ cache:
 # Vocabularies are DISCOVERED from the corpus, never declared here. The dossier
 # estimates (~11 entity classes, ~26 subject families) are estimates, not
 # ground truth, and must not be encoded as constants anywhere in the codebase.
-# These files are written by phase1/karan-matrix; they do not exist yet.
+# These files are written by phase1/karan-matrix.
 # -----------------------------------------------------------------------------
 vocabulary:
   entity_class_file: data/metadata/entity_classes.json
   subject_family_file: data/metadata/subject_families.json
+
+# ---------------------------------------------------------------------------
+# phase1/karan-matrix block (P1-002). Owned by this branch; edited only here.
+#
+# subject_family_raw is null for every document in the real corpus — the RBI
+# listing has no subject/topic column (established by phase1/akash-scraper).
+# subject_family is instead derived mechanically from DocumentRecord.title:
+# the already-known entity_class_raw string is matched and removed on a word
+# boundary, leaving the residual as the subject-family candidate. See
+# src/metadata/vocabulary_discovery.py's module docstring for the full
+# methodology and reports/phase1_karan_matrix.md for the discovered result
+# (validated against the real 380-document corpus: 56 terms, 80% coverage).
+# ---------------------------------------------------------------------------
+metadata:
+  subject_family_derivation: title_residual
+  # A cell with more than this many source Directions is marked ambiguous
+  # with reason "multiple_candidate_directions" rather than silently
+  # accepting the first/last match.
+  matrix_ambiguous_source_direction_threshold: 1
 
 # -----------------------------------------------------------------------------
 # Placeholders for values later phases need. Unset on purpose.

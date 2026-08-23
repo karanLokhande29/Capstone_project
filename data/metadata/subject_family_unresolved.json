@@ -1,0 +1,458 @@
+[
+  {
+    "document_id": "md_11322",
+    "entity_class_raw": "Banker and Debt Manager to Government",
+    "title": "Master Directions on Relief/Savings Bonds",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10476",
+    "entity_class_raw": "Banker and Debt Manager to Government",
+    "title": "Master Direction – Operational Guidelines for Primary Dealers  (Updated as on November 22, 2018)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13443",
+    "entity_class_raw": "Banker to Governments and Banks",
+    "title": "Reserve Bank of India [Conduct of Government Business by Agency Banks (ABs) – Payment of Agency Commission and Oversight of ABs] Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13442",
+    "entity_class_raw": "Banker to Governments and Banks",
+    "title": "Reserve Bank of India [Disbursement of Government Pension by Agency Banks (ABs)] Directions, 2026 (Updated as on June 24, 2026)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13271",
+    "entity_class_raw": "Consumer Education and Protection",
+    "title": "Reserve Bank of India (Commercial Banks - Internal Ombudsman) Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13272",
+    "entity_class_raw": "Consumer Education and Protection",
+    "title": "Reserve Bank of India (Small Finance Banks - Internal Ombudsman) Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13273",
+    "entity_class_raw": "Consumer Education and Protection",
+    "title": "Reserve Bank of India (Payments Banks - Internal Ombudsman) Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13274",
+    "entity_class_raw": "Consumer Education and Protection",
+    "title": "Reserve Bank of India (Non-Banking Financial Companies - Internal Ombudsman) Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13275",
+    "entity_class_raw": "Consumer Education and Protection",
+    "title": "Reserve Bank of India (Non-Bank Prepaid Payment Instruments Issuers - Internal Ombudsman) Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13276",
+    "entity_class_raw": "Consumer Education and Protection",
+    "title": "Reserve Bank of India (Credit Information Companies - Internal Ombudsman) Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12586",
+    "entity_class_raw": "Consumer Education and Protection",
+    "title": "Master Direction - Reserve Bank of India (Internal Ombudsman for Regulated Entities) Directions, 2023",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13167",
+    "entity_class_raw": "Commercial Banks",
+    "title": "Reserve Bank of India (Setting Up of Wholly Owned Subsidiaries by Foreign Banks) Guidelines, 2025 (Updated as on April 1, 2026)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13168",
+    "entity_class_raw": "Commercial Banks",
+    "title": "Reserve Bank of India (Universal Banks – Licensing) Guidelines, 2025",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12932",
+    "entity_class_raw": "Non-Banking Financial Companies",
+    "title": "Reserve Bank of India (Non-Operative Financial Holding Companies) Directions, 2025 (Updated as on December 05, 2025)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12935",
+    "entity_class_raw": "Non-Banking Financial Companies",
+    "title": "Reserve Bank of India (Mortgage Guarantee Companies) Directions, 2025 (Updated as on March 10, 2026)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12937",
+    "entity_class_raw": "Non-Banking Financial Companies",
+    "title": "Reserve Bank of India (Core Investment Companies) Directions, 2025 (Updated as on March 10, 2026)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12938",
+    "entity_class_raw": "Non-Banking Financial Companies",
+    "title": "Reserve Bank of India (Standalone Primary Dealers) Directions, 2025 (Updated as on March 10, 2026)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12939",
+    "entity_class_raw": "Non-Banking Financial Companies",
+    "title": "Reserve Bank of India (Housing Finance Companies) Directions, 2025 (Updated as on April 15, 2026)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12930",
+    "entity_class_raw": "Asset Reconstruction Companies",
+    "title": "Reserve Bank of India (Asset Reconstruction Companies) Directions, 2025 (Updated as on March 10, 2026)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12926",
+    "entity_class_raw": "Credit Information Companies",
+    "title": "Reserve Bank of India (Credit Information Companies) Directions, 2025 (Updated as on July 01, 2026)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13522",
+    "entity_class_raw": "Financial Inclusion and Development",
+    "title": "Reserve Bank of India [Commercial Banks - Kisan Credit Card (KCC) Scheme] Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13523",
+    "entity_class_raw": "Financial Inclusion and Development",
+    "title": "Reserve Bank of India [Small Finance Banks - Kisan Credit Card (KCC) Scheme] Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13524",
+    "entity_class_raw": "Financial Inclusion and Development",
+    "title": "Reserve Bank of India [Regional Rural Banks - Kisan Credit Card (KCC) Scheme] Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13525",
+    "entity_class_raw": "Financial Inclusion and Development",
+    "title": "Reserve Bank of India [Rural Co-operative Banks - Kisan Credit Card (KCC) Scheme] Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12799",
+    "entity_class_raw": "Financial Inclusion and Development",
+    "title": "Master Directions - Reserve Bank of India (Priority Sector Lending – Targets and Classification) Directions, 2025 ( Updated as on August 07, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_11959",
+    "entity_class_raw": "Financial Inclusion and Development",
+    "title": "",
+    "reason": "no title"
+  },
+  {
+    "document_id": "md_11060",
+    "entity_class_raw": "Financial Inclusion and Development",
+    "title": "Master Direction - Lending to Micro, Small & Medium Enterprises (MSME) Sector ( Updated as on February 09, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_11037",
+    "entity_class_raw": "Financial Inclusion and Development",
+    "title": "Master Direction – Reserve Bank of India (Relief Measures by banks in areas affected by Natural Calamities) Directions 2017",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13552",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction – Reserve Bank of India (Credit Derivatives) Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13343",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction - Reserve Bank of India (Unique Identifiers in Financial Markets) Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13214",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction – Reserve Bank of India (Rupee Interest Rate Derivatives) Directions, 2025",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12920",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction – Reserve Bank of India (Repurchase Transactions (Repo)) Directions, 2025",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12870",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction – Reserve Bank of India (Electronic Trading Platforms) Directions, 2025",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12784",
+    "entity_class_raw": "Financial Market",
+    "title": "Reserve Bank of India (Forward Contracts in Government Securities) Directions, 2025",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13376",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction - Reserve Bank of India (Access Criteria for NDS-OM) Directions, 2025 ( Updated as on April 27, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12765",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction - Reserve Bank of India (Non-resident Investment in Debt Instruments) Directions, 2025 ( Updated as on June 05, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12682",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction – Reserve Bank of India (Margining for Non-Centrally Cleared OTC Derivatives) Directions, 2024 ( Updated as on February 21, 2025 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12592",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction – Reserve Bank of India (Commercial Paper and Non-Convertible Debentures of original or initial maturity upto one year) Directions, 2024",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12581",
+    "entity_class_raw": "Financial Market",
+    "title": "Reserve Bank of India (Financial Benchmark Administrators) Directions, 2023",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12580",
+    "entity_class_raw": "Financial Market",
+    "title": "Reserve Bank of India (Government Securities Lending) Directions, 2023",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12427",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction – Foreign Exchange Management (Hedging of Commodity Price Risk  and Freight Risk in Overseas Markets) Directions, 2022 (Updated as on April 15, 2024)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12163",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction – Reserve Bank of India (Market-makers in OTC Derivatives) Directions, 2021 ( Updated as on February 21, 2025 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12108",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction – Reserve Bank of India (Certificate of Deposit) Directions, 2021",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12061",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction - Reserve Bank of India (Call, Notice and Term Money Markets) Directions, 2021 (Updated as on June 08, 2023)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_11500",
+    "entity_class_raw": "Financial Market",
+    "title": "Reserve Bank of India (Prevention of Market Abuse) Directions, 2019",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10485",
+    "entity_class_raw": "Financial Market",
+    "title": "Master Direction - Risk Management and Inter-Bank Dealings ( Updated as on September 22, 2025 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12839",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "",
+    "reason": "no title"
+  },
+  {
+    "document_id": "md_12710",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction - Overseas Investment ( Updated as on April 01, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_11510",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "",
+    "reason": "no title"
+  },
+  {
+    "document_id": "md_11200",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction – Foreign Investment in India ( Updated up to June 15, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10868",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction – Money Transfer Service Scheme (MTSS) ( Updated as on November 28, 2025 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10738",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction - Insurance (Updated as on December 07, 2021)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10404",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction - Establishment of Branch Office (BO)/ Liaison Office (LO)/ Project Office (PO) or any other place of business in India by foreign entities (Updated as on May 18, 2021)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10637",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction – Direct Investment by Residents in Joint Venture (JV) / Wholly Owned Subsidiary (WOS) Abroad (Updated as on June 24, 2021)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10191",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction – Borrowing and Lending transactions in Indian Rupee between Persons Resident in India and Non-Resident Indians/ Persons of Indian Origin ( Updated as on February 16, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10192",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction - Liberalised Remittance Scheme (LRS) ( Updated as on September 06, 2024 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10193",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction - Other Remittance Facilities ( Updated as on May 06, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10197",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction - Remittance of Assets ( Updated as on June 29, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10198",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction - Deposits and Accounts ( Updated as on June 29, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10201",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction – Import of Goods and Services ( Updated as on January 12, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10203",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction - Miscellaneous ( Updated as on May 13, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10205",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction – Opening and Maintenance of Rupee/Foreign Currency Vostro Accounts of Non-resident Exchange Houses (Updated as on December 22, 2022)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10395",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction – Export of Goods and Services ( Updated as on July 17, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_11518",
+    "entity_class_raw": "Foreign Exchange Management",
+    "title": "Master Direction - Money Changing Activities ( Updated as on June 24, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13362",
+    "entity_class_raw": "Issuer of Currency",
+    "title": "Master Direction – Facility for Exchange of Notes and Coins",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13361",
+    "entity_class_raw": "Issuer of Currency",
+    "title": "Master Direction on Counterfeit Notes – Detection, Reporting and Monitoring",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13360",
+    "entity_class_raw": "Issuer of Currency",
+    "title": "Master Direction on Incentives for Currency Distribution and Exchange and Penalties / Penal Provisions for Bank Branches and Currency Chests for Deficiency in Rendering Customer Service and Reporting of Transactions / Balances ( Updated as on May 27, 2026 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13526",
+    "entity_class_raw": "Payment and Settlement System",
+    "title": "Reserve Bank of India (Trade Receivables Discounting System) Directions, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13502",
+    "entity_class_raw": "Payment and Settlement System",
+    "title": "Master Directions on Authorisation to operate a Payment System",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_13374",
+    "entity_class_raw": "Payment and Settlement System",
+    "title": "Digital Payments – E-mandate Framework, 2026",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12898",
+    "entity_class_raw": "Payment and Settlement System",
+    "title": "Reserve Bank of India (Authentication mechanisms for  digital payment transactions) Directions, 2025",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12896",
+    "entity_class_raw": "Payment and Settlement System",
+    "title": "Master Direction on Regulation of Payment Aggregator (PA)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12715",
+    "entity_class_raw": "Payment and Settlement System",
+    "title": "Master Directions on Cyber Resilience and Digital Payment Security Controls for non-bank Payment System Operators",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12616",
+    "entity_class_raw": "Payment and Settlement System",
+    "title": "Master Direction – Reserve Bank of India (Bharat Bill Payment System) Directions, 2024",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_12156",
+    "entity_class_raw": "Payment and Settlement System",
+    "title": "Master Directions on Prepaid Payment Instruments (PPIs) ( Updated as on December 27, 2024 )",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  },
+  {
+    "document_id": "md_10833",
+    "entity_class_raw": "Payment and Settlement System",
+    "title": "Master Directions on Access Criteria for Payment Systems (Updated as on July 28, 2021)",
+    "reason": "entity_class_raw not found in title on a word boundary"
+  }
+]
