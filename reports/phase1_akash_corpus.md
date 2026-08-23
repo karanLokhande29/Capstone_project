@@ -1,22 +1,18 @@
 # Phase 1 — Akash: Corpus Acquisition, Extraction, Segmentation
 
-Run scope: **small validation slice, limit=12** (pipeline stage: `all`)
-
-This is the Task 7 small validation slice — real network calls against the live RBI site, a strict subset of the eventual full corpus, produced so `phase1/meer-annotation` (P1-003) has real `ParagraphRecord`s to build its Week-2 checks against rather than waiting on the full harvest.
-
-The full-corpus harvest (Task 8, Week 3) is a Kaggle-execution deliverable, not a local one — see `notebooks/phase1-akash-corpus.ipynb` §5 and Section U of the governing prompt ("The full-network, full-corpus run is not a local test — it is reported from the Kaggle execution"). Its metrics are **NOT YET MEASURED** here; they will be reported after that notebook runs.
+Run scope: **full corpus** (pipeline stage: `all`)
 
 ## Discovery
 
 - Documents discovered: **380**
-- Downloads attempted: **12**
-- Downloads successful: **12**
-- Downloads failed: **0**
-- Download success rate: **1.0**
-- PDF count: **12**
+- Downloads attempted: **380**
+- Downloads successful: **299**
+- Downloads failed: **81**
+- Download success rate: **0.7868421052631579**
+- PDF count: **299**
 - HTML count: **0**
-- Distinct entity classes (raw, this run's downloaded slice): **4**
-  - ['Banker and Debt Manager to Government', 'Banker to Governments and Banks', 'Commercial Banks', 'Consumer Education and Protection']
+- Distinct entity classes (raw, this run's downloaded slice): **19**
+  - ['All India Financial Institutions', 'Asset Reconstruction Companies', 'Banker and Debt Manager to Government', 'Banker to Governments and Banks', 'Commercial Banks', 'Consumer Education and Protection', 'Credit Information Companies', 'Financial Inclusion and Development', 'Financial Market', 'Foreign Exchange Management', 'Issuer of Currency', 'Local Area Banks', 'Non-Banking Financial Companies', 'Payment and Settlement System', 'Payments Banks', 'Regional Rural Banks', 'Rural Co-operative Banks', 'Small Finance Banks', 'Urban Co-operative Banks']
 
 ### Subject-family axis: not present on the source listing
 
@@ -28,32 +24,32 @@ A number of entity-class headings on the listing page (e.g. "Commercial Banks") 
 
 ## Extraction
 
-- Documents considered: **12**
-- Extraction successful: **12**
+- Documents considered: **299**
+- Extraction successful: **299**
 - Extraction failures: **0**
 - Extracted empty (parsed, no usable text): **0**
-- Skipped (not downloaded): **0**
+- Skipped (not downloaded): **81**
 - Extraction success rate: **1.0**
 
 ## Segmentation
 
-- Documents segmented: **12**
-- Total paragraphs: **1456**
-- section_id coverage: **0.9903846153846154**
-- clause_path coverage: **0.9903846153846154**
+- Documents segmented: **299**
+- Total paragraphs: **51853**
+- section_id coverage: **0.9934430023335198**
+- clause_path coverage: **0.9934430023335198**
 - Documents with no recognised structure: **0**
 
 ## Cross-references
 
-- Phrases detected: **33**
-- Resolved (intra-document only): **8**
-- Resolution rate: **0.24242424242424243**
+- Phrases detected: **2254**
+- Resolved (intra-document only): **438**
+- Resolution rate: **0.19432120674356698**
 
 Cross-document references (to other Directions, circulars, or the Banking Regulation Act) are detected as phrases but never resolved to a `paragraph_id` outside this scope — a low resolution rate is therefore expected and is not itself a defect; most legal cross-references in RBI text point outside the referencing document.
 
 ## Temporal signal (`update_date`)
 
-- Documents carrying an "(Updated as on ...)" stamp in this run's manifest: **2 / 12** (0.167)
+- Documents carrying an "(Updated as on ...)" stamp in this run's manifest: **162 / 380** (0.426)
 - Extracted verbatim from the title via `src.extraction.temporal_signals`; not parsed into a structured date, and not cross-checked against the listing's own per-block date sub-heading (see that module's docstring for why the two are not interchangeable).
 
 ## FAQ / enforcement supplementary sample

@@ -1,40 +1,365 @@
 {
   "scope": "all",
-  "limit": 12,
+  "limit": null,
   "discover": {
     "documents_discovered": 380,
-    "downloads_attempted": 12,
-    "downloads_successful": 12,
-    "downloads_failed": 0,
-    "download_success_rate": 1.0,
-    "pdf_count": 12,
+    "downloads_attempted": 380,
+    "downloads_successful": 299,
+    "downloads_failed": 81,
+    "download_success_rate": 0.7868421052631579,
+    "pdf_count": 299,
     "html_count": 0,
-    "manifest_path": "/Users/karan/Documents/Capstone_project/data/metadata/document_manifest.jsonl",
-    "failures": []
+    "manifest_path": "/kaggle/working/data/metadata/document_manifest.jsonl",
+    "failures": [
+      {
+        "document_id": "md_11322",
+        "reason": "md_11322: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_10476",
+        "reason": "md_10476: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13443",
+        "reason": "md_13443: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13442",
+        "reason": "md_13442: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13271",
+        "reason": "md_13271: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13272",
+        "reason": "md_13272: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13273",
+        "reason": "md_13273: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13274",
+        "reason": "md_13274: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13275",
+        "reason": "md_13275: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13276",
+        "reason": "md_13276: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_12586",
+        "reason": "md_12586: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13399",
+        "reason": "md_13399: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13400",
+        "reason": "md_13400: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13319",
+        "reason": "md_13319: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13136",
+        "reason": "md_13136: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13137",
+        "reason": "md_13137: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13138",
+        "reason": "md_13138: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13139",
+        "reason": "md_13139: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13140",
+        "reason": "md_13140: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13141",
+        "reason": "md_13141: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13143",
+        "reason": "md_13143: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13144",
+        "reason": "md_13144: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13145",
+        "reason": "md_13145: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13146",
+        "reason": "md_13146: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13147",
+        "reason": "md_13147: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13148",
+        "reason": "md_13148: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13149",
+        "reason": "md_13149: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13150",
+        "reason": "md_13150: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13151",
+        "reason": "md_13151: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13152",
+        "reason": "md_13152: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13153",
+        "reason": "md_13153: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13154",
+        "reason": "md_13154: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13155",
+        "reason": "md_13155: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13156",
+        "reason": "md_13156: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13157",
+        "reason": "md_13157: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13158",
+        "reason": "md_13158: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13159",
+        "reason": "md_13159: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13160",
+        "reason": "md_13160: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13161",
+        "reason": "md_13161: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13162",
+        "reason": "md_13162: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13163",
+        "reason": "md_13163: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13164",
+        "reason": "md_13164: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13165",
+        "reason": "md_13165: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13166",
+        "reason": "md_13166: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13167",
+        "reason": "md_13167: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13168",
+        "reason": "md_13168: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13328",
+        "reason": "md_13328: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13105",
+        "reason": "md_13105: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13106",
+        "reason": "md_13106: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13107",
+        "reason": "md_13107: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13108",
+        "reason": "md_13108: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13109",
+        "reason": "md_13109: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13111",
+        "reason": "md_13111: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13112",
+        "reason": "md_13112: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13113",
+        "reason": "md_13113: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13114",
+        "reason": "md_13114: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13115",
+        "reason": "md_13115: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13116",
+        "reason": "md_13116: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13117",
+        "reason": "md_13117: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13118",
+        "reason": "md_13118: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13119",
+        "reason": "md_13119: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13120",
+        "reason": "md_13120: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13121",
+        "reason": "md_13121: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13122",
+        "reason": "md_13122: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13123",
+        "reason": "md_13123: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13124",
+        "reason": "md_13124: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13125",
+        "reason": "md_13125: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13126",
+        "reason": "md_13126: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13127",
+        "reason": "md_13127: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13128",
+        "reason": "md_13128: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13129",
+        "reason": "md_13129: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13130",
+        "reason": "md_13130: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13131",
+        "reason": "md_13131: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13132",
+        "reason": "md_13132: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13133",
+        "reason": "md_13133: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13134",
+        "reason": "md_13134: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13135",
+        "reason": "md_13135: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13321",
+        "reason": "md_13321: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13087",
+        "reason": "md_13087: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13088",
+        "reason": "md_13088: received HTML where a PDF was expected"
+      },
+      {
+        "document_id": "md_13089",
+        "reason": "md_13089: received HTML where a PDF was expected"
+      }
+    ]
   },
   "extract": {
-    "documents_considered": 12,
-    "extraction_successful": 12,
+    "documents_considered": 299,
+    "extraction_successful": 299,
     "extraction_failures": 0,
     "extraction_empty": 0,
-    "skipped_not_downloaded": 0,
+    "skipped_not_downloaded": 81,
     "extraction_success_rate": 1.0,
     "failures": [],
     "empty_document_ids": []
   },
   "segment": {
-    "documents_segmented": 12,
-    "documents_missing_extracted_text": 0,
+    "documents_segmented": 299,
+    "documents_missing_extracted_text": 81,
     "documents_with_no_recognised_structure": 0,
-    "total_paragraphs": 1456,
-    "section_id_coverage": 0.9903846153846154,
-    "clause_path_coverage": 0.9903846153846154,
-    "index_path": "/Users/karan/Documents/Capstone_project/data/processed/paragraphs_index.jsonl"
+    "total_paragraphs": 51853,
+    "section_id_coverage": 0.9934430023335198,
+    "clause_path_coverage": 0.9934430023335198,
+    "index_path": "/kaggle/working/data/processed/paragraphs_index.jsonl"
   },
   "xref": {
-    "documents_processed": 12,
-    "cross_reference_phrases_detected": 33,
-    "cross_reference_count": 8,
-    "resolution_rate": 0.24242424242424243
+    "documents_processed": 299,
+    "cross_reference_phrases_detected": 2254,
+    "cross_reference_count": 438,
+    "resolution_rate": 0.19432120674356698
   }
 }
