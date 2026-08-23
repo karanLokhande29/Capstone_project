@@ -1,0 +1,205 @@
+{
+  "scope": "all",
+  "qa": {
+    "paragraphs_total": 51853,
+    "documents_represented": 299,
+    "distinct_entity_classes_in_paragraphs": 16,
+    "missing_section_id": 340,
+    "missing_section_id_rate": 0.006556997666480242,
+    "missing_clause_path": 340,
+    "missing_clause_path_rate": 0.006556997666480242,
+    "empty_text": 0,
+    "missing_source_url": 0,
+    "missing_entity_class": 0,
+    "missing_entity_class_rate": 0.0,
+    "missing_subject_family": 8008,
+    "missing_subject_family_rate": 0.15443658033286406,
+    "duplicate_paragraph_ids": 0,
+    "duplicate_examples": {},
+    "spot_check_sample_size": 10,
+    "spot_check_sample": [
+      {
+        "paragraph_id": "md_13019::p00016",
+        "document_id": "md_13019",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/286MD85DCC2671BCB41DC8B0714812DAB799A.PDF",
+        "section_id": "5",
+        "clause_path": "5",
+        "text_excerpt": "prescribed in the Reserve Bank of India (Urban Co-operative Banks – Resolution\nof Stressed Assets) Directions, 2025, in addition to these Directions.\nC. Definitions"
+      },
+      {
+        "paragraph_id": "md_13012::p00113",
+        "document_id": "md_13012",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/293MD6D08F6482DFE4A22AF441AD601136473.PDF",
+        "section_id": "29",
+        "clause_path": "29",
+        "text_excerpt": "29. A bank shall ensure that the terms and conditions governing the outsourcing\narrangement are carefully defined in written agreements and vetted by the bank’s\nlegal counsel on their legal effect and enforceability. The agreement shall\napp"
+      },
+      {
+        "paragraph_id": "md_13583::p00233",
+        "document_id": "md_13583",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/470MD9D03D4E25E864955B59B7A17DA164DB9.PDF",
+        "section_id": "181",
+        "clause_path": "181",
+        "text_excerpt": "181. The CIC shall establish and implement systems to collect and share threat\ninformation from local / national / international sources following legally accepted\n/ defined means / process.\nZ.2 Recovery from Cyber Incidents"
+      },
+      {
+        "paragraph_id": "md_12870::p00057",
+        "document_id": "md_12870",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/137MDEF04E0A142F948C58A9503C136E565AF.PDF",
+        "section_id": "2",
+        "clause_path": "2",
+        "text_excerpt": "2. We declare that to the best of our knowledge and belief the information furnished in\nthe statements/annexes enclosed are true/correct and complete and nothing has been\nconcealed.\nYours faithfully\nSignature:\nName:\nDesignation:\nCompany Sea"
+      },
+      {
+        "paragraph_id": "md_12983::p01379",
+        "document_id": "md_12983",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/321MDD26060BC94C943C8B5907F5E328E0F1B.PDF",
+        "section_id": "223",
+        "clause_path": "223(a)",
+        "text_excerpt": "(a) establishes a risk framework in order to assess and appropriately\nmanage the various risk exposures of an AIFI;"
+      },
+      {
+        "paragraph_id": "md_13021::p00145",
+        "document_id": "md_13021",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/284MD47AE1D934ED549E2AEB98E30D3A85A57.PDF",
+        "section_id": "105",
+        "clause_path": "105",
+        "text_excerpt": "per cent limit specified for unlisted non-SLR securities. In case such\ninvestments included under unlisted non-SLR securities lead to a breach of the\n10 per cent limit, a UCB shall not make further investments in non-SLR\nsecurities (both pr"
+      },
+      {
+        "paragraph_id": "md_13013::p00026",
+        "document_id": "md_13013",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/292MD76099C95D4BD4139A4EBCDA2F50BEFA2.PDF",
+        "section_id": "4",
+        "clause_path": "4(i)(vi)",
+        "text_excerpt": "(vi) loans given for other consumptions purposes (e.g., social ceremonies,\netc.). However, it excludes (a) education loans, (b) loans given for creation\n/ enhancement of immovable assets (e.g., housing, etc.), (c) loans given for\ninvestment"
+      },
+      {
+        "paragraph_id": "md_13006::p00156",
+        "document_id": "md_13006",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/298MD47439C1E67454650A666D90BDDE73AC3.PDF",
+        "section_id": "24",
+        "clause_path": "24(j)(v)",
+        "text_excerpt": "(v) Review follow-up action on the Internal Inspection / Internal Audit Reports,\nparticularly of \"unsatisfactory\" branches, and large branches and also on\nconcurrent audit observations."
+      },
+      {
+        "paragraph_id": "md_13619::p00043",
+        "document_id": "md_13619",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/434MDB0864F4A89F445818734DA5107794020.PDF",
+        "section_id": "23",
+        "clause_path": "23",
+        "text_excerpt": "23. The bank shall make it incumbent on the part of the staff members to intimate in\nwriting about the accounts opened by them with another branch of the bank or\nanother bank. Accordingly, necessary amendments to the Officers' Conduct\nRegul"
+      },
+      {
+        "paragraph_id": "md_13097::p00394",
+        "document_id": "md_13097",
+        "source_url": "https://rbidocs.rbi.org.in/rdocs/notification/PDFs/211MD.PDF",
+        "section_id": "1",
+        "clause_path": "1",
+        "text_excerpt": "Sr.\nInstruments CCF (%)\nNo.\n(These items are to be risk weighted according to the type of asset and not\naccording to the type of counterparty with whom the transaction has been\nentered into.)\nPartly paid shares and securities, which represe"
+      }
+    ],
+    "records_schema_checked": 500,
+    "records_failing_validation": 0,
+    "failures": []
+  },
+  "checks": {
+    "cross_class_alignment": {
+      "trigger_threshold": 0.6,
+      "similarity_threshold": 0.5,
+      "entity_classes_sampled": [
+        "All India Financial Institutions",
+        "Local Area Banks",
+        "Non-Banking Financial Companies"
+      ],
+      "subject_families_sampled": [
+        "Miscellaneous",
+        "Fraud Risk Management",
+        "Know Your Customer"
+      ],
+      "entity_class_axis": {
+        "description": "Same subject family, different entity classes — parallel Directions that SHOULD align. entity_class is raw-sourced from RBI's listing.",
+        "paragraph_level": {
+          "positions_compared": 811,
+          "aligned_positions": 296,
+          "alignment_rate": 0.3649815043156597,
+          "median_similarity": 0.13740458015267176
+        },
+        "section_level": {
+          "positions_compared": 614,
+          "aligned_positions": 210,
+          "alignment_rate": 0.34201954397394135,
+          "median_similarity": 0.1303885853066181
+        }
+      },
+      "subject_family_axis_derived": {
+        "description": "Same entity class, different subject families — unrelated regulations that should NOT align. Serves as the false-positive baseline.",
+        "paragraph_level": {
+          "positions_compared": 596,
+          "aligned_positions": 28,
+          "alignment_rate": 0.04697986577181208,
+          "median_similarity": 0.06557377049180328
+        },
+        "section_level": {
+          "positions_compared": 592,
+          "aligned_positions": 14,
+          "alignment_rate": 0.02364864864864865,
+          "median_similarity": 0.06382978723404255
+        },
+        "caveat": "subject_family is a DERIVED axis (P1-002-CORRECTIVE, commit e4013ca): RBI publishes no subject taxonomy, so these values were inferred from titles by stripping the entity-class string out of each. Any stratification on this axis rests on inferred metadata, not RBI's own classification."
+      },
+      "trigger_fired": true,
+      "judgment": "TRIGGER FIRED — paragraph-level alignment is 36.5%, BELOW the 60% threshold. Paragraph-level cross-class matching is NOT reliable on this evidence. Section-level alignment was measured as the dossier's suggested fallback and does NOT rescue it (34.2% vs 36.5% at paragraph level) — it is marginally more precise (lower false-positive baseline) but no more complete. Phase 2 should therefore NOT assume either structural level supports reliable one-to-one cross-class matching, and should treat semantic matching as load-bearing rather than as a refinement on top of a working structural match."
+    },
+    "faq_enforcement": {
+      "faq_items_found": 0,
+      "faq_paragraph_alignment_rate": "NOT YET MEASURED",
+      "faq_note": "NOT YET MEASURED — P1-001 reported this sample as not trivially reachable (FAQView.aspx is a category index requiring a second-level crawl into per-category pages), so no sample was harvested and there is nothing to align. Systematic harvesting is Phase 2, Week 4 scope. No rate is fabricated in its absence.",
+      "enforcement_items_found": 0,
+      "enforcement_paragraph_alignment_rate": "NOT YET MEASURED",
+      "enforcement_note": "NOT YET MEASURED — P1-001 reported this sample as not trivially reachable (FAQView.aspx is a category index requiring a second-level crawl into per-category pages), so no sample was harvested and there is nothing to align. Systematic harvesting is Phase 2, Week 4 scope. No rate is fabricated in its absence.",
+      "standing_rule": "FAQ and enforcement items are NOT treated as paragraph-level gold labels regardless of alignment outcome — they remain validation/motivation material only. This holds whether or not the sample exists."
+    }
+  },
+  "pilot": {
+    "paragraphs_searched": 20,
+    "entity_classes_spanned": [
+      "All India Financial Institutions",
+      "Asset Reconstruction Companies",
+      "Commercial Banks",
+      "Credit Information Companies",
+      "Financial Inclusion and Development",
+      "Financial Market",
+      "Foreign Exchange Management",
+      "Issuer of Currency",
+      "Local Area Banks",
+      "Non-Banking Financial Companies",
+      "Payment and Settlement System",
+      "Payments Banks",
+      "Regional Rural Banks",
+      "Rural Co-operative Banks",
+      "Small Finance Banks",
+      "Urban Co-operative Banks"
+    ],
+    "entity_classes_spanned_count": 16,
+    "items_extracted": 18,
+    "widening_attempts": [
+      {
+        "paragraphs_searched": 20,
+        "items_extracted": 18
+      }
+    ],
+    "cue_distribution": {
+      "shall": 15,
+      "must": 2,
+      "are required to": 1
+    },
+    "candidates_path": "/Users/karan/Documents/Capstone_project/data/benchmark/pilot_candidates.jsonl",
+    "task_files": {
+      "akash": "/Users/karan/Documents/Capstone_project/data/benchmark/tasks/annotation_akash.csv",
+      "karan": "/Users/karan/Documents/Capstone_project/data/benchmark/tasks/annotation_karan.csv",
+      "meer": "/Users/karan/Documents/Capstone_project/data/benchmark/tasks/annotation_meer.csv"
+    },
+    "annotation_status": "NOT YET MEASURED — task files generated and awaiting completion by 3 annotators. No annotations have been fabricated."
+  }
+}

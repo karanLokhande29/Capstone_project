@@ -148,13 +148,57 @@ retrieval:
   embedding_model: null
   index_type: null
 
+# ---------------------------------------------------------------------------
+# phase1/meer-annotation block (P1-003). Owned by this branch; edited only here.
+#
+# Annotation is the critical path for the research contribution: no amount of
+# later engineering substitutes for human labels on applies_to and
+# differential_flag, and annotator time cannot be recovered by working faster.
+# ---------------------------------------------------------------------------
 benchmark:
-  # Annotation is the critical path for the research contribution.
-  annotators: []
-  # TODO(phase1/meer-annotation): annotator identifiers, sample size, and the
-  # minimum number of independent annotators per item required before an item
-  # may be promoted from candidate to validated.
+  # Full roster. Every annotator receives every pilot item — at pilot scale,
+  # full overlap is what makes an agreement statistic computable at all
+  # (partial assignment would leave most items with one rater and no
+  # agreement to measure).
+  annotators:
+    - akash
+    - karan
+    - meer
+
+  # Distinct annotators required before an item may be promoted from
+  # candidate to validated. Set to 2 rather than 3 so a single annotator's
+  # unavailability cannot stall the whole set, while still requiring genuine
+  # independent agreement. Enforced in code by promote_validated() AND
+  # independently by T1Label.validate() — never warned-and-allowed.
   min_annotators_per_item: 2
+
   label_statuses:
     - candidate
+    - in_review
     - validated
+    - rejected
+
+  pilot:
+    # Task 5 bounds: search this many paragraphs, widening by step until the
+    # item floor is met. The paragraph range bounds the SEARCH; it cannot by
+    # itself guarantee an item count, since cue density varies per paragraph.
+    paragraphs_min: 15
+    paragraphs_max: 20
+    paragraphs_step: 5
+    min_items: 10
+    # Pilot candidate generation is a keyword heuristic ONLY — a feasibility
+    # device to test the annotation protocol, explicitly not the systematic
+    # Phase 2 (Week 4) extractor.
+    extraction_method: keyword_heuristic
+
+  alignment_check:
+    # The dossier's explicit decision threshold. Below this, paragraph-level
+    # cross-class matching is not assumed to work and the finding is reported
+    # rather than silently absorbed.
+    trigger_threshold: 0.60
+    # Two paragraphs at the same structural position count as aligned only if
+    # their texts also agree above this Jaccard overlap. Structure alone is
+    # not enough: clause_path values in this corpus are mostly bare numbers
+    # every Direction has, so position-only matching scores near-unrelated
+    # documents as aligned. See src/benchmark/alignment_check.py.
+    similarity_threshold: 0.5

@@ -1,0 +1,2 @@
+label_id,paragraph_id,document_id,context_entity_class,context_subject_family,span_text,matched_cue,applies_to,applies_to_rationale,differential_flag,notes
+t1_pilot_md_00000::p00000_00,md_00000::p00000,md_00000,Commercial Banks,Know Your Customer (DERIVED - see instructions),EXAMPLE ROW - delete before use. Every bank and NBFC shall maintain records for five years.,shall,Commercial Banks;Non-Banking Financial Companies,"Span names 'every bank and NBFC' explicitly, so both classes.",shared,This row is a filled-in EXAMPLE showing the expected format.

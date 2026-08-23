@@ -35,6 +35,13 @@ data/evaluation/**
 !data/benchmark/.gitkeep
 !data/evaluation/.gitkeep
 
+# Annotation templates are protocol documentation, not corpus payload — they
+# carry no RBI text and must be reviewable in the repo (P1-003, phase1/meer-
+# annotation). The filled-in task files and pilot labels alongside them stay
+# ignored under the data/benchmark/** rule above.
+!data/benchmark/templates/
+!data/benchmark/templates/**
+
 # Notebook execution noise
 .ipynb_checkpoints/
 
