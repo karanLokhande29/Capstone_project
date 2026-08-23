@@ -77,11 +77,58 @@ from src.schemas.vocabulary import (
 
 BRANCH = "phase1/karan-matrix"
 
-ENTITY_SOURCE = "RBI Master Directions listing entity-class heading (BS_ViewMasDirections.aspx)"
-SUBJECT_SOURCE = (
-    "title residual: entity_class_raw removed from DocumentRecord.title on a word "
-    "boundary, RBI/Directions/date boilerplate stripped mechanically — see module docstring"
+# -- provenance markers (P1-002-CORRECTIVE) ----------------------------------
+#
+# `VocabularyTerm.source` carries a machine-readable provenance prefix so a
+# downstream consumer can separate "harvested from a raw field and normalised"
+# from "inferred from the title" **from the data itself**, without reading any
+# docstring. The prose explanation lives in `.notes`; `.source` stays greppable.
+#
+#     grep '"source": "derived:' data/metadata/subject_families.json
+#
+PROVENANCE_RAW = "raw"
+PROVENANCE_DERIVED = "derived"
+#: A term whose aliases came from BOTH a raw field and a derivation. Does not
+#: occur in the current corpus (asserted by a test); see `term_provenance`.
+PROVENANCE_MIXED = "mixed"
+
+#: entity_class comes straight from a real harvested field (`entity_class_raw`).
+ENTITY_SOURCE = f"{PROVENANCE_RAW}:rbi_listing_entity_class_heading"
+ENTITY_SOURCE_NOTES = (
+    "Harvested verbatim from the RBI Master Directions listing's entity-class "
+    "heading (BS_ViewMasDirections.aspx) via DocumentRecord.entity_class_raw, "
+    "then normalised 1:1 (no aliasing needed for this corpus)."
 )
+
+#: subject_family has NO raw source field — see the module docstring and the
+#: dated finding in reports/phase1_karan_matrix.md. Every subject_family term
+#: is INFERRED from the title, and is marked as such here.
+SUBJECT_SOURCE = f"{PROVENANCE_DERIVED}:title_strip_entity_class"
+SUBJECT_SOURCE_NOTES = (
+    "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for "
+    "every document in this corpus (RBI's listing carries no subject-family "
+    "taxonomy). This term was inferred by removing the known entity_class_raw "
+    "string from DocumentRecord.title on a word boundary and stripping "
+    "RBI/Directions/date boilerplate from the residual. Treat as inferred "
+    "metadata, not as RBI's own classification."
+)
+
+
+def term_provenance(term: VocabularyTerm) -> str:
+    """Return `"raw"`, `"derived"`, or `"mixed"` for a term's `source` marker.
+
+    `"mixed"` is returned when a term's source carries neither recognised
+    prefix cleanly — the honest label for a term whose provenance cannot be
+    resolved to a single origin, rather than silently picking one (the same
+    "record, don't force-match" rule this module applies to unresolved
+    surface forms).
+    """
+    source = (term.source or "").strip()
+    if source.startswith(f"{PROVENANCE_RAW}:"):
+        return PROVENANCE_RAW
+    if source.startswith(f"{PROVENANCE_DERIVED}:"):
+        return PROVENANCE_DERIVED
+    return PROVENANCE_MIXED
 
 # -- subject-family title-residual extraction --------------------------------
 
@@ -147,11 +194,17 @@ def _slug(text: str) -> str:
 
 
 def _add_or_extend(vocab: Vocabulary, term_id: str, canonical_name: str, surface: str, *, source: str,
-                    first_seen_document_id: str, kind: str, logger: logging.Logger) -> VocabularyTerm:
+                    notes: str, first_seen_document_id: str, kind: str, logger: logging.Logger) -> VocabularyTerm:
     """Add a new term, or extend an existing one's aliases/count if `surface`
     already resolves there. Collision-safe: if `surface`'s normalised key
     already belongs to a *different* term, this raises inside `Vocabulary.add`
     rather than silently merging — the caller decides how to handle that.
+
+    If an existing term is extended with a surface form carrying a *different*
+    provenance than the term already has, the term's provenance is downgraded
+    to `PROVENANCE_MIXED` and logged as a warning rather than keeping whichever
+    label happened to land first (Section R: record the ambiguity, don't
+    force-match). This does not occur in the current corpus.
     """
     existing = vocab.resolve(surface)
     if existing is not None:
@@ -161,6 +214,18 @@ def _add_or_extend(vocab: Vocabulary, term_id: str, canonical_name: str, surface
                 "vocabulary: %s alias added to %r: %r (from %s)",
                 kind, existing.canonical_name, surface, first_seen_document_id,
             )
+        if existing.source != source:
+            logger.warning(
+                "vocabulary: %s term %r has MIXED provenance — existing source %r, "
+                "incoming source %r (from %s). Recording as %r rather than choosing one.",
+                kind, existing.canonical_name, existing.source, source,
+                first_seen_document_id, PROVENANCE_MIXED,
+            )
+            existing.source = f"{PROVENANCE_MIXED}:{existing.source}|{source}"
+            existing.notes = (
+                f"{existing.notes or ''} MIXED PROVENANCE: this term's surface forms came "
+                f"from more than one origin; see source field."
+            ).strip()
         existing.occurrence_count = (existing.occurrence_count or 0) + 1
         return existing
 
@@ -169,11 +234,15 @@ def _add_or_extend(vocab: Vocabulary, term_id: str, canonical_name: str, surface
         canonical_name=canonical_name,
         kind=kind,
         source=source,
+        notes=notes,
         first_seen_document_id=first_seen_document_id,
         occurrence_count=1,
     )
     vocab.add(term)
-    logger.info("vocabulary: new %s term %r (term_id=%s, first seen %s)", kind, canonical_name, term_id, first_seen_document_id)
+    logger.info(
+        "vocabulary: new %s term %r (term_id=%s, provenance=%s, source=%r, first seen %s)",
+        kind, canonical_name, term_id, term_provenance(term), source, first_seen_document_id,
+    )
     return term
 
 
@@ -199,7 +268,8 @@ def discover_entity_class_vocabulary(
         try:
             _add_or_extend(
                 vocab, term_id, raw, raw,
-                source=ENTITY_SOURCE, first_seen_document_id=record.document_id,
+                source=ENTITY_SOURCE, notes=ENTITY_SOURCE_NOTES,
+                first_seen_document_id=record.document_id,
                 kind=ENTITY_CLASS, logger=logger,
             )
         except Exception as exc:  # noqa: BLE001 - a genuine collision is a finding, not a crash
@@ -250,7 +320,8 @@ def discover_subject_family_vocabulary(
         try:
             _add_or_extend(
                 vocab, term_id, residual, residual,
-                source=SUBJECT_SOURCE, first_seen_document_id=record.document_id,
+                source=SUBJECT_SOURCE, notes=SUBJECT_SOURCE_NOTES,
+                first_seen_document_id=record.document_id,
                 kind=SUBJECT_FAMILY, logger=logger,
             )
         except Exception as exc:  # noqa: BLE001
@@ -342,10 +413,88 @@ def normalise_paragraphs(
     return results
 
 
+# -- provenance queries (P1-002-CORRECTIVE) ----------------------------------
+
+
+def provenance_counts(vocab: Vocabulary) -> dict[str, int]:
+    """Count a vocabulary's terms by provenance: raw / derived / mixed."""
+    counts = {PROVENANCE_RAW: 0, PROVENANCE_DERIVED: 0, PROVENANCE_MIXED: 0}
+    for term in vocab:
+        counts[term_provenance(term)] += 1
+    return counts
+
+
+def provenance_lookup(vocab: Vocabulary) -> dict[str, str]:
+    """Map canonical_name -> provenance label, for downstream consumers.
+
+    Persisted alongside the vocabularies so a consumer (e.g. Meer's P1-003
+    stratification) can classify a record's `subject_family` value without
+    parsing the full vocabulary file — one small dict lookup instead.
+    """
+    return {term.canonical_name: term_provenance(term) for term in vocab}
+
+
+def segmented_unresolved_rates(
+    records: Iterable[DocumentRecord],
+    entity_unresolved: Iterable[str],
+    subject_unresolved: Iterable[Mapping[str, str]],
+) -> dict[str, Any]:
+    """Split the unresolved-surface-form rate by raw-sourced vs derived origin.
+
+    P1-002 reported a single combined subject-family unresolved rate
+    (76/380). That number conflates two very different things, so this
+    separates them:
+
+    * **entity_class** resolves from a genuinely harvested field
+      (`entity_class_raw`), so its unresolved rate measures real
+      normalisation difficulty.
+    * **subject_family** has no raw field at all, so *every* value is
+      derived and its unresolved rate measures the reach of the derivation
+      method, not normalisation difficulty.
+
+    The raw-sourced subject-family rate is therefore reported as
+    ``"NOT MEASURABLE"`` rather than ``0.0`` when no raw values exist —
+    reporting 0% would imply raw values were examined and found clean, when
+    in fact there were none to examine.
+    """
+    records = list(records)
+    total = len(records)
+    entity_unresolved = list(entity_unresolved)
+    subject_unresolved = list(subject_unresolved)
+
+    raw_sourced_subject = sum(1 for r in records if r.subject_family_raw)
+    raw_sourced_entity = sum(1 for r in records if r.entity_class_raw)
+
+    if raw_sourced_subject:
+        unresolved_raw_subject = sum(
+            1 for u in subject_unresolved
+            if any(r.document_id == u["document_id"] and r.subject_family_raw for r in records)
+        )
+        subject_raw_rate: Any = unresolved_raw_subject / raw_sourced_subject
+    else:
+        subject_raw_rate = (
+            "NOT MEASURABLE — no raw-sourced subject_family values exist in this corpus"
+        )
+
+    return {
+        "documents_total": total,
+        "entity_class_raw_sourced_documents": raw_sourced_entity,
+        "entity_class_unresolved": len(entity_unresolved),
+        "entity_class_unresolved_rate_raw_sourced": (
+            len(entity_unresolved) / raw_sourced_entity if raw_sourced_entity else "NOT MEASURABLE"
+        ),
+        "subject_family_raw_sourced_documents": raw_sourced_subject,
+        "subject_family_derived_documents": total - raw_sourced_subject,
+        "subject_family_unresolved_combined": len(subject_unresolved),
+        "subject_family_unresolved_rate_combined": (len(subject_unresolved) / total) if total else "NOT MEASURABLE",
+        "subject_family_unresolved_rate_raw_sourced_only": subject_raw_rate,
+    }
+
+
 def persist_vocabularies(
     entity_vocab: Vocabulary, subject_vocab: Vocabulary, cfg: Mapping[str, Any], *, resolver: PathResolver | None = None
 ) -> dict[str, str]:
-    """Write both vocabularies to the paths named in `config.vocabulary`."""
+    """Write both vocabularies, plus a provenance lookup, to configured paths."""
     resolver = resolver or PathResolver.from_config(cfg)
     vocab_cfg = cfg.get("vocabulary", {})
 
@@ -358,7 +507,28 @@ def persist_vocabularies(
     write_json(entity_path, entity_vocab.to_dict())
     write_json(subject_path, subject_vocab.to_dict())
 
-    return {"entity_class_file": str(entity_path), "subject_family_file": str(subject_path)}
+    # Standalone provenance lookup so a consumer can classify a normalised
+    # value without parsing either full vocabulary file.
+    provenance_path = resolver.write_path("metadata", "vocabulary_provenance.json")
+    write_json(
+        provenance_path,
+        {
+            "entity_class": {
+                "counts": provenance_counts(entity_vocab),
+                "by_canonical_name": provenance_lookup(entity_vocab),
+            },
+            "subject_family": {
+                "counts": provenance_counts(subject_vocab),
+                "by_canonical_name": provenance_lookup(subject_vocab),
+            },
+        },
+    )
+
+    return {
+        "entity_class_file": str(entity_path),
+        "subject_family_file": str(subject_path),
+        "vocabulary_provenance_file": str(provenance_path),
+    }
 
 
 def _strip_data_metadata(configured_path: str) -> tuple[str, ...]:

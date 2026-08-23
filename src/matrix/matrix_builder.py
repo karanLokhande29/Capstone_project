@@ -36,6 +36,7 @@ from typing import Any, Iterable, Mapping
 from src.common.io_helpers import write_json, write_jsonl
 from src.common.logging_setup import get_logger
 from src.common.paths import PathResolver
+from src.metadata.vocabulary_discovery import PROVENANCE_DERIVED, term_provenance
 from src.schemas.matrix import MatrixCell
 from src.schemas.provenance import DocumentRecord
 from src.schemas.vocabulary import Vocabulary
@@ -86,6 +87,23 @@ def build_matrix(
                     entity_name, subject_name, len(doc_ids), doc_ids,
                 )
 
+            # Provenance marker (P1-002-CORRECTIVE): a cell's axes can rest on
+            # a harvested-and-normalised term or an inferred one. Recorded per
+            # cell so the matrix is auditable standalone, without joining back
+            # to the vocabulary files.
+            entity_provenance = term_provenance(entity_term)
+            subject_provenance = term_provenance(subject_term)
+            notes = (
+                f"provenance: entity_class={entity_provenance}, "
+                f"subject_family={subject_provenance}"
+            )
+            if subject_provenance == PROVENANCE_DERIVED or entity_provenance == PROVENANCE_DERIVED:
+                notes += (
+                    " — DERIVED axis present: this cell rests partly on inferred "
+                    "metadata, not RBI's own taxonomy. See "
+                    "reports/phase1_karan_matrix.md."
+                )
+
             cells.append(
                 MatrixCell(
                     entity_class=entity_name,
@@ -97,12 +115,16 @@ def build_matrix(
                     n_documents=len(doc_ids),
                     entity_class_term_id=entity_term.term_id,
                     subject_family_term_id=subject_term.term_id,
+                    notes=notes,
                 )
             )
 
+    derived_axis_cells = sum(1 for c in cells if c.notes and "DERIVED axis present" in c.notes)
     logger.info(
-        "build_matrix: %d cells (%d entity classes x %d subject families), %d populated",
-        len(cells), len(entity_terms), len(subject_terms), sum(1 for c in cells if c.populated),
+        "build_matrix: %d cells (%d entity classes x %d subject families), %d populated, "
+        "%d resting on at least one derived axis",
+        len(cells), len(entity_terms), len(subject_terms),
+        sum(1 for c in cells if c.populated), derived_axis_cells,
     )
     return cells
 

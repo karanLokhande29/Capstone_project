@@ -6,8 +6,30 @@
     "entity_class_unresolved_documents": 0,
     "subject_families_discovered": 56,
     "subject_family_unresolved_documents": 76,
+    "entity_class_provenance": {
+      "raw": 19,
+      "derived": 0,
+      "mixed": 0
+    },
+    "subject_family_provenance": {
+      "raw": 0,
+      "derived": 56,
+      "mixed": 0
+    },
+    "segmented_unresolved_rates": {
+      "documents_total": 380,
+      "entity_class_raw_sourced_documents": 380,
+      "entity_class_unresolved": 0,
+      "entity_class_unresolved_rate_raw_sourced": 0.0,
+      "subject_family_raw_sourced_documents": 0,
+      "subject_family_derived_documents": 380,
+      "subject_family_unresolved_combined": 76,
+      "subject_family_unresolved_rate_combined": 0.2,
+      "subject_family_unresolved_rate_raw_sourced_only": "NOT MEASURABLE — no raw-sourced subject_family values exist in this corpus"
+    },
     "entity_class_file": "/Users/karan/Documents/Capstone_project/data/metadata/entity_classes.json",
     "subject_family_file": "/Users/karan/Documents/Capstone_project/data/metadata/subject_families.json",
+    "vocabulary_provenance_file": "/Users/karan/Documents/Capstone_project/data/metadata/vocabulary_provenance.json",
     "subject_family_unresolved_file": "/Users/karan/Documents/Capstone_project/data/metadata/subject_family_unresolved.json"
   },
   "normalize": {
