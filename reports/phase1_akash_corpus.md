@@ -1,16 +1,16 @@
 # Phase 1 — Akash: Corpus Acquisition, Extraction, Segmentation
 
-Run scope: **full corpus** (pipeline stage: `all`)
+Run scope: **full corpus** (pipeline stage: `report-only`)
 
 ## Discovery
 
 - Documents discovered: **380**
-- Downloads attempted: **380**
-- Downloads successful: **299**
-- Downloads failed: **81**
-- Download success rate: **0.7868421052631579**
-- PDF count: **299**
-- HTML count: **0**
+- Downloads attempted: **NOT YET MEASURED**
+- Downloads successful: **NOT YET MEASURED**
+- Downloads failed: **NOT YET MEASURED**
+- Download success rate: **NOT YET MEASURED**
+- PDF count: **NOT YET MEASURED**
+- HTML count: **NOT YET MEASURED**
 - Distinct entity classes (raw, this run's downloaded slice): **19**
   - ['All India Financial Institutions', 'Asset Reconstruction Companies', 'Banker and Debt Manager to Government', 'Banker to Governments and Banks', 'Commercial Banks', 'Consumer Education and Protection', 'Credit Information Companies', 'Financial Inclusion and Development', 'Financial Market', 'Foreign Exchange Management', 'Issuer of Currency', 'Local Area Banks', 'Non-Banking Financial Companies', 'Payment and Settlement System', 'Payments Banks', 'Regional Rural Banks', 'Rural Co-operative Banks', 'Small Finance Banks', 'Urban Co-operative Banks']
 
@@ -24,26 +24,26 @@ A number of entity-class headings on the listing page (e.g. "Commercial Banks") 
 
 ## Extraction
 
-- Documents considered: **299**
-- Extraction successful: **299**
-- Extraction failures: **0**
-- Extracted empty (parsed, no usable text): **0**
-- Skipped (not downloaded): **81**
-- Extraction success rate: **1.0**
+- Documents considered: **NOT YET MEASURED**
+- Extraction successful: **NOT YET MEASURED**
+- Extraction failures: **NOT YET MEASURED**
+- Extracted empty (parsed, no usable text): **NOT YET MEASURED**
+- Skipped (not downloaded): **NOT YET MEASURED**
+- Extraction success rate: **NOT YET MEASURED**
 
 ## Segmentation
 
-- Documents segmented: **299**
-- Total paragraphs: **51853**
-- section_id coverage: **0.9934430023335198**
-- clause_path coverage: **0.9934430023335198**
-- Documents with no recognised structure: **0**
+- Documents segmented: **NOT YET MEASURED**
+- Total paragraphs: **NOT YET MEASURED**
+- section_id coverage: **NOT YET MEASURED**
+- clause_path coverage: **NOT YET MEASURED**
+- Documents with no recognised structure: **NOT YET MEASURED**
 
 ## Cross-references
 
-- Phrases detected: **2254**
-- Resolved (intra-document only): **438**
-- Resolution rate: **0.19432120674356698**
+- Phrases detected: **NOT YET MEASURED**
+- Resolved (intra-document only): **NOT YET MEASURED**
+- Resolution rate: **NOT YET MEASURED**
 
 Cross-document references (to other Directions, circulars, or the Banking Regulation Act) are detected as phrases but never resolved to a `paragraph_id` outside this scope — a low resolution rate is therefore expected and is not itself a defect; most legal cross-references in RBI text point outside the referencing document.
 
@@ -55,3 +55,35 @@ Cross-document references (to other Directions, circulars, or the Banking Regula
 ## FAQ / enforcement supplementary sample
 
 **NOT YET MEASURED.** `FAQView.aspx` (the FAQ index) was reachable, but is a category index requiring a second-level crawl into per-category pages to reach actual FAQ text — not "trivially reachable" in the sense Task 7 intends, and building that crawl would be the systematic harvester this prompt explicitly says not to build here. Left for Phase 2, Week 4 as scoped.
+
+
+---
+
+## Coverage by entity class
+
+_Repaired by P1-004 (Karan, solo)._ A corpus-level download rate is not enough for RQ1: the first harvest's 81 failures were not spread evenly, they fell almost entirely on Commercial Banks and Small Finance Banks, which is exactly where a cross-class comparison needs coverage most.
+
+| Entity class | Before | After | Rate |
+|---|---|---|---|
+| All India Financial Institutions | — | 23/23 | 100.0% |
+| Asset Reconstruction Companies | — | 5/5 | 100.0% |
+| Banker and Debt Manager to Government | — | 0/2 | 0.0% **(below 90%)** |
+| Banker to Governments and Banks | — | 0/2 | 0.0% **(below 90%)** |
+| Commercial Banks | — | 9/44 | 20.5% **(below 90%)** |
+| Consumer Education and Protection | — | 0/7 | 0.0% **(below 90%)** |
+| Credit Information Companies | — | 4/4 | 100.0% |
+| Financial Inclusion and Development | — | 8/8 | 100.0% |
+| Financial Market | — | 18/18 | 100.0% |
+| Foreign Exchange Management | — | 20/20 | 100.0% |
+| Issuer of Currency | — | 3/3 | 100.0% |
+| Local Area Banks | — | 33/33 | 100.0% |
+| Non-Banking Financial Companies | — | 44/44 | 100.0% |
+| Payment and Settlement System | — | 9/9 | 100.0% |
+| Payments Banks | — | 23/27 | 85.2% **(below 90%)** |
+| Regional Rural Banks | — | 26/26 | 100.0% |
+| Rural Co-operative Banks | — | 29/29 | 100.0% |
+| Small Finance Banks | — | 9/40 | 22.5% **(below 90%)** |
+| Urban Co-operative Banks | — | 36/36 | 100.0% |
+| **Overall** | — | **299/380** | **78.7%** |
+
+**WARNING — 6 class(es) below 90%:** Banker and Debt Manager to Government, Banker to Governments and Banks, Commercial Banks, Consumer Education and Protection, Payments Banks, Small Finance Banks. Any RQ1 or RQ2 claim scoped to these classes rests on a partial corpus, and the audit should read it that way.

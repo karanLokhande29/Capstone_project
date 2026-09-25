@@ -12,6 +12,17 @@ earlier one requires no extra plumbing.
     python scripts/run_harvest.py all --limit 12          # small slice
     python scripts/run_harvest.py all                     # full corpus (Kaggle)
     python scripts/run_harvest.py report                  # write the summary report only
+
+P1-004 repair stages:
+
+    python scripts/run_harvest.py diagnose --from-failures --max 5
+    python scripts/run_harvest.py export-missing
+    python scripts/run_harvest.py repair --import-dir ~/missing_pdfs --max-requests 150
+
+`repair` recovers the 81 Directions the first harvest lost to what looks like
+a session-level block, WITHOUT re-downloading the 299 that succeeded, and
+stops at the first failed consistency check rather than publishing a corpus
+whose paragraph ids have silently moved under three people's annotations.
 """
 
 from __future__ import annotations
@@ -31,7 +42,21 @@ from src.common.paths import PathResolver  # noqa: E402
 from src.extraction.text_extractor import extract_corpus  # noqa: E402
 from src.preprocessing.cross_references import resolve_cross_references  # noqa: E402
 from src.preprocessing.segmenter import segment_corpus  # noqa: E402
-from src.scraper.rbi_scraper import build_session, harvest_corpus  # noqa: E402
+from src.preprocessing.consistency import (  # noqa: E402
+    ConsistencyError,
+    check_pilot_join,
+    check_stable_ids,
+    write_fingerprints,
+)
+from src.schemas.provenance import DocumentRecord  # noqa: E402
+from src.scraper.rbi_scraper import (  # noqa: E402
+    RequestBudgetExceeded,
+    _fetch,
+    _validate_payload,
+    build_session,
+    coverage_by_entity_class,
+    harvest_corpus,
+)
 
 
 def _write_report(cfg, resolver, metrics: dict, logger) -> Path:
@@ -53,6 +78,14 @@ def _write_report(cfg, resolver, metrics: dict, logger) -> Path:
                 entity_classes.add(row["entity_class_raw"])
             if row.get("update_date"):
                 dated_count += 1
+
+    # A11: per-class coverage. An overall 299/380 hides that the first harvest
+    # lost 35/44 Commercial Banks and 31/40 Small Finance Banks Directions —
+    # the two classes a cross-class comparison most depends on.
+    coverage = {}
+    if manifest_rows:
+        records = [DocumentRecord.from_dict(r) for r in manifest_rows]
+        coverage = coverage_by_entity_class(records, logger=logger)
 
     is_slice = m.get("limit") is not None
     scope_label = f"small validation slice, limit={m['limit']}" if is_slice else "full corpus"
@@ -165,6 +198,46 @@ def _write_report(cfg, resolver, metrics: dict, logger) -> Path:
         "Phase 2, Week 4 as scoped.",
         "",
     ]
+    if coverage:
+        repair = m.get("repair", {})
+        before = repair.get("coverage_before", {}).get("by_entity_class", {})
+        lines += [
+            "",
+            "---",
+            "",
+            "## Coverage by entity class",
+            "",
+            "_Repaired by P1-004 (Karan, solo)._ A corpus-level download rate is not enough "
+            "for RQ1: the first harvest's 81 failures were not spread evenly, they fell "
+            "almost entirely on Commercial Banks and Small Finance Banks, which is exactly "
+            "where a cross-class comparison needs coverage most.",
+            "",
+            "| Entity class | Before | After | Rate |",
+            "|---|---|---|---|",
+        ]
+        for cls, stats in sorted(coverage["by_entity_class"].items()):
+            was = before.get(cls, {})
+            was_txt = f"{was.get('downloaded')}/{was.get('total')}" if was else "—"
+            flag = " **(below 90%)**" if stats["rate"] < 0.90 else ""
+            lines.append(
+                f"| {cls} | {was_txt} | {stats['downloaded']}/{stats['total']} "
+                f"| {stats['rate']:.1%}{flag} |"
+            )
+        overall = coverage["overall"]
+        lines += [
+            f"| **Overall** | — | **{overall['downloaded']}/{overall['total']}** "
+            f"| **{overall['rate']:.1%}** |",
+            "",
+        ]
+        if coverage["classes_below_90_percent"]:
+            lines += [
+                f"**WARNING — {len(coverage['classes_below_90_percent'])} class(es) below "
+                f"90%:** {', '.join(coverage['classes_below_90_percent'])}. Any RQ1 or RQ2 "
+                "claim scoped to these classes rests on a partial corpus, and the audit "
+                "should read it that way.",
+                "",
+            ]
+
     out_path = resolver.write_path("reports", "phase1_akash_corpus.md")
     out_path.write_text("\n".join(lines), encoding="utf-8")
     logger.info("report written: %s", out_path)
@@ -193,11 +266,199 @@ def run_pipeline(cfg, *, scope: str, limit: int | None, logger) -> dict:
     return metrics
 
 
+# -- P1-004 repair stages -----------------------------------------------------
+
+
+def _load_manifest(resolver) -> list[DocumentRecord]:
+    path = resolver.find_read_path("metadata", "document_manifest.jsonl")
+    if path is None:
+        return []
+    return [DocumentRecord.from_dict(r) for r in read_jsonl(path)]
+
+
+def run_diagnose(cfg, resolver, logger, *, from_failures: bool, max_docs: int) -> dict:
+    """Fetch a few failed documents twice — cold, then after a listing warm-up.
+
+    The 81 failures were the first 81 records in download order, which is the
+    signature of a session-level block rather than 81 broken documents. That
+    is an inference, and this stage is what turns it into a measurement:
+    if a warm-up fixes a cold failure, the block is session-level and the
+    repair's retry strategy is the right one. If both fail identically, it is
+    not, and the manual-import path is the honest fallback.
+
+    Nothing here disguises the client. It sends ordinary requests and records
+    what comes back.
+    """
+    records = _load_manifest(resolver)
+    targets = [r for r in records if not r.content_hash] if from_failures else records
+    targets = targets[:max_docs]
+
+    log_dir = Path(resolver.write_dir("logs", create=True)) / "harvest_diagnose"
+    log_dir.mkdir(parents=True, exist_ok=True)
+
+    listing_url = cfg["network"]["sources"]["rbi_master_directions"]["listing_url"]
+    observations = []
+
+    for record in targets:
+        for mode in ("cold", "warmed"):
+            session = build_session(cfg)
+            if mode == "warmed":
+                try:
+                    _fetch(listing_url, session, cfg, logger=logger, description="listing warm-up")
+                except Exception as exc:
+                    logger.warning("diagnose: warm-up failed: %s", exc)
+            try:
+                data = _fetch(
+                    record.source_url, session, cfg, logger=logger,
+                    description=f"diagnose {record.document_id} ({mode})",
+                )
+            except Exception as exc:
+                observations.append({
+                    "document_id": record.document_id, "mode": mode,
+                    "outcome": "transport_error", "detail": str(exc)[:300],
+                })
+                continue
+
+            ok, detail = _validate_payload(data, record.format)
+            title = ""
+            if not ok and b"<" in data[:2048]:
+                body = data[:4096]
+                (log_dir / f"{record.document_id}.{mode}.html").write_bytes(body)
+                import re as _re
+                found = _re.search(rb"<title[^>]*>(.*?)</title>", data[:8192], _re.I | _re.S)
+                title = found.group(1).decode("utf-8", "replace").strip()[:200] if found else ""
+
+            observations.append({
+                "document_id": record.document_id,
+                "mode": mode,
+                "outcome": "pdf" if ok else "rejected",
+                "detail": detail,
+                "length": len(data),
+                "first_16_bytes": repr(data[:16]),
+                "html_title": title,
+            })
+
+    cold_ok = sum(1 for o in observations if o["mode"] == "cold" and o["outcome"] == "pdf")
+    warm_ok = sum(1 for o in observations if o["mode"] == "warmed" and o["outcome"] == "pdf")
+    warm_up_helped = warm_ok > cold_ok
+
+    result = {
+        "documents_probed": len(targets),
+        "cold_successes": cold_ok,
+        "warmed_successes": warm_ok,
+        "warm_up_helped": warm_up_helped,
+        "observations": observations,
+        "log_dir": str(log_dir),
+        "conclusion": (
+            "A listing warm-up recovered documents a cold session could not, so the block is "
+            "session-level and the only-missing retry path should recover most of the 81."
+            if warm_up_helped else
+            "A warm-up made no difference on this sample. The block is not session-level, or "
+            "is no longer active. If the retries still fail, the manual-import path is the "
+            "remaining route and no evasion should be attempted."
+        ) if targets else "No documents probed.",
+    }
+    logger.info("diagnose: cold %d/%d ok, warmed %d/%d ok, warm-up helped=%s",
+                cold_ok, len(targets), warm_ok, len(targets), warm_up_helped)
+    return result
+
+
+def run_export_missing(cfg, resolver, logger) -> dict:
+    """List what is still missing, so it can be fetched by hand in a browser."""
+    import csv as _csv
+    records = _load_manifest(resolver)
+    missing = [r for r in records if not r.content_hash]
+    path = resolver.write_path("reports", "p1004_missing_documents.csv")
+    with path.open("w", encoding="utf-8", newline="") as handle:
+        writer = _csv.DictWriter(handle, fieldnames=[
+            "document_id", "source_url", "url_basename", "entity_class_raw", "title"])
+        writer.writeheader()
+        for r in sorted(missing, key=lambda x: x.document_id):
+            writer.writerow({
+                "document_id": r.document_id,
+                "source_url": r.source_url or "",
+                "url_basename": Path(r.source_url).name if r.source_url else "",
+                "entity_class_raw": r.entity_class_raw or "",
+                "title": (r.title or "").strip(),
+            })
+    logger.info("export-missing: %d document(s) -> %s", len(missing), path)
+    return {"missing_count": len(missing), "path": str(path),
+            "document_ids": [r.document_id for r in missing]}
+
+
+def run_repair(cfg, resolver, logger, *, import_dir, max_requests) -> dict:
+    """The full repair, stopping at the first failed check.
+
+    Ordered so that nothing irreversible happens after something unverified:
+    the fingerprint snapshot is taken BEFORE re-segmentation, and the
+    consistency checks run before the xref and coverage stages, so a corpus
+    that moved a paragraph id never reaches the reports.
+    """
+    metrics: dict = {"stages_run": []}
+
+    before = _load_manifest(resolver)
+    metrics["coverage_before"] = coverage_by_entity_class(before)
+    metrics["documents_before"] = len(before)
+    metrics["missing_before"] = sum(1 for r in before if not r.content_hash)
+
+    # 1-3. only-missing harvest with payload retries, then manual import.
+    try:
+        metrics["harvest"] = harvest_corpus(
+            cfg, resolver=resolver, logger=logger, only_missing=True,
+            existing_manifest=before, max_requests=max_requests, import_dir=import_dir,
+        )
+    except RequestBudgetExceeded as exc:
+        metrics["stopped_at"] = "request_budget"
+        metrics["error"] = str(exc)
+        logger.error("repair: %s", exc)
+        return metrics
+    metrics["stages_run"].append("harvest")
+
+    after = _load_manifest(resolver)
+    newly = sorted(
+        {r.document_id for r in after if r.content_hash}
+        - {r.document_id for r in before if r.content_hash}
+    )
+    metrics["newly_available_ids"] = newly
+
+    # 4. Extract ONLY the new documents. On Kaggle the 299 previously-extracted
+    #    PDFs are not attached, so an unfiltered pass would report a corpus-wide
+    #    extraction failure that did not happen.
+    metrics["extract"] = extract_corpus(
+        cfg, resolver=resolver, logger=logger, only_ids=newly
+    ) if newly else {"skipped": "no newly available documents"}
+    metrics["stages_run"].append("extract")
+
+    # 5. Fingerprint BEFORE re-segmenting, or there is nothing to compare to.
+    metrics["fingerprints_path"] = write_fingerprints(resolver, logger=logger)
+    metrics["segment"] = segment_corpus(cfg, resolver=resolver, logger=logger)
+    metrics["stages_run"].append("segment")
+
+    # 6. Hard stops. A corpus that fails either must not be published.
+    try:
+        metrics["stable_id_check"] = check_stable_ids(resolver, logger=logger)
+        metrics["pilot_join_check"] = check_pilot_join(resolver, logger=logger)
+    except ConsistencyError as exc:
+        metrics["stopped_at"] = "consistency"
+        metrics["error"] = str(exc)
+        logger.error("repair: %s", exc)
+        return metrics
+    metrics["stages_run"].append("consistency")
+
+    # 7-8. Only now: cross-references and the coverage report.
+    metrics["xref"] = resolve_cross_references(cfg, resolver=resolver, logger=logger)
+    metrics["coverage_after"] = coverage_by_entity_class(after, logger=logger)
+    metrics["stages_run"] += ["xref", "coverage"]
+    metrics["still_missing"] = sorted(r.document_id for r in after if not r.content_hash)
+    return metrics
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument(
         "stage",
-        choices=["discover", "download", "extract", "segment", "xref", "all", "report"],
+        choices=["discover", "download", "extract", "segment", "xref", "all", "report",
+                 "diagnose", "repair", "export-missing"],
         help="Pipeline stage to run. 'download' is an alias for 'discover' (download is part of harvest_corpus). "
         "'all' runs discover+download, extract, segment, xref in sequence. 'report' only regenerates "
         "reports/phase1_akash_corpus.md from whatever has already been produced.",
@@ -205,6 +466,13 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--limit", type=int, default=None, help="Cap documents downloaded (small slice / smoke run).")
     parser.add_argument("--config", default=None, help="Path to an alternative config.yaml.")
     parser.add_argument("--json", action="store_true", help="Print metrics as JSON instead of a summary.")
+    parser.add_argument("--from-failures", action="store_true",
+                        help="diagnose: probe documents that have no content_hash.")
+    parser.add_argument("--max", type=int, default=5, help="diagnose: how many documents to probe.")
+    parser.add_argument("--import-dir", default=None,
+                        help="repair: directory of hand-downloaded PDFs to adopt.")
+    parser.add_argument("--max-requests", type=int, default=150,
+                        help="repair: refuse to start if the plan needs more requests than this.")
     args = parser.parse_args(argv)
 
     cfg = load_config(args.config)
@@ -218,6 +486,25 @@ def main(argv: list[str] | None = None) -> int:
             metrics["discover"]["manifest_path"] = str(manifest_path)
             metrics["discover"]["documents_discovered"] = len(read_jsonl(manifest_path))
         _write_report(cfg, resolver, metrics, logger)
+        return 0
+
+    if args.stage in ("diagnose", "repair", "export-missing"):
+        resolver = PathResolver.from_config(cfg)
+        if args.stage == "diagnose":
+            metrics = {"scope": "diagnose",
+                       "diagnose": run_diagnose(cfg, resolver, logger,
+                                                from_failures=args.from_failures, max_docs=args.max)}
+        elif args.stage == "export-missing":
+            metrics = {"scope": "export-missing",
+                       "export_missing": run_export_missing(cfg, resolver, logger)}
+        else:
+            metrics = {"scope": "repair",
+                       "repair": run_repair(cfg, resolver, logger,
+                                            import_dir=args.import_dir,
+                                            max_requests=args.max_requests)}
+        write_json(resolver.write_path("reports", f"phase1_akash_{args.stage}_metrics.json"), metrics)
+        print(json.dumps(metrics, indent=2, default=str) if args.json
+              else json.dumps({k: v for k, v in metrics.items()}, indent=2, default=str)[:4000])
         return 0
 
     metrics = run_pipeline(cfg, scope=args.stage, limit=args.limit, logger=logger)

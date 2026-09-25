@@ -24,7 +24,7 @@ from __future__ import annotations
 
 import io
 import logging
-from typing import Any, Mapping
+from typing import Iterable, Any, Mapping
 
 from bs4 import BeautifulSoup
 import pdfplumber
@@ -122,6 +122,7 @@ def extract_corpus(
     resolver: PathResolver | None = None,
     cache: ArtifactCache | None = None,
     logger: logging.Logger | None = None,
+    only_ids: Iterable[str] | None = None,
     **kwargs: Any,
 ) -> dict[str, Any]:
     """Extract text for every downloaded document in the manifest.
@@ -129,6 +130,13 @@ def extract_corpus(
     Reads ``data/metadata/document_manifest.jsonl`` (written by
     :func:`src.scraper.rbi_scraper.write_manifest`) and writes one
     ``data/extracted/<document_id>.txt`` per successful extraction.
+
+    Args:
+        only_ids: Extract just these document ids. Needed on Kaggle, where the
+            299 already-extracted PDFs are not attached: without the filter,
+            every previously-successful record would be re-attempted, fail for
+            want of a cached payload, and report a corpus-wide extraction
+            collapse that had not happened.
     """
     logger = logger or get_logger("extraction.text", cfg)
     resolver = resolver or PathResolver.from_config(cfg)
@@ -137,13 +145,21 @@ def extract_corpus(
     manifest_path = resolver.read_path("metadata", "document_manifest.jsonl")
     records = [DocumentRecord.from_dict(r) for r in read_jsonl(manifest_path)]
 
+    wanted = set(only_ids) if only_ids is not None else None
+    if wanted is not None:
+        logger.info("extraction: restricted to %d document id(s)", len(wanted))
+
     considered = 0
     successful = 0
     failures: list[dict[str, str]] = []
     empty: list[str] = []
     skipped_not_downloaded: list[str] = []
+    skipped_not_requested: list[str] = []
 
     for record in records:
+        if wanted is not None and record.document_id not in wanted:
+            skipped_not_requested.append(record.document_id)
+            continue
         if not record.content_hash:
             skipped_not_downloaded.append(record.document_id)
             continue
@@ -174,6 +190,7 @@ def extract_corpus(
         "extraction_failures": len(failures),
         "extraction_empty": len(empty),
         "skipped_not_downloaded": len(skipped_not_downloaded),
+        "skipped_not_requested": len(skipped_not_requested),
         "extraction_success_rate": (successful / considered) if considered else "NOT YET MEASURED",
         "failures": failures,
         "empty_document_ids": empty,

@@ -92,6 +92,57 @@ def _load_paragraph_index(resolver: PathResolver) -> list[dict[str, Any]]:
         return [json.loads(line) for line in handle if line.strip()]
 
 
+#: P1-004 run (b): the three bank classes the repair is meant to restore.
+#: Fixed rather than coverage-ranked, because run (a) picks whichever cells are
+#: best populated — which before the repair meant it could not look at
+#: Commercial Banks or Small Finance Banks at all, the two classes missing
+#: 35/44 and 31/40 of their Directions. Measuring alignment only where the
+#: corpus happened to be complete answers a question nobody asked.
+FIXED_ENTITY_CLASSES: tuple[str, ...] = (
+    "Commercial Banks",
+    "Small Finance Banks",
+    "Payments Banks",
+)
+
+
+def select_fixed_alignment_sample(
+    resolver: PathResolver,
+    *,
+    entity_classes: Sequence[str] = FIXED_ENTITY_CLASSES,
+    n_subject_families: int = 3,
+) -> dict[str, Any]:
+    """Fixed entity classes, crossed with the families they most share.
+
+    The entity classes are pinned; the subject families are still chosen
+    mechanically — the three present across most of the pinned classes, ties
+    broken by paragraph volume then by name — so the sample is deterministic
+    and reproducible without being hand-picked to flatter the result.
+    """
+    index = _load_paragraph_index(resolver)
+    wanted = set(entity_classes)
+
+    present: dict[str, set[str]] = defaultdict(set)
+    volume: dict[str, int] = defaultdict(int)
+    for row in index:
+        ec, sf = row.get("entity_class"), row.get("subject_family")
+        if ec in wanted and sf:
+            present[sf].add(ec)
+            volume[sf] += 1
+
+    ranked = sorted(present.items(), key=lambda kv: (-len(kv[1]), -volume[kv[0]], kv[0]))
+    subjects = [sf for sf, _ in ranked[:n_subject_families]]
+
+    return {
+        "entity_classes": list(entity_classes),
+        "subject_families": subjects,
+        "selection": "fixed_entity_classes",
+        "subject_family_coverage": {
+            sf: {"classes_present": sorted(present[sf]), "paragraphs": volume[sf]}
+            for sf in subjects
+        },
+    }
+
+
 def select_alignment_sample(
     resolver: PathResolver, *, n_entity_classes: int = 3, n_subject_families: int = 3
 ) -> dict[str, Any]:
@@ -207,12 +258,26 @@ def cross_class_alignment(
     *,
     resolver: PathResolver | None = None,
     logger: logging.Logger | None = None,
+    fixed_sample: bool = False,
+    entity_classes: Sequence[str] | None = None,
 ) -> dict[str, Any]:
-    """Measure content-verified cross-class alignment and judge it against the 60% trigger."""
+    """Measure content-verified cross-class alignment and judge it against the 60% trigger.
+
+    Args:
+        fixed_sample: Pin the entity classes to :data:`FIXED_ENTITY_CLASSES`
+            instead of ranking cells by coverage. Reported **alongside** the
+            configured run, never instead of it: two samples answering the same
+            question differently is itself a finding about the corpus.
+    """
     logger = logger or get_logger("benchmark.alignment", cfg)
     resolver = resolver or PathResolver.from_config(cfg)
 
-    selection = select_alignment_sample(resolver)
+    if fixed_sample:
+        selection = select_fixed_alignment_sample(
+            resolver, entity_classes=entity_classes or FIXED_ENTITY_CLASSES
+        )
+    else:
+        selection = select_alignment_sample(resolver)
     entities: list[str] = selection["entity_classes"]
     subjects: list[str] = selection["subject_families"]
 
@@ -258,6 +323,8 @@ def cross_class_alignment(
         "similarity_threshold": SIMILARITY_THRESHOLD,
         "entity_classes_sampled": entities,
         "subject_families_sampled": subjects,
+        "sample_selection": selection.get("selection", "coverage_ranked"),
+        "sample_detail": {k: v for k, v in selection.items() if k != "selection"},
         "entity_class_axis": {
             "description": (
                 "Same subject family, different entity classes — parallel Directions that "

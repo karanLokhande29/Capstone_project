@@ -42,6 +42,7 @@ import logging
 import re
 import time
 from dataclasses import replace
+from pathlib import Path
 from datetime import datetime, timezone
 from typing import Any, Iterable, Mapping
 
@@ -198,6 +199,30 @@ def _parse_listing(html: str, *, logger: logging.Logger) -> list[dict[str, Any]]
         document_id = f"md_{rbi_id}"
 
         title = link.get_text(" ", strip=True)
+        if not title:
+            # P1-004 (A9): three Directions (md_11959, md_12839, md_11510)
+            # came back with an empty title because the anchor's own text is
+            # blank — the listing puts the text in a child element, or in the
+            # row's remaining cells, for those rows. Recover it from the row
+            # itself, never from the PDF: a title taken from the document body
+            # is a different field with different provenance, and
+            # subject_family is derived from this string by stripping the
+            # entity-class prefix, so a substituted title silently changes a
+            # derived axis.
+            title = (link.get("title") or "").strip()
+        if not title:
+            title = cells[0].get_text(" ", strip=True)
+        if not title:
+            for cell in cells[1:]:
+                candidate = cell.get_text(" ", strip=True)
+                if candidate and not candidate.lower().endswith((".pdf", "pdf")):
+                    title = candidate
+                    break
+        if not title:
+            logger.warning(
+                "discovery: %s has no title anywhere in its listing row — left empty rather "
+                "than substituted from the PDF body", href,
+            )
 
         pdf_url: str | None = None
         fmt: str | None = None
@@ -402,6 +427,211 @@ def download_document(
     )
 
 
+# -- P1-004: payload retries, only-missing harvest, manual import -------------
+
+
+class RequestBudgetExceeded(FoundationError):
+    """The planned harvest would exceed ``max_requests``. Nothing was sent."""
+
+
+def download_with_payload_retries(
+    record: DocumentRecord,
+    cfg: Mapping[str, Any],
+    *,
+    session: requests.Session,
+    cache: ArtifactCache,
+    resolver: PathResolver,
+    logger: logging.Logger,
+    warm_up: Any = None,
+    sleep_fn: Any = time.sleep,
+) -> tuple[DocumentRecord | None, dict[str, Any]]:
+    """Download one document, retrying an HTML-where-PDF-expected payload.
+
+    The first harvest treated a single HTML body as a permanent failure and
+    lost 81 Directions to it. The failures were the first 81 records in
+    download order, which is the signature of a session-level block rather
+    than 81 individually broken documents — so a retry that re-requests the
+    listing page first, re-establishing whatever session state the host wants
+    to see, is worth attempting before giving up on a document.
+
+    This is ordinary polite client behaviour: a fresh warm-up and a backoff.
+    Nothing here attempts to disguise the client or evade a block.
+
+    Returns ``(record_or_None, outcome)``. A failure returns ``None`` and is
+    the caller's to count; it never raises, so one bad document cannot abort
+    a 380-document harvest.
+    """
+    attempts_allowed = max(1, int((cfg.get("network", {}) or {}).get("payload_retries", 3)))
+    attempts: list[str] = []
+
+    for attempt in range(1, attempts_allowed + 1):
+        if attempt > 1:
+            delay = min(2.0 ** (attempt - 1), 30.0)
+            logger.info(
+                "harvest: %s attempt %d/%d after %.1fs, re-warming the listing first",
+                record.document_id, attempt, attempts_allowed, delay,
+            )
+            sleep_fn(delay)
+            if warm_up is not None:
+                try:
+                    warm_up()
+                except Exception as exc:  # a warm-up failure is not fatal
+                    logger.warning("harvest: listing warm-up failed: %s", exc)
+        try:
+            result = download_document(
+                record, cfg, session=session, cache=cache, resolver=resolver, logger=logger
+            )
+        except PayloadValidationError as exc:
+            attempts.append(f"attempt {attempt}: {exc}")
+            continue
+        except FoundationError as exc:
+            attempts.append(f"attempt {attempt}: {exc}")
+            break  # a transport failure is not a payload problem; stop here
+        return result, {
+            "document_id": record.document_id,
+            "attempts": attempt,
+            "outcome": "ok",
+            "detail": attempts,
+        }
+
+    return None, {
+        "document_id": record.document_id,
+        "attempts": len(attempts),
+        "outcome": "failed",
+        "detail": attempts,
+    }
+
+
+def import_manual_pdfs(
+    import_dir: Path | str,
+    manifest: Iterable[DocumentRecord],
+    cfg: Mapping[str, Any],
+    *,
+    cache: ArtifactCache | None = None,
+    resolver: PathResolver | None = None,
+    logger: logging.Logger | None = None,
+) -> tuple[list[DocumentRecord], dict[str, Any]]:
+    """Adopt PDFs downloaded by hand in a browser, as if they had been fetched.
+
+    The escape hatch for documents the host will not serve to any automated
+    client. A file is matched to a manifest record by its URL basename
+    (case-insensitively) or by ``<document_id>.pdf``, checked for the ``%PDF``
+    magic bytes, hashed and written into the same cache key a download would
+    have used — so everything downstream cannot tell, and does not need to,
+    how the bytes arrived. The manifest records that it was a manual import,
+    because provenance is not something to lose for convenience.
+    """
+    logger = logger or get_logger("scraper.rbi", cfg)
+    resolver = resolver or PathResolver.from_config(cfg)
+    cache = cache or ArtifactCache.from_config(cfg, resolver, namespace="scraper")
+
+    records = list(manifest)
+    import_dir = Path(import_dir)
+    if not import_dir.is_dir():
+        logger.warning("manual import: %s is not a directory — nothing imported", import_dir)
+        return records, {"manual_import_ids": [], "manual_import_unmatched": []}
+
+    by_basename: dict[str, DocumentRecord] = {}
+    by_doc_id: dict[str, DocumentRecord] = {}
+    for record in records:
+        if record.content_hash:
+            continue  # already have it; a manual file must not overwrite a download
+        if record.source_url:
+            by_basename[Path(record.source_url).name.lower()] = record
+        by_doc_id[f"{record.document_id}.pdf".lower()] = record
+
+    imported: dict[str, DocumentRecord] = {}
+    unmatched: list[str] = []
+
+    for path in sorted(import_dir.rglob("*")):
+        if not path.is_file() or path.suffix.lower() != ".pdf":
+            continue
+        target = by_basename.get(path.name.lower()) or by_doc_id.get(path.name.lower())
+        if target is None:
+            unmatched.append(path.name)
+            logger.warning(
+                "manual import: %s matches no missing manifest record by URL basename or "
+                "<document_id>.pdf — skipped", path.name,
+            )
+            continue
+
+        data = path.read_bytes()
+        if not data.startswith(_PDF_MAGIC):
+            unmatched.append(path.name)
+            logger.error(
+                "manual import: %s is not a PDF (first bytes %r) — skipped. A saved WAF "
+                "challenge page would otherwise be adopted as a Direction.",
+                path.name, data[:16],
+            )
+            continue
+
+        cache_key = cache.key_for("rbi_master_directions", target.document_id)
+        cached_path = cache.put(cache_key, data, suffix=".pdf")
+        imported[target.document_id] = replace(
+            target,
+            format="PDF",
+            content_hash=hashlib.sha256(data).hexdigest(),
+            local_path=str(cached_path.relative_to(resolver.working_root)),
+            retrieved_at=datetime.now(timezone.utc).isoformat(),
+            extraction_source="manual_browser_download",
+        )
+        logger.info(
+            "manual import: %s adopted from %s (%d bytes)", target.document_id, path.name, len(data)
+        )
+
+    merged = [imported.get(r.document_id, r) for r in records]
+    return merged, {
+        "manual_import_ids": sorted(imported),
+        "manual_import_unmatched": sorted(unmatched),
+        "manual_import_note": (
+            "obtained by manual browser download from source_url; bytes validated by %PDF "
+            "magic and cached under the same key a download would have used"
+        ),
+    }
+
+
+def coverage_by_entity_class(
+    records: Iterable[DocumentRecord], *, logger: logging.Logger | None = None
+) -> dict[str, Any]:
+    """Downloaded share per entity class, which is what RQ1 actually needs.
+
+    An overall 299/380 hides the thing that matters: the first harvest lost 35
+    of 44 Commercial Banks Directions and 31 of 40 Small Finance Banks ones,
+    so the two classes a cross-class comparison most depends on were the two
+    most damaged. A single corpus-level rate cannot show that.
+    """
+    totals: dict[str, int] = {}
+    have: dict[str, int] = {}
+    for record in records:
+        key = record.entity_class_raw or record.entity_class or "(unclassified)"
+        totals[key] = totals.get(key, 0) + 1
+        if record.content_hash:
+            have[key] = have.get(key, 0) + 1
+
+    table = {}
+    for key in sorted(totals):
+        got, total = have.get(key, 0), totals[key]
+        rate = got / total if total else 0.0
+        table[key] = {"downloaded": got, "total": total, "rate": rate}
+        if logger is not None and rate < 0.90:
+            logger.warning(
+                "coverage: %s at %.1f%% (%d/%d) — below the 90%% bar",
+                key, rate * 100, got, total,
+            )
+
+    overall_have = sum(have.values())
+    overall_total = sum(totals.values())
+    return {
+        "by_entity_class": table,
+        "classes_below_90_percent": sorted(k for k, v in table.items() if v["rate"] < 0.90),
+        "overall": {
+            "downloaded": overall_have,
+            "total": overall_total,
+            "rate": overall_have / overall_total if overall_total else 0.0,
+        },
+    }
+
+
 # -- orchestration ------------------------------------------------------------
 
 
@@ -415,6 +645,10 @@ def harvest_corpus(
     logger: logging.Logger | None = None,
     sleep_fn: Any = time.sleep,
     html: str | None = None,
+    only_missing: bool = False,
+    existing_manifest: Iterable[DocumentRecord] | None = None,
+    max_requests: int | None = None,
+    import_dir: Path | str | None = None,
     **kwargs: Any,
 ) -> dict[str, Any]:
     """Run discovery then download for every discovered document.
@@ -424,6 +658,20 @@ def harvest_corpus(
             slice or a local smoke run. Discovery always runs against the full
             listing regardless of ``limit`` — the discovered count is a
             measurement never subject to a cap.
+        only_missing: Download only records that have no ``content_hash`` in
+            ``existing_manifest``, plus ids the listing has gained since. A
+            record already downloaded is carried through **unchanged** — the
+            299 documents that succeeded are not re-fetched, which is the
+            difference between a 81-request repair and a 380-request
+            re-harvest against a host that already blocked us once.
+        existing_manifest: The manifest to diff against. Required by
+            ``only_missing``.
+        max_requests: Refuse to start if the plan needs more requests than
+            this. Checked **before** the first request, so an unexpectedly
+            large plan costs nothing rather than being noticed halfway
+            through.
+        import_dir: Directory of hand-downloaded PDFs, adopted after the
+            network pass for anything still missing.
 
     A single document's download failure is logged, counted, and does not
     abort the run; every other document is still attempted.
@@ -435,32 +683,118 @@ def harvest_corpus(
     rate_limit = float(get_required(cfg, "network.rate_limit_sec")) if "rate_limit_sec" in cfg.get("network", {}) else 0.0
 
     discovered = discover_documents(cfg, html=html, session=resolved_session, logger=logger)
-    to_download = discovered[:limit] if limit is not None else discovered
+
+    carried: list[DocumentRecord] = []
+    new_since_previous: list[str] = []
+    no_longer_listed: list[str] = []
+    coverage_before: dict[str, Any] = {}
+
+    if only_missing:
+        if existing_manifest is None:
+            raise DiscoveryError("only_missing requires existing_manifest")
+        previous = {r.document_id: r for r in existing_manifest}
+        coverage_before = coverage_by_entity_class(previous.values())
+        listed = {r.document_id for r in discovered}
+
+        new_since_previous = sorted(listed - set(previous))
+        no_longer_listed = sorted(set(previous) - listed)
+
+        to_download = []
+        for record in discovered:
+            prior = previous.get(record.document_id)
+            if prior is not None and prior.content_hash:
+                carried.append(prior)  # untouched, dict-equal to what was there
+            else:
+                to_download.append(prior or record)
+
+        # A record the listing has dropped is kept, not deleted. A Direction
+        # vanishing from a listing is a finding about the listing, and
+        # silently shrinking the corpus would erase it.
+        for doc_id in no_longer_listed:
+            carried.append(previous[doc_id])
+
+        logger.info(
+            "harvest: only-missing plan — %d to fetch, %d carried unchanged, %d newly "
+            "listed, %d no longer listed",
+            len(to_download), len(carried), len(new_since_previous), len(no_longer_listed),
+        )
+    else:
+        to_download = discovered[:limit] if limit is not None else discovered
+
+    if limit is not None and only_missing:
+        to_download = to_download[:limit]
+
+    # Checked before anything is sent: an oversized plan costs nothing.
+    if max_requests is not None and len(to_download) > max_requests:
+        raise RequestBudgetExceeded(
+            f"refusing to start: the plan needs {len(to_download)} requests, over the "
+            f"max_requests budget of {max_requests}. No request has been sent. Raise the "
+            "budget deliberately, or narrow the plan."
+        )
+
+    def _warm_up() -> None:
+        listing_url = get_required(cfg, "network.sources.rbi_master_directions.listing_url")
+        _fetch(listing_url, resolved_session, cfg, logger=logger, description="listing warm-up")
 
     downloaded: list[DocumentRecord] = []
     failures: list[dict[str, str]] = []
+    payload_retry_outcomes: list[dict[str, Any]] = []
+    cache_hits: list[str] = []
     pdf_count = 0
     html_count = 0
 
     for index, record in enumerate(to_download):
+        # A cached payload is reused without a request. The first harvest had
+        # no such check, so a re-run paid the full network cost — and every
+        # avoided request is one the host cannot refuse.
+        cache_key = cache.key_for("rbi_master_directions", record.document_id)
+        cached = cache.get(cache_key, suffix=".pdf")
+        if cached and cached.startswith(_PDF_MAGIC):
+            entry = cache.locate(cache_key, suffix=".pdf")
+            downloaded.append(replace(
+                record, format="PDF",
+                content_hash=hashlib.sha256(cached).hexdigest(),
+                local_path=str(entry.path.relative_to(resolver.working_root)) if entry else None,
+                retrieved_at=record.retrieved_at or datetime.now(timezone.utc).isoformat(),
+            ))
+            cache_hits.append(record.document_id)
+            pdf_count += 1
+            logger.info("harvest: %s served from cache, no request made", record.document_id)
+            continue
+
         if index > 0 and rate_limit > 0:
             sleep_fn(rate_limit)
-        try:
-            result = download_document(
-                record, cfg, session=resolved_session, cache=cache, resolver=resolver, logger=logger
-            )
-        except FoundationError as exc:
-            logger.error("harvest: %s failed: %s", record.document_id, exc)
-            failures.append({"document_id": record.document_id, "reason": str(exc)})
-            downloaded.append(record)  # keep the discovery-time record; payload fields stay null
+
+        result, outcome = download_with_payload_retries(
+            record, cfg, session=resolved_session, cache=cache, resolver=resolver,
+            logger=logger, warm_up=_warm_up if html is None else None, sleep_fn=sleep_fn,
+        )
+        payload_retry_outcomes.append(outcome)
+
+        if result is None:
+            reason = outcome["detail"][-1] if outcome["detail"] else "unknown"
+            logger.error("harvest: %s failed after %d attempt(s): %s",
+                         record.document_id, outcome["attempts"], reason)
+            failures.append({"document_id": record.document_id, "reason": reason})
+            downloaded.append(record)  # keep the record; payload fields stay null
             continue
+
         downloaded.append(result)
         if result.format == "PDF":
             pdf_count += 1
         elif result.format == "HTML":
             html_count += 1
 
-    manifest_path = write_manifest(downloaded, cfg, resolver=resolver)
+    all_records = carried + downloaded
+    import_metrics: dict[str, Any] = {"manual_import_ids": [], "manual_import_unmatched": []}
+    if import_dir is not None:
+        all_records, import_metrics = import_manual_pdfs(
+            import_dir, all_records, cfg, cache=cache, resolver=resolver, logger=logger
+        )
+
+    all_records.sort(key=lambda r: r.document_id)
+    manifest_path = write_manifest(all_records, cfg, resolver=resolver)
+    coverage_after = coverage_by_entity_class(all_records, logger=logger)
 
     metrics = {
         "documents_discovered": len(discovered),
@@ -474,8 +808,22 @@ def harvest_corpus(
         "html_count": html_count,
         "manifest_path": manifest_path,
         "failures": failures,
+        "only_missing": bool(only_missing),
+        "records_carried_unchanged": len(carried),
+        "cache_hits": cache_hits,
+        "new_since_previous_harvest": new_since_previous,
+        "no_longer_listed": no_longer_listed,
+        "payload_retry_outcomes": payload_retry_outcomes,
+        "coverage_by_entity_class_before": coverage_before,
+        "coverage_by_entity_class_after": coverage_after,
+        **import_metrics,
     }
-    logger.info("harvest: %s", {k: v for k, v in metrics.items() if k != "failures"})
+    logger.info(
+        "harvest: %s",
+        {k: v for k, v in metrics.items()
+         if k not in ("failures", "payload_retry_outcomes",
+                      "coverage_by_entity_class_before", "coverage_by_entity_class_after")},
+    )
     return metrics
 
 

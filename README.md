@@ -174,3 +174,45 @@ fully reproducible for anyone holding the corpus without republishing the text.
 
 Raise the redistribution question with the mentor / institutional IPR cell
 before any public release.
+
+## Kaggle workflow (P1-004)
+
+The corpus repair runs on Kaggle, because it needs Internet access the laptop
+run does not have and the 380 PDFs are too large to keep in the repo. The
+round trip is deliberately asymmetric about one thing: **no annotation file
+crosses either boundary**, in either direction.
+
+```
+laptop                       Kaggle                        laptop
+------                       ------                        ------
+rbi-oblibench-corpus-v1.zip
+  data/{metadata,extracted,
+        processed,matrix}
+  pilot_candidates.jsonl  ->  notebooks/
+                              phase1-corpus-repair.ipynb
+                                diagnose
+                                repair (only-missing)
+                                stable-ID + pilot-join checks
+                                matrix, QA, alignment (a)/(b)
+                                                       ->  p1004_return.zip
+                                                       ->  corpus-v2.zip
+```
+
+1. `python3 scripts/package_p1004.py corpus-v2 --out-dir ~/Desktop` builds the
+   upload. Upload it as a **private** Kaggle Dataset.
+2. Import `notebooks/phase1-corpus-repair.ipynb`, set **Internet: On**, add the
+   Dataset as an input, and **Run All** interactively (not Save & Run All).
+3. Download `p1004_return.zip` and unzip it over the repo root. Resume with
+   `Run Part C of docs/prompts/P1-004.md`.
+
+**What never travels:** `data/benchmark/tasks/annotation_*.csv` holds three
+people's hand-entered labels and is gitignored. Kaggle never receives it, so a
+returning `data/benchmark` could only overwrite real work with nothing —
+`scripts/package_p1004.py` refuses to build a zip containing an `annotation_`
+file rather than trusting the include list. `pilot_candidates.jsonl` does
+travel outward, because the pilot-join check needs it to verify the 18
+annotated spans still resolve after re-segmentation.
+
+**Paths:** on Kaggle, `PathResolver` resolves to `/kaggle/working/data/...`
+and `/kaggle/working/reports/...`. Inputs must be copied there, **not** to
+`/kaggle/working/Capstone_project/data`, which the resolver never searches.
