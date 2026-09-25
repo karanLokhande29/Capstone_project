@@ -1,8 +1,0 @@
-{
-  "scope": "export-missing",
-  "export_missing": {
-    "missing_count": 0,
-    "path": "/Users/karan/Documents/Capstone_project/reports/p1004_missing_documents.csv",
-    "document_ids": []
-  }
-}
