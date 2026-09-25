@@ -78,6 +78,7 @@ string belongs to the *reported metric*, while the per-label field stays
 from __future__ import annotations
 
 import csv
+import itertools
 import json
 import logging
 import math
@@ -151,12 +152,37 @@ ROUTE_NOT_OBLIGATION = "not-obligation"
 ROUTE_NEEDS_ADJUDICATION = "needs-adjudication"
 ROUTE_PASS1_ONLY = "pass1-only"
 ROUTE_ADJUDICATED = "adjudicated"
+#: P1-004: two or more independent human raters cast the identical judgment and
+#: no other human rater contradicted it.
+ROUTE_CONSENSUS = "consensus"
 #: Not in the P1-005 table: a second rater voted before the primary's pass 1.
 #: Held at ``in_review`` — an item the primary has never seen cannot validate.
 ROUTE_AWAITING_PRIMARY = "awaiting-primary"
 
 #: Routes whose items are eligible for ``validated``, subject to ``validate()``.
-VALIDATING_ROUTES = frozenset({ROUTE_RETEST_CONSISTENT, ROUTE_SINGLE_PASS, ROUTE_ADJUDICATED})
+VALIDATING_ROUTES = frozenset(
+    {ROUTE_RETEST_CONSISTENT, ROUTE_SINGLE_PASS, ROUTE_ADJUDICATED, ROUTE_CONSENSUS}
+)
+
+# -- label provenance (P1-004) ------------------------------------------------
+
+#: The named rater filled the file themselves, without AI assistance. Only
+#: these votes are human votes.
+LABEL_SOURCE_MANUAL = "manual"
+#: The labels were produced with AI assistance. Reported as a human-AI
+#: agreement diagnostic and never as a rater — counting them would fabricate
+#: the inter-rater agreement the benchmark's validity rests on.
+LABEL_SOURCE_AI = "ai_assisted"
+VALID_LABEL_SOURCES = (LABEL_SOURCE_MANUAL, LABEL_SOURCE_AI)
+
+#: Prefix marking a vote that came from an AI diagnostic file rather than a
+#: rater. Structurally distinct so it cannot be mistaken for a rater id.
+AI_RATER_PREFIX = "ai:"
+
+#: How a minutes figure was obtained. A recalled estimate is not a measurement
+#: and every figure derived from one is labelled with its basis.
+MINUTES_BASIS_MEASURED = "measured"
+MINUTES_BASIS_RECALLED = "recalled_estimate"
 
 # -- artifact filenames -------------------------------------------------------
 
@@ -197,6 +223,12 @@ def second_raters(cfg: Mapping[str, Any]) -> list[str]:
     """Raters who have actually agreed to label, if any. Usually empty."""
     raters = (cfg.get("benchmark", {}) or {}).get("second_raters") or []
     return [str(r) for r in raters]
+
+
+def ai_diagnostic_files(cfg: Mapping[str, Any]) -> list[str]:
+    """Files read as a human-AI diagnostic, relative to the benchmark path key."""
+    files = (cfg.get("benchmark", {}) or {}).get("ai_diagnostic_files") or []
+    return [str(f) for f in files]
 
 
 def configured_raters(cfg: Mapping[str, Any]) -> list[str]:
@@ -263,6 +295,79 @@ def tautology_smell_report(labels: Iterable[T1Label]) -> dict[str, Any]:
         "annotated_items": len(annotated),
         "items_matching_own_entity_class": matching,
         "share_matching_own_entity_class": matching / len(annotated),
+    }
+
+
+def judgment_column_independence(
+    votes: Iterable["AnnotatorVote"], raters: Sequence[str]
+) -> dict[str, Any]:
+    """Per judgment column: how often every rater gave the identical answer.
+
+    A1's independence check compares the free-text columns, which catches a
+    copied file. It does **not** catch a single column being shared while the
+    prose around it is written separately — and that is the case that quietly
+    destroys a reliability claim, because the column still produces a perfect
+    agreement score.
+
+    ``applies_to`` is set-valued over a vocabulary of ~19 classes, so exact
+    agreement on a large set is astronomically unlikely by chance: independent
+    raters agreeing on the same 12-element subset even once is a coincidence,
+    and doing it repeatedly is not. ``suspicious`` flags that pattern. It is
+    evidence to investigate and report, never grounds to alter anyone's file.
+    """
+    by_item: dict[str, dict[str, AnnotatorVote]] = {}
+    for vote in votes:
+        if vote.pass_no != 1 or vote.rater_id not in raters or not vote.is_decided:
+            continue
+        by_item.setdefault(vote.label_id, {})[vote.rater_id] = vote
+
+    complete = {i: per for i, per in by_item.items() if len(per) >= 2}
+    if not complete:
+        return {"status": f"{NOT_YET_MEASURED} — fewer than 2 raters decided any item"}
+
+    applies_identical = sum(
+        1 for per in complete.values() if len({v.applies_to for v in per.values()}) == 1
+    )
+    flag_identical = sum(
+        1 for per in complete.values()
+        if len({v.differential_flag for v in per.values()}) == 1
+    )
+    rationale_identical = sum(
+        1 for per in complete.values()
+        if len({(v.applies_to_rationale or "").strip() for v in per.values()}) == 1
+    )
+
+    # Only multi-class sets carry the argument: agreeing that one obvious class
+    # applies is ordinary, agreeing on the same 8 of 19 is not.
+    multi = {
+        i: per for i, per in complete.items()
+        if max(len(v.applies_to) for v in per.values()) > 1
+    }
+    multi_identical = sum(
+        1 for per in multi.values() if len({v.applies_to for v in per.values()}) == 1
+    )
+
+    suspicious = bool(multi) and multi_identical == len(multi) and len(multi) >= 3
+
+    return {
+        "n_items": len(complete),
+        "raters": sorted(raters),
+        "applies_to_identical_across_all_raters": applies_identical,
+        "differential_flag_identical_across_all_raters": flag_identical,
+        "applies_to_rationale_identical_across_all_raters": rationale_identical,
+        "multi_class_items": len(multi),
+        "multi_class_items_identical_across_all_raters": multi_identical,
+        "applies_to_independent": not suspicious,
+        "note": (
+            "applies_to is IDENTICAL across every rater on every multi-class item "
+            f"({multi_identical}/{len(multi)}). Independent raters do not converge on the "
+            "same large subset of a ~19-class vocabulary repeatedly, so this column has a "
+            "single source and its exact-match rate is NOT an agreement measurement. Report "
+            "differential_flag agreement only, and treat every applies_to figure as "
+            "unreplicated."
+            if suspicious else
+            "No column shows the one-source pattern."
+        ),
     }
 
 
@@ -731,6 +836,46 @@ def last_pass1_ingest(resolver: PathResolver, rater_id: str) -> dict[str, Any] |
     return entries[-1] if entries else None
 
 
+def rater_label_sources(resolver: PathResolver) -> dict[str, str]:
+    """Each rater's most recently recorded ``label_source``.
+
+    Latest entry wins, so re-ingesting a file after re-declaring its source
+    corrects the record without needing the log to be edited by hand.
+    """
+    sources: dict[str, str] = {}
+    for entry in read_annotation_log(resolver).get("entries", []):
+        rater = entry.get("rater_id")
+        source = entry.get("label_source")
+        if rater and source:
+            sources[str(rater)] = str(source)
+    return sources
+
+
+def human_raters(
+    cfg: Mapping[str, Any], resolver: PathResolver, *, logger: logging.Logger | None = None
+) -> list[str]:
+    """Configured raters whose labels are their own work.
+
+    A rater recorded as ``ai_assisted`` is dropped here and therefore never
+    reaches pairwise kappa, Fleiss' kappa or a promotion. This is the single
+    chokepoint for that rule: everything downstream asks this function who the
+    humans are rather than reading the roster directly.
+    """
+    sources = rater_label_sources(resolver)
+    humans: list[str] = []
+    for rater in configured_raters(cfg):
+        if sources.get(rater) == LABEL_SOURCE_AI:
+            if logger is not None:
+                logger.warning(
+                    "agreement: excluding %s from every human statistic — their labels are "
+                    "recorded as %s in %s. They are reported only as a human-AI diagnostic.",
+                    rater, LABEL_SOURCE_AI, ANNOTATION_LOG_FILENAME,
+                )
+            continue
+        humans.append(rater)
+    return humans
+
+
 def _parse_timestamp(raw: str | None) -> datetime | None:
     if not raw:
         return None
@@ -1086,6 +1231,57 @@ def load_votes(
                 path.name,
             )
 
+    return votes
+
+
+def load_ai_diagnostic_votes(
+    cfg: Mapping[str, Any],
+    *,
+    candidates: Iterable[T1Label] | None = None,
+    resolver: PathResolver | None = None,
+    logger: logging.Logger | None = None,
+    valid_entity_classes: Sequence[str] | None = None,
+) -> list[AnnotatorVote]:
+    """Read every configured AI-assisted file as a diagnostic, never as a rater.
+
+    The returned votes carry an :data:`AI_RATER_PREFIX` rater id, which is not
+    a legal rater name, so a vote from here cannot be confused with a human's
+    anywhere downstream. They are deliberately **not** returned by
+    :func:`load_votes`: a caller has to ask for them by name.
+    """
+    logger = logger or get_logger("benchmark.annotation", cfg)
+    resolver = resolver or PathResolver.from_config(cfg)
+
+    files = ai_diagnostic_files(cfg)
+    if not files:
+        return []
+
+    if candidates is None:
+        candidates = load_candidates(resolver)
+    valid_label_ids = {label.label_id for label in candidates}
+    if valid_entity_classes is None:
+        valid_entity_classes = load_entity_class_names(resolver, cfg=cfg)
+
+    votes: list[AnnotatorVote] = []
+    for relative in files:
+        parts = Path(relative).parts
+        path = resolver.find_read_path("benchmark", *parts)
+        if path is None:
+            logger.warning("annotation: AI diagnostic file %s not found — skipping", relative)
+            continue
+        rater_id = f"{AI_RATER_PREFIX}{Path(relative).stem}"
+        logger.warning(
+            "annotation: reading %s as a human-AI DIAGNOSTIC under rater id %r. These votes "
+            "are excluded from pairwise kappa, Fleiss' kappa and every promotion.",
+            relative, rater_id,
+        )
+        votes.extend(
+            _read_vote_file(
+                Path(path), rater_id=rater_id, pass_no=1,
+                valid_label_ids=valid_label_ids, valid_classes=valid_entity_classes,
+                logger=logger,
+            )
+        )
     return votes
 
 
@@ -1557,11 +1753,163 @@ def _comparison_block(
     }
 
 
+def _rater_pass1(votes: Sequence[AnnotatorVote], rater: str) -> dict[str, AnnotatorVote]:
+    """One rater's pass-1 votes by item. The primary's pass 1 is their vote."""
+    return _by_item(v for v in votes if v.rater_id == rater and v.pass_no == 1)
+
+
+def pairwise_agreement(
+    votes: Sequence[AnnotatorVote],
+    raters: Sequence[str],
+    cfg: Mapping[str, Any],
+    *,
+    logger: logging.Logger | None = None,
+) -> dict[str, Any]:
+    """Cohen's kappa and friends for every pair of human raters.
+
+    This is the statistic the pilot was always supposed to produce and the
+    superseded tooling could not: two people labelling the same item, compared
+    without either overwriting the other. For the primary annotator it is pass
+    1 that enters the comparison, so a pair is never contaminated by the
+    retest.
+    """
+    blocks: dict[str, Any] = {}
+    for left, right in itertools.combinations(sorted(raters), 2):
+        blocks[f"{left}__vs__{right}"] = _comparison_block(
+            _rater_pass1(votes, left), _rater_pass1(votes, right),
+            cfg=cfg, label=f"{left} vs {right} (independent human raters)", logger=logger,
+        )
+    return blocks
+
+
+def not_obligation_agreement(
+    votes: Sequence[AnnotatorVote], raters: Sequence[str]
+) -> dict[str, Any]:
+    """How often the human raters agree that an item is not an obligation.
+
+    Reported separately from the flag kappa because it is a different question
+    — whether the extractor's candidate is an obligation at all — and it is the
+    one the pilot is best placed to answer, candidate precision being exactly
+    what a keyword heuristic gets wrong.
+    """
+    by_item: dict[str, dict[str, AnnotatorVote]] = {}
+    for vote in votes:
+        if vote.pass_no != 1 or vote.rater_id not in raters or not vote.is_decided:
+            continue
+        by_item.setdefault(vote.label_id, {})[vote.rater_id] = vote
+
+    complete = {i: per for i, per in by_item.items() if len(per) >= 2}
+    if not complete:
+        return {
+            "status": f"{NOT_YET_MEASURED} — no item was decided by two or more human raters",
+            "n_items": 0,
+        }
+
+    unanimous_obligation = unanimous_not = split = 0
+    for per in complete.values():
+        statuses = {v.status for v in per.values()}
+        if statuses == {VOTE_NOT_OBLIGATION}:
+            unanimous_not += 1
+        elif statuses == {VOTE_VOTED}:
+            unanimous_obligation += 1
+        else:
+            split += 1
+
+    return {
+        "n_items": len(complete),
+        "raters": sorted(raters),
+        "unanimous_is_an_obligation": unanimous_obligation,
+        "unanimous_not_an_obligation": unanimous_not,
+        "split": split,
+        "agreement_rate": (unanimous_obligation + unanimous_not) / len(complete),
+    }
+
+
+def human_ai_diagnostic(
+    human_votes: Sequence[AnnotatorVote],
+    ai_votes: Sequence[AnnotatorVote],
+    raters: Sequence[str],
+    cfg: Mapping[str, Any],
+    *,
+    logger: logging.Logger | None = None,
+) -> dict[str, Any]:
+    """Each human rater against each AI-assisted file.
+
+    **This is not a reliability statistic and must never be reported as one.**
+    An AI label is not an independent observer of the same construct: it is a
+    model's output on the same text, and agreement with it measures how
+    model-like the human's labels are, not how reliable they are. It is
+    computed because a high value is worth knowing about — it would suggest
+    either that the task is easy or that the human labels were not independent
+    — not because it licenses any claim.
+    """
+    ai_raters = sorted({v.rater_id for v in ai_votes})
+    if not ai_raters:
+        return {
+            "status": f"{NOT_YET_MEASURED} — no AI-assisted file is configured",
+            "is_a_reliability_statistic": False,
+        }
+
+    combined = list(human_votes) + list(ai_votes)
+    blocks: dict[str, Any] = {}
+    for human in sorted(raters):
+        for ai in ai_raters:
+            blocks[f"{human}__vs__{ai}"] = _comparison_block(
+                _rater_pass1(combined, human), _rater_pass1(combined, ai),
+                cfg=cfg, label=f"{human} vs {ai} (human-AI DIAGNOSTIC, not reliability)",
+                logger=logger,
+            )
+    return {
+        "is_a_reliability_statistic": False,
+        "warning": (
+            "NOT a reliability statistic. An AI-assisted file is not an independent rater; "
+            "agreement with it measures how model-like the human labels are, not how "
+            "reliable they are. It never enters pairwise or Fleiss' kappa and can never "
+            "promote an item."
+        ),
+        "comparisons": blocks,
+    }
+
+
+#: What an applies_to figure is replaced with when the column is not replicated.
+APPLIES_TO_NOT_REPLICATED = (
+    "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every "
+    "rater's file. Each rater judged differential_flag only, so there is nothing to agree "
+    "about here and the exact-match rate would read 1.0 by construction."
+)
+
+
+def _suppress_applies_to_figures(block: Any) -> Any:
+    """Blank the applies_to agreement figures in a comparison block, in place.
+
+    Called when :func:`judgment_column_independence` reports that the column
+    has one source. The figures are replaced rather than deleted so that a
+    reader who goes looking for them finds the reason instead of a gap — and a
+    downstream consumer gets a string where it expected a float, which fails
+    loudly rather than quietly plotting a 1.0.
+    """
+    if not isinstance(block, dict):
+        return block
+    for key in ("applies_to_exact_match_rate", "applies_to_mean_jaccard"):
+        if key in block:
+            block[key] = APPLIES_TO_NOT_REPLICATED
+    categories = block.get("disagreement_categories")
+    if isinstance(categories, dict):
+        categories["note"] = (
+            "applies_to_only and both are 0 by construction: every rater held the same "
+            "applies_to. Only flag_only and none carry information."
+        )
+    return block
+
+
 def measure_agreement(
     votes: Iterable[AnnotatorVote],
     cfg: Mapping[str, Any] | None = None,
     *,
     logger: logging.Logger | None = None,
+    resolver: PathResolver | None = None,
+    ai_votes: Iterable[AnnotatorVote] | None = None,
+    raters: Sequence[str] | None = None,
     **kwargs: Any,
 ) -> dict[str, Any]:
     """Reliability statistics, computed from raw votes and never from labels.
@@ -1635,23 +1983,99 @@ def measure_agreement(
     # Fleiss' kappa needs >= 3 real raters. Below that the key is absent
     # entirely: a NOT-YET-MEASURED "fleiss" entry is still something a reader
     # can mistake for a statistic this protocol is able to produce.
-    real_raters = [r for r in raters_with_votes if r == primary or r in configured_seconds]
-    if len(real_raters) >= 3:
-        second_rater["fleiss_kappa_flag"] = _fleiss_over_raters(votes, real_raters)
+    # There is exactly ONE Fleiss key in the output, `fleiss_three_raters`,
+    # added below over human raters only. The P1-005 version lived here and
+    # counted the configured roster, which would have emitted a three-rater
+    # figure for two humans plus an ai_assisted one — the precise thing the
+    # provenance rule exists to prevent.
 
-    return {
+    # -- P1-004: three independent human raters ------------------------------
+    #
+    # `raters` is the list of people whose labels are their own work. It is
+    # passed in (from human_raters()) rather than read off the roster here, so
+    # an ai_assisted rater is filtered out at exactly one place and cannot
+    # re-enter through any of the blocks below.
+    if raters is None:
+        raters = human_raters(cfg, resolver, logger=logger) if (resolver and cfg.get("benchmark")) \
+            else ([primary, *configured_seconds] if primary else [])
+    humans = [r for r in raters if not r.startswith(AI_RATER_PREFIX)]
+    human_votes = [v for v in votes if v.rater_id in humans]
+    ai_votes = list(ai_votes or [])
+
+    # Two different populations, and conflating them loses a real case. A flag
+    # kappa needs raters who cast a FLAG, so it uses `voting_humans`. Whether
+    # an item is an obligation at all is answered just as much by a rater who
+    # said "not an obligation", so that block uses `deciding_humans`.
+    voting_humans = sorted({
+        v.rater_id for v in human_votes if v.pass_no == 1 and v.status == VOTE_VOTED
+    })
+    deciding_humans = sorted({
+        v.rater_id for v in human_votes if v.pass_no == 1 and v.is_decided
+    })
+
+    result = {
         "protocol": (cfg.get("benchmark", {}) or {}).get("promotion_policy", "single_expert_retest"),
         "primary_annotator": primary,
         "second_raters_configured": configured_seconds,
+        "human_raters": humans,
+        "human_raters_with_votes": voting_humans,
         "raters_with_votes": raters_with_votes,
         "interpretation": (
             "test_retest measures the stability of ONE annotator's judgment across two blind "
-            "passes. It is not inter-annotator agreement, and must not be reported as one."
+            "passes; it is not inter-annotator agreement. `pairwise` and `fleiss_three_raters` "
+            "ARE inter-rater agreement, over independent human raters only. "
+            "`human_ai_diagnostic` is neither and must not be reported as a reliability figure."
         ),
         "test_retest": test_retest,
         "second_rater": second_rater,
         "unlabelled_votes": dict(sorted(unlabelled_votes.items())),
+        "pairwise": (
+            pairwise_agreement(human_votes, voting_humans, cfg, logger=logger)
+            if len(voting_humans) >= 2
+            else {
+                "status": (
+                    f"{NOT_YET_MEASURED} — pairwise agreement needs 2 or more human raters "
+                    f"with votes, found {len(voting_humans)}"
+                )
+            }
+        ),
+        "not_obligation_agreement": not_obligation_agreement(human_votes, deciding_humans),
+        "human_ai_diagnostic": human_ai_diagnostic(
+            human_votes, ai_votes, voting_humans, cfg, logger=logger
+        ),
     }
+
+    # Fleiss' kappa needs three or more real human raters. Below that there is
+    # no key at all, so nothing downstream can surface a number that was never
+    # computable — and an AI file can never make up the third.
+    if len(voting_humans) >= 3:
+        result["fleiss_three_raters"] = _fleiss_over_raters(human_votes, voting_humans)
+
+    # If a judgment column turns out to have a single source, every agreement
+    # figure computed from it is arithmetic on one answer counted N times.
+    # Suppressing those figures here, rather than trusting a reader to notice
+    # the caveat, is the only way the number cannot reach a paper.
+    independence = judgment_column_independence(human_votes, deciding_humans)
+    result["column_independence"] = independence
+    if independence.get("applies_to_independent") is False:
+        result["applies_to_replicated"] = False
+        for block in list(result.get("pairwise", {}).values()):
+            _suppress_applies_to_figures(block)
+        for block in list((result.get("second_rater", {}) or {}).get("raters", {}).values()):
+            _suppress_applies_to_figures(block)
+        _suppress_applies_to_figures(result.get("test_retest"))
+        if logger is not None:
+            logger.warning(
+                "agreement: applies_to is identical across every rater on %d/%d multi-class "
+                "items — the column has one source, so its agreement figures are suppressed. "
+                "Only differential_flag agreement is reported.",
+                independence.get("multi_class_items_identical_across_all_raters", 0),
+                independence.get("multi_class_items", 0),
+            )
+    else:
+        result["applies_to_replicated"] = True
+
+    return result
 
 
 def _fleiss_over_raters(votes: Sequence[AnnotatorVote], raters: Sequence[str]) -> dict[str, Any]:
@@ -1793,6 +2217,7 @@ def merge_votes(
     retest_ids: Iterable[str] | None = None,
     adjudications: Mapping[str, Adjudication] | None = None,
     logger: logging.Logger | None = None,
+    human_rater_ids: Sequence[str] | None = None,
 ) -> list[T1Label]:
     """Build **one** merged label per item from that item's full vote set.
 
@@ -1807,9 +2232,32 @@ def merge_votes(
     retest_ids = set(retest_ids or ())
     adjudications = adjudications or {}
 
+    # Whose votes may promote an item. Defaults to the configured roster; the
+    # CLI passes human_raters(), which drops anyone recorded as ai_assisted.
+    # An AI diagnostic rater id can never appear here.
+    humans = [
+        r for r in (human_rater_ids if human_rater_ids is not None else configured_raters(cfg))
+        if not r.startswith(AI_RATER_PREFIX)
+    ]
+
     votes_by_item: dict[str, list[AnnotatorVote]] = {}
+    dropped: set[str] = set()
     for vote in votes:
+        # The firewall sits here, before anything is routed, so it covers every
+        # branch below rather than only the consensus one. A vote from an AI
+        # diagnostic file, or from a rater whose labels are recorded as
+        # ai_assisted, never reaches a label at all — including through the
+        # single-expert fallback, where an ai_assisted PRIMARY would otherwise
+        # have promoted items on their own.
+        if vote.rater_id.startswith(AI_RATER_PREFIX) or vote.rater_id not in humans:
+            dropped.add(vote.rater_id)
+            continue
         votes_by_item.setdefault(vote.label_id, []).append(vote)
+    for rater in sorted(dropped):
+        logger.warning(
+            "merge: every vote from %r was excluded — not a human rater under the current "
+            "label_source records. Their labels cannot promote any item.", rater,
+        )
 
     merged: list[T1Label] = []
     for label in candidates:
@@ -1860,6 +2308,78 @@ def merge_votes(
 
         if p1 is None and p2 is None and not seconds:
             merged.append(label)  # nothing voted: candidate, untouched
+            continue
+
+        # -- P1-004 consensus routing ------------------------------------
+        #
+        # With two or more independent human raters, promotion is a consensus
+        # question rather than a retest question. An item validates only when
+        # every human rater who made a call made the SAME call: "at least 2
+        # agree AND nobody contradicts" is unanimity among those who voted,
+        # and anything less goes to adjudication rather than being carried by
+        # a majority. A 2-1 split is exactly the case a written adjudication
+        # exists to resolve, and silently taking the majority would discard
+        # the dissent that makes the disagreement informative.
+        human_calls = {
+            v.rater_id: v
+            for v in item_votes
+            if v.rater_id in humans and v.is_decided and v.pass_no == 1
+        }
+        if len(human_calls) >= 2:
+            judgments = {v.judgment for v in human_calls.values()}
+            agreeing = sorted(human_calls)
+            retest_conflict = (
+                p2 is not None and p1 is not None and p1.judgment != p2.judgment
+            )
+            provenance_ids = "+".join(agreeing)
+
+            if len(judgments) > 1 or retest_conflict:
+                reason = "raters disagree" if len(judgments) > 1 else "primary's retest differs"
+                logger.info(
+                    "merge: %s -> needs-adjudication (%s; %d human calls)",
+                    label.label_id, reason, len(human_calls),
+                )
+                merged.append(
+                    _merged_label(
+                        label, primary=primary, route=ROUTE_NEEDS_ADJUDICATION,
+                        status=LabelStatus.IN_REVIEW.value, applies_to=(), flag=None,
+                        rationale=None, notes=None, raters=voted_raters,
+                        agreement_score=agreement_score,
+                    )
+                )
+                continue
+
+            call = next(iter(human_calls.values()))
+            consensus_provenance = (
+                f"{ANNOTATOR_PROVENANCE_PREFIX}{ROUTE_CONSENSUS}:{provenance_ids}"
+            )
+            if call.status == VOTE_NOT_OBLIGATION:
+                # Rejection is not promotion, so it keeps the ordinary
+                # not-obligation provenance rather than the consensus form.
+                # Overwriting it with `annotator:consensus:<ids>` would make
+                # label_route() read the item as a consensus *validation* and
+                # the route counts would stop adding up.
+                merged.append(
+                    _merged_label(
+                        label, primary=primary, route=ROUTE_NOT_OBLIGATION,
+                        status=LabelStatus.REJECTED.value, applies_to=(), flag=None,
+                        rationale=None, notes=call.notes, raters=[],
+                        agreement_score=agreement_score,
+                    )
+                )
+            else:
+                merged.append(
+                    replace(
+                        _merged_label(
+                            label, primary=primary, route=ROUTE_CONSENSUS,
+                            status=LabelStatus.VALIDATED.value, applies_to=call.applies_to,
+                            flag=call.differential_flag, rationale=call.applies_to_rationale,
+                            notes=call.notes, raters=agreeing,
+                            agreement_score=agreement_score,
+                        ),
+                        provenance=consensus_provenance,
+                    )
+                )
             continue
 
         if p1 is None:
@@ -1973,12 +2493,31 @@ def merge_votes(
 
 
 def label_route(label: T1Label) -> str | None:
-    """The validation route recorded in ``provenance``, if any."""
+    """The validation route recorded in ``provenance``, if any.
+
+    Two provenance shapes exist. The single-expert routes are
+    ``annotator:<rater>:<route>``. A consensus item is
+    ``annotator:consensus:<id>+<id>``, where the middle field is the literal
+    word and the last field names the agreeing raters — so the route is read
+    from the middle field in that case and the ids stay recoverable via
+    :func:`consensus_raters`.
+    """
     provenance = label.provenance or ""
     if not provenance.startswith(ANNOTATOR_PROVENANCE_PREFIX):
         return None
     parts = provenance.split(":")
+    if len(parts) >= 3 and parts[1] == ROUTE_CONSENSUS:
+        return ROUTE_CONSENSUS
     return parts[2] if len(parts) >= 3 else None
+
+
+def consensus_raters(label: T1Label) -> list[str]:
+    """The raters named in an ``annotator:consensus:<ids>`` provenance."""
+    provenance = label.provenance or ""
+    parts = provenance.split(":")
+    if len(parts) >= 3 and parts[1] == ROUTE_CONSENSUS:
+        return sorted(x for x in parts[2].split("+") if x)
+    return []
 
 
 def route_counts(labels: Iterable[T1Label]) -> dict[str, int]:

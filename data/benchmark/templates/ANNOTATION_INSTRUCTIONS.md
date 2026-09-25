@@ -200,6 +200,126 @@ here turns into a badly wrong schedule later. Without it the report prints
 
 ---
 
+# Guidelines v2 — mandatory from Phase 2
+
+> **The pilot files were labelled under v1 and are not edited.** These four
+> rules were written after the pilot, in response to what the pilot actually
+> produced. They are not applied retroactively; where a pilot disagreement
+> turns out to be v1 ambiguity rather than genuine disagreement, the audit
+> says so.
+
+## v2.1 Obligated party — label only duties on a REGULATED ENTITY
+
+Label an obligation only when the duty falls on an entity RBI regulates. If the
+sentence places the duty on a customer, an applicant, a borrower or any other
+third party, it is **not** an RE obligation, however forcefully it is worded.
+
+Leave `applies_to` and `differential_flag` blank and write in `notes`:
+
+```
+not an RE obligation — duty on <party>
+```
+
+The pilot's `t1_pilot_md_12927::p00046_00` is the worked example: *"they are
+required to submit an OVD..."* places the duty on the customer. The bank's
+obligation is to *collect* one, which is a different sentence.
+
+## v2.2 Function headings — which of the 19 names may appear in `applies_to`
+
+Not every entity-class name denotes a class of regulated entity. Some are RBI
+*function* headings, and using one as an applicability answer says which
+department published the Direction rather than who it binds.
+
+**May stand in for a regulated party:**
+
+- `Payment and Settlement System` — use for **authorised non-bank payment system operators**.
+- `Foreign Exchange Management` — use for **authorised persons / AD entities**.
+
+**Never use in `applies_to`.** Map to the regulated classes the text actually
+binds, and if the text binds nobody identifiable, treat it under v2.1:
+
+- `Issuer of Currency`
+- `Financial Market`
+- `Financial Inclusion and Development`
+- `Consumer Education and Protection`
+- `Banker and Debt Manager to Government`
+- `Banker to Governments and Banks`
+
+**Always available** (ordinary regulated classes):
+
+- `All India Financial Institutions`
+- `Asset Reconstruction Companies`
+- `Commercial Banks`
+- `Credit Information Companies`
+- `Local Area Banks`
+- `Non-Banking Financial Companies`
+- `Payments Banks`
+- `Regional Rural Banks`
+- `Rural Co-operative Banks`
+- `Small Finance Banks`
+- `Urban Co-operative Banks`
+
+This formalises what Karan's pass 1 mostly did already: it used the two
+stand-ins above as parties, while mapping "Financial Market" and "Issuer of
+Currency" through to bank classes. v1 left that to each rater's judgment, so
+some of the pilot's `applies_to` variation would have been guideline ambiguity
+rather than disagreement.
+
+## v2.3 Cite your counterparts
+
+A `differential_flag` is a claim about other Directions, so name them.
+
+| Flag | Required `notes` entry |
+|---|---|
+| `shared` | `counterparts: md_xxxxx; md_yyyyy` |
+| `class-specific` | `counterparts: md_xxxxx; md_yyyyy` |
+| `absent` | `checked: md_xxxxx; md_yyyyy` |
+
+Cite **only** document ids listed in `reference_directions.csv`, which is the
+corpus snapshot. A counterpart outside it cannot be checked by anyone reading
+the benchmark, and `absent` in particular is a positive finding that has to be
+falsifiable — "I checked these and found none" is a claim; "there isn't one" is
+not.
+
+The pilot hit this directly: several `shared` rows cited Commercial Banks and
+Small Finance Banks counterparts that were among the 81 Directions missing from
+the corpus, so nobody could verify them at labelling time.
+
+## v2.4 As-of rule
+
+Judge applicability **as of the corpus snapshot**, i.e. against the Directions
+in `reference_directions.csv` as they stand there. If you know of a draft, a
+recent amendment or a future-effective provision that would change the answer,
+put it in `notes` — but do not let it change the label. A benchmark whose labels
+track a moving regulatory frontier cannot be reproduced by anyone later.
+
+## v2.5 Independence — the rule the pilot did not have
+
+**Form every judgment yourself, before seeing anyone else's.**
+
+- **No AI tools** — ChatGPT, Claude, Copilot or any other — for labels,
+  rationales or notes. A file produced with AI assistance must be declared, and
+  is then recorded as a human-AI diagnostic: it never enters kappa and can
+  never promote an item.
+- **`applies_to` included.** Do not start from a file where someone has already
+  filled that column. The pilot ran partially anchored — one person's
+  `applies_to` was copied into all three files — so the pilot has **no**
+  applicability reliability figure at all, and the tooling now refuses to
+  report one when it detects the pattern. That is the specific mistake this
+  rule exists to prevent.
+- Do not discuss individual items with the other annotators until all files are
+  submitted.
+- Do not open anyone else's file.
+
+## v2.6 Time
+
+Record the **total minutes** each pass took you and report it with the file. A
+recalled estimate afterwards is recorded as `recalled_estimate` and cannot
+support a Phase 2 schedule; a figure noted at the time is recorded as
+`measured` and can.
+
+---
+
 ## For a second rater
 
 If someone else agrees to label a subset, they are a genuine second opinion and

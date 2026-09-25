@@ -1,0 +1,334 @@
+{
+  "scope": "ingest",
+  "ingest": {
+    "protocol": "single_expert_retest",
+    "solo_protocol_from": "2026-09-24",
+    "primary_annotator": "karan",
+    "human_raters": [
+      "karan",
+      "akash",
+      "meer"
+    ],
+    "label_sources": {
+      "karan": "manual",
+      "akash": "manual",
+      "meer": "manual"
+    },
+    "guidelines_version": "v1",
+    "items_total": 18,
+    "items_validated": 11,
+    "retest_set_size": 18,
+    "route_counts": {
+      "consensus": 11,
+      "needs-adjudication": 6,
+      "not-obligation": 1
+    },
+    "passes": {
+      "akash:pass1": {
+        "rows_voted": 17,
+        "rows_blank": 0,
+        "rows_not_obligation": 1,
+        "minutes": 45.0,
+        "minutes_basis": "recalled_estimate",
+        "label_source": "manual"
+      },
+      "karan:pass1": {
+        "rows_voted": 17,
+        "rows_blank": 0,
+        "rows_not_obligation": 1,
+        "minutes": null,
+        "minutes_basis": null,
+        "label_source": "manual"
+      },
+      "meer:pass1": {
+        "rows_voted": 17,
+        "rows_blank": 0,
+        "rows_not_obligation": 1,
+        "minutes": null,
+        "minutes_basis": null,
+        "label_source": "manual"
+      }
+    },
+    "agreement": {
+      "protocol": "single_expert_retest",
+      "primary_annotator": "karan",
+      "second_raters_configured": [
+        "akash",
+        "meer"
+      ],
+      "human_raters": [
+        "karan",
+        "akash",
+        "meer"
+      ],
+      "human_raters_with_votes": [
+        "akash",
+        "karan",
+        "meer"
+      ],
+      "raters_with_votes": [
+        "akash",
+        "karan",
+        "meer"
+      ],
+      "interpretation": "test_retest measures the stability of ONE annotator's judgment across two blind passes; it is not inter-annotator agreement. `pairwise` and `fleiss_three_raters` ARE inter-rater agreement, over independent human raters only. `human_ai_diagnostic` is neither and must not be reported as a reliability figure.",
+      "test_retest": {
+        "comparison": "karan pass 1 vs karan pass 2 (blind retest)",
+        "n_items": 0,
+        "status": "NOT YET MEASURED — pass 2 has not been ingested; run `retest` on or after the earliest allowed date, then `ingest --pass 2`"
+      },
+      "second_rater": {
+        "raters": {
+          "akash": {
+            "comparison": "karan pass 1 vs akash",
+            "n_items": 17,
+            "cohen_kappa_flag": 0.6263736263736263,
+            "cohen_kappa_flag_excl_unlabelled": 0.6263736263736263,
+            "n_items_excl_unlabelled": 17,
+            "raw_flag_agreement": 0.7647058823529411,
+            "applies_to_exact_match_rate": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+            "applies_to_mean_jaccard": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+            "kappa_bootstrap_ci95": {
+              "ci95": [
+                0.3013698630136988,
+                0.9044943820224719
+              ],
+              "seed": 20260924,
+              "resamples_requested": 1000,
+              "resamples_used": 1000,
+              "resamples_skipped_undefined": 0
+            },
+            "not_obligation_consistency": {
+              "n_items_decided_in_both": 18,
+              "both_agree_on_not_obligation_vs_obligation": 18,
+              "rate": 1.0
+            },
+            "disagreement_categories": {
+              "flag_only": 4,
+              "applies_to_only": 0,
+              "both": 0,
+              "none": 13,
+              "note": "applies_to_only and both are 0 by construction: every rater held the same applies_to. Only flag_only and none carry information."
+            }
+          },
+          "meer": {
+            "comparison": "karan pass 1 vs meer",
+            "n_items": 17,
+            "cohen_kappa_flag": 0.7197802197802197,
+            "cohen_kappa_flag_excl_unlabelled": 0.7197802197802197,
+            "n_items_excl_unlabelled": 17,
+            "raw_flag_agreement": 0.8235294117647058,
+            "applies_to_exact_match_rate": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+            "applies_to_mean_jaccard": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+            "kappa_bootstrap_ci95": {
+              "ci95": [
+                0.3865715439075892,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 1000,
+              "resamples_used": 1000,
+              "resamples_skipped_undefined": 0
+            },
+            "not_obligation_consistency": {
+              "n_items_decided_in_both": 18,
+              "both_agree_on_not_obligation_vs_obligation": 18,
+              "rate": 1.0
+            },
+            "disagreement_categories": {
+              "flag_only": 3,
+              "applies_to_only": 0,
+              "both": 0,
+              "none": 14,
+              "note": "applies_to_only and both are 0 by construction: every rater held the same applies_to. Only flag_only and none carry information."
+            }
+          }
+        }
+      },
+      "unlabelled_votes": {
+        "akash:pass1": 0,
+        "karan:pass1": 0,
+        "meer:pass1": 0
+      },
+      "pairwise": {
+        "akash__vs__karan": {
+          "comparison": "akash vs karan (independent human raters)",
+          "n_items": 17,
+          "cohen_kappa_flag": 0.6263736263736263,
+          "cohen_kappa_flag_excl_unlabelled": 0.6263736263736263,
+          "n_items_excl_unlabelled": 17,
+          "raw_flag_agreement": 0.7647058823529411,
+          "applies_to_exact_match_rate": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+          "applies_to_mean_jaccard": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+          "kappa_bootstrap_ci95": {
+            "ci95": [
+              0.3013698630136988,
+              0.9044943820224719
+            ],
+            "seed": 20260924,
+            "resamples_requested": 1000,
+            "resamples_used": 1000,
+            "resamples_skipped_undefined": 0
+          },
+          "not_obligation_consistency": {
+            "n_items_decided_in_both": 18,
+            "both_agree_on_not_obligation_vs_obligation": 18,
+            "rate": 1.0
+          },
+          "disagreement_categories": {
+            "flag_only": 4,
+            "applies_to_only": 0,
+            "both": 0,
+            "none": 13,
+            "note": "applies_to_only and both are 0 by construction: every rater held the same applies_to. Only flag_only and none carry information."
+          }
+        },
+        "akash__vs__meer": {
+          "comparison": "akash vs meer (independent human raters)",
+          "n_items": 17,
+          "cohen_kappa_flag": 0.4620253164556962,
+          "cohen_kappa_flag_excl_unlabelled": 0.4620253164556962,
+          "n_items_excl_unlabelled": 17,
+          "raw_flag_agreement": 0.7058823529411765,
+          "applies_to_exact_match_rate": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+          "applies_to_mean_jaccard": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+          "kappa_bootstrap_ci95": {
+            "ci95": [
+              -0.03378378378378399,
+              0.8172043010752688
+            ],
+            "seed": 20260924,
+            "resamples_requested": 1000,
+            "resamples_used": 1000,
+            "resamples_skipped_undefined": 0
+          },
+          "not_obligation_consistency": {
+            "n_items_decided_in_both": 18,
+            "both_agree_on_not_obligation_vs_obligation": 18,
+            "rate": 1.0
+          },
+          "disagreement_categories": {
+            "flag_only": 5,
+            "applies_to_only": 0,
+            "both": 0,
+            "none": 12,
+            "note": "applies_to_only and both are 0 by construction: every rater held the same applies_to. Only flag_only and none carry information."
+          }
+        },
+        "karan__vs__meer": {
+          "comparison": "karan vs meer (independent human raters)",
+          "n_items": 17,
+          "cohen_kappa_flag": 0.7197802197802197,
+          "cohen_kappa_flag_excl_unlabelled": 0.7197802197802197,
+          "n_items_excl_unlabelled": 17,
+          "raw_flag_agreement": 0.8235294117647058,
+          "applies_to_exact_match_rate": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+          "applies_to_mean_jaccard": "NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.",
+          "kappa_bootstrap_ci95": {
+            "ci95": [
+              0.3865715439075892,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 1000,
+            "resamples_used": 1000,
+            "resamples_skipped_undefined": 0
+          },
+          "not_obligation_consistency": {
+            "n_items_decided_in_both": 18,
+            "both_agree_on_not_obligation_vs_obligation": 18,
+            "rate": 1.0
+          },
+          "disagreement_categories": {
+            "flag_only": 3,
+            "applies_to_only": 0,
+            "both": 0,
+            "none": 14,
+            "note": "applies_to_only and both are 0 by construction: every rater held the same applies_to. Only flag_only and none carry information."
+          }
+        }
+      },
+      "not_obligation_agreement": {
+        "n_items": 18,
+        "raters": [
+          "akash",
+          "karan",
+          "meer"
+        ],
+        "unanimous_is_an_obligation": 17,
+        "unanimous_not_an_obligation": 1,
+        "split": 0,
+        "agreement_rate": 1.0
+      },
+      "human_ai_diagnostic": {
+        "status": "NOT YET MEASURED — no AI-assisted file is configured",
+        "is_a_reliability_statistic": false
+      },
+      "fleiss_three_raters": {
+        "kappa": 0.6025974025974025,
+        "n_items": 17,
+        "raters": [
+          "akash",
+          "karan",
+          "meer"
+        ]
+      },
+      "column_independence": {
+        "n_items": 18,
+        "raters": [
+          "akash",
+          "karan",
+          "meer"
+        ],
+        "applies_to_identical_across_all_raters": 18,
+        "differential_flag_identical_across_all_raters": 12,
+        "applies_to_rationale_identical_across_all_raters": 1,
+        "multi_class_items": 14,
+        "multi_class_items_identical_across_all_raters": 14,
+        "applies_to_independent": false,
+        "note": "applies_to is IDENTICAL across every rater on every multi-class item (14/14). Independent raters do not converge on the same large subset of a ~19-class vocabulary repeatedly, so this column has a single source and its exact-match rate is NOT an agreement measurement. Report differential_flag agreement only, and treat every applies_to figure as unreplicated."
+      },
+      "applies_to_replicated": false
+    },
+    "tautology_smell": {
+      "annotated_items": 11,
+      "items_matching_own_entity_class": 3,
+      "share_matching_own_entity_class": 0.2727272727272727
+    },
+    "tautology_share_by_rater": {
+      "akash:pass1": {
+        "voted_rows": 17,
+        "rows_matching_context_entity_class": 3,
+        "share": 0.17647058823529413
+      },
+      "karan:pass1": {
+        "voted_rows": 17,
+        "rows_matching_context_entity_class": 3,
+        "share": 0.17647058823529413
+      },
+      "meer:pass1": {
+        "voted_rows": 17,
+        "rows_matching_context_entity_class": 3,
+        "share": 0.17647058823529413
+      }
+    },
+    "adjudicated_items": 0,
+    "votes_path": "/Users/karan/Documents/Capstone_project/data/benchmark/pilot_votes.jsonl",
+    "labels_path": "/Users/karan/Documents/Capstone_project/data/benchmark/pilot_labels_annotated.jsonl",
+    "disagreements_path": "/Users/karan/Documents/Capstone_project/reports/phase1_pilot_disagreements.csv",
+    "log_entries_added": [
+      {
+        "event": "ingest",
+        "rater_id": "akash",
+        "pass_no": 1,
+        "timestamp": "2026-09-25T07:03:33.733164+00:00",
+        "rows_voted": 17,
+        "rows_blank": 0,
+        "rows_not_obligation": 1,
+        "minutes": 45.0,
+        "minutes_basis": "recalled_estimate",
+        "label_source": "manual"
+      }
+    ]
+  }
+}

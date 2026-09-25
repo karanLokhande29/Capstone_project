@@ -30,6 +30,7 @@ import pytest
 
 from src.benchmark.annotation import (
     ROUTE_ADJUDICATED,
+    ROUTE_CONSENSUS,
     ROUTE_NEEDS_ADJUDICATION,
     ROUTE_NOT_OBLIGATION,
     ROUTE_PASS1_ONLY,
@@ -45,6 +46,7 @@ from src.benchmark.annotation import (
     build_annotation_tasks,
     build_pass2_tasks,
     cohen_kappa,
+    consensus_raters,
     draw_retest_set,
     label_route,
     load_adjudications,
@@ -348,7 +350,11 @@ def test_second_rater_disagreement_blocks_an_otherwise_consistent_retest(env):
     assert not by_id[labels[1].label_id].is_validated
     # The items the second rater agreed on are unaffected.
     assert by_id[labels[0].label_id].is_validated
-    assert label_route(by_id[labels[0].label_id]) == ROUTE_RETEST_CONSISTENT
+    # P1-004: with a second human rater present, an agreed item is promoted on
+    # the CONSENSUS route rather than the single-expert retest route. Same
+    # outcome, and the provenance now names both raters who agreed.
+    assert label_route(by_id[labels[0].label_id]) == ROUTE_CONSENSUS
+    assert consensus_raters(by_id[labels[0].label_id]) == ["akash", "karan"]
 
 
 # -- 6. adjudication ----------------------------------------------------------
@@ -690,6 +696,27 @@ def test_legacy_roster_files_are_ignored_and_never_deleted(env, caplog):
 # -- 12. no Fleiss' kappa below three raters ----------------------------------
 
 
+def _fleiss_keys(node, path="") -> list[str]:
+    """Every key anywhere in the structure whose name mentions Fleiss.
+
+    Scans keys rather than the serialised blob: the metrics carry prose that
+    names `fleiss_three_raters` when explaining what is and is not reported,
+    and a substring search over the whole dump would trip on the explanation
+    instead of on a statistic.
+    """
+    found = []
+    if isinstance(node, dict):
+        for key, value in node.items():
+            here = f"{path}.{key}" if path else str(key)
+            if "fleiss" in str(key).lower():
+                found.append(here)
+            found += _fleiss_keys(value, here)
+    elif isinstance(node, list):
+        for i, value in enumerate(node):
+            found += _fleiss_keys(value, f"{path}[{i}]")
+    return found
+
+
 def test_primary_plus_one_second_rater_produces_no_numeric_fleiss_key(env):
     cfg = _cfg(second_raters=["akash"])
     labels = _candidates(4, resolver=env)
@@ -700,8 +727,7 @@ def test_primary_plus_one_second_rater_produces_no_numeric_fleiss_key(env):
     votes = load_votes(cfg, candidates=labels, resolver=env)
     agreement = measure_agreement(votes, cfg)
 
-    flat = json.dumps(agreement)
-    assert "fleiss" not in flat.lower(), f"no fleiss key may exist with 2 raters: {flat}"
+    assert _fleiss_keys(agreement) == [], "no fleiss key may exist with 2 human raters"
     assert agreement["second_rater"]["raters"]["akash"]["n_items"] == 4
 
 
@@ -712,7 +738,7 @@ def test_solo_annotator_produces_no_fleiss_key_and_says_why(env):
     votes = load_votes(CFG, candidates=labels, resolver=env)
     agreement = measure_agreement(votes, CFG)
 
-    assert "fleiss" not in json.dumps(agreement).lower()
+    assert _fleiss_keys(agreement) == [], "no fleiss key may exist with one annotator"
     assert agreement["second_rater"]["status"] == "NOT YET MEASURED — no second rater configured"
     assert "NOT YET MEASURED" in agreement["test_retest"]["status"]
 
@@ -730,10 +756,17 @@ def test_three_real_raters_do_get_a_fleiss_figure(env):
             lbl.label_id: _vote(flag=flags[i]) for i, lbl in enumerate(labels)
         })
 
-    agreement = measure_agreement(load_votes(cfg, candidates=labels, resolver=env), cfg)
-    fleiss = agreement["second_rater"]["fleiss_kappa_flag"]
+    # P1-004 moved this to a single, human-filtered key. The old
+    # second_rater.fleiss_kappa_flag counted the configured roster, which would
+    # have reported a three-rater figure for two humans plus an AI-assisted one.
+    agreement = measure_agreement(
+        load_votes(cfg, candidates=labels, resolver=env), cfg,
+        raters=["karan", "akash", "meer"],
+    )
+    fleiss = agreement["fleiss_three_raters"]
     assert fleiss["n_items"] == 4
     assert fleiss["kappa"] == pytest.approx(1.0)
+    assert _fleiss_keys(agreement) == ["fleiss_three_raters"], "exactly one Fleiss key"
 
 
 # -- 13. tautology share ------------------------------------------------------

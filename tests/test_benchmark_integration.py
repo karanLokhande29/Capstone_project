@@ -264,8 +264,9 @@ def test_solo_protocol_end_to_end_through_the_cli(tmp_path, real_paragraphs, mon
     assert "span_text" not in disagreement_columns
     assert "label_id" in disagreement_columns and "category" in disagreement_columns
 
-    # No numeric Fleiss' kappa can exist with one rater.
-    assert "fleiss" not in json.dumps(metrics["agreement"]).lower()
+    # No Fleiss' kappa key can exist with one human rater.
+    from tests.test_benchmark_solo_protocol import _fleiss_keys
+    assert _fleiss_keys(metrics["agreement"]) == []
 
     # `report` touched nothing under data/benchmark/.
     after = {

@@ -37,13 +37,19 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.benchmark.alignment_check import cross_class_alignment, faq_enforcement_check  # noqa: E402
 from src.benchmark.annotation import (  # noqa: E402
     ANNOTATION_LOG_FILENAME,
+    LABEL_SOURCE_AI,
+    LABEL_SOURCE_MANUAL,
+    MINUTES_BASIS_MEASURED,
+    MINUTES_BASIS_RECALLED,
     NOT_YET_MEASURED,
+    ROUTE_CONSENSUS,
     ROUTE_ADJUDICATED,
     ROUTE_NEEDS_ADJUDICATION,
     ROUTE_NOT_OBLIGATION,
     ROUTE_PASS1_ONLY,
     ROUTE_RETEST_CONSISTENT,
     ROUTE_SINGLE_PASS,
+    VALID_LABEL_SOURCES,
     VOTE_BLANK,
     VOTE_NOT_OBLIGATION,
     VOTE_VOTED,
@@ -54,6 +60,8 @@ from src.benchmark.annotation import (  # noqa: E402
     build_pass2_tasks,
     disagreement_rows,
     draw_retest_set,
+    human_raters,
+    load_ai_diagnostic_votes,
     load_adjudications,
     load_candidates,
     load_retest_set,
@@ -91,6 +99,7 @@ DISAGREEMENTS_FILENAME = "phase1_pilot_disagreements.csv"
 
 #: Validation routes in the order the report lists them.
 REPORT_ROUTES = (
+    ROUTE_CONSENSUS,
     ROUTE_RETEST_CONSISTENT,
     ROUTE_SINGLE_PASS,
     ROUTE_ADJUDICATED,
@@ -177,8 +186,17 @@ def _merge_ingest_metrics(resolver, new: dict) -> dict:
         except json.JSONDecodeError:
             existing = {}
 
+    # Merge per pass, never clobbering a recorded figure with a null. Each
+    # `ingest --rater X` run only knows X's minutes, so a plain dict.update()
+    # would wipe the minutes recorded for every other rater on the run before.
     passes = dict(existing.get("passes", {}))
-    passes.update(new.get("passes", {}))
+    for key, incoming in (new.get("passes", {}) or {}).items():
+        merged_pass = dict(passes.get(key, {}))
+        for field, value in incoming.items():
+            if value is None and merged_pass.get(field) is not None:
+                continue
+            merged_pass[field] = value
+        passes[key] = merged_pass
 
     merged = {**existing, **new, "passes": passes}
     write_json(path, merged)
@@ -189,6 +207,7 @@ def run_ingest(cfg, resolver, logger, args) -> dict:
     primary = primary_annotator(cfg)
     rater = args.rater or primary
     minutes = _parse_minutes(args.minutes)
+    minutes_basis = args.minutes_basis
 
     candidates = load_candidates(resolver)
     votes = load_votes(cfg, candidates=candidates, resolver=resolver, logger=logger)
@@ -200,16 +219,35 @@ def run_ingest(cfg, resolver, logger, args) -> dict:
             cfg, candidates=candidates, resolver=resolver, logger=logger
         )
 
+    # The label_source for THIS rater is recorded before the roster is read
+    # back, so an ai_assisted declaration takes effect in the same run that
+    # declares it rather than only on the next one.
+    if args.label_source:
+        append_annotation_log(resolver, {
+            "event": "label_source",
+            "rater_id": rater,
+            "pass_no": args.pass_no,
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "label_source": args.label_source,
+        })
+
+    humans = human_raters(cfg, resolver, logger=logger)
+    ai_votes = load_ai_diagnostic_votes(
+        cfg, candidates=candidates, resolver=resolver, logger=logger
+    )
+
     merged = merge_votes(
         candidates, votes, cfg, retest_ids=retest_ids,
-        adjudications=adjudications, logger=logger,
+        adjudications=adjudications, logger=logger, human_rater_ids=humans,
     )
     promoted = promote_validated(merged, cfg, logger=logger)
 
     votes_path = persist_votes(votes, cfg, resolver=resolver)
     labels_path = persist_labels(promoted, cfg, "pilot_labels_annotated.jsonl", resolver=resolver)
 
-    agreement = measure_agreement(votes, cfg, logger=logger)
+    agreement = measure_agreement(
+        votes, cfg, logger=logger, resolver=resolver, ai_votes=ai_votes, raters=humans,
+    )
     routes = route_counts(promoted)
 
     # One log entry per (rater, pass) actually present in this ingest.
@@ -228,6 +266,8 @@ def run_ingest(cfg, resolver, logger, args) -> dict:
             "rows_blank": counts[VOTE_BLANK],
             "rows_not_obligation": counts[VOTE_NOT_OBLIGATION],
             "minutes": minutes.get(rater),
+            "minutes_basis": minutes_basis if minutes.get(rater) is not None else None,
+            "label_source": args.label_source or LABEL_SOURCE_MANUAL,
         }
         append_annotation_log(resolver, entry)
         logged.append(entry)
@@ -257,6 +297,11 @@ def run_ingest(cfg, resolver, logger, args) -> dict:
         writer.writeheader()
         writer.writerows(rows)
 
+    sources = {
+        e["rater_id"]: e.get("label_source")
+        for e in read_annotation_log(resolver).get("entries", [])
+        if e.get("rater_id") and e.get("label_source")
+    }
     per_pass = {}
     for key in sorted({v.rater_key for v in votes}):
         pass_votes = [v for v in votes if v.rater_key == key]
@@ -266,12 +311,25 @@ def run_ingest(cfg, resolver, logger, args) -> dict:
             "rows_blank": counts[VOTE_BLANK],
             "rows_not_obligation": counts[VOTE_NOT_OBLIGATION],
             "minutes": minutes.get(pass_votes[0].rater_id) if pass_votes else None,
+            "minutes_basis": (
+                minutes_basis
+                if pass_votes and minutes.get(pass_votes[0].rater_id) is not None
+                else None
+            ),
+            "label_source": sources.get(pass_votes[0].rater_id) if pass_votes else None,
         }
 
     metrics = {
         "protocol": "single_expert_retest",
         "solo_protocol_from": SOLO_PROTOCOL_FROM,
         "primary_annotator": primary,
+        "human_raters": humans,
+        "label_sources": {
+            e["rater_id"]: e.get("label_source")
+            for e in read_annotation_log(resolver).get("entries", [])
+            if e.get("rater_id") and e.get("label_source")
+        },
+        "guidelines_version": "v1",
         "items_total": len(promoted),
         "items_validated": sum(1 for lbl in promoted if lbl.is_validated),
         "retest_set_size": len(retest_ids),
@@ -785,6 +843,59 @@ def _write_report(cfg, resolver: PathResolver, logger) -> Path:
     else:
         lines += [f"- {NOT_YET_MEASURED} — no pass has been ingested.", ""]
 
+    pairwise = agreement.get("pairwise", {})
+    if isinstance(pairwise, dict) and "status" not in pairwise:
+        lines += [
+            "#### Inter-rater agreement — independent human raters",
+            "",
+            "Unlike the test-retest block below, **this is genuine inter-rater agreement**: "
+            "different people labelling the same items. Each rater's pass 1 is used, so no "
+            "pair is contaminated by the retest.",
+            "",
+        ]
+        for key, block in sorted(pairwise.items()):
+            lines += _comparison_lines(block, title=key.replace("__vs__", " vs "))
+    else:
+        lines += [
+            "#### Inter-rater agreement — independent human raters",
+            "",
+            f"- {pairwise.get('status', NOT_YET_MEASURED) if isinstance(pairwise, dict) else NOT_YET_MEASURED}",
+            "",
+        ]
+
+    fleiss = agreement.get("fleiss_three_raters")
+    if isinstance(fleiss, dict):
+        lines += [
+            f"- **Fleiss' κ over {len(fleiss.get('raters', []))} human raters "
+            f"({', '.join(fleiss.get('raters', []))}): "
+            f"{_fmt(fleiss.get('kappa'))}** (n={fleiss.get('n_items', '?')} items every "
+            "rater voted on)",
+            "",
+        ]
+
+    no_block = agreement.get("not_obligation_agreement", {})
+    if isinstance(no_block, dict) and no_block.get("n_items"):
+        lines += [
+            f"- **Is-it-an-obligation agreement: {_fmt(no_block.get('agreement_rate'))}** "
+            f"(n={no_block['n_items']}; unanimous obligation "
+            f"{no_block.get('unanimous_is_an_obligation', 0)}, unanimous not-an-obligation "
+            f"{no_block.get('unanimous_not_an_obligation', 0)}, split {no_block.get('split', 0)}). "
+            "This measures candidate precision — whether the keyword heuristic surfaced a "
+            "real obligation — which is the question the pilot is best placed to answer.",
+            "",
+        ]
+
+    diag = agreement.get("human_ai_diagnostic", {})
+    if isinstance(diag, dict) and diag.get("comparisons"):
+        lines += [
+            "#### Human-AI diagnostic — NOT a reliability statistic",
+            "",
+            f"> {diag.get('warning', '')}",
+            "",
+        ]
+        for key, block in sorted(diag["comparisons"].items()):
+            lines += _comparison_lines(block, title=key.replace("__vs__", " vs "))
+
     lines += _comparison_lines(
         agreement.get("test_retest", {}),
         title=(
@@ -921,6 +1032,18 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--minutes", action="append", metavar="RATER=N",
         help="minutes that pass took, e.g. --minutes karan=45. Repeatable.",
+    )
+    parser.add_argument(
+        "--minutes-basis", choices=(MINUTES_BASIS_MEASURED, MINUTES_BASIS_RECALLED),
+        default=MINUTES_BASIS_RECALLED,
+        help="how the --minutes figure was obtained. A recalled estimate is not a "
+             "measurement and every figure derived from one is labelled with its basis.",
+    )
+    parser.add_argument(
+        "--label-source", choices=VALID_LABEL_SOURCES, default=None,
+        help="who produced this rater's labels. 'ai_assisted' records the file as a "
+             "human-AI diagnostic: its votes are excluded from every reliability statistic "
+             "and can never promote an item.",
     )
     parser.add_argument(
         "--allow-short-gap", action="store_true",

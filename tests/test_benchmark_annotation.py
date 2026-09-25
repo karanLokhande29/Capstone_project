@@ -391,8 +391,8 @@ def test_measure_agreement_never_reports_a_fleiss_key_for_one_annotator(tmp_path
     votes = _votes_from(resolver, labels, {
         1: {labels[0].label_id: {"applies_to": "Commercial Banks", "differential_flag": "shared"}},
     })
-    import json as _json
-    assert "fleiss" not in _json.dumps(measure_agreement(votes, CFG)).lower()
+    from tests.test_benchmark_solo_protocol import _fleiss_keys
+    assert _fleiss_keys(measure_agreement(votes, CFG)) == []
 
 
 # -- task files: generation and ingestion round-trip --------------------------

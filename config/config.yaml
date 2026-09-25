@@ -74,6 +74,11 @@ network:
   request_timeout_sec: 60
   # Courtesy delay between successive requests to the same host.
   rate_limit_sec: 1.5
+  # P1-004: how many times a download that returns HTML where a PDF was
+  # expected is retried, re-warming the listing page before each attempt. The
+  # first harvest treated one HTML body as a permanent failure and lost 81
+  # Directions to what looks like a session-level block.
+  payload_retries: 3
 
   # ---------------------------------------------------------------------------
   # phase1/akash-scraper block. Owned by this branch; edited only here.
@@ -166,7 +171,34 @@ benchmark:
   # second-rater comparison. Each statistic is labelled by what it is.
   # -------------------------------------------------------------------------
   primary_annotator: karan
-  second_raters: []          # e.g. [akash] only if that person has agreed to label
+
+  # P1-004: Akash and Meer each labelled the same 18 pilot items independently
+  # and returned their files, so the pilot has three human raters after all.
+  # A rater listed here counts as a human vote ONLY while their recorded
+  # label_source in annotation_log.json is `manual` — see ai_diagnostic_files.
+  second_raters: [akash, meer]
+
+  # Files whose labels were produced with AI assistance. They are read as a
+  # human-AI agreement DIAGNOSTIC and are never raters: they never enter
+  # pairwise kappa, never enter Fleiss' kappa, and can never promote an item.
+  # Paths are relative to the `benchmark` path key. Empty for the pilot, since
+  # all three files were declared `manual` on 2026-09-25.
+  ai_diagnostic_files: []
+
+  # P1-004, declared by Karan 2026-09-25. The pilot was run PARTIALLY ANCHORED:
+  # Karan filled `applies_to` once and gave Akash and Meer files with that
+  # column already populated, so each rater independently judged
+  # `differential_flag` and wrote their own rationale, but nobody re-formed the
+  # applicability judgment. Consequences, enforced in code by
+  # judgment_column_independence():
+  #   * differential_flag agreement IS a real three-rater measurement;
+  #   * every applies_to agreement figure is suppressed, because it would read
+  #     1.0 by construction and would be reported as RQ1 reliability;
+  #   * the flag agreement is conditional on a shared applicability premise,
+  #     which the report states.
+  # Phase 2 must have each rater form applies_to independently.
+  applies_to_source: karan_prefilled_pilot_only
+
   promotion_policy: single_expert_retest
 
   retest:
