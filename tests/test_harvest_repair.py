@@ -665,3 +665,23 @@ def test_repair_stops_when_a_consistency_check_fails(cfg, resolver, monkeypatch)
     assert metrics["stopped_at"] == "consistency"
     assert "must not be published" in metrics["error"]
     assert "xref" not in metrics["stages_run"]
+
+
+def test_the_corpus_v1_zip_excludes_cache_and_annotations(tmp_path):
+    """The upload is exactly the corpus: no cache, no filled task files."""
+    from scripts.package_p1004 import build_corpus_v1_zip
+
+    root = tmp_path
+    for rel in ("data/metadata/document_manifest.jsonl", "data/extracted/md_1.txt",
+                "data/processed/md_1.jsonl", "data/matrix/matrix.json",
+                "data/cache/smoke/probe.bin", "data/benchmark/pilot_candidates.jsonl",
+                "data/benchmark/tasks/annotation_karan.csv"):
+        p = root / rel
+        p.parent.mkdir(parents=True, exist_ok=True)
+        p.write_text("x", encoding="utf-8")
+
+    names = zipfile.ZipFile(build_corpus_v1_zip(root, root / "v1.zip")).namelist()
+    assert "data/benchmark/pilot_candidates.jsonl" in names
+    assert "data/metadata/document_manifest.jsonl" in names
+    assert not any(n.startswith("data/cache") for n in names)
+    assert not any("annotation_" in n for n in names)

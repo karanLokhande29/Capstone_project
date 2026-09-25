@@ -106,6 +106,29 @@ def build_return_zip(root: Path | str, out: Path | str | None = None) -> Path:
     return _write_zip(root, out, files)
 
 
+def build_corpus_v1_zip(root: Path | str, out: Path | str | None = None) -> Path:
+    """laptop -> Kaggle: the corpus as it stands, for the repair to work from.
+
+    Deliberately **without** ``data/cache``: the 299 downloaded PDFs are not on
+    this machine, and the handful of cache entries that are (a smoke-test
+    fixture, a scraper probe) are not corpus payload. Shipping them would put
+    unrelated bytes in a Dataset that is meant to be exactly the corpus.
+
+    Carries ``pilot_candidates.jsonl`` so the pilot-join check can verify the
+    18 annotated spans still resolve after re-segmentation — but no filled
+    ``annotation_*.csv``, which Kaggle has no use for and must never see.
+    """
+    root = Path(root)
+    out = Path(out) if out else root / "rbi-oblibench-corpus-v1.zip"
+
+    files = _iter_files(root, CORPUS_DIRS)
+    candidates = root / "data/benchmark/pilot_candidates.jsonl"
+    if candidates.is_file():
+        files.append(candidates)
+
+    return _write_zip(root, out, files)
+
+
 def build_corpus_v2_zip(root: Path | str, out: Path | str | None = None) -> Path:
     """Kaggle -> Kaggle Dataset: the repaired corpus for the next notebook run.
 
@@ -128,13 +151,18 @@ def main(argv: list[str] | None = None) -> int:
     import argparse
 
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("which", choices=["return", "corpus-v2", "both"])
+    parser.add_argument("which", choices=["return", "corpus-v1", "corpus-v2", "both"])
     parser.add_argument("--root", default=".")
     parser.add_argument("--out-dir", default=None)
     args = parser.parse_args(argv)
 
     root = Path(args.root).resolve()
     out_dir = Path(args.out_dir).resolve() if args.out_dir else root
+
+    if args.which == "corpus-v1":
+        path = build_corpus_v1_zip(root, out_dir / "rbi-oblibench-corpus-v1.zip")
+        print(f"{path}  ({path.stat().st_size / 1e6:.1f} MB)")
+        return 0
 
     if args.which in ("return", "both"):
         path = build_return_zip(root, out_dir / "p1004_return.zip")
