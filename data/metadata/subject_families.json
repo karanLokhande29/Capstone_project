@@ -1,6 +1,6 @@
 {
   "kind": "subject_family",
-  "term_count": 56,
+  "term_count": 57,
   "terms": [
     {
       "term_id": "sf_acceptance_of_public_deposits",
@@ -31,7 +31,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13166",
+      "first_seen_document_id": "md_13086",
       "occurrence_count": 4,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -75,7 +75,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13147",
+      "first_seen_document_id": "md_12949",
       "occurrence_count": 9,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -97,7 +97,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13164",
+      "first_seen_document_id": "md_12962",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -119,7 +119,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13160",
+      "first_seen_document_id": "md_13005",
       "occurrence_count": 7,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -130,7 +130,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13148",
+      "first_seen_document_id": "md_12950",
       "occurrence_count": 9,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -141,7 +141,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13138",
+      "first_seen_document_id": "md_12940",
       "occurrence_count": 3,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -152,7 +152,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13645",
+      "first_seen_document_id": "md_13593",
       "occurrence_count": 6,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -163,7 +163,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13152",
+      "first_seen_document_id": "md_12953",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -174,7 +174,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13644",
+      "first_seen_document_id": "md_13608",
       "occurrence_count": 5,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -185,7 +185,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13155",
+      "first_seen_document_id": "md_13027",
       "occurrence_count": 4,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -207,7 +207,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13156",
+      "first_seen_document_id": "md_12957",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -218,7 +218,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13154",
+      "first_seen_document_id": "md_12929",
       "occurrence_count": 9,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -229,7 +229,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13153",
+      "first_seen_document_id": "md_12954",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -240,7 +240,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13643",
+      "first_seen_document_id": "md_13583",
       "occurrence_count": 7,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -251,7 +251,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13095",
+      "first_seen_document_id": "md_13001",
       "occurrence_count": 3,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -262,7 +262,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13163",
+      "first_seen_document_id": "md_13008",
       "occurrence_count": 7,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -273,7 +273,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13642",
+      "first_seen_document_id": "md_13591",
       "occurrence_count": 5,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -284,7 +284,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13143",
+      "first_seen_document_id": "md_12945",
       "occurrence_count": 9,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -306,7 +306,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13641",
+      "first_seen_document_id": "md_13590",
       "occurrence_count": 9,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -317,7 +317,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13161",
+      "first_seen_document_id": "md_12960",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -328,7 +328,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13146",
+      "first_seen_document_id": "md_12948",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -339,7 +339,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13157",
+      "first_seen_document_id": "md_13003",
       "occurrence_count": 7,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -350,7 +350,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13149",
+      "first_seen_document_id": "md_12996",
       "occurrence_count": 6,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -361,7 +361,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13640",
+      "first_seen_document_id": "md_13589",
       "occurrence_count": 6,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -372,7 +372,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13141",
+      "first_seen_document_id": "md_12927",
       "occurrence_count": 10,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -405,7 +405,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13139",
+      "first_seen_document_id": "md_12925",
       "occurrence_count": 9,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -421,13 +421,24 @@
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
     {
+      "term_id": "sf_minimum_capital_requirements_for_market_risk",
+      "canonical_name": "Minimum Capital Requirements for Market Risk",
+      "kind": "subject_family",
+      "aliases": [],
+      "source": "derived:title_strip_entity_class",
+      "definition": null,
+      "first_seen_document_id": "md_13705",
+      "occurrence_count": 1,
+      "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
+    },
+    {
       "term_id": "sf_miscellaneous",
       "canonical_name": "Miscellaneous",
       "kind": "subject_family",
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13136",
+      "first_seen_document_id": "md_12931",
       "occurrence_count": 19,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -449,7 +460,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13159",
+      "first_seen_document_id": "md_12959",
       "occurrence_count": 9,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -460,7 +471,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13328",
+      "first_seen_document_id": "md_13321",
       "occurrence_count": 4,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -482,7 +493,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13015",
+      "first_seen_document_id": "md_12944",
       "occurrence_count": 3,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -515,7 +526,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13145",
+      "first_seen_document_id": "md_12947",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -526,7 +537,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13158",
+      "first_seen_document_id": "md_12982",
       "occurrence_count": 3,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -537,7 +548,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13140",
+      "first_seen_document_id": "md_12942",
       "occurrence_count": 9,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -548,7 +559,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13150",
+      "first_seen_document_id": "md_12951",
       "occurrence_count": 4,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -559,7 +570,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13639",
+      "first_seen_document_id": "md_13588",
       "occurrence_count": 7,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -570,7 +581,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13638",
+      "first_seen_document_id": "md_13584",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -581,7 +592,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13151",
+      "first_seen_document_id": "md_12952",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -592,7 +603,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13144",
+      "first_seen_document_id": "md_12928",
       "occurrence_count": 9,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -603,7 +614,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13162",
+      "first_seen_document_id": "md_12961",
       "occurrence_count": 8,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     },
@@ -614,7 +625,7 @@
       "aliases": [],
       "source": "derived:title_strip_entity_class",
       "definition": null,
-      "first_seen_document_id": "md_13165",
+      "first_seen_document_id": "md_12963",
       "occurrence_count": 7,
       "notes": "DERIVED, not harvested: DocumentRecord.subject_family_raw is null for every document in this corpus (RBI's listing carries no subject-family taxonomy). This term was inferred by removing the known entity_class_raw string from DocumentRecord.title on a word boundary and stripping RBI/Directions/date boilerplate from the residual. Treat as inferred metadata, not as RBI's own classification."
     }

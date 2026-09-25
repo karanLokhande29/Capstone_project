@@ -30,7 +30,7 @@
   "subject_family": {
     "counts": {
       "raw": 0,
-      "derived": 56,
+      "derived": 57,
       "mixed": 0
     },
     "by_canonical_name": {
@@ -72,6 +72,7 @@
       "Licensing, Scheduling and Regulatory Classification": "derived",
       "Managing Risks in Outsourcing": "derived",
       "Microfinance Institution": "derived",
+      "Minimum Capital Requirements for Market Risk": "derived",
       "Miscellaneous": "derived",
       "Peer to Peer Lending Platform": "derived",
       "Prudential Norms on Capital Adequacy": "derived",

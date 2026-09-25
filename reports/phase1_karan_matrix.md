@@ -23,9 +23,9 @@ Every `subject_family` value in this corpus is **inferred**, not harvested. It i
 
 ## Vocabulary discovery
 
-- Documents scanned: **380**
+- Documents scanned: **381**
 - Entity classes discovered: **19** (dossier estimate: ~11 — reported as a finding, not corrected toward it)
-- Subject families discovered: **56** (dossier estimate: ~26 — reported as a finding, not corrected toward it)
+- Subject families discovered: **57** (dossier estimate: ~26 — reported as a finding, not corrected toward it)
 - Entity-class unresolved documents: **0**
 - Subject-family unresolved documents: **76**
 
@@ -36,7 +36,7 @@ Each `VocabularyTerm.source` now carries a machine-readable prefix, so harvested
 | Axis | raw | derived | mixed |
 |---|---|---|---|
 | `entity_class` | **19** | 0 | 0 |
-| `subject_family` | 0 | **56** | 0 |
+| `subject_family` | 0 | **57** | 0 |
 
 - `raw:rbi_listing_entity_class_heading` — harvested from a real field, then normalised.
 - `derived:title_strip_entity_class` — inferred from the title; no raw source exists.
@@ -73,10 +73,10 @@ P1-002 reported a single combined figure (76/380, 20%). That number conflates tw
 
 | Measure | Value |
 |---|---|
-| `entity_class` unresolved rate (**raw-sourced**) | **0.0** (0/380) |
-| `subject_family` unresolved rate (combined) | **0.2** (76/380) |
+| `entity_class` unresolved rate (**raw-sourced**) | **0.0** (0/381) |
+| `subject_family` unresolved rate (combined) | **0.1994750656167979** (76/381) |
 | `subject_family` unresolved rate (**raw-sourced only**) | **NOT MEASURABLE — no raw-sourced subject_family values exist in this corpus** |
-| Documents with a derived `subject_family` | 380 / 380 |
+| Documents with a derived `subject_family` | 381 / 381 |
 
 **Reading this:** the raw-sourced subject-family rate is reported as `NOT MEASURABLE`, not `0.0` — there are no raw subject-family values in this corpus, so reporting 0% would falsely imply raw values were examined and found clean. The distinction is the whole point of the split.
 
@@ -94,22 +94,22 @@ Documents where the entity-class substring cannot be found in the title at all (
 
 ## Normalization
 
-- Documents normalised: **380**
+- Documents normalised: **381**
 - Entity-class extraction coverage: **1.0**
-- Subject-family extraction coverage: **0.8**
-- Documents with paragraphs normalised: **299**
-- Documents missing paragraphs (not downloaded/extracted by Akash's run): **81**
-- Total paragraphs normalised: **51853**
+- Subject-family extraction coverage: **0.800524934383202**
+- Documents with paragraphs normalised: **381**
+- Documents missing paragraphs (not downloaded/extracted by Akash's run): **0**
+- Total paragraphs normalised: **76188**
 - `*_raw` fields verified unchanged: **True** (checked programmatically for every document, not spot-checked)
 
 ## Subject x Entity-Class Matrix
 
-- Total cells (entity classes x subject families): **1064**
-- Populated cells: **295**
-- Missing cells: **769**
+- Total cells (entity classes x subject families): **1083**
+- Populated cells: **296**
+- Missing cells: **787**
 - Ambiguous cells: **9**
 - Duplicate-mapping cells (>1 source Direction): **9**
-- Matrix coverage (populated / total): **0.27725563909774437**
+- Matrix coverage (populated / total): **0.27331486611265005**
 
 ### On the ambiguous cells
 

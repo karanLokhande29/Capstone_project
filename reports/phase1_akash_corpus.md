@@ -4,7 +4,7 @@ Run scope: **full corpus** (pipeline stage: `report-only`)
 
 ## Discovery
 
-- Documents discovered: **380**
+- Documents discovered: **381**
 - Downloads attempted: **NOT YET MEASURED**
 - Downloads successful: **NOT YET MEASURED**
 - Downloads failed: **NOT YET MEASURED**
@@ -49,7 +49,7 @@ Cross-document references (to other Directions, circulars, or the Banking Regula
 
 ## Temporal signal (`update_date`)
 
-- Documents carrying an "(Updated as on ...)" stamp in this run's manifest: **162 / 380** (0.426)
+- Documents carrying an "(Updated as on ...)" stamp in this run's manifest: **162 / 381** (0.425)
 - Extracted verbatim from the title via `src.extraction.temporal_signals`; not parsed into a structured date, and not cross-checked against the listing's own per-block date sub-heading (see that module's docstring for why the two are not interchangeable).
 
 ## FAQ / enforcement supplementary sample
@@ -67,10 +67,10 @@ _Repaired by P1-004 (Karan, solo)._ A corpus-level download rate is not enough f
 |---|---|---|---|
 | All India Financial Institutions | — | 23/23 | 100.0% |
 | Asset Reconstruction Companies | — | 5/5 | 100.0% |
-| Banker and Debt Manager to Government | — | 0/2 | 0.0% **(below 90%)** |
-| Banker to Governments and Banks | — | 0/2 | 0.0% **(below 90%)** |
-| Commercial Banks | — | 9/44 | 20.5% **(below 90%)** |
-| Consumer Education and Protection | — | 0/7 | 0.0% **(below 90%)** |
+| Banker and Debt Manager to Government | — | 2/2 | 100.0% |
+| Banker to Governments and Banks | — | 2/2 | 100.0% |
+| Commercial Banks | — | 45/45 | 100.0% |
+| Consumer Education and Protection | — | 7/7 | 100.0% |
 | Credit Information Companies | — | 4/4 | 100.0% |
 | Financial Inclusion and Development | — | 8/8 | 100.0% |
 | Financial Market | — | 18/18 | 100.0% |
@@ -79,11 +79,9 @@ _Repaired by P1-004 (Karan, solo)._ A corpus-level download rate is not enough f
 | Local Area Banks | — | 33/33 | 100.0% |
 | Non-Banking Financial Companies | — | 44/44 | 100.0% |
 | Payment and Settlement System | — | 9/9 | 100.0% |
-| Payments Banks | — | 23/27 | 85.2% **(below 90%)** |
+| Payments Banks | — | 27/27 | 100.0% |
 | Regional Rural Banks | — | 26/26 | 100.0% |
 | Rural Co-operative Banks | — | 29/29 | 100.0% |
-| Small Finance Banks | — | 9/40 | 22.5% **(below 90%)** |
+| Small Finance Banks | — | 40/40 | 100.0% |
 | Urban Co-operative Banks | — | 36/36 | 100.0% |
-| **Overall** | — | **299/380** | **78.7%** |
-
-**WARNING — 6 class(es) below 90%:** Banker and Debt Manager to Government, Banker to Governments and Banks, Commercial Banks, Consumer Education and Protection, Payments Banks, Small Finance Banks. Any RQ1 or RQ2 claim scoped to these classes rests on a partial corpus, and the audit should read it that way.
+| **Overall** | — | **381/381** | **100.0%** |

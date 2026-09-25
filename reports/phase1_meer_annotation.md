@@ -14,16 +14,16 @@
 
 ## 1. Corpus QA (independent of P1-001's own metrics)
 
-_source: `reports/phase1_meer_all_metrics.json`, written 2026-08-23T11:49:46+00:00_
+_source: `reports/phase1_meer_qa_metrics.json`, written 2026-09-25T11:49:05+00:00_
 
-- Paragraphs checked: **51853** across **299** documents
-- Missing `section_id`: **340** (**0.0066**)
-- Missing `clause_path`: **340** (**0.0066**)
+- Paragraphs checked: **76188** across **381** documents
+- Missing `section_id`: **440** (**0.0058**)
+- Missing `clause_path`: **438** (**0.0057**)
 - Duplicate `paragraph_id`s: **0**
 - Empty text: **0**
 - Missing `source_url`: **0**
 - Missing `entity_class` (raw-sourced axis): **0** (**0.0000**)
-- Missing `subject_family` (**derived** axis): **8008** (**0.1544**)
+- Missing `subject_family` (**derived** axis): **9188** (**0.1206**)
 - Records re-validated against `ParagraphRecord` schema: **500**, failing: **0**
 - Spot-check sample drawn (for manual comparison against `source_url`): **10** paragraphs, listed in `reports/phase1_meer_all_metrics.json`
 
@@ -35,10 +35,10 @@ The `subject_family` gap is materially larger than the `entity_class` gap — a 
 
 ## 2. Week-2 cross-class alignment check (the 60% trigger)
 
-_source: `reports/phase1_meer_all_metrics.json`, written 2026-08-23T11:49:46+00:00_
+_source: `reports/phase1_meer_checks_metrics.json`, written 2026-09-25T11:49:09+00:00_
 
-- Entity classes sampled: ['All India Financial Institutions', 'Local Area Banks', 'Non-Banking Financial Companies']
-- Subject families sampled (**derived axis**): ['Miscellaneous', 'Fraud Risk Management', 'Know Your Customer']
+- Entity classes sampled: ['All India Financial Institutions', 'Commercial Banks', 'Local Area Banks']
+- Subject families sampled (**derived axis**): ['Know Your Customer', 'Miscellaneous', 'Asset Liability Management']
 - Trigger threshold: **60%**
 - Similarity threshold for counting a position as aligned: **0.5** Jaccard
 
@@ -48,14 +48,14 @@ Alignment requires **same structural position AND lexical agreement**. An earlie
 
 | Comparison | Paragraph level | Section level |
 |---|---|---|
-| **Parallel** (same subject, different entity classes — *should* align) | **0.3650** (n=811) | **0.3420** (n=614) |
-| **Baseline** (same entity class, different subjects — should *not* align) | 0.0470 (n=596) | 0.0236 (n=592) |
+| **Parallel** (same subject, different entity classes — *should* align) | **0.3279** (n=738) | **0.2311** (n=541) |
+| **Baseline** (same entity class, different subjects — should *not* align) | 0.0414 (n=604) | 0.0140 (n=573) |
 
 The baseline row is what makes the headline number interpretable: a ~37% parallel rate against a ~5% baseline is real signal (roughly 8x separation), and is still far below the threshold.
 
 ### TRIGGER FIRED: **True**
 
-> TRIGGER FIRED — paragraph-level alignment is 36.5%, BELOW the 60% threshold. Paragraph-level cross-class matching is NOT reliable on this evidence. Section-level alignment was measured as the dossier's suggested fallback and does NOT rescue it (34.2% vs 36.5% at paragraph level) — it is marginally more precise (lower false-positive baseline) but no more complete. Phase 2 should therefore NOT assume either structural level supports reliable one-to-one cross-class matching, and should treat semantic matching as load-bearing rather than as a refinement on top of a working structural match.
+> TRIGGER FIRED — paragraph-level alignment is 32.8%, BELOW the 60% threshold. Paragraph-level cross-class matching is NOT reliable on this evidence. Section-level alignment was measured as the dossier's suggested fallback and does NOT rescue it (23.1% vs 32.8% at paragraph level) — it is marginally more precise (lower false-positive baseline) but no more complete. Phase 2 should therefore NOT assume either structural level supports reliable one-to-one cross-class matching, and should treat semantic matching as load-bearing rather than as a refinement on top of a working structural match.
 
 **Recommendation for Phase 2 (per Section AA):** do **not** proceed on the assumption that structural cross-class matching works. Paragraph-level alignment is well below the dossier's 60% bar, and section-level — the dossier's own suggested fallback — does not rescue it. Phase 2's cross-class matcher should treat semantic matching as load-bearing rather than as a refinement layered on a working structural match, and RQ2's differential-obligation claims should be scoped to what that matcher can actually demonstrate.
 
@@ -65,7 +65,7 @@ The baseline row is what makes the headline number interpretable: a ~37% paralle
 
 ## 3. Week-2 FAQ / enforcement source check
 
-_source: `reports/phase1_meer_all_metrics.json`, written 2026-08-23T11:49:46+00:00_
+_source: `reports/phase1_meer_checks_metrics.json`, written 2026-09-25T11:49:09+00:00_
 
 - FAQ items found: **0**
 - FAQ paragraph-alignment rate: **NOT YET MEASURED**
@@ -124,50 +124,129 @@ Candidate generation is a **keyword heuristic and nothing more** — a feasibili
 
 ### Annotation status and reliability
 
-_no ingest has run: `reports/phase1_annotation_ingest_metrics.json` does not exist_
+_source: `reports/phase1_annotation_ingest_metrics.json`, written 2026-09-25T07:03:33+00:00_
 
 - Items total: **18**
 - Retest set size (drawn before pass 1 was filled): **18**
-- Rows voted in pass 1: **NOT YET MEASURED**
-- Rows voted in pass 2: **NOT YET MEASURED**
-- Rows marked not-an-obligation: **NOT YET MEASURED**
-- Items reaching `validated`: **NOT YET MEASURED**
+- Rows voted in pass 1: **51**
+- Rows voted in pass 2: **0**
+- Rows marked not-an-obligation: **3**
+- Items reaching `validated`: **11**
 
 #### Items per validation route
 
-- NOT YET MEASURED — no pass has been ingested.
+| Route | Items |
+|---|---|
+| `consensus` | 11 |
+| `not-obligation` | 1 |
+| `needs-adjudication` | 6 |
+
+#### Inter-rater agreement — independent human raters
+
+Unlike the test-retest block below, **this is genuine inter-rater agreement**: different people labelling the same items. Each rater's pass 1 is used, so no pair is contaminated by the retest.
+
+**akash vs karan**
+
+- Items compared (a `voted` row on both sides): **17**
+- Cohen's κ (differential_flag): **0.6264** (n=17)
+- Cohen's κ excluding `unlabelled`: **0.6264** (n=17)
+- 95% bootstrap CI for κ: **[0.3014, 0.9045] (1000 resamples used, 0 skipped as undefined)**
+- Raw flag agreement: **0.7647** (the chance-uncorrected baseline κ is measured against)
+- `applies_to` exact set match: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- `applies_to` mean Jaccard: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- Not-obligation consistency: **1.0000** (n=18 items decided on both sides)
+- Disagreement categories: `flag_only`=4, `applies_to_only`=0, `both`=0, `none`=13
+
+**akash vs meer**
+
+- Items compared (a `voted` row on both sides): **17**
+- Cohen's κ (differential_flag): **0.4620** (n=17)
+- Cohen's κ excluding `unlabelled`: **0.4620** (n=17)
+- 95% bootstrap CI for κ: **[-0.0338, 0.8172] (1000 resamples used, 0 skipped as undefined)**
+- Raw flag agreement: **0.7059** (the chance-uncorrected baseline κ is measured against)
+- `applies_to` exact set match: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- `applies_to` mean Jaccard: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- Not-obligation consistency: **1.0000** (n=18 items decided on both sides)
+- Disagreement categories: `flag_only`=5, `applies_to_only`=0, `both`=0, `none`=12
+
+**karan vs meer**
+
+- Items compared (a `voted` row on both sides): **17**
+- Cohen's κ (differential_flag): **0.7198** (n=17)
+- Cohen's κ excluding `unlabelled`: **0.7198** (n=17)
+- 95% bootstrap CI for κ: **[0.3866, 1.0000] (1000 resamples used, 0 skipped as undefined)**
+- Raw flag agreement: **0.8235** (the chance-uncorrected baseline κ is measured against)
+- `applies_to` exact set match: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- `applies_to` mean Jaccard: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- Not-obligation consistency: **1.0000** (n=18 items decided on both sides)
+- Disagreement categories: `flag_only`=3, `applies_to_only`=0, `both`=0, `none`=14
+
+- **Fleiss' κ over 3 human raters (akash, karan, meer): 0.6026** (n=17 items every rater voted on)
+
+- **Is-it-an-obligation agreement: 1.0000** (n=18; unanimous obligation 17, unanimous not-an-obligation 1, split 0). This measures candidate precision — whether the keyword heuristic surfaced a real obligation — which is the question the pilot is best placed to answer.
 
 **Test-retest — karan pass 1 vs karan blind pass 2 (stability of ONE annotator's judgment over time, NOT inter-annotator agreement)**
 
-- NOT YET MEASURED
+- NOT YET MEASURED — pass 2 has not been ingested; run `retest` on or after the earliest allowed date, then `ingest --pass 2`
 
-**Second rater**
+**Second rater — karan pass 1 vs akash**
 
-- NOT YET MEASURED — no second rater configured
+- Items compared (a `voted` row on both sides): **17**
+- Cohen's κ (differential_flag): **0.6264** (n=17)
+- Cohen's κ excluding `unlabelled`: **0.6264** (n=17)
+- 95% bootstrap CI for κ: **[0.3014, 0.9045] (1000 resamples used, 0 skipped as undefined)**
+- Raw flag agreement: **0.7647** (the chance-uncorrected baseline κ is measured against)
+- `applies_to` exact set match: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- `applies_to` mean Jaccard: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- Not-obligation consistency: **1.0000** (n=18 items decided on both sides)
+- Disagreement categories: `flag_only`=4, `applies_to_only`=0, `both`=0, `none`=13
+
+**Second rater — karan pass 1 vs meer**
+
+- Items compared (a `voted` row on both sides): **17**
+- Cohen's κ (differential_flag): **0.7198** (n=17)
+- Cohen's κ excluding `unlabelled`: **0.7198** (n=17)
+- 95% bootstrap CI for κ: **[0.3866, 1.0000] (1000 resamples used, 0 skipped as undefined)**
+- Raw flag agreement: **0.8235** (the chance-uncorrected baseline κ is measured against)
+- `applies_to` exact set match: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- `applies_to` mean Jaccard: **NOT A MEASUREMENT — applies_to was pre-filled from a single source and copied to every rater's file. Each rater judged differential_flag only, so there is nothing to agree about here and the exact-match rate would read 1.0 by construction.**
+- Not-obligation consistency: **1.0000** (n=18 items decided on both sides)
+- Disagreement categories: `flag_only`=3, `applies_to_only`=0, `both`=0, `none`=14
 
 > **Fleiss' κ is absent by design.** It requires three or more raters. With one annotator, or one annotator plus one second rater, the tooling emits no `fleiss` key at all — not even a sentinel — so nothing downstream can surface a number that was never computable.
 
 #### Annotation time
 
-- NOT YET MEASURED — no pass has been ingested.
+| Rater and pass | Voted | Blank | Not obligation | Minutes | Minutes/item |
+|---|---|---|---|---|---|
+| `akash:pass1` | 17 | 0 | 1 | 45.0 | 2.50 |
+| `karan:pass1` | 17 | 0 | 1 | 65.0 | 3.61 |
+| `meer:pass1` | 17 | 0 | 1 | 50.0 | 2.78 |
 
 #### Phase 2 sizing — a PROJECTION, not a measurement
 
 `N_target = (hours x 60) / (minutes_per_item x (1 + r))`, with `r = 0.2` (`benchmark.retest.phase2_fraction`) covering the fraction of Phase 2 items that get a second, blind pass.
 
-- Minutes per item: **NOT YET MEASURED** — no timed pass has been ingested, so `N_target` cannot be projected. Nothing is substituted for it: a guessed rate here becomes a badly wrong Phase 2 schedule later.
+- Measured minutes per item: **2.96**
+- At 10 annotation hours: **N_target ≈ 168 items**
+- At 20 annotation hours: **N_target ≈ 337 items**
+- At 30 annotation hours: **N_target ≈ 506 items**
 
 #### Pass-2 schedule
 
 - Minimum gap: **5 days** (`benchmark.retest.min_gap_days`)
-- Pass-1 ingested at: **NOT YET MEASURED**
-- Earliest allowed pass-2 date: **NOT YET MEASURED — pass 1 has not been ingested**
+- Pass-1 ingested at: **2026-09-25T07:03:33.733164+00:00**
+- Earliest allowed pass-2 date: **2026-09-30T07:03:33+00:00**
 - Pass 2 actually ingested at: **NOT YET MEASURED**
 
 #### Tautology share, per rater and pass
 
-- NOT YET MEASURED — no pass has been ingested.
+| Rater and pass | Voted rows | `applies_to` == source class | Share |
+|---|---|---|---|
+| `akash:pass1` | 17 | 3 | 0.1765 |
+| `karan:pass1` | 17 | 3 | 0.1765 |
+| `meer:pass1` | 17 | 3 | 0.1765 |
 
-> **NOT YET MEASURED: the pilot is generated and ready, not yet annotated.** The pass-1 task file for karan exists under `data/benchmark/tasks/`, carrying every pilot item, and the retest set has been drawn in advance. Test-retest κ, annotation time and disagreement categories cannot be reported until karan completes pass 1, waits 5 days, and completes the blind pass 2. **No annotations were fabricated and no placeholder agreement value was substituted** — a synthesised κ would be worse than no κ, because it would look like evidence.
+A share near 1.0 would mean the annotator was effectively copying `context_entity_class` into `applies_to`, which drains RQ1 of signal even when every label is honestly sourced. It is reported, never enforced.
 
 The ingestion path, the retest and adjudication stages, the promotion gates and the κ computations are implemented and tested end-to-end against fixture annotations (see `tests/test_benchmark_solo_protocol.py` and `tests/test_benchmark_integration.py`) — what is pending is human input, not code.
