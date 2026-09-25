@@ -156,21 +156,35 @@ retrieval:
 # differential_flag, and annotator time cannot be recovered by working faster.
 # ---------------------------------------------------------------------------
 benchmark:
-  # Full roster. Every annotator receives every pilot item — at pilot scale,
-  # full overlap is what makes an agreement statistic computable at all
-  # (partial assignment would leave most items with one rater and no
-  # agreement to measure).
-  annotators:
-    - akash
-    - karan
-    - meer
+  # -------------------------------------------------------------------------
+  # Single-Expert Annotation Protocol (P1-005, from 2026-09-24).
+  #
+  # The project has one annotator. Inter-annotator agreement therefore does
+  # not exist, and the tooling must not be able to produce a number that
+  # looks like it. Reliability evidence comes from a blind test-retest by the
+  # primary annotator and, where a second rater is actually obtainable, a
+  # second-rater comparison. Each statistic is labelled by what it is.
+  # -------------------------------------------------------------------------
+  primary_annotator: karan
+  second_raters: []          # e.g. [akash] only if that person has agreed to label
+  promotion_policy: single_expert_retest
 
-  # Distinct annotators required before an item may be promoted from
-  # candidate to validated. Set to 2 rather than 3 so a single annotator's
-  # unavailability cannot stall the whole set, while still requiring genuine
-  # independent agreement. Enforced in code by promote_validated() AND
-  # independently by T1Label.validate() — never warned-and-allowed.
-  min_annotators_per_item: 2
+  retest:
+    # Minimum days between pass 1 and pass 2. A retest taken too soon
+    # measures recall of the earlier answers, not stability of the judgment.
+    min_gap_days: 5
+    # The pilot retests everything: at 18 items the retest set IS the set.
+    pilot_fraction: 1.0
+    # Phase 2 retests a fifth of the items, which is what the annotation-time
+    # projection is costed against.
+    phase2_fraction: 0.20
+    # Pass-2 row order is shuffled so the file cannot be answered from
+    # position memory.
+    shuffle_seed: 20260924
+
+  agreement:
+    bootstrap_seed: 20260924
+    bootstrap_resamples: 1000
 
   label_statuses:
     - candidate

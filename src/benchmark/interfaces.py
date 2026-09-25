@@ -15,12 +15,19 @@ Implementation notes — these are correctness requirements, not style preferenc
   ``unlabelled`` until examined. Defaulting to ``absent`` converts unexamined
   items into a positive finding and inflates that class with items nobody
   looked at.
-* **Never promote to ``validated`` implicitly.** Promotion requires
-  ``config.benchmark.min_annotators_per_item`` independent annotations. An
-  unannotated benchmark of size zero is an honest result; a benchmark of
-  machine-labelled items presented as validated is not.
+* **Never promote to ``validated`` implicitly.** Under the single-expert
+  protocol (P1-005) promotion is by *validation route* — blind test-retest
+  consistency, a single pass outside the retest set, or written adjudication —
+  and never by counting raters, because with one annotator there is nothing to
+  count. An unannotated benchmark of size zero is an honest result; a benchmark
+  of machine-labelled items presented as validated is not.
+* **Never overwrite one rater's vote with another's.** Each pass and each
+  rater produces its own immutable vote; merging happens once, over the whole
+  vote set. Applying votes to the same label in turn makes the last writer win
+  and turns the agreement statistic into a count of itself.
 * Report agreement as ``"NOT YET MEASURED"`` until it has actually been
-  computed, never as ``0.0``.
+  computed, never as ``0.0``. With fewer than three raters, do not report
+  Fleiss' kappa at all — not even as a sentinel.
 """
 
 from __future__ import annotations
@@ -65,11 +72,11 @@ def sample_for_annotation(
 def build_annotation_tasks(
     sample: Iterable[T1Label], cfg: Mapping[str, Any], **kwargs: Any
 ) -> dict[str, str]:
-    """Write per-annotator task files, returning annotator id -> path.
+    """Write per-rater task files, returning rater id -> path.
 
-    Assignment must give each item to at least
-    ``config.benchmark.min_annotators_per_item`` distinct annotators, or
-    agreement cannot be computed for it.
+    Every configured rater (``config.benchmark.primary_annotator`` plus any
+    ``second_raters``) receives every item. Must refuse to overwrite a file
+    that already holds hand-entered labels unless explicitly forced.
 
     Raises:
         NotImplementedError: Always. Implemented by ``phase1/meer-annotation``.
@@ -86,8 +93,11 @@ def ingest_annotations(cfg: Mapping[str, Any], **kwargs: Any) -> list[T1Label]:
     raise NotImplementedError(f"ingest_annotations is implemented by {BRANCH}")
 
 
-def measure_agreement(labels: Iterable[T1Label], **kwargs: Any) -> dict[str, Any]:
-    """Compute inter-annotator agreement over multiply-annotated items.
+def measure_agreement(votes: Iterable[Any], cfg: Mapping[str, Any], **kwargs: Any) -> dict[str, Any]:
+    """Compute reliability statistics from raw per-pass votes.
+
+    Takes votes, never merged labels: a merged label holds one surviving
+    judgment per item, so agreement computed from it measures nothing.
 
     Returns ``"NOT YET MEASURED"`` for any statistic with insufficient data,
     never a numeric placeholder.
@@ -99,7 +109,7 @@ def measure_agreement(labels: Iterable[T1Label], **kwargs: Any) -> dict[str, Any
 
 
 def promote_validated(labels: Iterable[T1Label], cfg: Mapping[str, Any], **kwargs: Any) -> list[T1Label]:
-    """Promote items meeting the annotation threshold to ``validated``.
+    """Confirm each item's route-assigned status, withdrawing what fails.
 
     Every promotion must satisfy :meth:`T1Label.validate`, which rejects a
     validated item lacking annotators, applicability, or a differential

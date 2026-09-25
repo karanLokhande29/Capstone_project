@@ -209,6 +209,27 @@ def select_pilot_paragraphs(
     return [ParagraphRecord.from_dict(r) for r in selected[:limit]]
 
 
+def item_coverage_metrics(labels: Sequence[T1Label]) -> dict[str, Any]:
+    """Coverage of the EXTRACTED ITEMS, not of the paragraphs searched.
+
+    These two are routinely confused and the difference is not cosmetic: the
+    pilot searched 20 paragraphs spanning 16 entity classes but produced items
+    in only 11 of them, because cue density varies by class. Reporting 16 as
+    "entity classes spanned" overstates the benchmark's coverage by five
+    classes that contributed no annotatable item at all.
+
+    ``items_missing_subject_family`` is counted for the same reason: the
+    derived subject-family axis is blank on part of the pilot, and a
+    stratification built on it would silently drop those items.
+    """
+    in_items = sorted({lbl.entity_class for lbl in labels if lbl.entity_class})
+    return {
+        "entity_classes_in_items": in_items,
+        "entity_classes_in_items_count": len(in_items),
+        "items_missing_subject_family": sum(1 for lbl in labels if not lbl.subject_family),
+    }
+
+
 def run_pilot_extraction(
     resolver: Any,
     cfg: Mapping[str, Any] | None = None,
@@ -241,9 +262,10 @@ def run_pilot_extraction(
             )
             return {
                 "paragraphs_searched": len(paragraphs),
-                "entity_classes_spanned": sorted(entity_classes),
+                "entity_classes_in_paragraphs_searched": sorted(entity_classes),
                 "items_extracted": len(labels),
                 "widening_attempts": attempts,
+                **item_coverage_metrics(labels),
                 "labels": labels,
                 "paragraphs": paragraphs,
             }
@@ -255,9 +277,10 @@ def run_pilot_extraction(
             )
             return {
                 "paragraphs_searched": len(paragraphs),
-                "entity_classes_spanned": sorted(entity_classes),
+                "entity_classes_in_paragraphs_searched": sorted(entity_classes),
                 "items_extracted": len(labels),
                 "widening_attempts": attempts,
+                **item_coverage_metrics(labels),
                 "labels": labels,
                 "paragraphs": paragraphs,
             }

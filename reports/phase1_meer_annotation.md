@@ -1,5 +1,7 @@
 # Phase 1 — Meer: Corpus QA, Annotation Pilot, Validation Protocol
 
+> **Protocol change.** From 2026-09-24 this project has a single annotator (karan). The three-annotator roster this report was originally written against no longer exists, so **inter-annotator agreement is not a statistic this project can produce.** Reliability evidence comes instead from a blind test-retest by the primary annotator and, where a second rater is obtainable, a second-rater comparison. Every figure in §5 is labelled by which of those it is. Fleiss' κ is not reported at all below three real raters.
+
 ---
 
 ## Derived-axis caveat (read before any `subject_family` stratification)
@@ -11,6 +13,8 @@
 ---
 
 ## 1. Corpus QA (independent of P1-001's own metrics)
+
+_source: `reports/phase1_meer_all_metrics.json`, written 2026-08-23T11:49:46+00:00_
 
 - Paragraphs checked: **51853** across **299** documents
 - Missing `section_id`: **340** (**0.0066**)
@@ -30,6 +34,8 @@ The `subject_family` gap is materially larger than the `entity_class` gap — a 
 ---
 
 ## 2. Week-2 cross-class alignment check (the 60% trigger)
+
+_source: `reports/phase1_meer_all_metrics.json`, written 2026-08-23T11:49:46+00:00_
 
 - Entity classes sampled: ['All India Financial Institutions', 'Local Area Banks', 'Non-Banking Financial Companies']
 - Subject families sampled (**derived axis**): ['Miscellaneous', 'Fraud Risk Management', 'Know Your Customer']
@@ -59,6 +65,8 @@ The baseline row is what makes the headline number interpretable: a ~37% paralle
 
 ## 3. Week-2 FAQ / enforcement source check
 
+_source: `reports/phase1_meer_all_metrics.json`, written 2026-08-23T11:49:46+00:00_
+
 - FAQ items found: **0**
 - FAQ paragraph-alignment rate: **NOT YET MEASURED**
 - Enforcement items found: **0**
@@ -72,35 +80,94 @@ NOT YET MEASURED — P1-001 reported this sample as not trivially reachable (FAQ
 
 ## 4. Annotation protocol and tooling
 
-Three rules are enforced **in code**, not by convention — each protects a research claim that cannot be repaired after the fact:
+Four rules are enforced **in code**, not by convention — each protects a research claim that cannot be repaired after the fact:
 
-1. **`applies_to` is annotator-sourced or it does not exist.** It is written only by `apply_annotation()`, which requires an `annotator_id` and stamps `provenance='annotator:<id>'`. Any label with a non-empty `applies_to` lacking that provenance is rejected by `assert_applies_to_is_annotator_sourced()`, which runs on every promotion. A Phase 2 extractor cannot reintroduce the `applies_to = [entity_class]` tautology without deliberately forging annotator provenance. A corpus-level `tautology_smell_report()` additionally reports how often annotators land on exactly the source class — a pattern that would drain RQ1 of signal even when every label is honestly sourced.
-2. **`differential_flag` is never defaulted to `absent`.** It starts `unlabelled` by the schema's own default; only an ingested annotator judgment moves it.
-3. **Promotion is never implicit.** `promote_validated()` requires `min_annotators_per_item` *distinct* annotators, then defers to `T1Label.validate()`, which independently rejects a validated item with empty `applies_to` or a still-`unlabelled` flag. An item failing any gate stays where it is.
+1. **`applies_to` is annotator-sourced or it does not exist.** It is written only by `apply_annotation()`, which requires an `annotator_id` and stamps `provenance='annotator:<id>:<route>'`. Any label with a non-empty `applies_to` lacking that provenance is rejected by `assert_applies_to_is_annotator_sourced()`, which runs on every promotion. A Phase 2 extractor cannot reintroduce the `applies_to = [entity_class]` tautology without deliberately forging annotator provenance. `tautology_share_by_rater()` additionally reports, per rater and pass, how often that rater landed on exactly the source class — a pattern that would drain RQ1 of signal even when every label is honestly sourced.
+2. **`differential_flag` is never defaulted to `absent`.** It starts `unlabelled` by the schema's own default; only an ingested judgment moves it.
+3. **Raw votes are never overwritten.** Every row of every pass becomes one immutable `AnnotatorVote`, and merging happens once over the whole vote set. The superseded ingest applied each annotator's row to the same label in turn, so the last writer won and κ was then computed by counting that single surviving flag once per annotator — three annotators who never agreed on anything scored κ = 1.0 and all 18 items were promoted.
+4. **Promotion is by validation route, and never counts raters.** With one annotator there is nothing to count. `promote_validated()` gates on the route an item took, then defers to `T1Label.validate()`, which independently rejects a validated item with empty `applies_to` or a still-`unlabelled` flag.
 
-**On the agreement statistic:** `T1Label.agreement_score` is typed `float | int | None` by the base schema, so it cannot hold the string `NOT YET MEASURED`; the literal string belongs to the reported metric from `measure_agreement()`, while the per-label field stays `None` until a real number exists. Neither is ever `0.0` — a zero kappa is a real and very bad agreement reading, not an absence of one.
+**Validation routes** (recorded in `provenance`, one per item):
+
+| Route | Status | Meaning |
+|---|---|---|
+| `retest-consistent` | `validated` | In the retest set; both blind passes gave identical `applies_to` and flag. |
+| `single-pass` | `validated` | Outside the retest set; pass 1 only, and labelled as such. |
+| `adjudicated` | `validated` / `rejected` | A disagreement resolved by written adjudication. |
+| `not-obligation` | `rejected` | Judged not an obligation. |
+| `pass1-only` | `in_review` | In the retest set; pass 2 not done yet. |
+| `needs-adjudication` | `in_review` | The passes differ, or a second rater differs. |
+
+**On the agreement statistic:** `T1Label.agreement_score` is typed `float | int | None` by the base schema, so it cannot hold the string `NOT YET MEASURED`; the literal string belongs to the reported metric, while the per-label field stays `None` until a real number exists. Neither is ever `0.0` — a zero κ is a real and very bad reading, not an absence of one.
+
+**Data-loss guards:** task files, the pass-2 file and the adjudication file are never rewritten over filled-in cells without `--force-regenerate-tasks`, and even then the old file is copied to `data/benchmark/tasks/_overwritten/` first. `data/benchmark/**` is gitignored, so a blanked task file is not recoverable from anywhere. `report` reads existing artifacts and writes nothing under `data/benchmark/`.
 
 ---
 
 ## 5. Annotation feasibility pilot
 
+_source: `reports/phase1_meer_all_metrics.json`, written 2026-08-23T11:49:46+00:00_
+
 - Paragraphs searched: **20** (Task 5 range 15-20, widened in steps of 5 only if the item floor is unmet)
-- Entity classes spanned: **16** (requirement: more than one)
+- Entity classes **in the paragraphs searched**: **16**
+- Entity classes **in the extracted items**: **11** (requirement: more than one)
+- Items missing `context_subject_family` (**derived** axis): **7**
+  - _item-level figures from `data/benchmark/pilot_candidates.jsonl`, read live_
 - Candidate `ObligationSpan`s extracted: **18** (floor: 10)
 - Widening attempts: [{'paragraphs_searched': 20, 'items_extracted': 18}]
 - Cue distribution: {'shall': 15, 'must': 2, 'are required to': 1}
 - Task files generated: **3** (akash, karan, meer)
 
+**The two entity-class counts above are different measurements and the difference is not cosmetic.** An earlier version of this report printed the paragraph-level count as "entity classes spanned", which overstated the benchmark's coverage: the search touched more classes than actually produced an annotatable item, because cue density varies by class.
+
 Candidate generation is a **keyword heuristic and nothing more** — a feasibility device to test whether the protocol works on real RBI text. It is explicitly not the systematic Phase 2 (Week 4) extractor, and it is wrong in known ways: it catches definitional and commencement uses of "shall" alongside genuine obligations (a small reject-pattern list removes the most common), and has no notion of scope. `matched_cue` is recorded on every span precisely so this bias stays measurable — the distribution above is dominated by "shall", which is a property of the extractor, not of RBI.
 
-### Inter-annotator agreement
+### Annotation status and reliability
+
+_no ingest has run: `reports/phase1_annotation_ingest_metrics.json` does not exist_
 
 - Items total: **18**
-- Items reaching `validated`: **0**
-- Fleiss' kappa (differential_flag): **NOT YET MEASURED**
-- Annotation time: **NOT YET MEASURED** (measured by annotators during the pilot run)
-- Disagreement categories: **NOT YET MEASURED** (derived from completed annotations)
+- Retest set size (drawn before pass 1 was filled): **18**
+- Rows voted in pass 1: **NOT YET MEASURED**
+- Rows voted in pass 2: **NOT YET MEASURED**
+- Rows marked not-an-obligation: **NOT YET MEASURED**
+- Items reaching `validated`: **NOT YET MEASURED**
 
-> **NOT YET MEASURED: the pilot is generated and ready, not yet annotated.** Task files for all three annotators exist under `data/benchmark/tasks/`, each carrying every pilot item (full overlap, which is what makes an agreement statistic computable at this scale). Fleiss' kappa, annotation time, and disagreement categories cannot be reported until Akash, Karan and Meer complete those files and `run_annotation.py ingest` is run. **No annotations were fabricated and no placeholder agreement value was substituted** — a synthesised kappa would be worse than no kappa, because it would look like evidence.
+#### Items per validation route
 
-The ingestion path, promotion gates, and kappa computation are fully implemented and tested end-to-end against fixture annotations (see `tests/test_benchmark_annotation.py` and `tests/test_benchmark_integration.py`) — what is pending is human input, not code.
+- NOT YET MEASURED — no pass has been ingested.
+
+**Test-retest — karan pass 1 vs karan blind pass 2 (stability of ONE annotator's judgment over time, NOT inter-annotator agreement)**
+
+- NOT YET MEASURED
+
+**Second rater**
+
+- NOT YET MEASURED — no second rater configured
+
+> **Fleiss' κ is absent by design.** It requires three or more raters. With one annotator, or one annotator plus one second rater, the tooling emits no `fleiss` key at all — not even a sentinel — so nothing downstream can surface a number that was never computable.
+
+#### Annotation time
+
+- NOT YET MEASURED — no pass has been ingested.
+
+#### Phase 2 sizing — a PROJECTION, not a measurement
+
+`N_target = (hours x 60) / (minutes_per_item x (1 + r))`, with `r = 0.2` (`benchmark.retest.phase2_fraction`) covering the fraction of Phase 2 items that get a second, blind pass.
+
+- Minutes per item: **NOT YET MEASURED** — no timed pass has been ingested, so `N_target` cannot be projected. Nothing is substituted for it: a guessed rate here becomes a badly wrong Phase 2 schedule later.
+
+#### Pass-2 schedule
+
+- Minimum gap: **5 days** (`benchmark.retest.min_gap_days`)
+- Pass-1 ingested at: **NOT YET MEASURED**
+- Earliest allowed pass-2 date: **NOT YET MEASURED — pass 1 has not been ingested**
+- Pass 2 actually ingested at: **NOT YET MEASURED**
+
+#### Tautology share, per rater and pass
+
+- NOT YET MEASURED — no pass has been ingested.
+
+> **NOT YET MEASURED: the pilot is generated and ready, not yet annotated.** The pass-1 task file for karan exists under `data/benchmark/tasks/`, carrying every pilot item, and the retest set has been drawn in advance. Test-retest κ, annotation time and disagreement categories cannot be reported until karan completes pass 1, waits 5 days, and completes the blind pass 2. **No annotations were fabricated and no placeholder agreement value was substituted** — a synthesised κ would be worse than no κ, because it would look like evidence.
+
+The ingestion path, the retest and adjudication stages, the promotion gates and the κ computations are implemented and tested end-to-end against fixture annotations (see `tests/test_benchmark_solo_protocol.py` and `tests/test_benchmark_integration.py`) — what is pending is human input, not code.
