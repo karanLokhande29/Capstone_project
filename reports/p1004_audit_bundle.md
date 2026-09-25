@@ -82,3 +82,19 @@ All three pilot files (`annotation_karan.csv`, `annotation_akash.csv`, `annotati
 ## 9. Still-missing documents
 
 **0** — none. The repair recovered all 81 previously-missing Directions plus 1 newly-listed one.
+
+## D2 — empty titles
+
+**All three remain empty after the P1-004 repair. A9's fix did not run against them in this pass.**
+
+| Document | Title | `retrieved_at` | Entity class (raw) | `source_url` |
+|---|---|---|---|---|
+| `md_11959` | *(empty)* | `2026-08-22T19:21:24Z` — original harvest, unchanged | Financial Inclusion and Development | `.../MDPSL803EE903174E4C85AFA14C335A5B0909.PDF` |
+| `md_12839` | *(empty)* | `2026-08-22T19:22:15Z` — original harvest, unchanged | Foreign Exchange Management | `.../135MD89B55F672F36443FA02C0C53DC207FFF.PDF` |
+| `md_11510` | *(empty)* | `2026-08-22T19:22:20Z` — original harvest, unchanged | Foreign Exchange Management | `.../5MD2603201979CA1390E9E546869B2A9A92614DEDBF.PDF` |
+
+**Why:** all three documents already had a `content_hash` from the original harvest (they were part of the 299 that succeeded), so `harvest_corpus(only_missing=True)` carried their **prior manifest records through unchanged** — this is `src/scraper/rbi_scraper.py`, the `only_missing` branch: any record with an existing `content_hash` is appended to `carried` straight from `existing_manifest`, and the freshly re-discovered record for that same id (which A9's `_parse_listing()` fallback would have produced) is discarded. This carry-through is deliberate — it's what makes only-missing harvest safe (it never overwrites a working record) — but it means A9's title-recovery fallback only ever applies to a document that is newly discovered or re-downloaded, never to one merely carried through.
+
+**Consequence:** these three titles are not recoverable by re-running `repair` as-is; the only-missing path will keep carrying the same empty-titled records forward on every future run. Recovering them requires either (a) a `--force` re-discovery path that lets A9's fix overwrite a carried record's `title` field specifically (not implemented), or (b) forcing these three ids through the download branch (e.g., by clearing their `content_hash` in the manifest) so they re-enter `discovered` as new/missing and get A9's fallback applied.
+
+`subject_family` remains `None` for all three, consistent with A9's rule (never derive from the PDF body) and the title still being empty — there is nothing for the P1-002 derivation to work from.
