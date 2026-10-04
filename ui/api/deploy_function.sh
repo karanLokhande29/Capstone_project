@@ -52,7 +52,8 @@ for f in api/.state/replays/*.json; do
   az storage blob upload --connection-string "$CONN" -c comparator-cache -n "replays/$(basename "$f")" -f "$f" --overwrite -o none
 done
 
-HOST=$(az functionapp show -g "$RG" -n "$APP" --query defaultHostName -o tsv)
+HOST=$(az functionapp show -g "$RG" -n "$APP" --query defaultHostName -o tsv 2>/dev/null || true)
+[ -n "$HOST" ] || HOST="$APP.azurewebsites.net"   # Flex Consumption may not report defaultHostName here
 echo "   health: $(curl -s "https://$HOST/api/health")"
 
 echo "7/7 Rebuild and redeploy the public site against https://$HOST"

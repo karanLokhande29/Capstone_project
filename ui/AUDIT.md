@@ -213,3 +213,8 @@ All 32 DIFFERENT→NONE errors have `addresses_same_duty = false` on **both** ca
   - Creation was started from this session.
   - Further Azure changes (settings, key, code deploy) were blocked by the session's permission rules.
   - They are scripted in `ui/api/deploy_function.sh` for Karan to run himself; the key is typed into his own terminal.
+- **Deployed 2026-10-04:** comparator API at `https://rbiob-api-5qbvp2.azurewebsites.net`.
+  - Flex Consumption, Python 3.12, Central India, at most 2 instances.
+  - `/api/health`: hashes verified, model available, public mode, buffered streaming, 6 replays (the hero plus the 5 control runs recorded locally).
+  - The public site was rebuilt with `VITE_API_BASE` pointing at it. A live re-run from the public Lab works, and CORS is limited to the site origin.
+  - The first demo key was exposed in a terminal panel (pasted input was echoed), so Karan deleted it. Its replacement was set through a hidden macOS dialog, straight into the Function's app settings.
