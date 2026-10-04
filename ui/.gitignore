@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.env
+.env.local
+server/.state/
+server/.cache/
+*.tsbuildinfo
+.vite/
+__pycache__/
+dist-artifact/
+dist-azure/
+.swa/

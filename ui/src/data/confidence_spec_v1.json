@@ -1,0 +1,65 @@
+{
+ "version": "confidence-v1",
+ "unit": "one comparator class unit (item × compared class)",
+ "label": "correct iff the comparator judgement equals the gold judgement; `unsure` / parse failure -> Abstain band (counted as not answered)",
+ "method": "L2-regularised logistic regression, C = 1.0 (penalty 1/(2C)·||w||², intercept unpenalised), features standardised with the training data's mean and sd, Newton solver (numpy), 50 iterations max, tol 1e-10",
+ "models": {
+  "M2": {
+   "name": "comparator-intrinsic",
+   "features": [
+    "pred_different",
+    "pred_none",
+    "n_fields_both_sides",
+    "n_material_diff",
+    "single_field_hinge",
+    "candidates_agree",
+    "target_amended_text_only",
+    "ambiguous_matrix_cell"
+   ],
+   "fit": "development set: 30-item IRR consensus, 92 comparator units",
+   "use": "Showcase, product badges (Obligation Explorer, assistant, live mode, review queue)"
+  },
+  "M1": {
+   "name": "full signals (cross-validated on gold)",
+   "features": [
+    "pred_different",
+    "pred_none",
+    "n_fields_both_sides",
+    "n_material_diff",
+    "single_field_hinge",
+    "candidates_agree",
+    "target_amended_text_only",
+    "ambiguous_matrix_cell",
+    "agree_count_other_llms",
+    "long_context_unanswered",
+    "final_agentic_abstained",
+    "matched_equals_class_aware"
+   ],
+   "fit": "5-fold cross-fitting on gold, grouped by item; fold assignment = numpy default_rng(20261003).permutation over sorted item ids, fold = position mod 5",
+   "use": "research views only, labelled 'cross-validated on gold'"
+  }
+ },
+ "bands": {
+  "High": "p >= 0.85",
+  "Medium": "0.60 <= p < 0.85",
+  "Low": "p < 0.60",
+  "Abstain": "comparator unsure / parse failure"
+ },
+ "cut_points": {
+  "high": 0.85,
+  "low": 0.6
+ },
+ "merge_rule": "a High or Low band with n < 20 on gold is merged into Medium; if Medium then has n < 20 it is hidden (R14)",
+ "operating_point": "answer only at High (fixed here, before any gold evaluation)",
+ "honesty_rule": "bands are labelled 'experimental' and kept out of the Showcase if the High band's Wilson 95% lower bound is not above the Low band's point accuracy, or if ECE (10 equal-width bins) > 0.10",
+ "metrics": [
+  "per-band n, accuracy, Wilson 95% CI",
+  "reliability diagram (10 equal-width bins)",
+  "ECE (10 bins, weighted)",
+  "Brier score",
+  "selective-prediction curve (accuracy vs coverage, coverage over all 412 units)"
+ ],
+ "seed": 20261003,
+ "dropped_signal": "BM25/dense agreement on the matched paragraph: no per-unit rankings stored (DECISIONS D-04, gap G-23)",
+ "writtenUtc": "2026-10-03T11:26:31+00:00"
+}
