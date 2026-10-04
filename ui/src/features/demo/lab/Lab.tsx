@@ -3,7 +3,7 @@ import { NavLink, useLocation, useSearchParams } from "react-router-dom";
 import { AlertTriangle, Play, RotateCcw } from "lucide-react";
 import { Button, Card, CardBody } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
-import { liveAvailable, useApi, type ApiState } from "../api";
+import { liveAvailable, testDouble, useApi, type ApiState } from "../api";
 import { StatusBadge } from "../badges";
 import { useCase, useHome, useIndex } from "../data";
 import { Loading, PageHead } from "../DemoLayout";
@@ -34,6 +34,9 @@ export default function Lab() {
           </div>
         </div>
       )}
+      {testDouble(api) && (
+        <p className="mt-4 rounded-lg border border-line bg-panel-2 px-4 py-2 text-[13.5px]" role="status"><b>Test double.</b> This local server's “model” replays the sealed outputs; runs here are not live model calls.</p>
+      )}
       <nav aria-label="Lab" className="mt-5 flex flex-wrap gap-1 border-b border-line">
         {TABS.map((t) => <NavLink key={t.to} to={t.to} end={t.end} className={({ isActive }) => cn("-mb-px border-b-2 px-3 py-2 text-[14px]", isActive ? "border-accent font-medium" : "border-transparent text-ink-3 hover:text-ink")}>{t.label}</NavLink>)}
       </nav>
@@ -54,12 +57,14 @@ function Rerun({ api }: { api: ApiState }) {
   const { run, start, replay, stop } = useLiveRun();
   const [key, setKey] = useState<string | null>(null);
   const live = liveAvailable(api);
+  const loaded = c.data?.unit ?? null;
+  const loadedId = loaded?.id ?? null;
   useEffect(() => {
     stop();
-    if (!c.data) return;
-    const u = c.data.unit;
-    void cacheKey(String(u.provenance.prompt_sha256), String(u.provenance.rule_sha256), String(u.provenance.model), { mode: "benchmark", unitId: u.id }).then(setKey);
-  }, [c.data, stop]);
+    if (!loaded) return;
+    void cacheKey(String(loaded.provenance.prompt_sha256), String(loaded.provenance.rule_sha256), String(loaded.provenance.model), { mode: "benchmark", unitId: loaded.id }).then(setKey);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- re-key only when the selected unit changes
+  }, [loadedId, stop]);
   if (!c.data) return <Loading what="the pair" />;
   const unit = c.data.unit;
   return (
@@ -75,7 +80,7 @@ function Rerun({ api }: { api: ApiState }) {
       </div>
       <div className="grid gap-4 md:grid-cols-2">
         <SealedPanel unit={unit} />
-        <LivePanel run={run} unit={unit} />
+        <LivePanel run={run} unit={unit} mock={testDouble(api)} />
       </div>
       {run.phase === "error" && <ErrorNote run={run} onReplay={key && api.status === "ready" ? () => void replay(key) : undefined} />}
       {run.done && <CostMeter live={{ inputTokens: run.done.inputTokens, outputTokens: run.done.outputTokens, latencyMs: run.done.latencyMs }} />}
@@ -113,7 +118,7 @@ function Paste({ api }: { api: ApiState }) {
       </div>
       <Button disabled={!live || !a.trim() || !b.trim() || !ca || !cb || run.phase === "receiving"} onClick={() => void start({ mode: "paste", textA: a, textB: b, classA: ca, classB: cb })}><Play size={15} />Compare (unvalidated)</Button>
       {!live && <p className="text-[13px] text-ink-3">Paste mode needs the live service, which is not available on this site.</p>}
-      {run.phase !== "idle" && <LivePanel run={run} unvalidated />}
+      {run.phase !== "idle" && <LivePanel run={run} unvalidated mock={testDouble(api)} />}
       {run.phase === "error" && <ErrorNote run={run} />}
     </div>
   );

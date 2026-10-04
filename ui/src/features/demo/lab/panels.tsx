@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { Button, Card, CardBody } from "@/components/ui/primitives";
+import { Badge, Button, Card, CardBody } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
 import { StatusBadge } from "../badges";
 import { VerdictPill } from "../case/parts";
@@ -28,7 +28,7 @@ function RowsTable({ rows, pending }: { rows: { field: string; status: string | 
   );
 }
 
-export function LivePanel({ run, unit, unvalidated }: { run: LiveRun; unit?: Unit; unvalidated?: boolean }) {
+export function LivePanel({ run, unit, unvalidated, mock }: { run: LiveRun; unit?: Unit; unvalidated?: boolean; mock?: boolean }) {
   const diff = unit && run.phase === "done" ? diffWithSealed(unit, run.verdict) : null;
   const decisive = run.verdict?.matchedPid ?? null;
   const rows = useMemo(() => {
@@ -43,7 +43,7 @@ export function LivePanel({ run, unit, unvalidated }: { run: LiveRun; unit?: Uni
       <div className="flex flex-wrap items-center justify-between gap-2">
         <p className="font-semibold">{run.source === "replay" ? "Replayed run" : "Live run"}</p>
         <span className="flex flex-wrap gap-1">
-          {run.source === "live" && <StatusBadge status="live" />}
+          {run.source === "live" && (mock ? <Badge tone="neutral">Test double (mock model, not live)</Badge> : <StatusBadge status="live" />)}
           {run.source === "replay" && <StatusBadge status="replay" detail={run.recordedUtc ? `recorded ${run.recordedUtc.slice(0, 16).replace("T", " ")} UTC` : undefined} />}
           {unvalidated && <StatusBadge status="unvalidated" />}
           {diff && !diff.same && <StatusBadge status="mismatch" />}

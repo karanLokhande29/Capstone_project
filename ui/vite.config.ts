@@ -5,6 +5,12 @@ import tailwindcss from "@tailwindcss/vite";
 import { fileURLToPath, URL } from "node:url";
 
 const HOSTED = process.env.VITE_ARTIFACT === "1";
+// The demo's comparator API (ui/api/server.py, port 5190) and the workspace assistant proxy (ui/server, port 5182).
+const COMPARATOR = "http://127.0.0.1:5190";
+const API_PROXY = {
+  "^/api/(health|compare|replay|rehydrate|freshness)": COMPARATOR,
+  "/api": "http://127.0.0.1:5182",
+};
 const AZURE = process.env.VITE_NO_PROXY === "1" && !HOSTED;
 
 export default defineConfig({
@@ -22,8 +28,8 @@ export default defineConfig({
       { find: "@", replacement: fileURLToPath(new URL("./src", import.meta.url)) },
     ],
   },
-  server: { port: 5181, strictPort: true, proxy: { "/api": "http://127.0.0.1:5182" } },
-  preview: { port: 5183, strictPort: true, proxy: { "/api": "http://127.0.0.1:5182" } },
+  server: { port: 5181, strictPort: true, proxy: API_PROXY },
+  preview: { port: 5183, strictPort: true, proxy: API_PROXY },
   build: { chunkSizeWarningLimit: 2500, sourcemap: false, outDir: HOSTED ? "dist-artifact" : AZURE ? "dist-azure" : "dist" },
   test: {
     globals: true,

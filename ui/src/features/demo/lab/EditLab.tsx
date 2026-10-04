@@ -43,7 +43,7 @@ export function EditLab({ api }: { api: ApiState }) {
   if (!b) return <Loading />;
   return (
     <div className="space-y-4">
-      <div className="flex flex-wrap items-center gap-2"><StatusBadge status="postpaper" /><StatusBadge status="unvalidated" /><StatusBadge status="live" /></div>
+      <div className="flex flex-wrap items-center gap-2"><StatusBadge status="postpaper" /><StatusBadge status="unvalidated" />{!api.health?.model.mock && <StatusBadge status="live" />}</div>
       <p className="max-w-3xl text-[14.5px] leading-relaxed text-ink-2">
         The edit lab changes one value in the target paragraph (a frequency, a deadline, an amount, a percentage, an exception, an approval condition or a reporting line), previews the change, and re-runs the frozen comparator.
         Did it detect the edited field? Did the verdict change? Did anything else move?
@@ -63,12 +63,12 @@ export function EditLab({ api }: { api: ApiState }) {
             {b.bases.map((x) => <li key={x.unitId}><Link className="text-accent hover:underline" to={caseHref(x.unitId)}>{x.unitId}</Link> <span className="text-ink-3">· {VERDICT[x.verdict]} · editable: {x.kinds.map((k) => FIELD_LABEL[k as Field] ?? k).join(", ")}</span></li>)}
           </ul>
         </div>
-      ) : <EditRunner bases={b.bases} />}
+      ) : <EditRunner bases={b.bases} mock={!!api.health?.model.mock} />}
     </div>
   );
 }
 
-function EditRunner({ bases }: { bases: Bases["bases"] }) {
+function EditRunner({ bases, mock }: { bases: Bases["bases"]; mock: boolean }) {
   const [unitId, setUnitId] = useState(bases[0]?.unitId ?? null);
   const c = useCase(unitId);
   const base = bases.find((x) => x.unitId === unitId);
@@ -107,8 +107,8 @@ function EditRunner({ bases }: { bases: Bases["bases"] }) {
       </div>
       <div className="grid gap-4 md:grid-cols-3">
         <SealedPanel unit={unit} />
-        <LivePanel run={control.run} unit={unit} />
-        <LivePanel run={edited.run} unvalidated />
+        <LivePanel run={control.run} unit={unit} mock={mock} />
+        <LivePanel run={edited.run} unvalidated mock={mock} />
       </div>
       {control.run.phase === "done" && !interpretable && <p className="rounded-md border border-neg/40 bg-neg-soft p-3 text-[14px] font-semibold text-neg">Control did not reproduce the sealed result — this edit cannot be interpreted.</p>}
       <Card><CardBody className={interpretable && edited.run.phase === "done" ? "" : "opacity-50"} aria-disabled={!interpretable}>

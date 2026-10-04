@@ -5,7 +5,7 @@ import type { Band, FieldStatus, Judgement, RuleStep } from "./types";
 /** Client for the comparator API (Phase H). The key never reaches the browser; the API reports what it can do via /api/health. */
 export interface Health {
   ok: boolean;
-  model: { id: string; available: boolean; reason?: string };
+  model: { id: string; available: boolean; mock?: boolean; reason?: string };
   hashes: { verified: boolean; prompt?: string; rule?: string; mismatches?: string[] };
   cache: { reachable: boolean; replays: number };
   mode: "public" | "presenter";
@@ -41,6 +41,7 @@ export function useApi(): ApiState {
 
 /** Live model usable right now (key present, hashes verified). Otherwise the UI is replay-only. */
 export const liveAvailable = (s: ApiState) => s.status === "ready" && !!s.health?.model.available && !!s.health?.hashes.verified;
+export const testDouble = (s: ApiState) => !!s.health?.model.mock;
 export const presenter = (s: ApiState) => s.status === "ready" && s.health?.mode === "presenter" && !!s.health?.rehydrate;
 
 /** Full RBI text exists only in local / presenter builds; public builds compile this path away (check_dist enforces it). */
@@ -116,7 +117,9 @@ export async function readSse(stream: ReadableStream<Uint8Array>, onEvent: (e: C
 export async function fetchReplay(key: string): Promise<{ events: CompareEvent[]; recordedUtc: string } | null> {
   if (API_BASE == null) return null;
   const r = await fetch(`${API_BASE}/api/replay/${encodeURIComponent(key)}`);
-  return r.ok ? ((await r.json()) as { events: CompareEvent[]; recordedUtc: string }) : null;
+  if (!r.ok) return null;
+  const j = (await r.json()) as { found: boolean; events: CompareEvent[]; recordedUtc: string };
+  return j.found ? j : null;
 }
 
 export type Freshness = { outcome: "match" | "differs" | "unverified"; harvestDate: string | null; detail?: string; checkedUtc: string };

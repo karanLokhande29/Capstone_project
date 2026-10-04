@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { CasesIndex, Home, Shard, Unit } from "./types";
 
 // Per-route JSON shards (public/data/*.json). Each file is fetched once and cached for the session.
@@ -42,9 +42,12 @@ export function useHome() { return useJson<Home>("home.json"); }
 
 export function useCase(unitId: string | null): Loaded<{ shard: Shard; unit: Unit }> {
   const s = useJson<Shard>(unitId ? `cases/${shardName(itemOf(unitId))}.json` : null);
-  if (!s.data) return { data: null, error: s.error };
-  const unit = s.data.units.find((u) => u.id === unitId);
-  return unit ? { data: { shard: s.data, unit }, error: null } : { data: null, error: `Unknown case ${unitId}` };
+  // Stable identity across renders (callers use it in effect dependencies).
+  return useMemo(() => {
+    if (!s.data) return { data: null, error: s.error };
+    const unit = s.data.units.find((u) => u.id === unitId);
+    return unit ? { data: { shard: s.data, unit }, error: null } : { data: null, error: `Unknown case ${unitId}` };
+  }, [s.data, s.error, unitId]);
 }
 
 export const caseHref = (unitId: string, system?: string) => `/case/${encodeURIComponent(unitId)}${system ? `?system=${system}` : ""}`;

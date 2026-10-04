@@ -23,7 +23,7 @@ export default function Present() {
   const [started, setStarted] = useState(false);
   const [i, setI] = useState(0);
   const [big, setBig] = useState(true);
-  const [mode, setMode] = useState<"live" | "replay">("replay");
+  const [mode, setMode] = useState<"live" | "replay">("live");
   const [checks, setChecks] = useState<Check[]>([]);
   const [replayKey, setReplayKey] = useState<string | null>(null);
   const [replayOk, setReplayOk] = useState(false);
@@ -41,7 +41,9 @@ export default function Present() {
       const h = await getHealth(true);
       list[1] = { ...list[1], state: "ok", note: `mode ${h.mode}, streaming ${h.streaming}` };
       list[2] = { ...list[2], state: h.hashes.verified ? "ok" : "fail", note: h.hashes.mismatches?.join(", ") };
-      list[3] = h.model.available ? { ...list[3], state: "ok", note: h.model.id } : { ...list[3], state: "skip", note: h.model.reason ?? "no key: live steps hidden" };
+      list[3] = h.model.available && !h.model.mock ? { ...list[3], state: "ok", note: h.model.id }
+        : h.model.mock ? { ...list[3], state: "skip", note: "test double only (mock model): the live step is labelled “Test double”, never “Live”" }
+        : { ...list[3], state: "skip", note: h.model.reason ?? "no key: live steps hidden" };
     } catch (e) {
       list[1] = { ...list[1], state: "skip", note: (e as Error).message };
       list[2] = { ...list[2], state: "skip" };
@@ -105,7 +107,8 @@ export default function Present() {
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-wrap items-center justify-between gap-3 text-[15px] text-ink-3">
             <span>{i + 1} / {steps.length} · {step.title}</span>
-            <span className="flex gap-2"><StatusBadge status="sealed" />{step.id === "live" && (mode === "replay" || !live ? <StatusBadge status="replay" detail={run.recordedUtc ? `recorded ${run.recordedUtc.slice(0, 16).replace("T", " ")} UTC` : undefined} /> : <StatusBadge status="live" />)}</span>
+            <span className="flex gap-2"><StatusBadge status="sealed" />{step.id === "live" && run.source === "replay" && <StatusBadge status="replay" detail={run.recordedUtc ? `recorded ${run.recordedUtc.slice(0, 16).replace("T", " ")} UTC` : undefined} />}
+              {step.id === "live" && run.source === "live" && (api.health?.model.mock ? <span className="rounded-full border border-line px-2 py-0.5 text-[11.5px]">Test double (mock model, not live)</span> : <StatusBadge status="live" />)}</span>
           </div>
           <h1 className="mt-3 text-[40px] font-semibold leading-tight [text-wrap:balance]">{step.headline}</h1>
           <div className="mt-6">
@@ -129,7 +132,7 @@ function StepBody({ id, hero, pointers, api, t4, live, replayKey, run, start, re
     case "live": return (
       <div className="space-y-3 text-[16px]">
         <Button className="h-11 text-[17px]" onClick={() => (live ? void start({ mode: "benchmark", unitId: hero.id }) : replayKey && void replay(replayKey))}>{live ? "Re-run live" : "Play cached replay"}</Button>
-        <div className="grid gap-4 md:grid-cols-2"><SealedPanel unit={hero} /><LivePanel run={run} unit={hero} /></div>
+        <div className="grid gap-4 md:grid-cols-2"><SealedPanel unit={hero} /><LivePanel run={run} unit={hero} mock={!!api.health?.model.mock} /></div>
       </div>
     );
     case "edit": return <p>Open the edit lab: <a className="text-accent underline" href="/lab/edit">/lab/edit</a> (control run first).</p>;

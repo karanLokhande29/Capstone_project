@@ -11,3 +11,5 @@ dist-artifact/
 dist-azure/
 .swa/
 .routes-staging*
+api/.data/
+api/.state/

@@ -1,0 +1,10 @@
+{
+ "frozen_at_utc": "2026-10-02T13:19:24+00:00",
+ "sha256": {
+  "comparator_system.txt": "51f7ea78ed4b6ca22c9514d856c1812d7500589942c7db4ee8965efef74a24a3",
+  "comparator_user.txt": "cde2087182da21ced19ecc0e586036e274fed042f7104262a78fc323125d2967",
+  "comparator_rule.py": "83664f8d9d8f7b7355538552eb752bd553d0a1c936475643e9d0622f7249950e"
+ },
+ "model": "gemini-3.5-flash-lite",
+ "amendments_v2_sha256": "6b5ffdecd5d20473013f576f2423dbe126d393422187327d16f193e7c9e97c75"
+}

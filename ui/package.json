@@ -17,9 +17,12 @@
     "typecheck": "tsc -b --pretty false",
     "lint": "eslint . --max-warnings 0",
     "test": "vitest run",
-    "test:py": "python3 -m pytest -q -o addopts= -p no:cacheprovider scripts/tests",
+    "test:py": "python3 -m pytest -q -o addopts= -p no:cacheprovider scripts/tests api/tests",
     "check:dist": "python3 scripts/check_dist.py",
-    "data": "python3 scripts/build_demo_data.py"
+    "data": "python3 scripts/build_demo_data.py",
+    "api": "python3 api/server.py",
+    "api:bundle": "python3 api/build_bundle.py",
+    "present:local": "sh -c 'MODE=presenter python3 api/server.py & API=$!; trap \"kill $API\" EXIT; vite --open /present'"
   },
   "dependencies": {
     "@hono/node-server": "^1.19.5",
