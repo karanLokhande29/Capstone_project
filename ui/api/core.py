@@ -220,7 +220,7 @@ class GeminiLlm:
         req = urllib.request.Request(f"{GEMINI}/models/{self.id}:streamGenerateContent?alt=sse", data=json.dumps(payload).encode(),
                                      headers={"content-type": "application/json", "x-goog-api-key": self._key}, method="POST")
         try:
-            resp = self.opener(req, timeout=90)
+            resp = self.opener(req, timeout=90, context=_tls_context())
         except urllib.error.HTTPError as e:
             raise LlmError("quota" if e.code == 429 else "upstream", f"provider error {e.code}") from None
         except (urllib.error.URLError, TimeoutError, OSError) as e:
@@ -239,6 +239,19 @@ class GeminiLlm:
                     for part in (cand.get("content") or {}).get("parts") or []:
                         if part.get("text") and not part.get("thought"):
                             yield part["text"]
+
+
+def _tls_context():
+    """HTTPS trust store. python.org builds on macOS ship without system certificates, so use certifi's bundle when it
+    is installed (as `requests`, used by the experiments, does); otherwise the platform default."""
+    import ssl
+
+    try:
+        import certifi  # type: ignore[import-not-found]
+
+        return ssl.create_default_context(cafile=certifi.where())
+    except ImportError:
+        return ssl.create_default_context()
 
 
 class MockLlm:

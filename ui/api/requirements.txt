@@ -1,3 +1,4 @@
 # Azure Function runtime only; the service itself uses the standard library.
 azure-functions
 azure-storage-blob
+certifi

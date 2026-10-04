@@ -195,3 +195,21 @@ All 32 DIFFERENT→NONE errors have `addresses_same_duty = false` on **both** ca
 | 8 | Click-through | Home hero → reveal → Microscope → (re-run disabled: no model) → Failure Map cell → case → Triage → Results → Method: OK on the deployed site. |
 
 **Tests:** vitest 101; Python 26 (UI scripts + API); repo pytest 1211; `release_check` PASS; `build_tables --check` up to date; `check_paper --allow-placeholders` PASS; `scan_documents` 0 unsourced.
+
+## Live checks with the demo key (2026-10-04, local presenter server)
+
+- **Hero:** `t1_md_12949::p00040|Rural Co-operative Banks`.
+  - The live verdict (*different*) and matched paragraph (`md_12994::p00022`) equal the sealed output.
+  - Two field statuses differ: `deadline` differs → absent, `reporting` equal → differs.
+  - The UI shows **Live ≠ sealed** with that diff.
+  - 2.8 s; 1,856 input / 640 output tokens.
+- **J control-run check** (the 5 first edit-lab base pairs, unedited):
+  - **3 of 5 reproduce exactly**.
+  - In all 5 the verdict and matched paragraph are the same.
+  - The 2 divergent pairs differ only in `scope` (and `condition`) field labels.
+  - **Below the spec's 4-of-5 bar → the edit lab stays a read-only explainer on the public site.** In local presenter mode the per-pair gate still blocks interpretation whenever the control diverges.
+- **Python HTTPS fix:** python.org builds on macOS ship without system CA certificates. The API now uses certifi's bundle (as `requests` does in the experiments).
+- **Azure Function:**
+  - Creation was started from this session.
+  - Further Azure changes (settings, key, code deploy) were blocked by the session's permission rules.
+  - They are scripted in `ui/api/deploy_function.sh` for Karan to run himself; the key is typed into his own terminal.

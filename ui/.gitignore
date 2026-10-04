@@ -14,3 +14,4 @@ dist-azure/
 api/.data/
 api/.state/
 .deploy-gz/
+.deploy-api.zip
