@@ -9,16 +9,17 @@
     "calibrate": "python3 scripts/calibrate.py",
     "dev": "vite",
     "server": "tsx server/index.ts",
-    "build": "tsc -b && vite build",
+    "build": "npm run data && tsc -b && vite build",
     "preview": "vite preview",
-    "build:azure": "tsc -b && python3 scripts/public_snapshot.py && VITE_NO_PROXY=1 vite build && cp azure/staticwebapp.config.json dist-azure/",
+    "build:azure": "npm run data && tsc -b && VITE_NO_PROXY=1 vite build",
     "deploy:azure": "npm run build:azure && bash scripts/deploy_azure.sh",
-    "build:hosted": "tsc -b && python3 scripts/public_snapshot.py && VITE_ARTIFACT=1 vite build && python3 scripts/artifact_page.py",
+    "build:hosted": "npm run data && tsc -b && VITE_ARTIFACT=1 vite build && python3 scripts/artifact_page.py",
     "typecheck": "tsc -b --pretty false",
     "lint": "eslint . --max-warnings 0",
     "test": "vitest run",
     "test:py": "python3 -m pytest -q -o addopts= -p no:cacheprovider scripts/tests",
-    "check:dist": "python3 scripts/check_dist.py"
+    "check:dist": "python3 scripts/check_dist.py",
+    "data": "python3 scripts/build_demo_data.py"
   },
   "dependencies": {
     "@hono/node-server": "^1.19.5",

@@ -10,3 +10,4 @@ __pycache__/
 dist-artifact/
 dist-azure/
 .swa/
+.routes-staging*

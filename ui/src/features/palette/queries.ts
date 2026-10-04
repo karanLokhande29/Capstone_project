@@ -86,7 +86,7 @@ export const QUERIES: PaletteQuery[] = [
       const rows = s.paired.filter((p) => p.id.startsWith("prereg:comparator − class_aware"));
       return { title: "Pre-registered: comparator − class-aware (106 items)", summary: rows.map((r) => `${r.metric} ${r.ciLabel}`).join("; "),
         rows: rows.map((r) => ({ label: `${r.metric}: ${r.ciLabel}`, detail: r.preregistered ? "pre-registered (amendment 3)" : "secondary", node: `paired:${r.id}` })),
-        sourceKeys: rows.map((r) => r.sourceKey), href: "/results/paired?prereg=1" };
+        sourceKeys: rows.map((r) => r.sourceKey), href: "/workspace/results/paired?prereg=1" };
     },
   },
   {

@@ -126,7 +126,7 @@ function RealCommandCenter() {
               <Num value={n("tables.08_t3.scored")} sourceKey="tables.08_t3.scored" /> · T4 <Num value={n("tables.09_t4.n_questions")} sourceKey="tables.09_t4.n_questions" /> questions</p>
             <p>8 T1 systems · 5 retrievers · 3 ablations (A class filter, B temporal filter, C verifier)</p>
             <p>Pointer-only release (<code>release/</code>) · Master Document v2 · paper draft</p>
-            <p className="text-ink-3">Nav: <Link className="text-accent" to="/construction">construction</Link> · <Link className="text-accent" to="/results">results</Link></p>
+            <p className="text-ink-3">Nav: <Link className="text-accent" to="/construction">construction</Link> · <Link className="text-accent" to="/workspace/results">results</Link></p>
           </CardBody>
         </Card>
         <Card>

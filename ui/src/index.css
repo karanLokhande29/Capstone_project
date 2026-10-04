@@ -88,3 +88,9 @@ body {
 @media print { nav, .no-print { display: none !important; } }
 /* Grid children may shrink below their content (charts, wide tables scroll inside their own container). */
 .grid > * { min-width: 0; }
+
+/* Failure Map: "retrieval implicated" cells are hatched, so the state never depends on colour alone. */
+.hatch {
+  background-image: repeating-linear-gradient(135deg, var(--neg) 0 2px, transparent 2px 6px);
+  background-color: var(--neg-soft);
+}

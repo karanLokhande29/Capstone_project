@@ -1,0 +1,1 @@
+{"t1":{"calls":412,"inputTokens":535706,"outputTokens":301815,"perCall":{"input":1300.2572815533981,"output":732.5606796116505}},"dev":{"calls":184,"inputTokens":234082,"outputTokens":124420},"price":null,"priceNote":"No price is recorded in the repository; tokens only.","source":"logs/llm_calls.jsonl"}

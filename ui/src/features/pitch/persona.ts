@@ -12,7 +12,13 @@ function read(): Persona {
   try { return (localStorage.getItem("cc-persona") as Persona) || "compliance"; } catch { return "compliance"; }
 }
 
-export const usePersona = create<{ persona: Persona; set: (p: Persona) => void }>((set) => ({
+function readClass(): string {
+  try { return localStorage.getItem("cc-persona-class") ?? ""; } catch { return ""; }
+}
+
+export const usePersona = create<{ persona: Persona; myClass: string; set: (p: Persona) => void; setClass: (c: string) => void }>((set) => ({
   persona: read(),
+  myClass: readClass(),
   set(p) { try { localStorage.setItem("cc-persona", p); } catch { /* per-viewer convenience only */ } set({ persona: p }); },
+  setClass(c) { try { localStorage.setItem("cc-persona-class", c); } catch { /* per-viewer convenience only */ } set({ myClass: c }); },
 }));

@@ -13,8 +13,12 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: [
-      // Public builds (Azure / Artifact) ship the slim pitch snapshot instead of the full research snapshot.
-      ...(process.env.VITE_NO_PROXY === "1" || HOSTED ? [{ find: /^\.\/snapshot\.json\?url$/, replacement: "./snapshot_public.json?url" }] : []),
+      // Public builds (Azure / Artifact) contain only the demo, which reads public/data/*.json. The workspace's snapshot and
+      // confidence-model URLs are stubbed so Vite does not emit them as assets.
+      ...(process.env.VITE_NO_PROXY === "1" || HOSTED ? [
+        { find: /^\.\/snapshot\.json\?url$/, replacement: "./public_stub.json?url" },
+        { find: /^\.\/confidence_model_v1\.json\?url$/, replacement: "./public_stub.json?url" },
+      ] : []),
       { find: "@", replacement: fileURLToPath(new URL("./src", import.meta.url)) },
     ],
   },

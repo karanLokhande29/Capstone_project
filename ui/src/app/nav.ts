@@ -10,7 +10,7 @@ export const NAV: NavGroup[] = [
   { label: "Home", items: [{ to: "/workspace", label: "Command Center", icon: Home, tier: "MUST" }, { to: "/", label: "Public site (pitch)", icon: Rocket, tier: "COULD", product: true }] },
   { label: "Research", items: [
     { to: "/rq", label: "Research questions", icon: Compass, tier: "MUST" },
-    { to: "/results", label: "Results Lab", icon: FlaskConical, tier: "MUST" },
+    { to: "/workspace/results", label: "Results Lab", icon: FlaskConical, tier: "MUST" },
     { to: "/different", label: "`different` Explorer", icon: GitCompare, tier: "MUST" },
     { to: "/construction", label: "Construction", icon: Boxes, tier: "SHOULD" },
     { to: "/reliability", label: "Reliability", icon: Users, tier: "MUST" },

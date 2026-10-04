@@ -2,7 +2,7 @@
 """Turn the hosted build (ui/dist-artifact/index.html) into an Artifact page: the host wraps the page in its own
 <!doctype html><head><body> skeleton, so the page file carries only <title>, meta, links, scripts and the root element.
 
-    npm run build:hosted   ->   ui/dist-artifact/page.html  (+ the files it references under assets/)
+    npm run build:hosted   ->   ui/dist-artifact/page.html  (+ assets/ and the data/ shards)
 """
 
 from __future__ import annotations
@@ -24,7 +24,8 @@ def main() -> int:
     head = title + "\n" + head.replace(title, "").strip()  # the host scans the first 8KB for <title>
     page = "\n".join(x.rstrip() for x in (head.strip(), body.strip())) + "\n"
     (OUT / "page.html").write_text(page, encoding="utf-8")
-    assets = sorted(str(p.relative_to(OUT)) for p in (OUT / "assets").rglob("*") if p.is_file())
+    # assets/ (the app) and data/ (the demo's per-route JSON shards, fetched relative to the page).
+    assets = sorted(str(p.relative_to(OUT)) for d in ("assets", "data") for p in (OUT / d).rglob("*") if p.is_file())
     referenced = set(re.findall(r'(?:src|href)="\./(assets/[^"]+)"', page))
     missing = referenced - set(assets)
     if missing:

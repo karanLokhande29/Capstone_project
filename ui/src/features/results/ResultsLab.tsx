@@ -224,7 +224,7 @@ export default function ResultsLab() {
   return (
     <div>
       <PageHeader title="Results Lab" tier="MUST" subtitle="Every cell: hover shows its key in reports/results_v2.json; click opens evidence and lineage. CIs are 95% percentile bootstrap (2,000 item resamples), labelled exactly as src/eval/ci_format.py." />
-      <Tabs value={tab} onValueChange={(v) => nav(`/results/${v}`)}>
+      <Tabs value={tab} onValueChange={(v) => nav(`/workspace/results/${v}`)}>
         <TabsList className="mb-3">{TABS.map(([k, l]) => <TabsTrigger key={k} value={k}>{l}</TabsTrigger>)}</TabsList>
         <TabsContent value="t1"><T1Tab /></TabsContent>
         <TabsContent value="t2"><T2Tab /></TabsContent>
