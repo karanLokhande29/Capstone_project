@@ -86,7 +86,7 @@ export default function Method() {
           Re-running the frozen rule with actor comparisons masked shows how much rests on that:</p>
         <div className="mt-3 overflow-x-auto">
           <table className="min-w-[420px] text-[14px]">
-            <thead className="text-left text-[12.5px] text-ink-3"><tr><th className="py-1 pr-6 font-medium" /><th className="pr-6 font-medium">Frozen rule (reported)</th><th className="font-medium">Actor masked</th></tr></thead>
+            <thead className="text-left text-[12.5px] text-ink-3"><tr><th className="py-1 pr-6 font-medium"><span className="sr-only">Measure</span></th><th className="pr-6 font-medium">Frozen rule (reported)</th><th className="font-medium">Actor masked</th></tr></thead>
             <tbody>
               <tr className="border-t border-line"><td className="py-1.5 pr-6">Correct “different” calls (of 78)</td><td className="num">{s.frozen.tp}</td><td className="num">{s.actorMasked.tp} ({s.actorMasked.tp} of {s.frozen.tp} remain)</td></tr>
               <tr className="border-t border-line"><td className="py-1.5 pr-6">False alarms</td><td className="num">{s.frozen.fp}</td><td className="num">{s.actorMasked.fp} ({s.actorMasked.fp} of {s.frozen.fp} remain)</td></tr>

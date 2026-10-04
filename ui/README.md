@@ -6,7 +6,11 @@ An explainable, read-only product layer over the RBI-ObliBench research record. 
 - the **Obligation Explorer** and the **Ask RBI-ObliBench** assistant;
 - a **Product Showcase**.
 
-**Two sites from one codebase (D-23).** The public builds (Azure and the claude.ai copy) contain only the **pitch site**: Overview (with "I'm here as" personalisation), Results (six findings in plain language), Try it, How it works, and Trust & limits. They use a slim public snapshot (`scripts/public_snapshot.py`). The full author workspace (research views, P-numbered experiments, audit, readiness) runs locally only, at `/workspace` under `npm run dev`.
+**Two sites from one codebase (D-23, D-24).** Public builds (Azure and the claude.ai copy) contain only the **demo**:
+- Home · Cases (Explore, Failure Map, Play, Atlas, `/case/:unitId` Microscope) · Lab · Triage · Results · Method & Trust;
+- the hidden `/present`.
+
+It reads small per-route JSON shards from `public/data/` (`npm run data` → `scripts/build_demo_data.py`, with the §C3 assertions) and never the research snapshot. The author workspace (research views, audit, readiness) runs locally only, at `/workspace`. Start with `AUDIT.md`, `DEMO_RUNBOOK.md` and `CHANGELOG.md`.
 
 The benchmark is the research contribution, and the pipeline and comparator are the engineering artefacts. The Command Center itself makes **no LLM calls**.
 
@@ -35,10 +39,20 @@ The preview is served at http://127.0.0.1:5183.
 To update it, sign in with `az login`, then run:
 
 ```bash
-npm run deploy:azure   # build dist-azure + upload; every route returns 200; stale assets removed
+npm run deploy:azure   # data build + both builds + check_dist (must pass) + gzip upload; every route incl. the 412 case pages returns 200
 ```
 
-It serves the pitch pages only (`/`, `/findings`, `/demo`, `/how-it-works`, `/trust`). Any other path, including the old workspace routes, shows "Page not found".
+## Comparator API (Phase H)
+
+```bash
+npm run api:bundle   # frozen prompt/rule bundle (hash-checked) + server-side inputs in api/.data (gitignored)
+npm run api          # local API on :5190 (vite dev proxies /api/health|compare|replay|rehydrate|freshness)
+npm run present:local   # presenter mode (full text, freshness) + the app at /present
+```
+
+- **Key:** read only from the server process's environment: `ASSISTANT_GEMINI_API_KEY` locally, `GEMINI_API_KEY` as an Azure Function app setting. It must be a key dedicated to the demo. Without it, `/api/health` reports the model unavailable and the UI is replay-only.
+- **Azure:** `api/function_app.py` is the Azure Functions wrapper (buffered streaming). It is not deployed yet.
+- **Tests:** `npm run test:py` (mocked model).
 
 ## Hosted copy
 

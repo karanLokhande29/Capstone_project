@@ -157,3 +157,41 @@ So every `differs` row that shows `null | null` in the public snapshot (e.g. `t1
 ### Comparator misses (E drill-down)
 
 All 32 DIFFERENT→NONE errors have `addresses_same_duty = false` on **both** candidates (32/32). This supports the caption.
+
+---
+
+## Decisions taken while building (Phases B–K)
+
+| Item | Decision |
+|---|---|
+| **H streaming** | The local server (`ui/api/server.py`) ships **incremental** streaming. `field` events come only from values `jsonstream.JsonStream` has fully parsed; on any parse problem the run continues **buffered**, with no per-field events (tested). The Azure Function wrapper (`ui/api/function_app.py`) is **buffered** (no HTTP-streaming extension), and its `/api/health` says so. The UI copy matches each mode. |
+| **H deployment** | **Not deployed (hard stop 3).** There is no demo-dedicated model key, and the experiments' `GEMINI_API_KEY` must not be used. Built and tested locally with a mocked model: 19 API tests, including 5 benchmark units end to end that reproduce the sealed output, a mid-stream network loss, the rate limit, and paste privacy (a marker string never reaches the cache or the logs). The public site has no API, so it is replay-only with the "Live service unavailable" banner. |
+| **Replays** | Recorded only from real live runs. Runs from the dev test double (`MOCK_LLM=sealed`) are stored apart and are never served as replays. None exist yet, so presenter mode hides the live step unless a model is configured. |
+| **Inputs for live runs** | Exactly the sealed run's inputs: the source span and two candidates from the blank pass-1 sheet, sha-checked against the draw log as `scripts/run_sealed_predictions.py` does. They are written to `ui/api/.data/` (gitignored, server-side only). The call shape is the same as the sealed run: temperature 0, JSON mode, `thinkingLevel: minimal`, 4,096 output tokens. |
+| **J edit lab** | **Read-only explainer** on the public site. The control-run reproducibility check (≥ 5 live runs) could not be run without a key. In local presenter mode with a live model the full flow (control-run gate, structured edits, conclusion) is enabled. Edit runs are logged to `lab_runs.jsonl` locally, or to an append blob behind `CACHE_CONNECTION`. 9 curated base pairs (6 *same*, 3 *different*; 55 / 19 eligible). |
+| **H4 freshness** | Local presenter only: the repository's own fetch → re-segment → hash path (`scripts/rehydrate.py`), cached for 24 h, with exactly three outcomes. The Azure wrapper answers "Could not verify" because the pipeline is not bundled there. |
+| **K1 Atlas** | Built. The matrix has **294** populated cells over the 11 regulated classes; the published **296** includes 2 cells under "Foreign Exchange Management", an RBI function heading. The page states both. |
+| **K2 T3 timeline** | Built. Dragging the as-of date shows the amendment record's status; the model's stored answers appear only at the date that was actually asked. Nothing is generated. |
+| **K3 T2 animation** | Built from `data/evaluation/p3001/runs_t2_xclass_t1_v1.jsonl`. Recall@10 is re-derived and asserted equal to `results_v2.json`. |
+| **K4 X-Ray** | Partial, from the logs that exist: the context given to each LLM system per attempt, retries and the final answer. The BM25 / dense / RRF stages were not logged per case and are not shown. One view per system. |
+| **K5** | Not built (privacy rule; see A5). |
+| **K6 cost** | Tokens from the ledger. **No price** exists in the repository, so none is shown. |
+| **K7** | The static part is built. Live RePASs scoring is not attempted (optional). |
+| **K8 audience poll** | Not built: it needs the backend and a store. |
+| **Release check on `ui/dist`** | `ui/scripts/check_dist.py` (25-word limit, stricter than the release check's 30) scans every build plus `public/data`. It also runs the §14.2 honesty grep and fails if a public build contains the full-text endpoint. `npm run deploy:azure` refuses to deploy when it fails. |
+| **Commits** | Branch `demo-build`. Commits contain `ui/` plus `paper/aisigh/PATCHLIST_v1.md` (B5). The paper and generator files themselves are untracked in this repository and were not committed. |
+
+## QA (§14), 2026-10-04
+
+| # | Check | Result |
+|---|---|---|
+| 1 | Ingest assertions (§C3) | Pass: 412/412 traced, M2 recomputed per unit, every published count reproduced. |
+| 2 | Honesty grep on all builds | Pass. |
+| 3 | No RBI run ≥ 26 words in any build or data shard; no full-text endpoint in public builds | Pass (`check_dist`). |
+| 4 | Every route at 375 / 768 / 1280 px, light and dark | No horizontal scroll; tables scroll inside their own containers. Keyboard: cells, rows and choices are focusable. Failure Map states are icon or pattern plus label. |
+| 5 | Accessibility | axe-core 4.10: 0 violations on all 13 routes in light and dark. **Lighthouse itself was not run** (no Lighthouse CLI here). Home transfer ≈ 156 KB gzipped, of which 2 KB is JSON (budget 150 KB of JSON). |
+| 6 | Backend | Hash verification, the 503 on mismatch, rate limit and paste privacy are covered by tests. CORS is restricted to the listed origins. Not deployed. |
+| 7 | Presenter preflight | Green for sealed data and hashes. Live and replay are skipped without a key, and the live step is then hidden. |
+| 8 | Click-through | Home hero → reveal → Microscope → (re-run disabled: no model) → Failure Map cell → case → Triage → Results → Method: OK on the deployed site. |
+
+**Tests:** vitest 101; Python 26 (UI scripts + API); repo pytest 1211; `release_check` PASS; `build_tables --check` up to date; `check_paper --allow-placeholders` PASS; `scan_documents` 0 unsourced.

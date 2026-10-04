@@ -29,7 +29,7 @@ const CELL: Record<Cell, { label: string; cls: string; icon: React.ReactNode }> 
   retrieval: { label: "wrong, gold paragraph not in context (retrieval implicated)", cls: "hatch text-neg border border-neg", icon: <X size={13} strokeWidth={3} /> },
   abstained: { label: "abstained", cls: "bg-ink-3/35 text-ink", icon: <Minus size={13} strokeWidth={3} /> },
   not_answered: { label: "never answered (input too long)", cls: "border border-dashed border-ink-3 text-ink-3", icon: <Circle size={9} /> },
-  na: { label: "cannot output “different” (embedding baseline)", cls: "bg-panel-2 text-ink-3 opacity-60", icon: <span className="text-[10px]">n/a</span> },
+  na: { label: "cannot output “different” (embedding baseline)", cls: "bg-panel-2 text-ink-2", icon: <span className="text-[10px]">n/a</span> },
 };
 
 export default function FailureMap() {

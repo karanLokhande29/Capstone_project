@@ -83,7 +83,7 @@ export default function Present() {
 
   if (!started) {
     return (
-      <div className="min-h-screen bg-bg px-6 py-10 text-[20px] text-ink">
+      <main className="min-h-screen bg-bg px-6 py-10 text-[20px] text-ink">
         <div className="mx-auto max-w-3xl">
           <h1 className="text-[36px] font-semibold">Presenter preflight</h1>
           <ul className="mt-6 space-y-3">
@@ -97,13 +97,13 @@ export default function Present() {
           <p className="mt-6 text-[16px] text-ink-2">Steps in this session: {steps.map((s) => s.title).join(" → ")}. Keys: → next, ← back, R restart, L live/replay, B big text, F fullscreen.</p>
           <Button className="mt-6 h-12 px-6 text-[18px]" onClick={() => setStarted(true)} disabled={checks[0]?.state !== "ok"}>Start</Button>
         </div>
-      </div>
+      </main>
     );
   }
 
   return (
     <TooltipProvider>
-      <div className={cn("min-h-screen bg-bg px-6 py-8 text-ink", big ? "text-[24px] [&_p]:leading-snug" : "text-[18px]")} data-present>
+      <main className={cn("min-h-screen bg-bg px-6 py-8 text-ink", big ? "text-[24px] [&_p]:leading-snug" : "text-[18px]")} data-present>
         <div className="mx-auto max-w-6xl">
           <div className="flex flex-wrap items-center justify-between gap-3 text-[15px] text-ink-3">
             <span>{i + 1} / {steps.length} · {step.title}</span>
@@ -115,7 +115,7 @@ export default function Present() {
             <StepBody id={step.id} hero={hero} pointers={home.heroPointers} api={api} t4={t4} live={live && mode === "live"} replayKey={replayKey} run={run} start={start} replay={replay} />
           </div>
         </div>
-      </div>
+      </main>
     </TooltipProvider>
   );
 }

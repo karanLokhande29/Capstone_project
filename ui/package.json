@@ -12,7 +12,7 @@
     "build": "npm run data && tsc -b && vite build",
     "preview": "vite preview",
     "build:azure": "npm run data && tsc -b && VITE_NO_PROXY=1 vite build",
-    "deploy:azure": "npm run build:azure && bash scripts/deploy_azure.sh",
+    "deploy:azure": "npm run build:azure && npm run build && python3 scripts/check_dist.py && bash scripts/deploy_azure.sh",
     "build:hosted": "npm run data && tsc -b && VITE_ARTIFACT=1 vite build && python3 scripts/artifact_page.py",
     "typecheck": "tsc -b --pretty false",
     "lint": "eslint . --max-warnings 0",

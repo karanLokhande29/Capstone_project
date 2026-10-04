@@ -13,3 +13,4 @@ dist-azure/
 .routes-staging*
 api/.data/
 api/.state/
+.deploy-gz/

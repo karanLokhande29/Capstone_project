@@ -70,10 +70,17 @@ def entity_only(v) -> bool:
     return bool(toks) and all(t in ENTITY_WORDS or all(p in ENTITY_WORDS for p in t.split("-")) for t in toks)
 
 
+FFFD_DROPPED = [0]
+
+
 def wjson(name: str, obj) -> int:
     p = OUT / name
     p.parent.mkdir(parents=True, exist_ok=True)
     s = json.dumps(obj, ensure_ascii=False, separators=(",", ":"), default=float)
+    # U+FFFD comes from PDF extraction (e.g. a garbled Devanagari letterhead); it is display noise, so it is dropped.
+    # Paragraph hashes are computed on the corpus text, not on these excerpts, and are unaffected.
+    FFFD_DROPPED[0] += s.count("\ufffd")
+    s = s.replace("\ufffd", "")
     p.write_text(s, encoding="utf-8")
     return len(s.encode())
 
@@ -462,7 +469,7 @@ def main() -> int:
     total = sum(sizes.values())
     print(f"ui/public/data: {len(sizes)} files, {total / 1e6:.2f} MB; home.json {sizes['home.json'] / 1e3:.0f} KB; "
           f"index {sizes['cases/index.json'] / 1e3:.0f} KB; §C3 assertions passed; traced 412/412; sensitivity actor-masked "
-          f"{sens['actorMasked']['tp']}/38 correct, {sens['actorMasked']['fp']}/70 false alarms")
+          f"{sens['actorMasked']['tp']}/38 correct, {sens['actorMasked']['fp']}/70 false alarms; U+FFFD dropped {FFFD_DROPPED[0]}")
     return 0
 
 

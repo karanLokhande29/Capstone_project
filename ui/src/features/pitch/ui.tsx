@@ -30,7 +30,7 @@ export function FinePrint({ children, source }: { children: React.ReactNode; sou
 /** "What this means" callout. */
 export function Meaning({ children }: { children: React.ReactNode }) {
   return (
-    <div className="mt-4 border-l-[3px] border-accent bg-accent-soft/60 px-4 py-3 text-[14px] leading-relaxed text-ink">
+    <div className="prose-links mt-4 border-l-[3px] border-accent bg-accent-soft/60 px-4 py-3 text-[14px] leading-relaxed text-ink">
       <span className="mr-1 font-semibold">What this means:</span>{children}
     </div>
   );

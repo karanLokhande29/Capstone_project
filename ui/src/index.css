@@ -32,14 +32,14 @@
   --line: #e3e3de;
   --ink: #18181b;
   --ink-2: #4b4b52;
-  --ink-3: #6f6f78;
+  --ink-3: #63636b;
   --accent: #0f766e;
   --accent-soft: #e6f3f1;
-  --pos: #15803d;
+  --pos: #146c33;
   --pos-soft: #e8f5ec;
   --neg: #b91c1c;
   --neg-soft: #fbeaea;
-  --warn: #a16207;
+  --warn: #8a5306;
   --warn-soft: #fbf3e2;
   --neutral: #6b7280;
   --product: #4338ca;
@@ -94,3 +94,6 @@ body {
   background-image: repeating-linear-gradient(135deg, var(--neg) 0 2px, transparent 2px 6px);
   background-color: var(--neg-soft);
 }
+
+/* Links inside running text are underlined, so they are not distinguished by colour alone (WCAG 1.4.1). */
+p > a, li > a, dd > a, .prose-links a { text-decoration-line: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
