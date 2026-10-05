@@ -1,119 +1,109 @@
-# RBI-ObliBench Command Center
+# RBI-ObliBench demo and Command Center
 
-An explainable, read-only product layer over the RBI-ObliBench research record. It has three faces:
+> This is not a chatbot over RBI documents. It is a benchmark and inspection environment for finding, explaining and stress-testing differences between regulatory obligations.
 
-- the **Research Command Center**: traceability, results, audit and submission readiness;
-- the **Obligation Explorer** and the **Ask RBI-ObliBench** assistant;
-- a **Product Showcase**.
+**Live site:** https://rbioblibench5qbvp2.z29.web.core.windows.net
+**Comparator API:** https://rbiob-api-5qbvp2.azurewebsites.net/api/health
 
-**Two sites from one codebase (D-23, D-24).** Public builds (Azure and the claude.ai copy) contain only the **demo**:
-- Home · Cases (Explore, Failure Map, Play, Atlas, `/case/:unitId` Microscope) · Lab · Triage · Results · Method & Trust;
-- the hidden `/present`.
+Key documents:
+- `AUDIT.md`: what was checked, branch decisions, QA;
+- `DEMO_RUNBOOK.md`: how to present;
+- `CHANGELOG.md`: every user-visible change, and the source of every number;
+- `docs/DECISIONS.md`: D-01 to D-28.
 
-It reads small per-route JSON shards from `public/data/` (`npm run data` → `scripts/build_demo_data.py`, with the §C3 assertions) and never the research snapshot. The author workspace (research views, audit, readiness) runs locally only, at `/workspace`. Start with `AUDIT.md`, `DEMO_RUNBOOK.md` and `CHANGELOG.md`.
+## What it is
 
-The benchmark is the research contribution, and the pipeline and comparator are the engineering artefacts. The Command Center itself makes **no LLM calls**.
+RBI issues a separate Master Direction for each kind of regulated institution (banks, NBFCs, co-operative banks and others), so the same topic recurs with small but important differences.
 
-## Quick start
+The demo is built on **412 comparisons labelled by an expert**: one institution type's obligation against the closest rule for another type, labelled *same*, *different* or *no matching rule*. The same 412 comparisons were answered by:
+- five LLM systems;
+- a **structured comparator**. Its model extracts 13 fields from both rules, and a fixed rule, frozen by sha256 before any test run, decides the verdict.
+
+Every answer is sealed. The site shows them all and lets you inspect, replay and re-run them.
+
+## Pages
+
+| Route | What you can do |
+|---|---|
+| `/` **Home** | Play a spot-the-difference round on a verified case that all five LLMs missed and the comparator caught. Then the positioning, four stats, and next-step cards ordered by persona ("I'm here as…"). |
+| `/cases` **Explore** | Three entry cards, eight filters plus a paragraph-id search over the 412 cases. |
+| `/case/:unitId` **Microscope** | See one case in full:<br>• both paragraph excerpts with RBI links;<br>• every system's answer, marked when the gold paragraph was in context;<br>• the X-Ray of what each LLM was given;<br>• the 13-field table (click to highlight by string match);<br>• the frozen-rule decision trace;<br>• confidence: "Flagged for review" on *different*;<br>• the provenance drawer. |
+| `/cases/failures` **Failure Map** | The 78 real differences × systems: caught, reasoning failure, retrieval failure (hatched), abstained, never answered. Includes the "Why the comparator misses" drill-down. |
+| `/cases/play` **Play** | Curated hard cases (the 56 every LLM missed) or a random draw. Scored against the best LLM and the comparator over the same rounds. |
+| `/cases/atlas` **Atlas** | 11 institution types × 57 topics: which have Directions, where the test questions come from, and ambiguous cells. |
+| `/lab` **Lab** | Re-run a benchmark pair live, sealed vs live, with a "Live ≠ sealed" diff. Also cached replays, paste mode (unvalidated; only a hash is stored), the edit lab (read-only in public) and a token cost meter. |
+| `/triage` **Triage** *(post-paper)* | A threshold slider over the M2 confidence: coverage, accuracy, what goes to review (bootstrap 95% ranges), a reliability diagram and the feature weights. An observed trade-off, not a recommendation. |
+| `/results` **Results** | Six findings with plain-language meanings and fine print, plus the T2 filter animation, the T3 date timeline and the RePASs playground. |
+| `/method` **Method & Trust** | How it was built, two separately evaluated lanes, safeguards, the actor-masked sensitivity analysis (post-paper), limits, cost, frozen-file hashes and licences. |
+| `/present` | Hidden presenter mode: preflight, then an 8-step 3-minute script. Keys: ← → R L B F. |
+
+**Status badges** on every page: Benchmark · sealed / Live re-run / Cached replay / Unvalidated input / Post-paper / Live ≠ sealed.
+
+**RBI text:** at most 12 words per excerpt and 25 per paragraph across the whole site, always linked to RBI's PDF. Full text appears only in local presenter mode.
+
+## Run it locally
 
 ```bash
 cd ui
 npm install
-npm run ingest      # repo -> src/data/snapshot.json (numbers by results key, pointers, unit predictions, ≤25-word excerpts)
-npm run calibrate   # §8.2 confidence: spec -> M2 fitted on dev + frozen -> gold evaluation -> confidence_model_v1.json, docs/CALIBRATION.md
-npm run dev         # http://localhost:5181
+npm run data     # repo -> public/data/*.json (per-route shards); runs every §C3 assertion and stops on any mismatch
+npm run dev      # http://localhost:5181  (author workspace at /workspace)
 ```
 
-For the production build:
+The author workspace also needs `npm run ingest` (research snapshot) and `npm run calibrate` (confidence model). Both make no LLM calls.
+
+### Live comparator on your laptop
 
 ```bash
-npm run build && npm run preview
+npm run api:bundle      # frozen prompt + rule (sha256-checked) and server-side inputs in api/.data (gitignored)
+npm run present:local   # comparator API on :5190 in presenter mode + the app at /present
 ```
 
-The preview is served at http://127.0.0.1:5183.
+- **Key:** set `ASSISTANT_GEMINI_API_KEY` in that terminal first. Use a key dedicated to the demo, never the experiments' `GEMINI_API_KEY`.
+- **Without a key** the API reports the model as unavailable and the UI is replay-only.
+- **Test double:** `MOCK_LLM=sealed npm run api` is a test double for UI checks. It is labelled "Test double", never "Live", and its runs are never saved as replays.
 
-## Public site (Azure)
+## Deploy
 
-**https://rbioblibench5qbvp2.z29.web.core.windows.net/** is an Azure Storage static website in resource group `rg-rbi-oblibench` (Azure for Students).
+| What | Command | Notes |
+|---|---|---|
+| Public site (Azure Storage static website, `rg-rbi-oblibench`) | `VITE_API_BASE=https://rbiob-api-5qbvp2.azurewebsites.net npm run deploy:azure` | Runs the data build, both builds and `check_dist`; refuses to deploy if any check fails. Gzips JS/CSS/JSON. All 412 case URLs return 200. |
+| Comparator API (Azure Function, Flex Consumption, Central India) | `bash api/deploy_function.sh` | Re-runnable. Asks for the Gemini key in your terminal; the key is never written to a file. Uploads recorded runs as cached replays, then redeploys the site. |
+| claude.ai copy (private until shared) | `npm run build:hosted` | Republish `dist-artifact/page.html` with every file in `dist-artifact/files.json`, setting removed asset paths to `null`. |
 
-To update it, sign in with `az login`, then run:
-
-```bash
-npm run deploy:azure   # data build + both builds + check_dist (must pass) + gzip upload; every route incl. the 412 case pages returns 200
-```
-
-## Comparator API (Phase H)
-
-```bash
-npm run api:bundle   # frozen prompt/rule bundle (hash-checked) + server-side inputs in api/.data (gitignored)
-npm run api          # local API on :5190 (vite dev proxies /api/health|compare|replay|rehydrate|freshness)
-npm run present:local   # presenter mode (full text, freshness) + the app at /present
-```
-
-- **Key:** read only from the server process's environment: `ASSISTANT_GEMINI_API_KEY` locally, `GEMINI_API_KEY` as an Azure Function app setting. It must be a key dedicated to the demo. Without it, `/api/health` reports the model unavailable and the UI is replay-only.
-- **Azure:** `api/function_app.py` is the Azure Functions wrapper (buffered streaming). It is not deployed yet.
-- **Tests:** `npm run test:py` (mocked model).
-
-## Hosted copy
-
-```bash
-npm run build:hosted   # -> dist-artifact/page.html + assets/
-```
-
-The output is published as a claude.ai Artifact: https://claude.ai/artifact/NqaqjFz3gUz7zrnaFo6V4R. It is private until it is shared from the page's Share menu.
-- **Routing:** hash routes (`#/results/t1`). Drawer state is kept in the hash.
-- **Content:** the same pitch-only site as Azure. When republishing, set any asset paths that no longer exist to `null`.
+**To rotate the key:** update only the Function's app setting `GEMINI_API_KEY`. Enter the new key through a hidden dialog, not the app's terminal panel, which echoes pasted text.
 
 ## Checks
 
 | Command | What it checks |
 |---|---|
-| `npm run typecheck` / `npm run lint` | TypeScript strict and ESLint (0 warnings). |
-| `npm test` | Vitest:<br>• CI formatter vs `src/eval/ci_format.py`;<br>• R1–R14;<br>• confidence equals the frozen model;<br>• the four §6 chains;<br>• the 10 palette queries;<br>• every screen renders;<br>• the proxy with a mocked LLM;<br>• the live pipeline end to end with a mocked LLM. |
-| `npm run test:py` | Python:<br>• the snapshot word budget and the privacy invariants;<br>• calibration freeze order;<br>• the live bridge: a new query string → local bge encode (pinned revision) → class-aware RRF → comparator (mocked) → frozen rule. |
-| `npm run build && npm run check:dist` | `ui/dist` and `ui/src/data` contain no RBI run over 25 words (corpus shingles) and no key-like string. |
-| Repo root | `python3 -m pytest -q -o addopts= -p no:cacheprovider`, `python3 scripts/release_check.py`, `python3 scripts/build_tables.py --check`. |
+| `npm run typecheck` / `npm run lint` | TypeScript strict; ESLint with 0 warnings. |
+| `npm test` | Vitest (101 tests):<br>• every demo route renders from the real shards;<br>• honesty invariants: B2 names, "Flagged for review", triage 162/156 with no "recommended / optimal / safe", sensitivity label next to its numbers;<br>• Failure Map error counts equal the published table;<br>• no label leaks before a guess;<br>• SSE parsing and "Live ≠ sealed";<br>• the workspace screens. |
+| `npm run test:py` | Python (26 tests): UI ingest and privacy tests, and 19 comparator API tests with a mocked model. The API tests cover:<br>• 5 units reproducing the sealed output;<br>• hash mismatch → 503;<br>• buffered fallback;<br>• rate limit;<br>• a paste-mode marker never stored or logged. |
+| `npm run check:dist` | All builds and `public/data`: no RBI run over 25 words, no key-like strings, the §14 honesty grep, and no full-text endpoint in public builds. |
+| Repo root | `python3 -m pytest -q -o addopts=` (1211 tests), `python3 scripts/release_check.py` and `python3 scripts/build_tables.py --check`. |
 
-`ui/.gitignore` keeps `node_modules/`, `dist/`, `.env` and the proxy's state and cache out of the release check. No release-check exclusion was needed.
+**Accessibility:** axe-core 4.10 reports 0 violations on every route, in light and dark.
 
-## Opt-in assistant and live mode
+## Honesty rules the code enforces
 
-Both are **off by default** and need two switches:
-
-1. Create `ui/.env` (gitignored) from `.env.example`. Set `ASSISTANT_GEMINI_API_KEY=` to a key from a **separate Google Cloud project**. Never use the experiments' `GEMINI_API_KEY`.
-2. Run `npm run server`. This starts the proxy on 127.0.0.1:5182; the dev and preview servers proxy `/api` to it. Then turn the routes on in **Settings** in the app.
-
-Safeguards:
-- **Key handling.** The key is read server-side only. It is never sent to the browser and never logged.
-- **Daily cap.** `ASSISTANT_DAILY_CAP`, default 50, with a visible counter. "Quota reached", "off" and "offline" states are handled.
-- **Cache.** Responses are cached by the sha256 of the prompt (`server/.cache/`); cached answers do not consume quota.
-- **Grounded route.** BM25 over local project chunks (snapshot + Master Document v2). The model must cite every claim (`[key]` / `[MD §x]`) or reply "Not in the project record".
-  - Every number in an answer is post-checked against the snapshot; a mismatch blocks the answer (R6).
-  - Grounding badge: Exact / Partial / Unsupported.
-- **Live pipeline.** `server/pipeline_bridge.py` reuses the repo's real class-aware RRF (`src/retrieval/systems.run_query`) and the frozen comparator prompt and rule. The prompt hashes are checked against `FROZEN.json`.
-  - Free text is embedded locally with `BAAI/bge-base-en-v1.5 @ a5beb1e3e68b9ab74eb54cfd186867f64f240e1a` (HF offline; the snapshot commit is asserted). Existing benchmark paragraphs use their stored embeddings.
-  - The result carries an M2 confidence band labelled "calibrated on benchmark; new queries may differ".
-
-## What is shown, and what is not
-
-- **Numbers.** Every number comes from `reports/results_v2.json` by key (hover any number). CIs are printed exactly as `src/eval/ci_format.py` prints them.
-- **RBI text.** At most 25 words per paragraph across everything bundled: a 12-word excerpt plus comparator field values, always with the pointer (id, URL, harvest date, sha256). Direction titles are capped at 20 words. Full text only via `python3 release/rehydrate.py`.
-- **Privacy.**
-  - Nothing from `reports/private/`, rater-identity mappings or excluded rounds is ingested.
-  - Raters appear only as `rater_1`–`rater_3`. Annotator names that occur in the frozen results file are redacted in the snapshot copy (DECISIONS D-18, gap G-28).
-- **Confidence (§8.2).** Calibrated for **comparator verdicts only**.
-  - M2 (comparator-intrinsic): fitted on the 30-item dev set and frozen before the gold evaluation. It powers the Showcase and every product badge.
-  - M1 (full signals, *cross-validated on gold*): research views only.
-  - Every badge shows its band's empirical accuracy, Wilson CI and n, and names its model. See [docs/CALIBRATION.md](docs/CALIBRATION.md).
-  - Honest limit: the High band is almost entirely `same` verdicts; `different` verdicts are routed to review.
-- **Caveats.** T3's filter-on 1.000 is circular and is never shown as a win (R3). T2 gains always carry the by-construction caveat (R2). The A11 scoring asymmetry is shown wherever T1 F1 or coverage appears.
+- **Frozen files** are read and never edited: gold, `results_v2.json`, the comparator prompt and rule, the confidence model. Their hashes are shown, and the API refuses to run if they change.
+- **Per-unit data** comes only from run files; nothing is derived from aggregate tables.
+- **Verdicts** always come from the frozen rule, traced, and never from free text. Model rationales are never shown.
+- **Live fields** appear only once parsed from the model's output; there are no staged animations. Replays are labelled with their recording time.
+- **Pasted text** is never stored.
+- **Confidence, triage and the sensitivity analysis** are tagged *Post-paper*. A *different* verdict is "Flagged for review" (the expert agreed 38 of 108 times), never a confidence band.
 
 ## Layout
 
 ```
-scripts/   ingest.py, calibrate.py, check_dist.py, cc_common.py, tests/
-server/    Hono proxy (app.ts, llm.ts, grounding.ts, store.ts, bridge.ts, index.ts) + pipeline_bridge.py
-src/       domain/ (types), data/ (repository, derive, store, snapshot, confidence), intelligence/ (R1–R14),
-           lib/ (ci, keys, export), components/ (drawer, CI cell, forest plot, badges), features/<screen>/
-docs/      ANALYSIS.md (Part B), DECISIONS.md, CALIBRATION.md, PROGRESS.md
+scripts/   build_demo_data.py (public/data shards + §C3 assertions), ingest.py, calibrate.py, check_dist.py,
+           deploy_azure.sh, artifact_page.py, cc_common.py, tests/
+api/       core.py (service), jsonstream.py, server.py (local), function_app.py (Azure), build_bundle.py,
+           deploy_function.sh, bundle/ (frozen files + M2), tests/
+public/    data/ (home, cases/index + 106 case shards, results, triage_grid, method, t2/t3/t4, matrix, cost, edit_bases)
+src/       features/demo/ (public site: Home, cases/, case/, play/, lab/, present/, Triage, Results, Method),
+           features/* (author workspace), components/, data/, domain/, intelligence/, lib/
+server/    Hono proxy for the workspace assistant (local only) + pipeline_bridge.py
+docs/      ANALYSIS.md, DECISIONS.md, CALIBRATION.md, PROGRESS.md
 ```
