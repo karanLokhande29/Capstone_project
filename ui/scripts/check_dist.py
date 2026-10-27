@@ -67,6 +67,16 @@ def main() -> int:
                 problems.append(f"[full-text] {rel}: the public build references the full-text endpoint")
         for run in copied_runs(text, index, min_words=LIMIT + 1):
             problems.append(f"[rbi_text] {p.relative_to(UI)}: {run.length} words: {run.excerpt[:80]}…")
+    # The audit generator is local-only: public builds must not ship its replay packs or reference its API.
+    for d in PUBLIC_DISTS:
+        base = UI / d
+        if not base.exists():
+            continue
+        if (base / "auditgen").exists():
+            problems.append(f"[auditgen] {d}/auditgen/: replay packs must not ship in a public build")
+        for js in base.rglob("*.js"):
+            if "/api/auditgen" in js.read_text(encoding="utf-8", errors="replace"):
+                problems.append(f"[auditgen] {js.relative_to(UI)}: the public build references the local audit backend")
     print(f"check_dist: {n} files scanned in ui/dist + ui/src/data; corpus shingles {len(index.hashes):,}; limit {LIMIT} words")
     for pr in problems:
         print("  " + pr)

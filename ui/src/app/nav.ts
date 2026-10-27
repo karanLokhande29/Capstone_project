@@ -1,5 +1,5 @@
 import {
-  Activity, AlertTriangle, BookOpenCheck, Boxes, Building2, ClipboardCheck, Compass, FlaskConical, GitCompare, GitFork, Grid3x3, Home,
+  Activity, AlertTriangle, CalendarClock, Database, Download, FileSearch, FileCheck2, BookOpenCheck, Boxes, Building2, ClipboardCheck, Compass, FlaskConical, GitCompare, GitFork, Grid3x3, Home,
   Inbox, Lightbulb, ListChecks, MessageSquare, Network, PenTool, Rocket, Search, ShieldCheck, Sparkles, Users,
 } from "lucide-react";
 
@@ -29,6 +29,14 @@ export const NAV: NavGroup[] = [
     { to: "/review-queue", label: "Review queue", icon: Inbox, tier: "COULD" },
     { to: "/workbench", label: "Annotation workbench", icon: PenTool, tier: "COULD" },
     { to: "/tour", label: "Reviewer tour", icon: ListChecks, tier: "COULD" },
+  ] },
+  { label: "Audit generator", items: [
+    { to: "/auditgen", label: "Audit pack", icon: FileCheck2, tier: "COULD", product: true },
+    { to: "/auditgen/gaps", label: "Policy gaps", icon: FileSearch, tier: "COULD", product: true },
+    { to: "/auditgen/review", label: "Review & sign-off", icon: CalendarClock, tier: "COULD", product: true },
+    { to: "/auditgen/downloads", label: "Downloads", icon: Download, tier: "COULD", product: true },
+    { to: "/auditgen/corpus", label: "Corpus status", icon: Database, tier: "COULD", product: true },
+    { to: "/auditgen/ai", label: "AI assistant", icon: Sparkles, tier: "COULD", product: true },
   ] },
   { label: "Product", items: [
     { to: "/product", label: "Showcase", icon: Rocket, tier: "COULD", product: true },

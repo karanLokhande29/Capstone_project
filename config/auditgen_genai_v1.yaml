@@ -1,0 +1,45 @@
+# RBI compliance audit generator: generative-AI features v1 (local models only).
+# Every LLM call goes to an Ollama server on this machine's loopback address; a non-loopback host is refused.
+# No remote API (Gemini, Groq or any other) is used by any feature. Changing a value here changes the GenAI version
+# recorded in every AI output.
+version: auditgen-genai-v1
+
+llm:
+  host: http://127.0.0.1:11434
+  # The first model in this list that is pulled in the local runtime is used.
+  models: [qwen2.5:7b-instruct, qwen2.5:1.5b-instruct]
+  temperature: 0
+  seed: 20261022
+  num_ctx: 8192
+  max_tokens: 1200            # cap on generated tokens per call (stops runaway JSON)
+  timeout_sec: 180
+
+# Every generated sentence is checked by the local NLI cross-encoder (the gap-analysis model, config/auditgen_v1.yaml)
+# with its cited RBI paragraph(s) as premise. A sentence is verified iff the argmax label is entailment (the P4 rule).
+verifier:
+  premise_max_words: 380
+
+ask:
+  retrieve_depth: 30          # bge + BM25 candidates fused by reciprocal rank (k = rrf_k)
+  rrf_k: 60
+  evidence: 6                 # paragraphs shown to the model
+  passage_max_words: 160
+  max_question_chars: 600
+  history_turns: 3
+
+draft_clause:
+  # The draft is scored by the gap analyser's own rule (config/auditgen_v1.yaml gap_analysis thresholds).
+  max_words: 160
+
+calendar:
+  batch_limit: 25
+
+memo:
+  top_changes: 8
+  next_deadlines: 12
+  top_gaps: 8
+  top_directions: 8
+
+storage:
+  ai_cache: data/auditgen_state/genai     # embedding cache (RBI text only) and the activity log (hashes, never text)
+  activity_log: data/auditgen_state/genai/activity.jsonl

@@ -1,0 +1,86 @@
+# RBI compliance audit generator, rules and thresholds v1 (fixed 15 Oct 2026, before any validation run).
+# Changing a value here changes the rules version recorded in every output; never tune on the validation sets.
+version: auditgen-rules-v1
+tool_version: 0.1.0
+disclaimer: "Decision support only; verify against the official RBI text; not legal advice."
+
+paths:
+  research_corpus: data/processed
+  manifest: data/metadata/document_manifest.jsonl
+  candidates: data/benchmark/candidates/t1_candidates_v4.jsonl
+  matches: data/benchmark/matching/t1_matches_v1_thresholded.jsonl
+  amendments: data/supplementary/amendment/items_v1.jsonl
+  enforcement: data/supplementary/enforcement/items_v1.jsonl
+  supp_links: data/supplementary/supp_links_v1.jsonl
+  auditgen_corpus: data/auditgen_corpus        # refreshed snapshot (written only by `refresh --apply`)
+  uploads: data/auditgen_uploads               # uploaded policies, one folder per session; gitignored
+  runs: data/auditgen_runs                     # generated packs; gitignored
+  samples: outputs/auditgen_samples
+
+excerpt_max_words: 25
+freshness_warn_days: 30
+
+# Activity flags narrow the register through subject families. A family named under no activity is core and always
+# shown. Rows whose family belongs only to unselected activities are kept but marked "filtered by activity".
+activities:
+  deposits: [Acceptance of Public Deposits, Interest Rate on Deposits]
+  lending: [Credit Facilities, Interest Rates on Advances, Credit Risk Management, Concentration Risk Management,
+            "Income Recognition, Asset Classification and Provisioning", "Asset Classification, Provisioning and Income Recognition",
+            Resolution of Stressed Assets, Treatment of Wilful Defaulters and Large Defaulters, Credit Information Reporting,
+            Securitisation Transactions, Transfer and Distribution of Credit Risk, Microfinance Institution]
+  digital_lending: [Peer to Peer Lending Platform, Account Aggregator, Credit Facilities]
+  forex: ["Acquisition or Transfer of Immovable Property under Act, 1999", "Reporting under Act, 1999"]
+  payments: ["Credit Cards and Debit Cards: Issuance and Conduct", "Credit Cards: Issuance and Conduct",
+             "Debit Cards: Issuance and Conduct", Digital Payment Security Controls, Digital Banking Channels Authorisation]
+  priority_sector: []
+  co_lending: [Transfer and Distribution of Credit Risk, Credit Facilities]
+  outsourcing: [Managing Risks in Outsourcing]
+  kyc_aml: [Know Your Customer]
+  it_cyber: ["Cybersecurity, Technology: Risk, Resilience and Assurance Framework", Digital Payment Security Controls]
+
+# Function-heading Directions (cross-cutting, not class-specific) enter the register only through an activity.
+function_heading_activities:
+  Foreign Exchange Management: forex
+  Payment and Settlement System: payments
+  Financial Inclusion and Development: priority_sector
+  Consumer Education and Protection: core
+  Financial Market: none
+  Issuer of Currency: none
+  Banker and Debt Manager to Government: none
+  Banker to Governments and Banks: none
+
+confidence:
+  class_direction: 0.9          # a paragraph of a Direction issued for the profile's class
+  function_heading: 0.6         # cross-cutting function Direction reached through an activity
+  subtype_direction: 0.5        # a class Direction written for a sub-type (e.g. Housing Finance Companies)
+  status_uncertain_penalty: 0.3
+  review_threshold: 0.7         # below this a row is marked "needs human review"
+
+calendar:
+  review_threshold: 0.7         # below this an entry is marked "verify"
+  financial_year_end: "03-31"
+
+differential:
+  shared_lexical_min: 0.95      # matched and near-verbatim: shared; below: possibly different (needs human review)
+
+gap_analysis:
+  embedding_model: BAAI/bge-base-en-v1.5
+  embedding_revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+  nli_model: cross-encoder/nli-deberta-v3-xsmall
+  nli_revision: a150876415327c80daeff35ca6f68f5ed8cf5c24
+  top_k: 5
+  covered_entailment: 0.5       # NLI argmax = entailment and p(entailment) >= this: covered
+  partial_entailment: 0.2       # else p(entailment) >= this, or cosine >= partial_cosine: partial
+  partial_cosine: 0.78
+  review_threshold: 0.8         # a covered call below this confidence needs human review
+  min_clause_chars: 40
+  max_clause_words: 120
+
+local_llm:
+  host: http://127.0.0.1:11434
+  model: qwen2.5:1.5b-instruct
+  timeout_sec: 60
+
+server:
+  host: 127.0.0.1
+  port: 8765

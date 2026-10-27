@@ -47,3 +47,12 @@ data/evaluation/**
 
 # Claude Code local machine-specific permissions
 .claude/settings.local.json
+
+# Audit generator (local tool): uploaded company policies (confidential), refreshed corpus snapshot, generated packs,
+# state, and sample packs / UI replay copies that carry RBI excerpts. Never committed.
+data/auditgen_uploads/
+data/auditgen_corpus/
+data/auditgen_runs/
+data/auditgen_state/
+outputs/auditgen_samples/
+ui/public/auditgen/

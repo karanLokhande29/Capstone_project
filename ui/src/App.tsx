@@ -72,6 +72,15 @@ function workspaceRoutes() {
   const Showcase = lazy(() => import("./features/product/Showcase"));
   const ObligationExplorer = lazy(() => import("./features/explorer/ObligationExplorer"));
   const AssistantPage = lazy(() => import("./features/assistant/AssistantPage"));
+  // Audit generator (local tool; talks to the 127.0.0.1 backend or replays the sample packs). No research snapshot needed.
+  const AuditLayout = lazy(() => import("./features/auditgen/AuditLayout"));
+  const AuditPack = lazy(() => import("./features/auditgen/AuditPack"));
+  const PolicyGaps = lazy(() => import("./features/auditgen/PolicyGaps"));
+  const AuditReview = lazy(() => import("./features/auditgen/Review"));
+  const AuditDownloads = lazy(() => import("./features/auditgen/Downloads"));
+  const CorpusStatus = lazy(() => import("./features/auditgen/CorpusStatus"));
+  const AiAssistant = lazy(() => import("./features/auditgen/ai/AiAssistant"));
+  const a = (el: React.ReactNode) => <Suspense fallback={<LoadingPage />}>{el}</Suspense>;
   return {
     element: <Suspense fallback={<LoadingPage />}><Layout /></Suspense>, errorElement: <RouteError />,
     children: [
@@ -95,6 +104,14 @@ function workspaceRoutes() {
       { path: "product", element: g(<Showcase />) },
       { path: "explorer", element: g(<ObligationExplorer />) },
       { path: "assistant", element: g(<AssistantPage />) },
+      { path: "auditgen", element: a(<AuditLayout />), children: [
+        { index: true, element: a(<AuditPack />) },
+        { path: "gaps", element: a(<PolicyGaps />) },
+        { path: "review", element: a(<AuditReview />) },
+        { path: "downloads", element: a(<AuditDownloads />) },
+        { path: "corpus", element: a(<CorpusStatus />) },
+        { path: "ai/:tab?", element: a(<AiAssistant />) },
+      ] },
     ],
   };
 }
