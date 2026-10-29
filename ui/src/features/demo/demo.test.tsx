@@ -21,7 +21,7 @@ const PAGES: [string, RegExp][] = [
   ["/cases/play", /Can you spot the difference/], ["/cases/atlas", /Which institution types have a Direction/], [`/case/${hero}`, /field by field/],
   ["/lab", /Run the frozen comparator yourself/], ["/lab/paste", /Do not paste confidential or internal text/], ["/lab/edit", /control-run gate/],
   ["/triage", /How much could a team let the system handle/], ["/results", /Six results, explained/], ["/method", /Two lanes, evaluated separately/],
-  ["/genai", /one component at a time/], ["/present", /Presenter preflight/],
+  ["/genai", /ten components, each one checked/], ["/present", /Presenter preflight/],
 ];
 
 describe("every demo route renders from the public data shards", () => {
@@ -62,7 +62,7 @@ describe("honesty invariants on the rendered pages", () => {
   });
   it("Generative AI page: numbers come from the data, public system names only, AuditGen marked as local", async () => {
     go("/genai");
-    await screen.findAllByText(/one component at a time/, {}, { timeout: 5000 });
+    await screen.findAllByText(/ten components, each one checked/, {}, { timeout: 5000 });
     const t = document.body.textContent ?? "";
     expect(t).toMatch(/56 of 78 real differences were missed by every one of the five LLM systems/);
     expect(t).toMatch(/0\.154 → 0\.409/);

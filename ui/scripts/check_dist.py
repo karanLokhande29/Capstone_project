@@ -29,6 +29,10 @@ TEXT = {".js", ".css", ".html", ".json", ".svg", ".txt", ".md", ".map"}
 HONESTY = [re.compile(r"(?<!not a )recommended threshold", re.I), re.compile(r"optimal threshold", re.I), re.compile(r"checking threshold", re.I)]
 FACT_CHECKER = re.compile(r"automatic fact-checker", re.I)
 PUBLIC_DISTS = ("dist-azure", "dist-artifact")
+# The audit generator's replay packs (sample and AI-assistant outputs) carry RBI excerpts by design. They ship only in the
+# local build (ui/dist), never upload, and are stripped from both public builds, which the [auditgen] check below enforces.
+# So the RBI-text limit is not applied to them; the key and honesty checks still are.
+LOCAL_ONLY_RBI_TEXT = ("dist/auditgen/",)
 FULL_TEXT = re.compile(r"/api/rehydrate")
 
 
@@ -65,6 +69,8 @@ def main() -> int:
                     problems.append(f"[honesty] {rel}: “automatic fact-checker” without “Our first pipeline”")
             if rel.parts[0] in PUBLIC_DISTS and FULL_TEXT.search(text):
                 problems.append(f"[full-text] {rel}: the public build references the full-text endpoint")
+        if rel.as_posix().startswith(LOCAL_ONLY_RBI_TEXT):
+            continue
         for run in copied_runs(text, index, min_words=LIMIT + 1):
             problems.append(f"[rbi_text] {p.relative_to(UI)}: {run.length} words: {run.excerpt[:80]}…")
     # The audit generator is local-only: public builds must not ship its replay packs or reference its API.

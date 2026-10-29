@@ -48,7 +48,7 @@ export default function GenAI() {
 
   return (
     <div>
-      <PageHead eyebrow="Generative AI" title="Where generative AI is used in this project, one component at a time">
+      <PageHead eyebrow="Generative AI" title="Generative AI in RBI-ObliBench: ten components, each one checked">
         From the LLM client to the AuditGen assistant: what each part does, how it is checked, and what it measured. Every number on this page is read from the
         project's published results file and its extension reports.
       </PageHead>

@@ -17,7 +17,7 @@ rm -rf "$GZ" && cp -R dist-azure "$GZ"
 find "$GZ" -type f \( -name "*.js" -o -name "*.css" -o -name "*.json" \) -exec gzip -9 -n {} \; -exec sh -c 'mv "$1.gz" "$1"' _ {} \;
 # "cases" and "lab" are also folders (cases/play, lab/edit), so they are uploaded one by one, not staged.
 PARENTS="cases lab"
-ROUTES="cases/failures cases/play cases/atlas lab/paste lab/edit triage results method present findings how-it-works trust demo"
+ROUTES="cases/failures cases/play cases/atlas lab/paste lab/edit triage results method genai present findings how-it-works trust demo"
 STAGE=.routes-staging
 rm -rf "$STAGE" && mkdir -p "$STAGE/case"
 for r in $ROUTES $PARENTS; do mkdir -p "$STAGE/$(dirname "$r")"; done
