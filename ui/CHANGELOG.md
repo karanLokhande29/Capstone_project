@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-10-29: Generative AI page
+
+### User-visible changes
+
+- New page **`/genai` Generative AI**, added to the top navigation after Method & Trust. It walks through the project's
+  generative-AI components one at a time, in the order of the GenAI presentation:
+  1. the LLM client;
+  2. the RAG pipeline;
+  3. the LLM systems on T1;
+  4. the fact-checker;
+  5. date grounding;
+  6. the structured comparator;
+  7. the RePASs audit;
+  8. the four extensions;
+  9. the AuditGen assistant;
+  10. controls and cost.
+- AuditGen is described as a local tool that is not part of the public site.
+
+### Where the numbers come from
+
+- The new shard `public/data/genai.json` is written by `build_demo_data.genai_shard`. It reads:
+  - `reports/results_v2.json` (T1 systems, comparator, ablations B and C, T3, T4, Table 11);
+  - the extension reports `ext3_t1_rerank`, `ext4_groq`, `ext8_indiafinbench` and `ext9_langgraph`;
+  - `config/auditgen_genai_v1.yaml` (model names).
+- Ten build-time checks (`GENAI_EXPECT`) stop the build if a headline number drifts.
+- The page uses the public system names (B2), and a test checks that no internal id appears.
+
 ## 2026-10-04: Demo build (Demo Build Spec, all must-ship phases)
 
 Branch `demo-build`; commits contain `ui/` only (plus `paper/aisigh/PATCHLIST_v1.md`). Details and branch decisions are in `ui/AUDIT.md`.

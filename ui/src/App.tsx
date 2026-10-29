@@ -15,6 +15,7 @@ const Lab = lazy(() => import("./features/demo/lab/Lab"));
 const Triage = lazy(() => import("./features/demo/Triage"));
 const Results = lazy(() => import("./features/demo/Results"));
 const Method = lazy(() => import("./features/demo/Method"));
+const GenAI = lazy(() => import("./features/demo/GenAI"));
 const Present = lazy(() => import("./features/demo/present/Present"));
 
 function RouteError() {
@@ -39,6 +40,7 @@ const demoRoutes = {
     { path: "triage", element: s(<Triage />) },
     { path: "results", element: s(<Results />) },
     { path: "method", element: s(<Method />) },
+    { path: "genai", element: s(<GenAI />) },
     // Old pitch-site URLs keep working.
     { path: "findings", element: <Navigate to="/results" replace /> },
     { path: "how-it-works", element: <Navigate to="/method" replace /> },

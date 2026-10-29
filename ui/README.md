@@ -35,6 +35,7 @@ Every answer is sealed. The site shows them all and lets you inspect, replay and
 | `/triage` **Triage** *(post-paper)* | A threshold slider over the M2 confidence: coverage, accuracy, what goes to review (bootstrap 95% ranges), a reliability diagram and the feature weights. An observed trade-off, not a recommendation. |
 | `/results` **Results** | Six findings with plain-language meanings and fine print, plus the T2 filter animation, the T3 date timeline and the RePASs playground. |
 | `/method` **Method & Trust** | How it was built, two separately evaluated lanes, safeguards, the actor-masked sensitivity analysis (post-paper), limits, cost, frozen-file hashes and licences. |
+| `/genai` **Generative AI** | Each generative-AI component in turn: LLM client, RAG pipeline, T1 systems, fact-checker, date grounding, comparator, RePASs audit, four extensions, AuditGen assistant (local only), controls and cost. Numbers come from `genai.json`. |
 | `/present` | Hidden presenter mode: preflight, then an 8-step 3-minute script. Keys: ← → R L B F. |
 
 **Status badges** on every page: Benchmark · sealed / Live re-run / Cached replay / Unvalidated input / Post-paper / Live ≠ sealed.

@@ -103,6 +103,26 @@ export interface MethodShard {
   reliability: { id: string; value: number; n: number; label?: string }[];
 }
 
+/** Generative AI page (build_demo_data.genai_shard): results_v2 plus the extension reports. */
+type Diff = { measure: string; n: number; diff: number; ci: [number, number] };
+export interface GenAIShard {
+  model: string;
+  t1: { id: SystemId; n: number; flag: number; judgement: number; different: number; coverage: number }[];
+  missedByEveryLlm: number; goldDifferent: number;
+  comparator: { differentGain: { a: number; b: number; diff: number; ci: [number, number] }; recall: number; precision: number; frozenAtUtc: string };
+  verifier: { t1Flag: Diff; t1Coverage: Diff; t4Unsupported: Diff; t4Abstention: Diff };
+  temporal: Diff & { on: number; off: number };
+  repass: { n: number; byType: Record<string, number>; gaming: { mean: number; ci_low: number; ci_high: number }; verdicts: Record<string, string>; llm: string };
+  usage: { p4Calls: number; p4QuotaDays: number; t4GroqCalls: number; smokeCalls: number };
+  extensions: {
+    rerank: { diff: number; ci: [number, number] };
+    groq: { n: number; flag: number; vsGemini: { diff: number; ci: [number, number] }; different: number };
+    indiafinbench: { n: number; of: number; accuracy: number; byTask: Record<string, number> };
+    langgraph: { systems: number; passed: number; items: number; cacheMisses: number };
+  };
+  auditgen: { models: string[] };
+}
+
 export interface T3Item { id: string; pid: string; asOf: string; side: "before" | "after"; gold: string; action: string; scope: string;
   effective: string | null; published: string | null; amendmentUrl: string | null; url: string | null; off: string; on: string }
 export interface T2Query { id: string; src: string; tgt: string; judgement: string | null; srcPid: string; gold: string[]; ranks: Record<string, number | null> }

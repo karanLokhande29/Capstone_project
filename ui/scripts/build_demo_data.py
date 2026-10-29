@@ -464,6 +464,7 @@ def main() -> int:
         "reliability": [r for r in I.reliability(R2) if r["id"] in ("fleiss_class_row", "fleiss_flag")],
         "generatedUtc": gen})
 
+    sizes["genai.json"] = wjson("genai.json", genai_shard(R2))
     sizes["edit_bases.json"] = wjson("edit_bases.json", edit_bases(units, cmp_meta, text, cmpj))
     sizes.update(other_shards(R2, pointers))
     total = sum(sizes.values())
@@ -549,6 +550,87 @@ def triage_grid(units, conf, M2, model):
             "calibration": {"ece": e["ece"], "brier": e["brier"], "reliability": e["reliability"], "baseRate": e["baseRate"], "bands": e["bands"]},
             "features": [{"feature": f, "weight": w, "mean": m, "sd": s} for f, w, m, s in zip(M2["features"], M2["weights"], M2["means"], M2["sds"])],
             "intercept": M2["intercept"], "fittedOn": M2["fittedOn"], "label": M2["label"]}
+
+
+EXT = ROOT / "reports/private/final_push/extensions/sprint"
+_DIFF = re.compile(r"([+-]?\d+\.\d+) \[([+-]?\d+\.\d+), ([+-]?\d+\.\d+)\]")
+# §C3 for the Generative AI page: the published numbers each value below must reproduce (GenAI_Work_Report.md).
+GENAI_EXPECT = {"verifierT1": -0.068, "verifierCoverage": -0.217, "verifierT4": -0.382, "temporalT3": 0.462, "p4Calls": 797,
+                "rerank": -0.064, "groqFlag": 0.614, "ifbAcc": 0.757, "ifbN": 268, "langgraphPass": 4}
+
+
+def genai_shard(R2) -> dict:
+    """Generative AI page: every number comes from results_v2 or an extension report; nothing is typed in by hand."""
+    def stop(name, got, want):
+        if round(got, 3) != want:
+            raise SystemExit(f"STOP (§C3 genai): {name}: got {got}, expected {want}")
+
+    def ablation(toggle, measure):
+        row = next(r for r in R2["tables"]["10_ablations"]["rows"] if r["toggle"] == toggle and r["measure"] == measure)
+        d, lo, hi = (float(x) for x in _DIFF.match(row["on_minus_off"]).groups())
+        return {"measure": measure, "n": row["n"], "diff": d, "ci": [lo, hi]}
+
+    p4 = R2["phase4"]
+    systems = [{"id": s, "n": p4["t1_systems"][s]["n_items"], "flag": p4["t1_systems"][s]["flag_macro_f1"]["value"],
+                "judgement": p4["t1_systems"][s]["judgement_macro_f1"]["value"], "different": p4["t1_different"][s]["different_f1"],
+                "coverage": p4["t1_systems"][s]["coverage"]["value"]} for s in SYSTEMS if s != "comparator"]
+    cm = p4["comparator"]["metrics"]
+    systems.append({"id": "comparator", "n": cm["n_items"], "flag": cm["flag_macro_f1"]["value"], "judgement": cm["judgement_macro_f1"]["value"],
+                    "different": p4["comparator"]["different"]["different_f1"], "coverage": cm["coverage"]["value"]})
+    pre = p4["preregistered_comparisons"]["comparator − class_aware"]["judgement"]["different_f1"]
+    verifier = {"t1Flag": ablation("verifier", "T1 3-way flag Macro-F1"), "t1Coverage": ablation("verifier", "T1 coverage"),
+                "t4Unsupported": ablation("verifier", "T4 unsupported-sentence rate (NLI proxy), all 28"),
+                "t4Abstention": ablation("verifier", "T4 abstention rate")}
+    t3 = R2["tables"]["08_t3"]["t3"]
+    t4 = R2["tables"]["09_t4"]
+    usage = R2["tables"]["11_llm_usage"]
+    p4days = usage["p4"]["calls_per_quota_day"][p4["llm_calls"]["model"]]
+    ext3 = json.loads((EXT / "ext3_t1_rerank.json").read_text())["systems"]["class_blind"]["paired_flag"]["flag_macro_f1"]
+    ext4 = json.loads((EXT / "ext4_groq.json").read_text())
+    ext8 = json.loads((EXT / "ext8_indiafinbench.json").read_text())
+    ext9 = json.loads((EXT / "ext9_langgraph.json").read_text())["systems"]
+    import yaml
+
+    auditgen = yaml.safe_load((ROOT / "config/auditgen_genai_v1.yaml").read_text())["llm"]
+    out = {
+        "model": p4["llm_calls"]["model"],
+        "t1": systems, "missedByEveryLlm": p4["missed_by_every_llm_system"]["A_all_five_answered"]["missed"],
+        "goldDifferent": p4["missed_by_every_llm_system"]["gold_different_units"],
+        "comparator": {"differentGain": {"a": pre["a"], "b": pre["b"], "diff": pre["diff"], "ci": pre["ci"]},
+                       "recall": p4["comparator"]["different"]["different_recall"], "precision": p4["comparator"]["different"]["different_precision"],
+                       "frozenAtUtc": p4["comparator"]["frozen"]["frozen_at_utc"]},
+        "verifier": verifier,
+        "temporal": {**ablation("temporal filter", "T3 status exact match"), "on": t3["on"]["status_exact_match"]["value"],
+                     "off": t3["off"]["status_exact_match"]["value"]},
+        "repass": {"n": t4["n_questions"], "byType": {k: v["composite_score"]["mean"] for k, v in t4["by_type"].items()},
+                   "gaming": {k: t4["paired"]["concatenated - genuine"]["composite_score"][k] for k in ("mean", "ci_low", "ci_high")},
+                   "verdicts": t4["verdicts"], "llm": [m for p in usage["p3002"].values() for m in p["models"]][0]},
+        "usage": {"p4Calls": sum(p4days.values()), "p4QuotaDays": len(p4days), "t4GroqCalls": sum(p["api_calls"] for p in usage["p3002"].values()),
+                  "smokeCalls": len(usage["p3001_smoke"]["results"])},
+        "extensions": {
+            "rerank": {"diff": ext3["diff"], "ci": ext3["ci"]},
+            "groq": {"n": ext4["groq"]["n_items"], "flag": ext4["groq"]["flag_macro_f1"]["value"], "vsGemini": ext4["paired_flag"]["flag_macro_f1"],
+                     "different": ext4["groq"]["judgement_f1_per_label"]["different"]},
+            "indiafinbench": {"n": ext8["overall"]["n"], "of": ext8["of"], "accuracy": ext8["overall"]["accuracy"],
+                              "byTask": {k: v["accuracy"] for k, v in ext8["by_task"].items()}},
+            "langgraph": {"systems": len(ext9), "passed": sum(1 for v in ext9.values() if v["pass"]), "items": next(iter(ext9.values()))["items"],
+                          "cacheMisses": sum(v["cache_misses"] for v in ext9.values())},
+        },
+        "auditgen": {"models": auditgen["models"]},
+    }
+    stop("verifier T1", verifier["t1Flag"]["diff"], GENAI_EXPECT["verifierT1"])
+    stop("verifier coverage", verifier["t1Coverage"]["diff"], GENAI_EXPECT["verifierCoverage"])
+    stop("verifier T4", verifier["t4Unsupported"]["diff"], GENAI_EXPECT["verifierT4"])
+    stop("temporal T3", out["temporal"]["diff"], GENAI_EXPECT["temporalT3"])
+    stop("P4 calls", out["usage"]["p4Calls"], GENAI_EXPECT["p4Calls"])
+    stop("rerank", ext3["diff"], GENAI_EXPECT["rerank"])
+    stop("groq flag", out["extensions"]["groq"]["flag"], GENAI_EXPECT["groqFlag"])
+    stop("IndiaFinBench accuracy", out["extensions"]["indiafinbench"]["accuracy"], GENAI_EXPECT["ifbAcc"])
+    stop("IndiaFinBench n", out["extensions"]["indiafinbench"]["n"], GENAI_EXPECT["ifbN"])
+    stop("LangGraph passed", out["extensions"]["langgraph"]["passed"], GENAI_EXPECT["langgraphPass"])
+    if not out["auditgen"]["models"]:
+        raise SystemExit("STOP (§C3 genai): no AuditGen model list in config/auditgen_genai_v1.yaml")
+    return out
 
 
 def other_shards(R2, pointers):

@@ -21,7 +21,7 @@ const PAGES: [string, RegExp][] = [
   ["/cases/play", /Can you spot the difference/], ["/cases/atlas", /Which institution types have a Direction/], [`/case/${hero}`, /field by field/],
   ["/lab", /Run the frozen comparator yourself/], ["/lab/paste", /Do not paste confidential or internal text/], ["/lab/edit", /control-run gate/],
   ["/triage", /How much could a team let the system handle/], ["/results", /Six results, explained/], ["/method", /Two lanes, evaluated separately/],
-  ["/present", /Presenter preflight/],
+  ["/genai", /one component at a time/], ["/present", /Presenter preflight/],
 ];
 
 describe("every demo route renders from the public data shards", () => {
@@ -59,6 +59,17 @@ describe("honesty invariants on the rendered pages", () => {
     expect(await screen.findByText(/156 of 162 correct/, {}, { timeout: 5000 })).toBeInTheDocument();
     const t = (document.body.textContent ?? "").replace("not a recommended threshold", "");
     expect(t).not.toMatch(/\b(recommended|optimal|safe)\b/i);
+  });
+  it("Generative AI page: numbers come from the data, public system names only, AuditGen marked as local", async () => {
+    go("/genai");
+    await screen.findAllByText(/one component at a time/, {}, { timeout: 5000 });
+    const t = document.body.textContent ?? "";
+    expect(t).toMatch(/56 of 78 real differences were missed by every one of the five LLM systems/);
+    expect(t).toMatch(/0\.154 → 0\.409/);
+    expect(t).toMatch(/−0\.068/);
+    expect(t).toMatch(/4 of 4 systems × 106 items/);
+    expect(t).toMatch(/not part of this public site/);
+    expect(t).not.toMatch(/ablation_a|class_blind|class_aware|final_agentic|long_context|p2002_candidates/);
   });
   it("Method & Trust labels the sensitivity analysis next to its numbers", async () => {
     go("/method");

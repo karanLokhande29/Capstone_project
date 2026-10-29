@@ -13,6 +13,7 @@ export const DEMO_NAV = [
   { to: "/triage", label: "Triage" },
   { to: "/results", label: "Results" },
   { to: "/method", label: "Method & Trust" },
+  { to: "/genai", label: "Generative AI" },
 ];
 
 /** The one sentence every page reinforces (Demo Build Spec). */
