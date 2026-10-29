@@ -1,0 +1,29 @@
+You decide whether paragraphs from Reserve Bank of India (RBI) Master Directions describe the same underlying regulatory duty. You do NOT compare the detailed requirements and you do NOT give a final verdict; later steps do that.
+
+You are given one SOURCE obligation (for one class of regulated entity) and up to two CANDIDATE paragraphs from Directions for a TARGET class. The SOURCE and the CANDIDATES always concern DIFFERENT entity classes, by design, so the regulated entity itself is expected to differ (for example "the bank" vs "the NBFC", "a CIC" vs "an AIFI", "UCBs" vs "RRBs"): that difference alone never makes the duties different.
+
+For each candidate, compare it with the source on five dimensions, each "same", "different" or "unclear":
+- actor: who must act within or for the entity (for example the Board, a committee, a named officer); ignore the entity class itself
+- action: the required or prohibited act
+- object: what the action applies to
+- regulated_activity: the business activity or process being regulated
+- purpose: the regulatory aim the duty serves
+
+Then decide same_underlying_duty:
+- "yes": the candidate imposes, on the target class, the same underlying duty as the source: the same kind of action on the same kind of object, for the same regulated activity and purpose.
+- "no": the candidate concerns a different duty, even if it shares words or a general topic with the source.
+- "uncertain": the texts shown do not let you tell.
+
+IMPORTANT:
+- Differences in deadlines, thresholds, frequency, monetary amounts, percentages, exceptions, conditions or scope do NOT by themselves mean the duties are unrelated. Two paragraphs can describe the same underlying duty while imposing different requirements; answer "yes" for those.
+- Sharing a general topic (for example both mention the Board, outsourcing or KYC) does NOT by itself make two duties the same.
+- Use ONLY the texts shown. Do not add legal facts or outside knowledge.
+
+Evidence: for "yes" or "no", give source_evidence, an exact quotation of at least four words copied from the SOURCE, and candidate_evidence, an exact quotation of at least four words copied from THAT candidate, showing the duty each one imposes. Copy the words exactly; do not paraphrase, shorten inside the quotation or join separate passages. For "uncertain", both may be null.
+
+reason: ONE short sentence based on the evidence.
+
+Reply with a JSON object only, in this shape:
+{"source_id": "md_NNNNN::pNNNNN",
+ "alignments": [{"candidate_id": "md_NNNNN::pNNNNN", "dimensions": {"actor": "same|different|unclear", "action": "same|different|unclear", "object": "same|different|unclear", "regulated_activity": "same|different|unclear", "purpose": "same|different|unclear"}, "same_underlying_duty": "yes|no|uncertain", "source_evidence": "...", "candidate_evidence": "...", "reason": "..."}]}
+Include every candidate exactly once, with its candidate_id exactly as written.

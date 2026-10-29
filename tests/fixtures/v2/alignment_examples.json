@@ -1,0 +1,81 @@
+{
+  "_note": "FABRICATED test fixtures. These paragraphs are invented for unit tests and are NOT RBI text; ids use the reserved md_9xxxx range so they can never collide with a real Direction. The replies are hand-written stand-ins for a model answer.",
+  "cases": {
+    "same_duty_different_deadline": {
+      "unit": {
+        "item_id": "t1_md_90001::p00010",
+        "source_class": "Commercial Banks",
+        "source_text": "A bank shall report every fraud of Rs 1 crore and above to the Reserve Bank within seven days of its detection.",
+        "target_class": "Non-Banking Financial Companies",
+        "candidates": [
+          ["md_90002::p00020", "An NBFC shall report each fraud involving Rs 1 crore or more to the Reserve Bank within fifteen days from the date of detection."],
+          ["md_90002::p00021", "An NBFC shall display the name and contact details of its grievance redressal officer at every branch."]
+        ]
+      },
+      "reply": {
+        "source_id": "md_90001::p00010",
+        "alignments": [
+          {"candidate_id": "md_90002::p00020",
+           "dimensions": {"actor": "same", "action": "same", "object": "same", "regulated_activity": "same", "purpose": "same"},
+           "same_underlying_duty": "yes",
+           "source_evidence": "shall report every fraud of Rs 1 crore and above to the Reserve Bank",
+           "candidate_evidence": "shall report each fraud involving Rs 1 crore or more to the Reserve Bank",
+           "reason": "Both require reporting large frauds to the Reserve Bank; only the time limit differs."},
+          {"candidate_id": "md_90002::p00021",
+           "dimensions": {"actor": "same", "action": "different", "object": "different", "regulated_activity": "different", "purpose": "different"},
+           "same_underlying_duty": "no",
+           "source_evidence": "shall report every fraud of Rs 1 crore",
+           "candidate_evidence": "display the name and contact details of its grievance redressal officer",
+           "reason": "The candidate concerns grievance redressal disclosure, not fraud reporting."}
+        ]
+      },
+      "expected": {"md_90002::p00020": "yes", "md_90002::p00021": "no"}
+    },
+    "different_duty_shared_topic": {
+      "unit": {
+        "item_id": "t1_md_90003::p00005",
+        "source_class": "Commercial Banks",
+        "source_text": "The Board of the bank shall approve a policy on outsourcing of IT services and review it at least once a year.",
+        "target_class": "Non-Banking Financial Companies",
+        "candidates": [
+          ["md_90004::p00007", "The Board of the NBFC shall constitute an IT Strategy Committee consisting of at least two directors."]
+        ]
+      },
+      "reply": {
+        "source_id": "md_90003::p00005",
+        "alignments": [
+          {"candidate_id": "md_90004::p00007",
+           "dimensions": {"actor": "same", "action": "different", "object": "different", "regulated_activity": "same", "purpose": "unclear"},
+           "same_underlying_duty": "no",
+           "source_evidence": "shall approve a policy on outsourcing of IT services",
+           "candidate_evidence": "shall constitute an IT Strategy Committee",
+           "reason": "Both concern IT governance by the Board, but one approves an outsourcing policy and the other forms a committee."}
+        ]
+      },
+      "expected": {"md_90004::p00007": "no"}
+    },
+    "ambiguous_duty": {
+      "unit": {
+        "item_id": "t1_md_90005::p00030",
+        "source_class": "Small Finance Banks",
+        "source_text": "A small finance bank shall submit the return on large exposures to the Reserve Bank every quarter.",
+        "target_class": "Payments Banks",
+        "candidates": [
+          ["md_90006::p00040", "Such returns shall be furnished in the format specified in Annex II."]
+        ]
+      },
+      "reply": {
+        "source_id": "md_90005::p00030",
+        "alignments": [
+          {"candidate_id": "md_90006::p00040",
+           "dimensions": {"actor": "unclear", "action": "same", "object": "unclear", "regulated_activity": "unclear", "purpose": "unclear"},
+           "same_underlying_duty": "uncertain",
+           "source_evidence": null,
+           "candidate_evidence": null,
+           "reason": "The candidate does not say which returns it refers to."}
+        ]
+      },
+      "expected": {"md_90006::p00040": "uncertain"}
+    }
+  }
+}
