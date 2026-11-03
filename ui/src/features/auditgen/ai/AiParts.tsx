@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import { useAudit } from "../state";
 import { useAi } from "./aiState";
 import type { AiBase, AiSentence, AiSource } from "./aiTypes";
+import { PUBLIC_DEMO } from "../parts";
 
 export function AiBadge() {
   return <Badge tone="product"><Sparkles size={11} />AI draft · needs review</Badge>;
@@ -73,7 +74,7 @@ export function RunButton({ k, onClick, children, disabled }: { k: string; onCli
   const { mode } = useAudit();
   return (
     <Button type="button" size="sm" variant="product" disabled={!canRun || busy[k] || disabled} onClick={onClick}
-      title={mode !== "live" ? "Needs the local backend (offline replay shows recorded outputs)" : !canRun ? "No local model available" : undefined}>
+      title={mode !== "live" ? (PUBLIC_DEMO ? "Runs in the installed version; this demo shows recorded outputs" : "Needs the local backend (offline replay shows recorded outputs)") : !canRun ? "No model available" : undefined}>
       {busy[k] ? <Loader2 size={13} className="animate-spin" /> : <Sparkles size={13} />}{busy[k] ? "Thinking locally…" : children}
     </Button>
   );

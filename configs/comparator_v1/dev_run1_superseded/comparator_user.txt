@@ -1,0 +1,7 @@
+SOURCE class: {source_class}
+SOURCE obligation:
+{source_text}
+
+TARGET class: {target_class}
+CANDIDATE paragraphs (each starts with its id in brackets):
+{candidates}

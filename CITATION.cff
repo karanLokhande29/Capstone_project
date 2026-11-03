@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use RBI-ObliBench, please cite it as below."
+title: "RBI-ObliBench: a benchmark for entity-class applicability, differential obligations and metric integrity on Reserve Bank of India Master Directions"
+type: software
+authors:
+  - family-names: Lokhande
+    given-names: Karan
+version: "1.0"
+date-released: "2026-09-30"
+license: MIT
+repository-code: "REPO_URL_PLACEHOLDER"
+keywords:
+  - regulatory NLP
+  - retrieval-augmented generation
+  - benchmark
+  - Reserve Bank of India

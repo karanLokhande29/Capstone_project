@@ -1,13 +1,15 @@
 import { useEffect, useMemo, useState } from "react";
 import { Badge, Button, Card, CardBody } from "@/components/ui/primitives";
 import { PageHeader } from "@/components/Page";
-import { live } from "./api";
+import { HOSTED, live } from "./api";
 import { useAudit } from "./state";
 import { GapTable } from "./AuditPack";
-import { Stat } from "./parts";
+import { Stat, INSTALLED, PUBLIC_DEMO } from "./parts";
 
 export default function PolicyGaps() {
-  const { mode, pack, reload } = useAudit();
+  const { mode: m, pack, reload } = useAudit();
+  // The hosted service has no uploads or corpus refresh: those pages behave as in the read-only demo.
+  const mode = HOSTED ? "replay" : m;
   const [files, setFiles] = useState<File[]>([]);
   const [fams, setFams] = useState<string[]>([]);
   const [explain, setExplain] = useState(false);
@@ -21,9 +23,10 @@ export default function PolicyGaps() {
     <div>
       <PageHeader title="Policy gaps" subtitle="Upload your policies (PDF, DOCX, TXT, MD). Each applicable obligation is marked covered / partial / missing with the matched clauses and scores, using local models only (bge + NLI cross-encoder)." />
       <Card><CardBody className="space-y-2 text-[12.5px]">
-        <p className="rounded-md bg-accent-soft p-2 text-accent"><b>Privacy:</b> documents are processed on this machine only. No document text goes to Gemini, Groq or any remote API.
-          Files are stored in <code>data/auditgen_uploads/&lt;session&gt;/</code> (gitignored) and can be deleted below.</p>
-        {mode !== "live" ? <p className="text-ink-3">Uploading needs the local backend (<code>python3 scripts/auditgen.py serve</code>). Replay shows the sample pack's gap run on a synthetic policy.</p> : (
+        <p className="rounded-md bg-accent-soft p-2 text-accent"><b>Privacy:</b> {PUBLIC_DEMO ? "in the installed version, documents are processed inside your network only." : "documents are processed on this machine only."} No document text goes to Gemini, Groq or any remote API.
+          {!PUBLIC_DEMO && <>Files are stored in <code>data/auditgen_uploads/&lt;session&gt;/</code> (gitignored) and can be deleted below.</>}</p>
+        {mode !== "live" ? <p className="text-ink-3">{PUBLIC_DEMO ? <>Uploading your own policies is part of {INSTALLED}. This demo shows the sample pack's gap run on a synthetic policy.</>
+          : <>Uploading needs the local backend (<code>python3 scripts/auditgen.py serve</code>). Replay shows the sample pack's gap run on a synthetic policy.</>}</p> : (
           <form aria-label="Upload policies" className="space-y-2" onSubmit={async (e) => {
             e.preventDefault();
             if (!pack || !files.length) return;

@@ -1,0 +1,120 @@
+{
+  "note": "IRR adjudication metadata. Separate from reports/p2004_irr_metrics_v1.json, whose raw pre-adjudication reliability figures are unchanged.",
+  "consensus": {
+    "items": 30,
+    "routes": {
+      "adjudicated": 18,
+      "unanimous": 12
+    },
+    "not_obligation": 7,
+    "judgements": {
+      "same": 37,
+      "different": 22,
+      "none": 33,
+      "unsure": 0
+    },
+    "flags": {
+      "absent": 2,
+      "class-specific": 12,
+      "shared": 9
+    }
+  },
+  "adjudicated_only": {
+    "items": 18,
+    "not_obligation": 5,
+    "judgements": {
+      "same": 19,
+      "different": 16,
+      "none": 17,
+      "unsure": 0
+    }
+  },
+  "mapped_rows": {
+    "item": 9,
+    "class": 47,
+    "item_not_obligation_rows": 8
+  },
+  "not_obligation_rule": {
+    "settled_rule": "Treat a span as an obligation when it states a complete mandatory compliance condition that the regulated entity must ensure, even when phrased passively or as a mandatory condition on a document or process. Mark not_obligation only when the span is incomplete, purely definitional, scope-setting only, classification-only, merely illustrative or a worked example, or clearly assigns the duty to a non-regulated third party.",
+    "evidence": {
+      "disputed": 8,
+      "rejected": [
+        {
+          "item_id": "t1_md_12925::p00219",
+          "rejection_votes": {
+            "akash": false,
+            "karan": true,
+            "meer": false
+          },
+          "rationale": "Reject: the extracted text ends at 'develop an exit strategy that shall' and contains no complete operative requirement to annotate."
+        },
+        {
+          "item_id": "t1_md_12941::p00192",
+          "rejection_votes": {
+            "akash": false,
+            "karan": true,
+            "meer": true
+          },
+          "rationale": "Reject: this is a criterion describing when an outsourced activity is critical/material, not a duty requiring an RE to perform an action."
+        },
+        {
+          "item_id": "t1_md_12993::p00028",
+          "rejection_votes": {
+            "akash": false,
+            "karan": true,
+            "meer": false
+          },
+          "rationale": "Reject: the paragraph is a dated worked illustration of SMA/NPA tagging, not the general operative classification rule itself."
+        },
+        {
+          "item_id": "t1_md_13085::p00015",
+          "rejection_votes": {
+            "akash": false,
+            "karan": true,
+            "meer": true
+          },
+          "rationale": "Reject: this paragraph only defines which amalgamation cases fall within the Directions; it is a scope/applicability clause, not an operative duty."
+        },
+        {
+          "item_id": "t1_md_13127::p00541",
+          "rejection_votes": {
+            "akash": false,
+            "karan": true,
+            "meer": false
+          },
+          "rationale": "Reject: the USD 2 million statement is the numerical result in a worked example, not a standalone obligation imposed on the SFB."
+        }
+      ],
+      "kept_as_obligation": [
+        {
+          "item_id": "t1_md_12983::p00018",
+          "rejection_votes": {
+            "akash": false,
+            "karan": true,
+            "meer": false
+          },
+          "rationale": "Keep as an obligation: the one-month age limit is an operative compliance condition the AIFI must ensure; Commercial Banks have the same rule with a six-month limit."
+        },
+        {
+          "item_id": "t1_md_13044::p00066",
+          "rejection_votes": {
+            "akash": false,
+            "karan": true,
+            "meer": false
+          },
+          "rationale": "Keep as an obligation: passive audit wording still creates a control the RRB must ensure; UCB has the exact valuation-at-audit rule and SFB only a broader audit-control rule."
+        },
+        {
+          "item_id": "t1_md_13108::p00309",
+          "rejection_votes": {
+            "akash": false,
+            "karan": true,
+            "meer": false
+          },
+          "rationale": "Keep as an obligation because the paragraph identifies 'A SFB' as the actor; PB/RCB alert rules overlap in customer communication but do not match the full deposit-proof/statement duties."
+        }
+      ]
+    },
+    "support": "Supported by the adjudicated decisions: every rejection is an incomplete span, a classification/criterion-only clause, a worked example or a scope clause, and every overturned rejection vote was a complete mandatory condition (including passive wording). No disputed item here was rejected as purely definitional or as a third-party duty; those two clauses rest on guidelines v1 and v2.1, not on this adjudication."
+  }
+}

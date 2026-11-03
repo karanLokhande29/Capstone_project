@@ -1,0 +1,36 @@
+{
+ "decisions": [
+  {
+   "source": "faq",
+   "n": 30,
+   "clean": 5,
+   "rate": 0.1667,
+   "wilson95": [
+    0.0734,
+    0.3356
+   ],
+   "decision": "validation_or_motivation_only",
+   "interval_crosses": [
+    "direction_weak_min"
+   ],
+   "rule_file": "p2003_alignment_rule_v1.json",
+   "rule_sha256": "3556d26544f292f7b1e9457b42198066094f1aa76af61cc6db57966f5c167cb6"
+  },
+  {
+   "source": "enforcement",
+   "n": 30,
+   "clean": 16,
+   "rate": 0.5333,
+   "wilson95": [
+    0.3614,
+    0.6977
+   ],
+   "decision": "direction_level_weak_label_only",
+   "interval_crosses": [
+    "paragraph_weak_min"
+   ],
+   "rule_file": "p2003_alignment_rule_v1.json",
+   "rule_sha256": "3556d26544f292f7b1e9457b42198066094f1aa76af61cc6db57966f5c167cb6"
+  }
+ ]
+}

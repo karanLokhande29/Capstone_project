@@ -1,0 +1,511 @@
+{
+  "generated_at": "2026-09-27T11:22:55+00:00",
+  "method": "Blind test-retest procedure: the retest subset was fixed in advance, independently of pass-1 answers, and pass 2 was done on a shuffled blank sheet without access to pass 1. No washout period was enforced between the passes; a short interval may inflate agreement through recall of pass-1 answers.",
+  "comparison": "intra-rater (Karan pass 1 vs pass 2)",
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 20260924,
+    "unit": "item"
+  },
+  "provenance": {
+    "pass1": {
+      "file": "data/benchmark/t1/annotation_p2004_karan_pass1_completed.csv",
+      "sha256": "8f1dd4d1db2b10146f54d5c51ba0a5cd464aa43270ecb8cd4a6dc776ba10a098",
+      "received_at": "2026-09-27T07:19:11+00:00",
+      "completed_at": "unknown (not logged)"
+    },
+    "pilot_pass1": {
+      "ingested_at": "2026-09-25T07:02:54.834672+00:00",
+      "completed_at": "unknown (not logged)"
+    },
+    "pass2": {
+      "file": "data/benchmark/t1/annotation_p2004_karan_pass2_completed_v2.2.csv",
+      "sha256": "2a41142872f2cef0e750501751e7df701400335d5e70e35504a627a5bc502318",
+      "received_at": "2026-09-27T11:21:53+00:00",
+      "label_source": "manual",
+      "minutes": 165.0,
+      "minutes_source": "self-reported total (Karan, 2026-09-27), not logged per session",
+      "minutes_per_item": 3.8372093023255816,
+      "blank_sheet_written_at": "2026-09-27T08:32:38+00:00",
+      "window_minutes_sheet_written_to_received": 169.2,
+      "minutes_exceed_window": false,
+      "pass_1_completed_at": "unknown (not logged)",
+      "pass_2_completed_at": "unknown (not logged)",
+      "note": "Provenance only. The pass-2 labels were delivered in the original submission; this file corrects three rows. Neither the self-reported minutes nor any window gates anything.",
+      "original_submission": {
+        "file": "data/benchmark/t1/annotation_p2004_karan_pass2_completed.csv",
+        "sha256": "3ea732016ab852583146c0426ce56056fcda6a7df03e089583ba052c38fc2d98",
+        "received_at": "2026-09-27T10:45:37+00:00",
+        "window_minutes_sheet_written_to_received": 133.0,
+        "file_modified_at": "2026-09-27T10:33:59+00:00",
+        "window_minutes_sheet_written_to_file_modified": 121.3,
+        "minutes_exceed_window": true,
+        "source": "receipt of the reversed ingest (superseded/invalid_pass2_ingest_20260927T104537Z)"
+      },
+      "correction": {
+        "corrects": "data/benchmark/t1/annotation_p2004_karan_pass2_completed.csv",
+        "original_sha256": "3ea732016ab852583146c0426ce56056fcda6a7df03e089583ba052c38fc2d98",
+        "allowed_items": [
+          "t1_pilot_md_12061::p00055_00",
+          "t1_pilot_md_13525::p00050_00",
+          "t1_pilot_md_13525::p00050_01"
+        ],
+        "changed_rows": [
+          {
+            "row": 2,
+            "item_id": "t1_pilot_md_13525::p00050_01",
+            "cells": {
+              "applies_to": {
+                "from": "Financial Inclusion and Development",
+                "to": "Commercial Banks;Regional Rural Banks;Rural Co-operative Banks;Small Finance Banks"
+              },
+              "applies_to_rationale": {
+                "from": "The KCC insurance process requires the beneficiary's explicit consent before premium is debited from the account.",
+                "to": "Commercial Banks, Regional Rural Banks, Rural Co-operative Banks and Small Finance Banks must obtain the beneficiary's explicit consent at the application stage when the insurance premium is to be paid through the KCC account."
+              },
+              "differential_flag": {
+                "from": "class-specific",
+                "to": "shared"
+              }
+            }
+          },
+          {
+            "row": 10,
+            "item_id": "t1_pilot_md_13525::p00050_00",
+            "cells": {
+              "applies_to": {
+                "from": "Financial Inclusion and Development",
+                "to": "Commercial Banks;Regional Rural Banks;Rural Co-operative Banks;Small Finance Banks"
+              },
+              "applies_to_rationale": {
+                "from": "The scheme requires beneficiaries to be informed about the insurance cover available to them.",
+                "to": "Commercial Banks, Regional Rural Banks, Rural Co-operative Banks and Small Finance Banks must ensure KCC beneficiaries are made aware of the available insurance covers."
+              }
+            }
+          },
+          {
+            "row": 83,
+            "item_id": "t1_pilot_md_12061::p00055_00",
+            "cells": {
+              "applies_to": {
+                "from": "Financial Market",
+                "to": "Commercial Banks;Non-Banking Financial Companies;Payments Banks;Regional Rural Banks;Rural Co-operative Banks;Small Finance Banks;Urban Co-operative Banks"
+              },
+              "applies_to_rationale": {
+                "from": "A counterparty that misreports or duplicates an OTC-market deal must immediately notify Clearcorp.",
+                "to": "The immediate Clearcorp notification duty applies to eligible OTC money-market counterparties across these regulated classes."
+              },
+              "differential_flag": {
+                "from": "class-specific",
+                "to": "shared"
+              }
+            }
+          }
+        ],
+        "reason": "The original used function headings in applies_to on three pilot rows, which guidelines v2.2 forbid; Karan corrected those rows only, in a new versioned file (2026-09-27).",
+        "original_unchanged": true
+      }
+    }
+  },
+  "phase2": {
+    "all_25": {
+      "n_items": 25,
+      "not_obligation": {
+        "n_items": 25,
+        "n_units": 25,
+        "observed_agreement": 0.92,
+        "kappa": 0.7023809523809527,
+        "bootstrap": {
+          "ci95": [
+            0.0,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 1990,
+          "resamples_skipped_undefined": 10
+        }
+      },
+      "differential_flag": {
+        "n_items": 20,
+        "n_units": 20,
+        "observed_agreement": 0.65,
+        "kappa": 0.42622950819672134,
+        "bootstrap": {
+          "ci95": [
+            0.09090909090909091,
+            0.7297600290873831
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "per_class_judgement": {
+        "n_items": 20,
+        "n_units": 78,
+        "observed_agreement": 0.7051282051282052,
+        "kappa": 0.5503759398496242,
+        "bootstrap": {
+          "ci95": [
+            0.33294022864527234,
+            0.7519023430862806
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "applies_to": {
+        "n_items": 20,
+        "exact_set_agreement": 0.9,
+        "exact_set_bootstrap": {
+          "ci95": [
+            0.75,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        },
+        "mean_jaccard": 0.9140909090909091,
+        "mean_jaccard_bootstrap": {
+          "ci95": [
+            0.7831818181818182,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      }
+    },
+    "second_rater_overlap_9": {
+      "n_items": 9,
+      "not_obligation": {
+        "n_items": 9,
+        "n_units": 9,
+        "observed_agreement": 0.8888888888888888,
+        "kappa": 0.0,
+        "bootstrap": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 1315,
+          "resamples_skipped_undefined": 685
+        }
+      },
+      "differential_flag": {
+        "n_items": 8,
+        "n_units": 8,
+        "observed_agreement": 0.875,
+        "kappa": 0.7575757575757576,
+        "bootstrap": {
+          "ci95": [
+            0.42857142857142855,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 1948,
+          "resamples_skipped_undefined": 52
+        }
+      },
+      "per_class_judgement": {
+        "n_items": 8,
+        "n_units": 31,
+        "observed_agreement": 0.7419354838709677,
+        "kappa": 0.5716753022452504,
+        "bootstrap": {
+          "ci95": [
+            0.24756836659275688,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 1993,
+          "resamples_skipped_undefined": 7
+        }
+      },
+      "applies_to": {
+        "n_items": 8,
+        "exact_set_agreement": 0.875,
+        "exact_set_bootstrap": {
+          "ci95": [
+            0.625,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        },
+        "mean_jaccard": 0.8875,
+        "mean_jaccard_bootstrap": {
+          "ci95": [
+            0.6625,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      }
+    },
+    "other_16": {
+      "n_items": 16,
+      "not_obligation": {
+        "n_items": 16,
+        "n_units": 16,
+        "observed_agreement": 0.9375,
+        "kappa": 0.8181818181818182,
+        "bootstrap": {
+          "ci95": [
+            0.2558139534883721,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 1983,
+          "resamples_skipped_undefined": 17
+        }
+      },
+      "differential_flag": {
+        "n_items": 12,
+        "n_units": 12,
+        "observed_agreement": 0.5,
+        "kappa": 0.23404255319148942,
+        "bootstrap": {
+          "ci95": [
+            -0.22448979591836732,
+            0.625
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "per_class_judgement": {
+        "n_items": 12,
+        "n_units": 47,
+        "observed_agreement": 0.6808510638297872,
+        "kappa": 0.5262096774193549,
+        "bootstrap": {
+          "ci95": [
+            0.2650107079868984,
+            0.7368816204453732
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "applies_to": {
+        "n_items": 12,
+        "exact_set_agreement": 0.9166666666666666,
+        "exact_set_bootstrap": {
+          "ci95": [
+            0.75,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        },
+        "mean_jaccard": 0.9318181818181818,
+        "mean_jaccard_bootstrap": {
+          "ci95": [
+            0.7954545454545454,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      }
+    }
+  },
+  "pilot": {
+    "n_items": 18,
+    "both_obligation": 16,
+    "not_obligation": {
+      "n_items": 18,
+      "n_units": 18,
+      "observed_agreement": 0.9444444444444444,
+      "kappa": 0.6399999999999999,
+      "bootstrap": {
+        "ci95": [
+          0.0,
+          1.0
+        ],
+        "seed": 20260924,
+        "resamples_requested": 2000,
+        "resamples_used": 1742,
+        "resamples_skipped_undefined": 258
+      }
+    },
+    "differential_flag": {
+      "n_items": 16,
+      "n_units": 16,
+      "observed_agreement": 0.3125,
+      "kappa": -0.1282051282051282,
+      "bootstrap": {
+        "ci95": [
+          -0.37748344370860926,
+          0.06976744186046512
+        ],
+        "seed": 20260924,
+        "resamples_requested": 2000,
+        "resamples_used": 2000,
+        "resamples_skipped_undefined": 0
+      }
+    },
+    "applies_to": {
+      "n_items": 16,
+      "exact_set_agreement": 0.5,
+      "exact_set_bootstrap": {
+        "ci95": [
+          0.25,
+          0.75
+        ],
+        "seed": 20260924,
+        "resamples_requested": 2000,
+        "resamples_used": 2000,
+        "resamples_skipped_undefined": 0
+      },
+      "mean_jaccard": 0.5849454365079365,
+      "mean_jaccard_bootstrap": {
+        "ci95": [
+          0.3718687996031746,
+          0.7817460317460317
+        ],
+        "seed": 20260924,
+        "resamples_requested": 2000,
+        "resamples_used": 2000,
+        "resamples_skipped_undefined": 0
+      }
+    }
+  },
+  "pilot_sensitivity_excluding_corrected": {
+    "excluded_items": [
+      "t1_pilot_md_12061::p00055_00",
+      "t1_pilot_md_13525::p00050_00",
+      "t1_pilot_md_13525::p00050_01"
+    ],
+    "reason": "corrected after pass-1 answers for these items had been displayed in the session (reversed-ingest report); their corrected pass-2 labels may not be blind",
+    "n_items": 15,
+    "both_obligation": 13,
+    "not_obligation": {
+      "n_items": 15,
+      "n_units": 15,
+      "observed_agreement": 0.9333333333333333,
+      "kappa": 0.6341463414634149,
+      "bootstrap": {
+        "ci95": [
+          0.0,
+          1.0
+        ],
+        "seed": 20260924,
+        "resamples_requested": 2000,
+        "resamples_used": 1758,
+        "resamples_skipped_undefined": 242
+      }
+    },
+    "differential_flag": {
+      "n_items": 13,
+      "n_units": 13,
+      "observed_agreement": 0.23076923076923078,
+      "kappa": -0.19266055045871563,
+      "bootstrap": {
+        "ci95": [
+          -0.4444444444444444,
+          0.061855670103092716
+        ],
+        "seed": 20260924,
+        "resamples_requested": 2000,
+        "resamples_used": 2000,
+        "resamples_skipped_undefined": 0
+      }
+    },
+    "applies_to": {
+      "n_items": 13,
+      "exact_set_agreement": 0.38461538461538464,
+      "exact_set_bootstrap": {
+        "ci95": [
+          0.15384615384615385,
+          0.6923076923076923
+        ],
+        "seed": 20260924,
+        "resamples_requested": 2000,
+        "resamples_used": 2000,
+        "resamples_skipped_undefined": 0
+      },
+      "mean_jaccard": 0.48916361416361415,
+      "mean_jaccard_bootstrap": {
+        "ci95": [
+          0.27883089133089134,
+          0.7289644383394381
+        ],
+        "seed": 20260924,
+        "resamples_requested": 2000,
+        "resamples_used": 2000,
+        "resamples_skipped_undefined": 0
+      }
+    }
+  },
+  "subsets": {
+    "all_25": 25,
+    "second_rater_overlap_9": 9,
+    "other_16": 16
+  },
+  "disagreements": {
+    "rows": 55,
+    "items": 28,
+    "retest_items": 15,
+    "pilot_items": 13,
+    "item_ids": [
+      "t1_md_12927::p00108",
+      "t1_md_12953::p00098",
+      "t1_md_12973::p00166",
+      "t1_md_12975::p00064",
+      "t1_md_12980::p00044",
+      "t1_md_13020::p00033",
+      "t1_md_13030::p00071",
+      "t1_md_13094::p00185",
+      "t1_md_13100::p00041",
+      "t1_md_13111::p00157",
+      "t1_md_13122::p00115",
+      "t1_md_13159::p00778",
+      "t1_md_13328::p00018",
+      "t1_md_13605::p00068",
+      "t1_md_13608::p00026",
+      "t1_pilot_md_12061::p00055_00",
+      "t1_pilot_md_12927::p00046_00",
+      "t1_pilot_md_12958::p00018_00",
+      "t1_pilot_md_12983::p01671_00",
+      "t1_pilot_md_13042::p00070_00",
+      "t1_pilot_md_13042::p00070_01",
+      "t1_pilot_md_13042::p00070_02",
+      "t1_pilot_md_13526::p00022_00",
+      "t1_pilot_md_13526::p00022_01",
+      "t1_pilot_md_13633::p00074_00",
+      "t1_pilot_md_13633::p00074_01",
+      "t1_pilot_md_13633::p00074_02",
+      "t1_pilot_md_13644::p00037_00"
+    ],
+    "file": "data/benchmark/t1/p2004_retest_adjudication_v1.csv"
+  },
+  "report": "reports/p2004_retest_v1.md"
+}

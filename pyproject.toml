@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "Agentic RAG compliance system and RBI-ObliBench benchmark for RBI Master Directions"
 readme = "README.md"
 requires-python = ">=3.10"
-license = { text = "Proprietary — academic capstone; see reports/ for the licensing position on corpus content" }
+license = { text = "MIT" }  # code: MIT; annotations: CC BY 4.0 (release/LICENSE-DATA); RBI documents are not included
 
 # Runtime dependencies are declared in requirements.txt rather than here.
 # Execution happens on Kaggle Notebooks, whose base image already provides most

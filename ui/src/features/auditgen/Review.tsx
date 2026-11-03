@@ -1,9 +1,9 @@
 import { useMemo, useState } from "react";
 import { Badge, Button, Card, CardBody } from "@/components/ui/primitives";
 import { PageHeader } from "@/components/Page";
-import { live } from "./api";
+import { HOSTED, live } from "./api";
 import { useAudit } from "./state";
-import { Excerpt, RowTable, SourceLink } from "./parts";
+import { Excerpt, RowTable, SourceLink, INSTALLED, PUBLIC_DEMO } from "./parts";
 import type { Cited, Pack, ReviewStatus, Section } from "./types";
 
 const SECTIONS: [Section, string][] = [["register", "Applicability"], ["changes", "Changes"], ["calendar", "Calendar"],
@@ -25,7 +25,7 @@ export function progress(pack: Pack) {
 }
 
 export default function Review() {
-  const { mode, pack, reload, setPack } = useAudit();
+  const { mode, pack, packs, reload, setPack, track, refreshList } = useAudit();
   const [sec, setSec] = useState<Section>("register");
   const [reviewer, setReviewer] = useState("");
   const [onlyReview, setOnlyReview] = useState(true);
@@ -33,7 +33,8 @@ export default function Review() {
   const [wb, setWb] = useState<File | null>(null);
   const prog = useMemo(() => (pack ? progress(pack) : []), [pack]);
   if (!pack) return <p className="text-[13px] text-ink-3">No pack loaded.</p>;
-  const editable = mode === "live" && !pack.signoff;
+  const sampleOnHosted = HOSTED && packs.find((p) => p.pack_id === pack.pack_id)?.kind === "sample";
+  const editable = mode === "live" && !pack.signoff && !sampleOnHosted;
   const rows = rowsOf(pack, sec).filter((r) => !onlyReview || r.needs_review);
   const set = async (r: Cited, st: ReviewStatus, note: string) => {
     if (!editable) return;
@@ -55,13 +56,20 @@ export default function Review() {
           {pack.signoff && <Badge tone="pos">signed off by {pack.signoff.signer}</Badge>}
         </div>
         <ul className="flex flex-wrap gap-3 text-ink-2">{prog.map((p) => <li key={p.s}>{p.label}: <span className="num">{p.done}/{p.total}</span>{p.disputed > 0 && <span className="text-neg"> · {p.disputed} disputed</span>}</li>)}</ul>
-        {mode !== "live" && <p className="text-ink-3">Read-only in replay mode. Start the backend to review, or review in the Excel export and re-import it: <code>python3 scripts/auditgen.py review-import</code>.</p>}
+        {sampleOnHosted && !pack.signoff && <p className="text-ink-3">Sample packs are read-only. Generate a pack for your entity on the Audit pack tab to review it and sign it off.</p>}
+        {mode !== "live" && (PUBLIC_DEMO
+          ? <p className="text-ink-3">Read-only demo. In {INSTALLED}, reviewers confirm or dispute each row, add notes and sign the pack off.</p>
+          : <p className="text-ink-3">Read-only in replay mode. Start the backend to review, or review in the Excel export and re-import it: <code>python3 scripts/auditgen.py review-import</code>.</p>)}
         {editable && (
           <div className="flex flex-wrap items-end gap-2">
             <label className="flex flex-col gap-1">Reviewer<input aria-label="Reviewer name" className="h-7 rounded-md border border-line bg-panel px-2" value={reviewer} onChange={(e) => setReviewer(e.target.value)} /></label>
-            <label className="flex flex-col gap-1">Reviewed Excel (optional)<input type="file" accept=".xlsx" onChange={(e) => setWb(e.target.files?.[0] ?? null)} /></label>
+            {!HOSTED && <label className="flex flex-col gap-1">Reviewed Excel (optional)<input type="file" accept=".xlsx" onChange={(e) => setWb(e.target.files?.[0] ?? null)} /></label>}
             <Button disabled={!reviewer.trim()} onClick={async () => {
-              try { const r = await live.signoff(pack.pack_id, reviewer, wb ?? undefined); setMsg(`Signed-off pack ${r.pack_id} written; this pack is unchanged.`); await reload(); }
+              try {
+                const r = await live.signoff(pack.pack_id, reviewer, wb ?? undefined);
+                if (HOSTED) { const np = await live.pack(r.pack_id); track(np); setPack(np); await refreshList(); setMsg(`Signed off: pack ${r.pack_id} (the reviewed pack is kept unchanged).`); }
+                else { setMsg(`Signed-off pack ${r.pack_id} written; this pack is unchanged.`); await reload(); }
+              }
               catch (e) { setMsg((e as Error).message); }
             }}>Sign off</Button>
           </div>

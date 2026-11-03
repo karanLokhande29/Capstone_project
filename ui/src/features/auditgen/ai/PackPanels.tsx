@@ -6,6 +6,8 @@ import { ai } from "./aiApi";
 import { useAi } from "./aiState";
 import { AiBadge, Err, Meta, RunButton, Sentences, SourceChip } from "./AiParts";
 import type { ActivityRow } from "./aiTypes";
+import { PUBLIC_DEMO } from "../parts";
+import { HOSTED } from "../api";
 
 const PRI_TONE = { high: "neg", medium: "warn", low: "outline" } as const;
 
@@ -21,7 +23,9 @@ export function BriefingPanel() {
       <Card><CardBody className="space-y-2">
         <div className="flex flex-wrap items-center gap-2"><p className="text-[13px] font-semibold">Executive memo</p><AiBadge />
           <span className="ml-auto flex gap-2">
-            {memo && mode === "live" && <a className="inline-flex h-7 items-center rounded-md border border-line px-2 text-xs text-accent" href={ai.memoDocxUrl(pack.pack_id)} download>Download DOCX</a>}
+            {memo && mode === "live" && (HOSTED
+              ? <button className="inline-flex h-7 items-center rounded-md border border-line px-2 text-xs text-accent" onClick={() => void ai.memoDocx(pack.pack_id).catch(() => {})}>Download DOCX</button>
+              : <a className="inline-flex h-7 items-center rounded-md border border-line px-2 text-xs text-accent" href={ai.memoDocxUrl(pack.pack_id)} download>Download DOCX</a>)}
             <RunButton k="memo" onClick={() => void run("memo", () => ai.memo(pack.pack_id, model), (s, r) => ({ ...s, memo: r }))}>{memo ? "Redraft" : "Draft memo"}</RunButton>
           </span></div>
         <p className="text-[11.5px] text-ink-3">Drafted from numbered facts taken from this pack. Every number in a sentence must appear in the facts it cites; anything else is held back as unverified.</p>
@@ -74,7 +78,7 @@ export function CalendarPanel() {
         <div className="flex flex-wrap items-center gap-2"><p className="text-[13px] font-semibold">AI check of the compliance calendar</p><AiBadge />
           <span className="ml-auto"><RunButton k="calendar" disabled={!verify} onClick={() => void run("calendar", () => ai.calendar(pack.pack_id, null, model), (s, r) => ({ ...s, calendar: r }))}>
             {res ? "Check again" : `Check the ${Math.min(verify, 25)} “verify” entries`}</RunButton></span></div>
-        <p className="text-[12px] text-ink-3">The rule-based extractor marks {verify} of {pack.calendar.length} entries “verify”. The local model reads each source paragraph, extracts the deadline or frequency as structured data, and must quote the words it used; the quote is checked against the paragraph.</p>
+        <p className="text-[12px] text-ink-3">The rule-based extractor marks {verify} of {pack.calendar.length} entries “verify”. The model reads each source paragraph, extracts the deadline or frequency as structured data, and must quote the words it used; the quote is checked against the paragraph.</p>
         <Err k="calendar" />
       </CardBody></Card>
       {res && (
@@ -111,20 +115,27 @@ export function ActivityPanel() {
   const { mode } = useAudit();
   const { status, store } = useAi();
   const [rows, setRows] = useState<ActivityRow[]>([]);
-  useEffect(() => { if (mode === "live") void ai.activity().then(setRows).catch(() => setRows([])); }, [mode, store]);
+  const localLog = mode === "live" && !HOSTED;
+  useEffect(() => { if (localLog) void ai.activity().then(setRows).catch(() => setRows([])); }, [localLog, store]);
   return (
     <div className="space-y-3">
       <Card><CardBody className="space-y-1 text-[12.5px]">
         <p className="font-semibold">How the AI features work</p>
         <ul className="list-disc space-y-0.5 pl-5 text-ink-2">
-          <li><b>Local model only:</b> {status?.model ?? "a local Ollama model"} on {status?.host ?? "127.0.0.1"}. The backend refuses any non-loopback model host. No Gemini, Groq or other remote API.</li>
-          <li><b>Inputs:</b> RBI paragraphs from the local corpus and this pack's own rows. These features never send an uploaded company policy to the model.</li>
+          {HOSTED ? <>
+            <li><b>Hosted model:</b> {status?.model ?? "Gemini"} (Google) writes the drafts. The installed version runs the same features with a local model inside your network, with no remote API.</li>
+            <li><b>Inputs:</b> RBI paragraphs from the corpus, this pack's own rows and your question. No company document is uploaded or sent to the model; do not type confidential information.</li>
+          </> : <>
+            <li><b>Local model only:</b> {status?.model ?? "a local Ollama model"} on {status?.host ?? "127.0.0.1"}. The backend refuses any non-loopback model host. No Gemini, Groq or other remote API.</li>
+            <li><b>Inputs:</b> RBI paragraphs from the local corpus and this pack's own rows. These features never send an uploaded company policy to the model.</li>
+          </>}
           <li><b>Verifier:</b> every answer sentence is checked by the NLI cross-encoder ({status?.verifier ?? "nli-deberta-v3-xsmall"}) against the RBI text it cites; numbers must appear in the source. Unverified sentences are hidden by default.</li>
           <li><b>Never settled:</b> outputs are drafts. A review suggestion changes nothing until a named person applies it.</li>
-          <li><b>Log:</b> each call is logged with feature, model, timing, counts and sha256 hashes. Questions, prompts and answers are not logged.</li>
+          <li><b>{HOSTED ? "Storage" : "Log"}:</b> {HOSTED ? "outputs are stored with the pack you generated and deleted with it after 7 days; runs on a sample pack are shown to you and not stored."
+            : "each call is logged with feature, model, timing, counts and sha256 hashes. Questions, prompts and answers are not logged."}</li>
         </ul>
       </CardBody></Card>
-      {mode !== "live" ? <p className="text-[12.5px] text-ink-3">The activity log needs the local backend.</p> : (
+      {!localLog ? <p className="text-[12.5px] text-ink-3">{PUBLIC_DEMO ? "The activity log is kept by the installed version." : "The activity log needs the local backend."}</p> : (
         <div className="overflow-x-auto rounded-lg border border-line bg-panel">
           <table className="w-full text-left text-[12px]" aria-label="AI activity log">
             <thead className="bg-panel-2 text-ink-3"><tr>{["Time (UTC)", "Pack", "Feature", "Row", "Model", "Seconds", "Verified", "Unverified", "Input sha256"].map((h) => <th key={h} className="px-2 py-1">{h}</th>)}</tr></thead>

@@ -1,0 +1,36 @@
+{
+  "_note": "Values in «...» print highlighted in yellow; empty values print as blank cells to fill by hand. Re-run build/render.sh after editing.",
+  "group_no": "10",
+  "students": [
+    {
+      "name": "Akash Goyal",
+      "roll": "I025",
+      "sap": "70122300034"
+    },
+    {
+      "name": "Karan Lokhande",
+      "roll": "I039",
+      "sap": "70122300054"
+    },
+    {
+      "name": "Meer Magia",
+      "roll": "I040",
+      "sap": "70122300013"
+    }
+  ],
+  "program": "Bachelor of Technology (B.Tech.)",
+  "stream": "Artificial Intelligence",
+  "mentor": "Prof. Jish Elizabeth Joy",
+  "mentor_designation": "Assistant Professor",
+  "department": "Department of Artificial Intelligence",
+  "co_author_faculty": "Dr. Hima Deepthi Vankayalapati",
+  "hod": "Dr. Vaishali Kulkarni",
+  "academic_year": "2026-27",
+  "paper_id": "1954",
+  "paper_status": "Submitted (under review)",
+  "paper_title": "Same Subject, Different Duties: RBI-ObliBench for Differential Obligations across Entity Classes",
+  "paper_authors": "Meer Darshit Magia, Karan Madhukar Lokhande, Akash Goyal, Jish Elizabeth Joy, Hima Deepthi Vankayalapati",
+  "title": "Same Subject, Different Duties: RBI-ObliBench for Differential Obligations across Entity Classes",
+  "title_short": "Same Subject, Different Duties: RBI-ObliBench",
+  "file_title": "Same Subject Different Duties - RBI-ObliBench for Differential Obligations across Entity Classes"
+}

@@ -1,0 +1,446 @@
+{
+  "generated_at": "2026-09-27T07:19:22+00:00",
+  "guidelines_version": "v3",
+  "irr_seed": 20260927,
+  "items": 30,
+  "per_rater": {
+    "akash": {
+      "label_source": "manual",
+      "sha256": "dbca04f18207f95c5266d5a76699b51261a7f33760bbe06974cd9f9d8eafe442",
+      "received_at": "2026-09-27T06:33:19+00:00",
+      "source_file_modified_at": "2026-09-27T06:25:19+00:00",
+      "not_obligation_items": 2,
+      "flag_distribution": {
+        "absent": 2,
+        "class-specific": 15,
+        "shared": 11
+      },
+      "judgement_distribution": {
+        "different": 26,
+        "none": 35,
+        "same": 51
+      },
+      "applies_to_size": {
+        "1": 27,
+        "10": 1
+      },
+      "applies_to_includes_stand_in": 0,
+      "applies_to_equals_source_class_only": 27
+    },
+    "karan": {
+      "label_source": "manual",
+      "sha256": "b7da00da88b201fd2bdbaafc7092e613bc349a04ea2ca5c96f89964a3b962065",
+      "received_at": "2026-09-27T06:33:18+00:00",
+      "source_file_modified_at": "2026-09-27T06:25:14+00:00",
+      "not_obligation_items": 10,
+      "flag_distribution": {
+        "absent": 2,
+        "ambiguous": 1,
+        "class-specific": 4,
+        "shared": 13
+      },
+      "judgement_distribution": {
+        "different": 8,
+        "none": 25,
+        "same": 35,
+        "unsure": 12
+      },
+      "applies_to_size": {
+        "1": 20
+      },
+      "applies_to_includes_stand_in": 0,
+      "applies_to_equals_source_class_only": 20
+    },
+    "meer": {
+      "label_source": "manual",
+      "sha256": "1927bc161243ac2ad0ec8639fe8dc80d0b4f3599f52899488f3e7fd723246d52",
+      "received_at": "2026-09-27T06:33:20+00:00",
+      "source_file_modified_at": "2026-09-27T06:25:17+00:00",
+      "not_obligation_items": 4,
+      "flag_distribution": {
+        "absent": 2,
+        "class-specific": 10,
+        "shared": 14
+      },
+      "judgement_distribution": {
+        "different": 20,
+        "none": 30,
+        "same": 51,
+        "unsure": 3
+      },
+      "applies_to_size": {
+        "1": 25,
+        "7": 1
+      },
+      "applies_to_includes_stand_in": 0,
+      "applies_to_equals_source_class_only": 25
+    }
+  },
+  "minutes": {
+    "karan": {
+      "minutes": null,
+      "minutes_per_item": null,
+      "basis": "NOT YET MEASURED — no minutes logged in the irr rows of p2004_minutes.csv"
+    },
+    "akash": {
+      "minutes": null,
+      "minutes_per_item": null,
+      "basis": "NOT YET MEASURED — no minutes logged in the irr rows of p2004_minutes.csv"
+    },
+    "meer": {
+      "minutes": null,
+      "minutes_per_item": null,
+      "basis": "NOT YET MEASURED — no minutes logged in the irr rows of p2004_minutes.csv"
+    }
+  },
+  "agreement": {
+    "raters": [
+      "akash",
+      "karan",
+      "meer"
+    ],
+    "items": 30,
+    "seed": 20260924,
+    "resamples": 2000,
+    "pairwise": {
+      "akash-karan": {
+        "not_obligation": {
+          "n_items": 30,
+          "n_units": 30,
+          "observed_agreement": 0.7333333333333333,
+          "kappa": 0.24999999999999978,
+          "bootstrap": {
+            "ci95": [
+              0.0,
+              0.5714285714285715
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "differential_flag": {
+          "n_items": 20,
+          "n_units": 20,
+          "observed_agreement": 0.65,
+          "kappa": 0.4444444444444445,
+          "bootstrap": {
+            "ci95": [
+              0.180327868852459,
+              0.7392419175027866
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "per_class_judgement": {
+          "n_items": 20,
+          "n_units": 80,
+          "observed_agreement": 0.8375,
+          "kappa": 0.7621769951978046,
+          "bootstrap": {
+            "ci95": [
+              0.6538758237023073,
+              0.8719326728865973
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "applies_to": {
+          "n_items": 20,
+          "exact_set_agreement": 0.95,
+          "exact_set_bootstrap": {
+            "ci95": [
+              0.85,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          },
+          "mean_jaccard": 0.9550000000000001,
+          "mean_jaccard_bootstrap": {
+            "ci95": [
+              0.865,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        }
+      },
+      "akash-meer": {
+        "not_obligation": {
+          "n_items": 30,
+          "n_units": 30,
+          "observed_agreement": 0.9333333333333333,
+          "kappa": 0.6341463414634149,
+          "bootstrap": {
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 1964,
+            "resamples_skipped_undefined": 36
+          }
+        },
+        "differential_flag": {
+          "n_items": 26,
+          "n_units": 26,
+          "observed_agreement": 0.7692307692307693,
+          "kappa": 0.6020408163265306,
+          "bootstrap": {
+            "ci95": [
+              0.33669228560989617,
+              0.857543977842653
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "per_class_judgement": {
+          "n_items": 26,
+          "n_units": 104,
+          "observed_agreement": 0.8653846153846154,
+          "kappa": 0.7920297100414226,
+          "bootstrap": {
+            "ci95": [
+              0.6725880757425895,
+              0.8943223014131052
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "applies_to": {
+          "n_items": 26,
+          "exact_set_agreement": 0.9615384615384616,
+          "exact_set_bootstrap": {
+            "ci95": [
+              0.8846153846153846,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          },
+          "mean_jaccard": 0.9884615384615384,
+          "mean_jaccard_bootstrap": {
+            "ci95": [
+              0.9653846153846154,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        }
+      },
+      "karan-meer": {
+        "not_obligation": {
+          "n_items": 30,
+          "n_units": 30,
+          "observed_agreement": 0.8,
+          "kappa": 0.4705882352941179,
+          "bootstrap": {
+            "ci95": [
+              0.12903225806451626,
+              0.7931034482758621
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "differential_flag": {
+          "n_items": 20,
+          "n_units": 20,
+          "observed_agreement": 0.85,
+          "kappa": 0.7333333333333332,
+          "bootstrap": {
+            "ci95": [
+              0.4230769230769229,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "per_class_judgement": {
+          "n_items": 20,
+          "n_units": 80,
+          "observed_agreement": 0.85,
+          "kappa": 0.7771587743732592,
+          "bootstrap": {
+            "ci95": [
+              0.6393624319341422,
+              0.903360049016148
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "applies_to": {
+          "n_items": 20,
+          "exact_set_agreement": 0.95,
+          "exact_set_bootstrap": {
+            "ci95": [
+              0.85,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          },
+          "mean_jaccard": 0.9571428571428571,
+          "mean_jaccard_bootstrap": {
+            "ci95": [
+              0.8714285714285713,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        }
+      }
+    },
+    "fleiss": {
+      "not_obligation": {
+        "n_items": 30,
+        "n_units": 30,
+        "all_agree": 0.7333333333333333,
+        "kappa": 0.39189189189189233,
+        "bootstrap": {
+          "ci95": [
+            -0.015037593984962454,
+            0.6893016174799333
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "differential_flag": {
+        "n_items": 20,
+        "n_units": 20,
+        "all_agree": 0.65,
+        "kappa": 0.5710200190657769,
+        "bootstrap": {
+          "ci95": [
+            0.28852475792112775,
+            0.8069131323174595
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "per_class_judgement": {
+        "n_items": 20,
+        "n_units": 80,
+        "all_agree": 0.8125,
+        "kappa": 0.7738101471281218,
+        "bootstrap": {
+          "ci95": [
+            0.645370712202036,
+            0.8859115463741595
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "applies_to_all_three_identical": {
+        "n_items": 20,
+        "rate": 0.95,
+        "all_three_source_class_only": 19,
+        "any_rater_multi_class": 1
+      },
+      "complete_items_note": "Fleiss' κ only over items every rater labelled as an obligation (complete items)."
+    }
+  },
+  "independence": {
+    "identical_item_text_guard": "passed at ingest (all three files)",
+    "near_identical_item_text": {
+      "akash-karan": {
+        "text_cells_compared": 21,
+        "near_identical_ge_0_9": 0,
+        "examples": []
+      },
+      "akash-meer": {
+        "text_cells_compared": 27,
+        "near_identical_ge_0_9": 0,
+        "examples": []
+      },
+      "karan-meer": {
+        "text_cells_compared": 23,
+        "near_identical_ge_0_9": 0,
+        "examples": []
+      }
+    },
+    "source_file_modified_at": {
+      "karan": "2026-09-27T06:25:14+00:00",
+      "akash": "2026-09-27T06:25:19+00:00",
+      "meer": "2026-09-27T06:25:17+00:00"
+    }
+  },
+  "disagreements": {
+    "items": 18,
+    "item_ids": [
+      "t1_md_12925::p00219",
+      "t1_md_12929::p00021",
+      "t1_md_12941::p00192",
+      "t1_md_12949::p00030",
+      "t1_md_12974::p00028",
+      "t1_md_12983::p00018",
+      "t1_md_12987::p00109",
+      "t1_md_12993::p00028",
+      "t1_md_13013::p00087",
+      "t1_md_13028::p00349",
+      "t1_md_13044::p00066",
+      "t1_md_13085::p00015",
+      "t1_md_13108::p00309",
+      "t1_md_13127::p00541",
+      "t1_md_13147::p00121",
+      "t1_md_13165::p00017",
+      "t1_md_13583::p00177",
+      "t1_md_13623::p00060"
+    ]
+  },
+  "adjudication": {
+    "rows": 56,
+    "item_rows": 9,
+    "class_rows": 47,
+    "items": 18
+  },
+  "report": "reports/p2004_irr_v1.md",
+  "adjudication_file": "data/benchmark/t1/p2004_irr_adjudication_v1.csv"
+}

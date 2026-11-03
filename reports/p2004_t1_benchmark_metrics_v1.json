@@ -1,0 +1,1133 @@
+{
+  "generated_at": "2026-09-27T13:11:59+00:00",
+  "backup_before": "C:\\Users\\admin\\Downloads\\Capstone_project\\Capstone_project\\t1_backups\\t1_backup_20260927T131157Z.zip",
+  "validated_file": "data/benchmark/t1/t1_validated_v1.jsonl",
+  "validated_sha256": "67d471a13a266a12fbb55f41500c71c39f1322a0d847011a43be4cc55af45fc5",
+  "candidate_benchmark_unchanged": true,
+  "adjudication_receipts": {
+    "retest": {
+      "file": "data/benchmark/t1/p2004_retest_adjudication_v1_completed.csv",
+      "sha256": "6dac0de744362c137bdb071ad8bf72631efd21babb289d6433f6a949dad78d1b",
+      "received_at": "2026-09-27T13:11:59+00:00"
+    },
+    "overlap": {
+      "file": "data/benchmark/t1/p2004_overlap_adjudication_v1_completed.csv",
+      "sha256": "a527ab769e74ec1523e956a42e392f9cc0ac7a439f69e2e0b9e025c283b074fe",
+      "received_at": "2026-09-27T13:11:59+00:00"
+    },
+    "unsure": {
+      "file": "data/benchmark/t1/p2004_unsure_adjudication_v1_completed.csv",
+      "sha256": "080047468aaf41cf76802167014f1b14adfbe1de833d51bc4d7aabbdd7395cbf",
+      "received_at": "2026-09-27T13:11:59+00:00"
+    },
+    "rules": {
+      "file": "data/benchmark/t1/p2004_adjudication_rules.md",
+      "sha256": "3a711cbbbf21204937b40edcaf1c09fea74c3b01950a96fb55f76decebfa6301",
+      "received_at": "2026-09-27T13:11:59+00:00"
+    },
+    "irr": {
+      "file": "data/benchmark/t1/p2004_irr_adjudication_v1_completed.csv",
+      "sha256": "5fa1b1a864a4b9717183ff929b4e921bc90de0d445b424aa2193366862a8e702",
+      "received_at": "2026-09-27T08:05:46+00:00"
+    }
+  },
+  "problems": [],
+  "sample_items": 123,
+  "validated": 106,
+  "rejected": 17,
+  "in_review": 0,
+  "excluded_ids": {
+    "rejected": [
+      "t1_md_12940::p00022",
+      "t1_md_12941::p00283",
+      "t1_md_12948::p00016",
+      "t1_md_12960::p00133",
+      "t1_md_12970::p00311",
+      "t1_md_12999::p00016",
+      "t1_md_13011::p00041",
+      "t1_md_13043::p00015",
+      "t1_md_13087::p00036",
+      "t1_md_13096::p00012",
+      "t1_md_13098::p00032",
+      "t1_md_13126::p00013",
+      "t1_md_13163::p00031",
+      "t1_md_13324::p00026",
+      "t1_md_13603::p00117",
+      "t1_md_13605::p00068",
+      "t1_md_13638::p00055"
+    ],
+    "in_review": []
+  },
+  "route_counts": {
+    "annotator:karan:adjudicated": 38,
+    "annotator:karan:retest-consistent": 6,
+    "annotator:karan:single-pass": 62
+  },
+  "rejection_rate": {
+    "k": 17,
+    "n": 123,
+    "rate": 0.13821138211382114,
+    "wilson_95": [
+      0.08811572402149442,
+      0.21022172993682836
+    ]
+  },
+  "flag_distribution": {
+    "shared": 52,
+    "class-specific": 40,
+    "absent": 14,
+    "ambiguous": 0
+  },
+  "ambiguity_rate": {
+    "k": 0,
+    "n": 106,
+    "rate": 0.0,
+    "wilson_95": [
+      -3.469446951953614e-18,
+      0.034973998922084165
+    ]
+  },
+  "judgement_distribution": {
+    "same": 213,
+    "different": 78,
+    "none": 121,
+    "unsure": 0
+  },
+  "by_source_class": {
+    "All India Financial Institutions": {
+      "flag:absent": 2,
+      "flag:class-specific": 8,
+      "flag:shared": 1,
+      "judgement:different": 13,
+      "judgement:none": 10,
+      "judgement:same": 21,
+      "rejected": 1,
+      "validated": 11
+    },
+    "Asset Reconstruction Companies": {
+      "flag:shared": 7,
+      "judgement:same": 28,
+      "validated": 7
+    },
+    "Commercial Banks": {
+      "flag:absent": 6,
+      "flag:class-specific": 2,
+      "flag:shared": 7,
+      "judgement:different": 3,
+      "judgement:none": 35,
+      "judgement:same": 19,
+      "rejected": 2,
+      "validated": 15
+    },
+    "Credit Information Companies": {
+      "flag:class-specific": 3,
+      "flag:shared": 4,
+      "judgement:different": 5,
+      "judgement:none": 2,
+      "judgement:same": 21,
+      "validated": 7
+    },
+    "Local Area Banks": {
+      "flag:absent": 1,
+      "flag:class-specific": 3,
+      "flag:shared": 4,
+      "judgement:different": 3,
+      "judgement:none": 6,
+      "judgement:same": 22,
+      "rejected": 3,
+      "validated": 8
+    },
+    "Non-Banking Financial Companies": {
+      "flag:absent": 2,
+      "flag:class-specific": 4,
+      "flag:shared": 1,
+      "judgement:different": 13,
+      "judgement:none": 11,
+      "judgement:same": 3,
+      "rejected": 4,
+      "validated": 7
+    },
+    "Payments Banks": {
+      "flag:class-specific": 4,
+      "flag:shared": 4,
+      "judgement:different": 8,
+      "judgement:none": 7,
+      "judgement:same": 16,
+      "rejected": 3,
+      "validated": 8
+    },
+    "Regional Rural Banks": {
+      "flag:absent": 2,
+      "flag:class-specific": 2,
+      "flag:shared": 5,
+      "judgement:different": 5,
+      "judgement:none": 14,
+      "judgement:same": 16,
+      "rejected": 1,
+      "validated": 9
+    },
+    "Rural Co-operative Banks": {
+      "flag:class-specific": 6,
+      "flag:shared": 2,
+      "judgement:different": 10,
+      "judgement:none": 9,
+      "judgement:same": 11,
+      "rejected": 1,
+      "validated": 8
+    },
+    "Small Finance Banks": {
+      "flag:absent": 1,
+      "flag:class-specific": 3,
+      "flag:shared": 11,
+      "judgement:different": 4,
+      "judgement:none": 18,
+      "judgement:same": 35,
+      "rejected": 1,
+      "validated": 15
+    },
+    "Urban Co-operative Banks": {
+      "flag:class-specific": 5,
+      "flag:shared": 6,
+      "judgement:different": 14,
+      "judgement:none": 9,
+      "judgement:same": 21,
+      "rejected": 1,
+      "validated": 11
+    }
+  },
+  "stand_in_used": 0,
+  "applies_to_source_class_only": {
+    "k": 103,
+    "n": 106,
+    "rate": 0.9716981132075472,
+    "wilson_95": [
+      0.9200729964539736,
+      0.9903288913553809
+    ]
+  },
+  "matched_paragraph_id_missing": 0,
+  "candidate_label_agreement_by_band": {
+    "high": {
+      "k": 119,
+      "n": 119,
+      "rate": 1.0,
+      "wilson_95": [
+        0.9687272064186726,
+        1.0
+      ]
+    },
+    "mid": {
+      "k": 125,
+      "n": 132,
+      "rate": 0.946969696969697,
+      "wilson_95": [
+        0.8945808779221942,
+        0.974077912904769
+      ]
+    },
+    "low": {
+      "k": 114,
+      "n": 161,
+      "rate": 0.7080745341614907,
+      "wilson_95": [
+        0.6336500311723374,
+        0.7728007676551429
+      ]
+    }
+  },
+  "candidate_flag_agreement_absent_vs_not": {
+    "k": 92,
+    "n": 106,
+    "rate": 0.8679245283018868,
+    "wilson_95": [
+      0.7904447909077673,
+      0.9196686815835292
+    ]
+  },
+  "temporal_coverage": {
+    "in_force_from": {
+      "k": 106,
+      "n": 106,
+      "rate": 1.0,
+      "wilson_95": [
+        0.9650260010779157,
+        0.9999999999999998
+      ]
+    },
+    "amended_by": {
+      "k": 10,
+      "n": 106,
+      "rate": 0.09433962264150944,
+      "wilson_95": [
+        0.05205194116058447,
+        0.1650024353233706
+      ]
+    },
+    "in_force_to": {
+      "k": 1,
+      "n": 106,
+      "rate": 0.009433962264150943,
+      "wilson_95": [
+        0.0016672287844913501,
+        0.05151480789377989
+      ]
+    }
+  },
+  "enforcement_diagnostic": {
+    "items_with_linked_enforcement": 9,
+    "penalised_class_in_applies_to": {
+      "k": 9,
+      "n": 9,
+      "rate": 1.0,
+      "wilson_95": [
+        0.7008472464490407,
+        1.0
+      ]
+    },
+    "note": "direction-level diagnostic only; never used as a label"
+  },
+  "sizing": {
+    "planned": {
+      "budget_minutes": 600.0,
+      "minutes_per_item": 3.61,
+      "pilot_retest_minutes": 64.98,
+      "remaining_minutes": 535.02,
+      "minutes_per_item_with_retest": 4.332,
+      "n_target": 123,
+      "retest_items": 25,
+      "pass1_minutes": 444.03,
+      "retest_minutes": 90.25,
+      "total_minutes": 599.26,
+      "underpowered": false,
+      "blocks": 7
+    },
+    "pass1_minutes": "NOT YET MEASURED (not logged at the time)",
+    "pass2_minutes": {
+      "self_reported": 165.0,
+      "per_item": 3.8372093023255816,
+      "source": "self-reported total (Karan, 2026-09-27), not logged per session"
+    },
+    "blocks_labelled": 7
+  },
+  "reliability": {
+    "irr": {
+      "items": 30,
+      "fleiss": {
+        "per_class_judgement": {
+          "n_items": 20,
+          "n_units": 80,
+          "all_agree": 0.8125,
+          "kappa": 0.7738101471281218,
+          "bootstrap": {
+            "ci95": [
+              0.645370712202036,
+              0.8859115463741595
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "differential_flag": {
+          "n_items": 20,
+          "n_units": 20,
+          "all_agree": 0.65,
+          "kappa": 0.5710200190657769,
+          "bootstrap": {
+            "ci95": [
+              0.28852475792112775,
+              0.8069131323174595
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "not_obligation": {
+          "n_items": 30,
+          "n_units": 30,
+          "all_agree": 0.7333333333333333,
+          "kappa": 0.39189189189189233,
+          "bootstrap": {
+            "ci95": [
+              -0.015037593984962454,
+              0.6893016174799333
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        }
+      },
+      "pairwise": {
+        "akash-karan": {
+          "not_obligation": {
+            "n_items": 30,
+            "n_units": 30,
+            "observed_agreement": 0.7333333333333333,
+            "kappa": 0.24999999999999978,
+            "bootstrap": {
+              "ci95": [
+                0.0,
+                0.5714285714285715
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "differential_flag": {
+            "n_items": 20,
+            "n_units": 20,
+            "observed_agreement": 0.65,
+            "kappa": 0.4444444444444445,
+            "bootstrap": {
+              "ci95": [
+                0.180327868852459,
+                0.7392419175027866
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "per_class_judgement": {
+            "n_items": 20,
+            "n_units": 80,
+            "observed_agreement": 0.8375,
+            "kappa": 0.7621769951978046,
+            "bootstrap": {
+              "ci95": [
+                0.6538758237023073,
+                0.8719326728865973
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "applies_to": {
+            "n_items": 20,
+            "exact_set_agreement": 0.95,
+            "exact_set_bootstrap": {
+              "ci95": [
+                0.85,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            },
+            "mean_jaccard": 0.9550000000000001,
+            "mean_jaccard_bootstrap": {
+              "ci95": [
+                0.865,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          }
+        },
+        "akash-meer": {
+          "not_obligation": {
+            "n_items": 30,
+            "n_units": 30,
+            "observed_agreement": 0.9333333333333333,
+            "kappa": 0.6341463414634149,
+            "bootstrap": {
+              "ci95": [
+                0.0,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 1964,
+              "resamples_skipped_undefined": 36
+            }
+          },
+          "differential_flag": {
+            "n_items": 26,
+            "n_units": 26,
+            "observed_agreement": 0.7692307692307693,
+            "kappa": 0.6020408163265306,
+            "bootstrap": {
+              "ci95": [
+                0.33669228560989617,
+                0.857543977842653
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "per_class_judgement": {
+            "n_items": 26,
+            "n_units": 104,
+            "observed_agreement": 0.8653846153846154,
+            "kappa": 0.7920297100414226,
+            "bootstrap": {
+              "ci95": [
+                0.6725880757425895,
+                0.8943223014131052
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "applies_to": {
+            "n_items": 26,
+            "exact_set_agreement": 0.9615384615384616,
+            "exact_set_bootstrap": {
+              "ci95": [
+                0.8846153846153846,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            },
+            "mean_jaccard": 0.9884615384615384,
+            "mean_jaccard_bootstrap": {
+              "ci95": [
+                0.9653846153846154,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          }
+        },
+        "karan-meer": {
+          "not_obligation": {
+            "n_items": 30,
+            "n_units": 30,
+            "observed_agreement": 0.8,
+            "kappa": 0.4705882352941179,
+            "bootstrap": {
+              "ci95": [
+                0.12903225806451626,
+                0.7931034482758621
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "differential_flag": {
+            "n_items": 20,
+            "n_units": 20,
+            "observed_agreement": 0.85,
+            "kappa": 0.7333333333333332,
+            "bootstrap": {
+              "ci95": [
+                0.4230769230769229,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "per_class_judgement": {
+            "n_items": 20,
+            "n_units": 80,
+            "observed_agreement": 0.85,
+            "kappa": 0.7771587743732592,
+            "bootstrap": {
+              "ci95": [
+                0.6393624319341422,
+                0.903360049016148
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "applies_to": {
+            "n_items": 20,
+            "exact_set_agreement": 0.95,
+            "exact_set_bootstrap": {
+              "ci95": [
+                0.85,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            },
+            "mean_jaccard": 0.9571428571428571,
+            "mean_jaccard_bootstrap": {
+              "ci95": [
+                0.8714285714285713,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          }
+        }
+      }
+    },
+    "retest": {
+      "phase2": {
+        "all_25": {
+          "n_items": 25,
+          "not_obligation": {
+            "n_items": 25,
+            "n_units": 25,
+            "observed_agreement": 0.92,
+            "kappa": 0.7023809523809527,
+            "bootstrap": {
+              "ci95": [
+                0.0,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 1990,
+              "resamples_skipped_undefined": 10
+            }
+          },
+          "differential_flag": {
+            "n_items": 20,
+            "n_units": 20,
+            "observed_agreement": 0.65,
+            "kappa": 0.42622950819672134,
+            "bootstrap": {
+              "ci95": [
+                0.09090909090909091,
+                0.7297600290873831
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "per_class_judgement": {
+            "n_items": 20,
+            "n_units": 78,
+            "observed_agreement": 0.7051282051282052,
+            "kappa": 0.5503759398496242,
+            "bootstrap": {
+              "ci95": [
+                0.33294022864527234,
+                0.7519023430862806
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "applies_to": {
+            "n_items": 20,
+            "exact_set_agreement": 0.9,
+            "exact_set_bootstrap": {
+              "ci95": [
+                0.75,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            },
+            "mean_jaccard": 0.9140909090909091,
+            "mean_jaccard_bootstrap": {
+              "ci95": [
+                0.7831818181818182,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          }
+        },
+        "second_rater_overlap_9": {
+          "n_items": 9,
+          "not_obligation": {
+            "n_items": 9,
+            "n_units": 9,
+            "observed_agreement": 0.8888888888888888,
+            "kappa": 0.0,
+            "bootstrap": {
+              "ci95": [
+                0.0,
+                0.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 1315,
+              "resamples_skipped_undefined": 685
+            }
+          },
+          "differential_flag": {
+            "n_items": 8,
+            "n_units": 8,
+            "observed_agreement": 0.875,
+            "kappa": 0.7575757575757576,
+            "bootstrap": {
+              "ci95": [
+                0.42857142857142855,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 1948,
+              "resamples_skipped_undefined": 52
+            }
+          },
+          "per_class_judgement": {
+            "n_items": 8,
+            "n_units": 31,
+            "observed_agreement": 0.7419354838709677,
+            "kappa": 0.5716753022452504,
+            "bootstrap": {
+              "ci95": [
+                0.24756836659275688,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 1993,
+              "resamples_skipped_undefined": 7
+            }
+          },
+          "applies_to": {
+            "n_items": 8,
+            "exact_set_agreement": 0.875,
+            "exact_set_bootstrap": {
+              "ci95": [
+                0.625,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            },
+            "mean_jaccard": 0.8875,
+            "mean_jaccard_bootstrap": {
+              "ci95": [
+                0.6625,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          }
+        },
+        "other_16": {
+          "n_items": 16,
+          "not_obligation": {
+            "n_items": 16,
+            "n_units": 16,
+            "observed_agreement": 0.9375,
+            "kappa": 0.8181818181818182,
+            "bootstrap": {
+              "ci95": [
+                0.2558139534883721,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 1983,
+              "resamples_skipped_undefined": 17
+            }
+          },
+          "differential_flag": {
+            "n_items": 12,
+            "n_units": 12,
+            "observed_agreement": 0.5,
+            "kappa": 0.23404255319148942,
+            "bootstrap": {
+              "ci95": [
+                -0.22448979591836732,
+                0.625
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "per_class_judgement": {
+            "n_items": 12,
+            "n_units": 47,
+            "observed_agreement": 0.6808510638297872,
+            "kappa": 0.5262096774193549,
+            "bootstrap": {
+              "ci95": [
+                0.2650107079868984,
+                0.7368816204453732
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          },
+          "applies_to": {
+            "n_items": 12,
+            "exact_set_agreement": 0.9166666666666666,
+            "exact_set_bootstrap": {
+              "ci95": [
+                0.75,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            },
+            "mean_jaccard": 0.9318181818181818,
+            "mean_jaccard_bootstrap": {
+              "ci95": [
+                0.7954545454545454,
+                1.0
+              ],
+              "seed": 20260924,
+              "resamples_requested": 2000,
+              "resamples_used": 2000,
+              "resamples_skipped_undefined": 0
+            }
+          }
+        }
+      },
+      "pilot": {
+        "n_items": 18,
+        "both_obligation": 16,
+        "not_obligation": {
+          "n_items": 18,
+          "n_units": 18,
+          "observed_agreement": 0.9444444444444444,
+          "kappa": 0.6399999999999999,
+          "bootstrap": {
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 1742,
+            "resamples_skipped_undefined": 258
+          }
+        },
+        "differential_flag": {
+          "n_items": 16,
+          "n_units": 16,
+          "observed_agreement": 0.3125,
+          "kappa": -0.1282051282051282,
+          "bootstrap": {
+            "ci95": [
+              -0.37748344370860926,
+              0.06976744186046512
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "applies_to": {
+          "n_items": 16,
+          "exact_set_agreement": 0.5,
+          "exact_set_bootstrap": {
+            "ci95": [
+              0.25,
+              0.75
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          },
+          "mean_jaccard": 0.5849454365079365,
+          "mean_jaccard_bootstrap": {
+            "ci95": [
+              0.3718687996031746,
+              0.7817460317460317
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        }
+      },
+      "pilot_sensitivity": {
+        "excluded_items": [
+          "t1_pilot_md_12061::p00055_00",
+          "t1_pilot_md_13525::p00050_00",
+          "t1_pilot_md_13525::p00050_01"
+        ],
+        "reason": "corrected after pass-1 answers for these items had been displayed in the session (reversed-ingest report); their corrected pass-2 labels may not be blind",
+        "n_items": 15,
+        "both_obligation": 13,
+        "not_obligation": {
+          "n_items": 15,
+          "n_units": 15,
+          "observed_agreement": 0.9333333333333333,
+          "kappa": 0.6341463414634149,
+          "bootstrap": {
+            "ci95": [
+              0.0,
+              1.0
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 1758,
+            "resamples_skipped_undefined": 242
+          }
+        },
+        "differential_flag": {
+          "n_items": 13,
+          "n_units": 13,
+          "observed_agreement": 0.23076923076923078,
+          "kappa": -0.19266055045871563,
+          "bootstrap": {
+            "ci95": [
+              -0.4444444444444444,
+              0.061855670103092716
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        },
+        "applies_to": {
+          "n_items": 13,
+          "exact_set_agreement": 0.38461538461538464,
+          "exact_set_bootstrap": {
+            "ci95": [
+              0.15384615384615385,
+              0.6923076923076923
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          },
+          "mean_jaccard": 0.48916361416361415,
+          "mean_jaccard_bootstrap": {
+            "ci95": [
+              0.27883089133089134,
+              0.7289644383394381
+            ],
+            "seed": 20260924,
+            "resamples_requested": 2000,
+            "resamples_used": 2000,
+            "resamples_skipped_undefined": 0
+          }
+        }
+      }
+    }
+  },
+  "report": "reports/p2004_t1_benchmark.md",
+  "timed_relabel": {
+    "items": 20,
+    "minutes": {
+      "minutes_per_item": 5.35,
+      "total_minutes": 107.0,
+      "n_items": 20,
+      "n_blocks": 2,
+      "per_block": [
+        5.2,
+        5.5
+      ],
+      "bootstrap_ci95": [
+        5.2,
+        5.5
+      ],
+      "resamples": 2000,
+      "seed": 20260924,
+      "basis": "measured (clock times logged per block)",
+      "caveat": "the bootstrap resamples 2 blocks, so with few blocks the interval is close to the range of the per-block rates"
+    },
+    "agreement_with_pass1": {
+      "not_obligation": {
+        "n_items": 20,
+        "n_units": 20,
+        "observed_agreement": 0.95,
+        "kappa": 0.0,
+        "bootstrap": {
+          "ci95": [
+            0.0,
+            0.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 1312,
+          "resamples_skipped_undefined": 688
+        }
+      },
+      "differential_flag": {
+        "n_items": 19,
+        "n_units": 19,
+        "observed_agreement": 0.6842105263157895,
+        "kappa": 0.40932642487046633,
+        "bootstrap": {
+          "ci95": [
+            0.0419495326220376,
+            0.759493670886076
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "per_class_judgement": {
+        "n_items": 19,
+        "n_units": 72,
+        "observed_agreement": 0.8333333333333334,
+        "kappa": 0.6838638858397367,
+        "bootstrap": {
+          "ci95": [
+            0.5063321792144606,
+            0.871941027189692
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "applies_to": {
+        "n_items": 19,
+        "exact_set_agreement": 0.8947368421052632,
+        "exact_set_bootstrap": {
+          "ci95": [
+            0.7368421052631579,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        },
+        "mean_jaccard": 0.9052631578947368,
+        "mean_jaccard_bootstrap": {
+          "ci95": [
+            0.7631578947368421,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      }
+    },
+    "retest_all_25_for_comparison": {
+      "differential_flag": {
+        "n_items": 20,
+        "n_units": 20,
+        "observed_agreement": 0.65,
+        "kappa": 0.42622950819672134,
+        "bootstrap": {
+          "ci95": [
+            0.09090909090909091,
+            0.7297600290873831
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "per_class_judgement": {
+        "n_items": 20,
+        "n_units": 78,
+        "observed_agreement": 0.7051282051282052,
+        "kappa": 0.5503759398496242,
+        "bootstrap": {
+          "ci95": [
+            0.33294022864527234,
+            0.7519023430862806
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "applies_to": {
+        "n_items": 20,
+        "exact_set_agreement": 0.9,
+        "exact_set_bootstrap": {
+          "ci95": [
+            0.75,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        },
+        "mean_jaccard": 0.9140909090909091,
+        "mean_jaccard_bootstrap": {
+          "ci95": [
+            0.7831818181818182,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 2000,
+          "resamples_skipped_undefined": 0
+        }
+      },
+      "not_obligation": {
+        "n_items": 25,
+        "n_units": 25,
+        "observed_agreement": 0.92,
+        "kappa": 0.7023809523809527,
+        "bootstrap": {
+          "ci95": [
+            0.0,
+            1.0
+          ],
+          "seed": 20260924,
+          "resamples_requested": 2000,
+          "resamples_used": 1990,
+          "resamples_skipped_undefined": 10
+        }
+      }
+    },
+    "receipt": {
+      "file": "data/benchmark/t1/annotation_p2004_karan_timed_relabel_completed_v2.csv",
+      "sha256": "3ad0d9993e60ca25a9e29795100160972d9d82f6cab8654234807351e695f482",
+      "received_at": "2026-09-27T16:14:49+00:00",
+      "label_source": "manual"
+    },
+    "note": "Evidence only; no validated label was changed. Blind re-label with no washout period."
+  }
+}

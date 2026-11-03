@@ -46,4 +46,13 @@ export const NAV: NavGroup[] = [
 ];
 
 export const ALL_ROUTES = NAV.flatMap((g) => g.items);
+
+/** Pages the public site shows (App.tsx builds only these routes there); the audit generator is left out of the Artifact build. */
+const PUBLIC_PATHS = new Set(["/", "/rq", "/workspace/results", "/different", "/construction", "/reliability", "/atlas", "/architecture",
+  "/auditgen", "/auditgen/gaps", "/auditgen/review", "/auditgen/downloads", "/auditgen/corpus", "/auditgen/ai", "/product", "/explorer"]);
+export function publicNav(withAudit: boolean): NavGroup[] {
+  return NAV.map((g) => ({ ...g, label: g.label === "Home" ? "Site" : g.label,
+    items: g.items.filter((it) => PUBLIC_PATHS.has(it.to) && (withAudit || !it.to.startsWith("/auditgen"))).map((it) => it.to === "/" ? { ...it, label: "Home (benchmark demo)" } : it) }))
+    .filter((g) => g.items.length > 0);
+}
 export { Activity, Building2, Sparkles };

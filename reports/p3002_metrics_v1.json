@@ -1,0 +1,1565 @@
+{
+  "version": "v1",
+  "analysed_utc": "2026-09-28T21:56:23+00:00",
+  "protocol": {
+    "bootstrap_resamples": 2000,
+    "bootstrap_seed": 20261007,
+    "ci": "percentile 95%, resampling questions",
+    "verdict_rule": "type - genuine composite CI >= 0 reproduces; < 0 does not; else inconclusive",
+    "repair": {
+      "lcs_tau": 0.8,
+      "declared_utc": "2026-09-27T18:25:00+00:00",
+      "status": "exploratory; declared before scoring; same 30 questions"
+    }
+  },
+  "main": {
+    "n_questions": 30,
+    "by_type": {
+      "genuine": {
+        "composite_score": {
+          "mean": 0.37072133333333335,
+          "ci_low": 0.31082192500000005,
+          "ci_high": 0.43068805,
+          "n": 30
+        },
+        "entailment_score": {
+          "mean": 0.41455933333333334,
+          "ci_low": 0.3113241166666667,
+          "ci_high": 0.5285616416666666,
+          "n": 30
+        },
+        "contradiction_score": {
+          "mean": 0.4489086666666667,
+          "ci_low": 0.3273567916666667,
+          "ci_high": 0.5803426666666668,
+          "n": 30
+        },
+        "obligation_coverage_score": {
+          "mean": 0.1465131165131165,
+          "ci_low": 0.08219107744107744,
+          "ci_high": 0.2105964683464683,
+          "n": 30
+        },
+        "lcs_ratio": {
+          "mean": 0.5164644543012079,
+          "ci_low": 0.47946231021783975,
+          "ci_high": 0.553958584053965,
+          "n": 30
+        },
+        "overlap_penalty": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "n": 30
+        },
+        "relevance": {
+          "mean": 0.046069498744630163,
+          "ci_low": 0.013078531990615523,
+          "ci_high": 0.08918333352187804,
+          "n": 30
+        },
+        "repaired": {
+          "mean": 0.2083954160389818,
+          "ci_low": 0.16818704176542165,
+          "ci_high": 0.25328159706530956,
+          "n": 30
+        }
+      },
+      "concatenated": {
+        "composite_score": {
+          "mean": 0.7460676666666666,
+          "ci_low": 0.6917752666666666,
+          "ci_high": 0.7960147416666665,
+          "n": 30
+        },
+        "entailment_score": {
+          "mean": 0.9526280000000001,
+          "ci_low": 0.9085864583333334,
+          "ci_high": 0.9836537583333332,
+          "n": 30
+        },
+        "contradiction_score": {
+          "mean": 0.31561999999999996,
+          "ci_low": 0.2300291583333333,
+          "ci_high": 0.41270730833333336,
+          "n": 30
+        },
+        "obligation_coverage_score": {
+          "mean": 0.6011934307522543,
+          "ci_low": 0.49781098231833526,
+          "ci_high": 0.7009979416008827,
+          "n": 30
+        },
+        "lcs_ratio": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 30
+        },
+        "overlap_penalty": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 30
+        },
+        "relevance": {
+          "mean": 0.04006995319686633,
+          "ci_low": 0.016765913349418984,
+          "ci_high": 0.06891721924820643,
+          "n": 30
+        },
+        "repaired": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "n": 30
+        }
+      },
+      "adv_negated": {
+        "composite_score": {
+          "mean": 0.048736,
+          "ci_low": 0.022084966666666667,
+          "ci_high": 0.08241257499999997,
+          "n": 30
+        },
+        "entailment_score": {
+          "mean": 0.09595566666666665,
+          "ci_low": 0.048048200000000006,
+          "ci_high": 0.15641829166666665,
+          "n": 30
+        },
+        "contradiction_score": {
+          "mean": 0.9664786666666667,
+          "ci_low": 0.9356681166666665,
+          "ci_high": 0.9907063833333335,
+          "n": 30
+        },
+        "obligation_coverage_score": {
+          "mean": 0.016734006734006733,
+          "ci_low": 0.0030303030303030303,
+          "ci_high": 0.03414898989898986,
+          "n": 30
+        },
+        "lcs_ratio": {
+          "mean": 0.9505701644611408,
+          "ci_low": 0.9425822965867291,
+          "ci_high": 0.9574946073430068,
+          "n": 30
+        },
+        "overlap_penalty": {
+          "mean": 0.7528508223057042,
+          "ci_low": 0.7129114829336449,
+          "ci_high": 0.7874730367150345,
+          "n": 30
+        },
+        "relevance": {
+          "mean": 0.015868717700501998,
+          "ci_low": 0.0038120518136805274,
+          "ci_high": 0.0324381774186124,
+          "n": 30
+        },
+        "repaired": {
+          "mean": 0.006275964018595701,
+          "ci_low": 0.003215574306733906,
+          "ci_high": 0.010184310960894923,
+          "n": 30
+        }
+      },
+      "adv_offtopic": {
+        "composite_score": {
+          "mean": 0.22935433333333335,
+          "ci_low": 0.19805084166666667,
+          "ci_high": 0.2566608916666667,
+          "n": 30
+        },
+        "entailment_score": {
+          "mean": 0.029688,
+          "ci_low": 0.016492091666666667,
+          "ci_high": 0.045656166666666616,
+          "n": 30
+        },
+        "contradiction_score": {
+          "mean": 0.34162566666666666,
+          "ci_low": 0.2585347416666666,
+          "ci_high": 0.43243907499999995,
+          "n": 30
+        },
+        "obligation_coverage_score": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "n": 30
+        },
+        "lcs_ratio": {
+          "mean": 0.20017408439525766,
+          "ci_low": 0.18095527353013455,
+          "ci_high": 0.22010025919378184,
+          "n": 30
+        },
+        "overlap_penalty": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "n": 30
+        },
+        "relevance": {
+          "mean": 0.004892460783196614,
+          "ci_low": 0.0036036449117522033,
+          "ci_high": 0.0063289612281709744,
+          "n": 30
+        },
+        "repaired": {
+          "mean": 0.11712339705826498,
+          "ci_low": 0.10118560198911485,
+          "ci_high": 0.13088482602479298,
+          "n": 30
+        }
+      }
+    },
+    "paired": {
+      "concatenated - genuine": {
+        "composite_score": {
+          "mean": 0.3753463333333333,
+          "ci_low": 0.3251283083333334,
+          "ci_high": 0.4272197333333333,
+          "n": 30,
+          "share_of_resamples_above_zero": 1.0
+        },
+        "entailment_score": {
+          "mean": 0.5380686666666665,
+          "ci_low": 0.4161189666666666,
+          "ci_high": 0.6491739833333331,
+          "n": 30,
+          "share_of_resamples_above_zero": 1.0
+        },
+        "contradiction_score": {
+          "mean": -0.13328866666666667,
+          "ci_low": -0.21004740833333335,
+          "ci_high": -0.05986750833333336,
+          "n": 30,
+          "share_of_resamples_above_zero": 0.0
+        },
+        "obligation_coverage_score": {
+          "mean": 0.45468031423913774,
+          "ci_low": 0.33995683020683026,
+          "ci_high": 0.5673935239597003,
+          "n": 30,
+          "share_of_resamples_above_zero": 1.0
+        }
+      },
+      "adv_negated - genuine": {
+        "composite_score": {
+          "mean": -0.3219853333333333,
+          "ci_low": -0.38967524166666667,
+          "ci_high": -0.24349774166666674,
+          "n": 30,
+          "share_of_resamples_above_zero": 0.0
+        },
+        "entailment_score": {
+          "mean": -0.3186036666666666,
+          "ci_low": -0.4408972166666667,
+          "ci_high": -0.20312333333333338,
+          "n": 30,
+          "share_of_resamples_above_zero": 0.0
+        },
+        "contradiction_score": {
+          "mean": 0.51757,
+          "ci_low": 0.37532590000000005,
+          "ci_high": 0.6455031166666666,
+          "n": 30,
+          "share_of_resamples_above_zero": 1.0
+        },
+        "obligation_coverage_score": {
+          "mean": -0.12977910977910978,
+          "ci_low": -0.19554509379509377,
+          "ci_high": -0.06256254856254856,
+          "n": 30,
+          "share_of_resamples_above_zero": 0.0
+        }
+      },
+      "adv_offtopic - genuine": {
+        "composite_score": {
+          "mean": -0.14136699999999996,
+          "ci_low": -0.20614975000000002,
+          "ci_high": -0.07957540000000005,
+          "n": 30,
+          "share_of_resamples_above_zero": 0.0
+        },
+        "entailment_score": {
+          "mean": -0.3848713333333334,
+          "ci_low": -0.5015326083333334,
+          "ci_high": -0.27864990000000006,
+          "n": 30,
+          "share_of_resamples_above_zero": 0.0
+        },
+        "contradiction_score": {
+          "mean": -0.10728300000000002,
+          "ci_low": -0.25306680833333334,
+          "ci_high": 0.031602174999999955,
+          "n": 30,
+          "share_of_resamples_above_zero": 0.0675
+        },
+        "obligation_coverage_score": {
+          "mean": -0.1465131165131165,
+          "ci_low": -0.21059646834646834,
+          "ci_high": -0.08219107744107748,
+          "n": 30,
+          "share_of_resamples_above_zero": 0.0
+        }
+      }
+    },
+    "verdicts": {
+      "concatenated": "reproduces",
+      "adv_negated": "does not reproduce",
+      "adv_offtopic": "does not reproduce"
+    },
+    "repair": {
+      "genuine - concatenated": {
+        "mean": 0.2083954160389818,
+        "ci_low": 0.16818704176542165,
+        "ci_high": 0.25328159706530956,
+        "n": 30,
+        "share_of_resamples_above_zero": 1.0,
+        "verdict": "genuine ranked above"
+      },
+      "genuine - adv_negated": {
+        "mean": 0.202119452020386,
+        "ci_low": 0.16185144161902026,
+        "ci_high": 0.2463788331949825,
+        "n": 30,
+        "share_of_resamples_above_zero": 1.0,
+        "verdict": "genuine ranked above"
+      },
+      "genuine - adv_offtopic": {
+        "mean": 0.09127201898071677,
+        "ci_low": 0.04999175382593818,
+        "ci_high": 0.13647142996057582,
+        "n": 30,
+        "share_of_resamples_above_zero": 1.0,
+        "verdict": "genuine ranked above"
+      }
+    }
+  },
+  "sensitivity_without_bad_questions": {
+    "excluded": [
+      "T4Q14",
+      "T4Q30"
+    ],
+    "n_questions": 28,
+    "by_type": {
+      "genuine": {
+        "composite_score": {
+          "mean": 0.3825296428571429,
+          "ci_low": 0.3203564553571428,
+          "ci_high": 0.446793419642857,
+          "n": 28
+        },
+        "entailment_score": {
+          "mean": 0.4325575,
+          "ci_low": 0.3182086964285714,
+          "ci_high": 0.5529986696428572,
+          "n": 28
+        },
+        "contradiction_score": {
+          "mean": 0.4359942857142857,
+          "ci_low": 0.30587606250000005,
+          "ci_high": 0.5667959732142855,
+          "n": 28
+        },
+        "obligation_coverage_score": {
+          "mean": 0.1510259581688153,
+          "ci_low": 0.08571428571428572,
+          "ci_high": 0.22197266027623158,
+          "n": 28
+        },
+        "lcs_ratio": {
+          "mean": 0.5219887376795725,
+          "ci_low": 0.4840610503850048,
+          "ci_high": 0.5586637814166923,
+          "n": 28
+        },
+        "overlap_penalty": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "n": 28
+        },
+        "relevance": {
+          "mean": 0.04902907701170927,
+          "ci_low": 0.014382190183000819,
+          "ci_high": 0.09425524324933467,
+          "n": 28
+        },
+        "repaired": {
+          "mean": 0.21577935993442607,
+          "ci_low": 0.1752209377780867,
+          "ci_high": 0.26233737835846643,
+          "n": 28
+        }
+      },
+      "concatenated": {
+        "composite_score": {
+          "mean": 0.7496057142857142,
+          "ci_low": 0.6936910892857141,
+          "ci_high": 0.8001105178571428,
+          "n": 28
+        },
+        "entailment_score": {
+          "mean": 0.9506332142857142,
+          "ci_low": 0.9022249732142857,
+          "ci_high": 0.9836450625,
+          "n": 28
+        },
+        "contradiction_score": {
+          "mean": 0.3098892857142857,
+          "ci_low": 0.22133513392857143,
+          "ci_high": 0.4076805535714285,
+          "n": 28
+        },
+        "obligation_coverage_score": {
+          "mean": 0.6080713928928214,
+          "ci_low": 0.5058980008087152,
+          "ci_high": 0.7123101452119307,
+          "n": 28
+        },
+        "lcs_ratio": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 28
+        },
+        "overlap_penalty": {
+          "mean": 1.0,
+          "ci_low": 1.0,
+          "ci_high": 1.0,
+          "n": 28
+        },
+        "relevance": {
+          "mean": 0.041835267179152875,
+          "ci_low": 0.016130404719157256,
+          "ci_high": 0.07305193622157904,
+          "n": 28
+        },
+        "repaired": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "n": 28
+        }
+      },
+      "adv_negated": {
+        "composite_score": {
+          "mean": 0.05187071428571429,
+          "ci_low": 0.023680455357142857,
+          "ci_high": 0.08749523214285712,
+          "n": 28
+        },
+        "entailment_score": {
+          "mean": 0.10185535714285712,
+          "ci_low": 0.05093980357142856,
+          "ci_high": 0.16485127678571418,
+          "n": 28
+        },
+        "contradiction_score": {
+          "mean": 0.9641696428571428,
+          "ci_low": 0.9326931428571428,
+          "ci_high": 0.9895907857142857,
+          "n": 28
+        },
+        "obligation_coverage_score": {
+          "mean": 0.01792929292929293,
+          "ci_low": 0.003246753246753247,
+          "ci_high": 0.03831168831168831,
+          "n": 28
+        },
+        "lcs_ratio": {
+          "mean": 0.9513075152978471,
+          "ci_low": 0.9428636744862197,
+          "ci_high": 0.9589471745782399,
+          "n": 28
+        },
+        "overlap_penalty": {
+          "mean": 0.7565375764892355,
+          "ci_low": 0.7143183724310987,
+          "ci_high": 0.7947358728911986,
+          "n": 28
+        },
+        "relevance": {
+          "mean": 0.016932655074765643,
+          "ci_low": 0.004047705379691703,
+          "ci_high": 0.03344970442412139,
+          "n": 28
+        },
+        "repaired": {
+          "mean": 0.00666236684318892,
+          "ci_low": 0.0034572895809456814,
+          "ci_high": 0.010828160325756345,
+          "n": 28
+        }
+      },
+      "adv_offtopic": {
+        "composite_score": {
+          "mean": 0.23052928571428571,
+          "ci_low": 0.19838074107142856,
+          "ci_high": 0.2607723125,
+          "n": 28
+        },
+        "entailment_score": {
+          "mean": 0.03000035714285714,
+          "ci_low": 0.015547125,
+          "ci_high": 0.047440696428571426,
+          "n": 28
+        },
+        "contradiction_score": {
+          "mean": 0.33841357142857137,
+          "ci_low": 0.25157833035714283,
+          "ci_high": 0.4313355267857143,
+          "n": 28
+        },
+        "obligation_coverage_score": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "n": 28
+        },
+        "lcs_ratio": {
+          "mean": 0.19804907310747305,
+          "ci_low": 0.17951066961531228,
+          "ci_high": 0.21543425502472824,
+          "n": 28
+        },
+        "overlap_penalty": {
+          "mean": 0.0,
+          "ci_low": 0.0,
+          "ci_high": 0.0,
+          "n": 28
+        },
+        "relevance": {
+          "mean": 0.004930412599049908,
+          "ci_low": 0.003607808840756403,
+          "ci_high": 0.006466237446374831,
+          "n": 28
+        },
+        "repaired": {
+          "mean": 0.11772984915666782,
+          "ci_low": 0.10148993835585146,
+          "ci_high": 0.1331826246145927,
+          "n": 28
+        }
+      }
+    },
+    "paired": {
+      "concatenated - genuine": {
+        "composite_score": {
+          "mean": 0.3670760714285714,
+          "ci_low": 0.31390183928571436,
+          "ci_high": 0.4189411517857143,
+          "n": 28,
+          "share_of_resamples_above_zero": 1.0
+        },
+        "entailment_score": {
+          "mean": 0.5180757142857143,
+          "ci_low": 0.38986816071428565,
+          "ci_high": 0.641028267857143,
+          "n": 28,
+          "share_of_resamples_above_zero": 1.0
+        },
+        "contradiction_score": {
+          "mean": -0.126105,
+          "ci_low": -0.20841827678571428,
+          "ci_high": -0.04584198214285717,
+          "n": 28,
+          "share_of_resamples_above_zero": 0.0015
+        },
+        "obligation_coverage_score": {
+          "mean": 0.4570454347240061,
+          "ci_low": 0.33843550298907454,
+          "ci_high": 0.5802084423512993,
+          "n": 28,
+          "share_of_resamples_above_zero": 1.0
+        }
+      },
+      "adv_negated - genuine": {
+        "composite_score": {
+          "mean": -0.3306589285714286,
+          "ci_low": -0.40500530357142855,
+          "ci_high": -0.25194980357142854,
+          "n": 28,
+          "share_of_resamples_above_zero": 0.0
+        },
+        "entailment_score": {
+          "mean": -0.3307021428571428,
+          "ci_low": -0.46172170535714285,
+          "ci_high": -0.2002135535714287,
+          "n": 28,
+          "share_of_resamples_above_zero": 0.0
+        },
+        "contradiction_score": {
+          "mean": 0.5281753571428571,
+          "ci_low": 0.38425536607142863,
+          "ci_high": 0.6667335178571427,
+          "n": 28,
+          "share_of_resamples_above_zero": 1.0
+        },
+        "obligation_coverage_score": {
+          "mean": -0.13309666523952238,
+          "ci_low": -0.20713759454830882,
+          "ci_high": -0.0664894034536892,
+          "n": 28,
+          "share_of_resamples_above_zero": 0.0
+        }
+      },
+      "adv_offtopic - genuine": {
+        "composite_score": {
+          "mean": -0.15200035714285715,
+          "ci_low": -0.22070330357142864,
+          "ci_high": -0.0882676785714286,
+          "n": 28,
+          "share_of_resamples_above_zero": 0.0
+        },
+        "entailment_score": {
+          "mean": -0.40255714285714284,
+          "ci_low": -0.5215019553571428,
+          "ci_high": -0.28507865178571445,
+          "n": 28,
+          "share_of_resamples_above_zero": 0.0
+        },
+        "contradiction_score": {
+          "mean": -0.09758071428571428,
+          "ci_low": -0.24296096428571434,
+          "ci_high": 0.0580239999999999,
+          "n": 28,
+          "share_of_resamples_above_zero": 0.099
+        },
+        "obligation_coverage_score": {
+          "mean": -0.1510259581688153,
+          "ci_low": -0.2219726602762317,
+          "ci_high": -0.08571428571428572,
+          "n": 28,
+          "share_of_resamples_above_zero": 0.0
+        }
+      }
+    },
+    "verdicts": {
+      "concatenated": "reproduces",
+      "adv_negated": "does not reproduce",
+      "adv_offtopic": "does not reproduce"
+    },
+    "repair": {
+      "genuine - concatenated": {
+        "mean": 0.21577935993442607,
+        "ci_low": 0.1752209377780867,
+        "ci_high": 0.26233737835846643,
+        "n": 28,
+        "share_of_resamples_above_zero": 1.0,
+        "verdict": "genuine ranked above"
+      },
+      "genuine - adv_negated": {
+        "mean": 0.2091169930912371,
+        "ci_low": 0.16836061381742146,
+        "ci_high": 0.25485706395445296,
+        "n": 28,
+        "share_of_resamples_above_zero": 1.0,
+        "verdict": "genuine ranked above"
+      },
+      "genuine - adv_offtopic": {
+        "mean": 0.09804951077775825,
+        "ci_low": 0.05692683040046987,
+        "ci_high": 0.14505667756789162,
+        "n": 28,
+        "share_of_resamples_above_zero": 1.0,
+        "verdict": "genuine ranked above"
+      }
+    }
+  },
+  "human": {
+    "all_rated": {
+      "n": 30,
+      "by_type": {
+        "genuine": {
+          "faithful": {
+            "mean": 1.8,
+            "ci_low": 1.4,
+            "ci_high": 2.0,
+            "n": 10
+          },
+          "answers_question": {
+            "mean": 2.0,
+            "ci_low": 2.0,
+            "ci_high": 2.0,
+            "n": 10
+          }
+        },
+        "concatenated": {
+          "faithful": {
+            "mean": 2.0,
+            "ci_low": 2.0,
+            "ci_high": 2.0,
+            "n": 10
+          },
+          "answers_question": {
+            "mean": 1.3,
+            "ci_low": 0.8,
+            "ci_high": 1.8,
+            "n": 10
+          }
+        },
+        "adv_negated": {
+          "faithful": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n": 5
+          },
+          "answers_question": {
+            "mean": 1.6,
+            "ci_low": 1.2,
+            "ci_high": 2.0,
+            "n": 5
+          }
+        },
+        "adv_offtopic": {
+          "faithful": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n": 5
+          },
+          "answers_question": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n": 5
+          }
+        }
+      },
+      "spearman_composite_score_vs_faithful": {
+        "rho": 0.7312379596242495,
+        "ci_low": 0.5351795222459739,
+        "ci_high": 0.8445453328728426,
+        "n": 30,
+        "degenerate_resamples": 0
+      },
+      "spearman_composite_score_vs_answers_question": {
+        "rho": 0.007618103332184616,
+        "ci_low": -0.3228873841806802,
+        "ci_high": 0.339496394600332,
+        "n": 30,
+        "degenerate_resamples": 0
+      },
+      "spearman_repaired_vs_faithful": {
+        "rho": -0.12620897281471027,
+        "ci_low": -0.47667401482534705,
+        "ci_high": 0.21607962354305504,
+        "n": 30,
+        "degenerate_resamples": 0
+      },
+      "spearman_repaired_vs_answers_question": {
+        "rho": 0.1225085748238821,
+        "ci_low": -0.25954681761676046,
+        "ci_high": 0.45687725408795987,
+        "n": 30,
+        "degenerate_resamples": 0
+      }
+    },
+    "without_bad_questions": {
+      "n": 28,
+      "by_type": {
+        "genuine": {
+          "faithful": {
+            "mean": 2.0,
+            "ci_low": 2.0,
+            "ci_high": 2.0,
+            "n": 9
+          },
+          "answers_question": {
+            "mean": 2.0,
+            "ci_low": 2.0,
+            "ci_high": 2.0,
+            "n": 9
+          }
+        },
+        "concatenated": {
+          "faithful": {
+            "mean": 2.0,
+            "ci_low": 2.0,
+            "ci_high": 2.0,
+            "n": 9
+          },
+          "answers_question": {
+            "mean": 1.4444444444444444,
+            "ci_low": 0.8888888888888888,
+            "ci_high": 1.8888888888888888,
+            "n": 9
+          }
+        },
+        "adv_negated": {
+          "faithful": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n": 5
+          },
+          "answers_question": {
+            "mean": 1.6,
+            "ci_low": 1.2,
+            "ci_high": 2.0,
+            "n": 5
+          }
+        },
+        "adv_offtopic": {
+          "faithful": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n": 5
+          },
+          "answers_question": {
+            "mean": 0.0,
+            "ci_low": 0.0,
+            "ci_high": 0.0,
+            "n": 5
+          }
+        }
+      },
+      "spearman_composite_score_vs_faithful": {
+        "rho": 0.7105002165264419,
+        "ci_low": 0.47560936466600595,
+        "ci_high": 0.8417819366607234,
+        "n": 28,
+        "degenerate_resamples": 0
+      },
+      "spearman_composite_score_vs_answers_question": {
+        "rho": 0.11383236275717146,
+        "ci_low": -0.241723212466733,
+        "ci_high": 0.44354152843372674,
+        "n": 28,
+        "degenerate_resamples": 0
+      },
+      "spearman_repaired_vs_faithful": {
+        "rho": -0.09382627794627468,
+        "ci_low": -0.4685642799463945,
+        "ci_high": 0.2513021328298605,
+        "n": 28,
+        "degenerate_resamples": 0
+      },
+      "spearman_repaired_vs_answers_question": {
+        "rho": 0.07716591144620524,
+        "ci_low": -0.31167849705668105,
+        "ci_high": 0.41346096416835865,
+        "n": 28,
+        "degenerate_resamples": 0
+      }
+    },
+    "bad_question_count": 2,
+    "bad_questions": [
+      "T4Q14",
+      "T4Q30"
+    ],
+    "sheet_quotas": {
+      "genuine": 10,
+      "concatenated": 10,
+      "adv_negated": 5,
+      "adv_offtopic": 5
+    },
+    "minutes": {
+      "blocks": [
+        {
+          "block": 1,
+          "started_at": "2026-09-28 00:38",
+          "ended_at": "2026-09-28 01:03",
+          "minutes": 25.0
+        },
+        {
+          "block": 2,
+          "started_at": "2026-09-28 01:03",
+          "ended_at": "2026-09-28 01:28",
+          "minutes": 25.0
+        },
+        {
+          "block": 3,
+          "started_at": "2026-09-28 01:28",
+          "ended_at": "2026-09-28 01:53",
+          "minutes": 25.0
+        }
+      ],
+      "total": 75.0,
+      "per_answer": 2.5,
+      "source": "t4_faithfulness_minutes (accepted with the sheet)"
+    },
+    "receipt": {
+      "sha256": "d2cc4209dce7c143094651c9c871c4d5d10f47b14e457cdce8055e9490a3858f",
+      "received_utc": "2026-09-27T20:41:12+00:00",
+      "file_saved_local": "2026-09-28T02:08:39",
+      "label_source": "manual",
+      "rater": "karan",
+      "declared_by_karan": "manually annotated, final and complete; no AI tools",
+      "withdrawn_submissions": [
+        {
+          "sha256": "54733120d88b8e7cb73144f1652a4a14b00c23c3c5961115f5eaddbe162f90cd",
+          "received_local": "2026-09-28T00:52:44+05:30",
+          "status": "withdrawn before ingest; never ingested",
+          "why_not_ingested": "its minutes log (blocks 2-3 at 00:56-01:43) post-dated the file's arrival (00:52)",
+          "karan_statement": "a mock / garbage file, deleted; replaced by the final manually annotated file"
+        }
+      ]
+    }
+  },
+  "examples": {
+    "genuine": [
+      {
+        "question_id": "T4Q06",
+        "answer_type": "genuine",
+        "composite_score": 0.14001,
+        "entailment_score": 0.20912,
+        "contradiction_score": 0.98909,
+        "obligation_coverage_score": 0.2,
+        "lcs_ratio": 0.4594594594594595,
+        "overlap_penalty": 0.0,
+        "relevance": 0.0007418280001729727,
+        "repaired": 0.07037591400008648,
+        "on_sheet": true,
+        "faithful": 2,
+        "answers_question": 2,
+        "bad_question": false,
+        "question": "Can penal charges for a borrower’s default be subject to interest or be capitalized?",
+        "answer_excerpt": "No. The RBI’s Master Directions require that any penalty imposed for a borrower’s default be levied only as a **penal charge**, not as “penal interest,” …",
+        "answer_pointer": {
+          "question_id": "T4Q06",
+          "answer_type": "genuine",
+          "file": "t4_answers_genuine_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_12968::p00044",
+          "md_12968::p00042",
+          "md_12968::p00050"
+        ]
+      },
+      {
+        "question_id": "T4Q16",
+        "answer_type": "genuine",
+        "composite_score": 0.7083,
+        "entailment_score": 0.99314,
+        "contradiction_score": 0.0349,
+        "obligation_coverage_score": 0.16666666666666666,
+        "lcs_ratio": 0.6216216216216216,
+        "overlap_penalty": 0.0,
+        "relevance": 0.4646416688337922,
+        "repaired": 0.5864708344168961,
+        "on_sheet": true,
+        "faithful": 2,
+        "answers_question": 2,
+        "bad_question": false,
+        "question": "What minimum percentage of the bank’s loan portfolio must consist of loans up to ₹ 25 lakh, and does compliance assessment consider only new loans or the entire portfolio at the start of operations?",
+        "answer_excerpt": "The Directions require that **at least 50 percent** of the bank’s loan portfolio be made up of loans and advances of up to ₹ 25 …",
+        "answer_pointer": {
+          "question_id": "T4Q16",
+          "answer_type": "genuine",
+          "file": "t4_answers_genuine_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_13120::p00052",
+          "md_13135::p00048",
+          "md_13135::p00047"
+        ]
+      },
+      {
+        "question_id": "T4Q21",
+        "answer_type": "genuine",
+        "composite_score": 0.26761,
+        "entailment_score": 0.36732,
+        "contradiction_score": 0.56448,
+        "obligation_coverage_score": 0.0,
+        "lcs_ratio": 0.5391304347826087,
+        "overlap_penalty": 0.0,
+        "relevance": 0.034309605183079836,
+        "repaired": 0.15095980259153993,
+        "on_sheet": true,
+        "faithful": 2,
+        "answers_question": 2,
+        "bad_question": false,
+        "question": "What factors must the Board of Directors evaluate when deciding on a dividend proposal for the bank?",
+        "answer_excerpt": "When the Board of Directors reviews a proposal to declare a dividend, it must evaluate the following factors: 1. **The divergence in asset classification and …",
+        "answer_pointer": {
+          "question_id": "T4Q21",
+          "answer_type": "genuine",
+          "file": "t4_answers_genuine_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_13327::p00012",
+          "md_13327::p00018",
+          "md_13327::p00011"
+        ]
+      }
+    ],
+    "concatenated": [
+      {
+        "question_id": "T4Q11",
+        "answer_type": "concatenated",
+        "composite_score": 0.82324,
+        "entailment_score": 0.98283,
+        "contradiction_score": 0.01312,
+        "obligation_coverage_score": 0.5,
+        "lcs_ratio": 1.0,
+        "overlap_penalty": 1.0,
+        "relevance": 0.0018046092009171844,
+        "repaired": 0.0,
+        "on_sheet": true,
+        "faithful": 2,
+        "answers_question": 2,
+        "bad_question": false,
+        "question": "Which portal must a UCB use to apply for permission to deploy its own POS terminals and act as a POS acquiring bank?",
+        "answer_excerpt": "A UCB desirous to deploy their own POS terminals and act as POS acquiring bank shall apply through PRAVAAH Portal (https://pravaah.rbi.org.in) to Department of Regulation, …",
+        "answer_pointer": {
+          "question_id": "T4Q11",
+          "answer_type": "concatenated",
+          "file": "t4_answers_concatenated_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_13033::p00083",
+          "md_13033::p00079",
+          "md_13033::p00080"
+        ]
+      },
+      {
+        "question_id": "T4Q15",
+        "answer_type": "concatenated",
+        "composite_score": 0.89016,
+        "entailment_score": 0.99047,
+        "contradiction_score": 0.32,
+        "obligation_coverage_score": 1.0,
+        "lcs_ratio": 1.0,
+        "overlap_penalty": 1.0,
+        "relevance": 0.14113741408800706,
+        "repaired": 0.0,
+        "on_sheet": true,
+        "faithful": 2,
+        "answers_question": 2,
+        "bad_question": false,
+        "question": "Where must the bank post the financing framework and the external reviewer’s opinion prior to its implementation?",
+        "answer_excerpt": "Before the implementation of FF, a copy of the FF shall be made available on the website of the bank along with the opinion of …",
+        "answer_pointer": {
+          "question_id": "T4Q15",
+          "answer_type": "concatenated",
+          "file": "t4_answers_concatenated_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_13106::p00026",
+          "md_13119::p00081",
+          "md_13127::p01437"
+        ]
+      },
+      {
+        "question_id": "T4Q28",
+        "answer_type": "concatenated",
+        "composite_score": 0.83391,
+        "entailment_score": 0.98639,
+        "contradiction_score": 0.15134,
+        "obligation_coverage_score": 0.6666666666666666,
+        "lcs_ratio": 1.0,
+        "overlap_penalty": 1.0,
+        "relevance": 0.010616045125061646,
+        "repaired": 0.0,
+        "on_sheet": true,
+        "faithful": 2,
+        "answers_question": 2,
+        "bad_question": false,
+        "question": "How soon after the annual audit must the bank notify the RBI of any serious audit lapses?",
+        "answer_excerpt": "The Board / ACB of the bank shall review the performance of SCAs / SAs on an annual basis. The bank shall report any serious …",
+        "answer_pointer": {
+          "question_id": "T4Q28",
+          "answer_type": "concatenated",
+          "file": "t4_answers_concatenated_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_13621::p00092",
+          "md_13621::p00100",
+          "md_13621::p00021"
+        ]
+      }
+    ],
+    "adv_negated": [
+      {
+        "question_id": "T4Q01",
+        "answer_type": "adv_negated",
+        "composite_score": 0.00211,
+        "entailment_score": 0.00411,
+        "contradiction_score": 0.99779,
+        "obligation_coverage_score": 0.0,
+        "lcs_ratio": 0.9464285714285714,
+        "overlap_penalty": 0.7321428571428569,
+        "relevance": 0.002969008171930909,
+        "repaired": 0.0006802243087407475,
+        "on_sheet": true,
+        "faithful": 0,
+        "answers_question": 2,
+        "bad_question": false,
+        "question": "Does a CIC need to have a Board‑approved IT outsourcing policy before outsourcing its IT services?",
+        "answer_excerpt": "A CIC intending to outsource any of its IT services shall not put in place a comprehensive Board-approved IT outsourcing policy incorporating, inter alia, the …",
+        "answer_pointer": {
+          "question_id": "T4Q01",
+          "answer_type": "adv_negated",
+          "file": "t4_answers_adv_negated_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_12925::p00067",
+          "md_12925::p00043",
+          "md_12925::p00044"
+        ]
+      },
+      {
+        "question_id": "T4Q03",
+        "answer_type": "adv_negated",
+        "composite_score": 0.01846,
+        "entailment_score": 0.0534,
+        "contradiction_score": 0.99801,
+        "obligation_coverage_score": 0.0,
+        "lcs_ratio": 0.9435483870967742,
+        "overlap_penalty": 0.7177419354838711,
+        "relevance": 0.015062807427826695,
+        "repaired": 0.004731041370862636,
+        "on_sheet": true,
+        "faithful": 0,
+        "answers_question": 1,
+        "bad_question": false,
+        "question": "What condition must be satisfied before an account opened through V‑CIP can be made operational?",
+        "answer_excerpt": "The ARC shall not undertake the following EDD measures for non-face-to-face customer onboarding (other than customer onboarding in terms of paragraph 44): (2) If the …",
+        "answer_pointer": {
+          "question_id": "T4Q03",
+          "answer_type": "adv_negated",
+          "file": "t4_answers_adv_negated_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_12927::p00216",
+          "md_12927::p00154",
+          "md_12927::p00171"
+        ]
+      },
+      {
+        "question_id": "T4Q17",
+        "answer_type": "adv_negated",
+        "composite_score": 0.0031,
+        "entailment_score": 0.00569,
+        "contradiction_score": 0.99638,
+        "obligation_coverage_score": 0.0,
+        "lcs_ratio": 0.9173553719008265,
+        "overlap_penalty": 0.5867768595041324,
+        "relevance": 0.0017175508764921688,
+        "repaired": 0.000995361751341357,
+        "on_sheet": true,
+        "faithful": 0,
+        "answers_question": 2,
+        "bad_question": false,
+        "question": "What must the CI or CIC communicate to a complainant when a complaint is rejected?",
+        "answer_excerpt": "(6) The complainant shall not be advised by the CI / CIC of the action taken on the complaint in all cases, including the cases …",
+        "answer_pointer": {
+          "question_id": "T4Q17",
+          "answer_type": "adv_negated",
+          "file": "t4_answers_adv_negated_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_13122::p00115",
+          "md_13132::p00185",
+          "md_13122::p00114"
+        ]
+      }
+    ],
+    "adv_offtopic": [
+      {
+        "question_id": "T4Q05",
+        "answer_type": "adv_offtopic",
+        "composite_score": 0.21866,
+        "entailment_score": 0.06327,
+        "contradiction_score": 0.40729,
+        "obligation_coverage_score": 0.0,
+        "lcs_ratio": 0.16408668730650156,
+        "overlap_penalty": 0.0,
+        "relevance": 0.007046636921586469,
+        "repaired": 0.11285331846079323,
+        "on_sheet": true,
+        "faithful": 0,
+        "answers_question": 0,
+        "bad_question": false,
+        "question": "What is the maximum risk weight allowed for a loan secured by a commercial mortgage at the portfolio cut‑off date?",
+        "answer_excerpt": "The bank shall provide the highest level of 'read only' access to its Information Technology systems and manpower assistance, if required, to RBI’s officers. The …",
+        "answer_pointer": {
+          "question_id": "T4Q05",
+          "answer_type": "adv_offtopic",
+          "file": "t4_answers_adv_offtopic_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_12951::p00144",
+          "md_12951::p00145",
+          "md_12937::p00090"
+        ]
+      },
+      {
+        "question_id": "T4Q10",
+        "answer_type": "adv_offtopic",
+        "composite_score": 0.3354,
+        "entailment_score": 0.01385,
+        "contradiction_score": 0.00764,
+        "obligation_coverage_score": 0.0,
+        "lcs_ratio": 0.1388888888888889,
+        "overlap_penalty": 0.0,
+        "relevance": 0.015161186456680298,
+        "repaired": 0.17528059322834014,
+        "on_sheet": true,
+        "faithful": 0,
+        "answers_question": 0,
+        "bad_question": false,
+        "question": "What must a UCB introduce to address liquidity, interest rate, and currency risks?",
+        "answer_excerpt": "Policies and Procedures Banks shall put in place comprehensive policy(ies) for all digital banking channels keeping in account all statutory and regulatory requirements (including on …",
+        "answer_pointer": {
+          "question_id": "T4Q10",
+          "answer_type": "adv_offtopic",
+          "file": "t4_answers_adv_offtopic_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_13020::p00031",
+          "md_13020::p00072",
+          "md_13020::p00050"
+        ]
+      },
+      {
+        "question_id": "T4Q13",
+        "answer_type": "adv_offtopic",
+        "composite_score": 0.30662,
+        "entailment_score": 0.11323,
+        "contradiction_score": 0.19336,
+        "obligation_coverage_score": 0.0,
+        "lcs_ratio": 0.2087912087912088,
+        "overlap_penalty": 0.0,
+        "relevance": 0.015853788587264717,
+        "repaired": 0.16123689429363236,
+        "on_sheet": true,
+        "faithful": 0,
+        "answers_question": 0,
+        "bad_question": false,
+        "question": "May the facility be limited to specific customer groups or classes?",
+        "answer_excerpt": "(2) ‘Current or Valid Credit Rating’ for the purpose of determining rated security means a credit rating granted by a credit rating agency in India, …",
+        "answer_pointer": {
+          "question_id": "T4Q13",
+          "answer_type": "adv_offtopic",
+          "file": "t4_answers_adv_offtopic_v1.jsonl"
+        },
+        "passage_ids": [
+          "md_13084::p00168",
+          "md_13063::p00196",
+          "md_13063::p00077"
+        ]
+      }
+    ]
+  },
+  "provenance": {
+    "sample": {
+      "created_utc": "2026-09-27T18:23:41+00:00",
+      "source": "t1_validated_v1.jsonl",
+      "pool": 106,
+      "allocation": {
+        "All India Financial Institutions": 3,
+        "Asset Reconstruction Companies": 2,
+        "Commercial Banks": 4,
+        "Credit Information Companies": 2,
+        "Local Area Banks": 2,
+        "Non-Banking Financial Companies": 2,
+        "Payments Banks": 2,
+        "Regional Rural Banks": 3,
+        "Rural Co-operative Banks": 3,
+        "Small Finance Banks": 4,
+        "Urban Co-operative Banks": 3
+      },
+      "seed": 20261003,
+      "attempt": 0,
+      "seed_used": 20261003,
+      "classes": 11,
+      "families": 23,
+      "family_counts": {
+        "Asset Liability Management": 1,
+        "Branch Authorisation": 1,
+        "Cash Reserve Ratio and Statutory Liquidity Ratio": 1,
+        "Climate Finance and Management of Climate Change Risks": 1,
+        "Compliance Function": 1,
+        "Concentration Risk Management": 1,
+        "Credit Facilities": 1,
+        "Credit Information Reporting": 1,
+        "Cybersecurity, Technology: Risk, Resilience and Assurance Framework": 1,
+        "Digital Banking Channels Authorisation": 1,
+        "Financial Statements: Presentation and Disclosures": 3,
+        "Fraud Risk Management": 1,
+        "Internal Audit Function": 1,
+        "Know Your Customer": 2,
+        "Managing Risks in Outsourcing": 1,
+        "Miscellaneous": 1,
+        "Prudential Norms on Capital Adequacy": 3,
+        "Prudential Norms on Declaration of Dividend": 1,
+        "Responsible Business Conduct": 1,
+        "Securitisation Transactions": 1,
+        "Statutory Audit": 2,
+        "Supervisory Returns": 2,
+        "Undertaking of Financial Services": 1
+      },
+      "item_ids": [
+        "t1_md_12925::p00044",
+        "t1_md_12927::p00153",
+        "t1_md_12927::p00171",
+        "t1_md_12945::p00050",
+        "t1_md_12951::p00144",
+        "t1_md_12968::p00044",
+        "t1_md_12983::p02108",
+        "t1_md_12990::p00062",
+        "t1_md_13005::p00071",
+        "t1_md_13020::p00031",
+        "t1_md_13033::p00083",
+        "t1_md_13059::p00026",
+        "t1_md_13084::p00168",
+        "t1_md_13092::p00074",
+        "t1_md_13106::p00026",
+        "t1_md_13120::p00052",
+        "t1_md_13122::p00115",
+        "t1_md_13156::p00347",
+        "t1_md_13159::p00109",
+        "t1_md_13159::p00778",
+        "t1_md_13327::p00012",
+        "t1_md_13583::p00079",
+        "t1_md_13596::p00078",
+        "t1_md_13598::p00018",
+        "t1_md_13601::p00056",
+        "t1_md_13604::p00016",
+        "t1_md_13618::p00036",
+        "t1_md_13621::p00021",
+        "t1_md_13631::p00068",
+        "t1_md_13638::p00041"
+      ]
+    },
+    "questions_run": {
+      "run_id": "p3002_t4_questions_v1",
+      "provider": "groq",
+      "status": "forced_groq",
+      "fallback_events": [],
+      "http_attempts": 30,
+      "cache_hits": 0,
+      "api_calls": 30,
+      "input_tokens": 10204,
+      "output_tokens": 7263,
+      "models": [
+        "openai/gpt-oss-120b"
+      ],
+      "forced_provider": "groq",
+      "force_reason": "gemini-3.8-flash free-tier daily quota (GenerateRequestsPerDayPerProjectPerModel-FreeTier = 20) exhausted on 2026-09-27 after 7 of 30 questions; whole step rerun on the fallback per the P3-002 LLM rule (the 7 Gemini questions are discarded, not mixed)"
+    },
+    "genuine_run_api": {
+      "run_id": "p3002_t4_genuine_v1",
+      "provider": "groq",
+      "status": "forced_groq",
+      "fallback_events": [],
+      "http_attempts": 30,
+      "cache_hits": 0,
+      "api_calls": 30,
+      "input_tokens": 14948,
+      "output_tokens": 8120,
+      "models": [
+        "openai/gpt-oss-120b"
+      ],
+      "forced_provider": "groq",
+      "force_reason": "gemini-3.8-flash free-tier daily quota (GenerateRequestsPerDayPerProjectPerModel-FreeTier = 20) exhausted on 2026-09-27; the whole genuine-answer run is on the fallback per the P3-002 LLM rule (no Gemini answer is mixed in)"
+    },
+    "genuine_run_final": {
+      "run_id": "p3002_t4_genuine_v1",
+      "provider": "groq",
+      "status": "forced_groq",
+      "fallback_events": [],
+      "http_attempts": 0,
+      "cache_hits": 30,
+      "api_calls": 0,
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "models": [
+        "openai/gpt-oss-120b"
+      ],
+      "forced_provider": "groq",
+      "force_reason": "gemini-3.8-flash free-tier daily quota (GenerateRequestsPerDayPerProjectPerModel-FreeTier = 20) exhausted on 2026-09-27; the whole genuine-answer run is on the fallback per the P3-002 LLM rule (no Gemini answer is mixed in)"
+    },
+    "retrieval_source_ranks": {
+      "T4Q01": 3,
+      "T4Q02": 1,
+      "T4Q03": 3,
+      "T4Q04": 1,
+      "T4Q05": 1,
+      "T4Q06": 1,
+      "T4Q07": 1,
+      "T4Q08": 2,
+      "T4Q09": 1,
+      "T4Q10": 1,
+      "T4Q11": 1,
+      "T4Q12": 1,
+      "T4Q13": 1,
+      "T4Q14": 4,
+      "T4Q15": 1,
+      "T4Q16": 1,
+      "T4Q17": 1,
+      "T4Q18": 1,
+      "T4Q19": 1,
+      "T4Q20": 1,
+      "T4Q21": 1,
+      "T4Q22": 1,
+      "T4Q23": 1,
+      "T4Q24": 1,
+      "T4Q25": 4,
+      "T4Q26": 1,
+      "T4Q27": 1,
+      "T4Q28": 3,
+      "T4Q29": 1,
+      "T4Q30": 3
+    },
+    "repass": {
+      "url": "https://github.com/RegNLP/RePASs",
+      "commit": "821d438d07cfc6747bd657965188d9dde85dcb71",
+      "train_seed": 42,
+      "nli_model": "cross-encoder/nli-deberta-v3-xsmall",
+      "coverage_nli_model": "microsoft/deberta-large-mnli",
+      "obligation_base_model": "nlpaueb/legal-bert-base-uncased",
+      "scoring": {
+        "scored_utc": "2026-09-27T18:51:28+00:00",
+        "runs": {
+          "genuine": {
+            "group": "p3002_t4_genuine_v1",
+            "device": "cpu",
+            "seconds": 79.8,
+            "wall_seconds": 509.0
+          },
+          "concatenated": {
+            "group": "p3002_t4_concatenated_v1",
+            "device": "cpu",
+            "seconds": 84.7,
+            "wall_seconds": 91.0
+          },
+          "adv_negated": {
+            "group": "p3002_t4_adv_negated_v1",
+            "device": "cpu",
+            "seconds": 94.6,
+            "wall_seconds": 100.4
+          },
+          "adv_offtopic": {
+            "group": "p3002_t4_adv_offtopic_v1",
+            "device": "cpu",
+            "seconds": 115.7,
+            "wall_seconds": 121.6
+          }
+        },
+        "commit": "821d438d07cfc6747bd657965188d9dde85dcb71",
+        "results_dirs": [
+          "external/RePASs/data/p3002_t4_genuine_v1",
+          "external/RePASs/data/p3002_t4_concatenated_v1",
+          "external/RePASs/data/p3002_t4_adv_negated_v1",
+          "external/RePASs/data/p3002_t4_adv_offtopic_v1"
+        ]
+      },
+      "training": {
+        "commit": "821d438d07cfc6747bd657965188d9dde85dcb71",
+        "seed": 42,
+        "trainer_device": "mps",
+        "runtime_seconds": 617.4,
+        "finished_utc": "2026-09-27T18:29:09+00:00",
+        "best_checkpoint": "./results/checkpoint-345",
+        "best_metric_eval_loss": 0.03197391703724861,
+        "epochs_run": 6.0,
+        "eval_by_epoch": [
+          {
+            "epoch": 1.0,
+            "eval_accuracy": 0.8260869565217391,
+            "eval_f1": 0.8738170347003155,
+            "eval_loss": 0.40626201033592224,
+            "eval_precision": 0.7780898876404494,
+            "eval_recall": 0.9964028776978417,
+            "eval_runtime": 4.6073,
+            "eval_samples_per_second": 99.841,
+            "eval_steps_per_second": 6.294,
+            "step": 115
+          },
+          {
+            "epoch": 2.0,
+            "eval_accuracy": 0.9826086956521739,
+            "eval_f1": 0.9855072463768116,
+            "eval_loss": 0.07621021568775177,
+            "eval_precision": 0.9927007299270073,
+            "eval_recall": 0.9784172661870504,
+            "eval_runtime": 4.7916,
+            "eval_samples_per_second": 96.002,
+            "eval_steps_per_second": 6.052,
+            "step": 230
+          },
+          {
+            "epoch": 3.0,
+            "eval_accuracy": 0.9934782608695653,
+            "eval_f1": 0.9945945945945946,
+            "eval_loss": 0.03197391703724861,
+            "eval_precision": 0.9963898916967509,
+            "eval_recall": 0.9928057553956835,
+            "eval_runtime": 5.6708,
+            "eval_samples_per_second": 81.118,
+            "eval_steps_per_second": 5.114,
+            "step": 345
+          },
+          {
+            "epoch": 4.0,
+            "eval_accuracy": 0.9934782608695653,
+            "eval_f1": 0.9945945945945946,
+            "eval_loss": 0.04042070358991623,
+            "eval_precision": 0.9963898916967509,
+            "eval_recall": 0.9928057553956835,
+            "eval_runtime": 5.4011,
+            "eval_samples_per_second": 85.167,
+            "eval_steps_per_second": 5.369,
+            "step": 460
+          },
+          {
+            "epoch": 5.0,
+            "eval_accuracy": 0.991304347826087,
+            "eval_f1": 0.9927797833935018,
+            "eval_loss": 0.058614425361156464,
+            "eval_precision": 0.9963768115942029,
+            "eval_recall": 0.9892086330935251,
+            "eval_runtime": 5.9712,
+            "eval_samples_per_second": 77.036,
+            "eval_steps_per_second": 4.857,
+            "step": 575
+          },
+          {
+            "epoch": 6.0,
+            "eval_accuracy": 0.9891304347826086,
+            "eval_f1": 0.9909584086799277,
+            "eval_loss": 0.07279372215270996,
+            "eval_precision": 0.9963636363636363,
+            "eval_recall": 0.9856115107913669,
+            "eval_runtime": 6.0416,
+            "eval_samples_per_second": 76.138,
+            "eval_steps_per_second": 4.8,
+            "step": 690
+          }
+        ],
+        "versions": {
+          "python": "3.14.3",
+          "platform": "macOS-26.3.1-arm64-arm-64bit-Mach-O",
+          "torch": "2.11.0",
+          "transformers": "4.57.6",
+          "accelerate": "1.15.0",
+          "nltk": "3.9.4",
+          "scikit-learn": "1.6.1",
+          "numpy": "2.4.3"
+        },
+        "base_model": "nlpaueb/legal-bert-base-uncased",
+        "script": "scripts/train_model.py (unmodified)"
+      }
+    },
+    "llm_config": {
+      "model": "gemini-3.8-flash",
+      "long_context_model": "gemini-3.8-flash",
+      "fallback_model": "openai/gpt-oss-120b",
+      "model_versions": {
+        "gemini-3.8-flash": "3.0",
+        "openai/gpt-oss-120b": null
+      }
+    }
+  }
+}

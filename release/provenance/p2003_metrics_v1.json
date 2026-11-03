@@ -1,0 +1,466 @@
+{
+ "preflight": {
+  "directions": 381,
+  "processed_documents": 381,
+  "paragraphs": 76188,
+  "raw_entity_classes": 19,
+  "empty_title_directions": [
+   "md_11510",
+   "md_11959",
+   "md_12839"
+  ],
+  "passed": true
+ },
+ "smoke": {
+  "per_source": {
+   "faq": {
+    "discovered": 81,
+    "source": "faq",
+    "targets": 81,
+    "already_stored": 0,
+    "attempted": 5,
+    "fetched": 5,
+    "failed": 0,
+    "failure_reasons": {},
+    "failure_rate": 0.0,
+    "stopped": null
+   },
+   "enforcement": {
+    "discovered": 463,
+    "source": "enforcement",
+    "targets": 463,
+    "already_stored": 0,
+    "attempted": 5,
+    "fetched": 5,
+    "failed": 0,
+    "failure_reasons": {},
+    "failure_rate": 0.0,
+    "stopped": null
+   },
+   "amendment": {
+    "discovered": 333,
+    "source": "amendment",
+    "targets": 333,
+    "already_stored": 0,
+    "attempted": 5,
+    "fetched": 5,
+    "failed": 0,
+    "failure_reasons": {},
+    "failure_rate": 0.0,
+    "stopped": null
+   },
+   "withdrawn": {
+    "discovered": 9458,
+    "source": "withdrawn",
+    "targets": 9458,
+    "already_stored": 5,
+    "attempted": 0,
+    "fetched": 0,
+    "failed": 0,
+    "failure_reasons": {},
+    "failure_rate": 0.0,
+    "stopped": null,
+    "note": "rows come from the single list page"
+   }
+  },
+  "stops": [],
+  "ok": true
+ },
+ "fetch": {
+  "faq": {
+   "source": "faq",
+   "targets": 81,
+   "already_stored": 5,
+   "attempted": 76,
+   "fetched": 75,
+   "failed": 1,
+   "failure_reasons": {
+    "captcha": 1
+   },
+   "failure_rate": 0.0132,
+   "stopped": null
+  },
+  "enforcement": {
+   "source": "enforcement",
+   "targets": 463,
+   "already_stored": 5,
+   "attempted": 458,
+   "fetched": 458,
+   "failed": 0,
+   "failure_reasons": {},
+   "failure_rate": 0.0,
+   "stopped": null
+  },
+  "amendment": {
+   "source": "amendment",
+   "targets": 333,
+   "already_stored": 5,
+   "attempted": 328,
+   "fetched": 328,
+   "failed": 0,
+   "failure_reasons": {},
+   "failure_rate": 0.0,
+   "stopped": null
+  },
+  "withdrawn": {
+   "source": "withdrawn",
+   "targets": 9458,
+   "already_stored": 9458,
+   "attempted": 0,
+   "fetched": 0,
+   "failed": 0,
+   "failure_reasons": {},
+   "failure_rate": 0.0,
+   "stopped": null,
+   "note": "rows come from the single list page"
+  }
+ },
+ "audit": {
+  "faq": {
+   "stored": 80,
+   "invalid_content": 0,
+   "invalid_examples": [],
+   "hash_mismatch": 0
+  },
+  "enforcement": {
+   "stored": 463,
+   "invalid_content": 0,
+   "invalid_examples": [],
+   "hash_mismatch": 0
+  },
+  "amendment": {
+   "stored": 333,
+   "invalid_content": 0,
+   "invalid_examples": [],
+   "hash_mismatch": 0
+  },
+  "withdrawn": {
+   "stored": 1,
+   "invalid_content": 0,
+   "invalid_examples": [],
+   "hash_mismatch": 0
+  }
+ },
+ "harvest": {
+  "faq": {
+   "discovered": 81,
+   "stored_pages": 80,
+   "failures_logged": 1,
+   "failure_reasons": {
+    "captcha": 1
+   },
+   "items": 1845,
+   "items_by_era": {
+    "post_consolidation": 392,
+    "pre_consolidation": 1453
+   },
+   "discovery": {
+    "source": "faq",
+    "discovered": 81,
+    "listing_pages": [
+     {
+      "page": "faq_index.html",
+      "url": "https://www.rbi.org.in/Scripts/FAQDisplay.aspx",
+      "retrieved_at": "2026-09-26T09:38:57+00:00",
+      "content_hash": "6a0b4565451e3223cc0cfaa1a8296ba48a8da7f14cc856d0b784f8ff4578df77"
+     }
+    ],
+    "by_category": {
+     "Banker and Debt Manager to Government": 11,
+     "Commercial Banking": 13,
+     "Consumer Education and Protection": 1,
+     "Deposit Insurance and Credit Guarantee Corporation": 1,
+     "FinTech": 1,
+     "Financial Inclusion and Development": 4,
+     "Financial Market": 2,
+     "Foreign Exchange Management": 20,
+     "Issuer of Currency": 4,
+     "Non-banking": 2,
+     "Others": 1,
+     "Payment and Settlement System": 17,
+     "Research": 4
+    },
+    "discovered_at": "2026-09-26T09:38:59+00:00"
+   },
+   "faq_topics": 80,
+   "faq_topics_without_html_items": [
+    62,
+    93,
+    104,
+    105
+   ]
+  },
+  "enforcement": {
+   "discovered": 463,
+   "stored_pages": 463,
+   "failures_logged": 0,
+   "failure_reasons": {},
+   "items": 463,
+   "items_by_era": {
+    "post_consolidation": 186,
+    "pre_consolidation": 277
+   },
+   "discovery": {
+    "source": "enforcement",
+    "discovered": 463,
+    "listing_pages": [
+     {
+      "page": "press_releases_listing.html",
+      "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+      "retrieved_at": "2026-09-26T09:39:00+00:00",
+      "content_hash": "f94b217ecf79cd1c83a7b8a118e2697988f39bbcc91b20ca2dec77cfc49c9e39"
+     },
+     {
+      "page": "press_releases_2025.html",
+      "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+      "retrieved_at": "2026-09-26T09:39:03+00:00",
+      "content_hash": "74f951fe01ac5c14112f3401f669c28c51617fcd836c84f72c9c2ac8e4f63c42"
+     },
+     {
+      "page": "press_releases_2026.html",
+      "url": "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx",
+      "retrieved_at": "2026-09-26T09:39:07+00:00",
+      "content_hash": "46731eb0daf1331bf3dca644e98a4ed19fe3f2a21c2b8b23dced72eb9838b089"
+     }
+    ],
+    "listing_failures": [],
+    "press_releases_listed": 4244,
+    "near_misses_excluded": 199,
+    "near_miss_by_pattern": {
+     "cancels_registration": 24,
+     "cancels_licence": 16,
+     "directions_section_35a": 158,
+     "penalty_other": 1,
+     "compounding": 0
+    },
+    "near_miss_examples": [
+     {
+      "id": 61925,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – Innovative Co-operative Urban Bank Limited, Delhi – Extension of Period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61923,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – The Bhavani Sahakari Bank Ltd., Mumbai – Extension of Period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61871,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – Shree Mahalaxmi Urban Co-operative Credit Bank Ltd., Gokak (Karnataka) - Extension of Period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61849,
+      "title": "Directions under Section 35 A read with Section 56 of the Banking Regulation Act, 1949 – The Valsad Mahila Nagrik Sahakari Bank Ltd., Valsad, Gujarat",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61839,
+      "title": "Directions under Section 35 A read with Section 56 of the Banking Regulation Act, 1949 – The Gauhati Cooperative Urban Bank Ltd",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61831,
+      "title": "Directions under Section 35 A read with section 56 of the Banking Regulation Act, 1949 – “Loknete R.D. (Appa) Kshirsagar Sahakari Bank Ltd, Niphad, Tal. Niphad, Dist. Nashik”",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61796,
+      "title": "RBI cancels Certificate of Registration of 4 NBFCs",
+      "pattern": "cancels_registration"
+     },
+     {
+      "id": 61785,
+      "title": "Directions under Section 35 A read with section 56 of the Banking Regulation Act, 1949 (As Applicable to Co-operative Societies) – Nasik Jilha Mahila Vikas Sahakari Bank Ltd., Nasik",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61772,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – Sikar Urban Co-operative Bank Ltd., Sikar, Rajasthan – Extension of period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61769,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – The Amanath Co-operative Bank Ltd., Bangalore – Extension of Period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61684,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – The Yashwant Co-operative Bank Ltd., Phaltan, District Satara – Extension of Period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61666,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – National Mercantile Co-operative Bank Ltd., Lucknow – Withdrawal of Directions",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61656,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 - Shimsha Sahakara Bank Niyamitha, Maddur, Mandya District - Extension of Period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61602,
+      "title": "RBI cancels Certificate of Registration of 2 NBFCs",
+      "pattern": "cancels_registration"
+     },
+     {
+      "id": 61588,
+      "title": "Directions under Section 35 A read with Section 56 of the Banking Regulation Act, 1949 – The Pusad Urban Cooperative Bank Ltd., Pusad",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61587,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 - Sri Guru Raghavendra Sahakara Bank Niyamitha, Bengaluru, Karnataka - Extension of Period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61487,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – Indian Mercantile Co-operative Bank Limited (IMCBL), Lucknow – Extension of period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61472,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 (As Applicable to Co-operative Societies) – The Suri Friends’ Union Co-operative Bank Ltd., Suri, West Bengal – Extension of period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61459,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – The Konark Urban Co-operative Bank Ltd., Ulhasnagar – Extension of Period",
+      "pattern": "directions_section_35a"
+     },
+     {
+      "id": 61440,
+      "title": "Directions under Section 35A read with Section 56 of the Banking Regulation Act, 1949 – Pune Sahakari Bank Ltd., Shivajinagar, Pune – Withdrawal of Directions",
+      "pattern": "directions_section_35a"
+     }
+    ],
+    "discovered_at": "2026-09-26T09:39:10+00:00"
+   },
+   "entity_class_resolved": 455,
+   "entity_class_resolution_rate": 0.9827,
+   "entity_classes": {
+    "Commercial Banks": 53,
+    "Credit Information Companies": 4,
+    "Non-Banking Financial Companies": 86,
+    "Payment and Settlement System": 7,
+    "Payments Banks": 3,
+    "Regional Rural Banks": 4,
+    "Rural Co-operative Banks": 105,
+    "Small Finance Banks": 3,
+    "Urban Co-operative Banks": 190,
+    "unresolved": 8
+   },
+   "quoted_titles_total": 566,
+   "quoted_titles_per_release_mean": 1.222,
+   "releases_with_no_quoted_title": 74,
+   "releases_with_no_cited_direction": 67,
+   "releases_citing_statute_only": 56
+  },
+  "amendment": {
+   "discovered": 333,
+   "stored_pages": 333,
+   "failures_logged": 0,
+   "failure_reasons": {},
+   "items": 333,
+   "items_by_era": {
+    "post_consolidation": 333
+   },
+   "discovery": {
+    "source": "amendment",
+    "discovered": 333,
+    "listing_pages": [
+     {
+      "page": "notifications_listing.html",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx",
+      "retrieved_at": "2026-09-26T09:39:12+00:00",
+      "content_hash": "bb8e2e3f825009361fd2d28e2d68039c45f0c882a2eb2a33c8a56d36f67246fb"
+     },
+     {
+      "page": "notifications_2025.html",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx",
+      "retrieved_at": "2026-09-26T09:39:15+00:00",
+      "content_hash": "a329bc75934c48861579ce4248129e676cb394d797613f1bc9f8e879559bfd03"
+     },
+     {
+      "page": "notifications_2026.html",
+      "url": "https://www.rbi.org.in/Scripts/NotificationUser.aspx",
+      "retrieved_at": "2026-09-26T09:39:17+00:00",
+      "content_hash": "4ab3d6072e9211d3a0333d4b5b7d9e1132199b411dc77cdfd309ebf0f5297820"
+     }
+    ],
+    "listing_failures": [],
+    "notifications_listed": 867,
+    "amendment_directions_before_cutoff_excluded": 0,
+    "near_misses_excluded": 42,
+    "near_miss_by_pattern": {
+     "amendment_not_directions": 42
+    },
+    "discovered_at": "2026-09-26T09:39:18+00:00"
+   },
+   "with_amended_direction_cited": 312,
+   "with_md_hyperlink": 305,
+   "citing_paragraph_numbers": 302
+  },
+  "withdrawn": {
+   "discovered": 9458,
+   "stored_pages": 1,
+   "failures_logged": 0,
+   "failure_reasons": {},
+   "items": 9458,
+   "items_by_era": {
+    "post_consolidation": 17,
+    "pre_consolidation": 9441
+   },
+   "discovery": {
+    "source": "withdrawn",
+    "discovered": 9458,
+    "online_list_found": true,
+    "notes": [
+     "@-circulars shall be repealed with effect from January 01, 2026"
+    ],
+    "repeal_deferred_rows": 16,
+    "discovered_at": "2026-09-26T09:39:27+00:00"
+   },
+   "online_list_found": true
+  }
+ },
+ "parse": {
+  "faq": {
+   "source": "faq",
+   "topics": 80,
+   "items": 1845,
+   "topics_without_html_items": [
+    62,
+    93,
+    104,
+    105
+   ]
+  },
+  "enforcement": {
+   "source": "enforcement",
+   "items": 463
+  },
+  "amendment": {
+   "source": "amendment",
+   "items": 333
+  },
+  "withdrawn": {
+   "source": "withdrawn",
+   "items": 9458,
+   "online_items": 9458,
+   "local_items": 0
+  }
+ },
+ "kaggle": {
+  "runtime_sec": 2485.6,
+  "code_source": "dataset (unpacked by Kaggle) /kaggle/input/datasets/meermagia1/rbi-oblibench-code-p2003  | manifest sha256=1c17dd06c584a5032389cd1e04e4faaa3bbd13b0e423d29a5a307c96c086ad00  (64 files verified)",
+  "versions": {
+   "python": "3.12.13",
+   "requests": "2.32.4",
+   "bs4": "4.13.5",
+   "lxml": "6.1.0.0"
+  },
+  "rate_limit_sec": 1.5
+ }
+}

@@ -41,13 +41,30 @@ from src.auditgen.corpus import get_store, load_config  # noqa: E402
 from src.auditgen.enforcement import risk_by_family  # noqa: E402
 from src.auditgen.profile import Profile  # noqa: E402
 
-SAMPLE_PROFILES = [
+SAMPLE_PROFILES = [  # one per core entity class; the first (SFB) is also the validation profile (_sfb_register)
     Profile("Sample Small Finance Bank", "Small Finance Banks", "", "2025-12-01",
             ["deposits", "lending", "priority_sector", "payments", "outsourcing", "kyc_aml", "it_cyber"], ["Commercial Banks"]),
     Profile("Sample NBFC", "Non-Banking Financial Companies", "", "2025-12-01",
-            ["lending", "digital_lending", "co_lending", "outsourcing", "kyc_aml", "it_cyber"], []),
+            ["lending", "digital_lending", "co_lending", "outsourcing", "kyc_aml", "it_cyber"], ["Commercial Banks"]),
     Profile("Sample Payments Bank", "Payments Banks", "", "2025-12-01",
             ["deposits", "payments", "outsourcing", "kyc_aml", "it_cyber"], ["Small Finance Banks"]),
+    Profile("Sample Commercial Bank", "Commercial Banks", "", "2025-12-01",
+            ["deposits", "lending", "digital_lending", "forex", "payments", "priority_sector", "co_lending", "outsourcing", "kyc_aml", "it_cyber"],
+            ["Non-Banking Financial Companies"]),
+    Profile("Sample Urban Co-operative Bank", "Urban Co-operative Banks", "", "2025-12-01",
+            ["deposits", "lending", "priority_sector", "payments", "outsourcing", "kyc_aml", "it_cyber"], ["Rural Co-operative Banks"]),
+    Profile("Sample Rural Co-operative Bank", "Rural Co-operative Banks", "", "2025-12-01",
+            ["deposits", "lending", "priority_sector", "outsourcing", "kyc_aml", "it_cyber"], ["Regional Rural Banks"]),
+    Profile("Sample Regional Rural Bank", "Regional Rural Banks", "", "2025-12-01",
+            ["deposits", "lending", "priority_sector", "payments", "outsourcing", "kyc_aml", "it_cyber"], ["Commercial Banks"]),
+    Profile("Sample Local Area Bank", "Local Area Banks", "", "2025-12-01",
+            ["deposits", "lending", "priority_sector", "outsourcing", "kyc_aml", "it_cyber"], ["Small Finance Banks"]),
+    Profile("Sample All India Financial Institution", "All India Financial Institutions", "", "2025-12-01",
+            ["lending", "forex", "outsourcing", "kyc_aml", "it_cyber"], ["Commercial Banks"]),
+    Profile("Sample Asset Reconstruction Company", "Asset Reconstruction Companies", "", "2025-12-01",
+            ["lending", "outsourcing", "kyc_aml", "it_cyber"], ["Non-Banking Financial Companies"]),
+    Profile("Sample Credit Information Company", "Credit Information Companies", "", "2025-12-01",
+            ["outsourcing", "kyc_aml", "it_cyber"], ["Non-Banking Financial Companies"]),
 ]
 SAMPLE_POLICY = ROOT / "outputs/auditgen_samples/synthetic_sample_policy.md"
 
@@ -152,12 +169,14 @@ def cmd_samples(a) -> int:
         p = Profile(p0.name, p0.entity_class, today, p0.last_review, list(p0.activities), list(p0.group_classes)).validate(s.core_classes)
         pk = PK.generate(s, cfg, p)
         pk["pack_id"] = PK.slug(p.name)
-        if i == 0:
-            policy = SAMPLE_POLICY.read_bytes()
-            res = _gap(cfg, s, pk, [(SAMPLE_POLICY.name, policy)], families=["Know Your Customer", "Managing Risks in Outsourcing"])
-            res["session"] = None
-            res["note"] = "Run on a SYNTHETIC sample policy written for this demo; never on real company data."
-            pk["gaps"] = res
+        if a.gaps_all or i == 0:
+            try:
+                res = _gap(cfg, s, pk, [(SAMPLE_POLICY.name, SAMPLE_POLICY.read_bytes())], families=["Know Your Customer", "Managing Risks in Outsourcing"])
+                res["session"] = None
+                res["note"] = "Run on a SYNTHETIC sample policy written for this demo; never on real company data."
+                pk["gaps"] = res
+            except Exception as exc:  # e.g. no KYC / outsourcing Direction applies to this class
+                print(f"{pk['pack_id']}: no gap run ({exc})")
         pk["summary"] = PK.summarise(pk)
         d = base / pk["pack_id"]
         if d.exists():
@@ -221,6 +240,14 @@ AI_SAMPLE_QUESTIONS = {
     "sample_small_finance_bank": ["What must the bank do to verify a customer's identity?", "When must fraud be reported to the RBI?"],
     "sample_nbfc": ["What are the requirements for outsourcing to third parties?", "What must be disclosed to borrowers in digital lending?"],
     "sample_payments_bank": ["What are the limits on balances a payments bank customer can hold?", "What must be done when a card is lost or stolen?"],
+    "sample_commercial_bank": ["What must the bank do before outsourcing a financial service?", "How must the bank classify a loan as a non-performing asset?"],
+    "sample_urban_co_operative_bank": ["What must the bank do to verify a customer's identity?", "What are the board's responsibilities for the investment portfolio?"],
+    "sample_rural_co_operative_bank": ["What must the bank do to verify a customer's identity?", "How must priority sector lending targets be met?"],
+    "sample_regional_rural_bank": ["What are the priority sector lending requirements?", "When must fraud be reported to the RBI?"],
+    "sample_local_area_bank": ["What must the bank do to verify a customer's identity?", "What are the capital adequacy requirements?"],
+    "sample_all_india_financial_institution": ["What are the requirements for outsourcing to third parties?", "What prudential norms apply to lending?"],
+    "sample_asset_reconstruction_company": ["What must the company do when acquiring financial assets?", "What are the requirements for outsourcing?"],
+    "sample_credit_information_company": ["What must the company do to protect credit information?", "How must customer complaints be handled?"],
 }
 
 
@@ -315,6 +342,7 @@ def main() -> int:
     sub.add_parser("validate")
     sm = sub.add_parser("samples")
     sm.add_argument("--as-of")
+    sm.add_argument("--gaps-all", action="store_true", help="run the synthetic-policy gap analysis on every sample pack, not only the first")
     sv = sub.add_parser("serve")
     sv.add_argument("--host", default="127.0.0.1")
     sv.add_argument("--port", type=int, default=8765)

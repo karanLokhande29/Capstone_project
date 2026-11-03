@@ -1,6 +1,7 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Badge } from "./ui/primitives";
+import { NO_PROXY } from "@/lib/env";
 
 export function PageHeader({ title, subtitle, tier, product, actions }: {
   title: string; subtitle?: React.ReactNode; tier?: "MUST" | "SHOULD" | "COULD"; product?: boolean; actions?: React.ReactNode;
@@ -11,7 +12,7 @@ export function PageHeader({ title, subtitle, tier, product, actions }: {
         <div className="flex flex-wrap items-center gap-2">
           <h1 className="text-[20px] font-semibold tracking-tight">{title}</h1>
           {product && <Badge tone="product">Product view</Badge>}
-          {tier && <Badge tone="outline">{tier}</Badge>}
+          {tier && !NO_PROXY && <Badge tone="outline">{tier}</Badge>}
         </div>
         {subtitle && <p className="mt-1 max-w-3xl text-[13px] text-ink-2">{subtitle}</p>}
       </div>

@@ -15,9 +15,12 @@ GZ=.deploy-gz
 rm -rf "$GZ" && cp -R dist-azure "$GZ"
 # HTML stays uncompressed: index.html is also the 404 document, which the static website serves without Content-Encoding.
 find "$GZ" -type f \( -name "*.js" -o -name "*.css" -o -name "*.json" \) -exec gzip -9 -n {} \; -exec sh -c 'mv "$1.gz" "$1"' _ {} \;
-# "cases" and "lab" are also folders (cases/play, lab/edit), so they are uploaded one by one, not staged.
-PARENTS="cases lab"
-ROUTES="cases/failures cases/play cases/atlas lab/paste lab/edit triage results method genai present findings how-it-works trust demo"
+# "cases", "lab" and "auditgen" are also folders (cases/play, lab/edit, auditgen/gaps), so they are uploaded one by one, not staged.
+# The research pages and the read-only audit generator demo (workspace/results, rq, ..., auditgen/*) are app routes too.
+PARENTS="cases lab auditgen"
+ROUTES="cases/failures cases/play cases/atlas lab/paste lab/edit triage results method genai present findings how-it-works trust demo
+rq workspace/results different construction reliability atlas architecture product explorer
+auditgen/gaps auditgen/review auditgen/downloads auditgen/corpus auditgen/ai"
 STAGE=.routes-staging
 rm -rf "$STAGE" && mkdir -p "$STAGE/case"
 for r in $ROUTES $PARENTS; do mkdir -p "$STAGE/$(dirname "$r")"; done
@@ -37,6 +40,13 @@ up -s "$GZ" --pattern "assets/*.js" --content-type "text/javascript" --content-e
 up -s "$GZ" --pattern "assets/*.css" --content-type "text/css" --content-encoding gzip --content-cache-control "$IMM"
 up -s "$GZ" --pattern "assets/*.json" --content-type "application/json" --content-encoding gzip --content-cache-control "$IMM"
 up -s "$GZ" --pattern "data/*" --content-type "application/json" --content-encoding gzip --content-cache-control "public, max-age=300"
+# Audit generator demo packs: the .json files were gzipped above; the .json.gz packs stay gzip bytes that the app unpacks itself.
+up -s "$GZ" --pattern "auditgen/*.json" --content-type "application/json" --content-encoding gzip --content-cache-control "public, max-age=300"
+up -s "$GZ" --pattern "auditgen/*.json.gz" --content-type "application/gzip" --content-encoding "" --content-cache-control "public, max-age=300"
+up -s "$GZ" --pattern "auditgen/exports/*.xlsx" --content-type "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" --content-encoding "" --content-cache-control "public, max-age=300"
+up -s "$GZ" --pattern "auditgen/exports/*.docx" --content-type "application/vnd.openxmlformats-officedocument.wordprocessingml.document" --content-encoding "" --content-cache-control "public, max-age=300"
+up -s "$GZ" --pattern "auditgen/exports/*.pdf" --content-type "application/pdf" --content-encoding "" --content-cache-control "public, max-age=300"
+up -s "$GZ" --pattern "auditgen/exports/*.ics" --content-type "text/calendar" --content-encoding "" --content-cache-control "public, max-age=300"
 up -s "$GZ" --pattern "index.html" --content-type "text/html" --content-encoding "" --content-cache-control "no-cache"
 up -s "$STAGE" --content-type "text/html" --content-encoding "" --content-cache-control "no-cache"
 for r in $PARENTS; do
@@ -45,7 +55,7 @@ for r in $PARENTS; do
 done
 
 # 3. Remove blobs that are no longer part of the site: stale assets, stale data shards, old route copies.
-KEEP=$( (cd dist-azure && find assets data -type f; echo index.html; for r in $PARENTS; do echo "$r"; done; cd "../$STAGE" && find . -type f | sed 's#^\./##') | sort)
+KEEP=$( (cd dist-azure && find assets data auditgen -type f; echo index.html; for r in $PARENTS; do echo "$r"; done; cd "../$STAGE" && find . -type f | sed 's#^\./##') | sort)
 az storage blob list -c '$web' --account-name "$SA" --account-key "$KEY" --query "[].name" -o tsv --num-results "*" | sort > "$STAGE.remote"
 comm -23 "$STAGE.remote" <(echo "$KEEP") | while IFS= read -r b; do
   [ -n "$b" ] && az storage blob delete -c '$web' -n "$b" --account-name "$SA" --account-key "$KEY" -o none --only-show-errors

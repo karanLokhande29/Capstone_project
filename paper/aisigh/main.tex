@@ -1,0 +1,305 @@
+% DRAFT for author revision — authors must rewrite prose in their own words before submission (venue AI-content limit < 20%)
+% AISIGH-SD 2026 (IEEE, CMT). IEEEtran conference, two-column. Overleaf: pdfLaTeX, no shell-escape. Not anonymous.
+% Target 6 pages (7-page fallback, paid). Numbers are generated from reports/results_v2.json by scripts/build_paper_draft.py
+% and scripts/build_paper_tables_final.py — regenerate rather than hand-edit numbers.
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{adjustbox}
+\usepackage{url}
+\usepackage{xcolor}
+\newcommand{\placeholder}[1]{\textcolor{red}{\textbf{[#1]}}}
+
+\begin{document}
+
+\title{RBI-ObliBench: Entity-Class Applicability, Differential Obligations and Metric Integrity on Reserve Bank of India Master Directions}
+
+\author{\IEEEauthorblockN{Karan Lokhande}
+\IEEEauthorblockA{SVKM's NMIMS Mukesh Patel School of\\ Technology Management \& Engineering\\ Mumbai, India\\ karanlokhande2005@gmail.com}
+\and
+\IEEEauthorblockN{Akash Goyal}
+\IEEEauthorblockA{SVKM's NMIMS Mukesh Patel School of\\ Technology Management \& Engineering\\ Mumbai, India\\ goyalakashwork@gmail.com}
+\and
+\IEEEauthorblockN{Meer Magia}
+\IEEEauthorblockA{SVKM's NMIMS Mukesh Patel School of\\ Technology Management \& Engineering\\ Mumbai, India\\ meer.magia@gmail.com}
+\and
+\IEEEauthorblockN{Jish Joy}
+\IEEEauthorblockA{SVKM's NMIMS Mukesh Patel School of\\ Technology Management \& Engineering\\ Mumbai, India\\ Jish.Joy@nmims.edu}
+\and
+\IEEEauthorblockN{Hima Deepthi Vankayalapati}
+\IEEEauthorblockA{SVKM's NMIMS Mukesh Patel School of\\ Technology Management \& Engineering\\ Mumbai, India\\ himadeepthi.vankayalapati@nmims.edu}
+}
+
+\maketitle
+
+\begin{abstract}
+Regulated entities in India follow parallel Master Directions issued by the Reserve Bank of India (RBI) for banks,
+non-banking companies, co-operative banks and other classes. The same duty often appears for several classes, sometimes with a
+different threshold, deadline or scope. We present RBI-ObliBench, built on 381 Master Directions,
+with four tasks: entity-class applicability and differential obligation (T1), cross-class counterpart retrieval (T2), temporal status
+(T3) and an audit of the RePASs faithfulness metric (T4). T1 has 106 expert-validated items.
+A class filter sharply improves counterpart retrieval, but no LLM system beats an embedding-matching baseline on collapsed T1
+flag F1, and most gold \textit{different} judgements are missed by every system, usually with the counterpart already in
+context. A pairwise structured comparator, frozen before any test run, reaches \textit{different} F1 0.409. An NLI verifier lowers T1 F1, and a long-context model is competitive with retrieval. RePASs rewards verbatim
+concatenation on RBI text, as reported for ObliQA. The release is pointer-only and contains no RBI text.
+\end{abstract}
+
+\begin{IEEEkeywords}
+regulatory NLP, benchmark, retrieval-augmented generation, differential obligations, evaluation metrics
+\end{IEEEkeywords}
+
+\section{Introduction}\label{sec:intro}
+Compliance teams in Indian finance work across entity classes: a commercial bank, a small finance bank and an urban co-operative
+bank each have their own Master Direction on the same subject \cite{rbi}. A question that recurs in practice is not only
+\emph{which} obligations bind a class, but \emph{where parallel Directions differ}. A duty may exist for two classes with a
+different threshold or deadline, and a system that reports ``same'' hides exactly the difference a compliance officer needs.
+
+Consider a requirement to put a Board-approved outsourcing policy in place. It appears in the Directions for several classes, but
+the scope, the approving body or the reporting line can differ from one class to the next. A retrieval system that finds the
+right counterpart paragraph has done only half the job. The question that matters is whether the two paragraphs impose the same
+obligation in substance, or whether a threshold, deadline, condition or actor has changed. Errors here are costly in both
+directions: reporting a difference that is not there wastes review effort, and missing one leaves a compliance gap.
+
+Regulatory question answering has a growing evaluation literature, notably ObliQA and the RePASs metric \cite{gokhan2024regnlp},
+its multi-passage extension \cite{obliqamp} and the RIRAG-2025 shared task \cite{gokhan2025riragtask}. None of these tests
+the cross-class \emph{differential} case. We ask three questions:
+
+\textbf{RQ1 (Applicability):} Given a compliance question and a declared entity class, can a retrieval system return the
+obligations that bind that class, and how much does a class-blind dense retriever lose relative to a class-aware system?
+
+\textbf{RQ2 (Differential obligation):} For a subject issued in parallel across entity classes, can the system identify what
+one entity class is required to do that another entity class is not?
+
+\textbf{RQ3 (Metric integrity):} Does the documented gameability of RePASs reproduce on Indian regulatory text, and what minimal
+evaluation repair makes the metric resistant to concatenation/verbatim extraction?
+
+Our contributions are: (i) a pointer-only corpus of RBI Master Directions with an entity-class $\times$ subject-family matrix;
+(ii) T1, an expert-validated applicability and differential-obligation set, with its reliability evidence stated precisely;
+(iii) T2 relevance sets with their construction biases; (iv) T3, a deterministic temporal set; (v) T4, an audit of RePASs on
+RBI text; and (vi) an evaluation of class- and date-aware retrieval systems, including a pre-registered structured comparator
+aimed at the \textit{different} failure. The benchmark is the contribution; the agentic pipeline is the engineering artefact we
+evaluate on it.
+
+\section{Related Work}\label{sec:related}
+Gokhan et al.\ introduced ObliQA, built from financial regulations of Abu Dhabi Global Market, together with the RePASs
+answer-stability score, which combines entailment, contradiction and obligation coverage \cite{gokhan2024regnlp}. We use the
+RePASs code at a pinned commit \cite{repass}; its obligation classifier is fine-tuned from LEGAL-BERT \cite{legalbert}.
+ObliQA-MP extends the setting to multi-passage answers with learning-to-rank \cite{obliqamp}. In the RIRAG-2025 shared task
+\cite{gokhan2025riragtask}, the AUEB-Archimedes team showed that concatenating retrieved obligations scores highly under RePASs
+\cite{aueb2025rirag}; RQ3 tests whether this carries over to RBI text. IndiaFinBench evaluates LLMs on Indian financial
+regulatory questions \cite{indiafinbench}, but it does not compare obligations across entity classes. For retrieval we use
+BM25 \cite{bm25s}, dense embeddings from the BGE family \cite{bge} through Sentence-BERT \cite{sbert}, and reciprocal rank
+fusion \cite{rrf}.
+
+\section{RBI-ObliBench}\label{sec:bench}
+\textbf{Corpus.} We harvested 381 Master Directions (76,188 paragraphs)
+with stable paragraph ids. RBI's listing uses 19 entity-class headings:
+11 regulated-entity classes and 8 function headings.
+Subject families are derived from titles (57 families). Of the
+1,083 class $\times$ family cells, 296 are populated.
+RBI consolidates amendments in place, so the corpus holds only current text.
+
+\textbf{T1 construction.} Rule-based extraction finds obligation spans by deontic cues; over four precision rounds the final rules
+keep 28,694 candidates. Each candidate is matched to counterpart paragraphs in other classes with
+bge-base embeddings plus lexical similarity, and a threshold fixed on validation pairs. We drew
+123 items, seeded and stratified by source class, with at most four compared classes each. For each
+compared class, the annotator judges \textit{same} (the same obligation in substance), \textit{different} (same topic, different
+requirement) or \textit{none}, citing the counterpart paragraph. The item's differential flag (shared, class-specific or absent) is
+derived from these judgements by guideline rule v3.6 (v3 is the guideline family for this sheet; v3.1--v3.10 are its numbered
+rules). 106 items were validated and 17
+rejected as not an obligation (Table~\ref{tab:benchmark}, Fig.~\ref{fig:construction}).
+
+\textbf{T2--T4.} T2 has three relevance sets for retrieving the target-class counterpart. The first is derived from the T1 labels,
+the second from the P2-002 validation pairs, and the third from a hand alignment of FAQ and press-release questions. Each favours one retriever, because
+of how its candidates were shown to raters. T3 asks for the status of a paragraph on an as-of date. Its 52
+items come from a deterministic parser of Amendment Directions and update stamps; human spot-checks gave parse precision
+15/20 = 0.750 (Wilson 95\% [0.531, 0.888]). T4 has 30 questions, each with a genuine RAG answer and
+three rule-built variants: a concatenation of the retrieved obligation sentences, a negated version of that concatenation,
+and an off-topic answer of matched length drawn from an unrelated Direction. Thirty answers also carry blind human ratings of
+faithfulness and of whether they answer the question. Matching was validated on 60 pairs, with
+counterpart rate 53/60 = 0.883 (Wilson 95\% [0.778, 0.942]). We operationalise RQ1's compliance question as a
+source obligation plus a declared target class (T2) and as per-class judgement (T1).
+
+\input{tables/tab_benchmark}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/fig1_benchmark_construction.png}
+\caption{Benchmark construction: corpus, candidate extraction, cross-class matching, the T1 sample and expert labels, and T2--T4.}\label{fig:construction}\end{figure}
+
+\section{Annotation and Reliability}\label{sec:annotation}
+The gold labels come from a single expert annotator (rater\_1), following written guidelines and using blind sheets. All three raters in this paper (rater\_1--rater\_3) are student authors of this paper. Of the gold
+items, 62 are single-pass,
+6 were consistent across a blind retest, and
+38 were adjudicated by the same annotator. No gold item has an independent
+second-rater label. The guidelines define each judgement operationally: \textit{same} means the same obligation in substance,
+\textit{different} means the same topic with a different threshold, timeline, scope or carve-out, and \textit{none} covers only the
+paragraphs checked, never the whole class. Spans that impose no duty on a regulated entity, such as definitions or duties on
+customers, are rejected as not an obligation. A timed blind re-label of twenty single-pass items gave a flag $\kappa$ of
+0.409 [0.042, 0.759]; it is evidence about stability, not a validation route.
+
+Our reliability evidence is therefore indirect (Table~\ref{tab:reliability}, Fig.~\ref{fig:provenance}). On a separate sample
+of thirty items drawn outside the T1 sample, three raters labelled independently before adjudication. Fleiss' $\kappa$
+\cite{fleiss1971} is 0.774 [0.645, 0.886] on class judgements and 0.571 [0.289, 0.807] on the flag.
+The annotator's blind test--retest on 25 items, with a gap of 11.7--18.6 h between passes, gives Cohen's $\kappa$
+\cite{cohen1960} of 0.426 [0.091, 0.730] on the flag. We treat the retest as supplementary, because recall over so short
+a gap may inflate agreement. Every sheet showed the same two P2-002 candidate paragraphs per compared class, without scores; this may
+bias judgements toward those candidates.
+
+\input{tables/tab_reliability}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/fig2_annotation_provenance.png}
+\caption{Annotation and reliability: the single-expert gold, and the separately measured reliability evidence.}\label{fig:provenance}\end{figure}
+
+\section{Systems}\label{sec:systems}
+Retrieval systems are BM25, dense bge-base, hybrid reciprocal rank fusion (with $k=60$), a class-aware
+hybrid restricted to the target class's Directions, and, as a diagnostic, hybrid $-$ source class: the class-blind hybrid with every
+paragraph of the query's own source class removed before fusion. The class filter uses the entity-class metadata of each Direction; when the query
+names a class, only that class's paragraphs (and its function-heading Directions) can be returned. A temporal filter keeps only
+paragraphs in force on the as-of date, using the same amendment index that builds T3. Fig.~\ref{fig:architecture} shows how these
+components feed the judgement step. The T1 judgement systems all use gemini-3.5-flash-lite \cite{gemini35fl} at temperature zero, with minimal thinking and
+frozen prompts:
+\begin{itemize}
+\item a class-blind LLM and a class-aware LLM (judging retrieved evidence);
+\item the final agentic system: the class filter plus an NLI verifier, which retries or abstains when a rationale is not entailed
+\cite{nlideberta,debertav3};
+\item a class-blind LLM with the verifier (class-blind + verifier);
+\item a long-context system given every Direction of the compared classes, up to a 100K-token cap.
+\end{itemize}
+The baselines are the majority class, computed in-sample from the gold distribution (a reference, not a deployable system), and
+the P2-002 candidate labels. Ablations A--C toggle the class filter, the temporal filter and the verifier. T4 questions and genuine answers were drafted with gpt-oss-120b
+\cite{gptoss}.
+
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/fig3_evaluation_architecture.png}
+\caption{Evaluation architecture: retrieval with optional class and temporal filters, LLM judgement, the NLI verifier, the
+long-context alternative, and the structured comparator.}\label{fig:architecture}\end{figure}
+
+The pairwise structured comparator is our targeted experiment. For each item and compared class, it gives the model the source
+obligation and the two shown candidate paragraphs. The model extracts thirteen fields from both sides (actor, action, object, scope,
+condition, threshold, amount, percentage, frequency, deadline, exception, documentation and reporting) and marks each field equal,
+different, or present on one side only. A fixed rule, not the model, then decides \textit{same}, \textit{different} or
+\textit{none}. The prompt and rule were developed only on the separate 30-item set, with a single revision for a field-extraction
+bug, and were frozen by hash before any run on T1.
+
+\section{Results}\label{sec:results}
+All confidence intervals are 95\% percentile bootstrap intervals over 2,000 item resamples \cite{efron1979}, and differences
+are paired on the same items; proportions use Wilson intervals \cite{wilson1927}. Abstentions stay in the denominator: an
+abstained class judgement is scored as \textit{unsure}, which matches no label, and an item whose flag cannot be derived is
+\textit{ambiguous} and counts as wrong in both flag F1s. Coverage is the share of items with a derived flag. The long-context model
+is scored only on the 102 items it answered, and its comparisons use the same items.
+
+\subsection{RQ1: applicability and retrieval}
+The class filter raises nDCG@10 on \texttt{t2\_xclass\_t1} by +0.451 [+0.421, +0.481] (excludes 0 (above))
+(Table~\ref{tab:t2}). The gain is partly by construction, because relevance was labelled only for the target-class counterpart. It holds on all three
+sets: +0.423 [+0.336, +0.514] (excludes 0 (above)) on \texttt{t2\_xclass\_p2002} and
++0.171 [+0.072, +0.273] (excludes 0 (above)) on \texttt{t2\_supp\_p2003}. Removing only the source class from a
+class-blind system is not enough: \texttt{hybrid\_minus\_source\_class} reaches
+0.464 [0.429, 0.497] on \texttt{t2\_xclass\_t1}. The
+class-blind dense retriever reaches 0.421 [0.385, 0.455] against
+0.894 [0.864, 0.922] for the class-aware hybrid. On T1 the filter has no
+significant effect: with the class filter and without the verifier, class-aware minus class-blind 3-way F1 is
+$-$0.050 [$-$0.133, +0.027] (does not exclude 0).
+
+\input{tables/tab_t2}
+
+\subsection{RQ2: differential obligation}
+No LLM system significantly beats the P2-002 candidate labels on collapsed flag F1 (Table~\ref{tab:t1}). For example, class-blind
+minus P2-002 is $-$0.019 [$-$0.114, +0.072] (does not exclude 0), and class-aware minus P2-002 is
++0.024 [$-$0.096, +0.135] (does not exclude 0).
+
+The \textit{different} judgement is the core failure. Of 78 gold \textit{different} class units,
+56 are missed by every LLM system when all five answered, and 58
+when only the systems that answered are counted. Across the five systems, 262 of 350 \textit{different} errors occurred with
+the gold counterpart paragraph in context. These are reasoning failures, not retrieval failures.
+
+The errors differ in direction by system. Asked about a gold \textit{different} unit, the class-aware LLM answers
+\textit{same} 32 times and \textit{none} 39 times; the long-context
+model answers \textit{same} 43 times. Both behaviours erase the difference a compliance
+reviewer needs. The P2-002 baseline cannot express \textit{different} at all.
+
+The verifier lowers 3-way flag F1 by $-$0.068 [$-$0.132, $-$0.012] (excludes 0 (below)) and coverage by
+$-$0.217 [$-$0.292, $-$0.142] (excludes 0 (below)), because it abstains on many correct first answers: the final agentic system abstained on 81 class
+judgements, 59 of which were correct before the retry. The
+long-context model answered 102 items at the 100K cap. On those items it ties the retrieval
+systems on 3-way F1 and beats the final agentic system on collapsed F1
+(+0.126 [+0.016, +0.240] (excludes 0 (above))).
+
+\input{tables/tab_t1_systems}
+
+\subsection{Targeted experiment: structured comparison}
+Table~\ref{tab:cmp} gives the pre-registered comparisons. Against the class-aware LLM, the comparator changes \textit{different} F1 by +0.255 [+0.094, +0.411] (excludes 0 (above)), \textit{different} recall by +0.397 [+0.250, +0.543] (excludes 0 (above)) and judgement Macro-F1 by +0.071 [+0.001, +0.142] (excludes 0 (above)). Of the units every LLM system missed, it recovers 26 of 56. Its errors run \textit{different}$\rightarrow$\textit{same} 6 times and \textit{different}$\rightarrow$\textit{none} 32 times. On its development set (the separate 30-item set) it had reached \textit{different} F1 0.348.
+
+\input{tables/tab_comparator}
+
+\subsection{RQ3: metric integrity, and T3}
+Concatenation gameability reproduces: concatenated minus genuine RePASs is
++0.375 [+0.325, +0.427] (excludes 0 (above)) (pre-registered verdict:
+reproduces). Negated and off-topic answers score lower than genuine ones (Table~\ref{tab:t3t4}).
+RePASs tracks human faithfulness (Spearman $\rho$ 0.731 [0.535, 0.845]) but not
+whether the answer addresses the question ($\rho$ 0.008 [$-$0.323, 0.339]).
+An exploratory repair, combining an overlap penalty with a relevance term, ranks genuine answers first. It is not usable, however,
+because it no longer tracks human faithfulness ($\rho$ $-$0.126 [$-$0.477, 0.216]).
+
+On T3 the temporal filter yields exact match 1.000 [1.000, 1.000]. This is circular, since the gold and the
+filter share one parser. Without the filter the score is 0.538 [0.404, 0.673]: the model answered ``in force, original'' on
+48 of 52 items. T3 therefore measures whether a model uses
+the dates it is given, and it shows that it does not infer amendment status unaided. Because the corpus holds only amended text,
+the system can flag a later amendment but cannot show the earlier wording.
+
+\input{tables/tab_t3_t4_ablation}
+
+\subsection{Additional experiments}
+Pre-registered after the main runs; same prompts and intervals. A cross-encoder reranker (ms-marco-MiniLM-L6-v2, hybrid top 20)
+gave no reliable T2 gain and lowered T1 class-blind 3-way F1 ($-$0.064 [$-$0.115, $-$0.017]) and \textit{different} recall
+($-$0.077 [$-$0.151, $-$0.018]). The larger open-weight gpt-oss-120b \cite{gptoss} (class-blind, 103 items within its
+free-tier limit) tied gemini-3.5-flash-lite on 3-way F1 ($-$0.010 [$-$0.094, +0.084]); on collapsed F1 it was higher
+(+0.055 [+0.012, +0.112]) but not significantly above P2-002 (+0.061 [$-$0.047, +0.173]). Our retrieval harness reaches
+ObliQA test Recall@10 75.3 [73.9, 76.8] with BM25 (published 76.1) \cite{gokhan2024regnlp}. On a pre-registered stratified
+prefix of 268 of 406 IndiaFinBench items \cite{indiafinbench} (the quota-limited run did not finish), the frozen answer
+prompt scores 75.7\% [70.3, 80.5]. A LangGraph port reproduced all four retrieval-based T1 systems exactly (106 items).
+
+\section{Discussion}\label{sec:discussion}
+Six findings stand out. First, class-aware filtering improves retrieval. Second, that gain does not carry over to T1 judgement:
+finding the counterpart is not the hard part, and deciding what differs is. Third, \textit{different} is the core failure, and it is
+mostly a reasoning failure. Fourth, the verifier hurts T1, because a whole-paragraph entailment premise is a poor test for a
+one-sentence rationale. Abstentions are scored as errors, so the verifier's loss in F1 reflects both wrong answers and declined
+correct ones (coverage $-$0.217). Long-context items
+that exceeded the input cap are excluded rather than penalised, and every comparison with long-context is made on the same
+102 items. Fifth, a long-context model without retrieval is competitive where the relevant Directions fit in its window.
+Sixth, RePASs concatenation gameability reproduces on RBI text, while negation and off-topic text do not fool it. We present these as
+findings about what the benchmark exposes, not as evidence that our agent wins.
+
+The structured comparator suggests where the difficulty lies. Asking the model to fill in the same fields for both paragraphs, and
+leaving the verdict to a fixed rule, recovers part of the \textit{different} signal that free-form judgement misses. Its remaining
+errors are mostly \textit{different} answered as \textit{none}: the model decides the two paragraphs are not about the same duty.
+That points to the topic-matching step, not field extraction, as the next bottleneck. For evaluation design, the RePASs result is a
+reminder that a metric built on entailment and coverage rewards copying the evidence. A faithfulness score needs a relevance
+component that cannot be satisfied by verbatim text.
+
+\section{Limitations}\label{sec:limitations}
+T1 has 106 items, with 7 to 15 per source class, so per-class results are uncertain. The
+gold is single-expert. Inter-rater agreement is measured on a separate sample, and the retest interval was short. Compared classes
+are capped at four per item. Each T2 relevance set is biased toward one retriever. T3 is circular, and it has a known parser defect.
+The corpus lacks pre-amendment text. T4 is small, with LLM-drafted questions and one rater. All LLM results come from a
+Flash-Lite-class model on free tiers. The RePASs repair is exploratory and was designed and tested on the same thirty questions. Following our scope plan, we did not run
+reranking, IndiaFinBench transfer or an ObliQA baseline. A public inspection interface accompanies the release; it reads the sealed outputs and does not affect any reported result. Finally, the comparator saw only the two shown
+candidate paragraphs per class, the same ones the annotator saw; a comparator over retrieved evidence might behave differently.
+
+\section{Future Work}\label{sec:future}
+In order of priority: a test--retest with a proper gap; independent second raters on every gold item; a frontier LLM;
+a broader T3; a larger T4 study with two raters; the full IndiaFinBench run; and full use of the FAQ and enforcement sources.
+
+\section{Conclusion}\label{sec:conclusion}
+RBI-ObliBench isolates a case that generic regulatory QA does not test: an obligation whose counterpart exists in another entity
+class but says something different. Every system we evaluated, from embedding matching to long-context reading, is weak on this
+case, even with the counterpart in context. Data and code will be released as pointers, with no RBI text, on acceptance.
+
+\section*{Acknowledgment}
+\textbf{AI use.} Claude Code (Anthropic) wrote the repository code and analysis scripts under the authors' direction, and drafted
+internal reports. Claude Code also wrote the inspection interface and its build scripts under the authors' direction. gemini-3.5-flash-lite and gpt-oss-120b are systems under study; their outputs are never labels. All human labels
+are manual. Under the Gemini API free tier, outputs may be published and were not used to train any model, and free-tier inputs may
+be used by Google; our prompts contained only public RBI text and no personal data.
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs_verified}
+
+\end{document}

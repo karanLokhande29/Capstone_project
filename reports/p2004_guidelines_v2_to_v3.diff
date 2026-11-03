@@ -1,0 +1,186 @@
+--- ANNOTATION_INSTRUCTIONS.md (v2)
++++ ANNOTATION_INSTRUCTIONS.md (v3)
+@@ -1,12 +1,17 @@
+-# RBI-ObliBench — Annotation Instructions (Single-Expert Protocol)
+-
+-**Read this once before starting.** It should take about 10 minutes; the pilot
+-itself is ~18 items.
+-
+-> **This project has one annotator.** From 2026-09-24 the three-person roster
+-> no longer exists, so there is no inter-annotator agreement to measure and the
+-> tooling will not produce one. Reliability evidence comes from **you labelling
+-> the same items twice, blind, at least five days apart** — plus a second rater
+-> if one can be found. That is what the two passes below are for, and it is the
+-> only reason the retest is worth the time.
++# RBI-ObliBench — Annotation Instructions
++
++**Guidelines version: v3** (2026-09-26). v1 and v2 below still hold unless the
++v3 section at the end says otherwise.
++
++**Read this once before starting.** It should take about 15 minutes.
++
++> **Roster (v3, from 2026-09-26).** **Karan is the primary annotator.** **Akash
++> and Meer are independent second raters** on a 30-item subset of the P2-004
++> sample. They start from **blank files** (v2.5), and nobody discusses
++> individual items until their files have been returned.
++>
++> Reliability evidence comes from two places:
++> - **test-retest:** Karan labels the same items twice, blind, at least five
++>   days apart. That is what the two passes below are for.
++> - **inter-rater:** Karan, Akash and Meer on the shared subset.
+ 
+@@ -322,19 +327,137 @@
+ 
+-## For a second rater
+-
+-If someone else agrees to label a subset, they are a genuine second opinion and
+-the protocol treats them as one — but only if they are independent:
+-
+-- label **independently**: do not look at Karan's file, and do not discuss
+-  specific items beforehand;
+-- use the same four columns, the same entity-class names, and the same
+-  "blank if unsure" rule;
+-- return the file named **`annotation_<yourname>.csv`** (e.g.
+-  `annotation_akash.csv`);
+-- tell Karan roughly how long it took.
+-
+-Karan then adds that name to `config.benchmark.second_raters` and re-runs
+-`ingest`. Until that config entry exists the file is ignored — with a warning,
+-and it is never deleted. Any item where the second rater differs goes to
+-adjudication rather than quietly validating.
++# Guidelines v3 — the P2-004 sheet (from 2026-09-26)
++
++> v3 adds the per-class sheet used for the Phase 2 benchmark. **Every v1 and v2
++> rule still holds unless a rule below replaces it.** The pilot files, including
++> the pilot retest `annotation_pilot_karan_pass2.csv`, keep the item-level
++> columns described above (`applies_to`, `applies_to_rationale`,
++> `differential_flag`, `notes`).
++
++## v3.1 Layout: one item row, then one row per compared class
++
++The P2-004 files are called `annotation_p2004_<name>.csv`. Each item takes
++several consecutive rows, and `row_type` says which kind a row is.
++
++| `row_type` | What it shows | What you fill in |
++|---|---|---|
++| `item` | `source_class`, `subject_family`, `source_paragraph_id`, and `source_span` (the obligation sentence(s), then the whole paragraph) | `applies_to`, `applies_to_rationale`, `not_obligation`, `note` |
++| `class` | `target_class` and `target_candidates`: two paragraphs from that class's Directions in the same subject family, each with its id in `[brackets]`, in random order | `judgement`, `matched_paragraph_id`, `note` |
++
++- An item has **up to 4** class rows.
++- Leave the other cells of a row blank.
++- **Don't edit any shown column, and don't reorder or delete rows.**
++- The paragraphs shown are candidates, not answers. Nothing on the sheet tells
++  you how they were found or how good a match they are.
++
++## v3.2 `applies_to` (item row): unchanged meaning, never derived
++
++Fill this in **exactly as in v1**: which regulated entity classes the obligation
++binds, judged from **the span's own text**.
++- Apply v2.1 (obligated party).
++- Use the v2.2 names: the 11 regulated classes, plus the two stand-ins
++  `Payment and Settlement System` and `Foreign Exchange Management`.
++- Separate names with `;`.
++- **Don't fill this in from the class rows.** A counterpart in another class's
++  Directions doesn't mean *this* sentence binds that class.
++- `applies_to_rationale`: one sentence, as in v1.
++
++## v3.3 `not_obligation` (item row)
++
++Use this if the span isn't an obligation, or if the duty falls on someone RBI
++doesn't regulate (v2.1):
++- Enter `yes` in `not_obligation`.
++- Leave `applies_to` and `applies_to_rationale` blank.
++- Write the reason in `note`. For v2.1, write exactly
++  `not an RE obligation — duty on <party>`; otherwise, for example,
++  `definitional, not an obligation`.
++- The item's class rows may stay blank.
++
++These items are **rejected**. They are left out of the benchmark size and
++reported as the candidate rejection rate.
++
++## v3.4 `judgement` (class row): one of four values
++
++| Value | Use when |
++|---|---|
++| `same` | The target class has the **same obligation in substance**, in a shown paragraph or one you looked up. |
++| `different` | **Same topic, but the requirement differs**: a different threshold, timeline, scope or carve-out. |
++| `none` | **No counterpart among the shown paragraphs and anything you looked up.** This covers only what you checked, not every Direction of that class. |
++| `unsure` | You can't tell. |
++
++**"Leave it blank if unsure" (v1) does not apply to this sheet.** Use `unsure`
++instead. Every class row of an obligation item needs a value, and a blank
++stops ingest.
++
++## v3.5 `matched_paragraph_id` (class row): the v2.3 citation for this sheet
++
++| Judgement | `matched_paragraph_id` |
++|---|---|
++| `same` / `different` | **Required.** The id of the paragraph that carries the counterpart, in the form `md_NNNNN::pNNNNN`. It can be one of the two shown, or any paragraph from a Direction of that target class (see v3.9). Give one id; if several apply, give the best one and list the others in `note`. |
++| `none` | Leave it blank. The shown ids are recorded automatically as `checked`. If you checked other paragraphs, add them to `note` as `checked: md_…::p…; md_…::p…`. |
++| `unsure` | Leave it blank. |
++
++For this sheet, corpus paragraph ids replace v2.3's restriction to
++`reference_directions.csv`. Ingest checks the id format and that the paragraph
++belongs to a Direction of the judged target class.
++
++## v3.6 `differential_flag` is derived, not entered
++
++The item's flag is computed from its class rows, in this order:
++
++1. any `different` → **`class-specific`**
++2. otherwise, any `same` → **`shared`** (the obligation also binds another class)
++3. all `none` → **`absent`**
++4. otherwise (only `none` and `unsure`) → **ambiguous**, sent to adjudication
++
++Any item with an `unsure` is also listed for adjudication, even when rule 1 or
++2 decides its flag.
++
++`absent` is limited to what was checked: the shown and cited paragraphs of the
++compared classes (at most 4 per item). If a class's Directions in this subject
++family have no candidate paragraphs at all, that class isn't shown or compared,
++and it never counts as `none`.
++
++## v3.7 Classes
++
++Compared classes, and every T1 metric, use the **11 regulated classes** only.
++The two stand-ins can appear in `applies_to` (v3.2); the report counts them
++separately.
++
++## v3.8 Blocks and minutes
++
++- Items come in **blocks of 20** (column `block`). Label them in order.
++- Log each block in `p2004_minutes.csv` **at the time** (`measured`, v2.6):
++  `rater, block, started_at, ended_at, minutes, note`.
++- Karan stops after block 1 for the checkpoint, which re-sizes the benchmark
++  from the measured minutes.
++
++## v3.9 Looking up other paragraphs (Karan, with the repo)
++
++```bash
++python scripts/run_t1.py lookup --paragraph md_13140::p00087
++python scripts/run_t1.py lookup --class "Small Finance Banks" --family "Know Your Customer" --query "video KYC"
++```
++
++Second raters without the repo can cite the shown ids, or an id from a
++Direction they have open.
++
++---
++
++## For a second rater (Akash, Meer)
++
++You are a genuine second opinion, and the protocol treats you as one, but only
++if you are independent:
++
++- **Label independently.** Don't look at Karan's file or each other's, and
++  don't discuss any item until all files are returned (v2.5).
++- **Start from your own blank file.** For P2-004 that is
++  `annotation_p2004_akash.csv` or `annotation_p2004_meer.csv`. It uses the v3
++  sheet layout below; read v3 before starting.
++- **No AI tools** (v2.5).
++- **Keep the filename** and return the file as CSV (UTF-8 is fine).
++- **Log your minutes** as you go, one line per sitting (v2.6), and send them
++  with the file.
++
++Your names are already in `config.benchmark.second_raters`. Any item where you
++differ from Karan goes to adjudication rather than quietly validating.
+ 

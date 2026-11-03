@@ -3,7 +3,7 @@ import { Link, NavLink, Outlet, useLocation } from "react-router-dom";
 import { Menu, Moon, Sun, X } from "lucide-react";
 import { useSettings } from "@/data/settings";
 import { Button, TooltipProvider } from "@/components/ui/primitives";
-import { NO_PROXY } from "@/lib/env";
+import { ARTIFACT, NO_PROXY } from "@/lib/env";
 import { cn } from "@/lib/utils";
 
 export const DEMO_NAV = [
@@ -43,6 +43,8 @@ export function DemoLayout() {
             </nav>
             <div className="ml-auto flex items-center gap-1">
               {!NO_PROXY && <Link to="/workspace" className="hidden rounded-md px-2 py-1 text-[12px] text-ink-3 hover:text-ink xl:inline">Research workspace →</Link>}
+              {NO_PROXY && <Link to="/rq" className="hidden rounded-md px-2 py-1 text-[13px] text-ink-2 hover:text-ink md:inline">Research</Link>}
+              {NO_PROXY && !ARTIFACT && <Link to="/auditgen" className="hidden rounded-md bg-accent px-2.5 py-1 text-[13px] font-medium text-white hover:opacity-90 dark:text-black md:inline">Audit generator</Link>}
               <Button variant="ghost" size="icon" aria-label="Toggle theme" onClick={() => st.setTheme(dark ? "light" : "dark")}>{dark ? <Sun size={16} /> : <Moon size={16} />}</Button>
               <Button variant="ghost" size="icon" className="lg:hidden" aria-label={open ? "Close menu" : "Open menu"} aria-expanded={open} onClick={() => setOpen(!open)}>{open ? <X size={18} /> : <Menu size={18} />}</Button>
             </div>
@@ -52,6 +54,8 @@ export function DemoLayout() {
               {DEMO_NAV.map((n) => (
                 <NavLink key={n.to} to={n.to} end={n.to === "/"} className={({ isActive }) => cn("block rounded-md px-2 py-2 text-[15px]", isActive ? "bg-panel-2 font-medium" : "text-ink-2")}>{n.label}</NavLink>
               ))}
+              {NO_PROXY && <Link to="/rq" className="block rounded-md px-2 py-2 text-[15px] text-ink-2">Research</Link>}
+              {NO_PROXY && !ARTIFACT && <Link to="/auditgen" className="block rounded-md px-2 py-2 text-[15px] font-medium text-accent">Audit generator</Link>}
             </nav>
           )}
         </header>

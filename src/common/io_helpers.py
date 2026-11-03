@@ -18,7 +18,7 @@ import enum
 import json
 import os
 import tempfile
-from pathlib import Path
+from pathlib import Path, PurePath
 from typing import Any, Iterable, Iterator
 
 from src.common.errors import IOFormatError
@@ -36,8 +36,8 @@ def _json_default(value: Any) -> Any:
     """
     if isinstance(value, (_dt.datetime, _dt.date, _dt.time)):
         return value.isoformat()
-    if isinstance(value, Path):
-        return str(value)
+    if isinstance(value, PurePath):
+        return value.as_posix()  # forward slashes on every OS, so files diff cleanly across machines
     if isinstance(value, enum.Enum):
         return value.value
     if isinstance(value, (set, frozenset, tuple)):

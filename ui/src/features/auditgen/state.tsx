@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { backendUp, live, replay } from "./api";
+import { backendUp, HOSTED, live, mine, replay } from "./api";
 import type { Pack, PackListItem } from "./types";
 
 export type Mode = "checking" | "live" | "replay";
@@ -14,9 +14,17 @@ interface Ctx {
   setPack: (p: Pack) => void;
   refreshList: () => Promise<void>;
   reload: () => Promise<void>;
+  /** Hosted service: remember a pack this browser generated or signed off (the service lists only the samples). */
+  track: (p: Pack) => void;
 }
 
 const AuditCtx = createContext<Ctx | null>(null);
+
+/** Live list: the backend's packs, plus (hosted service) the packs this browser generated, newest first. */
+async function livePacks(): Promise<PackListItem[]> {
+  const list = await live.packs();
+  return HOSTED ? [...mine.list(), ...list] : list;
+}
 
 export function AuditProvider({ children }: { children: React.ReactNode }) {
   const [mode, setMode] = useState<Mode>("checking");
@@ -27,7 +35,7 @@ export function AuditProvider({ children }: { children: React.ReactNode }) {
 
   const refreshList = useCallback(async () => {
     try {
-      setPacks(mode === "live" ? await live.packs() : mode === "replay" ? await replay.index() : []);
+      setPacks(mode === "live" ? await livePacks() : mode === "replay" ? await replay.index() : []);
     } catch (e) {
       setError((e as Error).message);
     }
@@ -63,7 +71,7 @@ export function AuditProvider({ children }: { children: React.ReactNode }) {
     let cancelled = false;
     void (async () => {
       try {
-        const list = mode === "live" ? await live.packs() : await replay.index();
+        const list = mode === "live" ? await livePacks() : await replay.index();
         if (cancelled) return;
         setPacks(list);
         if (!pack && list.length) await open(list.find((p) => p.kind !== "run") ?? list[0]);
@@ -75,8 +83,9 @@ export function AuditProvider({ children }: { children: React.ReactNode }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- load the list once per mode
   }, [mode]);
 
-  const value = useMemo(() => ({ mode, packs, pack, error, loading, open, setPack: setPackState, refreshList, reload }),
-    [mode, packs, pack, error, loading, open, refreshList, reload]);
+  const track = useCallback((p: Pack) => { if (HOSTED) mine.add(p); }, []);
+  const value = useMemo(() => ({ mode, packs, pack, error, loading, open, setPack: setPackState, refreshList, reload, track }),
+    [mode, packs, pack, error, loading, open, refreshList, reload, track]);
   return <AuditCtx.Provider value={value}>{children}</AuditCtx.Provider>;
 }
 

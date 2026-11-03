@@ -1,0 +1,17 @@
+{
+  "sample_size": 40,
+  "true_obligation": 31,
+  "not_obligation": 9,
+  "unjudged": 0,
+  "unreadable": [],
+  "precision": 0.775,
+  "wilson_95": [
+    0.6249660359590695,
+    0.8768404674532148
+  ],
+  "precision_stop_triggered": false,
+  "entity_classes_in_sample": 19,
+  "sample_path": "data/benchmark/candidates/t1_precision_sample_v2_labeled.csv",
+  "scored_at": "2026-09-25T18:22:17+00:00",
+  "basis": "scored from the hand-filled sample CSV"
+}

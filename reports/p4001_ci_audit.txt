@@ -1,0 +1,230 @@
+# Every CI in reports/p4001_system_and_ablations.md, with its label (labels recomputed from the printed bounds)
+L7    Summary                      | The class filter improves T2 retrieval: nDCG@10 ON − OFF t2_xclass_t1  | +0.451 [+0.421, +0.481] | excludes 0 (above) ok
+L7    Summary                      | lass_t1 +0.451 [+0.421, +0.481] (excludes 0 (above)), t2_xclass_p2002  | +0.423 [+0.336, +0.514] | excludes 0 (above) ok
+L7    Summary                      | ass_p2002 +0.423 [+0.336, +0.514] (excludes 0 (above)), t2_supp_p2003  | +0.171 [+0.072, +0.273] | excludes 0 (above) ok
+L8    Summary                      | ass filter shows no significant effect on T1 judgement: 3-way flag F1  | -0.049 [-0.133, +0.036] | does not exclude 0 ok
+L8    Summary                      | F1 -0.049 [-0.133, +0.036] (does not exclude 0) with the verifier on,  | -0.050 [-0.133, +0.027] | does not exclude 0 ok
+L9    Summary                      | - The verifier lowers T1 3-way flag F1 by                              | -0.068 [-0.132, -0.012] | excludes 0 (below) ok
+L9    Summary                      | ag F1 by -0.068 [-0.132, -0.012] (excludes 0 (below)) and coverage by  | -0.217 [-0.292, -0.142] | excludes 0 (below) ok
+L10   Summary                      | abels on collapsed F1 (the fair comparison): Class-blind LLM − P2-002  | -0.019 [-0.114, +0.072] | does not exclude 0 ok
+L10   Summary                      | 0.019 [-0.114, +0.072] (does not exclude 0); Class-aware LLM − P2-002  | +0.024 [-0.096, +0.135] | does not exclude 0 ok
+L10   Summary                      |  +0.024 [-0.096, +0.135] (does not exclude 0); Final agentic − P2-002  | -0.074 [-0.192, +0.036] | does not exclude 0 ok
+L10   Summary                      | -0.192, +0.036] (does not exclude 0); Class-blind + verifier − P2-002  | -0.089 [-0.186, +0.006] | does not exclude 0 ok
+L13   Summary                      | -blind and class-aware on both flag metrics (paired CIs: P2-002 3-way  | +0.057 [-0.044, +0.163] | does not exclude 0 ok
+L13   Summary                      |  P2-002 3-way +0.057 [-0.044, +0.163] (does not exclude 0), collapsed  | +0.045 [-0.093, +0.176] | does not exclude 0 ok
+L13   Summary                      | apsed +0.045 [-0.093, +0.176] (does not exclude 0); class-blind 3-way  | -0.097 [-0.197, +0.010] | does not exclude 0 ok
+L13   Summary                      | s-blind 3-way -0.097 [-0.197, +0.010] (does not exclude 0), collapsed  | +0.054 [-0.047, +0.159] | does not exclude 0 ok
+L13   Summary                      | apsed +0.054 [-0.047, +0.159] (does not exclude 0); class-aware 3-way  | -0.035 [-0.128, +0.063] | does not exclude 0 ok
+L13   Summary                      | s-aware 3-way -0.035 [-0.128, +0.063] (does not exclude 0), collapsed  | +0.023 [-0.088, +0.142] | does not exclude 0 ok
+L13   Summary                      | 88, +0.142] (does not exclude 0)), matches final agentic on 3-way F1 ( | +0.030 [-0.067, +0.129] | does not exclude 0 ok
+L13   Summary                      | .030 [-0.067, +0.129] (does not exclude 0)), and beats final agentic ( | +0.126 [+0.016, +0.240] | excludes 0 (above) ok
+L13   Summary                      | 26 [+0.016, +0.240] (excludes 0 (above))) and class-blind + verifier ( | +0.127 [+0.018, +0.234] | excludes 0 (above) ok
+L19   Ablation table               | A                                                                      | 0.483 [0.385, 0.568] | estimate (no 0-test) 
+L19   Ablation table               | A                                                                      | 0.532 [0.431, 0.625] | estimate (no 0-test) 
+L19   Ablation table               | A                                                                      | -0.049 [-0.133, +0.036] | does not exclude 0 ok
+L20   Ablation table               | A                                                                      | 0.710 [0.590, 0.815] | estimate (no 0-test) 
+L20   Ablation table               | A                                                                      | 0.695 [0.572, 0.802] | estimate (no 0-test) 
+L20   Ablation table               | A                                                                      | +0.015 [-0.059, +0.082] | does not exclude 0 ok
+L21   Ablation table               | A                                                                      | 0.894 [0.866, 0.923] | estimate (no 0-test) 
+L21   Ablation table               | A                                                                      | 0.443 [0.410, 0.478] | estimate (no 0-test) 
+L21   Ablation table               | A                                                                      | +0.451 [+0.421, +0.481] | excludes 0 (above) ok
+L22   Ablation table               | A                                                                      | 0.741 [0.634, 0.848] | estimate (no 0-test) 
+L22   Ablation table               | A                                                                      | 0.319 [0.233, 0.411] | estimate (no 0-test) 
+L22   Ablation table               | A                                                                      | +0.423 [+0.336, +0.514] | excludes 0 (above) ok
+L23   Ablation table               | A                                                                      | 0.675 [0.527, 0.814] | estimate (no 0-test) 
+L23   Ablation table               | A                                                                      | 0.504 [0.349, 0.666] | estimate (no 0-test) 
+L23   Ablation table               | A                                                                      | +0.171 [+0.072, +0.273] | excludes 0 (above) ok
+L24   Ablation table               | B                                                                      | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L24   Ablation table               | B                                                                      | 0.538 [0.404, 0.673] | estimate (no 0-test) 
+L24   Ablation table               | B                                                                      | +0.462 [+0.327, +0.596] | excludes 0 (above) ok
+L25   Ablation table               | B                                                                      | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L25   Ablation table               | B                                                                      | 0.000 [0.0000, 0.0000] | estimate (no 0-test) 
+L25   Ablation table               | B                                                                      | +1.000 [+1.000, +1.000] | excludes 0 (above) ok
+L26   Ablation table               | C                                                                      | 0.483 [0.385, 0.568] | estimate (no 0-test) 
+L26   Ablation table               | C                                                                      | 0.551 [0.445, 0.639] | estimate (no 0-test) 
+L26   Ablation table               | C                                                                      | -0.068 [-0.132, -0.012] | excludes 0 (below) ok
+L27   Ablation table               | C                                                                      | 0.774 [0.689, 0.849] | estimate (no 0-test) 
+L27   Ablation table               | C                                                                      | 0.991 [0.972, 1.000] | estimate (no 0-test) 
+L27   Ablation table               | C                                                                      | -0.217 [-0.292, -0.142] | excludes 0 (below) ok
+L28   Ablation table               | C                                                                      | 0.000 [0.0000, 0.0000] | estimate (no 0-test) 
+L28   Ablation table               | C                                                                      | 0.382 [0.214, 0.552] | estimate (no 0-test) 
+L28   Ablation table               | C                                                                      | -0.382 [-0.552, -0.214] | excludes 0 (below) ok
+L29   Ablation table               | C                                                                      | 0.393 [0.214, 0.571] | estimate (no 0-test) 
+L29   Ablation table               | C                                                                      | 0.000 [0.0000, 0.0000] | estimate (no 0-test) 
+L29   Ablation table               | C                                                                      | +0.393 [+0.214, +0.571] | excludes 0 (above) ok
+L30   Ablation table               | C                                                                      | 0.296 [0.223, 0.376] | estimate (no 0-test) 
+L30   Ablation table               | C                                                                      | 0.350 [0.286, 0.412] | estimate (no 0-test) 
+L30   Ablation table               | C                                                                      | -0.055 [-0.121, +0.015] | does not exclude 0 ok
+L38   T1 (validated set, 106 items | Majority (in-sample)                                                   | 0.219 [0.186, 0.246] | estimate (no 0-test) 
+L38   T1 (validated set, 106 items | Majority (in-sample)                                                   | 0.465 [0.445, 0.483] | estimate (no 0-test) 
+L38   T1 (validated set, 106 items | Majority (in-sample)                                                   | 0.227 [0.202, 0.248] | estimate (no 0-test) 
+L38   T1 (validated set, 106 items | Majority (in-sample)                                                   | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L39   T1 (validated set, 106 items | P2-002 candidates (dense within-family)                                | 0.459 [0.381, 0.520] | estimate (no 0-test) 
+L39   T1 (validated set, 106 items | P2-002 candidates (dense within-family)                                | 0.784 [0.671, 0.877] | estimate (no 0-test) 
+L39   T1 (validated set, 106 items | P2-002 candidates (dense within-family)                                | 0.550 [0.512, 0.583] | estimate (no 0-test) 
+L39   T1 (validated set, 106 items | P2-002 candidates (dense within-family)                                | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L40   T1 (validated set, 106 items | Class-blind LLM                                                        | 0.602 [0.497, 0.700] | estimate (no 0-test) 
+L40   T1 (validated set, 106 items | Class-blind LLM                                                        | 0.766 [0.647, 0.873] | estimate (no 0-test) 
+L40   T1 (validated set, 106 items | Class-blind LLM                                                        | 0.664 [0.597, 0.726] | estimate (no 0-test) 
+L40   T1 (validated set, 106 items | Class-blind LLM                                                        | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L41   T1 (validated set, 106 items | Class-aware LLM                                                        | 0.551 [0.445, 0.639] | estimate (no 0-test) 
+L41   T1 (validated set, 106 items | Class-aware LLM                                                        | 0.808 [0.685, 0.908] | estimate (no 0-test) 
+L41   T1 (validated set, 106 items | Class-aware LLM                                                        | 0.609 [0.553, 0.667] | estimate (no 0-test) 
+L41   T1 (validated set, 106 items | Class-aware LLM                                                        | 0.991 [0.972, 1.000] | estimate (no 0-test) 
+L42   T1 (validated set, 106 items | Final agentic                                                          | 0.483 [0.385, 0.568] | estimate (no 0-test) 
+L42   T1 (validated set, 106 items | Final agentic                                                          | 0.710 [0.590, 0.815] | estimate (no 0-test) 
+L42   T1 (validated set, 106 items | Final agentic                                                          | 0.521 [0.470, 0.570] | estimate (no 0-test) 
+L42   T1 (validated set, 106 items | Final agentic                                                          | 0.774 [0.689, 0.849] | estimate (no 0-test) 
+L43   T1 (validated set, 106 items | Class-blind + verifier (ablation A)                                    | 0.532 [0.431, 0.625] | estimate (no 0-test) 
+L43   T1 (validated set, 106 items | Class-blind + verifier (ablation A)                                    | 0.695 [0.572, 0.802] | estimate (no 0-test) 
+L43   T1 (validated set, 106 items | Class-blind + verifier (ablation A)                                    | 0.578 [0.520, 0.639] | estimate (no 0-test) 
+L43   T1 (validated set, 106 items | Class-blind + verifier (ablation A)                                    | 0.792 [0.708, 0.868] | estimate (no 0-test) 
+L44   T1 (validated set, 106 items | Long-context LLM                                                       | 0.509 [0.408, 0.600] | estimate (no 0-test) 
+L44   T1 (validated set, 106 items | Long-context LLM                                                       | 0.819 [0.691, 0.917] | estimate (no 0-test) 
+L44   T1 (validated set, 106 items | Long-context LLM                                                       | 0.551 [0.496, 0.604] | estimate (no 0-test) 
+L44   T1 (validated set, 106 items | Long-context LLM                                                       | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L50   T1 (validated set, 106 items | Ablation A (verifier on): final agentic − class-blind + verifier       | -0.049 [-0.133, +0.036] | does not exclude 0 ok
+L50   T1 (validated set, 106 items | Ablation A (verifier on): final agentic − class-blind + verifier       | +0.015 [-0.059, +0.082] | does not exclude 0 ok
+L50   T1 (validated set, 106 items | Ablation A (verifier on): final agentic − class-blind + verifier       | -0.019 [-0.075, +0.038] | does not exclude 0 ok
+L51   T1 (validated set, 106 items | Class filter, no verifier: class-aware − class-blind                   | -0.050 [-0.133, +0.027] | does not exclude 0 ok
+L51   T1 (validated set, 106 items | Class filter, no verifier: class-aware − class-blind                   | +0.043 [-0.030, +0.109] | does not exclude 0 ok
+L51   T1 (validated set, 106 items | Class filter, no verifier: class-aware − class-blind                   | -0.009 [-0.028, +0.0000] | does not exclude 0 ok
+L52   T1 (validated set, 106 items | Ablation C on T1: final agentic − class-aware                          | -0.068 [-0.132, -0.012] | excludes 0 (below) ok
+L52   T1 (validated set, 106 items | Ablation C on T1: final agentic − class-aware                          | -0.099 [-0.151, -0.053] | excludes 0 (below) ok
+L52   T1 (validated set, 106 items | Ablation C on T1: final agentic − class-aware                          | -0.217 [-0.292, -0.142] | excludes 0 (below) ok
+L53   T1 (validated set, 106 items | Verifier, class-blind: ablation A − class-blind                        | -0.069 [-0.129, -0.014] | excludes 0 (below) ok
+L53   T1 (validated set, 106 items | Verifier, class-blind: ablation A − class-blind                        | -0.071 [-0.105, -0.041] | excludes 0 (below) ok
+L53   T1 (validated set, 106 items | Verifier, class-blind: ablation A − class-blind                        | -0.208 [-0.292, -0.132] | excludes 0 (below) ok
+L54   T1 (validated set, 106 items | Class-blind LLM − P2-002 candidates                                    | +0.143 [+0.054, +0.232] | excludes 0 (above) ok
+L54   T1 (validated set, 106 items | Class-blind LLM − P2-002 candidates                                    | -0.019 [-0.114, +0.072] | does not exclude 0 ok
+L54   T1 (validated set, 106 items | Class-blind LLM − P2-002 candidates                                    | +0.000 [+0.0000, +0.0000] | does not exclude 0 ok
+L55   T1 (validated set, 106 items | Class-aware LLM − P2-002 candidates                                    | +0.092 [-0.002, +0.183] | does not exclude 0 ok
+L55   T1 (validated set, 106 items | Class-aware LLM − P2-002 candidates                                    | +0.024 [-0.096, +0.135] | does not exclude 0 ok
+L55   T1 (validated set, 106 items | Class-aware LLM − P2-002 candidates                                    | -0.009 [-0.028, +0.0000] | does not exclude 0 ok
+L56   T1 (validated set, 106 items | Final agentic − P2-002 candidates                                      | +0.024 [-0.058, +0.106] | does not exclude 0 ok
+L56   T1 (validated set, 106 items | Final agentic − P2-002 candidates                                      | -0.074 [-0.192, +0.036] | does not exclude 0 ok
+L56   T1 (validated set, 106 items | Final agentic − P2-002 candidates                                      | -0.226 [-0.311, -0.151] | excludes 0 (below) ok
+L57   T1 (validated set, 106 items | Class-blind + verifier − P2-002 candidates                             | +0.073 [-0.006, +0.157] | does not exclude 0 ok
+L57   T1 (validated set, 106 items | Class-blind + verifier − P2-002 candidates                             | -0.089 [-0.186, +0.006] | does not exclude 0 ok
+L57   T1 (validated set, 106 items | Class-blind + verifier − P2-002 candidates                             | -0.208 [-0.292, -0.132] | excludes 0 (below) ok
+L58   T1 (validated set, 106 items | Long-context − majority (same items)                                   | +0.290 [+0.188, +0.376] | excludes 0 (above) ok
+L58   T1 (validated set, 106 items | Long-context − majority (same items)                                   | +0.353 [+0.212, +0.454] | excludes 0 (above) ok
+L58   T1 (validated set, 106 items | Long-context − majority (same items)                                   | +0.000 [+0.0000, +0.0000] | does not exclude 0 ok
+L59   T1 (validated set, 106 items | Long-context − P2-002 candidates (same items)                          | +0.057 [-0.044, +0.163] | does not exclude 0 ok
+L59   T1 (validated set, 106 items | Long-context − P2-002 candidates (same items)                          | +0.045 [-0.093, +0.176] | does not exclude 0 ok
+L59   T1 (validated set, 106 items | Long-context − P2-002 candidates (same items)                          | +0.000 [+0.0000, +0.0000] | does not exclude 0 ok
+L60   T1 (validated set, 106 items | Long-context − class-blind (same items)                                | -0.097 [-0.197, +0.010] | does not exclude 0 ok
+L60   T1 (validated set, 106 items | Long-context − class-blind (same items)                                | +0.054 [-0.047, +0.159] | does not exclude 0 ok
+L60   T1 (validated set, 106 items | Long-context − class-blind (same items)                                | +0.000 [+0.0000, +0.0000] | does not exclude 0 ok
+L61   T1 (validated set, 106 items | Long-context − class-aware (same items)                                | -0.035 [-0.128, +0.063] | does not exclude 0 ok
+L61   T1 (validated set, 106 items | Long-context − class-aware (same items)                                | +0.023 [-0.088, +0.142] | does not exclude 0 ok
+L61   T1 (validated set, 106 items | Long-context − class-aware (same items)                                | +0.010 [+0.0000, +0.039] | does not exclude 0 ok
+L62   T1 (validated set, 106 items | Long-context − final agentic (same items)                              | +0.030 [-0.067, +0.129] | does not exclude 0 ok
+L62   T1 (validated set, 106 items | Long-context − final agentic (same items)                              | +0.126 [+0.016, +0.240] | excludes 0 (above) ok
+L62   T1 (validated set, 106 items | Long-context − final agentic (same items)                              | +0.235 [+0.157, +0.324] | excludes 0 (above) ok
+L63   T1 (validated set, 106 items | Long-context − class-blind + verifier (same items)                     | -0.020 [-0.131, +0.094] | does not exclude 0 ok
+L63   T1 (validated set, 106 items | Long-context − class-blind + verifier (same items)                     | +0.127 [+0.018, +0.234] | excludes 0 (above) ok
+L63   T1 (validated set, 106 items | Long-context − class-blind + verifier (same items)                     | +0.216 [+0.137, +0.294] | excludes 0 (above) ok
+L65   T1 (validated set, 106 items | 100,000-token cap (D10). 102 of 106 items scored. 3-way flag Macro-F1  | 0.509 [0.408, 0.600] | estimate (no 0-test) 
+L71   T1 (validated set, 106 items | Majority (in-sample)                                                   | 0.219 [0.188, 0.247] | estimate (no 0-test) 
+L71   T1 (validated set, 106 items | Majority (in-sample)                                                   | 0.466 [0.446, 0.482] | estimate (no 0-test) 
+L71   T1 (validated set, 106 items | Majority (in-sample)                                                   | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L72   T1 (validated set, 106 items | P2-002 candidates (dense within-family)                                | 0.452 [0.371, 0.515] | estimate (no 0-test) 
+L72   T1 (validated set, 106 items | P2-002 candidates (dense within-family)                                | 0.774 [0.658, 0.873] | estimate (no 0-test) 
+L72   T1 (validated set, 106 items | P2-002 candidates (dense within-family)                                | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L73   T1 (validated set, 106 items | Class-blind LLM                                                        | 0.606 [0.491, 0.700] | estimate (no 0-test) 
+L73   T1 (validated set, 106 items | Class-blind LLM                                                        | 0.765 [0.635, 0.868] | estimate (no 0-test) 
+L73   T1 (validated set, 106 items | Class-blind LLM                                                        | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L74   T1 (validated set, 106 items | Class-aware LLM                                                        | 0.544 [0.431, 0.641] | estimate (no 0-test) 
+L74   T1 (validated set, 106 items | Class-aware LLM                                                        | 0.796 [0.658, 0.902] | estimate (no 0-test) 
+L74   T1 (validated set, 106 items | Class-aware LLM                                                        | 0.990 [0.961, 1.000] | estimate (no 0-test) 
+L75   T1 (validated set, 106 items | Final agentic                                                          | 0.479 [0.377, 0.575] | estimate (no 0-test) 
+L75   T1 (validated set, 106 items | Final agentic                                                          | 0.693 [0.559, 0.808] | estimate (no 0-test) 
+L75   T1 (validated set, 106 items | Final agentic                                                          | 0.765 [0.676, 0.843] | estimate (no 0-test) 
+L76   T1 (validated set, 106 items | Class-blind + verifier (ablation A)                                    | 0.529 [0.421, 0.627] | estimate (no 0-test) 
+L76   T1 (validated set, 106 items | Class-blind + verifier (ablation A)                                    | 0.692 [0.556, 0.800] | estimate (no 0-test) 
+L76   T1 (validated set, 106 items | Class-blind + verifier (ablation A)                                    | 0.784 [0.706, 0.863] | estimate (no 0-test) 
+L77   T1 (validated set, 106 items | Long-context LLM                                                       | 0.509 [0.408, 0.600] | estimate (no 0-test) 
+L77   T1 (validated set, 106 items | Long-context LLM                                                       | 0.819 [0.691, 0.917] | estimate (no 0-test) 
+L77   T1 (validated set, 106 items | Long-context LLM                                                       | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L88   T1 (validated set, 106 items | tion C, reported as is). Final agentic − class-aware: 3-way flag F1    | -0.068 [-0.132, -0.012] | excludes 0 (below) ok
+L88   T1 (validated set, 106 items |  3-way flag F1 -0.068 [-0.132, -0.012] (excludes 0 (below)), coverage  | -0.217 [-0.292, -0.142] | excludes 0 (below) ok
+L105  T2 (retrieval stage, no LLM) | t2_xclass_t1 (favours dense)                                           | 0.894 [0.866, 0.923] | estimate (no 0-test) 
+L105  T2 (retrieval stage, no LLM) | t2_xclass_t1 (favours dense)                                           | 0.443 [0.410, 0.478] | estimate (no 0-test) 
+L105  T2 (retrieval stage, no LLM) | t2_xclass_t1 (favours dense)                                           | +0.451 [+0.421, +0.481] | excludes 0 (above) ok
+L106  T2 (retrieval stage, no LLM) | t2_xclass_p2002 (favours dense)                                        | 0.741 [0.634, 0.848] | estimate (no 0-test) 
+L106  T2 (retrieval stage, no LLM) | t2_xclass_p2002 (favours dense)                                        | 0.319 [0.233, 0.411] | estimate (no 0-test) 
+L106  T2 (retrieval stage, no LLM) | t2_xclass_p2002 (favours dense)                                        | +0.423 [+0.336, +0.514] | excludes 0 (above) ok
+L107  T2 (retrieval stage, no LLM) | t2_supp_p2003 (favours BM25)                                           | 0.675 [0.527, 0.814] | estimate (no 0-test) 
+L107  T2 (retrieval stage, no LLM) | t2_supp_p2003 (favours BM25)                                           | 0.504 [0.349, 0.666] | estimate (no 0-test) 
+L107  T2 (retrieval stage, no LLM) | t2_supp_p2003 (favours BM25)                                           | +0.171 [+0.072, +0.273] | excludes 0 (above) ok
+L121  T3 (temporal: 60 items built | ON                                                                     | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L121  T3 (temporal: 60 items built | ON                                                                     | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L122  T3 (temporal: 60 items built | OFF                                                                    | 0.538 [0.404, 0.673] | estimate (no 0-test) 
+L122  T3 (temporal: 60 items built | OFF                                                                    | 0.000 [0.0000, 0.0000] | estimate (no 0-test) 
+L124  T3 (temporal: 60 items built | ON − OFF: status exact match                                           | +0.462 [+0.327, +0.596] | excludes 0 (above) ok
+L124  T3 (temporal: 60 items built | t match +0.462 [+0.327, +0.596] (excludes 0 (above)); supersession F1  | +1.000 [+1.000, +1.000] | excludes 0 (above) ok
+L128  T3 (temporal: 60 items built | d: {'earlier_of_date_or_adoption': 6}; n = 46): status exact match ON  | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L128  T3 (temporal: 60 items built | tion': 6}; n = 46): status exact match ON 1.000 [1.000, 1.000] vs OFF  | 0.543 [0.391, 0.696] | estimate (no 0-test) 
+L128  T3 (temporal: 60 items built | t match ON 1.000 [1.000, 1.000] vs OFF 0.543 [0.391, 0.696], ON − OFF  | +0.457 [+0.304, +0.609] | excludes 0 (above) ok
+L128  T3 (temporal: 60 items built |  OFF +0.457 [+0.304, +0.609] (excludes 0 (above)); supersession F1 ON  | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L128  T3 (temporal: 60 items built |  (excludes 0 (above)); supersession F1 ON 1.000 [1.000, 1.000] vs OFF  | 0.000 [0.0000, 0.0000] | estimate (no 0-test) 
+L128  T3 (temporal: 60 items built | on F1 ON 1.000 [1.000, 1.000] vs OFF 0.000 [0.0000, 0.0000], ON − OFF  | +1.000 [+1.000, +1.000] | excludes 0 (above) ok
+L138  T4 ablation C (verifier ON v | he same questions with the verifier OFF: unsupported-sentence rate ON  | 0.000 [0.0000, 0.0000] | estimate (no 0-test) 
+L138  T4 ablation C (verifier ON v | ifier OFF: unsupported-sentence rate ON 0.000 [0.0000, 0.0000] vs OFF  | 0.129 [0.0000, 0.300] | estimate (no 0-test) 
+L138  T4 ablation C (verifier ON v | rate ON 0.000 [0.0000, 0.0000] vs OFF 0.129 [0.0000, 0.300], ON − OFF  | -0.129 [-0.300, +0.0000] | does not exclude 0 ok
+L138  T4 ablation C (verifier ON v | 0, +0.0000] (does not exclude 0) (ON is 0 by construction); RePASs ON  | 0.421 [0.337, 0.504] | estimate (no 0-test) 
+L138  T4 ablation C (verifier ON v | e 0) (ON is 0 by construction); RePASs ON 0.421 [0.337, 0.504] vs OFF  | 0.381 [0.303, 0.457] | estimate (no 0-test) 
+L138  T4 ablation C (verifier ON v |  RePASs ON 0.421 [0.337, 0.504] vs OFF 0.381 [0.303, 0.457], ON − OFF  | +0.040 [+0.0000, +0.113] | does not exclude 0 ok
+L142  T4 ablation C (verifier ON v | Unsupported-sentence rate (NLI proxy)                                  | 0.000 [0.0000, 0.0000] | estimate (no 0-test) 
+L142  T4 ablation C (verifier ON v | Unsupported-sentence rate (NLI proxy)                                  | 0.382 [0.214, 0.552] | estimate (no 0-test) 
+L142  T4 ablation C (verifier ON v | Unsupported-sentence rate (NLI proxy)                                  | -0.382 [-0.552, -0.214] | excludes 0 (below) ok
+L142  T4 ablation C (verifier ON v | Unsupported-sentence rate (NLI proxy)                                  | -0.386 [-0.552, -0.219] | excludes 0 (below) ok
+L143  T4 ablation C (verifier ON v | Abstention rate                                                        | 0.393 [0.214, 0.571] | estimate (no 0-test) 
+L143  T4 ablation C (verifier ON v | Abstention rate                                                        | 0.000 [0.0000, 0.0000] | estimate (no 0-test) 
+L143  T4 ablation C (verifier ON v | Abstention rate                                                        | +0.393 [+0.214, +0.571] | excludes 0 (above) ok
+L143  T4 ablation C (verifier ON v | Abstention rate                                                        | +0.400 [+0.233, +0.567] | excludes 0 (above) ok
+L144  T4 ablation C (verifier ON v | RePASs composite                                                       | 0.296 [0.223, 0.376] | estimate (no 0-test) 
+L144  T4 ablation C (verifier ON v | RePASs composite                                                       | 0.350 [0.286, 0.412] | estimate (no 0-test) 
+L144  T4 ablation C (verifier ON v | RePASs composite                                                       | -0.055 [-0.121, +0.015] | does not exclude 0 ok
+L144  T4 ablation C (verifier ON v | RePASs composite                                                       | -0.060 [-0.121, +0.010] | does not exclude 0 ok
+L255  Deviations and additions (lo | lready been computed and displayed in Claude's session (3-way flag F1  | 0.515 [0.374, 0.626] | estimate (no 0-test) 
+L265  Appendix: long-context at th | Long-context LLM, 150K cap (superseded)                                | 0.515 [0.374, 0.626] | estimate (no 0-test) 
+L265  Appendix: long-context at th | Long-context LLM, 150K cap (superseded)                                | 0.866 [0.664, 1.000] | estimate (no 0-test) 
+L265  Appendix: long-context at th | Long-context LLM, 150K cap (superseded)                                | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L266  Appendix: long-context at th | Majority (in-sample)                                                   | 0.206 [0.153, 0.249] | estimate (no 0-test) 
+L266  Appendix: long-context at th | Majority (in-sample)                                                   | 0.472 [0.440, 0.495] | estimate (no 0-test) 
+L266  Appendix: long-context at th | Majority (in-sample)                                                   | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L267  Appendix: long-context at th | P2-002 candidates (dense within-family)                                | 0.464 [0.328, 0.553] | estimate (no 0-test) 
+L267  Appendix: long-context at th | P2-002 candidates (dense within-family)                                | 0.802 [0.598, 0.949] | estimate (no 0-test) 
+L267  Appendix: long-context at th | P2-002 candidates (dense within-family)                                | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L268  Appendix: long-context at th | Class-blind LLM                                                        | 0.631 [0.465, 0.770] | estimate (no 0-test) 
+L268  Appendix: long-context at th | Class-blind LLM                                                        | 0.774 [0.570, 0.925] | estimate (no 0-test) 
+L268  Appendix: long-context at th | Class-blind LLM                                                        | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L269  Appendix: long-context at th | Class-aware LLM                                                        | 0.560 [0.403, 0.696] | estimate (no 0-test) 
+L269  Appendix: long-context at th | Class-aware LLM                                                        | 0.802 [0.598, 0.936] | estimate (no 0-test) 
+L269  Appendix: long-context at th | Class-aware LLM                                                        | 1.000 [1.000, 1.000] | estimate (no 0-test) 
+L270  Appendix: long-context at th | Final agentic                                                          | 0.518 [0.370, 0.642] | estimate (no 0-test) 
+L270  Appendix: long-context at th | Final agentic                                                          | 0.658 [0.452, 0.814] | estimate (no 0-test) 
+L270  Appendix: long-context at th | Final agentic                                                          | 0.766 [0.638, 0.872] | estimate (no 0-test) 
+L271  Appendix: long-context at th | Class-blind + verifier (ablation A)                                    | 0.502 [0.353, 0.617] | estimate (no 0-test) 
+L271  Appendix: long-context at th | Class-blind + verifier (ablation A)                                    | 0.666 [0.461, 0.821] | estimate (no 0-test) 
+L271  Appendix: long-context at th | Class-blind + verifier (ablation A)                                    | 0.723 [0.596, 0.851] | estimate (no 0-test) 
+L277  Appendix: long-context at th | Long-context (150K) − Majority (in-sample)                             | +0.309 [+0.163, +0.411] | excludes 0 (above) ok
+L277  Appendix: long-context at th | Long-context (150K) − Majority (in-sample)                             | +0.394 [+0.175, +0.534] | excludes 0 (above) ok
+L277  Appendix: long-context at th | Long-context (150K) − Majority (in-sample)                             | +0.000 [+0.0000, +0.0000] | does not exclude 0 ok
+L278  Appendix: long-context at th | Long-context (150K) − P2-002 candidates (dense within-family)          | +0.052 [-0.021, +0.145] | does not exclude 0 ok
+L278  Appendix: long-context at th | Long-context (150K) − P2-002 candidates (dense within-family)          | +0.064 [-0.061, +0.200] | does not exclude 0 ok
+L278  Appendix: long-context at th | Long-context (150K) − P2-002 candidates (dense within-family)          | +0.000 [+0.0000, +0.0000] | does not exclude 0 ok
+L279  Appendix: long-context at th | Long-context (150K) − Class-blind LLM                                  | -0.116 [-0.223, -0.0003] | excludes 0 (below) ok
+L279  Appendix: long-context at th | Long-context (150K) − Class-blind LLM                                  | +0.092 [+0.0000, +0.204] | does not exclude 0 ok
+L279  Appendix: long-context at th | Long-context (150K) − Class-blind LLM                                  | +0.000 [+0.0000, +0.0000] | does not exclude 0 ok
+L280  Appendix: long-context at th | Long-context (150K) − Class-aware LLM                                  | -0.045 [-0.149, +0.050] | does not exclude 0 ok
+L280  Appendix: long-context at th | Long-context (150K) − Class-aware LLM                                  | +0.064 [-0.054, +0.200] | does not exclude 0 ok
+L280  Appendix: long-context at th | Long-context (150K) − Class-aware LLM                                  | +0.000 [+0.0000, +0.0000] | does not exclude 0 ok
+L281  Appendix: long-context at th | Long-context (150K) − Final agentic                                    | -0.002 [-0.096, +0.093] | does not exclude 0 ok
+L281  Appendix: long-context at th | Long-context (150K) − Final agentic                                    | +0.208 [+0.099, +0.349] | excludes 0 (above) ok
+L281  Appendix: long-context at th | Long-context (150K) − Final agentic                                    | +0.234 [+0.128, +0.362] | excludes 0 (above) ok
+L282  Appendix: long-context at th | Long-context (150K) − Class-blind + verifier (ablation A)              | +0.013 [-0.092, +0.135] | does not exclude 0 ok
+L282  Appendix: long-context at th | Long-context (150K) − Class-blind + verifier (ablation A)              | +0.200 [+0.099, +0.334] | excludes 0 (above) ok
+L282  Appendix: long-context at th | Long-context (150K) − Class-blind + verifier (ablation A)              | +0.277 [+0.149, +0.404] | excludes 0 (above) ok

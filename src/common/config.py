@@ -8,7 +8,7 @@ parallel branches drift apart without noticing, so it is not offered.
 
 from __future__ import annotations
 
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any, Mapping
 
 import yaml
@@ -78,6 +78,11 @@ def get_required(cfg: Mapping[str, Any], dotted: str) -> Any:
     return value
 
 
+def _is_absolute_anywhere(raw: str) -> bool:
+    """Absolute on either OS: "/kaggle/input/raw" is rejected on Windows, "C:\\data" on Linux."""
+    return PurePosixPath(raw).is_absolute() or PureWindowsPath(raw).is_absolute()
+
+
 def validate_config(cfg: Any) -> list[str]:
     """Return every validation problem found. Empty list means the config is valid."""
     errors: list[str] = []
@@ -98,7 +103,7 @@ def validate_config(cfg: Any) -> list[str]:
                 errors.append(f"missing path key: paths.{key}")
             elif not paths[key] or not isinstance(paths[key], str):
                 errors.append(f"path key must be a non-empty string: paths.{key}")
-            elif Path(paths[key]).is_absolute():
+            elif _is_absolute_anywhere(paths[key]):
                 errors.append(
                     f"path key must be relative, not absolute: paths.{key}={paths[key]!r} "
                     "(absolute roots come from environment.<mode>, not paths)"

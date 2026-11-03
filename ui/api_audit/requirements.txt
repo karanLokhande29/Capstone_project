@@ -1,0 +1,12 @@
+# Hosted audit generator (Azure Functions, Python 3.12). Generation and exports: pyyaml, numpy, openpyxl, python-docx,
+# reportlab. AI: onnxruntime + tokenizers (bge and NLI in ONNX); Gemini is called over REST with the standard library.
+azure-functions
+azure-storage-blob
+pyyaml
+numpy
+openpyxl
+python-docx
+reportlab
+onnxruntime
+tokenizers
+requests

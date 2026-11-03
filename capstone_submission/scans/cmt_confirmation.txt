@@ -1,0 +1,31 @@
+From: Microsoft CMT <noreply@msr-cmt.org>
+Date: 10 Oct 2026, 23:48
+To: karanlokhande2005@gmail.com
+
+Hello,
+
+The following submission has been edited.
+
+Track Name: AISIGHSD2026
+Paper ID: 1954
+Paper Title: Same Subject, Different Duties: RBI-ObliBench for Differential Obligations across Entity Classes
+
+Abstract:
+Regulated entities in India follow parallel Master Directions issued by the Reserve Bank of India (RBI) for each entity class, and the same duty often recurs across classes with a different threshold, deadline or scope. Existing regulatory QA evaluations emphasise passage retrieval and answer faithfulness, not whether a system can state how a counterpart differs. RBI-ObliBench targets this gap. Built on 381 Master Directions (76,188 paragraphs, 11 regulated entity classes), it defines four tasks: entity-class applicability and differential obligation (T1, 106 items with single-annotator gold labels), cross-class counterpart retrieval (T2), temporal status (T3) and an audit of the RePASs faithfulness metric (T4). A class filter raises counterpart nDCG@10 from 0.443 to 0.894 (partly by construction), yet none of five free-form LLM systems significantly beats an embedding-matching baseline on collapsed T1 flag F1. All five miss 56 of 78 gold different judgements, mostly with the counterpart already in context. A pairwise structured comparator, frozen before any T1 run, recovers 26 of these and reaches different F1 0.409. An NLI verifier lowers T1 F1, and a long-context model is competitive with retrieval. T3 serves as a circular consistency diagnostic. RePASs rewards verbatim concatenation on RBI text, and an exploratory repair loses agreement with human faithfulness ratings. Retrieval accuracy alone therefore does not measure cross-class obligation reasoning.
+
+Created on: Sat, 10 Oct 2026 17:29:04 GMT
+Last Modified: Sat, 10 Oct 2026 18:18:28 GMT
+
+Authors:
+  - meer.magia@gmail.com (Primary)
+  - karanlokhande2005@gmail.com
+  - goyalakashwork@gmail.com
+  - jish.joy@nmims.edu
+  - himadeepthi.vankayalapati@nmims.edu
+
+Secondary Subject Areas: Not Entered
+Submission Files: RBI-ObliBench.pdf (490 Kb, Sat, 10 Oct 2026 18:18:17 GMT)
+Submission Questions Response: Not Entered
+
+Thanks,
+CMT team.

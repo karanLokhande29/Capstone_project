@@ -19,7 +19,7 @@ const hero = encodeURIComponent(home.hero.id);
 const PAGES: [string, RegExp][] = [
   ["/", /These two rules look the same/], ["/cases", /412 expert-labelled comparisons/], ["/cases/failures", /Where do the models fail/],
   ["/cases/play", /Can you spot the difference/], ["/cases/atlas", /Which institution types have a Direction/], [`/case/${hero}`, /field by field/],
-  ["/lab", /Run the frozen comparator yourself/], ["/lab/paste", /Do not paste confidential or internal text/], ["/lab/edit", /control-run gate/],
+  ["/lab", /Inside the frozen comparator/], ["/lab/paste", /Inside the frozen comparator/], ["/lab/edit", /control-run gate/],
   ["/triage", /How much could a team let the system handle/], ["/results", /Six results, explained/], ["/method", /Two lanes, evaluated separately/],
   ["/genai", /ten components, each one checked/], ["/present", /Presenter preflight/],
 ];

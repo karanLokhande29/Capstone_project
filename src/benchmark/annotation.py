@@ -78,6 +78,7 @@ string belongs to the *reported metric*, while the per-label field stays
 from __future__ import annotations
 
 import csv
+import io
 import itertools
 import json
 import logging
@@ -85,7 +86,7 @@ import math
 import random
 import shutil
 from dataclasses import dataclass, replace
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Iterable, Mapping, Sequence
 
@@ -100,6 +101,12 @@ BRANCH = "phase1/meer-annotation"
 #: Sentinel for a statistic that has not been computed. Never 0.0 — a zero
 #: kappa is a real, meaningful (terrible) agreement reading, not an absence.
 NOT_YET_MEASURED = "NOT YET MEASURED"
+
+#: The guidelines in force, recorded with every ingest. Must match the
+#: "Guidelines version:" line of data/benchmark/templates/ANNOTATION_INSTRUCTIONS.md
+#: (a test checks this).
+GUIDELINES_VERSION = "v3.1"
+GUIDELINES_FILE = ("benchmark", "templates", "ANNOTATION_INSTRUCTIONS.md")
 
 #: Stamped into ``T1Label.provenance`` by :func:`apply_annotation`. A
 #: non-empty ``applies_to`` without this prefix fails the tautology guard.
@@ -898,22 +905,20 @@ def build_pass2_tasks(
     candidates: Iterable[T1Label] | None = None,
     resolver: PathResolver | None = None,
     logger: logging.Logger | None = None,
-    allow_short_gap: bool = False,
     force: bool = False,
     now: datetime | None = None,
 ) -> dict[str, Any]:
     """Write the blind pass-2 file: retest items only, shuffled, blank.
 
-    Three refusals, each protecting the blindness of the retest:
+    Blind test-retest with no enforced minimum inter-pass interval (policy of
+    2026-09-27). Readiness is workflow state, never elapsed time. Two refusals:
 
     * **pass 1 not ingested** — there is nothing to retest against, and a
       pass-2 file written first invites both passes in one sitting;
-    * **gap shorter than ``retest.min_gap_days``** — a retest taken too soon
-      measures recall of the earlier answers rather than stability of the
-      judgment. ``--allow-short-gap`` overrides it, and is then recorded in
-      the log and printed in the report, so the caveat travels with the number;
     * **the pass-2 file already exists** — regenerating it would blank work in
       progress.
+
+    The time since the pass-1 ingest is recorded as provenance only.
     """
     logger = logger or get_logger("benchmark.annotation", cfg)
     resolver = resolver or PathResolver.from_config(cfg)
@@ -921,7 +926,6 @@ def build_pass2_tasks(
 
     primary = primary_annotator(cfg)
     retest = _retest_cfg(cfg)
-    min_gap_days = int(retest.get("min_gap_days", 5))
     shuffle_seed = int(retest.get("shuffle_seed", 0))
 
     record = last_pass1_ingest(resolver, primary)
@@ -934,26 +938,8 @@ def build_pass2_tasks(
         )
 
     ingested_at = _parse_timestamp(record.get("timestamp"))
+    # Provenance only: never a gate.
     gap_days = (now - ingested_at).total_seconds() / 86400.0 if ingested_at else None
-    earliest = (ingested_at + timedelta(days=min_gap_days)).isoformat() if ingested_at else None
-
-    short_gap = gap_days is not None and gap_days < min_gap_days
-    if short_gap and not allow_short_gap:
-        raise AnnotationError(
-            f"refusing to write the pass-2 file: only {gap_days:.2f} day(s) since the pass-1 "
-            f"ingest at {record.get('timestamp')}, and retest.min_gap_days is {min_gap_days}. "
-            f"The earliest allowed date is {earliest}. A retest taken sooner measures recall "
-            "of your pass-1 answers, not the stability of the judgment. Pass "
-            "--allow-short-gap to override; the short gap is then recorded in the log and "
-            "printed in the report."
-        )
-    if short_gap:
-        logger.warning(
-            "annotation: writing the pass-2 file after only %.2f day(s) (min_gap_days=%d) "
-            "because --allow-short-gap was given — the test-retest figure is weakened and "
-            "the report will say so",
-            gap_days, min_gap_days,
-        )
 
     if candidates is None:
         candidates = load_candidates(resolver)
@@ -1001,10 +987,8 @@ def build_pass2_tasks(
         "items": len(rows),
         "shuffle_seed": shuffle_seed,
         "pass1_ingested_at": record.get("timestamp"),
-        "gap_days": gap_days,
-        "min_gap_days": min_gap_days,
-        "earliest_allowed": earliest,
-        "allow_short_gap_used": bool(short_gap),
+        "elapsed_days_since_pass1_ingest": gap_days,
+        "interval_policy": "no enforced minimum inter-pass interval",
     }
     append_annotation_log(
         resolver,
@@ -1014,9 +998,7 @@ def build_pass2_tasks(
             "pass_no": 2,
             "timestamp": now.isoformat(),
             "items": len(rows),
-            "gap_days": gap_days,
-            "min_gap_days": min_gap_days,
-            "allow_short_gap_used": bool(short_gap),
+            "elapsed_days_since_pass1_ingest": gap_days,
         },
     )
     return result
@@ -1052,6 +1034,12 @@ def _read_vote_file(
     seen_ids: dict[str, int] = {}
 
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
+        lines = handle.read().splitlines(keepends=True)
+    # A task file may open with "# ..." note lines (the P2-004 pilot retest does); Excel may quote them.
+    skipped = 0
+    while skipped < len(lines) and lines[skipped].lstrip('"').startswith("#"):
+        skipped += 1
+    with io.StringIO("".join(lines[skipped:]), newline="") as handle:
         reader = csv.DictReader(handle)
         missing_cols = set(TASK_FILE_COLUMNS) - set(reader.fieldnames or [])
         if missing_cols:
@@ -1059,7 +1047,7 @@ def _read_vote_file(
                 f"task file for {where} is malformed: missing columns {sorted(missing_cols)}"
             )
 
-        for row_number, row in enumerate(reader, start=2):
+        for row_number, row in enumerate(reader, start=2 + skipped):
             label_id = (row.get("label_id") or "").strip()
             if not label_id:
                 raise AnnotationError(f"task file for {where} row {row_number}: empty label_id")
@@ -1949,8 +1937,8 @@ def measure_agreement(
             "comparison": f"{primary} pass 1 vs {primary} pass 2 (blind retest)",
             "n_items": 0,
             "status": (
-                f"{NOT_YET_MEASURED} — pass 2 has not been ingested; run `retest` on or after "
-                "the earliest allowed date, then `ingest --pass 2`"
+                f"{NOT_YET_MEASURED} — pass 2 has not been ingested; run `retest` (no minimum "
+                "inter-pass interval), label the pass-2 file blind, then `ingest --pass 2`"
             ),
         }
 

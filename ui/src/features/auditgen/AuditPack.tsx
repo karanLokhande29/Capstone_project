@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
 import { Badge, Button, Card, CardBody, Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/primitives";
 import { PageHeader } from "@/components/Page";
-import { live } from "./api";
+import { HOSTED, live } from "./api";
 import { useAudit } from "./state";
-import { Conf, Excerpt, ReviewBadge, RowTable, SourceLink, Stat } from "./parts";
+import { Conf, Excerpt, ReviewBadge, RowTable, SourceLink, Stat, INSTALLED, PUBLIC_DEMO } from "./parts";
 import type { CalendarRow, ChangeRow, DiffRow, EnfRow, GapRow, Pack, Profile, RegisterRow } from "./types";
 
 const ACTS: [string, string][] = [["deposits", "Deposits"], ["lending", "Lending"], ["digital_lending", "Digital lending"], ["forex", "Forex"],
@@ -11,7 +11,7 @@ const ACTS: [string, string][] = [["deposits", "Deposits"], ["lending", "Lending
   ["kyc_aml", "KYC / AML"], ["it_cyber", "IT / cyber"]];
 
 function ProfileForm() {
-  const { mode, setPack, refreshList } = useAudit();
+  const { mode, setPack, refreshList, track } = useAudit();
   const [classes, setClasses] = useState<string[]>([]);
   const [p, setP] = useState<Profile>({ name: "My entity", entity_class: "Small Finance Banks", as_of: new Date().toISOString().slice(0, 10),
     last_review: "2025-12-01", activities: ["deposits", "lending", "kyc_aml", "outsourcing"], group_classes: [] });
@@ -24,7 +24,7 @@ function ProfileForm() {
       <form aria-label="Entity profile" className="grid gap-2 text-[12.5px] md:grid-cols-3" onSubmit={async (e) => {
         e.preventDefault();
         setBusy(true); setErr(null);
-        try { setPack(await live.generate(p)); await refreshList(); } catch (x) { setErr((x as Error).message); } finally { setBusy(false); }
+        try { const pk = await live.generate(p); track(pk); setPack(pk); await refreshList(); } catch (x) { setErr((x as Error).message); } finally { setBusy(false); }
       }}>
         <label className="flex flex-col gap-1">Name<input className="h-7 rounded-md border border-line bg-panel px-2" value={p.name} onChange={(e) => setP({ ...p, name: e.target.value })} /></label>
         <label className="flex flex-col gap-1">Entity class
@@ -50,7 +50,11 @@ function ProfileForm() {
         </label>
         <div className="flex items-center gap-2 md:col-span-3">
           <Button type="submit" disabled={disabled || busy}>{busy ? "Generating…" : "Generate audit pack"}</Button>
-          {disabled && <span className="text-ink-3">Generating needs the local backend: <code>python3 scripts/auditgen.py serve</code>. Replay shows the sample packs.</span>}
+          {disabled && (HOSTED && mode === "checking"
+            ? <span className="text-ink-3">Connecting to the hosted service (the first visit can take up to a minute)…</span>
+            : PUBLIC_DEMO
+            ? <span className="text-ink-3">Generating a pack for your own profile is part of {INSTALLED}. This demo has a sample pack for each of the 11 entity types: pick one above.</span>
+            : <span className="text-ink-3">Generating needs the local backend: <code>python3 scripts/auditgen.py serve</code>. Replay shows the sample packs.</span>)}
           {err && <span className="text-neg">{err}</span>}
         </div>
       </form>
@@ -231,6 +235,7 @@ function PackView({ pack }: { pack: Pack }) {
         </TabsContent>
         <TabsContent value="enforcement" className="pt-3">
           <p className="mb-2 rounded-md bg-panel-2 p-2 text-[12.5px]">{pack.enforcement_label}</p>
+          {pack.enforcement.length === 0 && <p className="mb-2 text-[12.5px] text-ink-3">No RBI monetary-penalty press release in the corpus (Jan 2025 – Sep 2026) names a {pack.profile.entity_class.replace(/s$/, "")}, so there is no enforcement context for this class.</p>}
           <RowTable<EnfRow> label="Enforcement-risk view" rows={pack.enforcement}
             cols={[
               { key: "d", label: "Direction", render: (r) => r.direction_title },

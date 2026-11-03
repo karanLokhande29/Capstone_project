@@ -52,6 +52,9 @@ paths:
   cache: data/cache
   reports: reports
   logs: logs
+  # P3-001 (gitignored): LLM response cache and local retrieval indexes.
+  llm_cache: data/llm_cache
+  indexes: data/indexes
 
 logging:
   level: INFO
@@ -147,11 +150,31 @@ metadata:
 # Placeholders for values later phases need. Unset on purpose.
 # -----------------------------------------------------------------------------
 retrieval:
-  # TODO(phase2): embedding model identifier, index type, chunk size. Not set in
-  # Phase 0 — choosing an embedding model is a Week 7 decision with evaluation
-  # consequences, and a placeholder value would invite accidental adoption.
-  embedding_model: null
-  index_type: null
+  # P3-001. The dense model is the P2-002 model at the P2-002 revision, so the
+  # T2 bias statements (bge-shown candidates) refer to the same model.
+  embedding_model: BAAI/bge-base-en-v1.5
+  embedding_revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+  max_seq_length: 512
+  normalize_embeddings: true
+  batch_size: 64
+  # Exact search: 76k x 768 float16 fits in memory, so no ANN index.
+  index_type: exact_inner_product
+  expected_paragraphs: 76188
+  # Stop before embedding if the projected runtime exceeds this (compute rule).
+  max_embed_hours: 3.0
+  bm25:
+    # bm25s "lucene" variant; lower-case alphanumeric tokens, no stemming, no stopwords.
+    method: lucene
+    k1: 1.5
+    b: 0.75
+    token_regex: "[a-z0-9]+"
+  rrf_k: 60
+  top_k: 100
+  eval:
+    cutoff: 10
+    bootstrap_resamples: 2000
+    bootstrap_seed: 20260927
+    per_class_min_n: 5
 
 # ---------------------------------------------------------------------------
 # phase1/meer-annotation block (P1-003). Owned by this branch; edited only here.
@@ -202,9 +225,10 @@ benchmark:
   promotion_policy: single_expert_retest
 
   retest:
-    # Minimum days between pass 1 and pass 2. A retest taken too soon
-    # measures recall of the earlier answers, not stability of the judgment.
-    min_gap_days: 5
+    # Blind test-retest with no enforced minimum inter-pass interval (policy of
+    # 2026-09-27). Pass 2 is gated on workflow state only (pass 1 ingested and
+    # frozen, predetermined retest set, blank shuffled sheet); elapsed time is
+    # recorded as provenance, never used as a gate.
     # The pilot retests everything: at 18 items the retest set IS the set.
     pilot_fraction: 1.0
     # Phase 2 retests a fifth of the items, which is what the annotation-time
@@ -248,3 +272,443 @@ benchmark:
     # every Direction has, so position-only matching scores near-unrelated
     # documents as aligned. See src/benchmark/alignment_check.py.
     similarity_threshold: 0.5
+
+# ---------------------------------------------------------------------------
+# P2-002 cross-class obligation matching. Read by src/benchmark/matching.py.
+# Positional alignment failed the 60% trigger in Phase 1 (32.8% / 41.6%), so
+# counterparts are found by content; nothing here uses clause position.
+# ---------------------------------------------------------------------------
+matching:
+  # Input: P2-001 candidates, rules v4. A1 preflight asserts this count.
+  candidate_rules: v4
+  expected_kept_candidates: 28694
+  expected_raw_entity_classes: 19
+
+  # D8 (Claude's recommendation, 2026-09-26). The 19 raw classes are 11
+  # regulated-entity types and 8 RBI function headings. Class-to-class
+  # matching runs among the 11 core classes only; function-heading candidates
+  # are counted and reported as a cross-cutting pool, never matched as a class.
+  core_entity_classes:
+    - All India Financial Institutions
+    - Asset Reconstruction Companies
+    - Commercial Banks
+    - Credit Information Companies
+    - Local Area Banks
+    - Non-Banking Financial Companies
+    - Payments Banks
+    - Regional Rural Banks
+    - Rural Co-operative Banks
+    - Small Finance Banks
+    - Urban Co-operative Banks
+  function_headings:
+    - Banker and Debt Manager to Government
+    - Banker to Governments and Banks
+    - Consumer Education and Protection
+    - Financial Inclusion and Development
+    - Financial Market
+    - Foreign Exchange Management
+    - Issuer of Currency
+    - Payment and Settlement System
+
+  units:
+    # A paragraph with one kept cue and fewer characters than this is one unit;
+    # otherwise one unit per sentence holding a kept cue.
+    whole_paragraph_max_chars: 400
+
+  stage1:
+    # Same normalisation and pairwise test as near_duplicate_clusters() (P2-001).
+    # Prefix matches count only when the shorter text has at least this many
+    # characters. At corpus scale a short unit would otherwise chain unrelated
+    # sentences into one cluster (single link).
+    prefix_min_chars: 40
+    # Candidate pairs for the pairwise test are generated from shared word
+    # 5-grams. A 5-gram in more than this many distinct texts is too common to
+    # propose pairs from; the rarer 5-grams of the same texts still do.
+    shingle_words: 5
+    shingle_max_postings: 200
+
+  model:
+    id: BAAI/bge-base-en-v1.5
+    # Exact Hugging Face commit. The notebook downloads with this revision and
+    # asserts the resolved commit equals it; there is no fallback model.
+    revision: a5beb1e3e68b9ab74eb54cfd186867f64f240e1a
+    max_seq_length: 512
+    normalize_embeddings: true
+    batch_size: 128
+    checkpoint_every_units: 5000
+
+  scoring:
+    top_k: 3
+    # Scores are written rounded, so reruns reproduce the match file byte for byte.
+    score_decimals: 6
+
+  bands:
+    # Tertiles of the best-match semantic score over `scored` rows, fixed before
+    # any validation sample is drawn.
+    rule: tertiles_of_best_scored
+
+  seeds:
+    smoke: 20260926
+    leakage: 20260927
+    validation_sheet: 20260928
+
+  smoke_candidates: 200
+  leakage_sample: 200
+
+  validation:
+    strata:
+      stage1: 10
+      high: 15
+      mid: 15
+      low: 20
+    # The operating threshold is the lowest band edge whose counterpart rate
+    # (same + related) reaches this.
+    counterpart_target: 0.80
+
+  gates:
+    proceed_high_counterpart_min: 0.80
+    escalate_high_counterpart_below: 0.60
+    stage1_same_min: 0.90
+    leakage_max: 0.30
+
+# ---------------------------------------------------------------------------
+# P2-003 supplementary sources. Read by src/supplementary/common.py.
+# Four sources (FAQ, enforcement, amendments, withdrawn/repeal), linked to
+# Master Directions at direction level only. No LLM or embedding model.
+# ---------------------------------------------------------------------------
+supplementary:
+  version: v1
+  # Output root. Registered as the logical path key "supplementary" at run time
+  # (P2-003 §O allows edits to this block only, not to `paths:`).
+  data_dir: data/supplementary
+
+  # A1 preflight: the P1-004 corpus.
+  expected_corpus:
+    directions: 381
+    paragraphs: 76188
+    raw_entity_classes: 19
+    empty_title_directions: [md_11510, md_11959, md_12839]
+
+  # Polite crawl. Never below 1 s (checked at load time).
+  rate_limit_sec: 1.5
+  # Consolidation date: items dated on or after it are post_consolidation.
+  era_cutoff: "2025-11-28"
+  # Kaggle discovery smoke: fetch this many items per source, stop at >= this failure rate.
+  smoke_items_per_source: 5
+  max_failure_rate: 0.5
+
+  faq:
+    index_url: "https://www.rbi.org.in/Scripts/FAQDisplay.aspx"
+    topic_url: "https://www.rbi.org.in/Scripts/FAQDisplay.aspx?Id={id}"
+    # A valid FAQ page carries this container; anything else is unexpected_content.
+    content_marker: 'id="example-min"'
+
+  enforcement:
+    listing_url: "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx"
+    release_url: "https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid={id}"
+    # Listing years (one POST per year returns the whole year). 2025 holds the
+    # pre-consolidation releases the report counts; 2026 is post-consolidation.
+    years: [2025, 2026]
+    content_marker: 'class="tablebg"'
+    include_title_regex: "imposes\\s+monetary\\s+penalty"
+    # Discovered, excluded and counted by pattern.
+    near_miss_title_regexes:
+      cancels_registration: "cancels\\s+(?:the\\s+)?certificate\\s+of\\s+registration"
+      cancels_licence: "cancels\\s+(?:the\\s+)?licen[cs]e"
+      directions_section_35a: "directions?\\s+under\\s+section\\s+35\\s*a|imposes\\s+(?:all[- ]inclusive\\s+)?directions"
+      penalty_other: "penalt(?:y|ies)"
+      compounding: "compound"
+
+  amendments:
+    listing_url: "https://www.rbi.org.in/Scripts/NotificationUser.aspx"
+    notification_url: "https://www.rbi.org.in/Scripts/NotificationUser.aspx?Id={id}&Mode=0"
+    years: [2025, 2026]
+    content_marker: 'class="tablebg"'
+    include_title_regex: "amendment\\s+directions|\\(amendment\\)\\s+directions"
+    # Titles with "amendment" that are not Amendment Directions (FEMA regulations, UAPA list updates).
+    near_miss_title_regex: "amendment"
+
+  withdrawn:
+    listing_url: "https://www.rbi.org.in/Scripts/NotificationUserWithdrawnCircular.aspx"
+    content_marker: "Circular Number"
+
+  linking:
+    # title_fuzzy: token Dice on normalised subjects. Fixed on 2026-09-26, in
+    # Part A, before any alignment labelling. Best, second best and margin are
+    # recorded on every fuzzy link.
+    fuzzy_threshold: 0.75
+    # Deterministic tie-break when several Directions share the best score (the
+    # same subject issued per entity class): this class order, then md_id.
+    tie_break_class_order:
+      - Commercial Banks
+      - Small Finance Banks
+      - Payments Banks
+      - Local Area Banks
+      - Regional Rural Banks
+      - Urban Co-operative Banks
+      - Rural Co-operative Banks
+      - Non-Banking Financial Companies
+      - All India Financial Institutions
+      - Asset Reconstruction Companies
+      - Credit Information Companies
+    # A Direction's own reference numbers (exact_ref) come from the first paragraph within
+    # this many that carries any (340 of 381 Directions carry them in paragraph 0).
+    ref_scan_paragraphs: 6
+
+  alignment:
+    faq_items: 30
+    enforcement_items: 30
+    # Below this many qualifying FAQ items the check cannot give a usable rate (§AB).
+    min_faq_items: 15
+    candidates_per_item: 8
+    # Paragraphs shorter than this are never offered as candidates (headings, page numbers).
+    candidate_min_chars: 40
+    seed: 20261001
+    # C3 FAQ filter, deterministic: an FAQ item qualifies when its answer has at
+    # least one requirement cue AND one regulated-entity cue (both case-insensitive,
+    # word-bounded regexes). Counts per cue are reported.
+    faq_requirement_cues:
+      - "shall"
+      - "must"
+      - "should"
+      - "(?:is|are)\\s+required\\s+to"
+      - "(?:is|are)\\s+mandatory|mandatorily"
+      - "(?:is|are)\\s+(?:not\\s+)?(?:permitted|allowed)\\s+to"
+      - "prohibited"
+      - "(?:has|have)\\s+been\\s+advised\\s+to|(?:is|are)\\s+advised\\s+to"
+      - "(?:need|needs)\\s+to"
+      - "(?:has|have)\\s+to"
+    faq_entity_cues:
+      - "banks?"
+      - "NBFCs?"
+      - "REs?"
+      - "regulated\\s+entit(?:y|ies)"
+      - "lenders?"
+      - "lending\\s+institutions?"
+      - "co-?operative\\s+banks?"
+      - "UCBs?"
+      - "RRBs?"
+      - "AD\\s+(?:Category|banks?)"
+      - "authori[sz]ed\\s+dealers?"
+      - "financial\\s+institutions?"
+      - "(?:payment\\s+system\\s+)?operators?"
+      - "PPI\\s+issuers?"
+      - "ARCs?"
+      - "HFCs?"
+    # C2 decision rule, written to the rule file before the sheet is drawn.
+    # Karan may change these before the sheet exists, never after.
+    rule:
+      paragraph_weak_min: 0.60
+      direction_weak_min: 0.30
+
+# ---------------------------------------------------------------------------
+# P2-004 T1 benchmark (+ P2-004-SPRINT overrides). Read by src/benchmark/t1.py.
+# Guidelines v3 (data/benchmark/templates/ANNOTATION_INSTRUCTIONS.md): item-level
+# applies_to from the span's own text; per-class judgements same | different |
+# none | unsure are counterpart evidence only; the flag is derived (v3.6).
+# ---------------------------------------------------------------------------
+t1:
+  version: v1
+  # v3.1 (2026-09-27): v3 label rules unchanged; the minimum gap between passes is removed.
+  guidelines_version: v3.1
+  # Inputs (P2-002). Preflight asserts the hash prefix and counts.
+  matches_sha256_prefix: 135355765728dd05
+  expected_kept_candidates: 28694
+  expected_eligible_candidates: 25918
+  # §K sizing. minutes_per_item is the pilot's RECALLED estimate with applies_to
+  # pre-filled (D11), so it is probably low; the v3 sheet adds an item-level
+  # applies_to plus up to 4 class judgements with ids, so the block-1 checkpoint
+  # re-derives N from measured minutes.
+  annotation_hours: 10
+  minutes_per_item: 3.61
+  minutes_per_item_basis: recalled_estimate
+  retest_fraction: 0.20
+  pilot_retest_items: 18
+  underpowered_below: 100
+  # §L A5 sample.
+  per_class_floor: 6
+  min_compared_classes: 2
+  max_compared_classes: 4
+  block_size: 20
+  # Sprint §4: 30 items from blocks 1-3, the same items to both second raters.
+  second_raters: [akash, meer]
+  second_rater_items: 30
+  second_rater_blocks: 3
+  primary: karan
+  # Retest (pass 2) has no date lock and no minimum interval: it is gated on workflow state only.
+  # Sheet text caps (characters). Excel cells hold at most 32,767.
+  source_paragraph_max_chars: 3000
+  target_paragraph_max_chars: 1500
+  seeds:
+    sample: 20260926
+    compared: 20260927
+    order: 20260928
+    retest: 20260929
+    second_rater: 20260930
+    target_shuffle: 20261001
+    pilot_pass2: 20261002
+
+# ---------------------------------------------------------------------------
+# P3-001 LLM client (src/llm/client.py). Free tiers only; no OpenAI API.
+# Keys live in the gitignored .env (GEMINI_API_KEY, GROQ_API_KEY), never here.
+# Groq is used only when Gemini keeps answering 429 / quota, and never mixed
+# with Gemini inside one system run.
+# ---------------------------------------------------------------------------
+llm:
+  primary: gemini
+  # P4-001: no provider fallback (a Groq answer inside a paired comparison would break the pairing).
+  # A quota error pauses and checkpoints the run instead. P3-001/P3-002 ran with `fallback: groq`.
+  fallback: none
+  temperature: 0
+  # Hard cap on HTTP attempts (retries included) per system run.
+  max_calls: 300
+  request_timeout_sec: 120
+  backoff:
+    attempts: 5
+    initial_delay_sec: 2.0
+    factor: 2.0
+    max_delay_sec: 60.0
+  providers:
+    # Client-side throttles, set at or below the published free-tier limits.
+    gemini:
+      key_env: GEMINI_API_KEY
+      rpm: 10
+      tpm: 250000
+    groq:
+      key_env: GROQ_API_KEY
+      rpm: 30
+      tpm: 8000
+  # BEGIN selected-models: written by scripts/run_llm_setup.py from the live model lists.
+  model: gemini-3.8-flash
+  # P4-001: every P4 system, the long-context baseline included, uses llm.p4_model (was gemini-3.8-flash).
+  long_context_model: gemini-3.5-flash-lite
+  fallback_model: openai/gpt-oss-120b
+  fallback_long_context_model: openai/gpt-oss-120b
+  # Version strings exactly as the list endpoints returned them (Groq returns none).
+  model_versions:
+    "gemini-3.8-flash": "3.0"
+    "openai/gpt-oss-120b": null
+  models_listed_utc: "2026-09-27T17:20:07+00:00"
+  # END selected-models
+  # P4-001: the one model for every P4 system (Gemini 3.5 Flash Lite, free tier: 15 RPM, 250K TPM, 500 RPD),
+  # found in the live model list on 2026-09-28; version string as the list endpoint returned it.
+  p4_model: gemini-3.5-flash-lite
+  p4_model_version: "3.5-flash-lite-07-2026"
+
+# ---------------------------------------------------------------------------
+# P3-002 T4: RePASs metric-integrity audit. Read by src/t4/ and scripts/run_t4.py.
+# ---------------------------------------------------------------------------
+t4:
+  version: v1
+  n_questions: 30
+  min_classes: 6
+  min_families: 10
+  retrieval_top: 3
+  seeds:
+    sample: 20261003
+    offtopic: 20261004
+    sheet_draw: 20261005
+    sheet_order: 20261006
+    bootstrap: 20261007
+  question_max_output_tokens: 2048
+  answer_max_output_tokens: 4096
+  repass:
+    url: https://github.com/RegNLP/RePASs
+    commit: 821d438d07cfc6747bd657965188d9dde85dcb71
+    train_seed: 42
+    # As implemented in scripts/evaluate_model.py at that commit (recorded in the report):
+    nli_model: cross-encoder/nli-deberta-v3-xsmall
+    coverage_nli_model: microsoft/deberta-large-mnli
+    obligation_base_model: nlpaueb/legal-bert-base-uncased
+  sheet:
+    genuine: 10
+    concatenated: 10
+    adv_negated: 5
+    adv_offtopic: 5
+    block_size: 10
+  # Part B exploratory repair. Declared 2026-09-27, before any answer was scored, and
+  # not to be changed after scoring. Designed with the RIRAG concatenation finding in
+  # mind and tested on the same 30 questions, so any result is optimistic.
+  #   lcs_ratio   = token LCS(answer, retrieved passages joined) / answer tokens,
+  #                 lower-case [a-z0-9]+ tokens
+  #   penalty     = clip((lcs_ratio - tau) / (1 - tau), 0, 1)
+  #   relevance   = mean over answer sentences of P(entailment | premise = question,
+  #                 hypothesis = sentence), RePASs' own NLI model (nli_model above)
+  #   repaired    = (1 - penalty) * (composite + relevance) / 2
+  repair:
+    lcs_tau: 0.8
+    declared_utc: "2026-09-27T18:25:00+00:00"
+
+# ---------------------------------------------------------------------------
+# P4-001 T3: deterministic temporal set from the P2-003 Amendment Directions.
+# ---------------------------------------------------------------------------
+t3:
+  version: v1
+  n_items: 60
+  max_items_per_direction: 5
+  spotcheck_n: 20
+  min_precision_k: 18
+  # As-of dates are drawn no later than this (the corpus harvest is 2026-09-26/27).
+  today: "2026-09-27"
+  seeds:
+    items: 20261008
+    spotcheck: 20261009
+    # Audit note 1: independent post-fix check, 10 parses behind frozen items, none of the first 20.
+    spotcheck2: 20261013
+  spotcheck2_n: 10
+
+# ---------------------------------------------------------------------------
+# P4-001: agentic RAG pipeline, system runs, ablations. Read by src/rag/ and scripts/run_p4.py.
+# ---------------------------------------------------------------------------
+p4:
+  version: v1
+  # Throttle below the free-tier 15 RPM / 250K TPM.
+  rpm: 12
+  tpm: 200000
+  ledger: data/llm_cache/quota_ledger.json
+  # 500 RPD minus 20 kept for the demo and retries. Counted per model per quota day (midnight Pacific).
+  soft_cap: 480
+  max_calls_per_run: 480
+  json_mode: true
+  # The lowest thinking setting the API accepts for p4_model, fixed across all systems. Probed 2026-09-28:
+  # thinkingLevel "minimal" accepted on the first try (5 output tokens, no thinking tokens reported).
+  thinking:
+    thinkingLevel: minimal
+  max_output_tokens: 4096
+  prompts_dir: configs/p4_prompts_v1
+  # Frozen 2026-09-27T21:48:14+00:00, before any validated-set run.
+  prompt_sha256:
+    answer_system.txt: 3f00c7789e31ab72f1f2d1e249172925eb5a586b5198fb53c5f369b88bd6e549
+    answer_user.txt: 18b22ca45ef79e97c5dab7c9ded41076bef3b82d7f980810510a35f602bbad41
+    long_context_system.txt: f99fe84e6cf0a4bad9e2954dfef54457ea103f9b42e8fd490c34c341d7f40477
+    long_context_user.txt: b6ded509953267030e393ace667ebed7224c422901374e2280286ac781201299
+    t1_system.txt: 8b99be45d71532931631a23e573132eba16b0553accd229b26de047fcc445dd5
+    t1_user.txt: cc762461a2799e9661a808cd58666b8b17bc52d2f46456e55142acd21e16ecef
+    t3_system.txt: 20e7bbd8f4a866cf7f7b0e721de69784cbf7725ef8ea324164814cc25cab7c09
+    t3_user.txt: 95fc014acd9dcdc9876a9f4981272a229fe51025801a104de2dbfab0bfd2ee53
+  retrieval:
+    depth: 20
+    answer_top: 5
+    t1_per_class: 5
+    paragraph_max_chars: 1500
+  verifier:
+    nli_model: cross-encoder/nli-deberta-v3-xsmall
+    nli_revision: a150876415327c80daeff35ca6f68f5ed8cf5c24
+    # Fixed now, no threshold tuning: a sentence is supported iff the argmax label is entailment.
+    rule: argmax_entailment
+    retries: 1
+  long_context:
+    max_input_tokens: 150000
+    subset_n: 30
+    # Audit note 2 (2026-09-28, after 10 of 38 long-context calls failed with 503 / network / read timeouts):
+    # at most 3 attempts per item per run (exponential backoff with jitter; every attempt counted in the ledger);
+    # a 300 s read timeout for these ~150K-token prompts (the default 120 s timed out). After the remainder run
+    # and one full retry pass, if more than 20% of the 30-item subset still fails, the WHOLE baseline is rerun
+    # with one uniform lower cap (fallback_cap), never reported as only the prompts that happened to succeed.
+    attempts_per_run: 3
+    request_timeout_sec: 300
+    fallback_cap: 100000
+    max_subset_failure_share: 0.2
+  seeds:
+    long_context_subset: 20261010
+    bootstrap: 20261011

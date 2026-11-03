@@ -1,0 +1,7 @@
+SOURCE obligation ({source_class}; Direction: {source_title}; paragraph {source_paragraph_id}):
+{source_text}
+
+Compared classes: {compared_classes}
+
+DIRECTIONS
+{directions}

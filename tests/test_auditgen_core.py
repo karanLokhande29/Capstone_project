@@ -160,6 +160,18 @@ def test_enforcement_links_same_class_releases(nbfc_pack):
     assert all(r["entity_class"] == "Non-Banking Financial Companies" for r in rows)
 
 
+def test_enforcement_keeps_releases_without_a_current_direction(store, cfg):
+    # SFB penalty releases cite pre-2026 circulars only: they appear as release-level rows, never silently dropped.
+    p = PK.generate(store, cfg, Profile(name="t", entity_class="Small Finance Banks", as_of="2026-10-30", last_review="2025-12-01",
+                                        activities=["deposits"], group_classes=[]))
+    rows = p["enforcement"]
+    assert rows and all(r["citation_level"] == "release" and not r["md_id"] for r in rows)
+    assert all(r["source_url"].startswith("https://www.rbi.org.in/") and "map it by hand" in r["link_note"] for r in rows)
+    assert p["summary"]["enforcement_releases"] == 3 and p["summary"]["enforcement_directions"] == 0
+    assert not p["dropped_without_citation"].get("enforcement")
+    PK.require_citation("enforcement", rows[0])
+
+
 # -- citations, excerpts, disclaimer --------------------------------------------------------------------------------
 
 def test_citation_required_rule():

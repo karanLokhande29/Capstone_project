@@ -1,0 +1,3 @@
+release_check: 865 publishable files (124.3 MB), tracked + untracked not ignored
+copied-text check: ON, 1,565,694 corpus shingles
+RESULT: PASS

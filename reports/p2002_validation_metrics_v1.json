@@ -1,0 +1,422 @@
+{
+  "scored_at": "2026-09-26T14:53:44+00:00",
+  "command": "python scripts/run_matching.py score --label-source manual --sheet-file data/benchmark/matching/p2002_validation_sheet_v1_completed.csv --sensitivity P015:related,P018:related,P025:related",
+  "label_source": "manual",
+  "sheet_file": "data/benchmark/matching/p2002_validation_sheet_v1_completed.csv",
+  "sheet_sha256": "f7a6cdcebf9583445ec6937976012ab79d6f55e8acdaaf6a72e47d970b44205a",
+  "validation": {
+    "complete": true,
+    "overall": {
+      "n": 60,
+      "same": 34,
+      "related": 19,
+      "unrelated": 7,
+      "counterpart_rate": {
+        "k": 53,
+        "n": 60,
+        "rate": 0.8833333333333333,
+        "wilson_95": [
+          0.7782097940014187,
+          0.9423235259654995
+        ]
+      },
+      "same_rate": {
+        "k": 34,
+        "n": 60,
+        "rate": 0.5666666666666667,
+        "wilson_95": [
+          0.44103214654694856,
+          0.6842779960559936
+        ]
+      },
+      "related_share": 0.31666666666666665
+    },
+    "by_stratum": {
+      "stage1": {
+        "n": 10,
+        "same": 10,
+        "related": 0,
+        "unrelated": 0,
+        "counterpart_rate": {
+          "k": 10,
+          "n": 10,
+          "rate": 1.0,
+          "wilson_95": [
+            0.7224598312333834,
+            1.0
+          ]
+        },
+        "same_rate": {
+          "k": 10,
+          "n": 10,
+          "rate": 1.0,
+          "wilson_95": [
+            0.7224598312333834,
+            1.0
+          ]
+        },
+        "related_share": 0.0
+      },
+      "high": {
+        "n": 15,
+        "same": 13,
+        "related": 2,
+        "unrelated": 0,
+        "counterpart_rate": {
+          "k": 15,
+          "n": 15,
+          "rate": 1.0,
+          "wilson_95": [
+            0.7961107336956521,
+            1.0
+          ]
+        },
+        "same_rate": {
+          "k": 13,
+          "n": 15,
+          "rate": 0.8666666666666667,
+          "wilson_95": [
+            0.6211750079348376,
+            0.9626395301086407
+          ]
+        },
+        "related_share": 0.13333333333333333
+      },
+      "mid": {
+        "n": 15,
+        "same": 9,
+        "related": 6,
+        "unrelated": 0,
+        "counterpart_rate": {
+          "k": 15,
+          "n": 15,
+          "rate": 1.0,
+          "wilson_95": [
+            0.7961107336956521,
+            1.0
+          ]
+        },
+        "same_rate": {
+          "k": 9,
+          "n": 15,
+          "rate": 0.6,
+          "wilson_95": [
+            0.357464427565077,
+            0.8017577191740534
+          ]
+        },
+        "related_share": 0.4
+      },
+      "low": {
+        "n": 20,
+        "same": 2,
+        "related": 11,
+        "unrelated": 7,
+        "counterpart_rate": {
+          "k": 13,
+          "n": 20,
+          "rate": 0.65,
+          "wilson_95": [
+            0.43285051021946463,
+            0.8188104521320554
+          ]
+        },
+        "same_rate": {
+          "k": 2,
+          "n": 20,
+          "rate": 0.1,
+          "wilson_95": [
+            0.027865893984153206,
+            0.30103820641179335
+          ]
+        },
+        "related_share": 0.55
+      }
+    }
+  },
+  "threshold": {
+    "target": 0.8,
+    "rule": "per_band_walk_down",
+    "evaluated": [
+      {
+        "edge": "high_lower",
+        "value": 0.95666,
+        "band": "high",
+        "counterpart_rate": 1.0,
+        "qualifies": true
+      },
+      {
+        "edge": "mid_lower",
+        "value": 0.757567,
+        "band": "mid",
+        "counterpart_rate": 1.0,
+        "qualifies": true
+      },
+      {
+        "edge": "min",
+        "value": 0.396569,
+        "band": "low",
+        "counterpart_rate": 0.65,
+        "qualifies": false
+      }
+    ],
+    "chosen": {
+      "edge": "mid_lower",
+      "value": 0.757567,
+      "band": "mid",
+      "counterpart_rate": 1.0
+    },
+    "note": "chosen on the validation sample it is scored on; the rate at the threshold is optimistic"
+  },
+  "gates": {
+    "high_counterpart_rate": 1.0,
+    "stage1_same_rate": 1.0,
+    "leakage_rate": 0.035,
+    "proceed": true,
+    "stop_high_below_60": false,
+    "stop_stage1_same_below_90": false,
+    "stop_leakage_above_30": false
+  },
+  "leakage_official_edge": {
+    "n": 200,
+    "seed": 20260927,
+    "high_lower_edge_used": 0.95666,
+    "leaks": 7,
+    "leakage_rate": 0.035,
+    "leakage_wilson_95": [
+      0.017055324637357105,
+      0.07047146086668134
+    ],
+    "best_outside_family_any_score": 27,
+    "best_outside_family_no_family_target": 3
+  },
+  "sheet_meta": {
+    "seed": 20260928,
+    "strata_wanted": {
+      "stage1": 10,
+      "high": 15,
+      "mid": 15,
+      "low": 20
+    },
+    "strata_drawn": {
+      "low": 20,
+      "high": 15,
+      "stage1": 10,
+      "mid": 15
+    },
+    "pool_sizes": {
+      "stage1": 43649,
+      "high": 1111,
+      "mid": 24920,
+      "low": 58767
+    },
+    "shortfall": {},
+    "band_edges": {
+      "rule": "tertiles_of_best_scored",
+      "n": 181388,
+      "mid_lower": 0.757567,
+      "high_lower": 0.95666,
+      "min": 0.396569,
+      "max": 1.000001,
+      "defined_at": "2026-09-25T21:35:50+00:00",
+      "defined_before_sampling": true
+    },
+    "drawn_at": "2026-09-25T21:38:51+00:00",
+    "redraw": {
+      "draw": 2,
+      "reason": "draw 1 (same seed, same band edges) tried subject families in alphabetical order within each class pair, so 26/60 rows fell in Asset Liability Management; fixed by a seeded family shuffle in draw_validation_sheet, regression test test_sheet_does_not_favour_alphabetically_first_family. Draw 1 was discarded before anyone saw or labelled it; kept in data/benchmark/matching/discarded/.",
+      "draw1_families": 13,
+      "draw1_top_family_rows": 26,
+      "draw2_families": 21,
+      "draw2_top_family_rows": 10
+    }
+  },
+  "sensitivity": {
+    "relabels": {
+      "P015": "related",
+      "P018": "related",
+      "P025": "related"
+    },
+    "by_stratum": {
+      "stage1": {
+        "n": 10,
+        "same": 10,
+        "related": 0,
+        "unrelated": 0,
+        "counterpart_rate": {
+          "k": 10,
+          "n": 10,
+          "rate": 1.0,
+          "wilson_95": [
+            0.7224598312333834,
+            1.0
+          ]
+        }
+      },
+      "high": {
+        "n": 15,
+        "same": 13,
+        "related": 2,
+        "unrelated": 0,
+        "counterpart_rate": {
+          "k": 15,
+          "n": 15,
+          "rate": 1.0,
+          "wilson_95": [
+            0.7961107336956521,
+            1.0
+          ]
+        }
+      },
+      "mid": {
+        "n": 15,
+        "same": 9,
+        "related": 6,
+        "unrelated": 0,
+        "counterpart_rate": {
+          "k": 15,
+          "n": 15,
+          "rate": 1.0,
+          "wilson_95": [
+            0.7961107336956521,
+            1.0
+          ]
+        }
+      },
+      "low": {
+        "n": 20,
+        "same": 2,
+        "related": 14,
+        "unrelated": 4,
+        "counterpart_rate": {
+          "k": 16,
+          "n": 20,
+          "rate": 0.8,
+          "wilson_95": [
+            0.5839782779742401,
+            0.9193436467288
+          ]
+        }
+      }
+    },
+    "threshold": {
+      "target": 0.8,
+      "rule": "per_band_walk_down",
+      "evaluated": [
+        {
+          "edge": "high_lower",
+          "value": 0.95666,
+          "band": "high",
+          "counterpart_rate": 1.0,
+          "qualifies": true
+        },
+        {
+          "edge": "mid_lower",
+          "value": 0.757567,
+          "band": "mid",
+          "counterpart_rate": 1.0,
+          "qualifies": true
+        },
+        {
+          "edge": "min",
+          "value": 0.396569,
+          "band": "low",
+          "counterpart_rate": 0.8,
+          "qualifies": true
+        }
+      ],
+      "chosen": {
+        "edge": "min",
+        "value": 0.396569,
+        "band": "low",
+        "counterpart_rate": 0.8
+      },
+      "note": "chosen on the validation sample it is scored on; the rate at the threshold is optimistic"
+    },
+    "note": "an alternative reading of the named pairs; the reviewer's labels stand and set the threshold"
+  },
+  "thresholded_status_counts": {
+    "matched": 120926,
+    "no_direction_in_family": 77792,
+    "below_threshold": 60462
+  },
+  "thresholded_records": 259180,
+  "matched_share_of_scored": 0.6666703420292411,
+  "stage1_top1_below_threshold": {
+    "rows": 56,
+    "distinct_pairs": 43,
+    "semantic_range": [
+      0.70346,
+      0.751682
+    ]
+  },
+  "lexical_at_matched_coverage": {
+    "coverage": 0.6666703420292411,
+    "semantic_threshold": 0.757567,
+    "lexical_threshold": 0.260598,
+    "semantic": {
+      "k": 30,
+      "n": 30,
+      "rate": 1.0,
+      "wilson_95": [
+        0.8864829086095221,
+        1.0
+      ]
+    },
+    "lexical": {
+      "k": 31,
+      "n": 32,
+      "rate": 0.96875,
+      "wilson_95": [
+        0.8425539219962727,
+        0.9944622826374491
+      ]
+    },
+    "caveat": "validation pairs were drawn by semantic band; the lexical figure uses the pair's lexical score for the semantic top-1 target"
+  },
+  "findings": {
+    "semantic_pairs": 50,
+    "top_n_by_semantic": {
+      "n": 30,
+      "counterparts": 30,
+      "same": 22,
+      "related": 8
+    },
+    "top_n_by_lexical": {
+      "n": 30,
+      "counterparts": 29,
+      "same": 24,
+      "related": 5
+    },
+    "related_total": 19,
+    "related_below_threshold": 11,
+    "unrelated_total": 7,
+    "unrelated_max_semantic": 0.733454
+  },
+  "boilerplate_stage1": {
+    "clusters_cross_class": 6292,
+    "clusters_boilerplate": 55,
+    "clusters_without_boilerplate": 6237,
+    "by_pattern": {
+      "repeal_savings": 38,
+      "state_nodal_officer": 11,
+      "format_table_row": 6
+    },
+    "candidates_in_cross_class_clusters": 20634,
+    "candidates_in_boilerplate_clusters": 366,
+    "patterns": {
+      "repeal_savings": "\\brepeal\\w*\\b[^.;]{0,120}\\b(shall not in any way prejudicially affect|deemed (?:as|to be) governed)|\\bdeemed (?:as|to be) governed by these directions",
+      "state_nodal_officer": "\\b(?:all the )?states?\\s*(?:and|/)\\s*uts?\\b[^.;]{0,40}\\b(?:shall|may) (?:notify|appoint|designate)|\\b(?:the )?(?:state|central) nodal officers?\\b(?:\\s*\\(\\w+\\))?\\s+shall\\b|\\bthe cno shall\\b",
+      "format_table_row": "\\b(?:alpha[ \\t]*-?[ \\t]*numeric|character|numeric|decimal)[ \\t]+\\d{1,4}\\b"
+    }
+  },
+  "d8_split": {
+    "core_with_family": 25918,
+    "core_no_family": 1021,
+    "function_with_family": 75,
+    "function_no_family": 1680,
+    "core_total": 26939,
+    "function_total": 1755,
+    "total": 28694
+  }
+}

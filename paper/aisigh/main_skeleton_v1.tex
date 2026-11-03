@@ -1,0 +1,109 @@
+% AISIGH-SD 2026 (IEEE, CMT). IEEEtran conference, two-column. Overleaf: pdfLaTeX, no shell-escape.
+% NOT anonymous. Hard limit 8 pages (6 standard; 7-8 paid over-length). PDF only, no supplementary file.
+% Prose is written by the authors from paper/aisigh/briefs/. Every \placeholder{} must be gone before submission
+% (python3 scripts/check_paper.py fails while any remains).
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+\usepackage{cite}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{xcolor}
+\newcommand{\placeholder}[1]{\textcolor{red}{\textbf{[#1]}}}
+
+\begin{document}
+
+\title{\placeholder{TITLE (authors)}}
+
+\author{\IEEEauthorblockN{Karan Lokhande}
+\IEEEauthorblockA{SVKM's NMIMS Mukesh Patel School of\\ Technology Management \& Engineering\\ Mumbai, India\\ \placeholder{email}}
+\and
+\IEEEauthorblockN{Akash Goyal}
+\IEEEauthorblockA{SVKM's NMIMS Mukesh Patel School of\\ Technology Management \& Engineering\\ Mumbai, India\\ \placeholder{email}}
+\and
+\IEEEauthorblockN{Meer Magia}
+\IEEEauthorblockA{SVKM's NMIMS Mukesh Patel School of\\ Technology Management \& Engineering\\ Mumbai, India\\ \placeholder{email}}
+% Author order confirmed by the corresponding author (2 Oct 2026); fixed at submission (not anonymous).
+}
+
+\maketitle
+
+\begin{abstract}
+\placeholder{ABSTRACT: see briefs/00_abstract.md}
+\end{abstract}
+
+\begin{IEEEkeywords}
+\placeholder{keywords}
+\end{IEEEkeywords}
+
+\section{Introduction}\label{sec:intro}
+% CONTENT BRIEF: briefs/01_intro.md
+\placeholder{SECTION TEXT (Introduction): authors write from briefs/01_intro.md}
+\placeholder{required citations:}~\cite{gokhan2024regnlp,obliqamp,aueb2025rirag,indiafinbench,rbi}
+
+
+\section{Related Work}\label{sec:related}
+% CONTENT BRIEF: briefs/02_related.md
+\placeholder{SECTION TEXT (Related Work): authors write from briefs/02_related.md}
+\placeholder{required citations:}~\cite{gokhan2024regnlp,obliqamp,gokhan2025riragtask,repass,aueb2025rirag,indiafinbench,bm25s,bge,sbert,rrf}
+
+
+\section{Corpus and Benchmark Construction}\label{sec:corpus}
+% CONTENT BRIEF: briefs/03_corpus.md
+\placeholder{SECTION TEXT (Corpus and Benchmark Construction): authors write from briefs/03_corpus.md}
+\placeholder{required citations:}~\cite{rbi,bge}
+\input{tables/tab_benchmark}
+\begin{figure}[t]\centering\includegraphics[width=\columnwidth]{figures/fig1_benchmark_construction.png}\caption{\placeholder{caption: benchmark construction}}\label{fig:construction}\end{figure}
+
+\section{Annotation and Reliability}\label{sec:annotation}
+% CONTENT BRIEF: briefs/04_annotation.md
+\placeholder{SECTION TEXT (Annotation and Reliability): authors write from briefs/04_annotation.md}
+\placeholder{required citations:}~\cite{fleiss1971,cohen1960,efron1979,wilson1927}
+\begin{figure*}[t]\centering\includegraphics[width=0.9\textwidth]{figures/fig2_annotation_provenance.png}\caption{\placeholder{caption: annotation and provenance}}\label{fig:provenance}\end{figure*}
+\input{tables/tab_reliability}
+
+\section{Tasks, Systems and Metrics}\label{sec:tasks}
+% CONTENT BRIEF: briefs/05_tasks.md
+\placeholder{SECTION TEXT (Tasks, Systems and Metrics): authors write from briefs/05_tasks.md}
+\placeholder{required citations:}~\cite{gemini35fl,gptoss,bm25s,bge,rrf,nlideberta,debertav3,repass,gokhan2024regnlp,legalbert}
+
+
+\section{Results}\label{sec:results}
+% CONTENT BRIEF: briefs/06_results.md
+\placeholder{SECTION TEXT (Results): authors write from briefs/06_results.md}
+\placeholder{required citations:}~\cite{aueb2025rirag,repass}
+\input{tables/tab_t2}
+\input{tables/tab_t1_systems}
+\input{tables/tab_t3_t4_ablation}
+
+\section{Targeted Experiment: Structured Comparison}\label{sec:comparator}
+% CONTENT BRIEF: briefs/07_comparator.md
+\placeholder{SECTION TEXT (Targeted Experiment: Structured Comparison): authors write from briefs/07_comparator.md}
+\placeholder{required citations:}~\cite{gemini35fl}
+
+
+\section{Discussion}\label{sec:discussion}
+% CONTENT BRIEF: briefs/08_discussion.md
+\placeholder{SECTION TEXT (Discussion): authors write from briefs/08_discussion.md}
+
+
+\section{Limitations}\label{sec:limitations}
+% CONTENT BRIEF: briefs/09_limitations.md
+\placeholder{SECTION TEXT (Limitations): authors write from briefs/09_limitations.md}
+
+
+\section{Ethics, Licensing and AI Use}\label{sec:ethics}
+% CONTENT BRIEF: briefs/10_ethics.md
+\placeholder{SECTION TEXT (Ethics, Licensing and AI Use): authors write from briefs/10_ethics.md}
+\placeholder{Data and code availability: Zenodo DOI}
+
+
+
+\section*{Acknowledgment}
+\placeholder{ACKNOWLEDGMENT + AI-use statement: see briefs/11_ai_use_ack.md}
+
+\bibliographystyle{IEEEtran}
+\bibliography{refs_verified}
+
+\end{document}

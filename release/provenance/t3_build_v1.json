@@ -1,0 +1,276 @@
+{
+ "built_utc": "2026-09-28T07:46:29+00:00",
+ "status": "frozen",
+ "rules_version": "v2",
+ "amendment_source": "data/supplementary/amendment/items_v1.jsonl",
+ "amendment_source_sha256": "541d93b103dc8650f9578c53274c2672562b859a4311b080685594fd94af71db",
+ "instructions": {
+  "verbs": 988,
+  "parsed": 196,
+  "unparsed": 765,
+  "merged_into_previous": 27
+ },
+ "parsed_actions": 196,
+ "parsed_by_type": {
+  "delete/paragraph_whole": 46,
+  "delete/within_paragraph": 6,
+  "insert/new_paragraph": 17,
+  "insert/within_paragraph": 11,
+  "substitute/paragraph_whole": 73,
+  "substitute/within_paragraph": 43
+ },
+ "exclusions": {
+  "corpus_version_unclear": 56,
+  "target_not_in_corpus": 39,
+  "path_touched_by_another_amendment": 8,
+  "not_exactly_one_linked_direction": 21,
+  "scope_new_paragraph": 17
+ },
+ "items": {
+  "eligible_rows": 144,
+  "usable_rows": 98,
+  "items": 60,
+  "directions": 20,
+  "max_items_per_direction": 4,
+  "sides": {
+   "before": 30,
+   "after": 30
+  },
+  "gold": {
+   "in_force_original": 30,
+   "amended": 21,
+   "deleted": 9
+  },
+  "corpus_version": {
+   "amended": 52,
+   "original": 8
+  }
+ },
+ "precision": {
+  "rules_v1_human": {
+   "k": 15,
+   "n": 20,
+   "value": 0.75,
+   "wilson_95": [
+    0.5312991206074114,
+    0.8881382993000237
+   ]
+  },
+  "rules_v2_same_20_rows": {
+   "k": 20,
+   "n": 20,
+   "value": 1.0,
+   "wilson_95": [
+    0.8388748398148705,
+    1.0000000000000002
+   ],
+   "basis": "the 15 rows rater_1 marked correct are unchanged under v2; the 5 he marked wrong change exactly as his notes describe. Assessed by Claude against rater_1's notes, not re-checked by a human.",
+   "rows": [
+    {
+     "row_id": "S01",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S02",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S03",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S04",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S05",
+     "v1_correct": "no",
+     "changed_fields": [
+      "parsed_action",
+      "parsed_effective_date"
+     ],
+     "v1": {
+      "parsed_action": "delete words within the paragraph",
+      "parsed_effective_date": "window: 2025-12-12 to 2025-12-15 (whichever earlier)"
+     },
+     "v2": {
+      "parsed_action": "amend words within the paragraph (2 substitution(s), 1 deletion(s))",
+      "parsed_effective_date": "2025-12-15"
+     },
+     "rater_1_note": "action misses the two substitutions, and the effective date is 2025-12-15, not a 12-to-15 window"
+    },
+    {
+     "row_id": "S06",
+     "v1_correct": "no",
+     "changed_fields": [
+      "parsed_effective_date"
+     ],
+     "v1": {
+      "parsed_effective_date": "window: 2025-12-12 to 2025-12-15 (whichever earlier)"
+     },
+     "v2": {
+      "parsed_effective_date": "2025-12-15"
+     },
+     "rater_1_note": "effective date is 2025-12-15; the December 12 exception applies to paragraph 7(viii)(2), not paragraph 33"
+    },
+    {
+     "row_id": "S07",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S08",
+     "v1_correct": "no",
+     "changed_fields": [
+      "parsed_effective_date"
+     ],
+     "v1": {
+      "parsed_effective_date": "2026-03-30"
+     },
+     "v2": {
+      "parsed_effective_date": "window: 2026-03-30 to 2026-07-01 (whichever earlier)"
+     },
+     "rater_1_note": "effective date is the bank's adoption date or 2026-07-01, whichever is earlier, not 2026-03-30"
+    },
+    {
+     "row_id": "S09",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S10",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S11",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S12",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S13",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S14",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S15",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S16",
+     "v1_correct": "no",
+     "changed_fields": [
+      "parsed_action",
+      "parsed_effective_date"
+     ],
+     "v1": {
+      "parsed_action": "substitute words within the paragraph",
+      "parsed_effective_date": "window: 2025-12-12 to 2025-12-15 (whichever earlier)"
+     },
+     "v2": {
+      "parsed_action": "amend words within the paragraph (2 substitution(s))",
+      "parsed_effective_date": "2025-12-15"
+     },
+     "rater_1_note": "effective date is 2025-12-15; the December 12 exception is for paragraph 7(viii)(2), not paragraph 39"
+    },
+    {
+     "row_id": "S17",
+     "v1_correct": "no",
+     "changed_fields": [
+      "parsed_action",
+      "parsed_effective_date"
+     ],
+     "v1": {
+      "parsed_action": "substitute words within the paragraph",
+      "parsed_effective_date": "window: 2025-12-12 to 2025-12-15 (whichever earlier)"
+     },
+     "v2": {
+      "parsed_action": "amend words within the paragraph (3 substitution(s))",
+      "parsed_effective_date": "2025-12-15"
+     },
+     "rater_1_note": "effective date is 2025-12-15; the December 12 exception is for paragraph 7(vii)(3), not paragraph 35"
+    },
+    {
+     "row_id": "S18",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S19",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    },
+    {
+     "row_id": "S20",
+     "v1_correct": "yes",
+     "changed_fields": [],
+     "v1": {},
+     "v2": {},
+     "rater_1_note": ""
+    }
+   ]
+  }
+ },
+ "rule_fix": [
+  "within-paragraph changes of one enumerated item merged into one action",
+  "per-instruction commencement date: an 'except paragraph N (item)' date applies only under that item of the amendment's own numbering; deeper exceptions stay a window",
+  "full commencement sentence; 'dated <date>' of another instrument ignored"
+ ]
+}

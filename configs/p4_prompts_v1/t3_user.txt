@@ -1,0 +1,4 @@
+Question: {query}
+
+EVIDENCE
+{evidence}

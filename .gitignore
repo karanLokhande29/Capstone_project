@@ -25,6 +25,12 @@ reports/logs/
 data/raw/**
 data/extracted/**
 data/cache/**
+# P2-003: raw RBI FAQ / press-release / notification pages and everything parsed from them (R6).
+data/supplementary/**
+# Kaggle return bundles carry raw pages and full-text matches, wherever they are saved (R6).
+*_return.zip
+# Local unpacked copy of the private Kaggle corpus Dataset: full RBI Direction text (R6). Never commit.
+rbi-oblibench-corpus-v2-karan/
 !data/**/.gitkeep
 
 # Derived artifacts are large and regenerable; commit deliberately, not by default.
@@ -48,6 +54,40 @@ data/evaluation/**
 # Claude Code local machine-specific permissions
 .claude/settings.local.json
 
+# P3-001: LLM API keys (never commit), the LLM response cache and the local retrieval indexes.
+.env
+data/llm_cache/
+data/indexes/
+
+# P3-002: third-party RePASs checkout, its venv and its trained model (pinned commit recorded in reports).
+external/
+
+# P5-001 release exclusions (task 5): never public, in the tree or in history.
+# LLM run logs carry retrieved RBI paragraph text; raw pages / PDFs / corpus text; private originals; backups;
+# raw annotation sheets, hidden keys, mock files, not-independent files.
+data/rag_runs/
+data/raw*/
+reports/private/
+*_backups/
+*_mock*
+**/not_independent/
+*.pdf
+
+# Scope decision 5 (3 Oct 2026): unused 2–3 Oct annotation rounds and unreported extension runs — kept on disk,
+# unchanged, never published (mirrors src/release/check.py EXCLUDED).
+docs/protocol/reliability_plan_v2*
+*t1v2*
+*t1v3*
+*t4v2*
+*_excluded/
+*phase4x*
+scripts/run_ext_*
+*results_v2_ext*
+docs/prompts/FINAL-*
+
+# Convenience copies of the final documents (includes the private dossier) — never published
+deliverables_*/
+
 # Audit generator (local tool): uploaded company policies (confidential), refreshed corpus snapshot, generated packs,
 # state, and sample packs / UI replay copies that carry RBI excerpts. Never committed.
 data/auditgen_uploads/
@@ -56,3 +96,6 @@ data/auditgen_runs/
 data/auditgen_state/
 outputs/auditgen_samples/
 ui/public/auditgen/
+
+# Model run outputs that quote RBI text (release_check rbi_text)
+data/v2_runs/

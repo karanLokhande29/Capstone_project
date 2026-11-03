@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation, useSearchParams } from "react-router-dom";
-import { AlertTriangle, Play, RotateCcw } from "lucide-react";
+import { Play, RotateCcw } from "lucide-react";
 import { Button, Card, CardBody } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
 import { liveAvailable, testDouble, useApi, type ApiState } from "../api";
@@ -17,28 +17,22 @@ const TABS = [{ to: "/lab", label: "Re-run a benchmark pair", end: true }, { to:
 export default function Lab() {
   const api = useApi();
   const loc = useLocation();
-  const tab = loc.pathname.endsWith("/paste") ? "paste" : loc.pathname.endsWith("/edit") ? "edit" : "rerun";
   const live = liveAvailable(api);
+  // Without a live comparator (the public site) the page shows the sealed outputs only: no live controls, no paste tab.
+  const tab = loc.pathname.endsWith("/paste") && live ? "paste" : loc.pathname.endsWith("/edit") ? "edit" : "rerun";
+  const tabs = live ? TABS : TABS.filter((t) => t.to !== "/lab/paste").map((t) => (t.to === "/lab" ? { ...t, label: "Benchmark pairs" } : t));
   return (
     <div>
-      <PageHead eyebrow="Lab" title="Run the frozen comparator yourself.">
-        The same prompt and fixed rule that produced the sealed benchmark output, called through a backend that verifies their hashes first. The key stays on the server.
+      <PageHead eyebrow="Lab" title={live ? "Run the frozen comparator yourself." : "Inside the frozen comparator."}>
+        {live
+          ? "The same prompt and fixed rule that produced the sealed benchmark output, called through a backend that verifies their hashes first. The key stays on the server."
+          : "Pick any of the 412 benchmark pairs to see the comparator's sealed output: the 13 fields it extracted from both rules, how each compares, and the verdict the fixed rule gave."}
       </PageHead>
-      {!live && (
-        <div className="mt-4 flex gap-2 rounded-lg border border-warn/50 bg-warn-soft px-4 py-3 text-[14px]" role="status">
-          <AlertTriangle size={18} className="mt-0.5 shrink-0 text-warn" />
-          <div>
-            <p className="font-semibold">Live service unavailable — showing cached replays.</p>
-            <p className="text-[13px] text-ink-2">{api.status === "checking" ? "Checking the comparator API…" : api.status === "offline" ? (api.reason ?? "No comparator API is reachable from this site.") : api.health?.model.reason ?? "The live model is not configured."}
-              {" "}{api.status === "ready" ? `${api.health?.cache.replays ?? 0} cached replays are recorded.` : "No replays can be fetched without the API."} Sealed benchmark outputs are always shown.</p>
-          </div>
-        </div>
-      )}
       {testDouble(api) && (
         <p className="mt-4 rounded-lg border border-line bg-panel-2 px-4 py-2 text-[13.5px]" role="status"><b>Test double.</b> This local server's “model” replays the sealed outputs; runs here are not live model calls.</p>
       )}
       <nav aria-label="Lab" className="mt-5 flex flex-wrap gap-1 border-b border-line">
-        {TABS.map((t) => <NavLink key={t.to} to={t.to} end={t.end} className={({ isActive }) => cn("-mb-px border-b-2 px-3 py-2 text-[14px]", isActive ? "border-accent font-medium" : "border-transparent text-ink-3 hover:text-ink")}>{t.label}</NavLink>)}
+        {tabs.map((t) => <NavLink key={t.to} to={t.to} end={t.end} className={({ isActive }) => cn("-mb-px border-b-2 px-3 py-2 text-[14px]", isActive ? "border-accent font-medium" : "border-transparent text-ink-3 hover:text-ink")}>{t.label}</NavLink>)}
       </nav>
       <div className="mt-5 grid gap-6 lg:grid-cols-[minmax(0,1fr)_280px]">
         <div className="min-w-0">{tab === "rerun" ? <Rerun api={api} /> : tab === "paste" ? <Paste api={api} /> : <EditLab api={api} />}</div>
@@ -75,12 +69,12 @@ function Rerun({ api }: { api: ApiState }) {
         </select>
       </label>
       <div className="flex flex-wrap gap-2">
-        <Button onClick={() => void start({ mode: "benchmark", unitId: unit.id })} disabled={!live || run.phase === "receiving"}><Play size={15} />Re-run live</Button>
+        {live && <Button onClick={() => void start({ mode: "benchmark", unitId: unit.id })} disabled={run.phase === "receiving"}><Play size={15} />Re-run live</Button>}
         {api.status === "ready" && key && <Button variant="outline" onClick={() => void replay(key)} disabled={run.phase === "receiving"}><RotateCcw size={15} />Play cached replay</Button>}
       </div>
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className={cn("grid gap-4", live && "md:grid-cols-2")}>
         <SealedPanel unit={unit} />
-        <LivePanel run={run} unit={unit} mock={testDouble(api)} />
+        {live && <LivePanel run={run} unit={unit} mock={testDouble(api)} />}
       </div>
       {run.phase === "error" && <ErrorNote run={run} onReplay={key && api.status === "ready" ? () => void replay(key) : undefined} />}
       {run.done && <CostMeter live={{ inputTokens: run.done.inputTokens, outputTokens: run.done.outputTokens, latencyMs: run.done.latencyMs }} />}

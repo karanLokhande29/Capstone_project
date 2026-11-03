@@ -50,6 +50,20 @@ KAGGLE_ENV_MARKERS = ("KAGGLE_KERNEL_RUN_TYPE", "KAGGLE_URL_BASE")
 KAGGLE_FS_MARKER = Path("kaggle") / "working"
 
 
+def repo_relative(path: Path | str, root: Path | str = REPO_ROOT) -> str:
+    """``path`` for a report or metrics file: repo-relative, forward slashes.
+
+    A path outside ``root`` (a test's temp dir, ``/kaggle/working``) stays
+    absolute, still with forward slashes.
+    """
+    p = Path(path).resolve()
+    try:
+        p = p.relative_to(Path(root).resolve())
+    except ValueError:
+        pass
+    return p.as_posix()
+
+
 def detect_mode(
     env: Mapping[str, str] | None = None,
     *,

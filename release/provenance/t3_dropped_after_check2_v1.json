@@ -1,0 +1,13 @@
+{
+ "dropped_items": [
+  "T3-005",
+  "T3-006",
+  "T3-015",
+  "T3-016",
+  "T3-051",
+  "T3-052",
+  "T3-059",
+  "T3-060"
+ ],
+ "reason": "their parse was marked wrong in spot-check 2"
+}

@@ -82,7 +82,6 @@ CFG = {
         "second_raters": [],
         "promotion_policy": "single_expert_retest",
         "retest": {
-            "min_gap_days": 5,
             "pilot_fraction": 1.0,
             "phase2_fraction": 0.20,
             "shuffle_seed": 20260924,
@@ -440,7 +439,7 @@ def test_adjudication_file_carries_every_vote_side_by_side(env):
     assert "final_applies_to" in result["columns"]
 
 
-# -- 7. the retest gap guard --------------------------------------------------
+# -- 7. retest readiness: workflow state only, no minimum interval -----------------
 
 
 def _log_pass1(resolver, *, days_ago: float, rater="karan"):
@@ -459,30 +458,29 @@ def test_retest_refuses_before_pass_one_is_ingested(env):
         build_pass2_tasks(CFG, candidates=labels, resolver=env)
 
 
-def test_retest_refuses_at_one_day(env):
+@pytest.mark.parametrize("days_ago", [0.0, 0.01, 1, 10])
+def test_retest_is_not_gated_on_elapsed_time_and_records_it_as_provenance(env, days_ago):
+    """Policy of 2026-09-27: blind test-retest with no enforced minimum inter-pass interval."""
     labels = _candidates(4, resolver=env)
     draw_retest_set(labels, 1.0, 1, resolver=env)
-    _log_pass1(env, days_ago=1)
-    with pytest.raises(AnnotationError, match="min_gap_days"):
-        build_pass2_tasks(CFG, candidates=labels, resolver=env)
+    _log_pass1(env, days_ago=days_ago)
 
+    result = build_pass2_tasks(CFG, candidates=labels, resolver=env)
 
-def test_retest_proceeds_with_allow_short_gap_and_records_it(env, caplog):
-    labels = _candidates(4, resolver=env)
-    draw_retest_set(labels, 1.0, 1, resolver=env)
-    _log_pass1(env, days_ago=1)
-
-    with caplog.at_level("WARNING"):
-        result = build_pass2_tasks(CFG, candidates=labels, resolver=env, allow_short_gap=True)
-
-    assert result["allow_short_gap_used"] is True
     assert Path(result["path"]).exists()
-    assert any("allow-short-gap" in r.message or "--allow-short-gap" in r.getMessage()
-               for r in caplog.records)
-
+    assert result["interval_policy"] == "no enforced minimum inter-pass interval"
+    assert result["elapsed_days_since_pass1_ingest"] == pytest.approx(days_ago, abs=0.01)
+    assert not {"min_gap_days", "earliest_allowed", "allow_short_gap_used"} & set(result)
     log = json.loads((env.write_path("benchmark", "annotation_log.json")).read_text())
-    retest_entries = [e for e in log["entries"] if e["event"] == "retest"]
-    assert retest_entries and retest_entries[-1]["allow_short_gap_used"] is True
+    entry = [e for e in log["entries"] if e["event"] == "retest"][-1]
+    assert entry["elapsed_days_since_pass1_ingest"] == pytest.approx(days_ago, abs=0.01)
+    assert "min_gap_days" not in entry
+
+
+def test_retest_signature_has_no_short_gap_override():
+    import inspect
+
+    assert "allow_short_gap" not in inspect.signature(build_pass2_tasks).parameters
 
 
 def test_retest_refuses_to_overwrite_an_existing_pass2_file(env):

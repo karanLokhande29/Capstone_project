@@ -1,0 +1,16 @@
+{
+ "run_id": "p3002_t4_genuine_v1",
+ "provider": "groq",
+ "status": "forced_groq",
+ "fallback_events": [],
+ "http_attempts": 30,
+ "cache_hits": 0,
+ "api_calls": 30,
+ "input_tokens": 14948,
+ "output_tokens": 8120,
+ "models": [
+  "openai/gpt-oss-120b"
+ ],
+ "forced_provider": "groq",
+ "force_reason": "gemini-3.8-flash free-tier daily quota (GenerateRequestsPerDayPerProjectPerModel-FreeTier = 20) exhausted on 2026-09-27; the whole genuine-answer run is on the fallback per the P3-002 LLM rule (no Gemini answer is mixed in)"
+}

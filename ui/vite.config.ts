@@ -18,16 +18,21 @@ const AZURE = process.env.VITE_NO_PROXY === "1" && !HOSTED;
 
 const PUBLIC_BUILD = HOSTED || process.env.VITE_NO_PROXY === "1";
 
-/** Public builds never ship the audit generator's replay packs (they carry RBI excerpts and are local-only). */
+/**
+ * Public builds never ship the local replay packs (full RBI excerpts). The Azure build ships the read-only demo copies instead:
+ * .public-auditgen/, written by scripts/build_public_extras.py with every RBI quote cut to 12 words.
+ */
 function stripAuditReplay() {
   return {
     name: "strip-auditgen-replay",
     apply: "build" as const,
     async closeBundle() {
       if (!PUBLIC_BUILD) return;
-      const { rm } = await import("node:fs/promises");
+      const { cp, rm } = await import("node:fs/promises");
       const out = HOSTED ? "dist-artifact" : "dist-azure";
-      await rm(fileURLToPath(new URL(`./${out}/auditgen`, import.meta.url)), { recursive: true, force: true });
+      const dest = fileURLToPath(new URL(`./${out}/auditgen`, import.meta.url));
+      await rm(dest, { recursive: true, force: true });
+      if (AZURE) await cp(fileURLToPath(new URL("./.public-auditgen", import.meta.url)), dest, { recursive: true });
     },
   };
 }
@@ -38,11 +43,10 @@ export default defineConfig({
   plugins: [react(), tailwindcss(), stripAuditReplay()],
   resolve: {
     alias: [
-      // Public builds (Azure / Artifact) contain only the demo, which reads public/data/*.json. The workspace's snapshot and
-      // confidence-model URLs are stubbed so Vite does not emit them as assets.
+      // Public builds (Azure / Artifact) ship the public research pages with the public snapshot (internal sections removed,
+      // scripts/build_public_extras.py) instead of the authors' full snapshot.
       ...(process.env.VITE_NO_PROXY === "1" || HOSTED ? [
-        { find: /^\.\/snapshot\.json\?url$/, replacement: "./public_stub.json?url" },
-        { find: /^\.\/confidence_model_v1\.json\?url$/, replacement: "./public_stub.json?url" },
+        { find: /^\.\/snapshot\.json\?url$/, replacement: "./public_snapshot.json?url" },
       ] : []),
       { find: "@", replacement: fileURLToPath(new URL("./src", import.meta.url)) },
     ],

@@ -13,7 +13,7 @@ from pathlib import Path
 import pytest
 
 from src.common.errors import ConfigError, PathResolutionError
-from src.common.paths import Mode, PathResolver, detect_mode
+from src.common.paths import Mode, PathResolver, detect_mode, repo_relative
 
 
 # -- mode detection -----------------------------------------------------------
@@ -155,3 +155,18 @@ def test_describe_is_json_serialisable(kaggle_resolver: PathResolver):
     described = kaggle_resolver.describe()
     assert described["mode"] == "kaggle"
     json.dumps(described)
+
+
+# -- paths written into reports -------------------------------------------------
+
+
+def test_repo_relative_is_relative_with_forward_slashes(tmp_path: Path):
+    target = tmp_path / "data" / "benchmark" / "matching" / "sheet.csv"
+    assert repo_relative(target, root=tmp_path) == "data/benchmark/matching/sheet.csv"
+    assert "\\" not in repo_relative(target, root=tmp_path)
+
+
+def test_repo_relative_keeps_outside_paths_absolute_posix(tmp_path: Path):
+    outside = tmp_path / "elsewhere" / "x.json"
+    out = repo_relative(outside, root=tmp_path / "repo")
+    assert out == outside.resolve().as_posix() and "\\" not in out

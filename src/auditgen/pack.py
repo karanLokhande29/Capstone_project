@@ -22,6 +22,7 @@ from src.auditgen.profile import Profile
 SECTIONS = ("register", "changes", "calendar", "differential", "enforcement", "gaps")
 PARAGRAPH_CITATION = ("md_id", "paragraph_id", "direction_title", "source_url")
 DIRECTION_CITATION = ("md_id", "direction_title", "source_url")
+RELEASE_CITATION = ("direction_title", "source_url")  # an RBI press release that names no current Direction
 EXCERPT_FIELDS = ("excerpt", "counterpart_excerpt", "phrase")
 
 
@@ -31,8 +32,10 @@ class CitationError(ValueError):
 
 def require_citation(section: str, row: Mapping[str, Any]) -> None:
     """No citation, no row: paragraph-level rows need md_id, paragraph_id, title and URL; Direction-level rows
-    (enforcement, withdrawn circulars) need md_id, title and URL and say so in ``citation_level``."""
-    need = DIRECTION_CITATION if row.get("citation_level") == "direction" else PARAGRAPH_CITATION
+    (enforcement, withdrawn circulars) need md_id, title and URL and say so in ``citation_level``; release-level rows
+    (enforcement releases that cite no current Direction) need a title and the press release's rbi.org.in URL."""
+    level = row.get("citation_level")
+    need = DIRECTION_CITATION if level == "direction" else RELEASE_CITATION if level == "release" else PARAGRAPH_CITATION
     missing = [k for k in need if not row.get(k)]
     if section in ("register", "calendar") and not row.get("status"):
         missing.append("status")
@@ -151,8 +154,8 @@ def summarise(pack: Mapping[str, Any]) -> dict[str, Any]:
                               "source_url": e["source_url"], "paragraph_id": e["paragraph_id"]} for d, e in next90[:60]],
             "differential_rows": len(pack["differential"]),
             "differential_needs_review": sum(1 for r in pack["differential"] if r["needs_review"]),
-            "enforcement_directions": len(pack["enforcement"]),
-            "enforcement_releases": sum(r["penalty_count"] for r in pack["enforcement"]),
+            "enforcement_directions": sum(1 for r in pack["enforcement"] if r.get("md_id")),
+            "enforcement_releases": len({p["id"] for r in pack["enforcement"] for p in r["press_releases"]}),
             "gaps": gaps.get("counts") if gaps else None,
             "highest_risk_gaps": [r for r in (gaps.get("rows") or []) if r["coverage"] == "missing"][:15] if gaps else [],
             "review_progress": {"reviewed": reviewed, "total": len(review_rows)}}

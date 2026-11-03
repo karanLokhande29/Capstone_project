@@ -29,7 +29,7 @@ import argparse
 import csv
 import json
 import sys
-from datetime import datetime, timedelta, timezone
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
@@ -37,6 +37,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from src.benchmark.alignment_check import cross_class_alignment, faq_enforcement_check  # noqa: E402
 from src.benchmark.annotation import (  # noqa: E402
     ANNOTATION_LOG_FILENAME,
+    GUIDELINES_VERSION,
     LABEL_SOURCE_AI,
     LABEL_SOURCE_MANUAL,
     MINUTES_BASIS_MEASURED,
@@ -329,7 +330,7 @@ def run_ingest(cfg, resolver, logger, args) -> dict:
             for e in read_annotation_log(resolver).get("entries", [])
             if e.get("rater_id") and e.get("label_source")
         },
-        "guidelines_version": "v1",
+        "guidelines_version": GUIDELINES_VERSION,
         "items_total": len(promoted),
         "items_validated": sum(1 for lbl in promoted if lbl.is_validated),
         "retest_set_size": len(retest_ids),
@@ -353,7 +354,6 @@ def run_retest(cfg, resolver, logger, args) -> dict:
         cfg,
         resolver=resolver,
         logger=logger,
-        allow_short_gap=args.allow_short_gap,
         force=args.force_regenerate_tasks,
     )
 
@@ -533,8 +533,6 @@ def _write_report(cfg, resolver: PathResolver, logger) -> Path:
     faq = checks.get("faq_enforcement", {})
 
     primary = primary_annotator(cfg)
-    retest_cfg = (cfg.get("benchmark", {}) or {}).get("retest", {}) or {}
-    min_gap_days = int(retest_cfg.get("min_gap_days", 5))
 
     # Item-level pilot coverage, computed from the candidate file when the
     # metrics JSON predates the renamed keys. Reading is fine; writing is not.
@@ -564,21 +562,13 @@ def _write_report(cfg, resolver: PathResolver, logger) -> Path:
         e for e in log.get("entries", [])
         if e.get("event") == "ingest" and int(e.get("pass_no") or 0) == 2
     ]
-    short_gap_used = any(
-        e.get("allow_short_gap_used") for e in log.get("entries", []) if e.get("event") == "retest"
-    )
-
-    if pass1_entries:
-        first_pass1 = pass1_entries[-1].get("timestamp")
-        try:
-            earliest = (
-                datetime.fromisoformat(first_pass1) + timedelta(days=min_gap_days)
-            ).isoformat(timespec="seconds")
-        except (TypeError, ValueError):
-            earliest = NOT_YET_MEASURED
-    else:
-        first_pass1 = None
-        earliest = f"{NOT_YET_MEASURED} — pass 1 has not been ingested"
+    first_pass1 = pass1_entries[-1].get("timestamp") if pass1_entries else None
+    pass2_at = pass2_entries[-1].get("timestamp") if pass2_entries else None
+    try:  # provenance only: never a gate
+        elapsed = ((datetime.fromisoformat(pass2_at) - datetime.fromisoformat(first_pass1)).total_seconds() / 86400.0
+                   if first_pass1 and pass2_at else None)
+    except (TypeError, ValueError):
+        elapsed = None
 
     agreement = ingest.get("agreement", {}) if ingest else {}
     routes = ingest.get("route_counts", {}) if ingest else {}
@@ -945,23 +935,15 @@ def _write_report(cfg, resolver: PathResolver, logger) -> Path:
     lines += _projection_lines(cfg, ingest)
 
     lines += [
-        "#### Pass-2 schedule",
+        "#### Pass-2 timing (provenance only)",
         "",
-        f"- Minimum gap: **{min_gap_days} days** (`benchmark.retest.min_gap_days`)",
-        f"- Pass-1 ingested at: **{first_pass1 or NOT_YET_MEASURED}**",
-        f"- Earliest allowed pass-2 date: **{earliest}**",
-        f"- Pass 2 actually ingested at: "
-        f"**{pass2_entries[-1].get('timestamp') if pass2_entries else NOT_YET_MEASURED}**",
+        "- Method: blind test-retest procedure. No washout period was enforced between the passes; a short "
+        "interval may inflate agreement through recall of pass-1 answers.",
+        f"- Pass-1 ingested at: **{first_pass1 or 'unknown'}**",
+        f"- Pass-2 ingested at: **{pass2_at or 'unknown'}**",
+        f"- Elapsed between the two ingests: **{f'{elapsed:.2f} days' if elapsed is not None else 'unknown'}**",
         "",
     ]
-    if short_gap_used:
-        lines += [
-            "> **`--allow-short-gap` was used.** The pass-2 file was generated before the "
-            f"{min_gap_days}-day minimum had elapsed. A retest taken that soon measures "
-            "recall of the pass-1 answers as much as the stability of the judgment, so the "
-            "test-retest figure above is weakened and must be reported with this caveat.",
-            "",
-        ]
 
     lines += ["#### Tautology share, per rater and pass", "", ]
     shares = ingest.get("tautology_share_by_rater", {}) if ingest else {}
@@ -989,8 +971,7 @@ def _write_report(cfg, resolver: PathResolver, logger) -> Path:
             f"The pass-1 task file for {primary} exists under `data/benchmark/tasks/`, "
             "carrying every pilot item, and the retest set has been drawn in advance. "
             "Test-retest κ, annotation time and disagreement categories cannot be reported "
-            f"until {primary} completes pass 1, waits {min_gap_days} days, and completes the "
-            "blind pass 2. **No annotations were fabricated and no placeholder agreement "
+            f"until {primary} completes pass 1 and then the blind pass 2. **No annotations were fabricated and no placeholder agreement "
             "value was substituted** — a synthesised κ would be worse than no κ, because it "
             "would look like evidence.",
             "",
@@ -1044,11 +1025,6 @@ def main(argv: list[str] | None = None) -> int:
         help="who produced this rater's labels. 'ai_assisted' records the file as a "
              "human-AI diagnostic: its votes are excluded from every reliability statistic "
              "and can never promote an item.",
-    )
-    parser.add_argument(
-        "--allow-short-gap", action="store_true",
-        help="write the pass-2 file before retest.min_gap_days has elapsed. Recorded in the "
-             "log and printed in the report, because it weakens the test-retest figure.",
     )
     parser.add_argument(
         "--force-regenerate-tasks", action="store_true",

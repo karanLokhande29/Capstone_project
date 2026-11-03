@@ -1,0 +1,586 @@
+# ------------------------------------------------------------------------------------------------ Chapter 1
+R.chapter_heading("Introduction", new_page=False)
+R.p("Chapter 1 sets out the problem this project addresses: an obligation issued by the Reserve Bank of India often "
+    "appears in the Master Directions of several classes of regulated entity, and the copies do not always say the "
+    "same thing. The chapter gives the regulatory background, explains why such differences matter to compliance "
+    "teams, states the research questions, lists what the project contributes and outlines the remaining chapters.")
+R.h2("1.1 Background of the project topic")
+R.p("The Reserve Bank of India (RBI) is India's central bank and the main regulator of its banking and non-banking "
+    "financial sector [@rbi]. It consolidates its binding instructions into *Master Directions*. Each Direction covers "
+    "one subject, such as Know Your Customer norms, outsourcing of financial services, interest rates on deposits or "
+    "priority-sector lending, and is addressed to one or more classes of regulated entity. Commercial banks, small "
+    "finance banks, payments banks, urban and rural co-operative banks, non-banking financial companies, all-India "
+    "financial institutions and asset reconstruction companies each receive their own Directions. Amendments are "
+    "usually written into the consolidated Direction itself, which is then stamped “Updated as on” a date.")
+R.p("Because the RBI writes a separate Direction for each class, one subject can produce several near-parallel texts. "
+    "In most places the wording barely changes. In others the substance does: a monetary threshold is higher, a "
+    "reporting deadline is shorter, a different body must approve the policy, or a carve-out applies to one class "
+    "only. These are the differences that a financial group running a bank and an NBFC, an auditor reviewing several "
+    "classes, or a regulatory-technology vendor has to track.")
+R.p("Pre-trained transformers [@vaswani2017, @devlin2019bert, @legalbert] and benchmark suites such as LexGLUE "
+    "[@chalkidis2022lexglue] have made legal and regulatory text a mainstream NLP domain. For regulatory question "
+    "answering the usual design is retrieval-augmented generation (RAG): a retriever finds evidence passages and a "
+    "large language model (LLM) answers from them [@lewis2020rag]. The field also has dedicated datasets and metrics, "
+    "most prominently ObliQA and the RePASs answer-stability score [@gokhan2024regnlp, @repass].")
+R.h2("1.2 Motivation and scope of the report")
+R.p("Errors in compliance work are costly in both directions. A reported difference that does not exist sends "
+    "reviewers chasing nothing; a real difference that goes unreported leaves a gap that can lead to supervisory "
+    "action and monetary penalties. If a system answers “the same rule applies” when the threshold has in fact "
+    "changed, it has hidden exactly the information the compliance officer was looking for. Generic regulatory QA "
+    "benchmarks check whether an answer is faithful to the passage it retrieved. They do not check whether that "
+    "passage is the right one for the asker's entity class, or whether two parallel passages impose the same "
+    "obligation.")
+R.p("The project's main output is a benchmark and the evaluation built on it. The class- and date-aware RAG pipeline "
+    "is an engineering artefact that we evaluate on the benchmark, not the contribution itself. The scope is all 381 "
+    "Master Directions that the RBI listed when we harvested the corpus, the eleven regulated-entity classes in that "
+    "listing, and English text only. Circulars that have not been consolidated into a Master Direction are out of "
+    "scope, and nothing in the project is legal advice. Two applications were also delivered: a public website for "
+    "inspecting the benchmark results, and a local compliance audit generator intended for a regulated entity's "
+    "compliance team.")
+R.h2("1.3 Problem statement")
+R.p("**Given an obligation in the Master Direction of one entity class, the task is to decide, for every other "
+    "class, whether a counterpart obligation exists and whether it imposes the same requirement or a different one; "
+    "to retrieve that counterpart; to determine whether a paragraph is in force on a given date; and to test whether "
+    "the standard faithfulness metric for regulatory answers can be gamed on Indian regulatory text.**")
+R.p("Three research questions follow from this problem:")
+R.bullets([
+    "**RQ1 (Applicability):** Given a compliance question and a declared entity class, can a retrieval system return "
+    "the obligations that bind that class, and how much does a class-blind dense retriever lose relative to a "
+    "class-aware system?",
+    "**RQ2 (Differential obligation):** For a subject issued in parallel across entity classes, can the system "
+    "identify what one entity class is required to do that another entity class is not?",
+    "**RQ3 (Metric integrity):** Does the documented gameability of RePASs reproduce on Indian regulatory text, and "
+    "what minimal evaluation repair makes the metric resistant to concatenation or verbatim extraction?",
+])
+R.h2("1.4 Salient contribution")
+R.bullets([
+    "A pointer-only corpus of all 381 RBI Master Directions (76,188 paragraphs with stable identifiers), organised by "
+    "an entity class × subject family matrix.",
+    "**T1**: 106 expert-validated items and 412 class judgements for applicability and differential obligations, "
+    "published with a precise account of their reliability evidence.",
+    "**T2**: three relevance sets for cross-class counterpart retrieval, each with its construction bias documented.",
+    "**T3**, a temporal-status set derived deterministically from Amendment Directions, and **T4**, an audit of the "
+    "RePASs metric on RBI text.",
+    "An evaluation of class- and date-aware retrieval and judgement systems using paired bootstrap confidence "
+    "intervals, including a pre-registered **structured comparator** aimed at the *different* failure.",
+    "Two applications on top of the benchmark: a public inspection website with a live comparator API, and a local, "
+    "citation-backed **compliance audit generator** with an on-device AI assistant.",
+    "A research paper submitted to AISIGH-SD 2026, an IEEE-sponsored conference.",
+])
+R.h2("1.5 Organization of report")
+R.p("Chapter 2 reviews work on regulatory NLP, retrieval and RAG evaluation and locates the gap this project fills. "
+    "Chapter 3 explains how the system was built: the block diagram, hardware and software, corpus construction, "
+    "benchmark construction and annotation, the retrieval and judgement systems, the structured comparator, the "
+    "evaluation protocol, the two applications and the standards we followed. Chapter 4 reports and analyses the "
+    "results question by question. Chapter 5 weighs advantages, limitations and applications, and Chapter 6 "
+    "concludes and sets out future work. Appendices A to D hold the algorithm flowcharts, data sheets for the dataset "
+    "and models, the software components and the list of papers; the annexures hold the topic approval form, the "
+    "weekly log book and the proof of paper submission.")
+R.p("**Summary.** The RBI repeats many obligations across the Directions of different entity classes, and the places "
+    "where the copies differ are the ones compliance teams care about most. RBI-ObliBench is built to test whether "
+    "retrieval and LLM systems can find those differences, and the three research questions frame that test around "
+    "applicability, differential obligations and metric integrity.")
+
+# ------------------------------------------------------------------------------------------------ Chapter 2
+R.chapter_heading("Literature Survey")
+R.p("Four strands of earlier work shape this project: language models for legal text, lexical and dense retrieval, "
+    "retrieval-augmented generation and its evaluation, and the statistics of annotation and benchmarking. Section "
+    "2.1 sets out this background, Section 2.2 examines the most closely related studies one by one, Section 2.3 "
+    "compares them in a table, and Section 2.4 states the gap that RBI-ObliBench addresses.")
+R.h2("2.1 Introduction to the overall topic")
+R.p("**Language models for legal and regulatory text.** The transformer [@vaswani2017] and BERT's bidirectional "
+    "pre-training [@devlin2019bert] reset the baseline for most NLP tasks, and domain adaptation soon followed. "
+    "LEGAL-BERT, pre-trained on legislation, court cases and contracts, improved legal classification over general "
+    "BERT [@legalbert], and LexGLUE gathered seven English legal-understanding tasks into one benchmark, on which "
+    "legal-domain models led but still left substantial headroom [@chalkidis2022lexglue]. Regulatory text has "
+    "difficulties of its own: deontic language (“shall”, “must”, “is required to”), long nested "
+    "clauses, defined terms and cross-references. The deontic cues matter directly here, because our candidate "
+    "extractor relies on them (Section 3.4).")
+R.p("**Lexical and dense retrieval.** BM25, derived from the probabilistic relevance framework, remains a strong "
+    "passage-retrieval baseline [@robertson2009bm25], and we use the BM25S implementation for speed [@bm25s]. Dense "
+    "retrieval instead encodes queries and passages with neural encoders. Dense Passage Retrieval showed that a dual "
+    "encoder can beat BM25 on open-domain QA [@karpukhin2020dpr], Sentence-BERT made sentence embeddings cheap to "
+    "compute [@sbert], and the BGE family from C-Pack offers strong general-purpose English embeddings [@bge]. "
+    "Reciprocal rank fusion merges ranked lists without calibrating their scores and often outperforms each input "
+    "[@rrf], while a BERT cross-encoder can re-score a short candidate list jointly with the query "
+    "[@nogueira2019passage]. Graded measures such as nDCG are the standard way to evaluate the resulting rankings "
+    "[@jarvelin2002ndcg].")
+R.p("**Retrieval-augmented generation and its evaluation.** RAG conditions a generator on retrieved passages "
+    "[@lewis2020rag], so its evaluation has to separate the quality of retrieval from the quality of the answer. "
+    "Reference-free frameworks such as RAGAS use LLM judges to score faithfulness and answer relevance [@es2024ragas]. "
+    "Faithfulness checks frequently rest on natural language inference (NLI) models trained on SNLI and MultiNLI "
+    "[@bowman2015snli, @williams2018mnli], including DeBERTa-v3 cross-encoders [@debertav3, @nlideberta]. Long-context "
+    "models are an alternative to retrieval, but they use information in the middle of a long input less reliably "
+    "than information at its start or end [@liu2024lost]. Open and hosted models such as gpt-oss-120b [@gptoss] and "
+    "Gemini 3.5 Flash-Lite [@gemini35fl] have made such systems inexpensive to run.")
+R.p("**Annotation and statistical evaluation.** A benchmark's labels are only as useful as the evidence for their "
+    "reliability. Cohen's κ measures chance-corrected agreement between two raters [@cohen1960], Fleiss' κ "
+    "generalises it to several raters [@fleiss1971], and Landis and Koch's scale is the usual guide to interpreting "
+    "the values [@landis1977]. Wilson's score interval gives dependable confidence intervals for proportions "
+    "[@wilson1927], and the bootstrap provides intervals for statistics such as F1 and nDCG that have no simple "
+    "closed form [@efron1979]. Datasheets for datasets recommend recording a dataset's motivation, composition, "
+    "collection process and intended use [@gebru2021datasheets]; Appendix B follows that practice.")
+R.h2("2.2 Survey of closely related work")
+R.p("**Gokhan et al. (2024), RIRAG and ObliQA** [@gokhan2024regnlp]. This work defined the two-stage regulatory RAG "
+    "task that later studies, including ours, build on: retrieve the relevant passages, then generate an answer. It "
+    "introduced ObliQA, 27,869 questions over the financial regulations of the Abu Dhabi Global Market, and RePASs, a "
+    "reference-free score that combines entailment, contradiction and obligation coverage computed with NLI and an "
+    "obligation classifier. ObliQA comes from a single regulator and jurisdiction, and each question is tied to one "
+    "regulatory context. That design suits question answering over one rulebook, which is the setting our T1 and T2 "
+    "tasks move away from.")
+R.p("**RegNLP, RePASs implementation** [@repass]. The released code computes RePASs with an NLI cross-encoder and an "
+    "obligation classifier fine-tuned from LEGAL-BERT [@legalbert]. We ran it unmodified at a pinned commit, which is "
+    "what makes our metric audit (T4) reproducible.")
+R.p("**Gokhan et al. (2025), RIRAG-2025 shared task** [@gokhan2025riragtask]. The shared task at the first Regulatory "
+    "NLP workshop evaluated retrieval and generation systems from several teams on ObliQA, with RePASs as the "
+    "official answer metric. For this project its main consequence is that RePASs became the reference metric for "
+    "regulatory RAG, which is why its robustness is worth testing.")
+R.p("**Chasandras et al. (2025), AUEB-Archimedes at RIRAG-2025** [@aueb2025rirag]. This team found that concatenating "
+    "the obligation sentences of the retrieved passages, with no generation step, already scores highly under "
+    "RePASs. The finding exposes a structural weakness of a metric built on entailment and coverage: copying the "
+    "evidence is rewarded. It was shown on ObliQA only, so our RQ3 asks whether it reproduces on RBI text.")
+R.p("**Gokhan and Briscoe (2025), ObliQA-MP** [@obliqamp]. ObliQA-MP extends ObliQA to answers grounded in several "
+    "passages and applies learning-to-rank to regulatory RAG. Multi-passage answers are closer to real compliance "
+    "questions, which often draw on more than one provision; the passages, however, still come from a single "
+    "rulebook.")
+R.p("**Pall (2026), IndiaFinBench** [@indiafinbench]. IndiaFinBench evaluates LLMs on 406 expert-annotated questions "
+    "over SEBI and RBI text, covering regulatory interpretation, numerical reasoning, contradiction and temporal "
+    "questions. It is the Indian benchmark closest to ours. Its questions test the understanding of individual "
+    "documents, so it complements a cross-document task such as T1, and we use it as an external check in Section 4.9.")
+R.p("**Xiao et al. (2024), C-Pack and BGE embeddings** [@bge]. C-Pack released the BGE models and their training "
+    "recipe; we use bge-base-en-v1.5 both for cross-class matching and as the dense retriever. General-purpose "
+    "embeddings are good at finding paragraphs on the same topic. T1 asks a harder question of them: whether they can "
+    "separate “same topic, same rule” from “same topic, different rule”.")
+R.p("**Cormack et al. (2009), reciprocal rank fusion** [@rrf]. RRF scores each document by summing 1/(k + rank) over "
+    "the input rankings. It needs no training and is robust, which is why our hybrid retriever uses it as the fusion "
+    "step (k = 60).")
+R.p("**Karpukhin et al. (2020), Dense Passage Retrieval** [@karpukhin2020dpr] and **Lewis et al. (2020), RAG** "
+    "[@lewis2020rag]. DPR established dual-encoder retrieval as a serious alternative to BM25, and RAG established the "
+    "retrieve-then-generate design. Both treat relevance as a property of the query and the passage alone. In "
+    "regulation, relevance also depends on *who* is asking: the correct paragraph for a small finance bank may be the "
+    "wrong one for an NBFC. Our class-aware retriever supplies this missing condition through metadata filtering.")
+R.p("**Es et al. (2024), RAGAS** [@es2024ragas]. RAGAS defines reference-free metrics for faithfulness, answer "
+    "relevance and context relevance. Keeping faithfulness and relevance apart turns out to matter for our T4 result, "
+    "in which RePASs tracks human faithfulness ratings but not whether an answer addresses the question.")
+R.p("**Liu et al. (2024), Lost in the Middle** [@liu2024lost]. Long-context models use information at the beginning "
+    "and end of their input better than information in the middle. This motivated our long-context baseline, which "
+    "reads every Direction of the compared classes up to a 100K-token cap, as a direct test of whether retrieval is "
+    "needed at all.")
+R.p("**Chalkidis et al. (2020, 2022), LEGAL-BERT and LexGLUE** [@legalbert, @chalkidis2022lexglue]. These studies "
+    "show that legal language benefits from domain-specific models and that legal-understanding benchmarks remain "
+    "difficult. Their tasks centre on court decisions and contracts; the obligations that a regulator places on "
+    "supervised entities are not their focus.")
+R.h2("2.3 Comparison of the surveyed work")
+R.p("Table 2.1 places the surveyed work along the two dimensions that matter most for this project: whether it "
+    "compares obligations across entity classes, and whether it examines the answer metric itself.")
+@@B1@@
+R.h2("2.4 Research gap and problem definition")
+R.p("Taken together, the surveyed work leaves three questions open. First, regulatory QA datasets treat a regulation "
+    "as one rulebook, so none of them tests whether a system can recognise that an obligation in one entity class "
+    "has a counterpart in another class that says something different. Second, regulatory retrieval is evaluated "
+    "without the asker's entity class, even though the correct paragraph depends on it. Third, the concatenation "
+    "weakness of RePASs has been shown only on ObliQA, and whether it carries over to Indian regulatory text is "
+    "unknown. These three gaps correspond, in order, to RQ2, RQ1 and RQ3 in Section 1.3.")
+R.p("**Summary.** Retrieval and RAG methods for regulatory text are well developed, and ObliQA with RePASs is the "
+    "reference evaluation. What the literature lacks is a test of cross-class differences, class-conditioned "
+    "retrieval and an independent check of RePASs; RBI-ObliBench is designed around those three needs.")
+
+# ------------------------------------------------------------------------------------------------ Chapter 3
+R.chapter_heading("Methodology and Implementation")
+R.p("This chapter describes what we built and how each part works, in the order the pipeline runs: harvesting the "
+    "RBI corpus, extracting obligations, matching them across classes, annotating them, and then running the "
+    "retrieval and judgement systems, the structured comparator and the evaluation protocol. It closes with the two "
+    "applications, the standards we followed, our use of AI tools and the project schedule.")
+R.h2("3.1 Block diagram")
+R.p("Fig. 3.1 shows the complete system in three stages. The top row builds the corpus: Master Directions are "
+    "downloaded from the RBI website, converted to text, split into paragraphs with stable identifiers and tagged with "
+    "entity class and subject family. The middle row builds the benchmark: obligation candidates are extracted and "
+    "matched across classes, an expert labels them, and supplementary sources feed the temporal and retrieval sets. "
+    "The bottom row runs the systems on the benchmark and produces the paper, the data release and the applications.")
+@@B2@@
+R.p("Fig. 3.2, taken from the research paper, shows the benchmark-construction steps in more detail.")
+@@B3@@
+R.h2("3.2 Hardware and software description")
+R.p("The project is software and data only and needed no special hardware. All development and CPU work ran on an "
+    "Apple-silicon (arm64) laptop under macOS. The cross-class embedding step ran on Kaggle Notebooks; when the code "
+    "runs there, its path resolver reads from the Kaggle inputs and writes only to the Kaggle working directory. LLM "
+    "calls went to hosted APIs on free tiers (Google Gemini API and Groq). The public demonstration website is an "
+    "Azure Storage static website, and its comparator API is an Azure Function. The audit generator, by contrast, "
+    "runs entirely on the user's own machine, and its AI assistant uses a local Ollama model. Tables 3.1 and 3.2 list "
+    "the platforms and the main software versions.")
+@@B4@@
+@@B5@@
+R.h2("3.3 Corpus construction")
+R.p("A scraper read the RBI's Master Directions listing and downloaded all 381 Directions. We extracted the text from "
+    "each PDF and split it into 76,188 paragraphs, each with a stable identifier of the form md_NNNNN::pNNNNN and its "
+    "clause path. An earlier harvest had missed 81 Directions. The repair phase (P1-004) recovered them using "
+    "retries, a manual import path and consistency gates, so every later artefact is built on the full set of 381.")
+R.p("The RBI listing groups Directions under 19 headings: 11 regulated-entity classes (among them commercial banks, "
+    "small finance banks, payments banks, urban and rural co-operative banks, NBFCs and asset reconstruction "
+    "companies) and 8 RBI function headings. Deriving subject families from the titles gave 57 families, and the "
+    "resulting entity class × subject family matrix has 1,083 cells, of which 296 are populated and 9 ambiguous. "
+    "Because the RBI consolidates amendments in place, 162 titles carry an “Updated as on” stamp and the "
+    "corpus contains only current text. For validation we also harvested supplementary sources: 80 FAQ pages with "
+    "1,845 items, 463 enforcement press releases (with the entity class resolved for 455) and 333 pages of Amendment "
+    "Directions.")
+R.h2("3.4 Obligation candidate extraction")
+R.p("The extractor is rule-based. It marks a paragraph as an obligation candidate when the paragraph contains a "
+    "deontic cue such as “shall”, “must”, “is required to” or “should ensure”, and it "
+    "excludes definitions, duties placed on customers and purely descriptive text. Of the 33,507 paragraphs that "
+    "contain a deontic cue, the final rules (v4) keep 28,694 candidates. We refined the rules over four precision "
+    "rounds, checking each version by hand on a fresh sample (Section 4.2).")
+R.h2("3.5 Cross-class matching")
+R.p("Each candidate obligation was matched to counterpart paragraphs in the Directions that the other entity classes "
+    "receive on the same subject. The matcher combines bge-base-en-v1.5 cosine similarity with lexical overlap, and "
+    "its threshold of 0.757567 was fixed on validation pairs before the matcher was used. The top two matches for each "
+    "compared class later became the candidates shown to the annotator. Used directly as labels, the same matches form "
+    "the “P2-002 candidates” baseline.")
+R.h2("3.6 Benchmark tasks and annotation protocol")
+R.p("**T1 (RQ1, RQ2).** We drew 123 candidates with a fixed seed, stratified by source class, with at most four "
+    "compared classes per item. For each compared class the annotator chooses one of three judgements and cites the "
+    "counterpart paragraph: **same** (the same obligation in substance), **different** (the same topic but a different "
+    "threshold, timeline, scope, actor or carve-out) or **none** (no counterpart among the paragraphs checked). A span "
+    "that imposes no duty on a regulated entity is rejected as not an obligation. Guideline rule v3.6 then derives the "
+    "item-level differential flag: any *different* gives *class-specific*; otherwise any *same* gives *shared*; and "
+    "all *none* gives *absent*. Of the 123 items, 106 were validated and 17 rejected, leaving 412 class judgements.")
+R.p("**Annotation workflow.** The gold labels come from one expert annotator who worked on blind sheets with written "
+    "guidelines. Of the 106 gold items, 62 are single-pass, 6 were consistent across a blind retest, and 38 were "
+    "adjudicated by the same annotator. Reliability was measured separately from the gold: three raters, all of them "
+    "student authors, independently labelled thirty items drawn outside the T1 sample, and the annotator repeated a "
+    "blind test–retest on 25 items. Fig. 3.3 shows this provenance.")
+@@B6@@
+R.p("**T2 (RQ1)** has three relevance sets for retrieving the target-class counterpart: one derived from the T1 "
+    "labels (291 queries), one from the P2-002 validation pairs (53) and one from a hand alignment of FAQ and press "
+    "release questions (25). **T3** asks for the status of a paragraph (in force, amended or deleted) on an as-of "
+    "date; its 52 scored items come from a deterministic parser of Amendment Directions and update stamps. **T4 "
+    "(RQ3)** has 30 questions. Each has a genuine RAG answer and three rule-built variants: a concatenation of the "
+    "retrieved obligation sentences, a negated version of that concatenation, and an off-topic answer of matched "
+    "length. Thirty answers also carry blind human ratings of faithfulness and of whether they answer the question. "
+    "Table 3.3 summarises the benchmark.")
+@@B7@@
+R.h2("3.7 Retrieval and judgement systems")
+R.p("Fig. 3.4 shows the evaluation architecture. We compared five retrievers: BM25; dense retrieval with "
+    "bge-base-en-v1.5; a hybrid that fuses the two with RRF (k = 60); a **class-aware hybrid** restricted to the "
+    "Directions of the target class (and its function-heading Directions); and, as a diagnostic, the class-blind "
+    "hybrid with every paragraph of the query's own source class removed. A **temporal filter** keeps only paragraphs "
+    "in force on the as-of date, using the same amendment index that builds T3.")
+@@B8@@
+R.p("All T1 judgement systems use gemini-3.5-flash-lite at temperature zero, with minimal thinking, JSON output and "
+    "frozen prompts whose SHA-256 hashes are stored in the configuration. They differ in the evidence the model sees "
+    "and in whether its answer is checked:")
+R.bullets([
+    "a **class-blind LLM** and a **class-aware LLM**, each judging the retrieved evidence;",
+    "the **final agentic system**, which adds to the class filter an NLI verifier (nli-deberta-v3-xsmall) that retries "
+    "or abstains when the cited paragraph does not entail the rationale;",
+    "a **class-blind LLM with the verifier**;",
+    "a **long-context system** that receives every Direction of the compared classes, up to a 100K-token cap.",
+])
+R.p("Two baselines anchor the comparison: the majority class, computed in-sample from the gold and therefore a "
+    "reference point rather than a deployable system, and the P2-002 candidate labels. Ablations A, B and C switch the "
+    "class filter, the temporal filter and the verifier on and off. The orchestration is plain Python; a later "
+    "LangGraph port reproduced all four retrieval-based T1 systems exactly. The final agentic system runs as follows:")
+R.bullets([
+    "Input: source obligation *o*, compared class *c*, as-of date *t*.",
+    "Retrieve the top-k paragraphs for *o* with the hybrid retriever, restricted to class *c* (class filter) and to "
+    "paragraphs in force on *t* (temporal filter).",
+    "Ask the LLM for a judgement in {same, different, none}, the matched paragraph id and a one-sentence rationale.",
+    "Check the rationale against the cited paragraph with the NLI verifier; if it is not entailed, retry once with "
+    "the verifier's feedback; if it still fails, abstain.",
+    "Derive the item flag from the per-class judgements with rule v3.6.",
+], numbered=True)
+R.h2("3.8 Pairwise structured comparator")
+R.p("The comparator is this project's targeted experiment, designed for the *different* failure. For each item and "
+    "compared class, the model receives the source obligation and the two candidate paragraphs that the annotator was "
+    "shown. It extracts thirteen fields from both sides (actor, action, object, scope, condition, threshold, amount, "
+    "percentage, frequency, deadline, exception, documentation and reporting) and marks each field as equal, "
+    "different or present on one side only. The verdict is then decided by a **fixed rule, not by the model**, with "
+    "the precedence same > different > none. We developed the prompt and the rule only on the separate 30-item set, "
+    "revised them once to fix a field-extraction bug, and froze them by hash (system prompt 51f7ea78ed4b…, rule "
+    "83664f8d9d8f…) before any run on the T1 gold. The comparisons against the class-aware LLM and against "
+    "P2-002 were pre-registered.")
+R.h2("3.9 Evaluation protocol")
+R.p("T1 is scored with five measures: three-way flag macro-F1 (shared, class-specific, absent); collapsed flag "
+    "macro-F1 (absent versus present), which is the fair comparison with P2-002 because P2-002 cannot express "
+    "*different*; judgement macro-F1 over class units; *different* F1; and coverage. Abstentions are kept in the "
+    "denominator. An abstained class judgement is scored as *unsure*, which matches no label, and an item whose flag "
+    "cannot be derived counts as wrong. The long-context system is scored on the 102 items it answered, and every "
+    "comparison with it uses those same items. T2 is scored with nDCG@10 [@jarvelin2002ndcg], T3 with status exact "
+    "match, and T4 with the RePASs composite and its Spearman correlation with human ratings.")
+R.p("Every confidence interval is a 95% percentile bootstrap interval over 2,000 item resamples [@efron1979]. "
+    "Differences between systems are paired on the same items, and we state whether each interval excludes zero. "
+    "Proportions use Wilson intervals [@wilson1927], and agreement uses Cohen's and Fleiss' κ "
+    "[@cohen1960, @fleiss1971].")
+R.h2("3.10 Applications built on the benchmark")
+R.h3("3.10.1 Interactive inspection website and live comparator API")
+R.p("A React and TypeScript website presents the 412 expert-labelled comparisons together with every sealed system "
+    "answer. Its *Microscope* page shows a single case in full: both paragraph excerpts with RBI links, each system's "
+    "answer, what each LLM was given, the 13-field table and the trace of the frozen rule's decision. A *Failure Map* "
+    "plots the 78 real differences against all systems. The site also has a spot-the-difference game, an atlas of 11 "
+    "institution types × 57 topics, a *Lab* that re-runs a benchmark pair live and compares it with the sealed "
+    "answer, a triage view, results and method pages, and a presenter mode. It is deployed as an Azure static "
+    "website, and the comparator API, which loads the frozen prompt and rule and checks their hashes, runs as an "
+    "Azure Function. Because RBI text is copyrighted, the site shows at most twelve words per excerpt and always links "
+    "to the RBI's PDF.")
+R.h3("3.10.2 Local compliance audit generator with an AI assistant")
+R.p("The audit generator turns the corpus and pipeline into a tool for a regulated entity's compliance team "
+    "(Fig. 3.5). Given an entity profile (class, as-of date, last review date and activities), it produces a "
+    "citation-backed audit pack with six parts: an applicability register; a change-impact log covering the period "
+    "since the last review; a compliance calendar of deadlines and frequencies; a cross-class differential for group "
+    "entities; an enforcement-risk view built from penalty press releases; and a policy gap analysis that marks each "
+    "applicable obligation as covered, partial or missing in an uploaded policy. A reviewer confirms or disputes each "
+    "row, and the pack can be exported to Excel, DOCX, PDF, iCalendar and a JSON audit trail. The FastAPI backend "
+    "binds only to 127.0.0.1.")
+@@B9@@
+R.p("The AI assistant answers questions about a pack, explains obligations, drafts policy clauses, explains changes "
+    "and writes an executive memo. It uses a local Ollama model only and refuses non-loopback hosts. Each sentence it "
+    "produces must cite RBI text and pass a check by the NLI cross-encoder; any number it states must appear in the "
+    "source, and sentences that fail verification are held back. Its suggestions never change a row's review status.")
+R.h2("3.11 Standards followed")
+R.p("We followed these standards and recommended practices in design, documentation and testing:")
+R.bullets([
+    "**ISO/IEC/IEEE 12207:2017** (software life-cycle processes): work proceeded in gated phases, P0 to P5, each with "
+    "a written plan, an audit and an acceptance checklist.",
+    "**ISO/IEC/IEEE 29148:2018** (requirements engineering): the research questions, tasks and acceptance criteria "
+    "were written down before implementation, and the comparator analysis was pre-registered.",
+    "**IEEE 1016-2009** (software design descriptions): the repository documents module boundaries, data schemas and "
+    "decision records (D-01 to D-28 for the demo).",
+    "**ISO/IEC/IEEE 29119** (software testing): the code base has over 1,200 automated Python tests and 115 UI tests; "
+    "a release check fails on excluded paths, key-like strings, oversized files or long copied runs of RBI text; and "
+    "data assertions stop the UI build on any mismatch.",
+    "**IEEE 7000-2021** (ethical concerns during system design): the RBI's copyright is respected through a "
+    "pointer-only release, prompts contain no personal data, AI use is disclosed, and every audit output states "
+    "“decision support only, not legal advice”.",
+    "**IEEE reference style** for citations, **ISO 8601** for dates and **RFC 5545** (iCalendar) for the "
+    "compliance-calendar export.",
+])
+R.h2("3.12 Use of AI tools")
+R.p("Claude Code (Anthropic) wrote the repository code under the authors' direction: the scraper, preprocessing, "
+    "candidate extraction, matching, benchmark tooling, evaluation and statistics scripts, the inspection interface "
+    "and the audit generator. It also drafted the internal reports, and Claude was used to draft and edit the text of "
+    "this report. The authors reviewed every output. gemini-3.5-flash-lite and gpt-oss-120b are systems under study, "
+    "and their outputs are never used as labels; every human label was assigned manually. Prompts contained only "
+    "public RBI text and no personal data.")
+R.h2("3.13 Project schedule")
+R.p("Fig. 3.6 shows the schedule, which we reviewed with the mentor each week and recorded in the log book. The work "
+    "was organised in gated phases (P0 to P5); each phase ended with a written report and an acceptance check before "
+    "the next began.")
+@@B10@@
+R.p("**Summary.** The pipeline harvests and structures all 381 Master Directions, extracts obligations and matches "
+    "them across classes, and turns the result into four benchmark tasks whose annotation and reliability evidence "
+    "are documented separately. Retrieval, LLM, verifier, long-context and structured-comparator systems are evaluated "
+    "under a pre-registered, bootstrap-based protocol, and the same pipeline powers both a public inspection website "
+    "and a local audit generator.")
+
+# ------------------------------------------------------------------------------------------------ Chapter 4
+R.chapter_heading("Results and Analysis")
+R.p("This chapter reports every experiment and reads the results against the three research questions. We first "
+    "check the intermediate steps (extraction, matching and annotation), then turn to retrieval (RQ1), differential "
+    "judgement (RQ2) and the structured comparator, metric integrity (RQ3) and the temporal task, before covering the "
+    "additional experiments and discussing what the results do and do not show. Square brackets give 95% confidence "
+    "intervals; for each difference we state whether its interval excludes zero.")
+R.h2("4.1 Experimental setup")
+R.p("Every T1 system used gemini-3.5-flash-lite at temperature zero with frozen prompts. Each system was run once per "
+    "item, and its predictions were sealed before scoring. The evaluation harness regenerates each table from the "
+    "stored predictions with a single command, and the paper's tables are generated from the same results file "
+    "rather than typed in by hand.")
+R.h2("4.2 Intermediate-step validation")
+R.p("**Candidate extraction.** Over four rounds of hand checks, the precision of the extraction rules rose from 0.675 "
+    "to 0.929 (Table 4.1, Fig. 4.1).")
+@@B11@@
+@@B12@@
+R.p("**Cross-class matching.** On 60 validation pairs the matcher found a true counterpart in 53, a rate of 0.883 "
+    "[0.778, 0.942]. **Supplementary sources.** FAQ alignment was clean in only 5 of 30 samples (0.167), and "
+    "enforcement alignment in 16 of 30 (0.533). Under the locked decision rule, FAQ text is therefore used only for "
+    "validation and motivation, and enforcement releases only as Direction-level weak labels. **T1 sampling.** 17 of "
+    "the 123 sampled candidates were rejected as not an obligation (0.138 [0.088, 0.210]). The 106 validated items "
+    "are flagged shared (52), class-specific (40) and absent (14).")
+R.h2("4.3 Annotation reliability")
+@@B13@@
+R.p("Agreement among the three raters on class judgements is substantial on the Landis and Koch scale "
+    "[@landis1977]. On the derived flag it is only moderate, which is expected: a flag compounds the errors of up to "
+    "four class judgements. The retest is supplementary evidence, because a gap of 11.7 to 18.6 hours is short enough "
+    "for recall to inflate agreement. The gold itself remains single-expert, and we note this wherever T1 results are "
+    "reported.")
+R.h2("4.4 RQ1: applicability and counterpart retrieval (T2)")
+@@B14@@
+@@B15@@
+R.p("The class filter raises nDCG@10 on t2_xclass_t1 by **+0.451 [+0.421, +0.481]** (excludes 0), and the gain "
+    "appears on all three relevance sets: +0.423 [+0.336, +0.514] on t2_xclass_p2002 and +0.171 [+0.072, +0.273] on "
+    "t2_supp_p2003, both excluding zero. Some of this gain is built in, because relevance was labelled only for the "
+    "target-class counterpart. The third set, however, was constructed independently and still shows a clear gain. "
+    "Removing only the source class is not enough (0.464), which suggests that the benefit comes from knowing the "
+    "target class rather than merely from avoiding near-duplicates in the source Direction. The class-blind dense "
+    "retriever reaches 0.421 against 0.894 for the class-aware hybrid; for the second half of RQ1, then, a class-blind "
+    "retriever loses more than half of the achievable nDCG on this set.")
+R.p("The picture changes on T1, where the class filter has no significant effect: class-aware minus class-blind "
+    "three-way flag F1 is -0.050 [-0.133, +0.027] without the verifier and -0.049 [-0.133, +0.036] with it, and "
+    "neither interval excludes zero. Finding the counterpart is not where T1 systems struggle.")
+R.h2("4.5 RQ2: differential obligation (T1)")
+@@B16@@
+R.p("Table 4.4 gives point estimates; Appendix B lists the confidence interval for every cell. No LLM system "
+    "significantly beats the P2-002 candidate labels on collapsed flag F1: class-blind minus P2-002 is -0.019 "
+    "[-0.114, +0.072] and class-aware minus P2-002 is +0.024 [-0.096, +0.135], and neither interval excludes zero. "
+    "On three-way F1 the class-blind LLM does beat P2-002, by +0.143 [+0.054, +0.232], because P2-002 cannot express "
+    "*different* at all.")
+@@B17@@
+R.h3("4.5.1 The different failure")
+R.p("*Different* is where the LLM systems fail most. Of the 78 gold *different* class units, **56 are missed by every "
+    "LLM system** when all five answered, and 58 when only the systems that answered are counted. We classify an "
+    "error as a retrieval failure if the gold matched paragraph was absent from the system's context, and as a "
+    "reasoning failure if it was present. Across the five LLM systems, 262 of the 350 *different* errors occurred "
+    "with the gold counterpart in context (Table 4.5, Fig. 4.4), so most of these errors are reasoning failures rather "
+    "than retrieval failures.")
+@@B18@@
+@@B19@@
+R.p("The systems also err in different directions. On gold *different* units, the class-aware LLM answers *same* 32 "
+    "times and *none* 39 times, while the long-context model answers *same* 43 times. Either way, the difference that a "
+    "compliance reviewer needs to see is lost.")
+R.h3("4.5.2 Verifier and long-context")
+R.p("Adding the NLI verifier lowers three-way flag F1 by **-0.068 [-0.132, -0.012]** and coverage by -0.217 [-0.292, "
+    "-0.142], both excluding zero; on the class-blind side the loss is -0.069 [-0.129, -0.014]. The final agentic "
+    "system abstained on 81 class judgements, 59 of which had been correct before the retry. Our reading is that a "
+    "whole-paragraph entailment premise is a poor test for a one-sentence rationale. The long-context model answered "
+    "102 items at the 100K cap. On those items it ties the retrieval systems on three-way F1 and beats the final "
+    "agentic system on collapsed F1 by +0.126 [+0.016, +0.240]. When the relevant Directions fit in the context "
+    "window, retrieval does not appear to be the bottleneck.")
+R.h2("4.6 Targeted experiment: the structured comparator")
+@@B20@@
+R.p("Against the class-aware LLM, the comparator raises *different* F1 by +0.255, *different* recall by +0.397 and "
+    "judgement macro-F1 by +0.071, and all three intervals exclude zero (Table 4.6). The gain does not extend to "
+    "collapsed flag F1 (+0.030 [-0.061, +0.128]). The comparator recovers 26 of the 56 units that every LLM system "
+    "missed, and on the gold its *different* recall is 0.487 at a precision of 0.352. Its *different* F1 on the "
+    "development set had been 0.348, so the gold result does not come from tuning on test data. The remaining errors "
+    "run *different* → *none* 32 times and *different* → *same* only 6 times: in most failures the model "
+    "decides that the two paragraphs do not describe the same duty. This points to topic matching, rather than field "
+    "extraction, as the next bottleneck.")
+R.h2("4.7 RQ3: metric integrity (T4)")
+@@B21@@
+@@B22@@
+R.p("Concatenation gameability reproduces on RBI text: concatenated answers score +0.375 [+0.325, +0.427] above "
+    "genuine answers under RePASs (pre-registered verdict: reproduces). The metric is not fooled by the other two "
+    "attacks, since negated and off-topic answers score below genuine ones. RePASs tracks human faithfulness ratings "
+    "(ρ = 0.731) but not whether an answer addresses the question (ρ = 0.008). We also tried an exploratory "
+    "repair that adds an overlap penalty and a relevance term. It ranks genuine answers first (+0.208 over "
+    "concatenated), but it no longer tracks human faithfulness (ρ = -0.126 [-0.477, 0.216]), so it is not usable "
+    "in its current form.")
+R.h2("4.8 Temporal status (T3) and ablations")
+R.p("With the temporal filter on, status exact match is 1.000, but this result is circular: the gold and the filter "
+    "share one parser. Without the filter the score falls to 0.538 [0.404, 0.673], and the model answered “in "
+    "force, original” on 48 of the 52 items. What T3 shows, then, is that a model uses the dates it is given but "
+    "does not infer amendment status on its own. Table 4.8 summarises ablations A to C.")
+@@B23@@
+R.h2("4.9 Additional experiments")
+R.p("The additional experiments were pre-registered after the main runs and used the same prompts and intervals. A "
+    "cross-encoder re-ranker (ms-marco-MiniLM-L6-v2 over the hybrid top 20) gave no reliable T2 gain and lowered T1 "
+    "class-blind three-way F1 by -0.064 [-0.115, -0.017]. The larger open-weight gpt-oss-120b (class-blind, on the 103 "
+    "items within its free-tier limit) tied gemini-3.5-flash-lite on three-way F1 (-0.010 [-0.094, +0.084]). Two "
+    "external checks place the harness against published work: on the ObliQA test set our BM25 retrieval reaches "
+    "Recall@10 of 75.3 [73.9, 76.8] against a published 76.1, and on a stratified prefix of 268 of the 406 "
+    "IndiaFinBench items the frozen answer prompt scores 75.7% [70.3, 80.5].")
+R.h2("4.10 Discussion")
+R.p("Six findings stand out. We present them as findings about what the benchmark exposes, not as evidence that our "
+    "agent wins:")
+R.bullets([
+    "Class-aware filtering substantially improves counterpart retrieval.",
+    "That improvement does not carry over to T1 judgement: locating the counterpart is easier than deciding what "
+    "differs.",
+    "*Different* is the core failure, and most *different* errors are reasoning failures.",
+    "The NLI verifier hurts T1, because it declines many correct answers.",
+    "A long-context model without retrieval is competitive when the relevant Directions fit in its window.",
+    "RePASs can be gamed by concatenation on RBI text, so a faithfulness score needs a relevance component that "
+    "verbatim text cannot satisfy.",
+], numbered=True)
+R.p("The comparator result adds a constructive point. Making the comparison explicit, field by field, and leaving the "
+    "verdict to a fixed rule recovers part of the *different* signal that free-form judgement misses. It does not "
+    "close the gap: the comparator still misses 40 of the 78 *different* units.")
+R.h2("4.11 Validity of the results")
+R.p("Several measures protect the validity of these results. Every prompt, rule and threshold was frozen and hashed "
+    "before the test runs, and the comparator comparisons were pre-registered. Differences are paired bootstrap "
+    "estimates with 95% intervals, abstentions are scored as errors instead of being dropped, and the paper's numbers "
+    "are generated from the results file. The software was tested following the practices of ISO/IEC/IEEE 29119 "
+    "(Section 3.11). These measures guard against tuning on test data and against transcription errors; they do not "
+    "remove the limitations of a single-expert gold set, which Chapter 5 discusses.")
+R.p("**Summary.** For RQ1, class-aware filtering helps retrieval but not judgement. For RQ2, every LLM system misses "
+    "most real differences even with the evidence in context, and only the structured comparator recovers a "
+    "substantial share. For RQ3, the concatenation weakness of RePASs reproduces on RBI text, and the simple repair we "
+    "tried fixes the ranking only at the cost of agreement with human judgement.")
+
+# ------------------------------------------------------------------------------------------------ Chapter 5
+R.chapter_heading("Advantages, Limitations and Applications")
+R.p("The strengths and weaknesses of the project follow from the results in Chapter 4. This chapter ties each "
+    "advantage to a documented feature or result, states the limitations that constrain how far the results "
+    "generalise, and describes where the work can be applied.")
+R.h2("5.1 Advantages")
+R.bullets([
+    "**A new evaluation target.** T1 isolates the case that generic regulatory QA does not test: a counterpart exists "
+    "in another class but says something different (Section 4.5).",
+    "**A complete, current corpus.** All 381 Master Directions with stable paragraph identifiers, an entity class "
+    "× subject family matrix and an amendment index (Section 3.3).",
+    "**Careful evaluation.** Prompts and rules were frozen, comparisons pre-registered, intervals computed by paired "
+    "bootstrap, abstentions scored as errors, and reliability evidence reported with its limits (Sections 3.9 and "
+    "4.11).",
+    "**An interpretable comparator.** The 13-field table and the fixed rule show *why* two obligations differ, so a "
+    "reviewer can check the verdict field by field (Section 3.8).",
+    "**A release that respects copyright.** The data is released as pointers with SHA-256 hashes and a rehydration "
+    "script; no RBI text is redistributed.",
+    "**Reproducible, tested code.** One command regenerates each table, and the code base has over 1,200 automated "
+    "tests and a release safety check (Section 3.11).",
+    "**Applications that keep data local.** The audit generator and its AI assistant run on the user's machine, and "
+    "uploaded policies appear in the audit trail only as hashes (Section 3.10.2).",
+])
+R.h2("5.2 Limitations")
+R.p("The following limitations bound how far the results generalise:")
+R.bullets([
+    "T1 has 106 items, with 7 to 15 per source class, so per-class results carry wide uncertainty.",
+    "The gold labels come from a single expert. Inter-rater agreement was measured on a separate sample, and the "
+    "retest gap was short.",
+    "Each item compares at most four classes. The annotator and the comparator saw the same two candidate paragraphs, "
+    "which may bias both towards the P2-002 candidates.",
+    "Each T2 relevance set favours one retriever because of how its candidates were shown to raters.",
+    "T3 is circular, since the gold and the filter share a parser, and the parser has a known defect on merged "
+    "changes.",
+    "The corpus holds only the current, amended text, so the system can flag a later amendment but cannot show the "
+    "earlier wording.",
+    "T4 is small, its questions were drafted by an LLM, and it has one rater; the RePASs repair is exploratory.",
+    "All main LLM results come from a Flash-Lite-class model on free tiers, so they may not hold for stronger models.",
+    "The tools provide decision support only and are not legal advice.",
+])
+R.h2("5.3 Applications")
+R.bullets([
+    "**Compliance teams of regulated entities** can generate an applicability register, change-impact log and "
+    "compliance calendar for their entity class, with every row linked to the RBI paragraph.",
+    "**Financial groups** with several regulated entities can use the cross-class differential to see where the rules "
+    "for, say, a bank and its NBFC subsidiary diverge.",
+    "**Internal and statutory auditors** get a reviewable audit pack with sign-off and a JSON audit trail.",
+    "**Policy owners** can run a gap analysis that checks an internal policy against every applicable obligation.",
+    "**Regulatory-technology vendors and researchers** can test RAG systems on Indian regulation, and metric designers "
+    "can use the evidence on the limits of RePASs.",
+    "**Teachers and trainers** can use the inspection website to show how LLMs fail on subtle regulatory differences.",
+])
+R.p("**Summary.** The project's strengths are a new evaluation target, a careful protocol and interpretable, "
+    "privacy-preserving tools. Its main limitations are the size and single-expert nature of the gold set and the "
+    "reliance on small hosted models. The tools are most useful to compliance teams, auditors, vendors and "
+    "researchers.")
+
+# ------------------------------------------------------------------------------------------------ Chapter 6
+R.chapter_heading("Conclusion and Future Scope")
+R.p("This chapter answers the three research questions and sets out the work that should follow.")
+R.h2("6.1 Conclusion")
+R.p("RBI-ObliBench tests whether systems can tell which RBI obligations bind an entity class and where parallel Master "
+    "Directions differ. Its answers to the three research questions are as follows.")
+R.p("**RQ1 (Applicability).** For retrieval, yes: a class filter raises counterpart nDCG@10 by +0.451. For judgement, "
+    "the filter makes no significant difference on T1.")
+R.p("**RQ2 (Differential obligation).** Not with current free-form LLM systems. Every system we evaluated, from "
+    "embedding matching to long-context reading, misses most real differences, usually with the counterpart already "
+    "in context. A structured comparator that decides by a fixed rule raises *different* F1 to 0.409 and recovers 26 "
+    "of the 56 differences that every LLM missed, but it still misses 40 of the 78 gold *different* units.")
+R.p("**RQ3 (Metric integrity).** Yes: RePASs rewards verbatim concatenation on RBI text as it does on ObliQA. A "
+    "faithfulness metric therefore needs a relevance component that copied text cannot satisfy, and the repair we "
+    "tried does not yet provide one without losing agreement with human ratings.")
+R.p("Alongside these findings, the project produced a pointer-only data release, a tested code base, a public "
+    "inspection website, a local compliance audit generator and a research paper submitted to AISIGH-SD 2026.")
+R.h2("6.2 Future scope")
+R.p("Table 6.1 ranks the work that would most improve the benchmark and the tools. The first two items address the "
+    "reliability of the gold labels; the others extend the models, tasks and sources evaluated.")
+@@B24@@
+

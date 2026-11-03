@@ -1,0 +1,666 @@
+{
+  "n_items": 106,
+  "n_judgements": 412,
+  "gold_flag_counts": {
+    "class-specific": 40,
+    "shared": 52,
+    "absent": 14
+  },
+  "gold_judgement_counts": {
+    "different": 78,
+    "same": 213,
+    "none": 121
+  },
+  "bootstrap": {
+    "resamples": 2000,
+    "seed": 20260927,
+    "unit": "item"
+  },
+  "baselines": {
+    "majority": {
+      "rule": {
+        "flag": "shared",
+        "judgement": "same",
+        "source": "majority of the validated set itself (in-sample)"
+      },
+      "undecided_predictions": false,
+      "native_collapsed": {
+        "flag": {
+          "n_units": 106,
+          "n_items": 106,
+          "labels": [
+            "absent",
+            "present"
+          ],
+          "macro_f1": 0.46464646464646464,
+          "macro_f1_ci": [
+            0.44502617801047123,
+            0.4803921568627451
+          ],
+          "accuracy": 0.8679245283018868,
+          "per_label": {
+            "absent": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 14,
+              "f1_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "present": {
+              "precision": 0.8679245283018868,
+              "recall": 1.0,
+              "f1": 0.9292929292929293,
+              "support": 92,
+              "f1_ci": [
+                0.8900523560209425,
+                0.9607843137254902
+              ]
+            }
+          },
+          "confusion": {
+            "absent": {
+              "absent": 0,
+              "present": 14
+            },
+            "present": {
+              "absent": 0,
+              "present": 92
+            }
+          }
+        },
+        "judgement": {
+          "n_units": 412,
+          "n_items": 106,
+          "labels": [
+            "none",
+            "counterpart"
+          ],
+          "macro_f1": 0.4139402560455192,
+          "macro_f1_ci": [
+            0.3871437870678432,
+            0.4372435873343982
+          ],
+          "accuracy": 0.7063106796116505,
+          "per_label": {
+            "none": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 121,
+              "f1_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "counterpart": {
+              "precision": 0.7063106796116505,
+              "recall": 1.0,
+              "f1": 0.8278805120910384,
+              "support": 291,
+              "f1_ci": [
+                0.7742875741356864,
+                0.8744871746687964
+              ]
+            }
+          },
+          "confusion": {
+            "none": {
+              "none": 0,
+              "counterpart": 121
+            },
+            "counterpart": {
+              "none": 0,
+              "counterpart": 291
+            }
+          }
+        }
+      },
+      "three_label": {
+        "flag": {
+          "n_units": 106,
+          "n_items": 106,
+          "labels": [
+            "shared",
+            "class-specific",
+            "absent"
+          ],
+          "macro_f1": 0.21940928270042195,
+          "macro_f1_ci": [
+            0.18918918918918917,
+            0.24603174603174602
+          ],
+          "accuracy": 0.49056603773584906,
+          "per_label": {
+            "shared": {
+              "precision": 0.49056603773584906,
+              "recall": 1.0,
+              "f1": 0.6582278481012659,
+              "support": 52,
+              "f1_ci": [
+                0.5675675675675675,
+                0.738095238095238
+              ]
+            },
+            "class-specific": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 40,
+              "f1_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "absent": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 14,
+              "f1_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "confusion": {
+            "shared": {
+              "shared": 52,
+              "class-specific": 0,
+              "absent": 0
+            },
+            "class-specific": {
+              "shared": 40,
+              "class-specific": 0,
+              "absent": 0
+            },
+            "absent": {
+              "shared": 14,
+              "class-specific": 0,
+              "absent": 0
+            }
+          }
+        },
+        "judgement": {
+          "n_units": 412,
+          "n_items": 106,
+          "labels": [
+            "same",
+            "different",
+            "none"
+          ],
+          "macro_f1": 0.22719999999999999,
+          "macro_f1_ci": [
+            0.20389366959188893,
+            0.24899598393574296
+          ],
+          "accuracy": 0.5169902912621359,
+          "per_label": {
+            "same": {
+              "precision": 0.5169902912621359,
+              "recall": 1.0,
+              "f1": 0.6816,
+              "support": 213,
+              "f1_ci": [
+                0.6116810087756668,
+                0.7469879518072289
+              ]
+            },
+            "different": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 78,
+              "f1_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "none": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 121,
+              "f1_ci": [
+                0.0,
+                0.0
+              ]
+            }
+          },
+          "confusion": {
+            "same": {
+              "same": 213,
+              "different": 0,
+              "none": 0
+            },
+            "different": {
+              "same": 78,
+              "different": 0,
+              "none": 0
+            },
+            "none": {
+              "same": 121,
+              "different": 0,
+              "none": 0
+            }
+          }
+        }
+      }
+    },
+    "p2002_candidates": {
+      "rule": {
+        "matched": "counterpart",
+        "below_threshold": "none",
+        "flag": "shared_or_class_specific if any compared class matched, else absent"
+      },
+      "undecided_predictions": true,
+      "native_collapsed": {
+        "flag": {
+          "n_units": 106,
+          "n_items": 106,
+          "labels": [
+            "absent",
+            "present"
+          ],
+          "macro_f1": 0.7843023255813955,
+          "macro_f1_ci": [
+            0.6748991121872477,
+            0.8765575798064422
+          ],
+          "accuracy": 0.8679245283018868,
+          "per_label": {
+            "absent": {
+              "precision": 0.5,
+              "recall": 0.9285714285714286,
+              "f1": 0.65,
+              "support": 14,
+              "f1_ci": [
+                0.45161290322580644,
+                0.8
+              ]
+            },
+            "present": {
+              "precision": 0.9875,
+              "recall": 0.8586956521739131,
+              "f1": 0.9186046511627908,
+              "support": 92,
+              "f1_ci": [
+                0.8717791411042944,
+                0.9550561797752808
+              ]
+            }
+          },
+          "confusion": {
+            "absent": {
+              "absent": 13,
+              "present": 1
+            },
+            "present": {
+              "absent": 13,
+              "present": 79
+            }
+          }
+        },
+        "judgement": {
+          "n_units": 412,
+          "n_items": 106,
+          "labels": [
+            "none",
+            "counterpart"
+          ],
+          "macro_f1": 0.8544398209939545,
+          "macro_f1_ci": [
+            0.7988853332172298,
+            0.9037863149168479
+          ],
+          "accuracy": 0.8689320388349514,
+          "per_label": {
+            "none": {
+              "precision": 0.7080745341614907,
+              "recall": 0.9421487603305785,
+              "f1": 0.8085106382978723,
+              "support": 121,
+              "f1_ci": [
+                0.7280144541650818,
+                0.8746177370030581
+              ]
+            },
+            "counterpart": {
+              "precision": 0.9721115537848606,
+              "recall": 0.8384879725085911,
+              "f1": 0.9003690036900369,
+              "support": 291,
+              "f1_ci": [
+                0.8583836811347098,
+                0.9377052016563616
+              ]
+            }
+          },
+          "confusion": {
+            "none": {
+              "none": 114,
+              "counterpart": 7
+            },
+            "counterpart": {
+              "none": 47,
+              "counterpart": 244
+            }
+          }
+        }
+      },
+      "confusion_raw": {
+        "flag": {
+          "shared": {
+            "shared": 0,
+            "class-specific": 0,
+            "absent": 4,
+            "shared_or_class_specific": 48
+          },
+          "class-specific": {
+            "shared": 0,
+            "class-specific": 0,
+            "absent": 9,
+            "shared_or_class_specific": 31
+          },
+          "absent": {
+            "shared": 0,
+            "class-specific": 0,
+            "absent": 13,
+            "shared_or_class_specific": 1
+          }
+        },
+        "judgement": {
+          "same": {
+            "same": 0,
+            "different": 0,
+            "none": 18,
+            "counterpart": 195
+          },
+          "different": {
+            "same": 0,
+            "different": 0,
+            "none": 29,
+            "counterpart": 49
+          },
+          "none": {
+            "same": 0,
+            "different": 0,
+            "none": 114,
+            "counterpart": 7
+          }
+        }
+      },
+      "fixed_mapping": {
+        "mapping": {
+          "shared_or_class_specific": "shared",
+          "counterpart": "same"
+        },
+        "flag": {
+          "n_units": 106,
+          "n_items": 106,
+          "labels": [
+            "shared",
+            "class-specific",
+            "absent"
+          ],
+          "macro_f1": 0.45909090909090916,
+          "macro_f1_ci": [
+            0.38215967831510594,
+            0.5184168248371979
+          ],
+          "accuracy": 0.5754716981132075,
+          "per_label": {
+            "shared": {
+              "precision": 0.6,
+              "recall": 0.9230769230769231,
+              "f1": 0.7272727272727274,
+              "support": 52,
+              "f1_ci": [
+                0.6393442622950819,
+                0.8079611103283076
+              ]
+            },
+            "class-specific": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 40,
+              "f1_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "absent": {
+              "precision": 0.5,
+              "recall": 0.9285714285714286,
+              "f1": 0.65,
+              "support": 14,
+              "f1_ci": [
+                0.45161290322580644,
+                0.8
+              ]
+            }
+          },
+          "confusion": {
+            "shared": {
+              "shared": 48,
+              "class-specific": 0,
+              "absent": 4
+            },
+            "class-specific": {
+              "shared": 31,
+              "class-specific": 0,
+              "absent": 9
+            },
+            "absent": {
+              "shared": 1,
+              "class-specific": 0,
+              "absent": 13
+            }
+          }
+        },
+        "judgement": {
+          "n_units": 412,
+          "n_items": 106,
+          "labels": [
+            "same",
+            "different",
+            "none"
+          ],
+          "macro_f1": 0.5496759598923943,
+          "macro_f1_ci": [
+            0.5120549897276221,
+            0.5820061373768917
+          ],
+          "accuracy": 0.75,
+          "per_label": {
+            "same": {
+              "precision": 0.7768924302788844,
+              "recall": 0.9154929577464789,
+              "f1": 0.8405172413793104,
+              "support": 213,
+              "f1_ci": [
+                0.7803706588208146,
+                0.8945254395902082
+              ]
+            },
+            "different": {
+              "precision": 0.0,
+              "recall": 0.0,
+              "f1": 0.0,
+              "support": 78,
+              "f1_ci": [
+                0.0,
+                0.0
+              ]
+            },
+            "none": {
+              "precision": 0.7080745341614907,
+              "recall": 0.9421487603305785,
+              "f1": 0.8085106382978723,
+              "support": 121,
+              "f1_ci": [
+                0.7280144541650818,
+                0.8746177370030581
+              ]
+            }
+          },
+          "confusion": {
+            "same": {
+              "same": 195,
+              "different": 0,
+              "none": 18
+            },
+            "different": {
+              "same": 49,
+              "different": 0,
+              "none": 29
+            },
+            "none": {
+              "same": 7,
+              "different": 0,
+              "none": 114
+            }
+          }
+        }
+      },
+      "oracle_upper_bound": {
+        "flag": {
+          "n_units": 106,
+          "n_items": 106,
+          "labels": [
+            "shared",
+            "class-specific",
+            "absent"
+          ],
+          "macro_f1": 0.8237037037037038,
+          "macro_f1_ci": [
+            0.7367098101680052,
+            0.8966705046231294
+          ],
+          "accuracy": 0.8679245283018868,
+          "per_label": {
+            "shared": {
+              "precision": 1.0,
+              "recall": 0.9230769230769231,
+              "f1": 0.9600000000000001,
+              "support": 52,
+              "f1_ci": [
+                0.9148784194528875,
+                0.9904761904761905
+              ]
+            },
+            "class-specific": {
+              "precision": 0.96875,
+              "recall": 0.775,
+              "f1": 0.8611111111111113,
+              "support": 40,
+              "f1_ci": [
+                0.7666489361702127,
+                0.9333333333333333
+              ]
+            },
+            "absent": {
+              "precision": 0.5,
+              "recall": 0.9285714285714286,
+              "f1": 0.65,
+              "support": 14,
+              "f1_ci": [
+                0.45161290322580644,
+                0.8
+              ]
+            }
+          },
+          "confusion": {
+            "shared": {
+              "shared": 48,
+              "class-specific": 0,
+              "absent": 4
+            },
+            "class-specific": {
+              "shared": 0,
+              "class-specific": 31,
+              "absent": 9
+            },
+            "absent": {
+              "shared": 0,
+              "class-specific": 1,
+              "absent": 13
+            }
+          }
+        },
+        "judgement": {
+          "n_units": 412,
+          "n_items": 106,
+          "labels": [
+            "same",
+            "different",
+            "none"
+          ],
+          "macro_f1": 0.831912091607046,
+          "macro_f1_ci": [
+            0.7718419096239145,
+            0.8861485452118089
+          ],
+          "accuracy": 0.8689320388349514,
+          "per_label": {
+            "same": {
+              "precision": 1.0,
+              "recall": 0.9154929577464789,
+              "f1": 0.9558823529411764,
+              "support": 213,
+              "f1_ci": [
+                0.9166613924050633,
+                0.9846952669956871
+              ]
+            },
+            "different": {
+              "precision": 0.875,
+              "recall": 0.6282051282051282,
+              "f1": 0.7313432835820897,
+              "support": 78,
+              "f1_ci": [
+                0.6024031610312217,
+                0.835452484413376
+              ]
+            },
+            "none": {
+              "precision": 0.7080745341614907,
+              "recall": 0.9421487603305785,
+              "f1": 0.8085106382978723,
+              "support": 121,
+              "f1_ci": [
+                0.7280144541650818,
+                0.8746177370030581
+              ]
+            }
+          },
+          "confusion": {
+            "same": {
+              "same": 195,
+              "different": 0,
+              "none": 18
+            },
+            "different": {
+              "same": 0,
+              "different": 49,
+              "none": 29
+            },
+            "none": {
+              "same": 0,
+              "different": 7,
+              "none": 114
+            }
+          }
+        }
+      }
+    }
+  },
+  "inputs": {
+    "t1_validated_v1.jsonl": "67d471a13a266a12fbb55f41500c71c39f1322a0d847011a43be4cc55af45fc5",
+    "t1_candidate_benchmark_v1.jsonl": "8463e9951a7c207db9bbe5d91f438191371a7d2f67ac630b53403e27990671cd"
+  },
+  "scored_utc": "2026-09-27T17:30:20+00:00"
+}

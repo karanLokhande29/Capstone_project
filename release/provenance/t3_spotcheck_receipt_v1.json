@@ -1,0 +1,17 @@
+{
+ "received_utc": "2026-09-28T07:43:36+00:00",
+ "sha256": "3fd5b51c7837a06ae4ed244853aa7a95743b7141145b178d185954210eb23d77",
+ "file": "data/benchmark/t3/t3_spotcheck_sheet_v1_returned.csv",
+ "had_bom": true,
+ "rows": 20,
+ "label_source": "manual",
+ "precision": {
+  "k": 15,
+  "n": 20,
+  "value": 0.75,
+  "wilson_95": [
+   0.5312991206074114,
+   0.8881382993000237
+  ]
+ }
+}

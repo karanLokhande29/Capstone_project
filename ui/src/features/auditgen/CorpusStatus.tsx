@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import { Badge, Button, Card, CardBody } from "@/components/ui/primitives";
 import { PageHeader } from "@/components/Page";
-import { live } from "./api";
+import { HOSTED, live } from "./api";
 import { useAudit } from "./state";
+import { INSTALLED, PUBLIC_DEMO } from "./parts";
 
 type Fresh = Awaited<ReturnType<typeof live.freshness>>;
 
 export default function CorpusStatus() {
-  const { mode, pack } = useAudit();
+  const { mode: m, pack } = useAudit();
+  // The hosted service has no uploads or corpus refresh: those pages behave as in the read-only demo.
+  const mode = HOSTED ? "replay" : m;
   const [fresh, setFresh] = useState<Fresh | null>(null);
   const [dry, setDry] = useState<Record<string, unknown> | null>(null);
   const [busy, setBusy] = useState(false);
@@ -31,7 +34,8 @@ export default function CorpusStatus() {
               {busy ? "Checking rbi.org.in (≤ 4 requests, 1.5 s apart)…" : "Refresh dry run"}</Button>
             <p className="mt-1 text-[12px] text-ink-3">The dry run reads the RBI listings only and writes nothing. To apply: <code>python3 scripts/auditgen.py refresh --apply</code>.</p>
           </div>
-        ) : <p className="text-[12px] text-ink-3">The dry run needs the local backend: <code>python3 scripts/auditgen.py serve</code>, or run <code>python3 scripts/auditgen.py refresh --dry-run</code>.</p>}
+        ) : PUBLIC_DEMO ? <p className="text-[12px] text-ink-3">In {INSTALLED}, a refresh checks rbi.org.in for new and amended Directions (a dry run first; it writes nothing until applied).</p>
+          : <p className="text-[12px] text-ink-3">The dry run needs the local backend: <code>python3 scripts/auditgen.py serve</code>, or run <code>python3 scripts/auditgen.py refresh --dry-run</code>.</p>}
         {err && <p className="text-neg">{err}</p>}
       </CardBody></Card>
       {dry && (

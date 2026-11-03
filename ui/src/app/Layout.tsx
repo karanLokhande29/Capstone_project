@@ -8,15 +8,19 @@ import { useDrawer } from "@/components/drawerState";
 import { Badge, Button, Kbd, Tip, TooltipProvider } from "@/components/ui/primitives";
 import { AssistantPanel } from "@/features/assistant/Assistant";
 import { CommandPalette, useCommandPalette } from "./CommandPalette";
-import { NAV } from "./nav";
+import { NAV, publicNav } from "./nav";
 import { cn } from "@/lib/utils";
-import { NO_PROXY } from "@/lib/env";
+import { ARTIFACT, NO_PROXY } from "@/lib/env";
 import { Countdown } from "./Countdown";
+
+/** The public site shows only its own pages and none of the authors' tools (search palette, assistant, settings, deadline). */
+const PUBLIC = NO_PROXY;
+const SIDE_NAV = PUBLIC ? publicNav(!ARTIFACT) : NAV;
 
 function SideNav({ onNavigate }: { onNavigate?: () => void }) {
   return (
     <nav aria-label="Main" className="space-y-4 px-2 py-3">
-      {NAV.map((g) => (
+      {SIDE_NAV.map((g) => (
         <div key={g.label}>
           <p className={cn("px-2 pb-1 text-[10.5px] font-semibold uppercase tracking-wider", g.label === "Product" ? "text-product" : "text-ink-3")}>{g.label}</p>
           <ul className="space-y-px">
@@ -77,7 +81,7 @@ export function Layout() {
   const sync = useDrawer((s) => s.syncFromUrl);
   const st = useSettings();
   const fixture = useData((s) => s.snapshot?.meta.fixture);
-  const isProduct = ["/product", "/explorer", "/assistant"].some((p) => loc.pathname.startsWith(p));
+  const isProduct = ["/product", "/explorer", "/assistant", "/auditgen"].some((p) => loc.pathname.startsWith(p));
   useEffect(() => { sync(loc.search); }, [loc.search, sync]);
   useEffect(() => { window.scrollTo?.(0, 0); }, [loc.pathname]);
   const dark = typeof document !== "undefined" && document.documentElement.classList.contains("dark");
@@ -88,26 +92,27 @@ export function Layout() {
         <aside className="fixed inset-y-0 left-0 z-30 hidden w-56 overflow-y-auto border-r border-line bg-panel lg:block">
           <div className="flex items-center gap-2 border-b border-line px-4 py-3">
             <span className="grid h-6 w-6 place-items-center rounded-md bg-accent text-[11px] font-bold text-white dark:text-black">RO</span>
-            <div className="leading-tight"><p className="text-[13px] font-semibold">RBI-ObliBench</p><p className="text-[11px] text-ink-3">Command Center</p></div>
+            <div className="leading-tight"><p className="text-[13px] font-semibold">RBI-ObliBench</p><p className="text-[11px] text-ink-3">{PUBLIC ? "Research & audit generator" : "Command Center"}</p></div>
           </div>
           <SideNav />
         </aside>
         <div className="lg:pl-56">
           <header className="sticky top-0 z-20 flex items-center gap-2 border-b border-line bg-bg/90 px-4 py-2 backdrop-blur">
             <Button variant="ghost" size="icon" className="lg:hidden" aria-label="Open navigation" onClick={() => setMobileNav(true)}><Menu size={18} /></Button>
+            {PUBLIC ? <NavLink to="/" className="text-[13px] text-ink-3 hover:text-ink">← Benchmark demo</NavLink> : (
             <button type="button" onClick={() => setOpen(true)}
               className="flex min-w-0 flex-1 cursor-pointer items-center gap-2 rounded-md border border-line bg-panel px-2.5 py-1.5 text-left text-[13px] text-ink-3 hover:border-ink-3 sm:max-w-md">
               <Search size={14} /><span className="truncate">Ask or search…</span><span className="ml-auto hidden sm:inline"><Kbd>⌘K</Kbd></span>
-            </button>
+            </button>)}
             <div className="ml-auto flex items-center gap-1">
-              <Countdown />
+              {!PUBLIC && <Countdown />}
               {fixture && <Badge tone="neg">synthetic fixture</Badge>}
-              <Tip content="Assistant panel"><Button variant="ghost" size="icon" aria-label="Toggle assistant" onClick={() => st.setAssistantOpen(!st.assistantOpen)}><MessageSquare size={16} /></Button></Tip>
+              {!PUBLIC && <Tip content="Assistant panel"><Button variant="ghost" size="icon" aria-label="Toggle assistant" onClick={() => st.setAssistantOpen(!st.assistantOpen)}><MessageSquare size={16} /></Button></Tip>}
               <Tip content="Toggle theme"><Button variant="ghost" size="icon" aria-label="Toggle theme" onClick={() => st.setTheme(dark ? "light" : "dark")}>{dark ? <Sun size={16} /> : <Moon size={16} />}</Button></Tip>
-              <SettingsMenu />
+              {!PUBLIC && <SettingsMenu />}
             </div>
           </header>
-          <main id="main" className={cn("mx-auto max-w-[1400px] px-4 pb-16 pt-4 sm:px-6", st.assistantOpen && "xl:mr-[400px]")}>
+          <main id="main" className={cn("mx-auto max-w-[1400px] px-4 pb-16 pt-4 sm:px-6", !PUBLIC && st.assistantOpen && "xl:mr-[400px]")}>
             <Outlet />
           </main>
           {isProduct && (
@@ -128,9 +133,9 @@ export function Layout() {
             </Dialog.Content>
           </Dialog.Portal>
         </Dialog.Root>
-        <CommandPalette open={open} setOpen={setOpen} />
+        {!PUBLIC && <CommandPalette open={open} setOpen={setOpen} />}
         <NodeDrawer />
-        {st.assistantOpen && <AssistantPanel onClose={() => st.setAssistantOpen(false)} />}
+        {!PUBLIC && st.assistantOpen && <AssistantPanel onClose={() => st.setAssistantOpen(false)} />}
       </div>
     </TooltipProvider>
   );

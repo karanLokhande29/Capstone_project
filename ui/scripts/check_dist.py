@@ -11,6 +11,7 @@ Direction titles get no allowance here. Exit 1 on any finding.
 
 from __future__ import annotations
 
+import gzip
 import re
 import sys
 from pathlib import Path
@@ -24,22 +25,28 @@ from src.release.rbi_text import CorpusIndex, copied_runs  # noqa: E402
 LIMIT = 25
 KEY_PATTERNS = [re.compile(p) for p in (r"AIza[0-9A-Za-z_\-]{30,}", r"gsk_[0-9A-Za-z]{20,}", r"sk-[A-Za-z0-9]{32,}", r"ya29\.[0-9A-Za-z_\-]{20,}",
                                         r"-----BEGIN [A-Z ]*PRIVATE KEY-----")]
-TEXT = {".js", ".css", ".html", ".json", ".svg", ".txt", ".md", ".map"}
+TEXT = {".js", ".css", ".html", ".json", ".svg", ".txt", ".md", ".map", ".ics"}
 # §14.2 honesty grep (built sites only). "not a recommended threshold" is the required disclaimer, so it is allowed.
 HONESTY = [re.compile(r"(?<!not a )recommended threshold", re.I), re.compile(r"optimal threshold", re.I), re.compile(r"checking threshold", re.I)]
 FACT_CHECKER = re.compile(r"automatic fact-checker", re.I)
 PUBLIC_DISTS = ("dist-azure", "dist-artifact")
-# The audit generator's replay packs (sample and AI-assistant outputs) carry RBI excerpts by design. They ship only in the
-# local build (ui/dist), never upload, and are stripped from both public builds, which the [auditgen] check below enforces.
-# So the RBI-text limit is not applied to them; the key and honesty checks still are.
+# The local build's replay packs (sample and AI-assistant outputs, ui/dist/auditgen) carry RBI excerpts by design and never
+# upload, so the RBI-text limit is not applied to them; the key and honesty checks still are. The Azure build ships capped copies.
 LOCAL_ONLY_RBI_TEXT = ("dist/auditgen/",)
 FULL_TEXT = re.compile(r"/api/rehydrate")
+LOCAL_AUDIT = re.compile(r"[\"'`]/api/auditgen")  # a quoted same-origin path; the hosted service is an absolute URL
 
 
 def files():
     for base in (UI / "dist", UI / "dist-artifact", UI / "dist-azure", UI / "src/data", UI / "public/data"):
         if base.exists():
-            yield from (p for p in sorted(base.rglob("*")) if p.is_file() and p.suffix in TEXT)
+            yield from (p for p in sorted(base.rglob("*")) if p.is_file() and (p.suffix in TEXT or p.name.endswith(".json.gz")))
+
+
+def read(p: Path) -> str:
+    if p.name.endswith(".gz"):
+        return gzip.open(p, "rt", encoding="utf-8", errors="replace").read()
+    return p.read_text(encoding="utf-8", errors="replace")
 
 
 def main() -> int:
@@ -55,7 +62,7 @@ def main() -> int:
     n = 0
     for p in files():
         n += 1
-        text = p.read_text(encoding="utf-8", errors="replace")
+        text = read(p)
         for pat in KEY_PATTERNS:
             if pat.search(text):
                 problems.append(f"[key] {p.relative_to(UI)}: matches {pat.pattern}")
@@ -73,15 +80,17 @@ def main() -> int:
             continue
         for run in copied_runs(text, index, min_words=LIMIT + 1):
             problems.append(f"[rbi_text] {p.relative_to(UI)}: {run.length} words: {run.excerpt[:80]}…")
-    # The audit generator is local-only: public builds must not ship its replay packs or reference its API.
+    # Public builds never reference the local audit backend (a same-origin "/api/auditgen" path); the Azure build may call the
+    # hosted service at its absolute URL (VITE_AUDIT_API). Only the Azure build ships the demo packs, which are the
+    # 12-word-capped copies (scanned by the RBI-text check above like any other file); the Artifact build ships none.
     for d in PUBLIC_DISTS:
         base = UI / d
         if not base.exists():
             continue
-        if (base / "auditgen").exists():
-            problems.append(f"[auditgen] {d}/auditgen/: replay packs must not ship in a public build")
+        if d == "dist-artifact" and (base / "auditgen").exists():
+            problems.append(f"[auditgen] {d}/auditgen/: replay packs must not ship in the Artifact build")
         for js in base.rglob("*.js"):
-            if "/api/auditgen" in js.read_text(encoding="utf-8", errors="replace"):
+            if LOCAL_AUDIT.search(js.read_text(encoding="utf-8", errors="replace")):
                 problems.append(f"[auditgen] {js.relative_to(UI)}: the public build references the local audit backend")
     print(f"check_dist: {n} files scanned in ui/dist + ui/src/data; corpus shingles {len(index.hashes):,}; limit {LIMIT} words")
     for pr in problems:

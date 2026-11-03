@@ -1,0 +1,182 @@
+{
+  "sample_size": 28,
+  "true_obligation": 26,
+  "not_obligation": 2,
+  "unjudged": 0,
+  "unreadable": [],
+  "precision": 0.9285714285714286,
+  "wilson_95": [
+    0.7735426157408214,
+    0.9801883525522292
+  ],
+  "precision_stop_triggered": false,
+  "entity_classes_in_sample": 11,
+  "by_group": {
+    "groups": {
+      "access_restriction": {
+        "sample_size": 8,
+        "true_obligation": 8,
+        "not_obligation": 0,
+        "unjudged": 0,
+        "unreadable": [],
+        "precision": 1.0,
+        "wilson_95": [
+          0.6755843804891231,
+          1.0
+        ],
+        "precision_stop_triggered": false,
+        "entity_classes_in_sample": 8,
+        "restore_v3_exclusion": false
+      },
+      "disclosure_scope": {
+        "sample_size": 10,
+        "true_obligation": 8,
+        "not_obligation": 2,
+        "unjudged": 0,
+        "unreadable": [],
+        "precision": 0.8,
+        "wilson_95": [
+          0.49015684672072335,
+          0.9433190520193067
+        ],
+        "precision_stop_triggered": false,
+        "entity_classes_in_sample": 9,
+        "restore_v3_exclusion": false
+      },
+      "risk_weight_provisioning": {
+        "sample_size": 10,
+        "true_obligation": 10,
+        "not_obligation": 0,
+        "unjudged": 0,
+        "unreadable": [],
+        "precision": 1.0,
+        "wilson_95": [
+          0.7224598312333834,
+          1.0
+        ],
+        "precision_stop_triggered": false,
+        "entity_classes_in_sample": 9,
+        "restore_v3_exclusion": false
+      }
+    },
+    "overall": {
+      "sample_size": 28,
+      "true_obligation": 26,
+      "not_obligation": 2,
+      "unjudged": 0,
+      "unreadable": [],
+      "precision": 0.9285714285714286,
+      "wilson_95": [
+        0.7735426157408214,
+        0.9801883525522292
+      ],
+      "precision_stop_triggered": false,
+      "entity_classes_in_sample": 11
+    },
+    "groups_failing_gate": []
+  },
+  "by_distinct_text": {
+    "overall": {
+      "rows": 28,
+      "distinct_texts": 18,
+      "true_obligation": 17,
+      "precision": 0.9444444444444444,
+      "wilson_95": [
+        0.7424220019799247,
+        0.9901250641690756
+      ],
+      "repeated_texts": [
+        [
+          "121",
+          "127"
+        ],
+        [
+          "122",
+          "133",
+          "134",
+          "135",
+          "142",
+          "143",
+          "144"
+        ],
+        [
+          "128",
+          "138",
+          "140"
+        ],
+        [
+          "137",
+          "141"
+        ]
+      ],
+      "clusters_with_conflicting_labels": []
+    },
+    "groups": {
+      "access_restriction": {
+        "rows": 8,
+        "distinct_texts": 2,
+        "true_obligation": 2,
+        "precision": 1.0,
+        "wilson_95": [
+          0.34237195288961925,
+          1.0
+        ],
+        "repeated_texts": [
+          [
+            "122",
+            "133",
+            "134",
+            "135",
+            "142",
+            "143",
+            "144"
+          ]
+        ],
+        "clusters_with_conflicting_labels": []
+      },
+      "disclosure_scope": {
+        "rows": 10,
+        "distinct_texts": 6,
+        "true_obligation": 5,
+        "precision": 0.8333333333333334,
+        "wilson_95": [
+          0.43649056343635395,
+          0.9699474141282697
+        ],
+        "repeated_texts": [
+          [
+            "121",
+            "127"
+          ],
+          [
+            "128",
+            "138",
+            "140"
+          ],
+          [
+            "137",
+            "141"
+          ]
+        ],
+        "clusters_with_conflicting_labels": []
+      },
+      "risk_weight_provisioning": {
+        "rows": 10,
+        "distinct_texts": 10,
+        "true_obligation": 10,
+        "precision": 1.0,
+        "wilson_95": [
+          0.7224598312333834,
+          1.0
+        ],
+        "repeated_texts": [],
+        "clusters_with_conflicting_labels": []
+      }
+    }
+  },
+  "sample_path": "data/benchmark/candidates/t1_precision_sample_v4_labeled.csv",
+  "scored_at": "2026-09-25T19:20:26+00:00",
+  "basis": "scored from the hand-filled sample CSV",
+  "label_source": "manual",
+  "counts_toward_gate": true
+}

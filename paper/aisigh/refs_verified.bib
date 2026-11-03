@@ -1,0 +1,222 @@
+% RBI-ObliBench — verified references (checked online 2 Oct 2026)
+% Replace paper/aisigh/refs.bib entries with these. Keys kept where the repo already uses them.
+% See refs_verification_notes.md for what changed and why.
+
+% ---------------------------------------------------------------------------
+% Regulatory QA / RePASs line of work
+% ---------------------------------------------------------------------------
+
+% Introduces ObliQA (27,869 questions from ADGM regulations) and the RePASs metric.
+% NOTE: arXiv v1 was titled "RegNLP in Action: Facilitating Compliance Through Automated
+% Information Retrieval and Answer Generation"; v2 (2 Dec 2024) is retitled as below.
+@misc{gokhan2024regnlp,
+  author       = {Tuba Gokhan and Kexin Wang and Iryna Gurevych and Ted Briscoe},
+  title        = {{RIRAG}: Regulatory Information Retrieval and Answer Generation},
+  year         = {2024},
+  eprint       = {2409.05677},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CL},
+  note         = {arXiv:2409.05677v2},
+  doi          = {10.48550/arXiv.2409.05677}
+}
+
+% Software citation for the exact code used (no LICENSE file in the repo; used unmodified, not redistributed).
+@misc{repass,
+  author       = {{RegNLP}},
+  title        = {{RePASs}: Regulatory Passage Answer Stability Score},
+  howpublished = {\url{https://github.com/RegNLP/RePASs}},
+  note         = {Commit 821d438d07cfc6747bd657965188d9dde85dcb71},
+  year         = {2024}
+}
+
+% Shared-task overview (RIRAG-2025), where RePASs was the official metric.
+@inproceedings{gokhan2025riragtask,
+  author    = {Tuba Gokhan and Kexin Wang and Iryna Gurevych and Ted Briscoe},
+  title     = {Shared Task {RIRAG}-2025: Regulatory Information Retrieval and Answer Generation},
+  booktitle = {Proceedings of the 1st Regulatory NLP Workshop (RegNLP 2025)},
+  pages     = {1--4},
+  address   = {Abu Dhabi, UAE},
+  publisher = {Association for Computational Linguistics},
+  month     = jan,
+  year      = {2025},
+  url       = {https://aclanthology.org/2025.regnlp-1.1/}
+}
+
+% ObliQA-MP (multi-passage) is introduced here, not in the 2024 arXiv paper.
+@inproceedings{obliqamp,
+  author    = {Tuba Gokhan and Ted Briscoe},
+  title     = {Grounded Answers from Multi-Passage Regulations: Learning-to-Rank for Regulatory {RAG}},
+  booktitle = {Proceedings of the Natural Legal Language Processing Workshop 2025},
+  pages     = {135--146},
+  address   = {Suzhou, China},
+  publisher = {Association for Computational Linguistics},
+  month     = nov,
+  year      = {2025},
+  doi       = {10.18653/v1/2025.nllp-1.10}
+}
+
+% The concatenation-gameability result RQ3 reproduces. Published version (use this, not arXiv).
+@inproceedings{aueb2025rirag,
+  author    = {Ioannis Chasandras and Odysseas S. Chlapanis and Ion Androutsopoulos},
+  title     = {{AUEB}-Archimedes at {RIRAG}-2025: Is Obligation Concatenation Really All You Need?},
+  booktitle = {Proceedings of the 1st Regulatory NLP Workshop (RegNLP 2025)},
+  pages     = {52--58},
+  address   = {Abu Dhabi, UAE},
+  publisher = {Association for Computational Linguistics},
+  month     = jan,
+  year      = {2025},
+  url       = {https://aclanthology.org/2025.regnlp-1.8/}
+}
+
+% Exists. Single-author preprint: 406 expert-annotated QA pairs from SEBI/RBI text,
+% four task types (regulatory interpretation, numerical, contradiction, temporal).
+@misc{indiafinbench,
+  author       = {Rajveer Singh Pall},
+  title        = {{IndiaFinBench}: An Evaluation Benchmark for Large Language Model Performance on Indian Financial Regulatory Text},
+  year         = {2026},
+  eprint       = {2604.19298},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.CL}
+}
+
+% ---------------------------------------------------------------------------
+% Models and retrieval methods
+% ---------------------------------------------------------------------------
+
+% Paper behind BAAI/bge-base-en-v1.5 (model licence: MIT).
+@inproceedings{bge,
+  author    = {Shitao Xiao and Zheng Liu and Peitian Zhang and Niklas Muennighoff and Defu Lian and Jian-Yun Nie},
+  title     = {{C-Pack}: Packed Resources For General {Chinese} Embeddings},
+  booktitle = {Proceedings of the 47th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR '24)},
+  year      = {2024},
+  note      = {arXiv:2309.07597}
+}
+
+% Verifier / RePASs NLI model. Model card: Apache-2.0, trained on SNLI + MultiNLI, base microsoft/deberta-v3-xsmall. No paper of its own.
+@misc{nlideberta,
+  author       = {{Sentence-Transformers}},
+  title        = {cross-encoder/nli-deberta-v3-xsmall},
+  howpublished = {\url{https://huggingface.co/cross-encoder/nli-deberta-v3-xsmall}},
+  note         = {Revision a150876415327c80daeff35ca6f68f5ed8cf5c24. Apache-2.0},
+  year         = {2023}
+}
+
+@inproceedings{debertav3,
+  author    = {Pengcheng He and Jianfeng Gao and Weizhu Chen},
+  title     = {{DeBERTaV3}: Improving {DeBERTa} using {ELECTRA}-Style Pre-Training with Gradient-Disentangled Embedding Sharing},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2023},
+  note      = {arXiv:2111.09543}
+}
+
+@inproceedings{sbert,
+  author    = {Nils Reimers and Iryna Gurevych},
+  title     = {Sentence-{BERT}: Sentence Embeddings using {Siamese} {BERT}-Networks},
+  booktitle = {Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing (EMNLP-IJCNLP)},
+  pages     = {3982--3992},
+  year      = {2019}
+}
+
+% bm25s 0.3.11 (PyPI licence: MIT).
+@misc{bm25s,
+  author       = {Xing Han L{\`u}},
+  title        = {{BM25S}: Orders of Magnitude Faster Lexical Search via Eager Sparse Scoring},
+  year         = {2024},
+  eprint       = {2407.03618},
+  archivePrefix= {arXiv},
+  primaryClass = {cs.IR}
+}
+
+@inproceedings{rrf,
+  author    = {Gordon V. Cormack and Charles L. A. Clarke and Stefan B{\"u}ttcher},
+  title     = {Reciprocal Rank Fusion Outperforms {Condorcet} and Individual Rank Learning Methods},
+  booktitle = {Proceedings of the 32nd International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages     = {758--759},
+  year      = {2009},
+  doi       = {10.1145/1571941.1572114}
+}
+
+% LLMs under study / used for T4 drafting.
+@misc{gemini35fl,
+  author       = {{Google DeepMind}},
+  title        = {Gemini 3.5 Flash-Lite Model Card},
+  howpublished = {\url{https://deepmind.google/models/model-cards/gemini-3-5-flash-lite/}},
+  note         = {Accessed: 2 October 2026},
+  year         = {2026}
+}
+
+@misc{gptoss,
+  author       = {{OpenAI}},
+  title        = {gpt-oss-120b \& gpt-oss-20b Model Card},
+  year         = {2025},
+  eprint       = {2508.10925},
+  archivePrefix= {arXiv}
+}
+
+% ---------------------------------------------------------------------------
+% Statistics
+% ---------------------------------------------------------------------------
+
+@article{fleiss1971,
+  author  = {Joseph L. Fleiss},
+  title   = {Measuring Nominal Scale Agreement Among Many Raters},
+  journal = {Psychological Bulletin},
+  volume  = {76},
+  number  = {5},
+  pages   = {378--382},
+  year    = {1971}
+}
+
+@article{cohen1960,
+  author  = {Jacob Cohen},
+  title   = {A Coefficient of Agreement for Nominal Scales},
+  journal = {Educational and Psychological Measurement},
+  volume  = {20},
+  number  = {1},
+  pages   = {37--46},
+  year    = {1960}
+}
+
+@article{efron1979,
+  author  = {Bradley Efron},
+  title   = {Bootstrap Methods: Another Look at the Jackknife},
+  journal = {The Annals of Statistics},
+  volume  = {7},
+  number  = {1},
+  pages   = {1--26},
+  year    = {1979}
+}
+
+@article{wilson1927,
+  author  = {Edwin B. Wilson},
+  title   = {Probable Inference, the Law of Succession, and Statistical Inference},
+  journal = {Journal of the American Statistical Association},
+  volume  = {22},
+  number  = {158},
+  pages   = {209--212},
+  year    = {1927}
+}
+
+% ---------------------------------------------------------------------------
+% Primary source
+% ---------------------------------------------------------------------------
+
+% RBI site footer: "(c) Reserve Bank of India. All Rights Reserved." No reproduction licence found
+% -> keep the release pointer-only (already the case).
+@misc{rbi,
+  author       = {{Reserve Bank of India}},
+  title        = {Master Directions},
+  howpublished = {\url{https://www.rbi.org.in}},
+  note         = {Harvested 22 August--25 September 2026},
+  year         = {2026}
+}
+
+% Base model of RePASs' obligation classifier (RePASs fine-tunes it with its own script; weights not redistributed).
+% Model licence: CC BY-SA 4.0 (verified 2 Oct 2026).
+@inproceedings{legalbert,
+  author    = {Ilias Chalkidis and Manos Fergadiotis and Prodromos Malakasiotis and Nikolaos Aletras and Ion Androutsopoulos},
+  title     = {{LEGAL-BERT}: The Muppets straight out of Law School},
+  booktitle = {Findings of the Association for Computational Linguistics: EMNLP 2020},
+  year      = {2020},
+  doi       = {10.18653/v1/2020.findings-emnlp.261}
+}

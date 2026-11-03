@@ -1,0 +1,6 @@
+Question: {query}
+Entity class of the asker: {entity_class}
+Date of the question (as of): {as_of}
+
+EVIDENCE
+{evidence}

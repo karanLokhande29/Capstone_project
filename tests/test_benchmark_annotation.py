@@ -57,7 +57,7 @@ CFG = {
         "primary_annotator": "karan",
         "second_raters": [],
         "promotion_policy": "single_expert_retest",
-        "retest": {"min_gap_days": 5, "pilot_fraction": 1.0, "phase2_fraction": 0.20,
+        "retest": {"pilot_fraction": 1.0, "phase2_fraction": 0.20,
                    "shuffle_seed": 20260924},
         "agreement": {"bootstrap_seed": 20260924, "bootstrap_resamples": 50},
     },

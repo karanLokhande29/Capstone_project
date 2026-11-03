@@ -1,0 +1,32 @@
+You extract and compare the structure of regulatory obligations in Reserve Bank of India (RBI) Master Directions. You do NOT give an overall verdict; a fixed rule applied afterwards decides it from your field-level answers.
+
+You are given one SOURCE obligation (for one class of regulated entity) and up to two CANDIDATE paragraphs from Directions for a TARGET class. For the source and for each candidate, extract these 13 fields, each as a short phrase copied or closely paraphrased from that text, or null if the text does not state it:
+- actor: who must act (e.g. "the bank", "the Board", "the Chief Compliance Officer")
+- action: the required or prohibited act (verb phrase)
+- object: what the action applies to
+- scope: which entities, products, accounts or transactions are covered
+- condition: when or under what circumstances the duty applies ("where…", "if…", "subject to…")
+- threshold: a limit or trigger level (e.g. "exceeding ₹5 crore", "at least 3 members")
+- amount: a money amount
+- percentage: a percentage or ratio
+- frequency: how often (e.g. "annually", "at least once a quarter")
+- deadline: a time limit or due date (e.g. "within 30 days")
+- exception: carve-outs or exemptions ("except…", "unless…", "does not apply to…")
+- documentation: records, policies or documents that must be kept or approved
+- reporting: reports, returns, disclosures or notifications that must be made, and to whom
+
+The SOURCE and the CANDIDATES always concern DIFFERENT entity classes, by design. The regulated entity itself is therefore expected to differ (for example "the bank" vs "the NBFC", "a CIC" vs "an AIFI", "UCBs" vs "RRBs"): treat that difference as equal. Compare actor only on who acts within or for the entity (for example the Board, a committee or a named officer), and compare scope only on what is covered beyond the entity class itself.
+
+Then, for each candidate:
+- addresses_same_duty: true if the candidate imposes a duty on the target class about the same subject matter (the same action on the same kind of object) as the source; false otherwise. Judge substance, not wording: different words for the same duty count as the same duty, and identical words carrying a different legal effect do not.
+- field_comparison: for each of the 13 fields, one of
+  "equal" (both state it and it means the same in substance),
+  "differs" (both state it but the requirement differs, e.g. a different number, period, actor, scope or condition),
+  "only_source" (stated in the source, absent from the candidate),
+  "only_target" (stated in the candidate, absent from the source),
+  "absent" (stated in neither).
+
+Use ONLY the texts shown. Reply with a JSON object only, in this shape:
+{"source": {"actor": ..., "action": ..., "object": ..., "scope": ..., "condition": ..., "threshold": ..., "amount": ..., "percentage": ..., "frequency": ..., "deadline": ..., "exception": ..., "documentation": ..., "reporting": ...},
+ "candidates": [{"paragraph_id": "md_NNNNN::pNNNNN", "addresses_same_duty": true, "fields": {<the same 13 fields>}, "field_comparison": {<the 13 field names>: "equal|differs|only_source|only_target|absent"}}]}
+Include every candidate exactly once, with its paragraph_id exactly as written.

@@ -2,17 +2,22 @@ import { useMemo, useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { Badge, Button } from "@/components/ui/primitives";
 import { cn } from "@/lib/utils";
+import { NO_PROXY } from "@/lib/env";
 import { live } from "./api";
 import { useAudit } from "./state";
 import type { Cited } from "./types";
 
 export const DISCLAIMER = "Decision support only; verify against the official RBI text; not legal advice.";
 
+/** Public site: a read-only demo of the sample packs. Generating, uploading, reviewing and the local model run in the installed version. */
+export const PUBLIC_DEMO = NO_PROXY;
+export const INSTALLED = "the installed version, which runs inside your own network";
+
 export function SourceLink({ row }: { row: Pick<Cited, "source_url" | "md_id" | "paragraph_id"> }) {
   return (
     <a href={row.source_url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-accent hover:underline"
-      aria-label={`RBI source for ${row.paragraph_id ?? row.md_id}`}>
-      {row.paragraph_id ?? `${row.md_id} (Direction)`}<ExternalLink size={11} />
+      aria-label={`RBI source for ${row.paragraph_id ?? (row.md_id || "the press release")}`}>
+      {row.paragraph_id ?? (row.md_id ? `${row.md_id} (Direction)` : "RBI press release")}<ExternalLink size={11} />
     </a>
   );
 }

@@ -9,3 +9,5 @@ export const NO_PROXY = ARTIFACT || import.meta.env.VITE_NO_PROXY === "1";
 export const API_BASE: string | null = import.meta.env.VITE_API_BASE != null && import.meta.env.VITE_API_BASE !== ""
   ? String(import.meta.env.VITE_API_BASE).replace(/\/$/, "")
   : NO_PROXY ? null : "";
+/** Base URL of the hosted audit generator (ui/api_audit, an Azure Function); null = none (local backend or read-only replay). */
+export const AUDIT_API: string | null = import.meta.env.VITE_AUDIT_API ? String(import.meta.env.VITE_AUDIT_API).replace(/\/$/, "") : null;

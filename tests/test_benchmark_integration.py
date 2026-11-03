@@ -57,7 +57,7 @@ CFG = {
         "primary_annotator": "karan",
         "second_raters": [],
         "promotion_policy": "single_expert_retest",
-        "retest": {"min_gap_days": 5, "pilot_fraction": 1.0, "phase2_fraction": 0.20,
+        "retest": {"pilot_fraction": 1.0, "phase2_fraction": 0.20,
                    "shuffle_seed": 20260924},
         "agreement": {"bootstrap_seed": 20260924, "bootstrap_resamples": 100},
     },
@@ -181,8 +181,8 @@ def test_solo_protocol_end_to_end_through_the_cli(tmp_path, real_paragraphs, mon
     # 3. ingest --pass 1 --minutes karan=30
     assert cli.main(["ingest", "--pass", "1", "--minutes", "karan=30"]) == 0
 
-    # 4. retest --allow-short-gap (pass 1 was ingested seconds ago)
-    assert cli.main(["retest", "--allow-short-gap"]) == 0
+    # 4. retest straight after pass 1 (no minimum inter-pass interval)
+    assert cli.main(["retest"]) == 0
     pass2_path = resolver.write_path("benchmark", "tasks", "annotation_karan_pass2.csv")
     assert pass2_path.exists()
 

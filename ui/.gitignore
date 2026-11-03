@@ -15,3 +15,8 @@ api/.data/
 api/.state/
 .deploy-gz/
 .deploy-api.zip
+.public-auditgen/
+src/data/public_snapshot.json
+
+# Hosted audit generator build output (models, vectors, deployment zip)
+api_audit/.build/

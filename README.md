@@ -1,218 +1,122 @@
-# RBI-ObliBench — Agentic RAG Compliance System for RBI Master Directions
+# RBI-ObliBench
 
-A 15-week B.Tech AI capstone. The research contribution is **RBI-ObliBench**: a
-retrieval-grade, applicability- and amendment-aware benchmark built from RBI
-Master Directions, together with its applicability and differential-obligation
-evaluation (RQ1, RQ2) and a metric-integrity audit (RQ3). The Agentic RAG system
-is the engineering artifact, not the claimed novelty.
+A benchmark and a class- and date-aware RAG system for **Reserve Bank of India (RBI) Master Directions**:
 
-**Current state: Phase 0 — shared foundation only.** No scraping, no
-normalisation, no matrix population, no annotation, no retrieval. Every
-workstream module contains interface stubs that raise `NotImplementedError`
-naming the branch that will implement them.
+- does a system know which entity class an obligation binds, and what differs between parallel Directions (T1, T2)?
+- does it respect amendment dates (T3)?
+- does the RePASs faithfulness metric survive gaming on Indian regulatory text (T4)?
 
----
+The corpus has 381 Directions and 76,188 paragraphs. The benchmark has four tasks, and every result carries a bootstrap
+95% CI.
 
-## Repository layout
+- **Report (draft):** [reports/final/rbi_oblibench_report.md](reports/final/rbi_oblibench_report.md)
+- **Tables:** [reports/tables/](reports/tables/), with all numbers in [reports/results_v1.json](reports/results_v1.json)
+- **Dataset card:** [release/DATASET_CARD.md](release/DATASET_CARD.md)
+- **Release data (pointers only, no RBI text):** [release/data/](release/data/)
 
-```
-config/config.yaml          Single shared config. Every branch loads it.
-src/common/                 Shared utilities — the foundation.
-  config.py                 Loading + loud validation
-  paths.py                  Dual-mode (local / Kaggle) path resolution
-  io_helpers.py             Atomic JSON / JSONL / text I/O
-  retry.py                  Exponential backoff with jitter
-  cache.py                  Content-addressed cache over Kaggle Datasets
-  logging_setup.py          Standard logging
-  verify.py                 Foundation self-check
-  errors.py                 Exception hierarchy
-src/schemas/                Shared record contracts. Owner-neutral by design.
-  provenance.py             DocumentRecord, ParagraphRecord
-  vocabulary.py             Vocabulary, VocabularyTerm (start empty)
-  matrix.py                 MatrixCell
-  benchmark.py              T1Label, ObligationSpan
-src/scraper/                }
-src/extraction/             } phase1/akash-scraper   — interface stubs
-src/preprocessing/          }
-src/metadata/               } phase1/karan-matrix    — interface stubs
-src/matrix/                 }
-src/benchmark/              phase1/meer-annotation   — interface stubs
-tests/                      232 tests, no network, Kaggle paths mocked
-scripts/verify_foundation.py
-notebooks/phase0-base-foundation.ipynb
-reports/                    Audit and branch plan
-data/                       Directory contract only — contents are gitignored
-```
+## Setup
 
-`src/schemas/` deliberately sits outside every workstream package: all three
-branches read and write these records, so placing them under one branch's
-package would misrepresent ownership and put the contract inside that branch's
-edit scope.
-
-Modules for later phases (`retrieval/`, `temporal/`, `evaluation/`, `agent/`)
-are **not** created. They have no near-term purpose, and empty packages invite
-premature commitment to a structure the research has not yet justified.
-
----
-
-## Two things every branch must honour
-
-**1. Vocabularies are discovered, never declared.** No entity class or subject
-family is hard-coded anywhere. The planning estimates (~11 classes, ~26
-families) are estimates; a discovered count that disagrees with them is a
-finding to report, not a bug to fix. `empty_entity_class_vocabulary()` returns
-an empty vocabulary and a test enforces that it stays empty.
-
-**2. Unmeasured is not zero.** Report `"NOT YET MEASURED"` for a statistic that
-has not been computed and `"FAILED — <reason>"` for one that could not be. In
-particular, `T1Label.differential_flag` defaults to `"unlabelled"`, never
-`"absent"` — defaulting to `absent` would turn every unexamined item into a
-positive finding. And `applies_to` is an annotation target: deriving it from the
-source document's `entity_class` produces a label that restates its own input
-and cannot support any applicability claim.
-
----
-
-## Running on Kaggle
-
-All compute happens on Kaggle Notebooks. The local machine is used only for
-authoring code, running unit tests, and pushing to GitHub.
-
-1. **Push the branch to GitHub.**
-2. On [kaggle.com](https://www.kaggle.com): **New Notebook → File → Upload
-   Notebook**, select `notebooks/phase0-base-foundation.ipynb`. Name it
-   `phase0-base-foundation`.
-3. In the notebook settings, enable **Internet** (needed to clone the repo).
-4. **Run All.** The first cell clones the repository; the rest import `src/`,
-   run the test suite, and run the foundation check.
-5. If a run produces data worth keeping, save it with **New Dataset** (or **New
-   Version** on an existing one) from the Kaggle UI, then add that dataset's
-   slug to `environment.kaggle.input_datasets` in `config/config.yaml`.
-
-There is no Kaggle CLI step and no `kernel-metadata.json`. Deployment is by hand
-through the website.
-
-### Why paths are resolved, never written literally
-
-On Kaggle, attached Datasets mount **read-only** at `/kaggle/input/<slug>` while
-only `/kaggle/working` is writable. Code that resolves one path and then both
-reads and writes it works locally and fails on Kaggle. So `PathResolver` splits
-the two:
-
-| | Reads | Writes |
-|---|---|---|
-| Local | repo root | repo root |
-| Kaggle | `/kaggle/input/<slug>` first, then `/kaggle/working` | `/kaggle/working` only |
-
-```python
-from src.common.config import load_config
-from src.common.paths import PathResolver
-
-cfg = load_config()
-paths = PathResolver.from_config(cfg)      # detects the environment
-
-paths.read_path("raw", "md_1.pdf")          # searches Datasets, then working
-paths.write_path("processed", "md_1.jsonl") # always writable, parents created
-```
-
-Never build `data/...` or `/kaggle/...` by hand. Add a key to `paths:` in
-`config/config.yaml` instead.
-
-The same ordering makes the cache work across sessions: a corpus harvested
-last session and saved as a Dataset is a cache **hit** this session, so a re-run
-costs nothing instead of re-downloading the corpus.
-
----
-
-## Local development
+Tested on macOS arm64 with Python 3.14.3.
 
 ```bash
 python3 -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt          # Phase 0 needs nothing beyond stdlib + PyYAML
-
-pytest -q                                # 232 tests
-python scripts/verify_foundation.py --versions
+python3 -m pip install -r requirements-lock.txt     # exact versions of the environment used
+cp .env.example .env                                # only for LLM runs: fill GEMINI_API_KEY / GROQ_API_KEY
+python3 -m pytest -q                                # the test suite (no network, no LLM calls)
 ```
 
-Tests make no network calls. Kaggle paths are exercised against a fake
-`/kaggle` filesystem built under `tmp_path`, so the read-only-input / writable-
-working split is genuinely tested without a Kaggle session.
+- `requirements.txt` keeps the original, looser Kaggle notes; `requirements-lock.txt` is the lock.
+- RePASs (T4) runs in its own environment ([requirements-repass-lock.txt](requirements-repass-lock.txt)), from a checkout
+  of https://github.com/RegNLP/RePASs at the commit in [NOTICE.md](NOTICE.md), under `external/`.
+- API keys are read from `.env`, which is never committed, and are never printed.
 
----
+## Get the text (rehydrate)
 
-## Git workflow
+The release holds no RBI text. It holds pointers: Direction id, paragraph id, character offsets, source URL, harvest
+date and the sha256 of the paragraph text. To rebuild the text from RBI's own URLs:
 
-```
-main ──▶ base ──┬──▶ phase1/akash-scraper
-                ├──▶ phase1/karan-matrix
-                └──▶ phase1/meer-annotation
-```
-
-`base` is the fork point. All three Phase 1 branches fork from it and never from
-each other. See [reports/phase1_branch_plan.md](reports/phase1_branch_plan.md)
-for the file-scope split, which is designed so no two branches edit the same
-file.
-
-**Changing anything in `src/common/` or `src/schemas/` is a base-branch change**
-and needs agreement from all three owners, because it lands under everyone at
-once. Adding a field to a schema without declaring its owner in `FIELD_SPECS`
-fails the test suite by design.
-
----
-
-## Data and licensing
-
-Whether RBI Master Directions may be redistributed as part of a public research
-benchmark is an **open IPR question** and is not assumed to be settled by their
-public availability on rbi.org.in.
-
-Accordingly: `data/raw/**` and `data/extracted/**` are gitignored, source
-documents live in a private Kaggle Dataset, and benchmark artifacts reference
-source text by document ID, paragraph ID and character offset rather than
-embedding it. `ObligationSpan` stores offsets for exactly this reason — it is
-fully reproducible for anyone holding the corpus without republishing the text.
-
-Raise the redistribution question with the mentor / institutional IPR cell
-before any public release.
-
-## Kaggle workflow (P1-004)
-
-The corpus repair runs on Kaggle, because it needs Internet access the laptop
-run does not have and the 380 PDFs are too large to keep in the repo. The
-round trip is deliberately asymmetric about one thing: **no annotation file
-crosses either boundary**, in either direction.
-
-```
-laptop                       Kaggle                        laptop
-------                       ------                        ------
-rbi-oblibench-corpus-v1.zip
-  data/{metadata,extracted,
-        processed,matrix}
-  pilot_candidates.jsonl  ->  notebooks/
-                              phase1-corpus-repair.ipynb
-                                diagnose
-                                repair (only-missing)
-                                stable-ID + pilot-join checks
-                                matrix, QA, alignment (a)/(b)
-                                                       ->  p1004_return.zip
-                                                       ->  corpus-v2.zip
+```bash
+python3 scripts/rehydrate.py --sample 5 --out rehydrated/    # quick check: the Directions behind 5 T1 items
+python3 scripts/rehydrate.py --out rehydrated/               # every Direction (downloads ~381 PDFs)
 ```
 
-1. `python3 scripts/package_p1004.py corpus-v2 --out-dir ~/Desktop` builds the
-   upload. Upload it as a **private** Kaggle Dataset.
-2. Import `notebooks/phase1-corpus-repair.ipynb`, set **Internet: On**, add the
-   Dataset as an input, and **Run All** interactively (not Save & Run All).
-3. Download `p1004_return.zip` and unzip it over the repo root. Resume with
-   `Run Part C of docs/prompts/P1-004.md`.
+It reports `matched` / `drifted` / `missing` paragraphs. RBI updates consolidated Directions in place
+("Updated as on …"), so some drift is expected over time.
 
-**What never travels:** `data/benchmark/tasks/annotation_*.csv` holds three
-people's hand-entered labels and is gitignored. Kaggle never receives it, so a
-returning `data/benchmark` could only overwrite real work with nothing —
-`scripts/package_p1004.py` refuses to build a zip containing an `annotation_`
-file rather than trusting the include list. `pilot_candidates.jsonl` does
-travel outward, because the pilot-join check needs it to verify the 18
-annotated spans still resolve after re-segmentation.
+## Pipeline: one command per stage
 
-**Paths:** on Kaggle, `PathResolver` resolves to `/kaggle/working/data/...`
-and `/kaggle/working/reports/...`. Inputs must be copied there, **not** to
-`/kaggle/working/Capstone_project/data`, which the resolver never searches.
+| Stage | Command |
+|---|---|
+| Scraper, text extraction and paragraph segmentation → `data/processed/` | `python3 scripts/run_harvest.py all` |
+| Entity-class and subject-family vocabularies, and the Subject × Entity-Class Matrix → `data/matrix/` | `python3 scripts/run_matrix.py all` |
+| Obligation candidates (P2-001) | `python3 scripts/run_candidates.py extract` |
+| Cross-class matching (P2-002; embeddings run on Kaggle) | `python3 scripts/run_matching.py units`, then the notebook it writes |
+| T1 candidate benchmark (P2-004) | `python3 scripts/run_t1.py candidates` |
+| T2 retrieval baselines (P3-001) | `python3 scripts/run_p3001.py index && python3 scripts/run_p3001.py qrels && python3 scripts/run_p3001.py retrieve && python3 scripts/run_p3001.py score` |
+| T3 temporal set | `python3 scripts/run_t3.py build` |
+| T4 RePASs audit (P3-002) | `python3 scripts/run_t4.py questions` … `python3 scripts/run_t4.py analyze` (see its `--help`) |
+| RAG systems and ablations (P4; LLM calls) | `python3 scripts/run_p4.py t1 --system <system>`, `t2`, `t3`, `t4`, then `python3 scripts/run_p4.py report` |
+| Evaluation harness: all tables and `results_v1.json` | `python3 scripts/build_tables.py` |
+| Release data (pointer-only, pseudonymised) | `python3 scripts/build_release.py` |
+| Release safety check | `python3 scripts/release_check.py` |
+
+Human labels (T1, T3 spot-checks, T4 ratings) are in `release/data/`. The labelling stages above only regenerate the
+blank sheets.
+
+## Reproduce each table
+
+Each command prints one table from the committed metrics files; a public clone uses `release/provenance/` for the few
+inputs that live outside the public tree.
+
+| Table | Command |
+|---|---|
+| 1. Corpus and matrix | `python3 scripts/build_tables.py --only 01` |
+| 2. Candidate extraction precision | `python3 scripts/build_tables.py --only 02` |
+| 3. Cross-class matching validation | `python3 scripts/build_tables.py --only 03` |
+| 4. Supplementary-source decisions | `python3 scripts/build_tables.py --only 04` |
+| 5. T1 labels, routes, reliability | `python3 scripts/build_tables.py --only 05` |
+| 6. T2 baselines and the P4 retrieval stage | `python3 scripts/build_tables.py --only 06` |
+| 7. T1 systems and long-context | `python3 scripts/build_tables.py --only 07` |
+| 8. T3 and ablation B | `python3 scripts/build_tables.py --only 08` |
+| 9. T4 RePASs audit | `python3 scripts/build_tables.py --only 09` |
+| 10. Ablations A–C | `python3 scripts/build_tables.py --only 10` |
+| 11. LLM usage | `python3 scripts/build_tables.py --only 11` |
+| 12–13. Per-class T1 results and error analysis | `python3 scripts/build_error_analysis.py` (needs the P4 run outputs in `data/rag_runs/`, which `run_p4.py` writes) |
+
+## Demo
+
+```bash
+python3 scripts/demo.py "What minimum share of the loan portfolio must consist of loans of up to Rs 25 lakh?" --class "Small Finance Banks"
+python3 scripts/demo.py "<question>" --class "<entity class>" --as-of 2026-03-01 [--no-class-filter] [--no-temporal-filter] [--no-verifier]
+```
+
+The demo needs a Gemini API key in `.env`. It prints:
+
+- the answer, or an abstention;
+- the cited paragraphs, with Direction titles and ids;
+- the filters applied;
+- the verifier verdicts;
+- the LLM calls used.
+
+**Limits:**
+
+- It uses the free-tier `gemini-3.5-flash-lite`. Answers can change as the hosted model changes, and the daily quota can
+  run out.
+- The corpus holds only the current (amended) text of each Direction. For a date before an amendment, the demo can say
+  the paragraph was amended later, but it cannot show the older wording.
+- The verifier abstains often. It is not legal or compliance advice.
+
+## Licences
+
+- **Code:** MIT ([LICENSE](LICENSE)).
+- **Annotations and derived metadata:** CC BY 4.0 ([release/LICENSE-DATA](release/LICENSE-DATA)). This covers the
+  annotations only.
+- **RBI documents** are not included and not licensed by this project.
+- **Third-party components:** [NOTICE.md](NOTICE.md).
+- **Citation:** [CITATION.cff](CITATION.cff).
+
+## Notes for running on Kaggle
+
+The original corpus harvest and the P2-002 embeddings ran on Kaggle Notebooks. `PathResolver` (`src/common/paths.py`)
+reads from `/kaggle/input/<slug>` first and writes only under `/kaggle/working`. Never build `data/...` paths by hand;
+add a key under `paths:` in `config/config.yaml` instead. Annotation sheets never travel to Kaggle.

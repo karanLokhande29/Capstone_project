@@ -1,0 +1,1873 @@
+{
+ "version": "v1",
+ "selection_rule": "qualifying cases sorted by id; first two shown (first one per retention group for long-context)",
+ "per_class_flag_accuracy": {
+  "Majority": {
+   "All India Financial Institutions": {
+    "flag_accuracy": {
+     "k": 1,
+     "n": 11,
+     "value": 0.09090909090909091,
+     "wilson_95": [
+      0.01623175226282597,
+      0.3773646254862038
+     ]
+    }
+   },
+   "Asset Reconstruction Companies": {
+    "flag_accuracy": {
+     "k": 7,
+     "n": 7,
+     "value": 1.0,
+     "wilson_95": [
+      0.6456611570247934,
+      1.0
+     ]
+    }
+   },
+   "Commercial Banks": {
+    "flag_accuracy": {
+     "k": 7,
+     "n": 15,
+     "value": 0.4666666666666667,
+     "wilson_95": [
+      0.24809225259746442,
+      0.6988336984894921
+     ]
+    }
+   },
+   "Credit Information Companies": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 7,
+     "value": 0.5714285714285714,
+     "wilson_95": [
+      0.2504542304090258,
+      0.8417830777373732
+     ]
+    }
+   },
+   "Local Area Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Non-Banking Financial Companies": {
+    "flag_accuracy": {
+     "k": 1,
+     "n": 7,
+     "value": 0.14285714285714285,
+     "wilson_95": [
+      0.02567895594897479,
+      0.51313450331903
+     ]
+    }
+   },
+   "Payments Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Regional Rural Banks": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 9,
+     "value": 0.5555555555555556,
+     "wilson_95": [
+      0.2666473457440297,
+      0.811224570528086
+     ]
+    }
+   },
+   "Rural Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 2,
+     "n": 8,
+     "value": 0.25,
+     "wilson_95": [
+      0.07147768885802763,
+      0.5907301208974108
+     ]
+    }
+   },
+   "Small Finance Banks": {
+    "flag_accuracy": {
+     "k": 11,
+     "n": 15,
+     "value": 0.7333333333333333,
+     "wilson_95": [
+      0.4804911034231324,
+      0.8910272389681718
+     ]
+    }
+   },
+   "Urban Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 6,
+     "n": 11,
+     "value": 0.5454545454545454,
+     "wilson_95": [
+      0.28008775568998817,
+      0.7872904245601196
+     ]
+    }
+   }
+  },
+  "P2-002 candidates": {
+   "All India Financial Institutions": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 11,
+     "value": 0.2727272727272727,
+     "wilson_95": [
+      0.09745880573921467,
+      0.5656502930102463
+     ]
+    }
+   },
+   "Asset Reconstruction Companies": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 7,
+     "value": 0.7142857142857143,
+     "wilson_95": [
+      0.35892909014821267,
+      0.9177828342909844
+     ]
+    }
+   },
+   "Commercial Banks": {
+    "flag_accuracy": {
+     "k": 13,
+     "n": 15,
+     "value": 0.8666666666666667,
+     "wilson_95": [
+      0.6211750079348376,
+      0.9626395301086407
+     ]
+    }
+   },
+   "Credit Information Companies": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 7,
+     "value": 0.5714285714285714,
+     "wilson_95": [
+      0.2504542304090258,
+      0.8417830777373732
+     ]
+    }
+   },
+   "Local Area Banks": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 8,
+     "value": 0.625,
+     "wilson_95": [
+      0.30573785458380187,
+      0.863158240538479
+     ]
+    }
+   },
+   "Non-Banking Financial Companies": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 7,
+     "value": 0.42857142857142855,
+     "wilson_95": [
+      0.15821692226262685,
+      0.7495457695909742
+     ]
+    }
+   },
+   "Payments Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Regional Rural Banks": {
+    "flag_accuracy": {
+     "k": 6,
+     "n": 9,
+     "value": 0.6666666666666666,
+     "wilson_95": [
+      0.35419734749908977,
+      0.879418401317257
+     ]
+    }
+   },
+   "Rural Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 2,
+     "n": 8,
+     "value": 0.25,
+     "wilson_95": [
+      0.07147768885802763,
+      0.5907301208974108
+     ]
+    }
+   },
+   "Small Finance Banks": {
+    "flag_accuracy": {
+     "k": 11,
+     "n": 15,
+     "value": 0.7333333333333333,
+     "wilson_95": [
+      0.4804911034231324,
+      0.8910272389681718
+     ]
+    }
+   },
+   "Urban Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 11,
+     "value": 0.45454545454545453,
+     "wilson_95": [
+      0.21270957543988045,
+      0.7199122443100118
+     ]
+    }
+   }
+  },
+  "Class-blind LLM": {
+   "All India Financial Institutions": {
+    "flag_accuracy": {
+     "k": 6,
+     "n": 11,
+     "value": 0.5454545454545454,
+     "wilson_95": [
+      0.28008775568998817,
+      0.7872904245601196
+     ]
+    }
+   },
+   "Asset Reconstruction Companies": {
+    "flag_accuracy": {
+     "k": 7,
+     "n": 7,
+     "value": 1.0,
+     "wilson_95": [
+      0.6456611570247934,
+      1.0
+     ]
+    }
+   },
+   "Commercial Banks": {
+    "flag_accuracy": {
+     "k": 11,
+     "n": 15,
+     "value": 0.7333333333333333,
+     "wilson_95": [
+      0.4804911034231324,
+      0.8910272389681718
+     ]
+    }
+   },
+   "Credit Information Companies": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 7,
+     "value": 0.7142857142857143,
+     "wilson_95": [
+      0.35892909014821267,
+      0.9177828342909844
+     ]
+    }
+   },
+   "Local Area Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Non-Banking Financial Companies": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 7,
+     "value": 0.42857142857142855,
+     "wilson_95": [
+      0.15821692226262685,
+      0.7495457695909742
+     ]
+    }
+   },
+   "Payments Banks": {
+    "flag_accuracy": {
+     "k": 8,
+     "n": 8,
+     "value": 1.0,
+     "wilson_95": [
+      0.6755843804891231,
+      1.0
+     ]
+    }
+   },
+   "Regional Rural Banks": {
+    "flag_accuracy": {
+     "k": 6,
+     "n": 9,
+     "value": 0.6666666666666666,
+     "wilson_95": [
+      0.35419734749908977,
+      0.879418401317257
+     ]
+    }
+   },
+   "Rural Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 2,
+     "n": 8,
+     "value": 0.25,
+     "wilson_95": [
+      0.07147768885802763,
+      0.5907301208974108
+     ]
+    }
+   },
+   "Small Finance Banks": {
+    "flag_accuracy": {
+     "k": 10,
+     "n": 15,
+     "value": 0.6666666666666666,
+     "wilson_95": [
+      0.41713125151212976,
+      0.8482389930530876
+     ]
+    }
+   },
+   "Urban Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 7,
+     "n": 11,
+     "value": 0.6363636363636364,
+     "wilson_95": [
+      0.35379677689163724,
+      0.8483377638586862
+     ]
+    }
+   }
+  },
+  "Class-aware LLM": {
+   "All India Financial Institutions": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 11,
+     "value": 0.2727272727272727,
+     "wilson_95": [
+      0.09745880573921467,
+      0.5656502930102463
+     ]
+    }
+   },
+   "Asset Reconstruction Companies": {
+    "flag_accuracy": {
+     "k": 7,
+     "n": 7,
+     "value": 1.0,
+     "wilson_95": [
+      0.6456611570247934,
+      1.0
+     ]
+    }
+   },
+   "Commercial Banks": {
+    "flag_accuracy": {
+     "k": 11,
+     "n": 15,
+     "value": 0.7333333333333333,
+     "wilson_95": [
+      0.4804911034231324,
+      0.8910272389681718
+     ]
+    }
+   },
+   "Credit Information Companies": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 7,
+     "value": 0.7142857142857143,
+     "wilson_95": [
+      0.35892909014821267,
+      0.9177828342909844
+     ]
+    }
+   },
+   "Local Area Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Non-Banking Financial Companies": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 7,
+     "value": 0.42857142857142855,
+     "wilson_95": [
+      0.15821692226262685,
+      0.7495457695909742
+     ]
+    }
+   },
+   "Payments Banks": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 8,
+     "value": 0.625,
+     "wilson_95": [
+      0.30573785458380187,
+      0.863158240538479
+     ]
+    }
+   },
+   "Regional Rural Banks": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 9,
+     "value": 0.5555555555555556,
+     "wilson_95": [
+      0.2666473457440297,
+      0.811224570528086
+     ]
+    }
+   },
+   "Rural Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 2,
+     "n": 8,
+     "value": 0.25,
+     "wilson_95": [
+      0.07147768885802763,
+      0.5907301208974108
+     ]
+    }
+   },
+   "Small Finance Banks": {
+    "flag_accuracy": {
+     "k": 12,
+     "n": 15,
+     "value": 0.8,
+     "wilson_95": [
+      0.5481406466534955,
+      0.9295257935638959
+     ]
+    }
+   },
+   "Urban Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 8,
+     "n": 11,
+     "value": 0.7272727272727273,
+     "wilson_95": [
+      0.4343497069897537,
+      0.9025411942607853
+     ]
+    }
+   }
+  },
+  "Final agentic": {
+   "All India Financial Institutions": {
+    "flag_accuracy": {
+     "k": 1,
+     "n": 11,
+     "value": 0.09090909090909091,
+     "wilson_95": [
+      0.01623175226282597,
+      0.3773646254862038
+     ]
+    }
+   },
+   "Asset Reconstruction Companies": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 7,
+     "value": 0.7142857142857143,
+     "wilson_95": [
+      0.35892909014821267,
+      0.9177828342909844
+     ]
+    }
+   },
+   "Commercial Banks": {
+    "flag_accuracy": {
+     "k": 9,
+     "n": 15,
+     "value": 0.6,
+     "wilson_95": [
+      0.357464427565077,
+      0.8017577191740534
+     ]
+    }
+   },
+   "Credit Information Companies": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 7,
+     "value": 0.5714285714285714,
+     "wilson_95": [
+      0.2504542304090258,
+      0.8417830777373732
+     ]
+    }
+   },
+   "Local Area Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Non-Banking Financial Companies": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 7,
+     "value": 0.42857142857142855,
+     "wilson_95": [
+      0.15821692226262685,
+      0.7495457695909742
+     ]
+    }
+   },
+   "Payments Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Regional Rural Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 9,
+     "value": 0.4444444444444444,
+     "wilson_95": [
+      0.188775429471914,
+      0.7333526542559703
+     ]
+    }
+   },
+   "Rural Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 1,
+     "n": 8,
+     "value": 0.125,
+     "wilson_95": [
+      0.02241690886329617,
+      0.4708948057698615
+     ]
+    }
+   },
+   "Small Finance Banks": {
+    "flag_accuracy": {
+     "k": 10,
+     "n": 15,
+     "value": 0.6666666666666666,
+     "wilson_95": [
+      0.41713125151212976,
+      0.8482389930530876
+     ]
+    }
+   },
+   "Urban Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 6,
+     "n": 11,
+     "value": 0.5454545454545454,
+     "wilson_95": [
+      0.28008775568998817,
+      0.7872904245601196
+     ]
+    }
+   }
+  },
+  "Class-blind + verifier": {
+   "All India Financial Institutions": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 11,
+     "value": 0.2727272727272727,
+     "wilson_95": [
+      0.09745880573921467,
+      0.5656502930102463
+     ]
+    }
+   },
+   "Asset Reconstruction Companies": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 7,
+     "value": 0.7142857142857143,
+     "wilson_95": [
+      0.35892909014821267,
+      0.9177828342909844
+     ]
+    }
+   },
+   "Commercial Banks": {
+    "flag_accuracy": {
+     "k": 10,
+     "n": 15,
+     "value": 0.6666666666666666,
+     "wilson_95": [
+      0.41713125151212976,
+      0.8482389930530876
+     ]
+    }
+   },
+   "Credit Information Companies": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 7,
+     "value": 0.5714285714285714,
+     "wilson_95": [
+      0.2504542304090258,
+      0.8417830777373732
+     ]
+    }
+   },
+   "Local Area Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Non-Banking Financial Companies": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 7,
+     "value": 0.42857142857142855,
+     "wilson_95": [
+      0.15821692226262685,
+      0.7495457695909742
+     ]
+    }
+   },
+   "Payments Banks": {
+    "flag_accuracy": {
+     "k": 7,
+     "n": 8,
+     "value": 0.875,
+     "wilson_95": [
+      0.5291051942301386,
+      0.9775830911367038
+     ]
+    }
+   },
+   "Regional Rural Banks": {
+    "flag_accuracy": {
+     "k": 6,
+     "n": 9,
+     "value": 0.6666666666666666,
+     "wilson_95": [
+      0.35419734749908977,
+      0.879418401317257
+     ]
+    }
+   },
+   "Rural Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 1,
+     "n": 8,
+     "value": 0.125,
+     "wilson_95": [
+      0.02241690886329617,
+      0.4708948057698615
+     ]
+    }
+   },
+   "Small Finance Banks": {
+    "flag_accuracy": {
+     "k": 8,
+     "n": 15,
+     "value": 0.5333333333333333,
+     "wilson_95": [
+      0.3011663015105079,
+      0.7519077474025355
+     ]
+    }
+   },
+   "Urban Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 5,
+     "n": 11,
+     "value": 0.45454545454545453,
+     "wilson_95": [
+      0.21270957543988045,
+      0.7199122443100118
+     ]
+    }
+   }
+  },
+  "Long-context (100K)": {
+   "All India Financial Institutions": {
+    "flag_accuracy": {
+     "k": 2,
+     "n": 11,
+     "value": 0.18181818181818182,
+     "wilson_95": [
+      0.05136660067100063,
+      0.4769861375782448
+     ]
+    }
+   },
+   "Asset Reconstruction Companies": {
+    "flag_accuracy": {
+     "k": 7,
+     "n": 7,
+     "value": 1.0,
+     "wilson_95": [
+      0.6456611570247934,
+      1.0
+     ]
+    }
+   },
+   "Commercial Banks": {
+    "flag_accuracy": {
+     "k": 11,
+     "n": 13,
+     "value": 0.8461538461538461,
+     "wilson_95": [
+      0.5776482949136899,
+      0.9567427368172621
+     ]
+    }
+   },
+   "Credit Information Companies": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 6,
+     "value": 0.5,
+     "wilson_95": [
+      0.18761280689940868,
+      0.8123871931005913
+     ]
+    }
+   },
+   "Local Area Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Non-Banking Financial Companies": {
+    "flag_accuracy": {
+     "k": 3,
+     "n": 7,
+     "value": 0.42857142857142855,
+     "wilson_95": [
+      0.15821692226262685,
+      0.7495457695909742
+     ]
+    }
+   },
+   "Payments Banks": {
+    "flag_accuracy": {
+     "k": 4,
+     "n": 8,
+     "value": 0.5,
+     "wilson_95": [
+      0.21521252682444186,
+      0.7847874731755582
+     ]
+    }
+   },
+   "Regional Rural Banks": {
+    "flag_accuracy": {
+     "k": 6,
+     "n": 9,
+     "value": 0.6666666666666666,
+     "wilson_95": [
+      0.35419734749908977,
+      0.879418401317257
+     ]
+    }
+   },
+   "Rural Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 2,
+     "n": 8,
+     "value": 0.25,
+     "wilson_95": [
+      0.07147768885802763,
+      0.5907301208974108
+     ]
+    }
+   },
+   "Small Finance Banks": {
+    "flag_accuracy": {
+     "k": 10,
+     "n": 14,
+     "value": 0.7142857142857143,
+     "wilson_95": [
+      0.4535045882751561,
+      0.882788120898909
+     ]
+    }
+   },
+   "Urban Co-operative Banks": {
+    "flag_accuracy": {
+     "k": 7,
+     "n": 11,
+     "value": 0.6363636363636364,
+     "wilson_95": [
+      0.35379677689163724,
+      0.8483377638586862
+     ]
+    }
+   }
+  }
+ },
+ "judgement_recall": {
+  "Majority": {
+   "same": {
+    "recall": {
+     "k": 213,
+     "n": 213,
+     "value": 1.0,
+     "wilson_95": [
+      0.982283842214778,
+      1.0
+     ]
+    },
+    "predicted_instead": {}
+   },
+   "different": {
+    "recall": {
+     "k": 0,
+     "n": 78,
+     "value": 0.0,
+     "wilson_95": [
+      0.0,
+      0.04693945377411976
+     ]
+    },
+    "predicted_instead": {
+     "same": 78
+    }
+   },
+   "none": {
+    "recall": {
+     "k": 0,
+     "n": 121,
+     "value": 0.0,
+     "wilson_95": [
+      0.0,
+      0.03077179401737882
+     ]
+    },
+    "predicted_instead": {
+     "same": 121
+    }
+   }
+  },
+  "P2-002 candidates": {
+   "same": {
+    "recall": {
+     "k": 195,
+     "n": 213,
+     "value": 0.9154929577464789,
+     "wilson_95": [
+      0.8703854345560619,
+      0.9458786033407255
+     ]
+    },
+    "predicted_instead": {
+     "none": 18
+    }
+   },
+   "different": {
+    "recall": {
+     "k": 0,
+     "n": 78,
+     "value": 0.0,
+     "wilson_95": [
+      0.0,
+      0.04693945377411976
+     ]
+    },
+    "predicted_instead": {
+     "same": 49,
+     "none": 29
+    }
+   },
+   "none": {
+    "recall": {
+     "k": 114,
+     "n": 121,
+     "value": 0.9421487603305785,
+     "wilson_95": [
+      0.885388492644203,
+      0.9716976068610899
+     ]
+    },
+    "predicted_instead": {
+     "same": 7
+    }
+   }
+  },
+  "Class-blind LLM": {
+   "same": {
+    "recall": {
+     "k": 191,
+     "n": 213,
+     "value": 0.8967136150234741,
+     "wilson_95": [
+      0.8485728853648782,
+      0.9307978626834668
+     ]
+    },
+    "predicted_instead": {
+     "different": 15,
+     "none": 7
+    }
+   },
+   "different": {
+    "recall": {
+     "k": 18,
+     "n": 78,
+     "value": 0.23076923076923078,
+     "wilson_95": [
+      0.15125388693827768,
+      0.3355596650939407
+     ]
+    },
+    "predicted_instead": {
+     "none": 42,
+     "same": 18
+    }
+   },
+   "none": {
+    "recall": {
+     "k": 110,
+     "n": 121,
+     "value": 0.9090909090909091,
+     "wilson_95": [
+      0.8445255989438558,
+      0.9484792968601068
+     ]
+    },
+    "predicted_instead": {
+     "same": 10,
+     "different": 1
+    }
+   }
+  },
+  "Class-aware LLM": {
+   "same": {
+    "recall": {
+     "k": 205,
+     "n": 213,
+     "value": 0.9624413145539906,
+     "wilson_95": [
+      0.9276493028239328,
+      0.9808479596939605
+     ]
+    },
+    "predicted_instead": {
+     "none": 4,
+     "different": 4
+    }
+   },
+   "different": {
+    "recall": {
+     "k": 7,
+     "n": 78,
+     "value": 0.08974358974358974,
+     "wilson_95": [
+      0.044152447186411065,
+      0.1738491559103026
+     ]
+    },
+    "predicted_instead": {
+     "same": 32,
+     "none": 39
+    }
+   },
+   "none": {
+    "recall": {
+     "k": 106,
+     "n": 121,
+     "value": 0.8760330578512396,
+     "wilson_95": [
+      0.8055069201274051,
+      0.9234167719752272
+     ]
+    },
+    "predicted_instead": {
+     "same": 12,
+     "different": 2,
+     "unsure": 1
+    }
+   }
+  },
+  "Final agentic": {
+   "same": {
+    "recall": {
+     "k": 140,
+     "n": 213,
+     "value": 0.6572769953051644,
+     "wilson_95": [
+      0.5912563619887682,
+      0.7177249404919367
+     ]
+    },
+    "predicted_instead": {
+     "none": 5,
+     "unsure": 65,
+     "different": 3
+    }
+   },
+   "different": {
+    "recall": {
+     "k": 2,
+     "n": 78,
+     "value": 0.02564102564102564,
+     "wilson_95": [
+      0.007059945446585378,
+      0.08875440813398978
+     ]
+    },
+    "predicted_instead": {
+     "unsure": 19,
+     "none": 44,
+     "same": 13
+    }
+   },
+   "none": {
+    "recall": {
+     "k": 107,
+     "n": 121,
+     "value": 0.8842975206611571,
+     "wilson_95": [
+      0.8151285407808101,
+      0.929815452247155
+     ]
+    },
+    "predicted_instead": {
+     "same": 10,
+     "different": 2,
+     "unsure": 2
+    }
+   }
+  },
+  "Class-blind + verifier": {
+   "same": {
+    "recall": {
+     "k": 142,
+     "n": 213,
+     "value": 0.6666666666666666,
+     "wilson_95": [
+      0.6008996254370196,
+      0.7265283219679064
+     ]
+    },
+    "predicted_instead": {
+     "unsure": 60,
+     "none": 6,
+     "different": 5
+    }
+   },
+   "different": {
+    "recall": {
+     "k": 8,
+     "n": 78,
+     "value": 0.10256410256410256,
+     "wilson_95": [
+      0.05289271527803498,
+      0.18954633772190638
+     ]
+    },
+    "predicted_instead": {
+     "unsure": 21,
+     "none": 41,
+     "same": 8
+    }
+   },
+   "none": {
+    "recall": {
+     "k": 111,
+     "n": 121,
+     "value": 0.9173553719008265,
+     "wilson_95": [
+      0.8545337547304028,
+      0.9544914419988926
+     ]
+    },
+    "predicted_instead": {
+     "same": 9,
+     "unsure": 1
+    }
+   }
+  },
+  "Long-context (100K)": {
+   "same": {
+    "recall": {
+     "k": 196,
+     "n": 206,
+     "value": 0.9514563106796117,
+     "wilson_95": [
+      0.9129612558076441,
+      0.973421615844116
+     ]
+    },
+    "predicted_instead": {
+     "none": 9,
+     "different": 1
+    }
+   },
+   "different": {
+    "recall": {
+     "k": 3,
+     "n": 76,
+     "value": 0.039473684210526314,
+     "wilson_95": [
+      0.013514390129808602,
+      0.10974967271462335
+     ]
+    },
+    "predicted_instead": {
+     "same": 43,
+     "none": 30
+    }
+   },
+   "none": {
+    "recall": {
+     "k": 90,
+     "n": 114,
+     "value": 0.7894736842105263,
+     "wilson_95": [
+      0.7058258545306216,
+      0.8542480073314033
+     ]
+    },
+    "predicted_instead": {
+     "same": 23,
+     "different": 1
+    }
+   }
+  }
+ },
+ "flag_confusion": {
+  "Majority": {
+   "shared": {
+    "shared": 52,
+    "class-specific": 0,
+    "absent": 0,
+    "ambiguous": 0
+   },
+   "class-specific": {
+    "shared": 40,
+    "class-specific": 0,
+    "absent": 0,
+    "ambiguous": 0
+   },
+   "absent": {
+    "shared": 14,
+    "class-specific": 0,
+    "absent": 0,
+    "ambiguous": 0
+   }
+  },
+  "P2-002 candidates": {
+   "shared": {
+    "shared": 48,
+    "class-specific": 0,
+    "absent": 4,
+    "ambiguous": 0
+   },
+   "class-specific": {
+    "shared": 31,
+    "class-specific": 0,
+    "absent": 9,
+    "ambiguous": 0
+   },
+   "absent": {
+    "shared": 1,
+    "class-specific": 0,
+    "absent": 13,
+    "ambiguous": 0
+   }
+  },
+  "Class-blind LLM": {
+   "shared": {
+    "shared": 46,
+    "class-specific": 5,
+    "absent": 1,
+    "ambiguous": 0
+   },
+   "class-specific": {
+    "shared": 18,
+    "class-specific": 12,
+    "absent": 10,
+    "ambiguous": 0
+   },
+   "absent": {
+    "shared": 3,
+    "class-specific": 0,
+    "absent": 11,
+    "ambiguous": 0
+   }
+  },
+  "Class-aware LLM": {
+   "shared": {
+    "shared": 49,
+    "class-specific": 3,
+    "absent": 0,
+    "ambiguous": 0
+   },
+   "class-specific": {
+    "shared": 28,
+    "class-specific": 6,
+    "absent": 6,
+    "ambiguous": 0
+   },
+   "absent": {
+    "shared": 3,
+    "class-specific": 0,
+    "absent": 10,
+    "ambiguous": 1
+   }
+  },
+  "Final agentic": {
+   "shared": {
+    "shared": 38,
+    "class-specific": 4,
+    "absent": 0,
+    "ambiguous": 10
+   },
+   "class-specific": {
+    "shared": 17,
+    "class-specific": 3,
+    "absent": 8,
+    "ambiguous": 12
+   },
+   "absent": {
+    "shared": 2,
+    "class-specific": 0,
+    "absent": 10,
+    "ambiguous": 2
+   }
+  },
+  "Class-blind + verifier": {
+   "shared": {
+    "shared": 39,
+    "class-specific": 2,
+    "absent": 1,
+    "ambiguous": 10
+   },
+   "class-specific": {
+    "shared": 13,
+    "class-specific": 6,
+    "absent": 10,
+    "ambiguous": 11
+   },
+   "absent": {
+    "shared": 2,
+    "class-specific": 0,
+    "absent": 11,
+    "ambiguous": 1
+   }
+  },
+  "Long-context (100K)": {
+   "shared": {
+    "shared": 46,
+    "class-specific": 2,
+    "absent": 2,
+    "ambiguous": 0
+   },
+   "class-specific": {
+    "shared": 32,
+    "class-specific": 3,
+    "absent": 4,
+    "ambiguous": 0
+   },
+   "absent": {
+    "shared": 3,
+    "class-specific": 0,
+    "absent": 10,
+    "ambiguous": 0
+   }
+  }
+ },
+ "flag_f1_per_label": {
+  "Majority": {
+   "shared": 0.6582278481012659,
+   "class-specific": 0.0,
+   "absent": 0.0
+  },
+  "P2-002 candidates": {
+   "shared": 0.7272727272727274,
+   "class-specific": 0.0,
+   "absent": 0.65
+  },
+  "Class-blind LLM": {
+   "shared": 0.773109243697479,
+   "class-specific": 0.42105263157894735,
+   "absent": 0.6111111111111112
+  },
+  "Class-aware LLM": {
+   "shared": 0.7424242424242424,
+   "class-specific": 0.24489795918367346,
+   "absent": 0.6666666666666666
+  },
+  "Final agentic": {
+   "shared": 0.6972477064220183,
+   "class-specific": 0.1276595744680851,
+   "absent": 0.6250000000000001
+  },
+  "Class-blind + verifier": {
+   "shared": 0.7358490566037735,
+   "class-specific": 0.24999999999999997,
+   "absent": 0.6111111111111112
+  },
+  "Long-context (100K)": {
+   "shared": 0.7022900763358778,
+   "class-specific": 0.13636363636363635,
+   "absent": 0.6896551724137931
+  }
+ },
+ "a_different_missed": {
+  "gold_different_units": 78,
+  "missed_by_every_llm_system": 56,
+  "per_system_recall": {
+   "Majority": {
+    "k": 0,
+    "n": 78,
+    "value": 0.0,
+    "wilson_95": [
+     0.0,
+     0.04693945377411976
+    ]
+   },
+   "P2-002 candidates": {
+    "k": 0,
+    "n": 78,
+    "value": 0.0,
+    "wilson_95": [
+     0.0,
+     0.04693945377411976
+    ]
+   },
+   "Class-blind LLM": {
+    "k": 18,
+    "n": 78,
+    "value": 0.23076923076923078,
+    "wilson_95": [
+     0.15125388693827768,
+     0.3355596650939407
+    ]
+   },
+   "Class-aware LLM": {
+    "k": 7,
+    "n": 78,
+    "value": 0.08974358974358974,
+    "wilson_95": [
+     0.044152447186411065,
+     0.1738491559103026
+    ]
+   },
+   "Final agentic": {
+    "k": 2,
+    "n": 78,
+    "value": 0.02564102564102564,
+    "wilson_95": [
+     0.007059945446585378,
+     0.08875440813398978
+    ]
+   },
+   "Class-blind + verifier": {
+    "k": 8,
+    "n": 78,
+    "value": 0.10256410256410256,
+    "wilson_95": [
+     0.05289271527803498,
+     0.18954633772190638
+    ]
+   },
+   "Long-context (100K)": {
+    "k": 3,
+    "n": 76,
+    "value": 0.039473684210526314,
+    "wilson_95": [
+     0.013514390129808602,
+     0.10974967271462335
+    ]
+   }
+  },
+  "per_system_predicted_instead": {
+   "Majority": {
+    "same": 78
+   },
+   "P2-002 candidates": {
+    "same": 49,
+    "none": 29
+   },
+   "Class-blind LLM": {
+    "none": 42,
+    "same": 18
+   },
+   "Class-aware LLM": {
+    "same": 32,
+    "none": 39
+   },
+   "Final agentic": {
+    "unsure": 19,
+    "none": 44,
+    "same": 13
+   },
+   "Class-blind + verifier": {
+    "unsure": 21,
+    "none": 41,
+    "same": 8
+   },
+   "Long-context (100K)": {
+    "same": 43,
+    "none": 30
+   }
+  },
+  "examples": [
+   {
+    "item_id": "t1_md_12925::p00061",
+    "source_class": "Credit Information Companies",
+    "compared_class": "Rural Co-operative Banks",
+    "gold_matched_paragraph_id": "md_12986::p00025",
+    "source": {
+     "paragraph_id": "md_12925::p00061",
+     "offsets": [
+      [
+       0,
+       114
+      ]
+     ],
+     "excerpt": "commensurate processes to manage those risks. For this purpose, the CIC shall, inter alia, consider the following:"
+    },
+    "predictions": {
+     "Majority": "same",
+     "P2-002 candidates": "none",
+     "Class-blind LLM": "none",
+     "Class-aware LLM": "none",
+     "Final agentic": "none",
+     "Class-blind + verifier": "none",
+     "Long-context (100K)": "none"
+    },
+    "run_files": [
+     "data/rag_runs/t1_class_blind/t1_md_12925_p00061.json",
+     "data/rag_runs/t1_class_aware/t1_md_12925_p00061.json",
+     "data/rag_runs/t1_final_agentic/t1_md_12925_p00061.json",
+     "data/rag_runs/t1_ablation_a/t1_md_12925_p00061.json",
+     "data/rag_runs/t1_long_context_cap100k/t1_md_12925_p00061.json"
+    ]
+   },
+   {
+    "item_id": "t1_md_12945::p00050",
+    "source_class": "Non-Banking Financial Companies",
+    "compared_class": "Payments Banks",
+    "gold_matched_paragraph_id": "md_13092::p00184",
+    "source": {
+     "paragraph_id": "md_12945::p00050",
+     "offsets": [
+      [
+       0,
+       333
+      ]
+     ],
+     "excerpt": "21. An NBFC shall make following disclosures in ‘Notes to Accounts’ to the financial statements. (1) Loans against gold and silver collateral i) Details of …"
+    },
+    "predictions": {
+     "Majority": "same",
+     "P2-002 candidates": "same",
+     "Class-blind LLM": "none",
+     "Class-aware LLM": "none",
+     "Final agentic": "none",
+     "Class-blind + verifier": "none",
+     "Long-context (100K)": "none"
+    },
+    "run_files": [
+     "data/rag_runs/t1_class_blind/t1_md_12945_p00050.json",
+     "data/rag_runs/t1_class_aware/t1_md_12945_p00050.json",
+     "data/rag_runs/t1_final_agentic/t1_md_12945_p00050.json",
+     "data/rag_runs/t1_ablation_a/t1_md_12945_p00050.json",
+     "data/rag_runs/t1_long_context_cap100k/t1_md_12945_p00050.json"
+    ]
+   }
+  ]
+ },
+ "b_verifier_abstentions": {
+  "Final agentic": {
+   "abstained_judgements": 81,
+   "unsure_from_invalid_output": 5,
+   "abstained_judgements_correct_before_retry": 59,
+   "items_flag_correct_before_retry_wrong_after": 14,
+   "items_scored": 106,
+   "examples": [
+    {
+     "item_id": "t1_md_12927::p00153",
+     "source": {
+      "paragraph_id": "md_12927::p00153",
+      "offsets": [
+       [
+        0,
+        186
+       ]
+      ],
+      "excerpt": "only after closure of any critical gap found during such tests. Such tests shall also be carried out periodically in conformity with internal / regulatory …"
+     },
+     "gold_flag": "shared",
+     "first_pass_flag": "shared",
+     "final_flag": "ambiguous",
+     "abstained_classes": [
+      "All India Financial Institutions",
+      "Commercial Banks",
+      "Non-Banking Financial Companies",
+      "Small Finance Banks"
+     ],
+     "gold_judgements": {
+      "All India Financial Institutions": "same",
+      "Commercial Banks": "same",
+      "Non-Banking Financial Companies": "same",
+      "Small Finance Banks": "same"
+     },
+     "first_pass_judgements": {
+      "All India Financial Institutions": "same",
+      "Commercial Banks": "same",
+      "Non-Banking Financial Companies": "same",
+      "Small Finance Banks": "same"
+     },
+     "run_file": "data/rag_runs/t1_final_agentic/t1_md_12927_p00153.json"
+    },
+    {
+     "item_id": "t1_md_12928::p00016",
+     "source": {
+      "paragraph_id": "md_12928::p00016",
+      "offsets": [
+       [
+        39,
+        235
+       ],
+       [
+        236,
+        473
+       ]
+      ],
+      "excerpt": "(1) Any account included in LWD, where an ARC has entered into a compromise settlement with the borrower, shall be removed from the LWD only …"
+     },
+     "gold_flag": "shared",
+     "first_pass_flag": "shared",
+     "final_flag": "ambiguous",
+     "abstained_classes": [
+      "All India Financial Institutions",
+      "Small Finance Banks"
+     ],
+     "gold_judgements": {
+      "All India Financial Institutions": "same",
+      "Non-Banking Financial Companies": "same",
+      "Small Finance Banks": "same",
+      "Urban Co-operative Banks": "same"
+     },
+     "first_pass_judgements": {
+      "All India Financial Institutions": "same",
+      "Non-Banking Financial Companies": "same",
+      "Small Finance Banks": "same",
+      "Urban Co-operative Banks": "same"
+     },
+     "run_file": "data/rag_runs/t1_final_agentic/t1_md_12928_p00016.json"
+    }
+   ]
+  },
+  "Class-blind + verifier": {
+   "abstained_judgements": 80,
+   "unsure_from_invalid_output": 2,
+   "abstained_judgements_correct_before_retry": 60,
+   "items_flag_correct_before_retry_wrong_after": 15,
+   "items_scored": 106,
+   "examples": [
+    {
+     "item_id": "t1_md_12925::p00044",
+     "source": {
+      "paragraph_id": "md_12925::p00044",
+      "offsets": [
+       [
+        0,
+        196
+       ]
+      ],
+      "excerpt": "9. A CIC intending to outsource its IT services shall put in place a comprehensive Board-approved IT outsourcing policy, the coverage of which is indicated …"
+     },
+     "gold_flag": "class-specific",
+     "first_pass_flag": "class-specific",
+     "final_flag": "ambiguous",
+     "abstained_classes": [
+      "Commercial Banks",
+      "Non-Banking Financial Companies",
+      "Payments Banks",
+      "Rural Co-operative Banks"
+     ],
+     "gold_judgements": {
+      "Commercial Banks": "different",
+      "Non-Banking Financial Companies": "different",
+      "Payments Banks": "different",
+      "Rural Co-operative Banks": "same"
+     },
+     "first_pass_judgements": {
+      "Commercial Banks": "different",
+      "Non-Banking Financial Companies": "different",
+      "Payments Banks": "different",
+      "Rural Co-operative Banks": "different"
+     },
+     "run_file": "data/rag_runs/t1_ablation_a/t1_md_12925_p00044.json"
+    },
+    {
+     "item_id": "t1_md_12927::p00153",
+     "source": {
+      "paragraph_id": "md_12927::p00153",
+      "offsets": [
+       [
+        0,
+        186
+       ]
+      ],
+      "excerpt": "only after closure of any critical gap found during such tests. Such tests shall also be carried out periodically in conformity with internal / regulatory …"
+     },
+     "gold_flag": "shared",
+     "first_pass_flag": "shared",
+     "final_flag": "ambiguous",
+     "abstained_classes": [
+      "All India Financial Institutions",
+      "Commercial Banks",
+      "Non-Banking Financial Companies",
+      "Small Finance Banks"
+     ],
+     "gold_judgements": {
+      "All India Financial Institutions": "same",
+      "Commercial Banks": "same",
+      "Non-Banking Financial Companies": "same",
+      "Small Finance Banks": "same"
+     },
+     "first_pass_judgements": {
+      "All India Financial Institutions": "same",
+      "Commercial Banks": "same",
+      "Non-Banking Financial Companies": "same",
+      "Small Finance Banks": "same"
+     },
+     "run_file": "data/rag_runs/t1_ablation_a/t1_md_12927_p00153.json"
+    }
+   ]
+  }
+ },
+ "c_long_context": {
+  "cap": 100000,
+  "scored": 102,
+  "by_retention": {
+   "all gold kept": {
+    "items": 82,
+    "flag_errors": 34
+   },
+   "at least one gold cut": {
+    "items": 7,
+    "flag_errors": 6
+   },
+   "no gold matched paragraph": {
+    "items": 13,
+    "flag_errors": 3
+   }
+  },
+  "examples": [
+   {
+    "item_id": "t1_md_12925::p00044",
+    "group": "all gold kept",
+    "gold_paragraphs": 4,
+    "kept": 4,
+    "prompt_tokens_est": 73757,
+    "gold_flag": "class-specific",
+    "pred_flag": "shared",
+    "correct": false,
+    "source": {
+     "paragraph_id": "md_12925::p00044",
+     "offsets": [
+      [
+       0,
+       196
+      ]
+     ],
+     "excerpt": "9. A CIC intending to outsource its IT services shall put in place a comprehensive Board-approved IT outsourcing policy, the coverage of which is indicated …"
+    },
+    "gold_judgements": {
+     "Commercial Banks": "different",
+     "Non-Banking Financial Companies": "different",
+     "Payments Banks": "different",
+     "Rural Co-operative Banks": "same"
+    },
+    "pred_judgements": {
+     "Commercial Banks": "same",
+     "Non-Banking Financial Companies": "same",
+     "Payments Banks": "same",
+     "Rural Co-operative Banks": "none"
+    },
+    "run_file": "data/rag_runs/t1_long_context_cap100k/t1_md_12925_p00044.json"
+   },
+   {
+    "item_id": "t1_md_12968::p00044",
+    "group": "at least one gold cut",
+    "gold_paragraphs": 4,
+    "kept": 2,
+    "prompt_tokens_est": 99763,
+    "gold_flag": "class-specific",
+    "pred_flag": "shared",
+    "correct": false,
+    "source": {
+     "paragraph_id": "md_12968::p00044",
+     "offsets": [
+      [
+       0,
+       565
+      ]
+     ],
+     "excerpt": "(ii) Default in repayment by the borrower is also a type of non-compliance of material terms and conditions of loan repayment contract by the borrower …"
+    },
+    "gold_judgements": {
+     "Commercial Banks": "same",
+     "Non-Banking Financial Companies": "same",
+     "Payments Banks": "different",
+     "Urban Co-operative Banks": "same"
+    },
+    "pred_judgements": {
+     "Commercial Banks": "same",
+     "Non-Banking Financial Companies": "same",
+     "Payments Banks": "none",
+     "Urban Co-operative Banks": "none"
+    },
+    "run_file": "data/rag_runs/t1_long_context_cap100k/t1_md_12968_p00044.json"
+   }
+  ]
+ },
+ "d_t3_filter_off": {
+  "scored": 52,
+  "status_errors": 24,
+  "pred_status_filter_off": {
+   "in_force_original": 48,
+   "deleted": 4
+  },
+  "gold_status": {
+   "in_force_original": 26,
+   "amended": 17,
+   "deleted": 9
+  },
+  "errors_by_gold_status_and_side": {
+   "gold amended (after the effective date) → predicted in_force_original": 17,
+   "gold deleted (after the effective date) → predicted in_force_original": 6,
+   "gold in_force_original (before the effective date) → predicted deleted": 1
+  },
+  "examples": [
+   {
+    "t3_id": "T3-002",
+    "paragraph_id": "md_13071::p00180",
+    "as_of": "2026-05-18",
+    "side": "after",
+    "effective_date": "2026-05-18",
+    "gold_status": "amended",
+    "gold_governing_instrument": "amd_13453",
+    "pred_status": "in_force_original",
+    "pred_governing_instrument": "md_13071",
+    "corpus_version": "amended",
+    "run_file": "data/rag_runs/t3_temporal_off/T3-002.json"
+   },
+   {
+    "t3_id": "T3-004",
+    "paragraph_id": "md_13075::p00048",
+    "as_of": "2026-05-04",
+    "side": "after",
+    "effective_date": "2026-04-01",
+    "gold_status": "deleted",
+    "gold_governing_instrument": "amd_13251",
+    "pred_status": "in_force_original",
+    "pred_governing_instrument": "md_13075",
+    "corpus_version": "original",
+    "run_file": "data/rag_runs/t3_temporal_off/T3-004.json"
+   }
+  ]
+ },
+ "e_t4_metric_vs_human": {
+  "rated": 30,
+  "rule": "human faithful = 2 with RePASs composite < 0.5, or faithful = 0 with composite >= 0.5 (a display threshold chosen for this analysis after scoring, not pre-registered)",
+  "faithful_2_metric_low": 7,
+  "faithful_0_metric_high": 0,
+  "faithful_2_metric_low_by_type": {
+   "genuine": 6,
+   "concatenated": 1
+  },
+  "faithful_0_metric_high_by_type": {},
+  "examples": [
+   {
+    "question_id": "T4Q02",
+    "answer_type": "genuine",
+    "faithful": 2,
+    "answers_question": 2,
+    "repass_composite": 0.41452,
+    "entailment": 0.22012,
+    "contradiction": 0.3099,
+    "obligation_coverage": 0.3333333333333333,
+    "answer_excerpt": "You may proceed only after any critical gap identified in the tests has been closed — the tests must be completed and any critical gaps …",
+    "answer_pointer": "release/data/t4/answers_genuine.jsonl, T4Q02"
+   },
+   {
+    "question_id": "T4Q06",
+    "answer_type": "genuine",
+    "faithful": 2,
+    "answers_question": 2,
+    "repass_composite": 0.14001,
+    "entailment": 0.20912,
+    "contradiction": 0.98909,
+    "obligation_coverage": 0.2,
+    "answer_excerpt": "No. The RBI’s Master Directions require that any penalty imposed for a borrower’s default be levied only as a **penal charge**, not as “penal interest,” …",
+    "answer_pointer": "release/data/t4/answers_genuine.jsonl, T4Q06"
+   }
+  ]
+ }
+}
