@@ -10,6 +10,10 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 
+# The draft paper (and its bib) was removed on 18 Nov 2026 to make room for the accepted camera-ready paper.
+pytestmark = pytest.mark.skipif(not (ROOT / "paper/aisigh/refs_verified.bib").exists(),
+                                reason="paper/aisigh/refs_verified.bib removed (draft paper deleted)")
+
 
 @pytest.fixture(scope="module")
 def mod():

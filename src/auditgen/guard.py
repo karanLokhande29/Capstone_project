@@ -17,7 +17,9 @@ RESEARCH_ROOTS = ("data/processed", "data/benchmark", "data/metadata", "data/sup
                   "data/indexes", "data/matrix", "data/llm_cache", "configs", "reports", "docs/protocol", "paper")
 LIVE_COLLECTION = ("data/benchmark/t1/sprint_", "data/benchmark/sprint_supervision",
                    # Regenerated on every run of scripts/release_check.py (a required final check), not research data.
-                   "reports/final/release_check.txt")
+                   "reports/final/release_check.txt",
+                   # Daily LLM usage counter, rewritten by src/llm/client.py on every API call, not research data.
+                   "data/llm_cache/quota_ledger.json")
 SNAPSHOT = ROOT / "data/auditgen_state/research_hashes_before.json"
 
 
