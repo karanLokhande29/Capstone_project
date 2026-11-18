@@ -14,6 +14,26 @@ The corpus has 381 Directions and 76,188 paragraphs. The benchmark has four task
 - **Dataset card:** [release/DATASET_CARD.md](release/DATASET_CARD.md)
 - **Release data (pointers only, no RBI text):** [release/data/](release/data/)
 
+## Repository layout
+
+| Folder | What it holds |
+|---|---|
+| `src/` | Library code (scraper, extraction, matrix, benchmark, retrieval, RAG, eval, release, audit generator) |
+| `scripts/` | One CLI per pipeline stage, plus build and check scripts |
+| `tests/` | Test suite (`python3 -m pytest -q`) |
+| `config/`, `configs/` | Pipeline and audit-generator config; comparator and P4 prompt configs |
+| `data/` | Corpus, matrix, benchmark and run outputs (mostly gitignored) |
+| `release/` | Public release: pointer-only data, guidelines, dataset card |
+| `reports/` | Metrics, tables, phase reports, `final/` master document |
+| `notebooks/` | Kaggle notebooks (harvest, matching, supplementary sources) |
+| `ui/` | Demo site, audit generator UI and hosted audit API |
+| `docs/` | Protocol, prompts, presentation decks, GenAI work report, `planning/` |
+| `paper/camera_ready/` | The accepted AISIGH-SD 2026 paper and its camera-ready build |
+| `submissions/capstone/` | Capstone report, forms, scans and their build scripts |
+| `submissions/master_document_2026-10-03/` | Copies of the master document and private dossier (gitignored) |
+| `archive/` | Old backups (gitignored) and duplicate prompt files |
+| `outputs/`, `logs/`, `external/` | Sample audit packs, run logs, RePASs checkout (all gitignored) |
+
 ## Setup
 
 Tested on macOS arm64 with Python 3.14.3.

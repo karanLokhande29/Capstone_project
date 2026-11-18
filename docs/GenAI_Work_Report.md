@@ -372,7 +372,7 @@ The model runtime is Ollama 0.40.4, with `qwen2.5:7b-instruct` (fallback `1.5b`)
 4. Build a small gold set for AuditGen's Ask and Explain features (for example 30 questions), so the assistant has
    measured accuracy and not only safety guarantees.
 5. Finish IndiaFinBench: 138 of 406 items are still to run.
-6. Commit the remaining working-tree files: the paper, `capstone_submission/`, `release/` and the reports.
+6. Commit the remaining working-tree files: the paper, `submissions/capstone/`, `release/` and the reports.
 
 ---
 

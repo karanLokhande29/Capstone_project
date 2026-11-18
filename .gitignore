@@ -87,6 +87,7 @@ docs/prompts/FINAL-*
 
 # Convenience copies of the final documents (includes the private dossier) — never published
 deliverables_*/
+submissions/master_document_*/
 
 # Audit generator (local tool): uploaded company policies (confidential), refreshed corpus snapshot, generated packs,
 # state, and sample packs / UI replay copies that carry RBI excerpts. Never committed.
